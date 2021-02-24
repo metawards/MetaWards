@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -234,12 +233,12 @@
 <h1>metawards.Infections<a class="headerlink" href="#metawards-infections" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="metawards.Infections">
-<em class="property">class </em><code class="sig-prename descclassname">metawards.</code><code class="sig-name descname">Infections</code><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.</span></code><code class="sig-name descname"><span class="pre">Infections</span></code><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class holds the arrays that record the infections as they
 are occuring during the outbreak</p>
 <dl class="py method">
 <dt id="metawards.Infections.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#metawards.Infections.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#metawards.Infections.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
@@ -313,25 +312,25 @@ are occuring during the outbreak</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_set_stage_mapping</span></code>(disease_params, …)</p></td>
 <td><p>Get the mapping from the disease stages for this sub-network (from disease_params) to the disease stages for the overall network (in overall_params)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.aggregate" title="metawards.Infections.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a>([profiler, nthreads])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.aggregate" title="metawards.Infections.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a>([profiler, nthreads])</p></td>
 <td><p>Aggregate all of the infection data from the demographic sub-networks</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.build" title="metawards.Infections.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>([network, overall])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.build" title="metawards.Infections.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>([network, overall])</p></td>
 <td><p>Construct and return the Infections object that will track infections during a model run on the passed Network (or Networks)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.clear" title="metawards.Infections.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>([nthreads])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.clear" title="metawards.Infections.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>([nthreads])</p></td>
 <td><p>Clear all of the infections (resets all to zero)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.get_stage_mapping" title="metawards.Infections.get_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stage_mapping</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.get_stage_mapping" title="metawards.Infections.get_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stage_mapping</span></code></a>()</p></td>
 <td><p>Return the mapping from disease stages in this sub-network to disease stages in the overall network.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.get_work_index" title="metawards.Infections.get_work_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_work_index</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.get_work_index" title="metawards.Infections.get_work_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_work_index</span></code></a>()</p></td>
 <td><p>Return the mapping from the index in this sub-networks work matrix to the mapping in the overall network’s work matrix</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.has_different_stage_mapping" title="metawards.Infections.has_different_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_stage_mapping</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.has_different_stage_mapping" title="metawards.Infections.has_different_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_stage_mapping</span></code></a>()</p></td>
 <td><p>Return whether or not the sub-network disease stages are different to that of the overall network, and must thus be mapped</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.has_different_work_matrix" title="metawards.Infections.has_different_work_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_work_matrix</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.has_different_work_matrix" title="metawards.Infections.has_different_work_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_work_matrix</span></code></a>()</p></td>
 <td><p>Return whether or not the sub-network work matrix is different to that of the overall network</p></td>
 </tr>
 </tbody>
@@ -343,7 +342,7 @@ are occuring during the outbreak</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.N_INF_CLASSES" title="metawards.Infections.N_INF_CLASSES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">N_INF_CLASSES</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.N_INF_CLASSES" title="metawards.Infections.N_INF_CLASSES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">N_INF_CLASSES</span></code></a></p></td>
 <td><p>The total number of stages in the disease</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dataclass_fields__</span></code></p></td>
@@ -373,41 +372,41 @@ are occuring during the outbreak</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_work_index</span></code></p></td>
 <td><p>The index in the overall network’s work matrix of the ith index in this subnetworks work matrix.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.nlinks" title="metawards.Infections.nlinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlinks</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.nlinks" title="metawards.Infections.nlinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlinks</span></code></a></p></td>
 <td><p>Return the number of work links</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.nnodes" title="metawards.Infections.nnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nnodes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.nnodes" title="metawards.Infections.nnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nnodes</span></code></a></p></td>
 <td><p>The total number of nodes (wards)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.nsubnets" title="metawards.Infections.nsubnets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsubnets</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.nsubnets" title="metawards.Infections.nsubnets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsubnets</span></code></a></p></td>
 <td><p>Return the number of demographic subnetworks</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.play" title="metawards.Infections.play"><code class="xref py py-obj docutils literal notranslate"><span class="pre">play</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.play" title="metawards.Infections.play"><code class="xref py py-obj docutils literal notranslate"><span class="pre">play</span></code></a></p></td>
 <td><p>The infections caused by random (play) movements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.subinfs" title="metawards.Infections.subinfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subinfs</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.subinfs" title="metawards.Infections.subinfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subinfs</span></code></a></p></td>
 <td><p>The infections for the multi-demographic subnets</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.work" title="metawards.Infections.work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">work</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.work" title="metawards.Infections.work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">work</span></code></a></p></td>
 <td><p>The infections caused by fixed (work) movements.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt id="metawards.Infections.N_INF_CLASSES">
-<em class="property">property </em><code class="sig-name descname">N_INF_CLASSES</code><a class="headerlink" href="#metawards.Infections.N_INF_CLASSES" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">N_INF_CLASSES</span></code><a class="headerlink" href="#metawards.Infections.N_INF_CLASSES" title="Permalink to this definition">¶</a></dt>
 <dd><p>The total number of stages in the disease</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Infections.aggregate">
-<code class="sig-name descname">aggregate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">profiler</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nthreads</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.aggregate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.aggregate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">aggregate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profiler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nthreads</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.aggregate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.aggregate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Aggregate all of the infection data from the demographic
 sub-networks</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – Network that was used to initialise these infections</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – Network that was used to initialise these infections</p></li>
 <li><p><strong>profiler</strong> (<a class="reference internal" href="metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils.Profiler"><em>Profiler</em></a><em>, </em><em>optional</em>) – Profiler used to profile the calculation, by default None</p></li>
 <li><p><strong>nthreads</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of threads to use, by default 1</p></li>
 </ul>
@@ -417,14 +416,14 @@ sub-networks</p>
 
 <dl class="py method">
 <dt id="metawards.Infections.build">
-<em class="property">static </em><code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">network</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>metawards._network.Network<span class="p">, </span>metawards._networks.Networks<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">overall</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>metawards._network.Network<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.build" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">build</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">metawards._network.Network</span><span class="p"><span class="pre">,</span> </span><span class="pre">metawards._networks.Networks</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overall</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">metawards._network.Network</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.build" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct and return the Infections object that will track
 infections during a model run on the passed Network (or Networks)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="metawards.Networks.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network or networks that will be run</p></li>
-<li><p><strong>overall</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – The overall network to which this subnet belongs</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="../index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network or networks that will be run</p></li>
+<li><p><strong>overall</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – The overall network to which this subnet belongs</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -432,14 +431,14 @@ infections during a model run on the passed Network (or Networks)</p>
 (including space for all of the demographics)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#metawards.Infections" title="metawards.Infections">Infections</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections" title="metawards.Infections">Infections</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Infections.clear">
-<code class="sig-name descname">clear</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nthreads</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.clear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nthreads</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clear all of the infections (resets all to zero)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -451,7 +450,7 @@ of threads to use</p>
 
 <dl class="py method">
 <dt id="metawards.Infections.get_stage_mapping">
-<code class="sig-name descname">get_stage_mapping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.get_stage_mapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.get_stage_mapping" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_stage_mapping</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.get_stage_mapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.get_stage_mapping" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mapping from disease stages in this sub-network
 to disease stages in the overall network. This returns a list
 where mapping[i] gives the index of stage i in the subnetwork
@@ -460,14 +459,14 @@ to stage j in the overall network</p>
 
 <dl class="py method">
 <dt id="metawards.Infections.get_work_index">
-<code class="sig-name descname">get_work_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.get_work_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.get_work_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_work_index</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.get_work_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.get_work_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mapping from the index in this sub-networks work
 matrix to the mapping in the overall network’s work matrix</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Infections.has_different_stage_mapping">
-<code class="sig-name descname">has_different_stage_mapping</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.has_different_stage_mapping"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.has_different_stage_mapping" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">has_different_stage_mapping</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.has_different_stage_mapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.has_different_stage_mapping" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether or not the sub-network disease stages
 are different to that of the overall network, and must
 thus be mapped</p>
@@ -475,45 +474,45 @@ thus be mapped</p>
 
 <dl class="py method">
 <dt id="metawards.Infections.has_different_work_matrix">
-<code class="sig-name descname">has_different_work_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.has_different_work_matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Infections.has_different_work_matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">has_different_work_matrix</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_infections.html#Infections.has_different_work_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Infections.has_different_work_matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether or not the sub-network work matrix
 is different to that of the overall network</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Infections.nlinks">
-<em class="property">property </em><code class="sig-name descname">nlinks</code><a class="headerlink" href="#metawards.Infections.nlinks" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nlinks</span></code><a class="headerlink" href="#metawards.Infections.nlinks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of work links</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Infections.nnodes">
-<em class="property">property </em><code class="sig-name descname">nnodes</code><a class="headerlink" href="#metawards.Infections.nnodes" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nnodes</span></code><a class="headerlink" href="#metawards.Infections.nnodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>The total number of nodes (wards)</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Infections.nsubnets">
-<em class="property">property </em><code class="sig-name descname">nsubnets</code><a class="headerlink" href="#metawards.Infections.nsubnets" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">nsubnets</span></code><a class="headerlink" href="#metawards.Infections.nsubnets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of demographic subnetworks</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Infections.play">
-<code class="sig-name descname">play</code><em class="property"> = None</em><a class="headerlink" href="#metawards.Infections.play" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">play</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Infections.play" title="Permalink to this definition">¶</a></dt>
 <dd><p>The infections caused by random (play) movements. This is a list
 of int arrays, size play[N_INF_CLASSES][nnodes+1]</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Infections.subinfs">
-<code class="sig-name descname">subinfs</code><em class="property"> = None</em><a class="headerlink" href="#metawards.Infections.subinfs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">subinfs</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Infections.subinfs" title="Permalink to this definition">¶</a></dt>
 <dd><p>The infections for the multi-demographic subnets</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Infections.work">
-<code class="sig-name descname">work</code><em class="property"> = None</em><a class="headerlink" href="#metawards.Infections.work" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">work</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Infections.work" title="Permalink to this definition">¶</a></dt>
 <dd><p>The infections caused by fixed (work) movements. This is a list
 of int arrays, size work[N_INF_CLASSES][nlinks+1]</p>
 </dd></dl>
@@ -537,7 +536,7 @@ of int arrays, size work[N_INF_CLASSES][nlinks+1]</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 24, 2021.
       </span>
 
     </p>

@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -233,7 +232,7 @@
 <h1>metawards.iterators.advance_foi<a class="headerlink" href="#metawards-iterators-advance-foi" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="metawards.iterators.advance_foi">
-<code class="sig-prename descclassname">metawards.iterators.</code><code class="sig-name descname">advance_foi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nthreads</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#metawards.iterators.advance_foi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">metawards.iterators.</span></code><code class="sig-name descname"><span class="pre">advance_foi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nthreads</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metawards.iterators.advance_foi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Advance the model calculating the new force of infection (foi)
 for all of the wards and links between wards, based on the
 current number of infections. Note that you must call this
@@ -244,10 +243,10 @@ this function</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="metawards.Networks.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network being modelled</p></li>
-<li><p><strong>population</strong> (<a class="reference internal" href="metawards.Population.html#metawards.Population" title="metawards.Population"><em>Population</em></a>) – The population experiencing the outbreak - contains the
+<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="../index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network being modelled</p></li>
+<li><p><strong>population</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Population" title="metawards.Population"><em>Population</em></a>) – The population experiencing the outbreak - contains the
 day number of the outbreak</p></li>
-<li><p><strong>infections</strong> (<a class="reference internal" href="metawards.Infections.html#metawards.Infections" title="metawards.Infections"><em>Infections</em></a>) – The space that holds all of the infections</p></li>
+<li><p><strong>infections</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections" title="metawards.Infections"><em>Infections</em></a>) – The space that holds all of the infections</p></li>
 <li><p><strong>rngs</strong> – The list of thread-safe random number generators, one per thread</p></li>
 <li><p><strong>nthreads</strong> (<em>int</em>) – The number of threads over which to parallelise the calculation</p></li>
 <li><p><strong>profiler</strong> (<a class="reference internal" href="metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils.Profiler"><em>Profiler</em></a>) – The profiler used to profile this calculation</p></li>
@@ -275,7 +274,7 @@ are not used by advance_play</p></li>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 24, 2021.
       </span>
 
     </p>

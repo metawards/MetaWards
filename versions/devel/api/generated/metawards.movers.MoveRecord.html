@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -233,13 +232,13 @@
 <h1>metawards.movers.MoveRecord<a class="headerlink" href="#metawards-movers-moverecord" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="metawards.movers.MoveRecord">
-<em class="property">class </em><code class="sig-prename descclassname">metawards.movers.</code><code class="sig-name descname">MoveRecord</code><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.movers.MoveRecord" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.movers.</span></code><code class="sig-name descname"><span class="pre">MoveRecord</span></code><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.movers.MoveRecord" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class holds a record of mover-initiated moves. This could
 be used, to reverse moves, e.g. to send individuals back from
 home hospital, or to send individuals back home from holiday</p>
 <dl class="py method">
 <dt id="metawards.movers.MoveRecord.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.movers.MoveRecord.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.movers.MoveRecord.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
@@ -350,19 +349,19 @@ home hospital, or to send individuals back home from holiday</p>
 </table>
 <dl class="py method">
 <dt id="id0">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.movers.MoveRecord.__str__">
-<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.movers.MoveRecord.__str__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.movers.MoveRecord.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.movers.MoveRecord.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">from_stage</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">to_stage</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">from_type</span><span class="p">:</span> <span class="n">metawards._network.PersonType</span></em>, <em class="sig-param"><span class="n">to_type</span><span class="p">:</span> <span class="n">metawards._network.PersonType</span></em>, <em class="sig-param"><span class="n">from_ward</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">to_ward</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">from_demographic</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em>, <em class="sig-param"><span class="n">to_demographic</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">0</span></em>, <em class="sig-param"><span class="n">number</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.movers.MoveRecord.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_stage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_stage</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">metawards._network.PersonType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">metawards._network.PersonType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_ward</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_ward</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_demographic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_demographic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.movers.MoveRecord.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Record the move from the specified demographic, stage
 type and ward to the specified demographic, stage,
 type and ward, recording the number of individuals
@@ -373,7 +372,7 @@ If the type is WORKER, then the ward is the link index</p>
 
 <dl class="py method">
 <dt id="metawards.movers.MoveRecord.invert">
-<code class="sig-name descname">invert</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; metawards.movers._moverecord.MoveRecord<a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.invert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.movers.MoveRecord.invert" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">invert</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">metawards.movers._moverecord.MoveRecord</span><a class="reference internal" href="../../_modules/metawards/movers/_moverecord.html#MoveRecord.invert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.movers.MoveRecord.invert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of this record with the moves inverted - i.e.
 a move of X -&gt; Y of 10 individuals will become a move
 from Y -&gt; X of 10 individuals. Use this, together with
@@ -399,7 +398,7 @@ MoveGenerator, to reverse moves</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 24, 2021.
       </span>
 
     </p>

@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -233,7 +232,7 @@
 <h1>metawards.movers.go_ward<a class="headerlink" href="#metawards-movers-go-ward" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="metawards.movers.go_ward">
-<code class="sig-prename descclassname">metawards.movers.</code><code class="sig-name descname">go_ward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">generator</span><span class="p">:</span> <span class="n"><a class="reference internal" href="metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator">MoveGenerator</a></span></em>, <em class="sig-param"><span class="n">network</span><span class="p">:</span> <span class="n">_Union<span class="p">[</span>Network<span class="p">, </span>Networks<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">infections</span><span class="p">:</span> <span class="n">Infections</span></em>, <em class="sig-param"><span class="n">rngs</span></em>, <em class="sig-param"><span class="n">nthreads</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">record</span><span class="p">:</span> <span class="n"><a class="reference internal" href="metawards.movers.MoveRecord.html#metawards.movers.MoveRecord" title="metawards.movers.MoveRecord">MoveRecord</a></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#metawards.movers.go_ward" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">metawards.movers.</span></code><code class="sig-name descname"><span class="pre">go_ward</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><span class="pre">MoveGenerator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Network</span><span class="p"><span class="pre">,</span> </span><span class="pre">Networks</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infections</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Infections</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rngs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nthreads</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="metawards.movers.MoveRecord.html#metawards.movers.MoveRecord" title="metawards.movers.MoveRecord"><span class="pre">MoveRecord</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#metawards.movers.go_ward" title="Permalink to this definition">¶</a></dt>
 <dd><p>This go function will move individuals according to the flexible
 move specification described by the passed ‘generator’.</p>
 <p>If you want a record of all moves, then pass in ‘record’,
@@ -242,8 +241,8 @@ which will be updated.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>generator</strong> (<a class="reference internal" href="metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><em>MoveGenerator</em></a>) – Fully describes all of the moves that should be performed</p></li>
-<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="metawards.Networks.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network(s) in which the individuals will be moved</p></li>
-<li><p><strong>infections</strong> (<a class="reference internal" href="metawards.Infections.html#metawards.Infections" title="metawards.Infections"><em>Infections</em></a>) – Current record of infections</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="../index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network(s) in which the individuals will be moved</p></li>
+<li><p><strong>infections</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections" title="metawards.Infections"><em>Infections</em></a>) – Current record of infections</p></li>
 <li><p><strong>nthreads</strong> (<em>int</em>) – Number of threads over which to parallelise the move</p></li>
 <li><p><strong>rngs</strong> – Thread-safe random number generators used to choose the fraction
 of individuals</p></li>
@@ -270,7 +269,7 @@ of individuals</p></li>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 24, 2021.
       </span>
 
     </p>

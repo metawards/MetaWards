@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -234,16 +233,16 @@
 <h1>metawards.utils.get_initialise_functions<a class="headerlink" href="#metawards-utils-get-initialise-functions" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="metawards.utils.get_initialise_functions">
-<code class="sig-prename descclassname">metawards.utils.</code><code class="sig-name descname">get_initialise_functions</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Callable<span class="p">[</span><span class="p">[</span><span class="p">…</span><span class="p">]</span><span class="p">, </span>None<span class="p">]</span><span class="p">]</span><a class="reference internal" href="../../_modules/metawards/utils/_get_functions.html#get_initialise_functions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.utils.get_initialise_functions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">metawards.utils.</span></code><code class="sig-name descname"><span class="pre">get_initialise_functions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">…</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/metawards/utils/_get_functions.html#get_initialise_functions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.utils.get_initialise_functions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience function that returns all of the functions
 that should be called during the initialisation step
 of the model (e.g. the “initialise” stage)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="metawards.Networks.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network(s) to be modelled</p></li>
-<li><p><strong>population</strong> (<a class="reference internal" href="metawards.Population.html#metawards.Population" title="metawards.Population"><em>Population</em></a>) – The population experiencing the outbreak</p></li>
-<li><p><strong>infections</strong> (<a class="reference internal" href="metawards.Infections.html#metawards.Infections" title="metawards.Infections"><em>Infections</em></a>) – Space to record the infections through the day</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="../index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network(s) to be modelled</p></li>
+<li><p><strong>population</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Population" title="metawards.Population"><em>Population</em></a>) – The population experiencing the outbreak</p></li>
+<li><p><strong>infections</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections" title="metawards.Infections"><em>Infections</em></a>) – Space to record the infections through the day</p></li>
 <li><p><strong>iterator</strong> (<em>function</em>) – Iterator used to obtain the function used to advance
 the outbreak</p></li>
 <li><p><strong>extractor</strong> (<em>function</em>) – Extractor used to analyse the data and output results</p></li>
@@ -281,7 +280,7 @@ stage of the day</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 11, 2021.
+        Last updated on Feb 24, 2021.
       </span>
 
     </p>
