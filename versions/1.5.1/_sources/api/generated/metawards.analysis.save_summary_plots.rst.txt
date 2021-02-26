@@ -1,0 +1,6 @@
+﻿metawards.analysis.save\_summary\_plots
+=======================================
+
+.. currentmodule:: metawards.analysis
+
+.. autofunction:: save_summary_plots

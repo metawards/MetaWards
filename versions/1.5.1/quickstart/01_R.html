@@ -1,0 +1,538 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting Started in R &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extending the Model in R" href="02_R.html" />
+    <link rel="prev" title="Quick Start Guide" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Start Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#r-rstudio">R / RStudio</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Getting Started in R</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-disease">Creating the disease</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-wards-network">Creating the wards (network)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-model">Running the model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seeding-the-outbreak">Seeding the outbreak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualising-the-results">Visualising the results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complete-code">Complete code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_R.html">Extending the Model in R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_R.html">Multiple pathways with R</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-jupyter">Python / Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#console-command-line">Console / Command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Quick Start Guide</a> &raquo;</li>
+        
+      <li>Getting Started in R</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02_R.html" class="btn btn-neutral float-right" title="Extending the Model in R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Quick Start Guide" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-in-r">
+<h1>Getting Started in R<a class="headerlink" href="#getting-started-in-r" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Open R or RStudio.</p>
+<p>Make sure you have installed MetaWards according to the
+<a class="reference internal" href="../install.html"><span class="doc">R installation instructions</span></a>. Check this is
+the case by typing;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_metawards_available</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
+</pre></div>
+</div>
+<p>If you don’t see <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> returned, then double-check your installation.</p>
+<p>Now make sure that you have installed the
+<a class="reference external" href="https://www.tidyverse.org">tidyverse</a>, e.g. via;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then, finally, load the metawards R module;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">metawards</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-the-disease">
+<h2>Creating the disease<a class="headerlink" href="#creating-the-disease" title="Permalink to this headline">¶</a></h2>
+<p>You should now be in R (or RStudio) and have imported <a class="reference internal" href="../api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metawards</span></code></a>.
+To run a simulation you need to define the <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a>
+that you want to model. MetaWards implements a SEIR-style model, but
+you have complete control to define as many (or few) stages as you wish.</p>
+<p>First, we will create a disease, which we will call <code class="docutils literal notranslate"><span class="pre">lurgy</span></code>, that
+will consist of four stages: S, E, I and R. To do this, let’s create
+the disease;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">lurgy</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Disease</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;lurgy&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we will add each stage. You don’t define the “S” stage, as the model
+starts with a set of susceptible individuals by default. Instead, we need
+to add in the E, I and R stages.</p>
+<p>First, lets add the latent (“E”) stage. Latent individuals are not
+infectious, and so we will set <code class="docutils literal notranslate"><span class="pre">beta</span></code> (the infectivity parameter) to 0.0.
+Individuals will progress quickly through this stage, so we will set
+<code class="docutils literal notranslate"><span class="pre">progress</span></code> to 0.5, meaning that 50% of individuals move to
+the next stage each day.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">lurgy</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="m">0.0</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next we will add the infectious (“I”) stage. This will have a high <code class="docutils literal notranslate"><span class="pre">beta</span></code>
+value (0.8), but a lower progress (0.25) as we will model this as a
+disease with a long symptomatic period.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">lurgy</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="m">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we need to add the recovered (“R”) stage. We don’t need to set the
+<code class="docutils literal notranslate"><span class="pre">beta</span></code> or <code class="docutils literal notranslate"><span class="pre">progress</span></code> values, as MetaWards will automatically recognise
+this as the recovered state, and will set <code class="docutils literal notranslate"><span class="pre">beta</span></code> to 0 and <code class="docutils literal notranslate"><span class="pre">progress</span></code>
+to 0 automatically.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">lurgy</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;R&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can should print this disease to the screen to confirm that everything
+has been correctly set.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="n">lurgy</span><span class="p">)</span>
+
+<span class="o">*</span> <span class="n">Disease</span><span class="o">:</span> <span class="n">lurgy</span>
+<span class="o">*</span> <span class="n">stage</span><span class="o">:</span> <span class="p">[</span><span class="s">&#39;E&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">mapping</span><span class="o">:</span> <span class="p">[</span><span class="s">&#39;E&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">beta</span><span class="o">:</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">,</span> <span class="m">0</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">progress</span><span class="o">:</span> <span class="p">[</span><span class="m">0.5</span><span class="p">,</span> <span class="m">0.25</span><span class="p">,</span> <span class="m">0</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">too_ill_to_move</span><span class="o">:</span> <span class="p">[</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">start_symptom</span><span class="o">:</span> <span class="m">2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can save this disease to a file using
+<code class="docutils literal notranslate"><span class="pre">lurgy$to_json(&quot;lurgy.json.bz2&quot;)</span></code>, and then load it back
+using <code class="docutils literal notranslate"><span class="pre">lurgy</span> <span class="pre">=</span> <span class="pre">metawards$Disease$from_json(&quot;lurgy.json.bz2&quot;)</span></code></p>
+</div>
+</div>
+<div class="section" id="creating-the-wards-network">
+<h2>Creating the wards (network)<a class="headerlink" href="#creating-the-wards-network" title="Permalink to this headline">¶</a></h2>
+<p>Next, you need to define the wards (network) that will contain the individuals
+who will experience the model outbreak.</p>
+<p>We will first start with a single ward, called home.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">home</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;home&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>MetaWards works by assigning individuals as either <em class="xref py py-obj">workers</em> or <em class="xref py py-obj">players</em>.
+The difference is that <em class="xref py py-obj">workers</em> make fixed (predictable) movements
+between different wards each day, while <em class="xref py py-obj">players</em> make random movements.
+Since we have just a single ward, we will start by populating it
+with 10,000 players.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="nf">set_num_players</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+
+<span class="nf">Ward</span><span class="p">(</span> <span class="n">info</span><span class="o">=</span><span class="n">home</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">num_players</span><span class="o">=</span><span class="m">10000</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can save this Ward to a file using
+<code class="docutils literal notranslate"><span class="pre">home$to_json(&quot;home.json.bz2&quot;)</span></code>, and then load it back
+using <code class="docutils literal notranslate"><span class="pre">home</span> <span class="pre">=</span> <span class="pre">metawards$Ward$from_json(&quot;home.json.bz2&quot;)</span></code></p>
+</div>
+</div>
+<div class="section" id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+<p>Now we have a disease and a network, we can now model an outbreak. To do this,
+we will use the <a class="reference internal" href="../api/generated/metawards.run.html#metawards.run" title="metawards.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.run()</span></code></a> function.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">home</span><span class="p">,</span> <span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will print a lot to the screen. The key lines are these;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+Ending on day 5
+</pre></div>
+</div>
+<p>This shows the number of people in the different stages of the outbreak.
+In this case, there was no infection seeded, and so the number of infections
+remained zero.</p>
+</div>
+<div class="section" id="seeding-the-outbreak">
+<h2>Seeding the outbreak<a class="headerlink" href="#seeding-the-outbreak" title="Permalink to this headline">¶</a></h2>
+<p>We need to seed the outbreak with some additional seeds. We do this using
+the <code class="docutils literal notranslate"><span class="pre">additional</span></code> option. This can be very powerful (e.g. adding seeds
+at different days, different wards etc.), but at its simplest, it is
+just the number of initial infections on the first day in the first
+ward. We will start with 100 initial infections;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">home</span><span class="p">,</span> <span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">additional</span><span class="o">=</span><span class="m">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now you get a lot more output, e.g. for me the outbreak runs for 75 days.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 70 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 423  E: 0  I: 1  R: 9576  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 71 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 423  E: 0  I: 1  R: 9576  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 72 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 423  E: 0  I: 1  R: 9576  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 73 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 423  E: 0  I: 1  R: 9576  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 74 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 423  E: 0  I: 1  R: 9576  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 75 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 423  E: 0  I: 0  R: 9577  IW: 0  POPULATION: 10000
+Number of infections: 0
+Ending on day 75
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualising-the-results">
+<h2>Visualising the results<a class="headerlink" href="#visualising-the-results" title="Permalink to this headline">¶</a></h2>
+<p>The output <code class="docutils literal notranslate"><span class="pre">results</span></code> contains the filename of a csv file that contains
+the S, E, I and R data (amongst other things). You can load and plot this
+using standard R commands, e.g.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="n">fingerprint</span> <span class="n">repeat.</span> <span class="n">day</span>       <span class="n">date</span>     <span class="n">S</span>    <span class="n">E</span>    <span class="n">I</span>    <span class="n">R</span> <span class="n">IW</span> <span class="n">SCALE_UV</span>
+ <span class="m">1</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">0</span> <span class="m">2020-07-20</span> <span class="m">10000</span>    <span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span>  <span class="m">0</span>        <span class="m">1</span>
+ <span class="m">2</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">1</span> <span class="m">2020-07-21</span>  <span class="m">9900</span>   <span class="m">57</span>   <span class="m">43</span>    <span class="m">0</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">3</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">2</span> <span class="m">2020-07-22</span>  <span class="m">9859</span>   <span class="m">66</span>   <span class="m">66</span>    <span class="m">9</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">4</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">3</span> <span class="m">2020-07-23</span>  <span class="m">9807</span>   <span class="m">86</span>   <span class="m">82</span>   <span class="m">25</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">5</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">4</span> <span class="m">2020-07-24</span>  <span class="m">9747</span>  <span class="m">101</span>  <span class="m">112</span>   <span class="m">40</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">6</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">5</span> <span class="m">2020-07-25</span>  <span class="m">9654</span>  <span class="m">140</span>  <span class="m">130</span>   <span class="m">76</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">7</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">6</span> <span class="m">2020-07-26</span>  <span class="m">9548</span>  <span class="m">183</span>  <span class="m">165</span>  <span class="m">104</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">8</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">7</span> <span class="m">2020-07-27</span>  <span class="m">9433</span>  <span class="m">215</span>  <span class="m">203</span>  <span class="m">149</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">9</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">8</span> <span class="m">2020-07-28</span>  <span class="m">9280</span>  <span class="m">252</span>  <span class="m">269</span>  <span class="m">199</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">10</span>      <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">9</span> <span class="m">2020-07-29</span>  <span class="m">9082</span>  <span class="m">318</span>  <span class="m">341</span>  <span class="m">259</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="kc">...</span>
+</pre></div>
+</div>
+<p>To visualise the data we need to tidy it up so that we can group by S, E, I and R.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">results</span> <span class="o">%&gt;%</span>
+     <span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,</span> <span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="s">&quot;R&quot;</span><span class="p">),</span>
+     <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;stage&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="c1"># A tibble: 304 x 8</span>
+   <span class="n">fingerprint</span> <span class="n">repeat.</span>   <span class="n">day</span> <span class="n">date</span>          <span class="n">IW</span> <span class="n">SCALE_UV</span> <span class="n">stage</span> <span class="n">count</span>
+   <span class="o">&lt;</span><span class="n">chr</span><span class="o">&gt;</span>         <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">chr</span><span class="o">&gt;</span>      <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span>    <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">chr</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">int</span><span class="o">&gt;</span>
+ <span class="m">1</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">0</span> <span class="m">2020-07-20</span>     <span class="m">0</span>        <span class="m">1</span> <span class="n">S</span>     <span class="m">10000</span>
+ <span class="m">2</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">0</span> <span class="m">2020-07-20</span>     <span class="m">0</span>        <span class="m">1</span> <span class="n">E</span>         <span class="m">0</span>
+ <span class="m">3</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">0</span> <span class="m">2020-07-20</span>     <span class="m">0</span>        <span class="m">1</span> <span class="n">I</span>         <span class="m">0</span>
+ <span class="m">4</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">0</span> <span class="m">2020-07-20</span>     <span class="m">0</span>        <span class="m">1</span> <span class="n">R</span>         <span class="m">0</span>
+ <span class="m">5</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">1</span> <span class="m">2020-07-21</span>     <span class="m">1</span>        <span class="m">1</span> <span class="n">S</span>      <span class="m">9900</span>
+ <span class="m">6</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">1</span> <span class="m">2020-07-21</span>     <span class="m">1</span>        <span class="m">1</span> <span class="n">E</span>        <span class="m">57</span>
+ <span class="m">7</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">1</span> <span class="m">2020-07-21</span>     <span class="m">1</span>        <span class="m">1</span> <span class="n">I</span>        <span class="m">43</span>
+ <span class="m">8</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">1</span> <span class="m">2020-07-21</span>     <span class="m">1</span>        <span class="m">1</span> <span class="n">R</span>         <span class="m">0</span>
+ <span class="m">9</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">2</span> <span class="m">2020-07-22</span>     <span class="m">1</span>        <span class="m">1</span> <span class="n">S</span>      <span class="m">9859</span>
+<span class="m">10</span> <span class="n">REPEAT</span>            <span class="m">1</span>     <span class="m">2</span> <span class="m">2020-07-22</span>     <span class="m">1</span>        <span class="m">1</span> <span class="n">E</span>        <span class="m">66</span>
+<span class="c1"># … with 294 more rows</span>
+</pre></div>
+</div>
+<p>You can graph S, E, I and R against day using;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">,</span>
+         <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The result should look something like this;</p>
+<img alt="Plot of the initial outbreak" src="../_images/r01.jpg" />
+</div>
+<div class="section" id="complete-code">
+<h2>Complete code<a class="headerlink" href="#complete-code" title="Permalink to this headline">¶</a></h2>
+<p>The complete R code for this part of the getting started guide is
+re-copied below;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the dependencies / libraries</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">metawards</span><span class="p">)</span>
+
+<span class="c1"># Create the disease</span>
+<span class="n">lurgy</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Disease</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;lurgy&quot;</span><span class="p">)</span>
+<span class="n">lurgy</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="m">0.0</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="m">0.25</span><span class="p">)</span>
+<span class="n">lurgy</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="m">0.8</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="m">0.25</span><span class="p">)</span>
+<span class="n">lurgy</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="s">&quot;R&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create the model network</span>
+<span class="n">home</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;home&quot;</span><span class="p">)</span>
+<span class="n">home</span><span class="o">$</span><span class="nf">set_num_players</span><span class="p">(</span><span class="m">10000</span><span class="p">)</span>
+
+<span class="c1"># Run the model</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">home</span><span class="p">,</span> <span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">additional</span><span class="o">=</span><span class="m">100</span><span class="p">)</span>
+
+<span class="c1"># Read the tidy the results</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="n">results</span> <span class="o">%&gt;%</span>
+     <span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,</span> <span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="s">&quot;R&quot;</span><span class="p">),</span>
+     <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;stage&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+
+<span class="c1"># Graph the results</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">,</span>
+       <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_R.html" class="btn btn-neutral float-right" title="Extending the Model in R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Quick Start Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

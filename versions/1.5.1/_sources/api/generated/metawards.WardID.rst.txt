@@ -1,0 +1,57 @@
+﻿metawards.WardID
+================
+
+.. currentmodule:: metawards
+
+.. autoclass:: WardID
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~WardID.__delattr__
+      ~WardID.__dir__
+      ~WardID.__eq__
+      ~WardID.__format__
+      ~WardID.__ge__
+      ~WardID.__getattribute__
+      ~WardID.__gt__
+      ~WardID.__init__
+      ~WardID.__init_subclass__
+      ~WardID.__le__
+      ~WardID.__lt__
+      ~WardID.__ne__
+      ~WardID.__new__
+      ~WardID.__reduce__
+      ~WardID.__reduce_ex__
+      ~WardID.__repr__
+      ~WardID.__setattr__
+      ~WardID.__sizeof__
+      ~WardID.__str__
+      ~WardID.__subclasshook__
+      ~WardID.commute
+      ~WardID.home
+      ~WardID.is_all_commute
+      ~WardID.is_null
+      ~WardID.is_ward
+      ~WardID.is_ward_connection
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~WardID.__dict__
+      ~WardID.__doc__
+      ~WardID.__hash__
+      ~WardID.__module__
+      ~WardID.__weakref__
+   
+   

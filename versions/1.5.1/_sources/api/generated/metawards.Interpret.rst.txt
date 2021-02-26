@@ -1,0 +1,60 @@
+﻿metawards.Interpret
+===================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Interpret
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Interpret.__delattr__
+      ~Interpret.__dir__
+      ~Interpret.__eq__
+      ~Interpret.__format__
+      ~Interpret.__ge__
+      ~Interpret.__getattribute__
+      ~Interpret.__gt__
+      ~Interpret.__hash__
+      ~Interpret.__init__
+      ~Interpret.__init_subclass__
+      ~Interpret.__le__
+      ~Interpret.__lt__
+      ~Interpret.__ne__
+      ~Interpret.__new__
+      ~Interpret.__reduce__
+      ~Interpret.__reduce_ex__
+      ~Interpret.__repr__
+      ~Interpret.__setattr__
+      ~Interpret.__sizeof__
+      ~Interpret.__str__
+      ~Interpret.__subclasshook__
+      ~Interpret.boolean
+      ~Interpret.date
+      ~Interpret.day
+      ~Interpret.day_or_date
+      ~Interpret.integer
+      ~Interpret.number
+      ~Interpret.random_integer
+      ~Interpret.random_number
+      ~Interpret.string
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Interpret.__dict__
+      ~Interpret.__doc__
+      ~Interpret.__module__
+      ~Interpret.__weakref__
+   
+   

@@ -1,0 +1,6 @@
+﻿metawards.utils.recalculate\_work\_denominator\_day
+===================================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: recalculate_work_denominator_day

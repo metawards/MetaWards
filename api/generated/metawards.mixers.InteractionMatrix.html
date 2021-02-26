@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -233,7 +232,7 @@
 <h1>metawards.mixers.InteractionMatrix<a class="headerlink" href="#metawards-mixers-interactionmatrix" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="metawards.mixers.InteractionMatrix">
-<em class="property">class </em><code class="sig-prename descclassname">metawards.mixers.</code><code class="sig-name descname">InteractionMatrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.mixers.</span></code><code class="sig-name descname"><span class="pre">InteractionMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is an interaction matrix, which is used to control
 how the FOIs of different demographics are merged together.</p>
 <p>An interaction matrix is just a square matrix, with
@@ -242,7 +241,7 @@ a convenience class that makes it easier to create
 more complex interaction matrixes</p>
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an interaction matrix that is n x n in size,
 where all values equal ‘value’</p>
 </dd></dl>
@@ -369,38 +368,38 @@ where all values equal ‘value’</p>
 </table>
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.__eq__">
-<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__eq__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__eq__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__eq__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self==value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.__getitem__">
-<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__getitem__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__getitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the ith row of the matrix</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="id0">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an interaction matrix that is n x n in size,
 where all values equal ‘value’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.__setitem__">
-<code class="sig-name descname">__setitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">row</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__setitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__setitem__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__setitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__setitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__setitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Set the ith row of the matrix equal to ‘row’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.__str__">
-<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__str__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.detach">
-<code class="sig-name descname">detach</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.detach"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.detach" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">detach</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.detach"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.detach" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detach the ‘nth’ demographic from interacting with
 any other demographics. This sets the ith row and ith
 column equal to zero (which not changing m[n][n])</p>
@@ -408,34 +407,34 @@ column equal to zero (which not changing m[n][n])</p>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.diagonal">
-<em class="property">static </em><code class="sig-name descname">diagonal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">off_diagonal</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.diagonal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.diagonal" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">diagonal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">off_diagonal</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.diagonal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.diagonal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a n x n matrix where each diagonal element equals
 ‘value’ and each off-diagonal element equals ‘off_diagonal’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.identity">
-<em class="property">static </em><code class="sig-name descname">identity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">off_diagonal</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.identity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.identity" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">identity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">off_diagonal</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.identity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.identity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a n x n matrix where each diagonal element equals
 ‘value’ and each off-diagonal element equals ‘off_diagonal’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.ones">
-<em class="property">static </em><code class="sig-name descname">ones</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.ones"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.ones" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">ones</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.ones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.ones" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a n x n matrix where each element equals ‘value’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.resize">
-<code class="sig-name descname">resize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.resize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.resize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">resize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.resize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.resize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resize this matrix to ‘n x n’, adding in extra
 values equal to ‘value’ if needed</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.mixers.InteractionMatrix.zeroes">
-<em class="property">static </em><code class="sig-name descname">zeroes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.zeroes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.zeroes" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">zeroes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.zeroes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a n x n matrix where each element equals ‘value’</p>
 </dd></dl>
 
@@ -458,7 +457,7 @@ values equal to ‘value’ if needed</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 09, 2021.
+        Last updated on Feb 26, 2021.
       </span>
 
     </p>

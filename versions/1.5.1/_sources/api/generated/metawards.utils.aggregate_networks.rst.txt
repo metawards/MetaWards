@@ -1,0 +1,6 @@
+﻿metawards.utils.aggregate\_networks
+===================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: aggregate_networks

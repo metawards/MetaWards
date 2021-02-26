@@ -1,0 +1,6 @@
+﻿metawards.app.get\_cores\_per\_node
+===================================
+
+.. currentmodule:: metawards.app
+
+.. autofunction:: get_cores_per_node

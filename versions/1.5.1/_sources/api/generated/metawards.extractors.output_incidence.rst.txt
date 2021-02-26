@@ -1,0 +1,6 @@
+﻿metawards.extractors.output\_incidence
+======================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: output_incidence

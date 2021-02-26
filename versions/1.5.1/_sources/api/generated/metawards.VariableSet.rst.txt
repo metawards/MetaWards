@@ -1,0 +1,75 @@
+﻿metawards.VariableSet
+=====================
+
+.. currentmodule:: metawards
+
+.. autoclass:: VariableSet
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VariableSet.__delattr__
+      ~VariableSet.__dir__
+      ~VariableSet.__eq__
+      ~VariableSet.__format__
+      ~VariableSet.__ge__
+      ~VariableSet.__getattribute__
+      ~VariableSet.__getitem__
+      ~VariableSet.__gt__
+      ~VariableSet.__init__
+      ~VariableSet.__init_subclass__
+      ~VariableSet.__le__
+      ~VariableSet.__len__
+      ~VariableSet.__lt__
+      ~VariableSet.__ne__
+      ~VariableSet.__new__
+      ~VariableSet.__reduce__
+      ~VariableSet.__reduce_ex__
+      ~VariableSet.__repr__
+      ~VariableSet.__setattr__
+      ~VariableSet.__setitem__
+      ~VariableSet.__sizeof__
+      ~VariableSet.__str__
+      ~VariableSet.__subclasshook__
+      ~VariableSet._add
+      ~VariableSet._extract_values
+      ~VariableSet.adjust
+      ~VariableSet.adjustable_help
+      ~VariableSet.create_fingerprint
+      ~VariableSet.extract_values
+      ~VariableSet.fingerprint
+      ~VariableSet.from_data
+      ~VariableSet.from_json
+      ~VariableSet.get_value
+      ~VariableSet.is_empty
+      ~VariableSet.make_compatible_with
+      ~VariableSet.output_dir
+      ~VariableSet.read
+      ~VariableSet.repeat_index
+      ~VariableSet.set_value
+      ~VariableSet.to_data
+      ~VariableSet.to_json
+      ~VariableSet.variable_names
+      ~VariableSet.variable_values
+      ~VariableSet.variables
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~VariableSet.__dict__
+      ~VariableSet.__doc__
+      ~VariableSet.__hash__
+      ~VariableSet.__module__
+      ~VariableSet.__weakref__
+   
+   

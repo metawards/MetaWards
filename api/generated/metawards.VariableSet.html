@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -234,7 +233,7 @@
 <h1>metawards.VariableSet<a class="headerlink" href="#metawards-variableset" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="metawards.VariableSet">
-<em class="property">class </em><code class="sig-prename descclassname">metawards.</code><code class="sig-name descname">VariableSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">repeat_index</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">names</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.</span></code><code class="sig-name descname"><span class="pre">VariableSet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class holds a single set of adjustable variables that
 are used to adjust the variables as part of a model run</p>
 <p class="rubric">Examples</p>
@@ -253,7 +252,7 @@ are used to adjust the variables as part of a model run</p>
 </div>
 <dl class="py method">
 <dt id="metawards.VariableSet.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">repeat_index</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">names</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a new VariableSet from the passed adjusted variable
 values.</p>
 <dl class="field-list simple">
@@ -444,13 +443,13 @@ VariableSet from one another</p></li>
 </table>
 <dl class="py method">
 <dt id="metawards.VariableSet.__eq__">
-<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.__eq__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__eq__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.__eq__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self==value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="id0">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">repeat_index</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">1</span></em>, <em class="sig-param"><span class="n">names</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">values</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>List<span class="p">[</span>float<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a new VariableSet from the passed adjusted variable
 values.</p>
 <dl class="field-list simple">
@@ -476,20 +475,20 @@ VariableSet from one another</p></li>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.__repr__">
-<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__repr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.__repr__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return repr(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.__str__">
-<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.__str__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a printable representation of the variables to
 be adjusted</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.adjust">
-<code class="sig-name descname">adjust</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.adjust"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.adjust" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">adjust</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.adjust"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.adjust" title="Permalink to this definition">¶</a></dt>
 <dd><p>Use the variables in this set to adjust the passed parameters.
 Note that this directly modifies ‘params’</p>
 <dl class="field-list simple">
@@ -521,20 +520,20 @@ Note that this directly modifies ‘params’</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.adjustable_help">
-<em class="property">static </em><code class="sig-name descname">adjustable_help</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.adjustable_help"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.adjustable_help" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">adjustable_help</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.adjustable_help"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.adjustable_help" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a string that contains some help that is useful
 for finding out which variables can be adjusted</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.create_fingerprint">
-<em class="property">static </em><code class="sig-name descname">create_fingerprint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vals</span><span class="p">:</span> <span class="n">List<span class="p">[</span>float<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">index</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">include_index</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.create_fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.create_fingerprint" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">create_fingerprint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vals</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.create_fingerprint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.create_fingerprint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create the fingerprint for the passed values</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.extract_values">
-<em class="property">static </em><code class="sig-name descname">extract_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fingerprint</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.extract_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.extract_values" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">extract_values</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fingerprint</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.extract_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.extract_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the original values from the passed fingerprint
 or filename. This assumes that the fingerprint
 was created using the ‘fingerprint’ function, namely
@@ -556,7 +555,7 @@ in the fingerprint</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.fingerprint">
-<code class="sig-name descname">fingerprint</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_index</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.fingerprint"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.fingerprint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">fingerprint</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include_index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.fingerprint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.fingerprint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a fingerprint for this VariableSet. This can be
 used to quickly identify and distinguish the values of
 the variables in this set from the values in other
@@ -577,33 +576,33 @@ but different parameters</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.from_data">
-<em class="property">static </em><code class="sig-name descname">from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.from_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.from_data" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">from_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.from_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.from_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build a VariableSet from the passed data dictionary (which
 may have been deserialised from json</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.from_json">
-<em class="property">static </em><code class="sig-name descname">from_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.from_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.from_json" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">from_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct and return VariableSet loaded from the passed
 json file</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.get_value">
-<code class="sig-name descname">get_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.get_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.get_value" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_value</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.get_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.get_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the value of ‘key’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.is_empty">
-<code class="sig-name descname">is_empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.is_empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.is_empty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">is_empty</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.is_empty"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.is_empty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether or not there is nothing to change</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.make_compatible_with">
-<code class="sig-name descname">make_compatible_with</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.make_compatible_with"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.make_compatible_with" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_compatible_with</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.make_compatible_with"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.make_compatible_with" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of this VariableSet which has been made
 compatible with ‘other’. This means that it will change
 the same variables as ‘other’, e.g. by adding ‘None’
@@ -637,7 +636,7 @@ if it is not possible to make this set compatible</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.output_dir">
-<code class="sig-name descname">output_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.output_dir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.output_dir" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">output_dir</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.output_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.output_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the output directory in which runs using this
 variable set should be placed. Normally this would
 be the fingerprint of the variable set, but users may
@@ -647,7 +646,7 @@ can be added via a design file</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.read">
-<em class="property">static </em><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.read" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">read</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.read" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a single set of adjustable variables from the passed
 file. The file can either write the variables in horizontal
 or vertical mode, using space or comma separated values.</p>
@@ -669,7 +668,7 @@ a large VariableSets</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.repeat_index">
-<code class="sig-name descname">repeat_index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.repeat_index"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.repeat_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">repeat_index</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.repeat_index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.repeat_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the repeat index of this set. The repeat index is the
 ID of this set if the VariableSet is repeated. The index should
 range from 1 to nrepeats</p>
@@ -685,19 +684,19 @@ range from 1 to nrepeats</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.set_value">
-<code class="sig-name descname">set_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.set_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.set_value" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_value</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.set_value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.set_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the value of ‘key’ to ‘value’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.to_data">
-<code class="sig-name descname">to_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.to_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.to_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">to_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.to_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.to_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a data dictionary that can be serialised to json</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.to_json">
-<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">indent</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_bzip</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.to_json" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">to_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bzip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialise the VariableSet to JSON. This will write to a file
 if filename is set, otherwise it will return a JSON string.</p>
 <dl class="field-list simple">
@@ -723,7 +722,7 @@ the json-serialised string</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.variable_names">
-<code class="sig-name descname">variable_names</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.variable_names"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.variable_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">variable_names</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.variable_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.variable_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the names of the variables that will be adjusted
 by this VariableSet</p>
 <dl class="field-list simple">
@@ -738,7 +737,7 @@ by this VariableSet</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.variable_values">
-<code class="sig-name descname">variable_values</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.variable_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.variable_values" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">variable_values</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.variable_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.variable_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the values that the variables will be adjusted to.
 Note that ‘None’ means that the variable won’t be adjusted
 from its default (original) value</p>
@@ -754,7 +753,7 @@ from its default (original) value</p>
 
 <dl class="py method">
 <dt id="metawards.VariableSet.variables">
-<code class="sig-name descname">variables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.variables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.VariableSet.variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">variables</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_variableset.html#VariableSet.variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.VariableSet.variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the variables (name and values) to be adjusted</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -786,7 +785,7 @@ with be adjusted to their desired values</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 09, 2021.
+        Last updated on Feb 26, 2021.
       </span>
 
     </p>

@@ -1,0 +1,6 @@
+﻿metawards.print\_version\_string
+================================
+
+.. currentmodule:: metawards
+
+.. autofunction:: print_version_string

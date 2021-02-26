@@ -1,0 +1,6 @@
+﻿metawards.iterators.iterate\_custom
+===================================
+
+.. currentmodule:: metawards.iterators
+
+.. autofunction:: iterate_custom

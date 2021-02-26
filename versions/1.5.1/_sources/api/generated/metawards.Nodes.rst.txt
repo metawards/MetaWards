@@ -1,0 +1,64 @@
+﻿metawards.Nodes
+===============
+
+.. currentmodule:: metawards
+
+.. autoclass:: Nodes
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Nodes.__delattr__
+      ~Nodes.__dir__
+      ~Nodes.__eq__
+      ~Nodes.__format__
+      ~Nodes.__ge__
+      ~Nodes.__getattribute__
+      ~Nodes.__getitem__
+      ~Nodes.__gt__
+      ~Nodes.__hash__
+      ~Nodes.__init__
+      ~Nodes.__init_subclass__
+      ~Nodes.__le__
+      ~Nodes.__len__
+      ~Nodes.__lt__
+      ~Nodes.__ne__
+      ~Nodes.__new__
+      ~Nodes.__reduce__
+      ~Nodes.__reduce_ex__
+      ~Nodes.__repr__
+      ~Nodes.__setattr__
+      ~Nodes.__setitem__
+      ~Nodes.__sizeof__
+      ~Nodes.__str__
+      ~Nodes.__subclasshook__
+      ~Nodes.assert_not_null
+      ~Nodes.assert_valid_index
+      ~Nodes.copy
+      ~Nodes.get_custom
+      ~Nodes.get_index
+      ~Nodes.is_null
+      ~Nodes.population
+      ~Nodes.resize
+      ~Nodes.scale_susceptibles
+      ~Nodes.set_custom
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Nodes.__dict__
+      ~Nodes.__doc__
+      ~Nodes.__module__
+      ~Nodes.__weakref__
+   
+   

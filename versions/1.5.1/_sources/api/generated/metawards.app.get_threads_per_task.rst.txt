@@ -1,0 +1,6 @@
+﻿metawards.app.get\_threads\_per\_task
+=====================================
+
+.. currentmodule:: metawards.app
+
+.. autofunction:: get_threads_per_task

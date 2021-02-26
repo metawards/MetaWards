@@ -1,0 +1,6 @@
+﻿metawards.iterators.build\_custom\_iterator
+===========================================
+
+.. currentmodule:: metawards.iterators
+
+.. autofunction:: build_custom_iterator

@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MetaWards.iterators API Detail &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="metawards.iterators.advance_additional" href="generated/metawards.iterators.advance_additional.html" />
+    <link rel="prev" title="MetaWards.iterators" href="index_MetaWards_iterators.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards.html">MetaWards</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index_MetaWards_iterators.html">MetaWards.iterators</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MetaWards.iterators API Detail</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Documentation</a> &raquo;</li>
+        
+          <li><a href="index_MetaWards_iterators.html">MetaWards.iterators</a> &raquo;</li>
+        
+      <li>MetaWards.iterators API Detail</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="generated/metawards.iterators.advance_additional.html" class="btn btn-neutral float-right" title="metawards.iterators.advance_additional" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="index_MetaWards_iterators.html" class="btn btn-neutral float-left" title="MetaWards.iterators" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-metawards.iterators">
+<span id="metawards-iterators-api-detail"></span><h1>MetaWards.iterators API Detail<a class="headerlink" href="#module-metawards.iterators" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_additional.html#metawards.iterators.advance_additional" title="metawards.iterators.advance_additional"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_additional</span></code></a>(network, population, …)</p></td>
+<td><p>Advance the infection by infecting additional wards based on a pre-determined pattern based on the additional seeds</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_fixed.html#metawards.iterators.advance_fixed" title="metawards.iterators.advance_fixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_fixed</span></code></a>(nthreads, **kwargs)</p></td>
+<td><p>Advance the model by triggering infections related to fixed ‘work’ movements (parallel version of the function)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_fixed_omp.html#metawards.iterators.advance_fixed_omp" title="metawards.iterators.advance_fixed_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_fixed_omp</span></code></a>(network, infections, rngs, …)</p></td>
+<td><p>Advance the model by triggering infections related to fixed ‘work’ movements (parallel version of the function)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_foi</span></code></a>(nthreads, **kwargs)</p></td>
+<td><p>Advance the model calculating the new force of infection (foi) for all of the wards and links between wards, based on the current number of infections.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_foi_omp.html#metawards.iterators.advance_foi_omp" title="metawards.iterators.advance_foi_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_foi_omp</span></code></a>(network, population, …)</p></td>
+<td><p>Advance the model calculating the new force of infection (foi) for all of the wards and links between wards, based on the current number of infections.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_imports.html#metawards.iterators.advance_imports" title="metawards.iterators.advance_imports"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_imports</span></code></a>(nthreads, **kwargs)</p></td>
+<td><p>Advance the model by importing additional infections depending on the additional seeds specified by the user and the day of the outbreak (serial version of the function)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_imports_omp.html#metawards.iterators.advance_imports_omp" title="metawards.iterators.advance_imports_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_imports_omp</span></code></a>(network, population, …)</p></td>
+<td><p>Advance the model by importing additional infections depending on the additional seeds specified by the user and the day of the outbreak (serial version of the function)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_infprob</span></code></a>(nthreads, **kwargs)</p></td>
+<td><p>Advance the calculation of the day and night infection probabilities for each ward.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_infprob_omp.html#metawards.iterators.advance_infprob_omp" title="metawards.iterators.advance_infprob_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_infprob_omp</span></code></a>(network, nthreads, …)</p></td>
+<td><p>Advance the calculation of the day and night infection probabilities for each ward.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_play.html#metawards.iterators.advance_play" title="metawards.iterators.advance_play"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_play</span></code></a>(nthreads, **kwargs)</p></td>
+<td><p>Advance the model by triggering infections related to random ‘play’ movements (parallel version of the function)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_play_omp.html#metawards.iterators.advance_play_omp" title="metawards.iterators.advance_play_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_play_omp</span></code></a>(network, infections, rngs, …)</p></td>
+<td><p>Advance the model by triggering infections related to random ‘play’ movements (parallel version of the function)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_recovery.html#metawards.iterators.advance_recovery" title="metawards.iterators.advance_recovery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_recovery</span></code></a>(nthreads, **kwargs)</p></td>
+<td><p>Advance the model by processing recovery of individual through the different stages of the disease (parallel version of the function))</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.advance_recovery_omp.html#metawards.iterators.advance_recovery_omp" title="metawards.iterators.advance_recovery_omp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">advance_recovery_omp</span></code></a>(network, infections, …)</p></td>
+<td><p>Advance the model by processing recovery of individual through the different stages of the disease (parallel version of the function))</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.build_custom_iterator.html#metawards.iterators.build_custom_iterator" title="metawards.iterators.build_custom_iterator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_custom_iterator</span></code></a>(custom_function[, …])</p></td>
+<td><p>Build and return a custom iterator from the passed function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.iterate_custom.html#metawards.iterators.iterate_custom" title="metawards.iterators.iterate_custom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterate_custom</span></code></a>(custom_function, stage, **kwargs)</p></td>
+<td><p>This returns the default list of ‘advance_XXX’ functions that are called in sequence for each iteration of the model run.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterate_default</span></code></a>(stage, **kwargs)</p></td>
+<td><p>This returns the default list of ‘advance_XXX’ functions that are called in sequence for each iteration of the model run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.iterate_weekday.html#metawards.iterators.iterate_weekday" title="metawards.iterators.iterate_weekday"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterate_weekday</span></code></a>(**kwargs)</p></td>
+<td><p>This returns the default list of ‘advance_XXX’ functions that are called in sequence for each weekday iteration of the model run.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.iterate_weekend.html#metawards.iterators.iterate_weekend" title="metawards.iterators.iterate_weekend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterate_weekend</span></code></a>([nthreads])</p></td>
+<td><p>This returns the default list of ‘advance_XXX’ functions that are called in sequence for each weekend iteration of the model run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.iterate_working_week.html#metawards.iterators.iterate_working_week" title="metawards.iterators.iterate_working_week"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterate_working_week</span></code></a>(population, **kwargs)</p></td>
+<td><p>This returns the default list of ‘advance_XXX’ functions that are called in sequence for each iteration of the model run.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.setup_seed_all_wards.html#metawards.iterators.setup_seed_all_wards" title="metawards.iterators.setup_seed_all_wards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_seed_all_wards</span></code></a>(network, population, …)</p></td>
+<td><p>Seed the wards with an initial set of infections, assuming an ‘expected’ number of infected people out of a population of ‘population’, based on the number of daily imports held in params.daily_imports</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.iterators.setup_seed_specified_ward.html#metawards.iterators.setup_seed_specified_ward" title="metawards.iterators.setup_seed_specified_ward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_seed_specified_ward</span></code></a>(network, …)</p></td>
+<td><p>Setup function that sets up the Network by seeding the infection at the ward specified by looking up the ward index from network.to_seed using index params.ward_seed_index</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.iterators.setup_seed_wards.html#metawards.iterators.setup_seed_wards" title="metawards.iterators.setup_seed_wards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_seed_wards</span></code></a>(network, **kwargs)</p></td>
+<td><p>Seed the wards with an initial infection.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="generated/metawards.iterators.advance_additional.html" class="btn btn-neutral float-right" title="metawards.iterators.advance_additional" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index_MetaWards_iterators.html" class="btn btn-neutral float-left" title="MetaWards.iterators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

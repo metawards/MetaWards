@@ -1,0 +1,692 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards.OutputFiles &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="metawards.Parameters" href="metawards.Parameters.html" />
+    <link rel="prev" title="metawards.Nodes" href="metawards.Nodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_MetaWards.html">MetaWards</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index_api_MetaWards.html">MetaWards API Detail</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index_api_MetaWards.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index_api_MetaWards.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_iterators.html">MetaWards.iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Documentation</a> &raquo;</li>
+        
+          <li><a href="../index_MetaWards.html">MetaWards</a> &raquo;</li>
+        
+          <li><a href="../index_api_MetaWards.html">MetaWards API Detail</a> &raquo;</li>
+        
+      <li>metawards.OutputFiles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="metawards.Parameters.html" class="btn btn-neutral float-right" title="metawards.Parameters" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="metawards.Nodes.html" class="btn btn-neutral float-left" title="metawards.Nodes" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metawards-outputfiles">
+<h1>metawards.OutputFiles<a class="headerlink" href="#metawards-outputfiles" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="metawards.OutputFiles">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.</span></code><code class="sig-name descname"><span class="pre">OutputFiles</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">output_dir:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'output'</span></em>, <em class="sig-param"><span class="pre">check_empty:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em>, <em class="sig-param"><span class="pre">force_empty:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">prompt=&lt;built-in</span> <span class="pre">function</span> <span class="pre">input&gt;</span></em>, <em class="sig-param"><span class="pre">auto_bzip:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a class that manages all of the output files that
+are written to during a model outbreak. This object is used
+to hold the ‘FILE’ objects for open files, and will
+ensure that these files are closed and written to disk
+as needed. It will also ensure that files are written
+to the correct output directory, and that they are only
+opened when they are needed (e.g. only the first call
+to open the file will actually open it - subsequent
+calls will return the already-open file handler)</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">output</span> <span class="o">=</span> <span class="n">OutputFiles</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">,</span> <span class="n">check_empty</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FILE</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;some output</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FILE</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;something.csv.bz2&quot;</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;something,else,is,here</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FILE</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;some more output</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">output</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that you can also use OutputFiles in a contexthandler, to
+ensure that all output files are automatically closed, e.g.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">OutputFiles</span><span class="p">(</span><span class="n">output_dir</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">output</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">FILE</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;something</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="metawards.OutputFiles.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">output_dir:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'output'</span></em>, <em class="sig-param"><span class="pre">check_empty:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em>, <em class="sig-param"><span class="pre">force_empty:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">prompt=&lt;built-in</span> <span class="pre">function</span> <span class="pre">input&gt;</span></em>, <em class="sig-param"><span class="pre">auto_bzip:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a set of OutputFiles. These will all be written
+to ‘output_dir’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>str</em>) – The directory in which to create all of the output files.
+This directory will be created automatically if it doesn’t
+exist</p></li>
+<li><p><strong>check_empty</strong> (<em>bool</em>) – Whether or not to check if the directory is empty before
+continuing. If the directory is not empty, then the user
+will be prompted to make a decision to either keep going,
+choose a different directory, remove existing output
+or exit</p></li>
+<li><p><strong>force_empty</strong> (<em>bool</em>) – Force the output directory to be empty. BE CAREFUL as this
+will remove all files in that directory! There are checks
+to stop you doing something silly, but these are not
+fool-proof. The user will be prompted to confirm that
+the files should be removed</p></li>
+<li><p><strong>prompt</strong> – This is the function that should be called to prompt the
+user for input, e.g. to confirm whether or not files
+should be deleted. This defaults to <a class="reference internal" href="../index_api_MetaWards.html#metawards.input" title="metawards.input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code></a>. Set this
+to None if you <em>really</em> want MetaWards to remove files
+silently (e.g. useful if you are running batch jobs
+on a cluster and you really know what you are doing)</p></li>
+<li><p><strong>auto_bzip</strong> (<em>bool</em>) – The default flag for <a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> when opening files. If
+this is true then all files will be automatically bzipped
+(compressed) as they are written, unless the code opening
+the file has explicitly asked otherwise</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__delattr__</span></code>(name, /)</p></td>
+<td><p>Implement delattr(self, name).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dir__</span></code>()</p></td>
+<td><p>Default dir() implementation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__enter__</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code>(value, /)</p></td>
+<td><p>Return self==value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__exit__</span></code>(exc_type, exc_value, exc_traceback)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__format__</span></code>(format_spec, /)</p></td>
+<td><p>Default object formatter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ge__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getattribute__</span></code>(name, /)</p></td>
+<td><p>Return getattr(self, name).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__gt__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code>()</p></td>
+<td><p>Return hash(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.__init__" title="metawards.OutputFiles.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([output_dir, check_empty, …])</p></td>
+<td><p>Construct a set of OutputFiles.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init_subclass__</span></code></p></td>
+<td><p>This method is called when a class is subclassed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__le__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__lt__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ne__</span></code>(value, /)</p></td>
+<td><p>Return self!=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__new__</span></code>(**kwargs)</p></td>
+<td><p>Create and return a new object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce__</span></code>()</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce_ex__</span></code>(protocol, /)</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code>()</p></td>
+<td><p>Return repr(self).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setattr__</span></code>(name, value, /)</p></td>
+<td><p>Implement setattr(self, name, value).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__sizeof__</span></code>()</p></td>
+<td><p>Size of object in memory, in bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code>()</p></td>
+<td><p>Return str(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__subclasshook__</span></code></p></td>
+<td><p>Abstract classes can override this to customize issubclass().</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_close_dir</span></code>()</p></td>
+<td><p>Internal function used to close all of the output files</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_open_dir</span></code>()</p></td>
+<td><p>Internal function used to open the directory in which all output files will be placed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a>()</p></td>
+<td><p>Return whether the default is to automatically bzip2 files</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.close" title="metawards.OutputFiles.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close all of the files and this directory</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.flush" title="metawards.OutputFiles.flush"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flush</span></code></a>()</p></td>
+<td><p>Flush the contents of all files to disk</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.get_filename" title="metawards.OutputFiles.get_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_filename</span></code></a>(filename)</p></td>
+<td><p>Return the full expanded filename for ‘filename’</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.get_path" title="metawards.OutputFiles.get_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_path</span></code></a>()</p></td>
+<td><p>Return the full expanded path to this directory</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.is_closed" title="metawards.OutputFiles.is_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_closed</span></code></a>()</p></td>
+<td><p>Return whether or not the output files are closed</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.is_database" title="metawards.OutputFiles.is_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_database</span></code></a>(filename)</p></td>
+<td><p>Return whether or not ‘filename’ is an open database</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.is_open" title="metawards.OutputFiles.is_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_open</span></code></a>()</p></td>
+<td><p>Return whether or not the output files are open</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.open" title="metawards.OutputFiles.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(filename[, auto_bzip, mode, headers, sep])</p></td>
+<td><p>Open the file called ‘filename’ in the output directory, returning a handle to that file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_db</span></code></a>(filename[, auto_bzip, initialise])</p></td>
+<td><p>Open up a SQLite3 database connection to a file called</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.open_subdir" title="metawards.OutputFiles.open_subdir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_subdir</span></code></a>(dirname)</p></td>
+<td><p>Create and open a sub-directory in this OutputFiles called ‘dirname’.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.output_dir" title="metawards.OutputFiles.output_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_dir</span></code></a>()</p></td>
+<td><p>Return the absolute path of the directory to which the output files will be written</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.remove" title="metawards.OutputFiles.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(path[, prompt])</p></td>
+<td><p>Remove the passed filename or directory</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dict__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__doc__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__module__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__weakref__</span></code></p></td>
+<td><p>list of weak references to the object (if defined)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="id0">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">output_dir:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'output'</span></em>, <em class="sig-param"><span class="pre">check_empty:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></em>, <em class="sig-param"><span class="pre">force_empty:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em>, <em class="sig-param"><span class="pre">prompt=&lt;built-in</span> <span class="pre">function</span> <span class="pre">input&gt;</span></em>, <em class="sig-param"><span class="pre">auto_bzip:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a set of OutputFiles. These will all be written
+to ‘output_dir’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>output_dir</strong> (<em>str</em>) – The directory in which to create all of the output files.
+This directory will be created automatically if it doesn’t
+exist</p></li>
+<li><p><strong>check_empty</strong> (<em>bool</em>) – Whether or not to check if the directory is empty before
+continuing. If the directory is not empty, then the user
+will be prompted to make a decision to either keep going,
+choose a different directory, remove existing output
+or exit</p></li>
+<li><p><strong>force_empty</strong> (<em>bool</em>) – Force the output directory to be empty. BE CAREFUL as this
+will remove all files in that directory! There are checks
+to stop you doing something silly, but these are not
+fool-proof. The user will be prompted to confirm that
+the files should be removed</p></li>
+<li><p><strong>prompt</strong> – This is the function that should be called to prompt the
+user for input, e.g. to confirm whether or not files
+should be deleted. This defaults to <a class="reference internal" href="../index_api_MetaWards.html#metawards.input" title="metawards.input"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input</span></code></a>. Set this
+to None if you <em>really</em> want MetaWards to remove files
+silently (e.g. useful if you are running batch jobs
+on a cluster and you really know what you are doing)</p></li>
+<li><p><strong>auto_bzip</strong> (<em>bool</em>) – The default flag for <a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> when opening files. If
+this is true then all files will be automatically bzipped
+(compressed) as they are written, unless the code opening
+the file has explicitly asked otherwise</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.auto_bzip">
+<code class="sig-name descname"><span class="pre">auto_bzip</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.auto_bzip"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.auto_bzip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether the default is to automatically bzip2 files</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.close">
+<code class="sig-name descname"><span class="pre">close</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close all of the files and this directory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.flush">
+<code class="sig-name descname"><span class="pre">flush</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.flush"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush the contents of all files to disk</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.get_filename">
+<code class="sig-name descname"><span class="pre">get_filename</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.get_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.get_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the full expanded filename for ‘filename’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.get_path">
+<code class="sig-name descname"><span class="pre">get_path</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.get_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the full expanded path to this directory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.is_closed">
+<code class="sig-name descname"><span class="pre">is_closed</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.is_closed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.is_closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether or not the output files are closed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.is_database">
+<code class="sig-name descname"><span class="pre">is_database</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.is_database"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.is_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether or not ‘filename’ is an open database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.is_open">
+<code class="sig-name descname"><span class="pre">is_open</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.is_open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.is_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether or not the output files are open</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.open">
+<code class="sig-name descname"><span class="pre">open</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'t'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the file called ‘filename’ in the output directory,
+returning a handle to that file. Note that this will
+open the file once, and will return the already-open
+file handle on all subsequent calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The name of the file to open. This must be relative
+to the output directory, and within that directory.
+It is an error to try to open a file that is
+not contained within this directory.</p></li>
+<li><p><strong>auto_bzip</strong> (<em>bool</em>) – Whether or not to open the file in auto-bzip (compression)
+mode. If this is True then the file will be automatically
+compressed as it is written. The filename will have
+‘.bz2’ automatically appended so that this is clear.
+If this is False then the file will be written uncompressed.
+If ‘None’ is passed (the default) then the value of
+<a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> that was passed to the constructor of
+this OutputFiles will be used. Note that this flag is
+ignored if the file is already open.</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – The mode of opening the file, e.g. ‘t’ for text mode, and
+‘b’ for binary mode. The default is text mode</p></li>
+<li><p><strong>headers</strong> (<em>list</em><em>[</em><em>str</em><em>] or </em><em>plain str</em><em> or </em><em>function</em>) – The headers to add to the top of the file, e.g. if it will
+contain column data. This will be written to the first line
+when the file is opened. If a list is passed, then this
+will be written joined together using ‘sep’. If a plain
+string is passed then this will be written. If this is a function
+then this function will be called with “FILE” as the argument.
+If nothing is passed then no headers will be written.</p></li>
+<li><p><strong>sep</strong> (<em>str</em>) – The separator used for the headers (e.g. ” ” or “,” are good
+choices). By default things are space-separated</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The handle to the open file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.open_db">
+<code class="sig-name descname"><span class="pre">open_db</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bzip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialise</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.open_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.open_db" title="Permalink to this definition">¶</a></dt>
+<dd><dl>
+<dt>Open up a SQLite3 database connection to a file called</dt><dd><p>‘filename’ in the output directory, returning the
+SQLite3 connection to the database. Note that this will
+open the database one, and will return the already-made
+connection on all subsequence calls.</p>
+<dl class="simple">
+<dt>filename: str</dt><dd><p>The name of the file containing the database to open.
+This must be relative to the output directory, and within
+that directory. It is an error to try to open a database
+that is not contained in this directory.</p>
+</dd>
+<dt>auto_bzip: bool</dt><dd><p>Whether or not to automatically compress the file
+using bzip2 when it is closed. The filename will
+automatically have ‘.bz2’ appended so that this
+is clear. If ‘None’ is passed (the default) then
+the value of ‘auto_bzip’ that was passed to the
+constructor of this OutputFiles will be used. Note that
+this flag is ignored if the database is already open</p>
+</dd>
+</dl>
+</dd>
+<dt>initialise: function</dt><dd><p>A function that is called to initialise the database the
+first time that it is opened. The function is called
+with the argument “CONN” (representing the sqlite3 database
+connection). Use this to create the tables that you need</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.open_subdir">
+<code class="sig-name descname"><span class="pre">open_subdir</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.open_subdir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.open_subdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and open a sub-directory in this OutputFiles
+called ‘dirname’. This will inherit all properties,
+e.g. check_empty, auto_bzip etc from this OutputFiles</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dirname</strong> (<em>str</em>) – The name of the subdirectory to open</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>subdir</strong> – The open subdirectory</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles">OutputFiles</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.output_dir">
+<code class="sig-name descname"><span class="pre">output_dir</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.output_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.output_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the absolute path of the directory to which
+the output files will be written</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.OutputFiles.remove">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">path</span></em>, <em class="sig-param"><span class="pre">prompt=&lt;built-in</span> <span class="pre">function</span> <span class="pre">input&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_outputfiles.html#OutputFiles.remove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.OutputFiles.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the passed filename or directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – The path to the file or directory or remove</p></li>
+<li><p><strong>prompt</strong> – Prompt to use to ask the user - if None then no checks!</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="metawards.Parameters.html" class="btn btn-neutral float-right" title="metawards.Parameters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="metawards.Nodes.html" class="btn btn-neutral float-left" title="metawards.Nodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

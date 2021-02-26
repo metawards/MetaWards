@@ -1,0 +1,6 @@
+﻿metawards.app.get\_parallel\_scheme
+===================================
+
+.. currentmodule:: metawards.app
+
+.. autofunction:: get_parallel_scheme

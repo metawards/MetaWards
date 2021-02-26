@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -234,12 +233,12 @@
 <h1>metawards.Ward<a class="headerlink" href="#metawards-ward" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="metawards.Ward">
-<em class="property">class </em><code class="sig-prename descclassname">metawards.</code><code class="sig-name descname">Ward</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">code</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authority</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">region</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">info</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>metawards._wardinfo.WardInfo<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_assign_players</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.</span></code><code class="sig-name descname"><span class="pre">Ward</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">metawards._wardinfo.WardInfo</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_assign_players</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class holds all of the information about a Ward. It is used
 to create and edit Networks</p>
 <dl class="py method">
 <dt id="metawards.Ward.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">code</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authority</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">region</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">info</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>metawards._wardinfo.WardInfo<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_assign_players</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">metawards._wardinfo.WardInfo</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_assign_players</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a new Ward, optionally supplying information about
 the ward</p>
 <dl class="field-list simple">
@@ -535,19 +534,19 @@ ward</p></li>
 </table>
 <dl class="py method">
 <dt id="metawards.Ward.__eq__">
-<code class="sig-name descname">__eq__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__eq__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__eq__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__eq__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__eq__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return self==value.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.__imul__">
-<code class="sig-name descname">__imul__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; metawards._ward.Ward<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__imul__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__imul__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__imul__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">metawards._ward.Ward</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__imul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__imul__" title="Permalink to this definition">¶</a></dt>
 <dd><p>In-place multiply the number of workers and players by ‘scale’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="id0">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">code</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">authority</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">region</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">info</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>metawards._wardinfo.WardInfo<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_assign_players</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">metawards._wardinfo.WardInfo</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_assign_players</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a new Ward, optionally supplying information about
 the ward</p>
 <dl class="field-list simple">
@@ -573,31 +572,31 @@ ward</p></li>
 
 <dl class="py method">
 <dt id="metawards.Ward.__mul__">
-<code class="sig-name descname">__mul__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; metawards._ward.Ward<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__mul__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__mul__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__mul__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">metawards._ward.Ward</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__mul__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale the number of workers and players by ‘scale’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.__repr__">
-<code class="sig-name descname">__repr__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__repr__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__repr__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__repr__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__repr__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return repr(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.__rmul__">
-<code class="sig-name descname">__rmul__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; metawards._ward.Ward<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__rmul__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__rmul__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__rmul__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">metawards._ward.Ward</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__rmul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__rmul__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale the number of workers and players by ‘scale’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.__str__">
-<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.__str__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.add_player_weight">
-<code class="sig-name descname">add_player_weight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.add_player_weight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.add_player_weight" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_player_weight</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.add_player_weight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.add_player_weight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the weight for players who will randomly move to
 the specified destination to play(or to play in the home
 ward if destination is not set). Note that the sum of
@@ -606,33 +605,33 @@ player weights cannot be greater than 1.0.</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.add_workers">
-<code class="sig-name descname">add_workers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>int<span class="p">, </span>metawards._wardinfo.WardInfo<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.add_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.add_workers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_workers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">metawards._wardinfo.WardInfo</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.add_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.add_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add some workers to this ward, specifying their destination
 if they work out of ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.assert_sane">
-<code class="sig-name descname">assert_sane</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.assert_sane"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.assert_sane" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">assert_sane</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.assert_sane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.assert_sane" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assert that the data in this ward is sane</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.authority">
-<code class="sig-name descname">authority</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.authority"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.authority" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">authority</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.authority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.authority" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the local authority of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.auto_assign_players">
-<code class="sig-name descname">auto_assign_players</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.auto_assign_players"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.auto_assign_players" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">auto_assign_players</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">bool</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.auto_assign_players"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.auto_assign_players" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether or not the remaining player weight is automatically
 added to the home-ward player weight</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.bg_foi">
-<code class="sig-name descname">bg_foi</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.bg_foi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.bg_foi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">bg_foi</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.bg_foi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.bg_foi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the background force of infection (FOI). This is the
 starting value for ward FOI calculations. It defaults to 0.0.
 Positive values are used when you want the ward to have some
@@ -644,13 +643,13 @@ the number of infecteds</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.code">
-<code class="sig-name descname">code</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.code" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">code</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the code of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.custom">
-<code class="sig-name descname">custom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">default</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">0.0</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.custom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.custom" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">custom</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.custom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.custom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the per-ward custom parameter at key ‘key’, returning
 ‘default’ if this has not been set. Note that all custom
 parameters are stored as floats</p>
@@ -658,7 +657,7 @@ parameters are stored as floats</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.cutoff">
-<code class="sig-name descname">cutoff</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.cutoff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.cutoff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">cutoff</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.cutoff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.cutoff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the cutoff parameter for this ward. This sets the
 maximum distance that residents (or travellers) to this ward
 can travel</p>
@@ -666,7 +665,7 @@ can travel</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.depopulate">
-<code class="sig-name descname">depopulate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">zero_player_weights</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; metawards._ward.Ward<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.depopulate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.depopulate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">depopulate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zero_player_weights</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">metawards._ward.Ward</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.depopulate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.depopulate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of this Ward with exact same details, but with
 zero population. If ‘zero_player_weights’ is True, then
 this will also zero the player weights for all connected
@@ -675,7 +674,7 @@ wards</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.dereference">
-<code class="sig-name descname">dereference</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">wards</span><span class="p">:</span> <span class="n"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards">Wards</a></span></em>, <em class="sig-param"><span class="n">_inplace</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards.Ward">Ward</a><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.dereference"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.dereference" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dereference</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><span class="pre">Wards</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">_inplace</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><span class="pre">Ward</span></a><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.dereference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.dereference" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dereference the IDs and convert those back to WardInfo objects.
 This is the opposite of self.resolve(wards). This will
 return the dereferenced ward.</p>
@@ -683,14 +682,14 @@ return the dereferenced ward.</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.from_data">
-<em class="property">static </em><code class="sig-name descname">from_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.from_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.from_data" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">from_data</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.from_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.from_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a Ward that has been created from the passed dictionary
 (e.g. which has been deserialised from JSON)</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.from_json">
-<em class="property">static </em><code class="sig-name descname">from_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.from_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.from_json" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">from_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.from_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Ward constructed from the passed json. This will
 either load from a passed json string, or from json loaded
 from the passed file</p>
@@ -698,7 +697,7 @@ from the passed file</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.get_player_lists">
-<code class="sig-name descname">get_player_lists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">no_auto_assign</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_player_lists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.get_player_lists" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_player_lists</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">no_auto_assign</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_player_lists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.get_player_lists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a pair of arrays, containing the destination wards
 and player weights for this ward.</p>
 <p>If ‘no_auto_assign’ is set then do not include any
@@ -708,7 +707,7 @@ as it is only used when serialising</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.get_players">
-<code class="sig-name descname">get_players</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_players"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.get_players" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_players</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_players"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.get_players" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the fraction of players who will play in the
 specified destination ward (or who play in their home
 ward if destination is not set)</p>
@@ -716,14 +715,14 @@ ward if destination is not set)</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.get_worker_lists">
-<code class="sig-name descname">get_worker_lists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_worker_lists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.get_worker_lists" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_worker_lists</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_worker_lists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.get_worker_lists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a pair of arrays, containing the destination wards
 and worker populations for this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.get_workers">
-<code class="sig-name descname">get_workers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.get_workers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_workers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.get_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.get_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the number of workers who commute to the specified
 destination ward (or who commute to their home ward if
 destination is not set)</p>
@@ -731,27 +730,27 @@ destination is not set)</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.id">
-<code class="sig-name descname">id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">id</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the ID of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.info">
-<code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">info</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return (a copy of) the WardInfo containing all ward
 identifying metadata</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.is_resolved">
-<code class="sig-name descname">is_resolved</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.is_resolved"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.is_resolved" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">is_resolved</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.is_resolved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.is_resolved" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether or not any of the worker or player links in
 this ward are unresolved, or whether the ID of this ward is None</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.merge">
-<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.merge" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">merge</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.merge"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.merge" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge in the data from ‘other’ into this Ward. The ‘info’
 and the ID numbers must match (or be None).</p>
 <p>This will add the workers from ‘other’ to this ward,
@@ -762,51 +761,51 @@ bg_foi or custom parameters</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.name">
-<code class="sig-name descname">name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">name</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the name of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.num_play_links">
-<code class="sig-name descname">num_play_links</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_play_links"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.num_play_links" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">num_play_links</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_play_links"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.num_play_links" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the total number of play links</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.num_players">
-<code class="sig-name descname">num_players</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_players"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.num_players" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">num_players</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_players"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.num_players" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the total number of players who make their home
 in this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.num_work_links">
-<code class="sig-name descname">num_work_links</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_work_links"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.num_work_links" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">num_work_links</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_work_links"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.num_work_links" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the total number of work links</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.num_workers">
-<code class="sig-name descname">num_workers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.num_workers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">num_workers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.num_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.num_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the total number of workers who make their home
 in this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.play_connections">
-<code class="sig-name descname">play_connections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.play_connections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.play_connections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">play_connections</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.play_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.play_connections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the full list of play connections for this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.population">
-<code class="sig-name descname">population</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.population"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.population" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">population</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.population"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.population" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the total population of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.position">
-<code class="sig-name descname">position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.position" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">position</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.position" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the position of the center of this ward. This will
 return a dictionary containing either the {“x”, “y”}
 coordinates (in kilometers) or containing the
@@ -816,20 +815,20 @@ if cooordinates have not been set.</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.region">
-<code class="sig-name descname">region</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.region" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">region</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the region containing this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.resolve">
-<code class="sig-name descname">resolve</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">wards</span><span class="p">:</span> <span class="n"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards">Wards</a></span></em>, <em class="sig-param"><span class="n">_inplace</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards.Ward">Ward</a><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.resolve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.resolve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">resolve</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><span class="pre">Wards</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">_inplace</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><span class="pre">Ward</span></a><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.resolve"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.resolve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resolve any unresolved links using the passed Wards object
 ‘wards’</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.scale">
-<code class="sig-name descname">scale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">work_ratio</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">play_ratio</span><span class="p">:</span> <span class="n">float</span> <span class="o">=</span> <span class="default_value">1.0</span></em>, <em class="sig-param"><span class="n">_inplace</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span> &#x2192; metawards._ward.Ward<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.scale" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">scale</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">work_ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">play_ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_inplace</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">metawards._ward.Ward</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a copy of these wards where the number of workers
 and players have been scaled by ‘work_ratios’ and ‘play_ratios’
 respectively. These can be greater than 1.0, e.g. if you want
@@ -852,7 +851,7 @@ to scale up the number of workers and players</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.scale_uv">
-<code class="sig-name descname">scale_uv</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.scale_uv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.scale_uv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">scale_uv</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">float</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.scale_uv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.scale_uv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the scale_uv parameter for this ward. This is the amount
 by which to scale the force of infection (FOI) during the
 FOI calculation</p>
@@ -860,20 +859,20 @@ FOI calculation</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_authority">
-<code class="sig-name descname">set_authority</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">authority</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_authority"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_authority" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_authority</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">authority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_authority"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_authority" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the local authority of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_auto_assign_players">
-<code class="sig-name descname">set_auto_assign_players</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">auto_assign_players</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_auto_assign_players"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_auto_assign_players" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_auto_assign_players</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auto_assign_players</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_auto_assign_players"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_auto_assign_players" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return whether or not the remaining player weight is automatically
 assigned to the home-ward player weight</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_bg_foi">
-<code class="sig-name descname">set_bg_foi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">bg_foi</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_bg_foi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_bg_foi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_bg_foi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bg_foi</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_bg_foi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_bg_foi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the background force of infection (FOI). This is the
 starting value for ward FOI calculations. It defaults to 0.0.
 Positive values are used when you want the ward to have some
@@ -885,13 +884,13 @@ the number of infecteds</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_code">
-<code class="sig-name descname">set_code</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_code" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_code</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_code" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the code of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_custom">
-<code class="sig-name descname">set_custom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">value</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_custom"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_custom" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_custom</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_custom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_custom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the value of the custom ward parameter to ‘value’. Note
 that this must be convertible to a float as all custom
 parameters are stored as floats</p>
@@ -899,7 +898,7 @@ parameters are stored as floats</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_cutoff">
-<code class="sig-name descname">set_cutoff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cutoff</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_cutoff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_cutoff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_cutoff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_cutoff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_cutoff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the cutoff distance (in km) for this ward. This is the
 maximum distance that residents (or travellers to) this ward
 are allowed to travel. This defaults to 99999.99, which is
@@ -908,37 +907,37 @@ larger than any point to point distance on earth</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_id">
-<code class="sig-name descname">set_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_id</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the ID of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_info">
-<code class="sig-name descname">set_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">info</span><span class="p">:</span> <span class="n">metawards._wardinfo.WardInfo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_info</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">metawards._wardinfo.WardInfo</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the info of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_name">
-<code class="sig-name descname">set_name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_name</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the name of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_num_players">
-<code class="sig-name descname">set_num_players</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_num_players"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_num_players" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_num_players</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_num_players"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_num_players" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of players in this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_num_workers">
-<code class="sig-name descname">set_num_workers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_num_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_num_workers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_num_workers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_num_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_num_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the number of workers in this ward.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_position">
-<code class="sig-name descname">set_position</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">y</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">lat</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">long</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>float<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">units</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'m'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_position"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_position" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_position</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'m'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_position" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the position of the centre of this ward. This can
 be set either as x/y coordinates or latitude/longitude
 coordinates.</p>
@@ -960,13 +959,13 @@ meters or “km” for kilometers</p></li>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_region">
-<code class="sig-name descname">set_region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">region</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_region"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_region" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_region</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the region of this ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.set_scale_uv">
-<code class="sig-name descname">set_scale_uv</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scale_uv</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_scale_uv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.set_scale_uv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_scale_uv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale_uv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.set_scale_uv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.set_scale_uv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the scale_uv parameter for this ward. This is the amount
 by which to scale the FOI when caclulating the FOI. This
 defaults to 1.0</p>
@@ -974,7 +973,7 @@ defaults to 1.0</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.subtract_player_weight">
-<code class="sig-name descname">subtract_player_weight</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weight</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.subtract_player_weight"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.subtract_player_weight" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">subtract_player_weight</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.subtract_player_weight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.subtract_player_weight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subtract the weight for players who will randomly move to
 the specified destination to play (or to play in the home
 ward if destination is not set).</p>
@@ -982,20 +981,20 @@ ward if destination is not set).</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.subtract_workers">
-<code class="sig-name descname">subtract_workers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">destination</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.subtract_workers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.subtract_workers" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">subtract_workers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.subtract_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.subtract_workers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove some workers from this ward, specifying their destination
 if they work out of ward</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.to_data">
-<code class="sig-name descname">to_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.to_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.to_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">to_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.to_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.to_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a dictionary that can be serialised to JSON</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Ward.to_json">
-<code class="sig-name descname">to_json</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">indent</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">auto_bzip</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.to_json"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.to_json" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">to_json</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bzip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">str</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.to_json" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serialise the ward to JSON. This will write to a file
 if filename is set, otherwise it will return a JSON string.</p>
 <dl class="field-list simple">
@@ -1021,7 +1020,7 @@ the json-serialised string</p>
 
 <dl class="py method">
 <dt id="metawards.Ward.work_connections">
-<code class="sig-name descname">work_connections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.work_connections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Ward.work_connections" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">work_connections</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_ward.html#Ward.work_connections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Ward.work_connections" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the full list of work connections for this ward</p>
 </dd></dl>
 
@@ -1044,7 +1043,7 @@ the json-serialised string</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 09, 2021.
+        Last updated on Feb 26, 2021.
       </span>
 
     </p>

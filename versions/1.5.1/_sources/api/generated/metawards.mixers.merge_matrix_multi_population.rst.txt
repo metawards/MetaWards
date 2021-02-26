@@ -1,0 +1,6 @@
+﻿metawards.mixers.merge\_matrix\_multi\_population
+=================================================
+
+.. currentmodule:: metawards.mixers
+
+.. autofunction:: merge_matrix_multi_population

@@ -1,0 +1,6 @@
+﻿metawards.movers.go\_record
+===========================
+
+.. currentmodule:: metawards.movers
+
+.. autofunction:: go_record

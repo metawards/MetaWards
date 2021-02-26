@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>metawards</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. currentmodule:: metawards</span>
+
+<span class="sd">Classes</span>
+<span class="sd">=======</span>
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">    :toctree: generated/</span>
+
+<span class="sd">    Demographic</span>
+<span class="sd">    Demographics</span>
+<span class="sd">    Disease</span>
+<span class="sd">    Infections</span>
+<span class="sd">    InputFiles</span>
+<span class="sd">    Interpret</span>
+<span class="sd">    Link</span>
+<span class="sd">    Links</span>
+<span class="sd">    Network</span>
+<span class="sd">    Networks</span>
+<span class="sd">    Node</span>
+<span class="sd">    Nodes</span>
+<span class="sd">    OutputFiles</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    PersonType</span>
+<span class="sd">    Population</span>
+<span class="sd">    Populations</span>
+<span class="sd">    VariableSet</span>
+<span class="sd">    VariableSets</span>
+<span class="sd">    Ward</span>
+<span class="sd">    WardID</span>
+<span class="sd">    WardInfo</span>
+<span class="sd">    WardInfos</span>
+<span class="sd">    Wards</span>
+<span class="sd">    Workspace</span>
+
+<span class="sd">Functions</span>
+<span class="sd">=========</span>
+
+<span class="sd">.. autosummary::</span>
+<span class="sd">    :toctree: generated/</span>
+
+<span class="sd">    get_version_string</span>
+<span class="sd">    print_version_string</span>
+<span class="sd">    input</span>
+<span class="sd">    run</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">_sys</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+
+<span class="kn">from</span> <span class="nn">._version</span> <span class="kn">import</span> <span class="n">get_versions</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;get_version_string&quot;</span><span class="p">,</span> <span class="s2">&quot;print_version_string&quot;</span><span class="p">,</span> <span class="s2">&quot;input&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Demographic&quot;</span><span class="p">,</span> <span class="s2">&quot;Demographics&quot;</span><span class="p">,</span> <span class="s2">&quot;Disease&quot;</span><span class="p">,</span> <span class="s2">&quot;Infections&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;InputFiles&quot;</span><span class="p">,</span> <span class="s2">&quot;Interpret&quot;</span><span class="p">,</span> <span class="s2">&quot;Link&quot;</span><span class="p">,</span> <span class="s2">&quot;Links&quot;</span><span class="p">,</span> <span class="s2">&quot;Network&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Networks&quot;</span><span class="p">,</span> <span class="s2">&quot;Node&quot;</span><span class="p">,</span> <span class="s2">&quot;Nodes&quot;</span><span class="p">,</span> <span class="s2">&quot;OutputFiles&quot;</span><span class="p">,</span> <span class="s2">&quot;Parameters&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Populations&quot;</span><span class="p">,</span> <span class="s2">&quot;VariableSet&quot;</span><span class="p">,</span> <span class="s2">&quot;VariableSets&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;Ward&quot;</span><span class="p">,</span> <span class="s2">&quot;WardID&quot;</span><span class="p">,</span> <span class="s2">&quot;WardInfo&quot;</span><span class="p">,</span> <span class="s2">&quot;WardInfos&quot;</span><span class="p">,</span> <span class="s2">&quot;Wards&quot;</span><span class="p">,</span> <span class="s2">&quot;Workspace&quot;</span><span class="p">]</span>
+
+<span class="c1"># make sure that the directory containing this __init__.py is</span>
+<span class="c1"># early in the path - this will ensure that this versions modules</span>
+<span class="c1"># will be imported rather than globally installed modules. This is</span>
+<span class="c1"># needed so that lazily imported modules will come from this directory,</span>
+<span class="c1"># rather than any other installed version of metawards</span>
+<span class="n">_install_path</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+<span class="n">_sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">_install_path</span><span class="p">)</span>
+
+<span class="n">_disable_lazy_import</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">_disable_lazy_import</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">()</span>
+
+    <span class="kn">import</span> <span class="nn">lazy_import</span> <span class="k">as</span> <span class="nn">_lazy_import</span>
+    <span class="n">_lazy_import</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">disable</span><span class="p">(</span><span class="n">_lazy_import</span><span class="o">.</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+    <span class="k">class</span> <span class="nc">_lazy_import</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;This is not lazy_import, but instead a thin stub that matches the</span>
+<span class="sd">           API but DOES NOT lazy_import anything. This imports at call time.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nd">@staticmethod</span>
+        <span class="k">def</span> <span class="nf">lazy_module</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">import_module</span>
+            <span class="k">return</span> <span class="n">import_module</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">package</span><span class="o">=</span><span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+
+        <span class="nd">@staticmethod</span>
+        <span class="k">def</span> <span class="nf">lazy_function</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+            <span class="n">module_name</span><span class="p">,</span> <span class="n">unit_name</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">module</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">unit_name</span><span class="p">)</span>
+
+        <span class="nd">@staticmethod</span>
+        <span class="k">def</span> <span class="nf">lazy_class</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.analysis&quot;</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.app&quot;</span><span class="p">)</span>
+<span class="n">movers</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.movers&quot;</span><span class="p">)</span>
+<span class="n">mixers</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.mixers&quot;</span><span class="p">)</span>
+<span class="n">extractors</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.extractors&quot;</span><span class="p">)</span>
+<span class="n">iterators</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.iterators&quot;</span><span class="p">)</span>
+<span class="n">utils</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_module</span><span class="p">(</span><span class="s2">&quot;.utils&quot;</span><span class="p">)</span>
+
+<span class="n">Demographic</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._demographic.Demographic&quot;</span><span class="p">)</span>
+<span class="n">Demographics</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._demographics.Demographics&quot;</span><span class="p">)</span>
+<span class="n">Disease</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._disease.Disease&quot;</span><span class="p">)</span>
+<span class="n">Infections</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._infections.Infections&quot;</span><span class="p">)</span>
+<span class="n">InputFiles</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._inputfiles.InputFiles&quot;</span><span class="p">)</span>
+<span class="n">Interpret</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._interpret.Interpret&quot;</span><span class="p">)</span>
+<span class="n">Link</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._link.Link&quot;</span><span class="p">)</span>
+<span class="n">Links</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._links.Links&quot;</span><span class="p">)</span>
+<span class="n">Network</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._network.Network&quot;</span><span class="p">)</span>
+<span class="n">Networks</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._networks.Networks&quot;</span><span class="p">)</span>
+<span class="n">Node</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._node.Node&quot;</span><span class="p">)</span>
+<span class="n">Nodes</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._nodes.Nodes&quot;</span><span class="p">)</span>
+<span class="n">OutputFiles</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._outputfiles.OutputFiles&quot;</span><span class="p">)</span>
+<span class="n">Parameters</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._parameters.Parameters&quot;</span><span class="p">)</span>
+<span class="n">PersonType</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._network.PersonType&quot;</span><span class="p">)</span>
+<span class="n">Population</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._population.Population&quot;</span><span class="p">)</span>
+<span class="n">Populations</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._population.Populations&quot;</span><span class="p">)</span>
+<span class="n">VariableSet</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._variableset.VariableSet&quot;</span><span class="p">)</span>
+<span class="n">VariableSets</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._variableset.VariableSets&quot;</span><span class="p">)</span>
+<span class="n">Ward</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._ward.Ward&quot;</span><span class="p">)</span>
+<span class="n">WardID</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._wardid.WardID&quot;</span><span class="p">)</span>
+<span class="n">WardInfo</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._wardinfo.WardInfo&quot;</span><span class="p">)</span>
+<span class="n">WardInfos</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._wardinfo.WardInfos&quot;</span><span class="p">)</span>
+<span class="n">Wards</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._wards.Wards&quot;</span><span class="p">)</span>
+<span class="n">Workspace</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._workspace.Workspace&quot;</span><span class="p">)</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">_lazy_import</span><span class="o">.</span><span class="n">lazy_class</span><span class="p">(</span><span class="s2">&quot;._run.run&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">_sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MetaWards requires Python version 3.7 or above.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Your python is version&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">_sys</span><span class="o">.</span><span class="n">version</span><span class="p">)</span>
+    <span class="n">_sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># import the pyx cython-compiled modules</span>
+
+<span class="n">__manual_version__</span> <span class="o">=</span> <span class="s2">&quot;1.4.0&quot;</span>
+
+<span class="n">_v</span> <span class="o">=</span> <span class="n">get_versions</span><span class="p">()</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="n">_v</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">__version__</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;untagged&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="n">__manual_version__</span>
+
+<span class="n">__branch__</span> <span class="o">=</span> <span class="n">_v</span><span class="p">[</span><span class="s1">&#39;branch&#39;</span><span class="p">]</span>
+<span class="n">__repository__</span> <span class="o">=</span> <span class="n">_v</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">]</span>
+<span class="n">__revisionid__</span> <span class="o">=</span> <span class="n">_v</span><span class="p">[</span><span class="s1">&#39;full-revisionid&#39;</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">_v</span>
+<span class="k">del</span> <span class="n">get_versions</span>
+
+
+<span class="k">def</span> <span class="nf">_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Simple function to include URLs on OS&#39;s that support them in</span>
+<span class="sd">       console output</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">url</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">](</span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+
+<div class="viewcode-block" id="get_version_string"><a class="viewcode-back" href="../api/index_api_MetaWards.html#metawards.get_version_string">[docs]</a><span class="k">def</span> <span class="nf">get_version_string</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return a version string for metawards which can be printed</span>
+<span class="sd">       into a file or written out to the screen</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">._parameters</span> <span class="kn">import</span> <span class="n">get_repository</span>
+    <span class="n">repository</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">get_repository</span><span class="p">(</span><span class="n">error_on_missing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">repository</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">repo_info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">***WARNING: MetaWardsData cannot be found!</span>
+<span class="s2">Please see </span><span class="si">{</span><span class="n">_url</span><span class="p">(</span><span class="s1">&#39;https://metawards.org/model_data&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">for instructions on how to download and install this necessary data.***</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;is_dirty&quot;</span><span class="p">]:</span>
+            <span class="n">dirty</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">***WARNING: This data has not been committed to git.</span>
+<span class="s2">You may not be able to reproduce this run.***</span>
+<span class="s2">&quot;&quot;&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dirty</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">repo_info</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"># MetaWardsData information</span>
+<span class="s2">* version: </span><span class="si">{</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">* repository: </span><span class="si">{</span><span class="n">_url</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">* branch: </span><span class="si">{</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;branch&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+<span class="si">{</span><span class="n">dirty</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="kn">from</span> <span class="nn">._version</span> <span class="kn">import</span> <span class="n">get_versions</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">get_versions</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;untagged&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># the version couldn&#39;t be found - this is likely because this</span>
+        <span class="c1"># is run as part of github actions or in a disconnected repo.</span>
+        <span class="c1"># We need to drop back to &#39;__manual_version__&#39;</span>
+        <span class="n">v</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__manual_version__</span>
+
+    <span class="k">if</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;dirty&quot;</span><span class="p">]:</span>
+        <span class="n">dirty</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">**WARNING: This version has not been committed to git,</span>
+<span class="s2">so you may not be able to recover the original</span>
+<span class="s2">source code that was used to generate this run!**</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">dirty</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"># MetaWards version </span><span class="si">{</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+<span class="s2"># </span><span class="si">{</span><span class="n">_url</span><span class="p">(</span><span class="s1">&#39;https://metawards.org&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2"># Source information</span>
+
+<span class="s2">* repository: </span><span class="si">{</span><span class="n">_url</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;repository&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">* branch: </span><span class="si">{</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;branch&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">* revision: </span><span class="si">{</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;full-revisionid&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">* last modified: </span><span class="si">{</span><span class="n">v</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"></span>
+<span class="si">{</span><span class="n">dirty</span><span class="si">}</span><span class="s2"></span>
+<span class="si">{</span><span class="n">repo_info</span><span class="si">}</span><span class="s2"></span>
+
+<span class="s2"># Additional information</span>
+<span class="s2">Visit </span><span class="si">{</span><span class="n">_url</span><span class="p">(</span><span class="s1">&#39;https://metawards.org&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2"> for more information</span>
+<span class="s2">about metawards, its authors and its license</span>
+<span class="s2">&quot;&quot;&quot;</span></div>
+
+
+<span class="k">def</span> <span class="nf">print_version_string</span><span class="p">():</span>
+    <span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">get_version_string</span><span class="p">(),</span> <span class="n">markdown</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                  <span class="n">style</span><span class="o">=</span><span class="s2">&quot;header&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">72</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="n">_system_input</span> <span class="o">=</span> <span class="nb">input</span>
+
+
+<div class="viewcode-block" id="input"><a class="viewcode-back" href="../api/index_api_MetaWards.html#metawards.input">[docs]</a><span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wrapper for &#39;input&#39; that returns &#39;default&#39; if it detected</span>
+<span class="sd">       that this is being run from within a batch job or other</span>
+<span class="sd">       service that doesn&#39;t have access to a tty</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">isatty</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">_system_input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Not connected to a console, so having to use the &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;default (</span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">default</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unable to get the input: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Using the default (</span><span class="si">{</span><span class="n">default</span><span class="si">}</span><span class="s2">) instead&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">default</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

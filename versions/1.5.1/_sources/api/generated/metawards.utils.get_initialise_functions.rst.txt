@@ -1,0 +1,6 @@
+﻿metawards.utils.get\_initialise\_functions
+==========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: get_initialise_functions

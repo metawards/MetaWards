@@ -1,0 +1,6 @@
+﻿metawards.utils.reset\_everything
+=================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: reset_everything

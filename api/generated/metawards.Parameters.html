@@ -36,7 +36,6 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -234,7 +233,7 @@
 <h1>metawards.Parameters<a class="headerlink" href="#metawards-parameters" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="metawards.Parameters">
-<em class="property">class </em><code class="sig-prename descclassname">metawards.</code><code class="sig-name descname">Parameters</code><span class="sig-paren">(</span><em class="sig-param">input_files: Optional[metawards._inputfiles.InputFiles] = None</em>, <em class="sig-param">disease_params: Optional[metawards._disease.Disease] = None</em>, <em class="sig-param">additional_seeds: Optional[List[str]] = None</em>, <em class="sig-param">length_day: float = 0.7</em>, <em class="sig-param">static_play_at_home: float = 0.0</em>, <em class="sig-param">dyn_play_at_home: float = 0.0</em>, <em class="sig-param">dyn_dist_cutoff: float = 10000000.0</em>, <em class="sig-param">play_to_work: float = 0.0</em>, <em class="sig-param">work_to_play: float = 0.0</em>, <em class="sig-param">daily_imports: float = 0.0</em>, <em class="sig-param">ward_seed_index: Optional[int] = None</em>, <em class="sig-param">initial_inf: int = 5</em>, <em class="sig-param">stage_0: str = 'R'</em>, <em class="sig-param">UV: float = 0.0</em>, <em class="sig-param">UV_max: Optional[datetime.date] = None</em>, <em class="sig-param">scale_uv: float = 1.0</em>, <em class="sig-param">bg_foi: float = 0.0</em>, <em class="sig-param">user_params: Dict[str</em>, <em class="sig-param">float] = &lt;factory&gt;</em>, <em class="sig-param">adjustments: Optional[List[metawards._variableset.VariableSet]] = None</em>, <em class="sig-param">_name: Optional[str] = None</em>, <em class="sig-param">_version: Optional[str] = None</em>, <em class="sig-param">_authors: Optional[str] = None</em>, <em class="sig-param">_contacts: Optional[str] = None</em>, <em class="sig-param">_references: Optional[str] = None</em>, <em class="sig-param">_filename: Optional[str] = None</em>, <em class="sig-param">_repository: Optional[str] = None</em>, <em class="sig-param">_repository_version: Optional[str] = None</em>, <em class="sig-param">_repository_branch: Optional[str] = None</em>, <em class="sig-param">_repository_dir: Optional[str] = None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.</span></code><code class="sig-name descname"><span class="pre">Parameters</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">input_files:</span> <span class="pre">Optional[metawards._inputfiles.InputFiles]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">disease_params:</span> <span class="pre">Optional[metawards._disease.Disease]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">additional_seeds:</span> <span class="pre">Optional[List[str]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">length_day:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.7</span></em>, <em class="sig-param"><span class="pre">static_play_at_home:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">dyn_play_at_home:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">dyn_dist_cutoff:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">10000000.0</span></em>, <em class="sig-param"><span class="pre">play_to_work:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">work_to_play:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">daily_imports:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">ward_seed_index:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">initial_inf:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">5</span></em>, <em class="sig-param"><span class="pre">stage_0:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'R'</span></em>, <em class="sig-param"><span class="pre">UV:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">UV_max:</span> <span class="pre">Optional[datetime.date]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">scale_uv:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></em>, <em class="sig-param"><span class="pre">bg_foi:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">user_params:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">float]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">adjustments:</span> <span class="pre">Optional[List[metawards._variableset.VariableSet]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_name:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_version:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_authors:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_contacts:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_references:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_filename:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository_version:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository_branch:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository_dir:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>The full set of Parameters that are used to control the model
 outbreak over a Network. The combination of a Network and
 a Parameters defines the model outbreak.</p>
@@ -250,7 +249,7 @@ e.g.</p>
 </div>
 <dl class="py method">
 <dt id="metawards.Parameters.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">input_files: Optional[metawards._inputfiles.InputFiles] = None</em>, <em class="sig-param">disease_params: Optional[metawards._disease.Disease] = None</em>, <em class="sig-param">additional_seeds: Optional[List[str]] = None</em>, <em class="sig-param">length_day: float = 0.7</em>, <em class="sig-param">static_play_at_home: float = 0.0</em>, <em class="sig-param">dyn_play_at_home: float = 0.0</em>, <em class="sig-param">dyn_dist_cutoff: float = 10000000.0</em>, <em class="sig-param">play_to_work: float = 0.0</em>, <em class="sig-param">work_to_play: float = 0.0</em>, <em class="sig-param">daily_imports: float = 0.0</em>, <em class="sig-param">ward_seed_index: Optional[int] = None</em>, <em class="sig-param">initial_inf: int = 5</em>, <em class="sig-param">stage_0: str = 'R'</em>, <em class="sig-param">UV: float = 0.0</em>, <em class="sig-param">UV_max: Optional[datetime.date] = None</em>, <em class="sig-param">scale_uv: float = 1.0</em>, <em class="sig-param">bg_foi: float = 0.0</em>, <em class="sig-param">user_params: Dict[str</em>, <em class="sig-param">float] = &lt;factory&gt;</em>, <em class="sig-param">adjustments: Optional[List[metawards._variableset.VariableSet]] = None</em>, <em class="sig-param">_name: Optional[str] = None</em>, <em class="sig-param">_version: Optional[str] = None</em>, <em class="sig-param">_authors: Optional[str] = None</em>, <em class="sig-param">_contacts: Optional[str] = None</em>, <em class="sig-param">_references: Optional[str] = None</em>, <em class="sig-param">_filename: Optional[str] = None</em>, <em class="sig-param">_repository: Optional[str] = None</em>, <em class="sig-param">_repository_version: Optional[str] = None</em>, <em class="sig-param">_repository_branch: Optional[str] = None</em>, <em class="sig-param">_repository_dir: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#metawards.Parameters.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">input_files:</span> <span class="pre">Optional[metawards._inputfiles.InputFiles]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">disease_params:</span> <span class="pre">Optional[metawards._disease.Disease]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">additional_seeds:</span> <span class="pre">Optional[List[str]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">length_day:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.7</span></em>, <em class="sig-param"><span class="pre">static_play_at_home:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">dyn_play_at_home:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">dyn_dist_cutoff:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">10000000.0</span></em>, <em class="sig-param"><span class="pre">play_to_work:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">work_to_play:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">daily_imports:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">ward_seed_index:</span> <span class="pre">Optional[int]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">initial_inf:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">5</span></em>, <em class="sig-param"><span class="pre">stage_0:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'R'</span></em>, <em class="sig-param"><span class="pre">UV:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">UV_max:</span> <span class="pre">Optional[datetime.date]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">scale_uv:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.0</span></em>, <em class="sig-param"><span class="pre">bg_foi:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.0</span></em>, <em class="sig-param"><span class="pre">user_params:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">float]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">adjustments:</span> <span class="pre">Optional[List[metawards._variableset.VariableSet]]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_name:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_version:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_authors:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_contacts:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_references:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_filename:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository_version:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository_branch:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em>, <em class="sig-param"><span class="pre">_repository_dir:</span> <span class="pre">Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#metawards.Parameters.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
 </dd></dl>
 
@@ -478,19 +477,19 @@ e.g.</p>
 </table>
 <dl class="py attribute">
 <dt id="metawards.Parameters.UV">
-<code class="sig-name descname">UV</code><em class="property">: float</em><em class="property"> = 0.0</em><a class="headerlink" href="#metawards.Parameters.UV" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">UV</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#metawards.Parameters.UV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Seasonality parameter</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.UV_max">
-<code class="sig-name descname">UV_max</code><em class="property">: datetime.date</em><em class="property"> = None</em><a class="headerlink" href="#metawards.Parameters.UV_max" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">UV_max</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.date</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Parameters.UV_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Date when transmission should be at a maximum</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.__getitem__">
-<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">demographic</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.__getitem__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__getitem__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demographic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the parameters that should be used for the demographic
 subnetwork called ‘demographic’. If these have not been set
 specifically then the parameters for the overall network
@@ -499,13 +498,13 @@ are used</p>
 
 <dl class="py method">
 <dt id="metawards.Parameters.__str__">
-<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.__str__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.__str__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return str(self).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.add_seeds">
-<code class="sig-name descname">add_seeds</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.add_seeds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.add_seeds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_seeds</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.add_seeds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.add_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an ‘additional seeds’ file that can be used to
 seed wards with new infections at different times and
 locations. Several additional_seed files can be added</p>
@@ -518,59 +517,59 @@ locations. Several additional_seed files can be added</p>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.additional_seeds">
-<code class="sig-name descname">additional_seeds</code><em class="property">: List<span class="p">[</span>str<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#metawards.Parameters.additional_seeds" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">additional_seeds</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Parameters.additional_seeds" title="Permalink to this definition">¶</a></dt>
 <dd><p>The set of files that contain additional seeds that
 seed the outbreak during the model run</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.adjustments">
-<code class="sig-name descname">adjustments</code><em class="property">: List<span class="p">[</span>metawards._variableset.VariableSet<span class="p">]</span></em><em class="property"> = None</em><a class="headerlink" href="#metawards.Parameters.adjustments" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">adjustments</span></code><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">metawards._variableset.VariableSet</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Parameters.adjustments" title="Permalink to this definition">¶</a></dt>
 <dd><p>All of the VariableSet adjustments that have been applied
 to these parameters</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.bg_foi">
-<code class="sig-name descname">bg_foi</code><em class="property">: float</em><em class="property"> = 0.0</em><a class="headerlink" href="#metawards.Parameters.bg_foi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">bg_foi</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#metawards.Parameters.bg_foi" title="Permalink to this definition">¶</a></dt>
 <dd><p>The global background force of infection (FOI). This is combined
 with the per-ward level bg_foi to give a single value</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.copy">
-<code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">include_subparams</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">include_subparams</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a safe copy of these parameters, which does not
 include any subnetwork parameters if ‘include_subparams’ is False</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.daily_imports">
-<code class="sig-name descname">daily_imports</code><em class="property">: float</em><em class="property"> = 0.0</em><a class="headerlink" href="#metawards.Parameters.daily_imports" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">daily_imports</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.0</span></em><a class="headerlink" href="#metawards.Parameters.daily_imports" title="Permalink to this definition">¶</a></dt>
 <dd><p>proportion of daily imports if there are additional infections</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.default">
-<em class="property">static </em><code class="sig-name descname">default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.default" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">default</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the default set of parameters</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.disease_params">
-<code class="sig-name descname">disease_params</code><em class="property">: metawards._disease.Disease</em><em class="property"> = None</em><a class="headerlink" href="#metawards.Parameters.disease_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">disease_params</span></code><em class="property"><span class="pre">:</span> <span class="pre">metawards._disease.Disease</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Parameters.disease_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>The set of parameters that define the disease</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.dyn_dist_cutoff">
-<code class="sig-name descname">dyn_dist_cutoff</code><em class="property">: float</em><em class="property"> = 10000000.0</em><a class="headerlink" href="#metawards.Parameters.dyn_dist_cutoff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dyn_dist_cutoff</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">10000000.0</span></em><a class="headerlink" href="#metawards.Parameters.dyn_dist_cutoff" title="Permalink to this definition">¶</a></dt>
 <dd><p>The cutoff distance in km beyond which workers or players cannot move</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.get_repository">
-<em class="property">static </em><code class="sig-name descname">get_repository</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">repository</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.get_repository"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.get_repository" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">get_repository</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.get_repository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.get_repository" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the repository location and version information
 for the passed repository</p>
 <dl class="field-list simple">
@@ -592,25 +591,25 @@ plus the version information (git ID etc)</p>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.initial_inf">
-<code class="sig-name descname">initial_inf</code><em class="property">: int</em><em class="property"> = 5</em><a class="headerlink" href="#metawards.Parameters.initial_inf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">initial_inf</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">5</span></em><a class="headerlink" href="#metawards.Parameters.initial_inf" title="Permalink to this definition">¶</a></dt>
 <dd><p>The number of initial infections if there are daily imports</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.input_files">
-<code class="sig-name descname">input_files</code><em class="property">: metawards._inputfiles.InputFiles</em><em class="property"> = None</em><a class="headerlink" href="#metawards.Parameters.input_files" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">input_files</span></code><em class="property"><span class="pre">:</span> <span class="pre">metawards._inputfiles.InputFiles</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Parameters.input_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>The set of input files that define the model Network</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.length_day">
-<code class="sig-name descname">length_day</code><em class="property">: float</em><em class="property"> = 0.7</em><a class="headerlink" href="#metawards.Parameters.length_day" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">length_day</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0.7</span></em><a class="headerlink" href="#metawards.Parameters.length_day" title="Permalink to this definition">¶</a></dt>
 <dd><p>The fraction of day considered “day” for work, e.g. 0.7 * 24 hours</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.load">
-<em class="property">static </em><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parameters</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'march29'</span></em>, <em class="sig-param"><span class="n">repository</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">folder</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">'parameters'</span></em>, <em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.load" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'march29'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repository</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'parameters'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>This will return a Parameters object containing all of the
 parameters loaded from the parameters found in file
 f”{repository}/{folder}/{parameters}.json”</p>
@@ -642,7 +641,7 @@ repository</p></li>
 
 <dl class="py method">
 <dt id="metawards.Parameters.read_variables">
-<em class="property">static </em><code class="sig-name descname">read_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">line_numbers</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.read_variables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.read_variables" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">read_variables</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_numbers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.read_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.read_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read in extra variable parameters from the specified line number(s)
 of the specified file, returning the list
 of the dictionaries of variables that have been
@@ -667,14 +666,14 @@ None then all lines will be read.</p></li>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.scale_uv">
-<code class="sig-name descname">scale_uv</code><em class="property">: float</em><em class="property"> = 1.0</em><a class="headerlink" href="#metawards.Parameters.scale_uv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">scale_uv</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">1.0</span></em><a class="headerlink" href="#metawards.Parameters.scale_uv" title="Permalink to this definition">¶</a></dt>
 <dd><p>The global scale_uv. This is combined with the population and
 per-ward level scale_uvs to give a single value</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="metawards.Parameters.set_disease">
-<code class="sig-name descname">set_disease</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">disease</span><span class="p">:</span> <span class="n">metawards._disease.Disease</span></em>, <em class="sig-param"><span class="n">silent</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.set_disease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.set_disease" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_disease</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disease</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">metawards._disease.Disease</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">silent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.set_disease"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.set_disease" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Set the disease that will be modelled</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -689,7 +688,7 @@ per-ward level scale_uvs to give a single value</p>
 
 <dl class="py method">
 <dt id="metawards.Parameters.set_input_files">
-<code class="sig-name descname">set_input_files</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_files</span><span class="p">:</span> <span class="n">metawards._inputfiles.InputFiles</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.set_input_files"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.set_input_files" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_input_files</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_files</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">metawards._inputfiles.InputFiles</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.set_input_files"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.set_input_files" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the input files that are used to initialise the
 simulation</p>
 <dl class="field-list simple">
@@ -703,7 +702,7 @@ based on that string.</p>
 
 <dl class="py method">
 <dt id="metawards.Parameters.set_variables">
-<code class="sig-name descname">set_variables</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">variables</span><span class="p">:</span> <span class="n">metawards._variableset.VariableSet</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.set_variables"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.set_variables" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">set_variables</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">metawards._variableset.VariableSet</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.set_variables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.set_variables" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function sets the adjustable variable values to those
 specified in ‘variables’ in A COPY OF THIS PARAMETERS OBJECT.
 This returns the copy. It does not change this object</p>
@@ -723,7 +722,7 @@ This adjusts the parameters and returns them in a deep copy</p>
 
 <dl class="py method">
 <dt id="metawards.Parameters.specialised_demographics">
-<code class="sig-name descname">specialised_demographics</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.specialised_demographics"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metawards.Parameters.specialised_demographics" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">specialised_demographics</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/metawards/_parameters.html#Parameters.specialised_demographics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Parameters.specialised_demographics" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the names of demographics that have specialised
 parameters that are different to those of the overall
 network</p>
@@ -731,7 +730,7 @@ network</p>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.stage_0">
-<code class="sig-name descname">stage_0</code><em class="property">: str</em><em class="property"> = 'R'</em><a class="headerlink" href="#metawards.Parameters.stage_0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">stage_0</span></code><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'R'</span></em><a class="headerlink" href="#metawards.Parameters.stage_0" title="Permalink to this definition">¶</a></dt>
 <dd><p>how to treat the * state (stage 0). This should be a string
 describing the method. Currently “R”, “E” and “disable” are
 supported. Not needed if the mapping is specified explicitly
@@ -740,13 +739,13 @@ in the disease</p>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.user_params">
-<code class="sig-name descname">user_params</code><em class="property">: Dict<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span></em><a class="headerlink" href="#metawards.Parameters.user_params" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">user_params</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#metawards.Parameters.user_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>User parameters</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="metawards.Parameters.ward_seed_index">
-<code class="sig-name descname">ward_seed_index</code><em class="property">: int</em><em class="property"> = None</em><a class="headerlink" href="#metawards.Parameters.ward_seed_index" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ward_seed_index</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Parameters.ward_seed_index" title="Permalink to this definition">¶</a></dt>
 <dd><p>The index of the seeding ward if there are daily imports</p>
 </dd></dl>
 
@@ -769,7 +768,7 @@ in the disease</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 09, 2021.
+        Last updated on Feb 26, 2021.
       </span>
 
     </p>

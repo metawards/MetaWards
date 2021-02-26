@@ -1,0 +1,6 @@
+﻿metawards.utils.fill\_in\_gaps
+==============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: fill_in_gaps

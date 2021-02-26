@@ -1,0 +1,6 @@
+﻿metawards.utils.accepts\_stage
+==============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: accepts_stage

@@ -1,0 +1,604 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards.iterators._advance_additional &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards.iterators._advance_additional</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards.iterators._advance_additional</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
+
+<span class="kn">from</span> <span class="nn">.._network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">from</span> <span class="nn">.._networks</span> <span class="kn">import</span> <span class="n">Networks</span>
+<span class="kn">from</span> <span class="nn">.._population</span> <span class="kn">import</span> <span class="n">Population</span>
+<span class="kn">from</span> <span class="nn">..utils._profiler</span> <span class="kn">import</span> <span class="n">Profiler</span>
+<span class="kn">from</span> <span class="nn">.._infections</span> <span class="kn">import</span> <span class="n">Infections</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;advance_additional&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_get_ward</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">network</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;This should be a Network object...&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">.._interpret</span> <span class="kn">import</span> <span class="n">Interpret</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">Interpret</span><span class="o">.</span><span class="n">integer</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">,</span> <span class="n">minval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">maxval</span><span class="o">=</span><span class="n">network</span><span class="o">.</span><span class="n">nnodes</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">network</span><span class="o">.</span><span class="n">get_node_index</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">return</span> <span class="n">network</span><span class="o">.</span><span class="n">get_node_index</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_get_demographic</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">network</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">s</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">Network</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">s</span> <span class="o">==</span> <span class="s2">&quot;overall&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">return</span> <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">get_index</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_load_additional_seeds</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">Network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">],</span>
+                           <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load additional seeds from the passed filename. This returns</span>
+<span class="sd">       the added seeds. Note that the filename can be interpreted</span>
+<span class="sd">       as the actual contents of the file, meaning that for short</span>
+<span class="sd">       content, it is quicker to pass this than the filename</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
+    <span class="kn">from</span> <span class="nn">..utils._console</span> <span class="kn">import</span> <span class="n">Console</span><span class="p">,</span> <span class="n">Table</span>
+
+    <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading additional seeds from </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">FILE</span><span class="p">:</span>
+            <span class="n">ilines</span> <span class="o">=</span> <span class="n">FILE</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loading additional seeds from the command line&quot;</span><span class="p">)</span>
+        <span class="n">ilines</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="p">)</span>
+
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">ilines</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">):</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+    <span class="n">seeds</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Day&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Demographic&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Ward&quot;</span><span class="p">)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Number seeded&quot;</span><span class="p">)</span>
+
+    <span class="kn">import</span> <span class="nn">csv</span>
+
+    <span class="c1"># remove any initial comment lines (breaks sniffing below)</span>
+    <span class="k">while</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># remove any empty initial lines (breaks sniffing below)</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dialect</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">Sniffer</span><span class="p">()</span><span class="o">.</span><span class="n">sniff</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">delimiters</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;,&quot;</span><span class="p">])</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">words</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Could not identify what sort of separator to use to &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;read the additional seeds, so will assume commas. If this &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;is wrong then could you add commas to separate the &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;fields?&quot;</span><span class="p">)</span>
+
+        <span class="n">dialect</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">excel</span>  <span class="c1">#  default comma-separated file</span>
+
+    <span class="n">titles</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">nwords</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">dialect</span><span class="o">=</span><span class="n">dialect</span><span class="p">,</span>
+                           <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_ALL</span><span class="p">,</span>
+                           <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+        <span class="n">words</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># yes, the original files really do mix tabe and spaces... need</span>
+        <span class="c1"># to extract these separately!</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">rest_commented</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">):</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">):</span>
+                    <span class="n">rest_commented</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+
+                <span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">rest_commented</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">nwords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">nwords</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">nwords</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="k">if</span> <span class="n">titles</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;day&quot;</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> <span class="s2">&quot;number&quot;</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> <span class="s2">&quot;ward&quot;</span> <span class="ow">in</span> <span class="n">words</span> <span class="ow">or</span> \
+                    <span class="s2">&quot;demographics&quot;</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+                <span class="n">titles</span> <span class="o">=</span> <span class="p">{}</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">titles</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">titles</span><span class="p">[</span><span class="s2">&quot;number&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">titles</span><span class="p">[</span><span class="s2">&quot;ward&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;ward&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">titles</span><span class="p">[</span><span class="s2">&quot;demographic&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;demographic&quot;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="k">pass</span>
+
+                <span class="k">continue</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># try to guess the values based on the number of items and</span>
+                <span class="c1"># their type</span>
+                <span class="k">if</span> <span class="n">nwords</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">titles</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ward&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+                    <span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">nwords</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                    <span class="n">titles</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;day&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ward&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+                    <span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">nwords</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">titles</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;day&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;ward&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># yes, this is really the order of the seeds - &quot;t num loc&quot;</span>
+                    <span class="n">titles</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;day&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                              <span class="s2">&quot;ward&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;demographic&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="kn">from</span> <span class="nn">.._interpret</span> <span class="kn">import</span> <span class="n">Interpret</span>
+
+        <span class="c1"># is in the file as &quot;t loc num&quot;</span>
+        <span class="n">day</span> <span class="o">=</span> <span class="n">titles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">day</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">day</span> <span class="o">=</span> <span class="n">Interpret</span><span class="o">.</span><span class="n">day_or_date</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">day</span><span class="p">],</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">day</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">))</span>
+
+        <span class="n">this_network</span> <span class="o">=</span> <span class="n">network</span>
+
+        <span class="n">demographic</span> <span class="o">=</span> <span class="n">titles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;demographic&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">demographic</span> <span class="o">=</span> <span class="n">_get_demographic</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">demographic</span><span class="p">],</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># we need the right network to get the ward below</span>
+            <span class="n">this_network</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">subnets</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">demographic</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">this_network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">):</span>
+            <span class="c1"># The demographic has not been specified, so this must be</span>
+            <span class="c1"># the first demographic</span>
+            <span class="n">this_network</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">subnets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">demographic</span><span class="p">))</span>
+
+        <span class="n">ward</span> <span class="o">=</span> <span class="n">titles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ward&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">ward</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">ward</span> <span class="o">=</span> <span class="n">_get_ward</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">ward</span><span class="p">],</span> <span class="n">network</span><span class="o">=</span><span class="n">this_network</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ward</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">this_network</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ward</span><span class="p">))</span>
+
+        <span class="n">seed</span> <span class="o">=</span> <span class="n">titles</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">seed</span> <span class="o">=</span> <span class="n">Interpret</span><span class="o">.</span><span class="n">integer</span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">seed</span><span class="p">],</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">,</span> <span class="n">minval</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">seed</span><span class="p">))</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="n">seeds</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">day</span><span class="p">,</span> <span class="n">ward</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">demographic</span><span class="p">))</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">seeds</span>
+
+
+<span class="k">def</span> <span class="nf">setup_additional_seeds</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">Network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">],</span>
+                           <span class="n">profiler</span><span class="p">:</span> <span class="n">Profiler</span><span class="p">,</span>
+                           <span class="n">rng</span><span class="p">,</span>
+                           <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Setup function that reads in the additional seeds held</span>
+<span class="sd">       in `params.additional_seeds` and puts them ready to</span>
+<span class="sd">       be used by `advance_additional` to import additional</span>
+<span class="sd">       infections at specified times in specified wards</span>
+<span class="sd">       during the outbreak</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       network: Network or Networks</span>
+<span class="sd">         The network to be seeded</span>
+<span class="sd">       profiler: Profiler</span>
+<span class="sd">         Profiler used to profile this function</span>
+<span class="sd">       rng:</span>
+<span class="sd">         Random number generator used to generate any random seeding</span>
+<span class="sd">       kwargs</span>
+<span class="sd">         Arguments that are not used by this setup function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">profiler</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s2">&quot;load_additional_seeds&quot;</span><span class="p">)</span>
+    <span class="n">additional_seeds</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">params</span><span class="o">.</span><span class="n">additional_seeds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">additional</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">additional_seeds</span><span class="p">:</span>
+            <span class="n">additional_seeds</span> <span class="o">+=</span> <span class="n">_load_additional_seeds</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                                                       <span class="n">filename</span><span class="o">=</span><span class="n">additional</span><span class="p">,</span>
+                                                       <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">additional_seeds</span>
+
+
+<div class="viewcode-block" id="advance_additional"><a class="viewcode-back" href="../../../api/generated/metawards.iterators.advance_additional.html#metawards.iterators.advance_additional">[docs]</a><span class="k">def</span> <span class="nf">advance_additional</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">Network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">],</span>
+                       <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
+                       <span class="n">infections</span><span class="p">:</span> <span class="n">Infections</span><span class="p">,</span>
+                       <span class="n">profiler</span><span class="p">:</span> <span class="n">Profiler</span><span class="p">,</span>
+                       <span class="n">rngs</span><span class="p">,</span>
+                       <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Advance the infection by infecting additional wards based</span>
+<span class="sd">       on a pre-determined pattern based on the additional seeds</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       network: Network or Networks</span>
+<span class="sd">         The network being modelled</span>
+<span class="sd">       population: Population</span>
+<span class="sd">         The population experiencing the outbreak - also contains the day</span>
+<span class="sd">         of the outbreak</span>
+<span class="sd">       infections: Infections</span>
+<span class="sd">         Space to hold the infections</span>
+<span class="sd">       rngs:</span>
+<span class="sd">         The list of thread-safe random number generators, one per thread</span>
+<span class="sd">       profiler: Profiler</span>
+<span class="sd">         Used to profile this function</span>
+<span class="sd">       kwargs</span>
+<span class="sd">         Arguments that aren&#39;t used by this advancer</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="s2">&quot;_advance_additional_seeds&quot;</span><span class="p">):</span>
+        <span class="n">network</span><span class="o">.</span><span class="n">_advance_additional_seeds</span> <span class="o">=</span> \
+            <span class="n">setup_additional_seeds</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">,</span>
+                                   <span class="n">rng</span><span class="o">=</span><span class="n">rngs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="kn">from</span> <span class="nn">..utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+
+    <span class="n">additional_seeds</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">_advance_additional_seeds</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">profiler</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s2">&quot;additional_seeds&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="n">additional_seeds</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">seed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="ow">or</span> <span class="n">seed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">population</span><span class="o">.</span><span class="n">date</span><span class="p">:</span>
+            <span class="n">ward</span> <span class="o">=</span> <span class="n">seed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">num</span> <span class="o">=</span> <span class="n">seed</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">):</span>
+                <span class="n">demographic</span> <span class="o">=</span> <span class="n">seed</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># not specified, so seed the first demographic</span>
+                    <span class="n">demographic</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">demographic</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">get_index</span><span class="p">(</span><span class="n">demographic</span><span class="p">)</span>
+
+                <span class="n">seed_network</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">subnets</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span>
+                <span class="n">seed_wards</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">nodes</span>
+                <span class="n">seed_infections</span> <span class="o">=</span> <span class="n">infections</span><span class="o">.</span><span class="n">subinfs</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span><span class="o">.</span><span class="n">play</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">demographic</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">seed_network</span> <span class="o">=</span> <span class="n">network</span>
+                <span class="n">seed_wards</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">nodes</span>
+                <span class="n">seed_infections</span> <span class="o">=</span> <span class="n">infections</span><span class="o">.</span><span class="n">play</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">ward</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">get_node_index</span><span class="p">(</span><span class="n">ward</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Cannot seed </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> infection(s) in ward </span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2"> &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;as there are no susceptibles remaining&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+
+                <span class="k">elif</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Not enough susceptibles in ward to see all </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">num</span> <span class="o">=</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span>
+
+                <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num</span>
+                <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;seeding demographic </span><span class="si">{</span><span class="n">demographic</span><span class="si">}</span><span class="s2"> &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;play_infections[0][</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">] += </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;seeding play_infections[0][</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">] += </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                <span class="n">seed_infections</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">ward</span><span class="p">]</span> <span class="o">+=</span> <span class="n">num</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Unable to seed the infection using </span><span class="si">{</span><span class="n">seed</span><span class="si">}</span><span class="s2">. The &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;error was </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. Please double-check &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;that you are trying to seed a node that exists &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;in this network.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">e</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

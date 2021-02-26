@@ -1,0 +1,67 @@
+﻿metawards.WardInfos
+===================
+
+.. currentmodule:: metawards
+
+.. autoclass:: WardInfos
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~WardInfos.__contains__
+      ~WardInfos.__delattr__
+      ~WardInfos.__dir__
+      ~WardInfos.__eq__
+      ~WardInfos.__format__
+      ~WardInfos.__ge__
+      ~WardInfos.__getattribute__
+      ~WardInfos.__getitem__
+      ~WardInfos.__gt__
+      ~WardInfos.__init__
+      ~WardInfos.__init_subclass__
+      ~WardInfos.__le__
+      ~WardInfos.__len__
+      ~WardInfos.__lt__
+      ~WardInfos.__ne__
+      ~WardInfos.__new__
+      ~WardInfos.__reduce__
+      ~WardInfos.__reduce_ex__
+      ~WardInfos.__repr__
+      ~WardInfos.__setattr__
+      ~WardInfos.__setitem__
+      ~WardInfos.__sizeof__
+      ~WardInfos.__str__
+      ~WardInfos.__subclasshook__
+      ~WardInfos._find_authority
+      ~WardInfos._find_region
+      ~WardInfos._find_ward
+      ~WardInfos._intersect
+      ~WardInfos.contains
+      ~WardInfos.find
+      ~WardInfos.index
+      ~WardInfos.reindex
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~WardInfos.__annotations__
+      ~WardInfos.__dataclass_fields__
+      ~WardInfos.__dataclass_params__
+      ~WardInfos.__dict__
+      ~WardInfos.__doc__
+      ~WardInfos.__hash__
+      ~WardInfos.__module__
+      ~WardInfos.__weakref__
+      ~WardInfos._index
+   
+   

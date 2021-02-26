@@ -1,0 +1,6 @@
+﻿metawards.utils.get\_available\_num\_threads
+============================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: get_available_num_threads

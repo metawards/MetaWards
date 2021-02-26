@@ -1,0 +1,6 @@
+﻿metawards.utils.string\_to\_ints
+================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: string_to_ints

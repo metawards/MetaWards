@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Accumulating into a Workspace &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extracting by location" href="03_regional.html" />
+    <link rel="prev" title="Custom extractors" href="01_extractors.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_extractors.html">Custom extractors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Accumulating into a Workspace</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#output-incidence">Output incidence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-outputs">Default outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_regional.html">Extracting by location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_rates.html">Extracting rates by ward</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part04.html">Part 4 - Customising the output</a> &raquo;</li>
+        
+      <li>Accumulating into a Workspace</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="03_regional.html" class="btn btn-neutral float-right" title="Extracting by location" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="01_extractors.html" class="btn btn-neutral float-left" title="Custom extractors" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="accumulating-into-a-workspace">
+<h1>Accumulating into a Workspace<a class="headerlink" href="#accumulating-into-a-workspace" title="Permalink to this headline">¶</a></h1>
+<p>The default function that is always called by
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">extract()</span></code> is
+<a class="reference internal" href="../../api/generated/metawards.extractors.output_core.html#metawards.extractors.output_core" title="metawards.extractors.output_core"><code class="xref py py-meth docutils literal notranslate"><span class="pre">metawards.extractors.output_core()</span></code></a>.</p>
+<p>This core extractor performs the bulk of the work of accumulating all of
+the infection data into a single <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Workspace</span></code></a> object.</p>
+<p>This <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Workspace</span></code></a> object contains;</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.inf_tot" title="metawards.Workspace.inf_tot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">inf_tot()</span></code></a>: The total population size at each
+of the different disease stages from the <code class="docutils literal notranslate"><span class="pre">work</span></code> infections.</p></li>
+<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.pinf_tot" title="metawards.Workspace.pinf_tot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pinf_tot()</span></code></a>: The total population size at each
+of the different disease stages from the <code class="docutils literal notranslate"><span class="pre">play</span></code> infections.</p></li>
+<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.n_inf_wards" title="metawards.Workspace.n_inf_wards"><code class="xref py py-meth docutils literal notranslate"><span class="pre">n_inf_wards()</span></code></a>: The number of wards with at
+least one member for each disease stage.</p></li>
+<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.total_inf_ward" title="metawards.Workspace.total_inf_ward"><code class="xref py py-meth docutils literal notranslate"><span class="pre">total_inf_ward()</span></code></a>: The size of the infected
+population in each ward (the prevalence).</p></li>
+<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.total_new_inf_ward" title="metawards.Workspace.total_new_inf_ward"><code class="xref py py-meth docutils literal notranslate"><span class="pre">total_new_inf_ward()</span></code></a>: The number of new infections
+on this day in each ward.</p></li>
+<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.incidence" title="metawards.Workspace.incidence"><code class="xref py py-meth docutils literal notranslate"><span class="pre">incidence()</span></code></a>: The incidence of infection in each
+ward.</p></li>
+</ul>
+<div class="section" id="output-incidence">
+<h2>Output incidence<a class="headerlink" href="#output-incidence" title="Permalink to this headline">¶</a></h2>
+<p>This <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workspace</span></code></a> contains data that can be easily output,
+e.g. the <a class="reference internal" href="../../api/generated/metawards.extractors.output_incidence.html#metawards.extractors.output_incidence" title="metawards.extractors.output_incidence"><code class="xref py py-meth docutils literal notranslate"><span class="pre">metawards.extractors.output_incidence()</span></code></a> supplied extractor
+writes the incidence to a file called <code class="docutils literal notranslate"><span class="pre">incidence.dat.bz2</span></code>. For example,
+you can call this from your <code class="docutils literal notranslate"><span class="pre">population.py</span></code> extractor by changing it
+to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">output_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello output_population&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create an output file called &#39;population.dat&#39;</span>
+    <span class="n">popfile</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;population.dat&quot;</span><span class="p">,</span>
+                              <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                                       <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">])</span>
+
+    <span class="c1"># write the population to this file</span>
+    <span class="n">popfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">extract_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;hello extract_population&quot;</span><span class="p">)</span>
+
+    <span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">output_incidence</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">output_population</span><span class="p">,</span> <span class="n">output_incidence</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">output_incidence</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See how we are calling <code class="docutils literal notranslate"><span class="pre">output_incidence</span></code> on every day, but
+<code class="docutils literal notranslate"><span class="pre">output_population</span></code> only on even days.</p>
+</div>
+<p>If you run this extractor using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --extractor population
+</pre></div>
+</div>
+<p>You will now see that you get a file called <code class="docutils literal notranslate"><span class="pre">incidence.dat.bz2</span></code>
+in the output directory. This will be a big matrix of mostly zeroes,
+as no infection has been seeded.</p>
+</div>
+<div class="section" id="default-outputs">
+<h2>Default outputs<a class="headerlink" href="#default-outputs" title="Permalink to this headline">¶</a></h2>
+<p>The default extractor is <a class="reference internal" href="../../api/generated/metawards.extractors.extract_default.html#metawards.extractors.extract_default" title="metawards.extractors.extract_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_default()</span></code></a>.
+This returns;</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../api/generated/metawards.extractors.output_basic.html#metawards.extractors.output_basic" title="metawards.extractors.output_basic"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output_basic()</span></code></a>: Writes out basic information
+to the files <code class="docutils literal notranslate"><span class="pre">NumberWardsInfected.dat</span></code>, <code class="docutils literal notranslate"><span class="pre">TotalInfections.dat</span></code> etc.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.extractors.output_dispersal.html#metawards.extractors.output_dispersal" title="metawards.extractors.output_dispersal"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output_dispersal()</span></code></a>: Calculates and writes out
+the geographic disperal of the outbreak to <code class="docutils literal notranslate"><span class="pre">MeanXY.dat</span></code>, <code class="docutils literal notranslate"><span class="pre">VarXY.day</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Dispersal.dat</span></code></p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.extractors.output_prevalence.html#metawards.extractors.output_prevalence" title="metawards.extractors.output_prevalence"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output_prevalence()</span></code></a>: Writes the (large)
+prevalence matrix to <code class="docutils literal notranslate"><span class="pre">prevalence.dat</span></code>.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.extractors.output_incidence.html#metawards.extractors.output_incidence" title="metawards.extractors.output_incidence"><code class="xref py py-meth docutils literal notranslate"><span class="pre">output_incidence()</span></code></a>: Writes the (large) incidence
+matrix to <code class="docutils literal notranslate"><span class="pre">incidence.dat</span></code>.</p></li>
+</ul>
+<p>You can use <a class="reference internal" href="../../api/generated/metawards.extractors.extract_default.html#metawards.extractors.extract_default" title="metawards.extractors.extract_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_default()</span></code></a>
+either by not supplying an extractor
+via the <code class="docutils literal notranslate"><span class="pre">--extractor</span></code> command line argument, or by specifying
+<code class="docutils literal notranslate"><span class="pre">--extract-default</span></code>.</p>
+<p>Have a go using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --extractor extract_default
+</pre></div>
+</div>
+<p>As well as <a class="reference internal" href="../../api/generated/metawards.extractors.extract_default.html#metawards.extractors.extract_default" title="metawards.extractors.extract_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_default()</span></code></a>, there is also
+<a class="reference internal" href="../../api/generated/metawards.extractors.extract_small.html#metawards.extractors.extract_small" title="metawards.extractors.extract_small"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_small()</span></code></a> (only extracting the
+“small” files),
+“meth:<a class="reference internal" href="../../api/generated/metawards.extractors.extract_large.html#metawards.extractors.extract_large" title="metawards.extractors.extract_large"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extract_large</span></code></a> (extract everything, including
+producing large trajectory files) and
+<a class="reference internal" href="../../api/generated/metawards.extractors.extract_none.html#metawards.extractors.extract_none" title="metawards.extractors.extract_none"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_none()</span></code></a> (extract nothing - useful if
+you want to restrict output only to <code class="docutils literal notranslate"><span class="pre">results.csv.bz2</span></code>).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="03_regional.html" class="btn btn-neutral float-right" title="Extracting by location" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_extractors.html" class="btn btn-neutral float-left" title="Custom extractors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

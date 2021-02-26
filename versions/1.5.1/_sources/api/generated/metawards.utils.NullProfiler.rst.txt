@@ -1,0 +1,54 @@
+﻿metawards.utils.NullProfiler
+============================
+
+.. currentmodule:: metawards.utils
+
+.. autoclass:: NullProfiler
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NullProfiler.__delattr__
+      ~NullProfiler.__dir__
+      ~NullProfiler.__eq__
+      ~NullProfiler.__format__
+      ~NullProfiler.__ge__
+      ~NullProfiler.__getattribute__
+      ~NullProfiler.__gt__
+      ~NullProfiler.__hash__
+      ~NullProfiler.__init__
+      ~NullProfiler.__init_subclass__
+      ~NullProfiler.__le__
+      ~NullProfiler.__lt__
+      ~NullProfiler.__ne__
+      ~NullProfiler.__new__
+      ~NullProfiler.__reduce__
+      ~NullProfiler.__reduce_ex__
+      ~NullProfiler.__repr__
+      ~NullProfiler.__setattr__
+      ~NullProfiler.__sizeof__
+      ~NullProfiler.__str__
+      ~NullProfiler.__subclasshook__
+      ~NullProfiler.is_null
+      ~NullProfiler.start
+      ~NullProfiler.stop
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~NullProfiler.__dict__
+      ~NullProfiler.__doc__
+      ~NullProfiler.__module__
+      ~NullProfiler.__weakref__
+   
+   

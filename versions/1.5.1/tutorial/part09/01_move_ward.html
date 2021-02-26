@@ -1,0 +1,543 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Creating intricate moves &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Modelling vaccination" href="02_vaccinate.html" />
+    <link rel="prev" title="Part 9 - Advanced Moves and Scenarios" href="../index_part09.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Creating intricate moves</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-movegenerator">Using MoveGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wardid-and-commuters">WardID and commuters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moving-a-number-or-fraction">Moving a number or fraction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-go-ward">Using go_ward</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_vaccinate.html">Modelling vaccination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_fading_immunity.html">Fading immunity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_university.html">Modelling population movements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_holidays.html">Holidays and quarantine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a> &raquo;</li>
+        
+      <li>Creating intricate moves</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02_vaccinate.html" class="btn btn-neutral float-right" title="Modelling vaccination" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../index_part09.html" class="btn btn-neutral float-left" title="Part 9 - Advanced Moves and Scenarios" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-intricate-moves">
+<h1>Creating intricate moves<a class="headerlink" href="#creating-intricate-moves" title="Permalink to this headline">¶</a></h1>
+<p>Up to now you have used the top-level go functions (e.g.
+<a class="reference internal" href="../../api/generated/metawards.movers.go_isolate.html#metawards.movers.go_isolate" title="metawards.movers.go_isolate"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_isolate()</span></code></a>, <a class="reference internal" href="../../api/generated/metawards.movers.go_stage.html#metawards.movers.go_stage" title="metawards.movers.go_stage"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_stage()</span></code></a>
+and <a class="reference internal" href="../../api/generated/metawards.movers.go_to.html#metawards.movers.go_to" title="metawards.movers.go_to"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_to()</span></code></a>) to perform more complex
+moves of individuals between demographics and/or disease stages.</p>
+<p>These go functions are built on top of lower-level function
+<a class="reference internal" href="../../api/generated/metawards.movers.go_ward.html#metawards.movers.go_ward" title="metawards.movers.go_ward"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_ward()</span></code></a>. This is a generic go function that
+can move individuals between any and all combinations of
+demographics, disease stages, wards (for players)
+(for workers) and <a class="reference internal" href="../../api/generated/metawards.PersonType.html#metawards.PersonType" title="metawards.PersonType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PersonType</span></code></a> (worker or player).</p>
+<p>It uses <a class="reference internal" href="../../api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a> to define the move.
+This is a generator that generates all of the moves to perform
+based on the arguments to its constructor.</p>
+<div class="section" id="using-movegenerator">
+<h2>Using MoveGenerator<a class="headerlink" href="#using-movegenerator" title="Permalink to this headline">¶</a></h2>
+<p>You construct a <a class="reference internal" href="../../api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a> object by specifying
+the <code class="docutils literal notranslate"><span class="pre">from</span></code> and <code class="docutils literal notranslate"><span class="pre">to</span></code> states of individuals for the moves to be
+generated. You can specify one or more of;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">from_demographic</span></code> / <code class="docutils literal notranslate"><span class="pre">to_demographic</span></code> : Moving individuals between
+different demographics (and thus different networks)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from_stage</span></code> / <code class="docutils literal notranslate"><span class="pre">to_stage</span></code> : Moving individuals between different
+disease stages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from_ward</span></code> / <code class="docutils literal notranslate"><span class="pre">to_ward</span></code> : Moving individuals between different
+wards.</p></li>
+</ul>
+<p>You can use the index or the name of the demographic, stage or ward when
+specifying the move.</p>
+<p>For example;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># Move from disease stage E to I</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move from disease stage 0 to 1</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Move from demographic &quot;red&quot; to &quot;blue&quot;</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move from ward Bristol to London</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;London&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move from ward with ID 5 to ID 7</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">to_ward</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also specify multiple from and to stages, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># Move from both E and I to R</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">],</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move from S to E, and also move from I to R</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">],</span> <span class="n">to_stage</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">])</span>
+
+<span class="c1"># Move from red and blue to green</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span><span class="p">],</span> <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move from Bristol and Oxford to London</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="s2">&quot;Oxford&quot;</span><span class="p">],</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;London&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If a state isn’t specified, then all matching individuals will move,
+keeping the states the same as much as possible. So a move from
+disease stage E to I that does not specify a move of demographic or ward
+would move all individuals in every demographic and every ward from
+E to I.</p>
+<p>You can limit this by specifying multiple states per move, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># Move everyone in the blue demographic from E to I</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move everyone in the I stage from Bristol to Oxford</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="n">from_ward</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;Oxford&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move everyone in the red demographic and E stage to the blue</span>
+<span class="c1"># demographic and I stage</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                    <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move everyone in Bristol from the red demographic and E stage to the blue</span>
+<span class="c1"># demographic and I stage</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span>
+                    <span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                    <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move everyone from Bristol who is in the red demographic and E stage</span>
+<span class="c1"># to Oxford to the blue demographic and I stage</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;Oxford&quot;</span><span class="p">,</span>
+                    <span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                    <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move everyone who is in the red demographic to Oxford from wherever</span>
+<span class="c1"># they are now to Oxford</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;Oxford&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note how you can specify the <code class="docutils literal notranslate"><span class="pre">from</span></code> without a <code class="docutils literal notranslate"><span class="pre">to</span></code>. This would mean
+move everyone who matches the <code class="docutils literal notranslate"><span class="pre">from</span></code>. Note also how you can specify
+the <code class="docutils literal notranslate"><span class="pre">to</span></code> without the <code class="docutils literal notranslate"><span class="pre">from</span></code>. In this case, it moves everyone
+to the <code class="docutils literal notranslate"><span class="pre">to</span></code>.</p>
+</div>
+</div>
+<div class="section" id="wardid-and-commuters">
+<h2>WardID and commuters<a class="headerlink" href="#wardid-and-commuters" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">from_ward</span></code> and <code class="docutils literal notranslate"><span class="pre">to_ward</span></code> are a little more complex because individuals
+are either workers or players.</p>
+<p>Players are modelled in a single ward, and so can be identified just by
+the ward ID or name. Thus <code class="docutils literal notranslate"><span class="pre">from_ward=&quot;Bristol&quot;</span></code> means only the players
+who reside in Bristol.</p>
+<p>Workers are modelled in a ward-link (or ward-connection). This is a link
+from the home ward of the worker to the commute ward where they work each
+day. We need to specify both the home and commute ward to identify a worker.
+To do this, the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.WardID" title="metawards.WardID"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.WardID</span></code></a> class is used, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">WardID</span>
+<span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># Move all of the workers who live in Bristol and commute to Oxford</span>
+<span class="c1"># to become players who live in London</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="s2">&quot;Oxford&quot;</span><span class="p">),</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;London&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Often you want to identify all workers who reside in a ward, not just those
+that commute between two wards. To do this, you need to set
+<code class="docutils literal notranslate"><span class="pre">all_commute</span></code> to true, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">WardID</span>
+<span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># Move all of the workers who live in Bristol</span>
+<span class="c1"># to become players who live in London</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="n">all_commute</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                    <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;London&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This enables you to specify moves with a lot of detail, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Network</span><span class="p">,</span> <span class="n">Ward</span><span class="p">,</span> <span class="n">Network</span>
+<span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># create the Bristol, Oxford and London wards</span>
+<span class="n">bristol</span> <span class="o">=</span> <span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;Bristol&quot;</span><span class="p">)</span>
+<span class="n">london</span> <span class="o">=</span> <span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;London&quot;</span><span class="p">)</span>
+<span class="n">oxford</span> <span class="o">=</span> <span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;Oxford&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add the connections for commuters</span>
+<span class="n">bristol</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">london</span><span class="p">)</span>
+<span class="n">bristol</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">oxford</span><span class="p">)</span>
+<span class="n">london</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">bristol</span><span class="p">)</span>
+<span class="n">london</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">oxford</span><span class="p">)</span>
+
+<span class="c1"># build a network from these wards</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">Network</span><span class="o">.</span><span class="n">from_wards</span><span class="p">(</span><span class="n">bristol</span><span class="o">+</span><span class="n">london</span><span class="o">+</span><span class="n">oxford</span><span class="p">)</span>
+
+<span class="c1"># Move everyone who lives in Bristol from the red to blue demographic</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_wards</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;bristol&quot;</span><span class="p">,</span>
+                                 <span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;bristol&quot;</span><span class="p">,</span> <span class="n">all_commute</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span>
+                    <span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move only workers who live in Bristol from the red to blue demographic</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_wards</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;bristol&quot;</span><span class="p">,</span> <span class="n">all_commute</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+                    <span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move only workers who live in Bristol and commute to London</span>
+<span class="c1"># from the red to blue demographic</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_wards</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;bristol&quot;</span><span class="p">,</span> <span class="s2">&quot;london&quot;</span><span class="p">),</span>
+                    <span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move only workers who commute to London from red to blue</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_wards</span><span class="o">=</span><span class="p">[</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;bristol&quot;</span><span class="p">,</span> <span class="s2">&quot;london&quot;</span><span class="p">),</span>
+                                <span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;oxford&quot;</span><span class="p">,</span> <span class="s2">&quot;london&quot;</span><span class="p">)],</span>
+                    <span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move all workers who commute to Oxford to become players in Oxford</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_wards</span><span class="o">=</span><span class="p">[</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;bristol&quot;</span><span class="p">,</span> <span class="s2">&quot;oxford&quot;</span><span class="p">),</span>
+                                <span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;london&quot;</span><span class="p">,</span> <span class="s2">&quot;oxford&quot;</span><span class="p">)],</span>
+                    <span class="n">to_wards</span><span class="o">=</span><span class="s2">&quot;Oxford&quot;</span><span class="p">)</span>
+
+<span class="c1"># Move all players in Bristol to become workers who commute to London</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_wards</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span>
+                    <span class="n">to_wards</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="moving-a-number-or-fraction">
+<h2>Moving a number or fraction<a class="headerlink" href="#moving-a-number-or-fraction" title="Permalink to this headline">¶</a></h2>
+<p>You can also control how many individuals will be moved using either
+the <code class="docutils literal notranslate"><span class="pre">number</span></code> or <code class="docutils literal notranslate"><span class="pre">fraction</span></code> arguments. <code class="docutils literal notranslate"><span class="pre">number</span></code> specifies the
+maximum number of individuals in an individual ward or ward-link who can move.
+<code class="docutils literal notranslate"><span class="pre">fraction</span></code> specifies the fraction (percentage) of individuals from an
+individual ward or ward-link who can move. <code class="docutils literal notranslate"><span class="pre">fraction</span></code> should be
+between 0 and 1. If it is not 1, then the fraction of individuals
+are sampled according to the random binomial distribution. For example;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+
+<span class="c1"># move 50% of individuals from the red to blue demographics</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+                    <span class="n">fraction</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># move up to 10 individuals from each ward or ward-link from the</span>
+<span class="c1"># S stage to the E stage. If there are more than or equal to</span>
+<span class="c1"># 10 matching individuals, then all 10 will be moved. Else, only</span>
+<span class="c1"># the number who match will be moved.</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># move 25% of the maximum number of 10 players in Bristol to play in Oxford.</span>
+<span class="c1"># In this case, 25% of the up-to 10 individuals in Bristol will be sampled</span>
+<span class="c1"># using the binomial distribution.</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">,</span> <span class="n">to_ward</span><span class="o">=</span><span class="s2">&quot;Oxford&quot;</span><span class="p">,</span>
+                    <span class="n">number</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-go-ward">
+<h2>Using go_ward<a class="headerlink" href="#using-go-ward" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../../api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a> is used to generate the moves that
+are made by <a class="reference internal" href="../../api/generated/metawards.movers.go_ward.html#metawards.movers.go_ward" title="metawards.movers.go_ward"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_ward()</span></code></a>. This is a go_function that
+you can use in a move function. For example, let’s create now a
+custom go_function that will use <a class="reference internal" href="../../api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a>
+and <a class="reference internal" href="../../api/generated/metawards.movers.go_ward.html#metawards.movers.go_ward" title="metawards.movers.go_ward"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_ward()</span></code></a> to move individuals from the
+R stage back to S. This would imply that as soon as they have recovered,
+they are not immune and can be infected again.</p>
+<p>To do this, create a move function in a file called <code class="docutils literal notranslate"><span class="pre">move_cycle.py</span></code>
+and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span><span class="p">,</span> <span class="n">go_ward</span>
+
+
+<span class="k">def</span> <span class="nf">move_cycle</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="c1"># Create the go-function</span>
+    <span class="k">def</span> <span class="nf">go_cycle</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_stage</span><span class="o">=</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="n">to_stage</span><span class="o">=</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># Return this function to be called</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">go_cycle</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ve put go_cycle inside move_cycle as this is cleaner than
+having it as a function defined in global scope. This style will
+also be used in later pages in this tutorial as it will enable
+information to be passed between multiple go functions.</p>
+</div>
+<p>You can run this model using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --mover move_cycle -m single -d lurgy -a <span class="m">5</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we are using the original lurgy disease model and the single
+ward network for speed. We have seeded the outbreak with 5 infections.</p>
+</div>
+<p>You should see that the outbreak cycles forever (cutting off at the
+automatic 2-year - 720 day mark). The plot of <code class="docutils literal notranslate"><span class="pre">results.csv.bz2</span></code>
+(e.g. produced using <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code>) shows the outbreak becoming
+random noise once R individuals are moved back into S, e.g.</p>
+<img alt="Demographic trajectories for a cyclic model" src="../../_images/tutorial_9_1.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_vaccinate.html" class="btn btn-neutral float-right" title="Modelling vaccination" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index_part09.html" class="btn btn-neutral float-left" title="Part 9 - Advanced Moves and Scenarios" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

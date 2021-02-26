@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Understanding the Model Network &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Creating a Custom Network" href="02_custom_network.html" />
+    <link rel="prev" title="Part 8 - Creating your own models / networks" href="../index_part08.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Understanding the Model Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-single-node-network">The single-node network</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seeding-the-outbreak">Seeding the outbreak</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_custom_network.html">Creating a Custom Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_reticulate.html">Creating Networks in R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_using_custom.html">Using a Custom Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_local_network.html">Specifying ward-local parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_network_demographics.html">Different networks for different demographics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part08.html">Part 8 - Creating your own models / networks</a> &raquo;</li>
+        
+      <li>Understanding the Model Network</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02_custom_network.html" class="btn btn-neutral float-right" title="Creating a Custom Network" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../index_part08.html" class="btn btn-neutral float-left" title="Part 8 - Creating your own models / networks" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="understanding-the-model-network">
+<h1>Understanding the Model Network<a class="headerlink" href="#understanding-the-model-network" title="Permalink to this headline">¶</a></h1>
+<p>At its core, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> implements a meta-population model. Individuals
+are grouped into workers and players, and distributed across wards. The
+force of infection of a ward caused by infection of an individual, based on
+their movements and behaviour is calculated, and used to decide whether
+other individuals who reside or visit that ward should be infected.</p>
+<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> is the collection of
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Nodes" title="metawards.Nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nodes</span></code></a> and <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Links" title="metawards.Links"><code class="xref py py-class docutils literal notranslate"><span class="pre">Links</span></code></a> that describe
+the individual wards, and the movements between wards of their
+residents.</p>
+<p>Up to now, you have used a single underlying <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a>
+for every demographic and model run in this tutorial. This does not need
+to be the case, and you can choose to assign different
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> objects to different demographics in
+a simulation. You would do this, for example, to model different connections
+or movements between wards for different demographics, e.g. workers
+or school students. Or to use different networks to represent movements
+related to holidays or foreign travel.</p>
+<div class="section" id="the-single-node-network">
+<h2>The single-node network<a class="headerlink" href="#the-single-node-network" title="Permalink to this headline">¶</a></h2>
+<p>You can set the overall network used by default by all demographics via
+the <code class="docutils literal notranslate"><span class="pre">--model</span></code> or <code class="docutils literal notranslate"><span class="pre">-m</span></code> command-line argument. The default value
+is <code class="docutils literal notranslate"><span class="pre">2011Data</span></code>, which is based on 2011 census data, and models every
+electoral ward in England and Wales.</p>
+<p>There are two other models supplied;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2011UK</span></code> : Again, this is based on the 2011 census, but includes Scotland
+and Northern Ireland. This model is still a work in progress.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">single</span></code> : This is a single-ward network that is used for testing, or
+when you don’t want to model geographic behaviour.</p></li>
+</ul>
+<p>You can run a single-ward simulation using the command line;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy_home -m single -P <span class="m">100</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are using the <code class="docutils literal notranslate"><span class="pre">lurgy_home.json</span></code> file from the last chapter of this
+tutorial. Note that we also need to set the population of this single
+ward using the <code class="docutils literal notranslate"><span class="pre">-P</span></code> or <code class="docutils literal notranslate"><span class="pre">--population</span></code> command line argument. In this
+case, we are setting the population to 100 individuals.</p>
+</div>
+<p>When you run, you should see that <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is siginficantly faster.
+Also, as the outbreak is not seeded, nothing much happens.</p>
+</div>
+<div class="section" id="seeding-the-outbreak">
+<h2>Seeding the outbreak<a class="headerlink" href="#seeding-the-outbreak" title="Permalink to this headline">¶</a></h2>
+<p>Up to now, you have been using the <code class="docutils literal notranslate"><span class="pre">ExtraSeedsLondon.dat</span></code> file to seed
+every outbreak. This file contains the single line;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>       <span class="mi">5</span>   <span class="mi">255</span>
+</pre></div>
+</div>
+<p>The three numbers instruct <code class="docutils literal notranslate"><span class="pre">metawards</span></code> to seed the outbreak on day 1
+(the first number), infecting 5 individuals (the second number) in
+ward 255 (the third number).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The name of this file is misleading, as it is really seeding
+the ward with index 255, not seeding a ward in London. This will
+only be seeding London if the network this is used with has a
+ward in London at index 255.</p>
+</div>
+<p>If you try to seed using this file you will get an error, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy_home -m single -P <span class="m">100</span> -a ExtraSeedsLondon.dat
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ERROR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Unable to seed the infection using (1, 255, 5, None). The error was &lt;class &#39;IndexError&#39;&gt;: Invalid node index
+255. Number of nodes in this container equals 2. Please double-check that you are trying to seed a node that
+exists in this network.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Traceback (most recent call last):
+
+[lots of output]
+
+IndexError: Invalid node index 255. Number of nodes in this container equals 2
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The traceback can be long and complex, and is really only of use for <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+developers. You can normally work out what has gone wrong by scrolling up
+to before the traceback, and seeing if there is a <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> printed immediately
+before.</p>
+</div>
+<p>We have provided an <code class="docutils literal notranslate"><span class="pre">ExtraSeedsOne.dat</span></code> file, which seeds 5 infections
+in ward 1 on the first day of the outbreak. This contains the line;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>       <span class="mi">5</span>        <span class="mi">1</span>
+</pre></div>
+</div>
+<p>which says to seed 5 individuals on the first day in ward 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nodes are indexed from 1 rather than 0. This means that <code class="docutils literal notranslate"><span class="pre">ward[1]</span></code>
+is the first node, and <code class="docutils literal notranslate"><span class="pre">ward[nnodes]</span></code> is the last node in the
+network.</p>
+</div>
+<p>You can use this with single-ward networks, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy_home -m single -P <span class="m">100</span> -a ExtraSeedsOne.dat
+</pre></div>
+</div>
+<p>However, creating a file to seed an outbreak is inconvenient, particularly
+when you only want to seed a single ward. You can, optionally, pass
+the seeding information as the argument, instead of the filename. Thus
+this will work;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy_home -m single -P <span class="m">100</span> -a <span class="s2">&quot;1 5 1&quot;</span>
+</pre></div>
+</div>
+<p>Equally, you can seed on multiple days, e.g. seeding 5 individuals on day 1,
+and then 10 individuals on day 2, via;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy_home -m single -P <span class="m">100</span> -a <span class="s2">&quot;1 5 1\n2 10 1&quot;</span>
+</pre></div>
+</div>
+<p>The contents of the string is interpreted identically to if it had been
+read from a file, with <code class="docutils literal notranslate"><span class="pre">\n</span></code> representing a newline character.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The extra seeds file has a flexible and powerful format, e.g. supporting
+seeding by date, seeding random wards or by random amounts etc.
+More information on the format of this file can
+be <a class="reference internal" href="../../fileformats/extraseeds.html"><span class="doc">found here</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_custom_network.html" class="btn btn-neutral float-right" title="Creating a Custom Network" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index_part08.html" class="btn btn-neutral float-left" title="Part 8 - Creating your own models / networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on Feb 26, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
