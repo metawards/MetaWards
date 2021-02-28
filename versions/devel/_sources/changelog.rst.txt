@@ -2,6 +2,16 @@
 Changelog
 =========
 
+`1.5.1 <https://github.com/metawards/MetaWards/compare/1.5.0...1.5.1>`__ - February 26th 2021
+--------------------------------------------------------------------------------------------
+* Fixed a bug in the new :func:`~metawards.mixers.merge_matrix_multi_population`
+  function that caused it to calculate incorrect values when one or more
+  of the demographics had zero members (it didn't catch this divide by
+  zero case). This led to too-high FOIs which produced meaningless results.
+* Updated the setup.cfg to correctly state that MetaWards supports
+  Python 3.9
+* Updated sphinx to the latest version
+
 `1.5.0 <https://github.com/metawards/MetaWards/compare/1.4.1...1.5.0>`__ - February 9th 2021
 --------------------------------------------------------------------------------------------
 
