@@ -289,7 +289,7 @@ should be deleted. This defaults to <a class="reference internal" href="../index
 to None if you <em>really</em> want MetaWards to remove files
 silently (e.g. useful if you are running batch jobs
 on a cluster and you really know what you are doing)</p></li>
-<li><p><strong>auto_bzip</strong> (<em>bool</em>) – The default flag for <a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> when opening files. If
+<li><p><strong>auto_bzip</strong> (<em>bool</em>) – The default flag for <a class="reference internal" href="#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> when opening files. If
 this is true then all files will be automatically bzipped
 (compressed) as they are written, unless the code opening
 the file has explicitly asked otherwise</p></li>
@@ -335,7 +335,7 @@ the file has explicitly asked otherwise</p></li>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code>()</p></td>
 <td><p>Return hash(self).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.__init__" title="metawards.OutputFiles.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([output_dir, check_empty, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="metawards.OutputFiles.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([output_dir, check_empty, …])</p></td>
 <td><p>Construct a set of OutputFiles.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init_subclass__</span></code></p></td>
@@ -380,43 +380,43 @@ the file has explicitly asked otherwise</p></li>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_open_dir</span></code>()</p></td>
 <td><p>Internal function used to open the directory in which all output files will be placed</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a>()</p></td>
 <td><p>Return whether the default is to automatically bzip2 files</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.close" title="metawards.OutputFiles.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.OutputFiles.close" title="metawards.OutputFiles.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
 <td><p>Close all of the files and this directory</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.flush" title="metawards.OutputFiles.flush"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flush</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.flush" title="metawards.OutputFiles.flush"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flush</span></code></a>()</p></td>
 <td><p>Flush the contents of all files to disk</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.get_filename" title="metawards.OutputFiles.get_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_filename</span></code></a>(filename)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.OutputFiles.get_filename" title="metawards.OutputFiles.get_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_filename</span></code></a>(filename)</p></td>
 <td><p>Return the full expanded filename for ‘filename’</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.get_path" title="metawards.OutputFiles.get_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_path</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.get_path" title="metawards.OutputFiles.get_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_path</span></code></a>()</p></td>
 <td><p>Return the full expanded path to this directory</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.is_closed" title="metawards.OutputFiles.is_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_closed</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.OutputFiles.is_closed" title="metawards.OutputFiles.is_closed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_closed</span></code></a>()</p></td>
 <td><p>Return whether or not the output files are closed</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.is_database" title="metawards.OutputFiles.is_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_database</span></code></a>(filename)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.is_database" title="metawards.OutputFiles.is_database"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_database</span></code></a>(filename)</p></td>
 <td><p>Return whether or not ‘filename’ is an open database</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.is_open" title="metawards.OutputFiles.is_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_open</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.OutputFiles.is_open" title="metawards.OutputFiles.is_open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_open</span></code></a>()</p></td>
 <td><p>Return whether or not the output files are open</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.open" title="metawards.OutputFiles.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(filename[, auto_bzip, mode, headers, sep])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.open" title="metawards.OutputFiles.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(filename[, auto_bzip, mode, headers, sep])</p></td>
 <td><p>Open the file called ‘filename’ in the output directory, returning a handle to that file.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_db</span></code></a>(filename[, auto_bzip, initialise])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_db</span></code></a>(filename[, auto_bzip, initialise])</p></td>
 <td><p>Open up a SQLite3 database connection to a file called</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.open_subdir" title="metawards.OutputFiles.open_subdir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_subdir</span></code></a>(dirname)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.open_subdir" title="metawards.OutputFiles.open_subdir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open_subdir</span></code></a>(dirname)</p></td>
 <td><p>Create and open a sub-directory in this OutputFiles called ‘dirname’.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.output_dir" title="metawards.OutputFiles.output_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_dir</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.OutputFiles.output_dir" title="metawards.OutputFiles.output_dir"><code class="xref py py-obj docutils literal notranslate"><span class="pre">output_dir</span></code></a>()</p></td>
 <td><p>Return the absolute path of the directory to which the output files will be written</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.remove" title="metawards.OutputFiles.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(path[, prompt])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.OutputFiles.remove" title="metawards.OutputFiles.remove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove</span></code></a>(path[, prompt])</p></td>
 <td><p>Remove the passed filename or directory</p></td>
 </tr>
 </tbody>
@@ -469,7 +469,7 @@ should be deleted. This defaults to <a class="reference internal" href="../index
 to None if you <em>really</em> want MetaWards to remove files
 silently (e.g. useful if you are running batch jobs
 on a cluster and you really know what you are doing)</p></li>
-<li><p><strong>auto_bzip</strong> (<em>bool</em>) – The default flag for <a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> when opening files. If
+<li><p><strong>auto_bzip</strong> (<em>bool</em>) – The default flag for <a class="reference internal" href="#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> when opening files. If
 this is true then all files will be automatically bzipped
 (compressed) as they are written, unless the code opening
 the file has explicitly asked otherwise</p></li>
@@ -546,7 +546,7 @@ compressed as it is written. The filename will have
 ‘.bz2’ automatically appended so that this is clear.
 If this is False then the file will be written uncompressed.
 If ‘None’ is passed (the default) then the value of
-<a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> that was passed to the constructor of
+<a class="reference internal" href="#metawards.OutputFiles.auto_bzip" title="metawards.OutputFiles.auto_bzip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auto_bzip</span></code></a> that was passed to the constructor of
 this OutputFiles will be used. Note that this flag is
 ignored if the file is already open.</p></li>
 <li><p><strong>mode</strong> (<em>str</em>) – The mode of opening the file, e.g. ‘t’ for text mode, and
@@ -617,7 +617,7 @@ e.g. check_empty, auto_bzip etc from this OutputFiles</p>
 <dd class="field-even"><p><strong>subdir</strong> – The open subdirectory</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles">OutputFiles</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#metawards.OutputFiles" title="metawards.OutputFiles">OutputFiles</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -662,7 +662,7 @@ the output files will be written</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 28, 2021.
+        Last updated on May 05, 2021.
       </span>
 
     </p>

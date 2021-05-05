@@ -243,17 +243,17 @@ the evening, and <em>players</em>, who just made random interactions within
 their home ward.</p>
 <div class="section" id="understanding-network">
 <h2>Understanding Network<a class="headerlink" href="#understanding-network" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> class models this network of <em>workers</em> and
-<em>players</em>. It holds a set of <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Nodes" title="metawards.Nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nodes</span></code></a> that represent each
-electoral ward, and a set of <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Links" title="metawards.Links"><code class="xref py py-class docutils literal notranslate"><span class="pre">Links</span></code></a> that represent the
+<p>The <a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> class models this network of <em>workers</em> and
+<em>players</em>. It holds a set of <a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes" title="metawards.Nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">Nodes</span></code></a> that represent each
+electoral ward, and a set of <a class="reference internal" href="../../api/generated/metawards.Links.html#metawards.Links" title="metawards.Links"><code class="xref py py-class docutils literal notranslate"><span class="pre">Links</span></code></a> that represent the
 fixed motions between wards made by the “workers”.</p>
-<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Node" title="metawards.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> class holds the number of <em>players</em> who
+<p>The <a class="reference internal" href="../../api/generated/metawards.Node.html#metawards.Node" title="metawards.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> class holds the number of <em>players</em> who
 are susceptible to infection (S). This is held in the variable
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Node.play_suscept" title="metawards.Node.play_suscept"><code class="xref py py-data docutils literal notranslate"><span class="pre">metawards.Node.play_suscept</span></code></a>.</p>
-<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Link" title="metawards.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a> class contains the number of <em>workers</em> who are
+<a class="reference internal" href="../../api/generated/metawards.Node.html#metawards.Node.play_suscept" title="metawards.Node.play_suscept"><code class="xref py py-data docutils literal notranslate"><span class="pre">metawards.Node.play_suscept</span></code></a>.</p>
+<p>The <a class="reference internal" href="../../api/generated/metawards.Link.html#metawards.Link" title="metawards.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a> class contains the number of <em>workers</em> who are
 susceptible to infection (S) who travel regularly between their
 “home” ward and their “work” ward. This is held in the
-variable <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Link.suscept" title="metawards.Link.suscept"><code class="xref py py-data docutils literal notranslate"><span class="pre">metawards.Link.suscept</span></code></a>.</p>
+variable <a class="reference internal" href="../../api/generated/metawards.Link.html#metawards.Link.suscept" title="metawards.Link.suscept"><code class="xref py py-data docutils literal notranslate"><span class="pre">metawards.Link.suscept</span></code></a>.</p>
 <p>During a <em>model run</em> these values will be reduced as individuals are
 infected and then progressed through the different disease stages.</p>
 <div class="admonition note">
@@ -268,10 +268,10 @@ for calculations during a <em>model run</em>.</p>
 <h2>Understanding Networks<a class="headerlink" href="#understanding-networks" title="Permalink to this headline">¶</a></h2>
 <p>To model multiple demographics, we need to create space for multiple different
 sets of <em>workers</em> and <em>players</em>. This is achieved in <code class="docutils literal notranslate"><span class="pre">metawards</span></code> by
-giving each demographic its own <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a>. All of these
+giving each demographic its own <a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a>. All of these
 demographic sub-networks are merged and managed via the
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> class.</p>
-<p>We create a <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> object by first specifying the way
+<a class="reference internal" href="../../api/generated/metawards.Networks.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> class.</p>
+<p>We create a <a class="reference internal" href="../../api/generated/metawards.Networks.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> object by first specifying the way
 we would like to distribute the population between different demographics.
 We do this by writing a <em>demographics</em> file, which is a simple
 <a class="reference external" href="https://guide.couchdb.org/draft/json.html">JSON-format</a>
@@ -299,7 +299,7 @@ that should belong to each demographic. For example, here 50% of the
 <p class="admonition-title">Note</p>
 <p>You can specify the work and play ratios using either numbers between
 0.0 and 1.0, or you can pass in strings that are interpreted using
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Interpret.number" title="metawards.Interpret.number"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.Interpret.number()</span></code></a>, e.g. “50%”, “1/4” or
+<a class="reference internal" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.number" title="metawards.Interpret.number"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.Interpret.number()</span></code></a>, e.g. “50%”, “1/4” or
 “(10+15)%”. The only requirement is that the sum of ratios must
 equal 1.0 (or 100%), as every individual must be assigned to one
 of the demographics.</p>
@@ -334,8 +334,8 @@ blue - population: 39275547
 </pre></div>
 </div>
 <p>These show that your demographics file was read correctly. In this case,
-this has specialised the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> which modelled a
-population of 56082077 individuals into a <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a>
+this has specialised the <a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> which modelled a
+population of 56082077 individuals into a <a class="reference internal" href="../../api/generated/metawards.Networks.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a>
 which has a <em>red</em> population of 16806530 and a <em>blue</em> population of
 39275547.</p>
 <div class="admonition warning">
@@ -345,13 +345,13 @@ to a random demographic. For example, 10 individuals cannot be divided
 equally between 3 demographics, so one randomly chosen demographic
 will have 4 individuals, while the other two will have 3. This
 division is performed by <code class="docutils literal notranslate"><span class="pre">metawards</span></code> in every single
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Node" title="metawards.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> and every single <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Link" title="metawards.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a>,
+<a class="reference internal" href="../../api/generated/metawards.Node.html#metawards.Node" title="metawards.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> and every single <a class="reference internal" href="../../api/generated/metawards.Link.html#metawards.Link" title="metawards.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a>,
 to ensure that every individual is allocated. This random seed is
 hard-coded to <code class="docutils literal notranslate"><span class="pre">4751828</span></code>. Or, you can set it for a demographic
 by adding <code class="docutils literal notranslate"><span class="pre">&quot;random_seed&quot;</span> <span class="pre">=</span> <span class="pre">number</span></code> to the <em>demographics</em> file,
 e.g. <code class="docutils literal notranslate"><span class="pre">&quot;random_seed&quot;</span> <span class="pre">=</span> <span class="pre">10859403</span></code>.</p>
 </div>
-<p>Once the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> had been specialised, the <em>model run</em>
+<p>Once the <a class="reference internal" href="../../api/generated/metawards.Networks.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> had been specialised, the <em>model run</em>
 was performed as before. Now, the output shows the S, E, I, R values
 for both the overall total population, and also for the demographic
 sub-network populations, e.g.</p>
@@ -503,7 +503,7 @@ demographic were infected.</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 28, 2021.
+        Last updated on May 05, 2021.
       </span>
 
     </p>

@@ -312,25 +312,25 @@ are occuring during the outbreak</p>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_set_stage_mapping</span></code>(disease_params, …)</p></td>
 <td><p>Get the mapping from the disease stages for this sub-network (from disease_params) to the disease stages for the overall network (in overall_params)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.aggregate" title="metawards.Infections.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a>([profiler, nthreads])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.aggregate" title="metawards.Infections.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a>([profiler, nthreads])</p></td>
 <td><p>Aggregate all of the infection data from the demographic sub-networks</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.build" title="metawards.Infections.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>([network, overall])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.build" title="metawards.Infections.build"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build</span></code></a>([network, overall])</p></td>
 <td><p>Construct and return the Infections object that will track infections during a model run on the passed Network (or Networks)</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.clear" title="metawards.Infections.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>([nthreads])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.clear" title="metawards.Infections.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a>([nthreads])</p></td>
 <td><p>Clear all of the infections (resets all to zero)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.get_stage_mapping" title="metawards.Infections.get_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stage_mapping</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.get_stage_mapping" title="metawards.Infections.get_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stage_mapping</span></code></a>()</p></td>
 <td><p>Return the mapping from disease stages in this sub-network to disease stages in the overall network.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.get_work_index" title="metawards.Infections.get_work_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_work_index</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.get_work_index" title="metawards.Infections.get_work_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_work_index</span></code></a>()</p></td>
 <td><p>Return the mapping from the index in this sub-networks work matrix to the mapping in the overall network’s work matrix</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.has_different_stage_mapping" title="metawards.Infections.has_different_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_stage_mapping</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.has_different_stage_mapping" title="metawards.Infections.has_different_stage_mapping"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_stage_mapping</span></code></a>()</p></td>
 <td><p>Return whether or not the sub-network disease stages are different to that of the overall network, and must thus be mapped</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.has_different_work_matrix" title="metawards.Infections.has_different_work_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_work_matrix</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.has_different_work_matrix" title="metawards.Infections.has_different_work_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_different_work_matrix</span></code></a>()</p></td>
 <td><p>Return whether or not the sub-network work matrix is different to that of the overall network</p></td>
 </tr>
 </tbody>
@@ -342,7 +342,7 @@ are occuring during the outbreak</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.N_INF_CLASSES" title="metawards.Infections.N_INF_CLASSES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">N_INF_CLASSES</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.N_INF_CLASSES" title="metawards.Infections.N_INF_CLASSES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">N_INF_CLASSES</span></code></a></p></td>
 <td><p>The total number of stages in the disease</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dataclass_fields__</span></code></p></td>
@@ -372,22 +372,22 @@ are occuring during the outbreak</p>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_work_index</span></code></p></td>
 <td><p>The index in the overall network’s work matrix of the ith index in this subnetworks work matrix.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.nlinks" title="metawards.Infections.nlinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlinks</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.nlinks" title="metawards.Infections.nlinks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlinks</span></code></a></p></td>
 <td><p>Return the number of work links</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.nnodes" title="metawards.Infections.nnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nnodes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.nnodes" title="metawards.Infections.nnodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nnodes</span></code></a></p></td>
 <td><p>The total number of nodes (wards)</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.nsubnets" title="metawards.Infections.nsubnets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsubnets</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.nsubnets" title="metawards.Infections.nsubnets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsubnets</span></code></a></p></td>
 <td><p>Return the number of demographic subnetworks</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.play" title="metawards.Infections.play"><code class="xref py py-obj docutils literal notranslate"><span class="pre">play</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.play" title="metawards.Infections.play"><code class="xref py py-obj docutils literal notranslate"><span class="pre">play</span></code></a></p></td>
 <td><p>The infections caused by random (play) movements.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.subinfs" title="metawards.Infections.subinfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subinfs</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Infections.subinfs" title="metawards.Infections.subinfs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subinfs</span></code></a></p></td>
 <td><p>The infections for the multi-demographic subnets</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections.work" title="metawards.Infections.work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">work</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Infections.work" title="metawards.Infections.work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">work</span></code></a></p></td>
 <td><p>The infections caused by fixed (work) movements.</p></td>
 </tr>
 </tbody>
@@ -406,7 +406,7 @@ sub-networks</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – Network that was used to initialise these infections</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – Network that was used to initialise these infections</p></li>
 <li><p><strong>profiler</strong> (<a class="reference internal" href="metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils.Profiler"><em>Profiler</em></a><em>, </em><em>optional</em>) – Profiler used to profile the calculation, by default None</p></li>
 <li><p><strong>nthreads</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of threads to use, by default 1</p></li>
 </ul>
@@ -422,8 +422,8 @@ infections during a model run on the passed Network (or Networks)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>network</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="../index_api_MetaWards.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network or networks that will be run</p></li>
-<li><p><strong>overall</strong> (<a class="reference internal" href="../index_api_MetaWards.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – The overall network to which this subnet belongs</p></li>
+<li><p><strong>network</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a><em> or </em><a class="reference internal" href="metawards.Networks.html#metawards.Networks" title="metawards.Networks"><em>Networks</em></a>) – The network or networks that will be run</p></li>
+<li><p><strong>overall</strong> (<a class="reference internal" href="metawards.Network.html#metawards.Network" title="metawards.Network"><em>Network</em></a>) – The overall network to which this subnet belongs</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -431,7 +431,7 @@ infections during a model run on the passed Network (or Networks)</p>
 (including space for all of the demographics)</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Infections" title="metawards.Infections">Infections</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#metawards.Infections" title="metawards.Infections">Infections</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -536,7 +536,7 @@ of int arrays, size work[N_INF_CLASSES][nlinks+1]</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 28, 2021.
+        Last updated on May 05, 2021.
       </span>
 
     </p>

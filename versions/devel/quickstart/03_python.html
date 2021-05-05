@@ -228,7 +228,7 @@
             
   <div class="section" id="multiple-pathways-with-python">
 <h1>Multiple pathways with Python<a class="headerlink" href="#multiple-pathways-with-python" title="Permalink to this headline">¶</a></h1>
-<p>MetaWards uses <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Demographics</span></code></a> to model different groups
+<p>MetaWards uses <a class="reference internal" href="../api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Demographics</span></code></a> to model different groups
 of individuals in different ways. Individuals can move between
 different demographics, and different demographics can experience
 different disease models and move within different networks. This
@@ -299,9 +299,9 @@ who stay at home, and workers who go to work.</p>
 <div class="section" id="creating-the-demographics">
 <h2>Creating the demographics<a class="headerlink" href="#creating-the-demographics" title="Permalink to this headline">¶</a></h2>
 <p>Next, we create the demographics. We do this by creating
-<a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Demographic" title="metawards.Demographic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographic</span></code></a> objects for each demographic that
+<a class="reference internal" href="../api/generated/metawards.Demographic.html#metawards.Demographic" title="metawards.Demographic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographic</span></code></a> objects for each demographic that
 specify the network and disease to use for each group. These are then
-combined into a single <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a> object.</p>
+combined into a single <a class="reference internal" href="../api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a> object.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">students</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;students&quot;</span><span class="p">,</span>
 <span class="go">                              disease=&quot;mild_lurgy.json.bz2&quot;,</span>
 <span class="go">                              network=&quot;students.json.bz2&quot;)</span>
@@ -463,7 +463,7 @@ to model conditional branching, please do now follow the
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 28, 2021.
+        Last updated on May 05, 2021.
       </span>
 
     </p>

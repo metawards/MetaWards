@@ -245,7 +245,7 @@ destinations.</p>
 <p>We can model this by making use of the background force of infection
 (<code class="docutils literal notranslate"><span class="pre">bg_foi</span></code>) parameter. This can be set on a per-ward basis via
 <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Ward.bg_foi" title="metawards.Ward.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Ward.bg_foi</span></code></a>, or globally for a
-network via the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a>
+network via the <a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a>
 parameters.</p>
 <p>The background FOI is the starting value for the FOI calculation in each
 ward. If this is positive, then this implies that the ward has a background
@@ -255,7 +255,7 @@ that the ward has a background mitigation that reduces the FOI by a
 fixed amount regardless of the number of infected individuals (subject
 to the FOI not dropping below zero).</p>
 <p>It is a constant that is added to the FOI for each ward. The global
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> is added first
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> is added first
 to all wards, and then the per-ward
 <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Ward.bg_foi" title="metawards.Ward.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Ward.bg_foi</span></code></a> is added for each ward.</p>
 </div>
@@ -327,20 +327,20 @@ e.g. in Python;</p>
 of the network. <code class="docutils literal notranslate"><span class="pre">holiday</span></code> is created as an empty network.</p>
 <p><code class="docutils literal notranslate"><span class="pre">holiday</span></code> has its parameters adjusted according to;</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.scale_uv" title="metawards.Parameters.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span></code></a> is set to
+<li><p><a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.scale_uv" title="metawards.Parameters.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span></code></a> is set to
 zero. This stops members of the <code class="docutils literal notranslate"><span class="pre">holiday</span></code> demographic from infecting
 each other. They will only experince the force of infection as set
 by the background FOI. This is realistic, as holidaymakers are unlikely
 to travel together in large groups, and so are unlikely to infect
 one another. This of course could be changed by setting scale_uv
 to a value above zero.</p></li>
-<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a> is
+<li><p><a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a> is
 also set to zero. This stops holidaymakers from travelling outside
 their ward. This is because this is because they are not really in
 their home ward - it is used just as a marker so we can remember which
 ward they came from so that they can return their at the end of their
 holiday.</p></li>
-<li><p><a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> is set to 0.05.
+<li><p><a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> is set to 0.05.
 This is a reasonable starting value for the FOI, which will drive
 a small outbreak infecting ~0.2% of susceptibles per day.</p></li>
 </ul>
@@ -580,11 +580,11 @@ do this in python by typing;</p>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">qurantine</span></code> demographic has both
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.scale_uv" title="metawards.Parameters.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span></code></a> and
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.scale_uv" title="metawards.Parameters.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>
 as zero, just like the holiday demographic, because holidaymakers
 should be self-isolating and thus not infecting one another. The
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> parameter is
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> parameter is
 not set, meaning that it keeps its default value of zero, meaning that
 there is no background driver for more infections.</p>
 </div>
@@ -701,7 +701,7 @@ developer documentation for the <a class="reference internal" href="../../api/in
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 28, 2021.
+        Last updated on May 05, 2021.
       </span>
 
     </p>
