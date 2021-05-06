@@ -246,6 +246,17 @@
     <span class="k">if</span> <span class="n">njobs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">njobs</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
+    <span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">is_openmp_supported</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_openmp_supported</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">nthreads</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Cannot use more than one thread as &quot;</span>
+                            <span class="s2">&quot;this MetaWards executable has been &quot;</span>
+                            <span class="s2">&quot;compiled without OpenMP support&quot;</span><span class="p">)</span>
+
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+
     <span class="k">if</span> <span class="n">parallel_scheme</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">parallel_scheme</span> <span class="o">=</span> <span class="s2">&quot;multiprocessing&quot;</span>
 
@@ -266,13 +277,13 @@
 
         <span class="k">if</span> <span class="n">njobs</span> <span class="o">&gt;=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">ncores</span><span class="p">:</span>   <span class="c1"># not worth going parallel for &lt;80%</span>
             <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">nprocs</span> <span class="o">=</span> <span class="n">ncores</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ncores</span><span class="p">,</span> <span class="n">njobs</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="kn">import</span> <span class="nn">math</span>
             <span class="n">nthreads</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">njobs</span><span class="p">))</span>
             <span class="k">if</span> <span class="n">nthreads</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">nprocs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">nthreads</span><span class="p">))</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">njobs</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">nthreads</span><span class="p">)))</span>
             <span class="k">if</span> <span class="n">nprocs</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="n">nprocs</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">nthreads</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
@@ -284,8 +295,8 @@
     <span class="k">elif</span> <span class="n">nprocs</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="kn">import</span> <span class="nn">math</span>
         <span class="n">max_nprocs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">nthreads</span><span class="p">))</span>
-        <span class="k">if</span> <span class="n">max_nprocs</span> <span class="o">&lt;</span> <span class="n">njobs</span><span class="p">:</span>
-            <span class="n">nprocs</span> <span class="o">=</span> <span class="n">max_nprocs</span>
+        <span class="k">if</span> <span class="n">max_nprocs</span> <span class="o">&gt;</span> <span class="n">njobs</span><span class="p">:</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="n">njobs</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">nprocs</span> <span class="o">=</span> <span class="n">max_nprocs</span>
 
@@ -296,6 +307,11 @@
     <span class="sd">&quot;&quot;&quot;Return the maximum number of threads that are recommended</span>
 <span class="sd">       for this computer (the OMP_NUM_THREADS value)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">._check_openmp</span> <span class="kn">import</span> <span class="n">is_openmp_supported</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_openmp_supported</span><span class="p">():</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
     <span class="kn">import</span> <span class="nn">os</span>
 
     <span class="c1"># try OMP_NUM_THREADS as this is the accepted way to</span>
@@ -358,7 +374,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 05, 2021.
+        Last updated on May 06, 2021.
       </span>
 
     </p>

@@ -591,6 +591,11 @@
 
 
 <div class="viewcode-block" id="get_threads_per_task"><a class="viewcode-back" href="../../../api/generated/metawards.app.get_threads_per_task.html#metawards.app.get_threads_per_task">[docs]</a><span class="k">def</span> <span class="nf">get_threads_per_task</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">.utils._check_openmp</span> <span class="kn">import</span> <span class="n">is_openmp_supported</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_openmp_supported</span><span class="p">():</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">nthreads</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">args</span><span class="o">.</span><span class="n">nthreads</span>
 
@@ -1499,7 +1504,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 05, 2021.
+        Last updated on May 06, 2021.
       </span>
 
     </p>
