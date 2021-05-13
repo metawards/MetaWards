@@ -367,23 +367,28 @@
     <span class="kn">import</span> <span class="nn">tempfile</span>
     <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
 
-    <span class="c1"># look for the windows-named executable first...</span>
-    <span class="n">metawards</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">),</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">)</span>
+    <span class="n">metawards</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">dirpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">))</span>
 
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">metawards</span><span class="p">):</span>
-        <span class="n">metawards</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">),</span> <span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">),</span>
+                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">),</span>
+                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">),</span>
+                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">)]:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">option</span><span class="p">):</span>
+            <span class="n">metawards</span> <span class="o">=</span> <span class="n">option</span>
+            <span class="k">break</span>
 
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">metawards</span><span class="p">):</span>
-            <span class="c1"># last attempt - is &#39;metawards&#39; in the PATH?</span>
-            <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">which</span>
-            <span class="n">exe</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">metawards</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># last attempt - is &#39;metawards&#39; in the PATH?</span>
+        <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">which</span>
+        <span class="n">exe</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
             
-            <span class="k">if</span> <span class="n">exe</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot;Cannot find the metawards executable: </span><span class="si">{</span><span class="n">metawards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">metawards</span> <span class="o">=</span> <span class="n">exe</span>
+        <span class="k">if</span> <span class="n">exe</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Cannot find the metawards executable in </span><span class="si">{</span><span class="n">dirpath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">metawards</span> <span class="o">=</span> <span class="n">exe</span>
 
     <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -664,8 +669,13 @@
                     <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
                         <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
                         <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-
+                
                 <span class="n">return_val</span> <span class="o">=</span> <span class="n">PROC</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">return_val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="c1"># get None if everything OK on Windows</span>
+                    <span class="n">return_val</span> <span class="o">=</span> <span class="mi">0</span>
+
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[ERROR] </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="n">return_val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>

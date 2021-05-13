@@ -303,7 +303,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">nprocs</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="get_available_num_threads"><a class="viewcode-back" href="../../../api/generated/metawards.utils.get_available_num_threads.html#metawards.utils.get_available_num_threads">[docs]</a><span class="k">def</span> <span class="nf">get_available_num_threads</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">get_available_num_threads</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Return the maximum number of threads that are recommended</span>
 <span class="sd">       for this computer (the OMP_NUM_THREADS value)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -325,10 +325,10 @@
             <span class="k">pass</span>
 
     <span class="c1"># ok, get this from &#39;os&#39;</span>
-    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span></div>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">create_thread_generators</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">):</span>
+<div class="viewcode-block" id="create_thread_generators"><a class="viewcode-back" href="../../../api/generated/metawards.utils.create_thread_generators.html#metawards.utils.create_thread_generators">[docs]</a><span class="k">def</span> <span class="nf">create_thread_generators</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Return a set of random number generators, one for each</span>
 <span class="sd">       thread - these are seeded using the next &#39;nthreads&#39;</span>
 <span class="sd">       random numbers drawn from the passed generator</span>
@@ -361,7 +361,7 @@
         <span class="c1"># Use unsigned long long (&quot;Q&quot;) on Windows since it has a 32-bit long.</span>
         <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">,</span> <span class="n">rngs</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">rngs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">rngs</span><span class="p">)</span></div>
 </pre></div>
 
            </div>
