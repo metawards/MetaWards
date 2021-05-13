@@ -367,11 +367,23 @@
     <span class="kn">import</span> <span class="nn">tempfile</span>
     <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
 
-    <span class="n">metawards</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">),</span> <span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+    <span class="c1"># look for the windows-named executable first...</span>
+    <span class="n">metawards</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">),</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">metawards</span><span class="p">):</span>
-        <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot find the metawards executable: </span><span class="si">{</span><span class="n">metawards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">metawards</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">),</span> <span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">metawards</span><span class="p">):</span>
+            <span class="c1"># last attempt - is &#39;metawards&#39; in the PATH?</span>
+            <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">which</span>
+            <span class="n">exe</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">exe</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Cannot find the metawards executable: </span><span class="si">{</span><span class="n">metawards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">metawards</span> <span class="o">=</span> <span class="n">exe</span>
 
     <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -631,10 +643,16 @@
             <span class="n">Console</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing output to directory </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
         <span class="k">try</span><span class="p">:</span>
-            <span class="kn">import</span> <span class="nn">shlex</span>
+            <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;win&quot;</span><span class="p">):</span>
+                <span class="c1">#shlex.split doesn&#39;t work, but the command can </span>
+                <span class="c1">#be passed as a single string</span>
+                <span class="n">args</span> <span class="o">=</span> <span class="n">cmd</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">shlex</span>
+                <span class="n">args</span> <span class="o">=</span> <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+    
             <span class="kn">import</span> <span class="nn">subprocess</span>
-            <span class="n">args</span> <span class="o">=</span> <span class="n">shlex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
-            <span class="k">with</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">stdin</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span>
+            <span class="k">with</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">args</span><span class="p">,</span>
                                   <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>
                                   <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">bufsize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
                                   <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">PROC</span><span class="p">:</span>
@@ -678,7 +696,7 @@
             <span class="k">try</span><span class="p">:</span>
                 <span class="kn">import</span> <span class="nn">pandas</span>
                 <span class="n">auto_load</span> <span class="o">=</span> <span class="kc">True</span>
-            <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
                 <span class="n">auto_load</span> <span class="o">=</span> <span class="kc">False</span>
 
         <span class="k">if</span> <span class="n">auto_load</span><span class="p">:</span>
@@ -687,8 +705,10 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">results</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="n">output_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="s2">&quot;console.log.bz2&quot;</span><span class="p">)</span>
+
         <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Something went wrong with the run. Please look &quot;</span>
-                      <span class="sa">f</span><span class="s2">&quot;at </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">/console.log.bz2 for more information&quot;</span><span class="p">)</span>
+                      <span class="sa">f</span><span class="s2">&quot;at </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2"> for more information&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span></div>
 </pre></div>
 
@@ -702,7 +722,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 06, 2021.
+        Last updated on May 13, 2021.
       </span>
 
     </p>

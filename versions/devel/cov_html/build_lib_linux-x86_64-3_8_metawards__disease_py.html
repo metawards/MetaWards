@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for build/lib.linux-x86_64-3.8/metawards/_disease.py: 78.45%</title>
+    <title>Coverage for build/lib.linux-x86_64-3.8/metawards/_disease.py: 79.97%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,15 +18,15 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>build/lib.linux-x86_64-3.8/metawards/_disease.py</b> :
-            <span class="pc_cov">78.45%</span>
+            <span class="pc_cov">79.97%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             433 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">351 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">82 missing</button>
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">358 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">75 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
-            <button type="button" class="par run show_par shortkey_p button_toggle_par" title="Toggle lines partially run">54 partial</button>
+            <button type="button" class="par run show_par shortkey_p button_toggle_par" title="Toggle lines partially run">53 partial</button>
         </h2>
     </div>
 </div>
@@ -962,16 +962,16 @@
     <p id="t907" class="pln"><span class="n"><a href="#t907">907</a></span><span class="t"><span class="str">        """</span>&nbsp;</span><span class="r"></span></p>
     <p id="t908" class="run"><span class="n"><a href="#t908">908</a></span><span class="t">        <span class="key">import</span> <span class="nam">json</span>&nbsp;</span><span class="r"></span></p>
     <p id="t909" class="pln"><span class="n"><a href="#t909">909</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t910" class="par run show_par"><span class="n"><a href="#t910">910</a></span><span class="t">        <span class="key">if</span> <span class="nam">indent</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">910&#x202F;&#x219B;&#x202F;913</span><span class="annotate long">line 910 didn't jump to line 913, because the condition on line 910 was never false</span></span></p>
+    <p id="t910" class="run"><span class="n"><a href="#t910">910</a></span><span class="t">        <span class="key">if</span> <span class="nam">indent</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t911" class="run"><span class="n"><a href="#t911">911</a></span><span class="t">            <span class="nam">indent</span> <span class="op">=</span> <span class="nam">int</span><span class="op">(</span><span class="nam">indent</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t912" class="pln"><span class="n"><a href="#t912">912</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t913" class="par run show_par"><span class="n"><a href="#t913">913</a></span><span class="t">        <span class="key">if</span> <span class="nam">filename</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">913&#x202F;&#x219B;&#x202F;916</span><span class="annotate long">line 913 didn't jump to line 916, because the condition on line 913 was never false</span></span></p>
+    <p id="t913" class="run"><span class="n"><a href="#t913">913</a></span><span class="t">        <span class="key">if</span> <span class="nam">filename</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t914" class="run"><span class="n"><a href="#t914">914</a></span><span class="t">            <span class="key">return</span> <span class="nam">json</span><span class="op">.</span><span class="nam">dumps</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">to_data</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">indent</span><span class="op">=</span><span class="nam">indent</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t915" class="pln"><span class="n"><a href="#t915">915</a></span><span class="t">        <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t916" class="mis show_mis"><span class="n"><a href="#t916">916</a></span><span class="t">            <span class="key">from</span> <span class="nam">pathlib</span> <span class="key">import</span> <span class="nam">Path</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t917" class="mis show_mis"><span class="n"><a href="#t917">917</a></span><span class="t">            <span class="nam">filename</span> <span class="op">=</span> <span class="nam">str</span><span class="op">(</span><span class="nam">Path</span><span class="op">(</span><span class="nam">filename</span><span class="op">)</span><span class="op">.</span><span class="nam">expanduser</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">resolve</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">absolute</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t916" class="run"><span class="n"><a href="#t916">916</a></span><span class="t">            <span class="key">from</span> <span class="nam">pathlib</span> <span class="key">import</span> <span class="nam">Path</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t917" class="run"><span class="n"><a href="#t917">917</a></span><span class="t">            <span class="nam">filename</span> <span class="op">=</span> <span class="nam">str</span><span class="op">(</span><span class="nam">Path</span><span class="op">(</span><span class="nam">filename</span><span class="op">)</span><span class="op">.</span><span class="nam">expanduser</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">resolve</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">absolute</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t918" class="pln"><span class="n"><a href="#t918">918</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t919" class="mis show_mis"><span class="n"><a href="#t919">919</a></span><span class="t">            <span class="key">if</span> <span class="nam">auto_bzip</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t919" class="par run show_par"><span class="n"><a href="#t919">919</a></span><span class="t">            <span class="key">if</span> <span class="nam">auto_bzip</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">919&#x202F;&#x219B;&#x202F;920</span><span class="annotate long">line 919 didn't jump to line 920, because the condition on line 919 was never true</span></span></p>
     <p id="t920" class="mis show_mis"><span class="n"><a href="#t920">920</a></span><span class="t">                <span class="key">if</span> <span class="key">not</span> <span class="nam">filename</span><span class="op">.</span><span class="nam">endswith</span><span class="op">(</span><span class="str">".bz2"</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t921" class="mis show_mis"><span class="n"><a href="#t921">921</a></span><span class="t">                    <span class="nam">filename</span> <span class="op">+=</span> <span class="str">".bz2"</span>&nbsp;</span><span class="r"></span></p>
     <p id="t922" class="pln"><span class="n"><a href="#t922">922</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
@@ -985,22 +985,22 @@
     <p id="t930" class="mis show_mis"><span class="n"><a href="#t930">930</a></span><span class="t">                        <span class="nam">os</span><span class="op">.</span><span class="nam">unlink</span><span class="op">(</span><span class="nam">filename</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t931" class="mis show_mis"><span class="n"><a href="#t931">931</a></span><span class="t">                        <span class="key">raise</span>&nbsp;</span><span class="r"></span></p>
     <p id="t932" class="pln"><span class="n"><a href="#t932">932</a></span><span class="t">            <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t933" class="mis show_mis"><span class="n"><a href="#t933">933</a></span><span class="t">                <span class="key">with</span> <span class="nam">open</span><span class="op">(</span><span class="nam">filename</span><span class="op">,</span> <span class="str">"w"</span><span class="op">)</span> <span class="key">as</span> <span class="nam">FILE</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t934" class="mis show_mis"><span class="n"><a href="#t934">934</a></span><span class="t">                    <span class="key">try</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t935" class="mis show_mis"><span class="n"><a href="#t935">935</a></span><span class="t">                        <span class="nam">json</span><span class="op">.</span><span class="nam">dump</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">to_data</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">FILE</span><span class="op">,</span> <span class="nam">indent</span><span class="op">=</span><span class="nam">indent</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t933" class="run"><span class="n"><a href="#t933">933</a></span><span class="t">                <span class="key">with</span> <span class="nam">open</span><span class="op">(</span><span class="nam">filename</span><span class="op">,</span> <span class="str">"w"</span><span class="op">)</span> <span class="key">as</span> <span class="nam">FILE</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t934" class="run"><span class="n"><a href="#t934">934</a></span><span class="t">                    <span class="key">try</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t935" class="run"><span class="n"><a href="#t935">935</a></span><span class="t">                        <span class="nam">json</span><span class="op">.</span><span class="nam">dump</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">to_data</span><span class="op">(</span><span class="op">)</span><span class="op">,</span> <span class="nam">FILE</span><span class="op">,</span> <span class="nam">indent</span><span class="op">=</span><span class="nam">indent</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t936" class="mis show_mis"><span class="n"><a href="#t936">936</a></span><span class="t">                    <span class="key">except</span> <span class="nam">Exception</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t937" class="mis show_mis"><span class="n"><a href="#t937">937</a></span><span class="t">                        <span class="key">import</span> <span class="nam">os</span>&nbsp;</span><span class="r"></span></p>
     <p id="t938" class="mis show_mis"><span class="n"><a href="#t938">938</a></span><span class="t">                        <span class="nam">FILE</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t939" class="mis show_mis"><span class="n"><a href="#t939">939</a></span><span class="t">                        <span class="nam">os</span><span class="op">.</span><span class="nam">unlink</span><span class="op">(</span><span class="nam">filename</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t940" class="mis show_mis"><span class="n"><a href="#t940">940</a></span><span class="t">                        <span class="key">raise</span>&nbsp;</span><span class="r"></span></p>
     <p id="t941" class="pln"><span class="n"><a href="#t941">941</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t942" class="mis show_mis"><span class="n"><a href="#t942">942</a></span><span class="t">            <span class="key">return</span> <span class="nam">filename</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t942" class="run"><span class="n"><a href="#t942">942</a></span><span class="t">            <span class="key">return</span> <span class="nam">filename</span>&nbsp;</span><span class="r"></span></p>
 </div>
 <div id="footer">
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.5</a>,
-            created at 2021-05-06 21:08 +0000
+            created at 2021-05-13 15:06 +0000
         </p>
     </div>
 </div>
