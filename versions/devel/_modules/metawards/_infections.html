@@ -208,7 +208,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Infections&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="Infections"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections">[docs]</a><span class="nd">@_dataclass</span>
+<div class="viewcode-block" id="Infections"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections">[docs]</a><span class="nd">@_dataclass</span>
 <span class="k">class</span> <span class="nc">Infections</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This class holds the arrays that record the infections as they</span>
 <span class="sd">       are occuring during the outbreak</span>
@@ -269,7 +269,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
 
-<div class="viewcode-block" id="Infections.build"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.build">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Infections.build"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.build">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">Network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">overall</span><span class="p">:</span> <span class="n">Network</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Construct and return the Infections object that will track</span>
@@ -329,14 +329,14 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_stage_mapping</span> <span class="o">=</span> <span class="n">disease_params</span><span class="o">.</span><span class="n">get_mapping_to</span><span class="p">(</span><span class="n">overall_params</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Infections.has_different_stage_mapping"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.has_different_stage_mapping">[docs]</a>    <span class="k">def</span> <span class="nf">has_different_stage_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Infections.has_different_stage_mapping"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.has_different_stage_mapping">[docs]</a>    <span class="k">def</span> <span class="nf">has_different_stage_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not the sub-network disease stages</span>
 <span class="sd">           are different to that of the overall network, and must</span>
 <span class="sd">           thus be mapped</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stage_mapping</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="Infections.get_stage_mapping"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.get_stage_mapping">[docs]</a>    <span class="k">def</span> <span class="nf">get_stage_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Infections.get_stage_mapping"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.get_stage_mapping">[docs]</a>    <span class="k">def</span> <span class="nf">get_stage_mapping</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the mapping from disease stages in this sub-network</span>
 <span class="sd">           to disease stages in the overall network. This returns a list</span>
 <span class="sd">           where mapping[i] gives the index of stage i in the subnetwork</span>
@@ -347,13 +347,13 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">N_INF_CLASSES</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Infections.has_different_work_matrix"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.has_different_work_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">has_different_work_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Infections.has_different_work_matrix"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.has_different_work_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">has_different_work_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not the sub-network work matrix</span>
 <span class="sd">           is different to that of the overall network</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_work_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
-<div class="viewcode-block" id="Infections.get_work_index"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.get_work_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_work_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Infections.get_work_index"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.get_work_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_work_index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the mapping from the index in this sub-networks work</span>
 <span class="sd">           matrix to the mapping in the overall network&#39;s work matrix</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -364,7 +364,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nlinks</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Infections.aggregate"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="Infections.aggregate"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Aggregate all of the infection data from the demographic</span>
 <span class="sd">           sub-networks</span>
 
@@ -381,7 +381,7 @@
         <span class="n">aggregate_infections</span><span class="p">(</span><span class="n">infections</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">,</span>
                              <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Infections.clear"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Infections.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="Infections.clear"><a class="viewcode-back" href="../../api/generated/metawards.Infections.html#metawards.Infections.clear">[docs]</a>    <span class="k">def</span> <span class="nf">clear</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Clear all of the infections (resets all to zero)</span>
 
 <span class="sd">           Parameters</span>

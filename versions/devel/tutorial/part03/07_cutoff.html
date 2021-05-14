@@ -255,7 +255,7 @@ using the equation;</p>
 <p>where;</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(F(w)\)</span> is the <em>force of infection</em>, <span class="math notranslate nohighlight">\(F\)</span>, calculated for a specific ward, <span class="math notranslate nohighlight">\(w\)</span>,</p></li>
-<li><p><span class="math notranslate nohighlight">\(S\)</span> is a constant scaling parameter, set via <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.scale_uv</span></code></a>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> is a constant scaling parameter, set via <a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.scale_uv</span></code></a>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(U(t)\)</span> is a seasonal scaling function (UV) calculated for the specified day <span class="math notranslate nohighlight">\(t\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\sum_s\)</span> is the sum over all disease stages, <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
 <li><p><span class="math notranslate nohighlight">\(C_s\)</span> is the <code class="docutils literal notranslate"><span class="pre">contrib_foi</span></code> disease parameter for stage <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
@@ -296,7 +296,7 @@ are not too sick to go to work (controlled by <code class="docutils literal notr
 in which case they stay at home). Players
 will visit a randomly chosen play ward during the <em>daytime</em>.</p>
 <p>However, these movements are controlled by a cutoff parameter,
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>.
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>.
 If the distance between the home and work ward, or home and play ward, is
 greater than the cutoff (measured in kilometers), then the worker or player
 will stay at home, and contribute to the force of infection of their home
@@ -326,14 +326,14 @@ be infected.</p>
 <p>Based on this knowledge, we could enact a lockdown by adjusting the
 parameters used to calculate the force of infection, and the parameters
 used to control movement of individuals between wards. For example,
-we could reduce <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.scale_uv</span></code></a>,
+we could reduce <a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.scale_uv</span></code></a>,
 thereby reducing <span class="math notranslate nohighlight">\(S\)</span> in equation 1. This would have the same effect
 on scaling down the FOI as scaling down <span class="math notranslate nohighlight">\(\beta\)</span>. This would mean that
 you could relate different values of <span class="math notranslate nohighlight">\(S\)</span> to different lockdown
 control measures, e.g. closing schools, wearing masks, limiting number
 of contacts etc.</p>
 <p>We could also reduce
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>
 to, e.g. 5 km, to prevent most work and play movements. Indeed, we could
 even reduce this to 0 km to stop all movement between wards.</p>
 <p>A good example of an

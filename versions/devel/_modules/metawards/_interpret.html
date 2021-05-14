@@ -221,17 +221,17 @@
     <span class="k">return</span> <span class="n">val</span>
 
 
-<div class="viewcode-block" id="Interpret"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret">[docs]</a><span class="k">class</span> <span class="nc">Interpret</span><span class="p">:</span>
+<div class="viewcode-block" id="Interpret"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret">[docs]</a><span class="k">class</span> <span class="nc">Interpret</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This is a static class that provides some routines for interpreting</span>
 <span class="sd">       values from inputs (normally strings). This is used heavily by</span>
 <span class="sd">       code that reads values from the user or from files</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-<div class="viewcode-block" id="Interpret.string"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.string">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.string"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.string">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">string</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Interpret and return a string from &#39;s&#39;&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Interpret.random_integer"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.random_integer">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.random_integer"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.random_integer">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">random_integer</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                        <span class="n">maxval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Interpret a random integer from the passed string,</span>
@@ -295,7 +295,7 @@
         <span class="c1"># we want to be from &#39;min&#39; to &#39;max&#39; inclusive</span>
         <span class="k">return</span> <span class="n">ran_int</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">rmin</span><span class="p">,</span> <span class="n">rmax</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Interpret.random_number"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.random_number">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.random_number"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.random_number">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">random_number</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">maxval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Interpret a random number (float) from the passed string,</span>
@@ -358,7 +358,7 @@
         <span class="kn">from</span> <span class="nn">.utils._ran_binomial</span> <span class="kn">import</span> <span class="n">ran_uniform</span>
         <span class="k">return</span> <span class="n">rmin</span> <span class="o">+</span> <span class="p">((</span><span class="n">rmax</span> <span class="o">-</span> <span class="n">rmin</span><span class="p">)</span> <span class="o">*</span> <span class="n">ran_uniform</span><span class="p">(</span><span class="n">rng</span><span class="p">))</span></div>
 
-<div class="viewcode-block" id="Interpret.integer"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.integer">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.integer"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.integer">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">integer</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                 <span class="n">maxval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Interpret and return an integer from &#39;s&#39;, using the</span>
@@ -396,7 +396,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot interpret an integer from </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Interpret.number"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.number">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.number"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.number">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">number</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minval</span><span class="p">:</span> <span class="n">_Number</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                <span class="n">maxval</span><span class="p">:</span> <span class="n">_Number</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_Number</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Interpret and return a number (integer or float) using</span>
@@ -437,7 +437,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot interpret a number from </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Interpret.boolean"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.boolean">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.boolean"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.boolean">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">boolean</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Interpret and return a boolean (True or False) using</span>
 <span class="sd">           the passed random number generator if this is a request</span>
@@ -464,7 +464,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">return</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="Interpret.date"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.date">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.date"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.date">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">date</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">allow_fuzzy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a Python datetime.date object from the passed</span>
 <span class="sd">           &#39;s&#39;, allowing fuzzy dates if &#39;allow_fuzzy&#39; is true</span>
@@ -489,7 +489,7 @@
 
         <span class="k">return</span> <span class="n">d</span></div>
 
-<div class="viewcode-block" id="Interpret.day"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.day">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.day"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.day">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">day</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">maxval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return a day number (integer) from the passed &#39;s&#39;. This is</span>
 <span class="sd">           a shorthand for &#39;integer&#39;, but may take on more meaning</span>
@@ -497,7 +497,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">Interpret</span><span class="o">.</span><span class="n">integer</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="n">s</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="n">rng</span><span class="p">,</span> <span class="n">minval</span><span class="o">=</span><span class="n">minval</span><span class="p">,</span> <span class="n">maxval</span><span class="o">=</span><span class="n">maxval</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Interpret.day_or_date"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Interpret.day_or_date">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Interpret.day_or_date"><a class="viewcode-back" href="../../api/generated/metawards.Interpret.html#metawards.Interpret.day_or_date">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">day_or_date</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span> <span class="n">rng</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">minval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">maxval</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                     <span class="n">allow_fuzzy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convenience function that matches a day or a date from the</span>

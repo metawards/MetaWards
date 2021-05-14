@@ -328,8 +328,8 @@ the below;</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">extract_population</span></code>, which tells <code class="docutils literal notranslate"><span class="pre">metawards</span></code> to use your
 <code class="docutils literal notranslate"><span class="pre">output_population</span></code> function,</p></li>
 <li><p>and <code class="docutils literal notranslate"><span class="pre">output_population</span></code> that uses the passed
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">population</span></code></a> and
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">output_dir</span></code></a> objects to write
+<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">population</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">output_dir</span></code></a> objects to write
 the population of the different disease states to a file
 in the output directory called <code class="docutils literal notranslate"><span class="pre">population.dat</span></code>.</p></li>
 </ul>
@@ -360,7 +360,7 @@ directory. If you don’t want this, then use the command-line argument
 </div>
 <p>Notice that there are no headers to the columns. We can add a header
 by passing in the headers to the
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open" title="metawards.OutputFiles.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> function, e.g. change <code class="docutils literal notranslate"><span class="pre">population.py</span></code>
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open" title="metawards.OutputFiles.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> function, e.g. change <code class="docutils literal notranslate"><span class="pre">population.py</span></code>
 to read;</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
 
@@ -479,7 +479,7 @@ once the number of infections reaches 2000. Copy the below into
 <p>This extractor uses all of the functions of
 <a class="reference internal" href="../../api/generated/metawards.extractors.extract_default.html#metawards.extractors.extract_default" title="metawards.extractors.extract_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_default()</span></code></a>, plus a new custom
 output function called <code class="docutils literal notranslate"><span class="pre">output_stop</span></code>. This compares the number
-of infections (<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Population.infecteds" title="metawards.Population.infecteds"><code class="xref py py-data docutils literal notranslate"><span class="pre">population.infecteds</span></code></a>),
+of infections (<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population.infecteds" title="metawards.Population.infecteds"><code class="xref py py-data docutils literal notranslate"><span class="pre">population.infecteds</span></code></a>),
 and if this is more than 2000, then it raises a Python
 <a class="reference external" href="https://docs.python.org/3/library/exceptions.html">StopIteration</a>.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using;</p>

@@ -49,13 +49,13 @@ or you may have to `install pip <https://pip.pypa.io/en/stable/installing/>`__.
 If you have trouble installing pip then we recommend that you download
 and install `anaconda <https://anaconda.org>`__, which has pip included)
 
-To install a specific version, e.g. 1.4.0, type
+To install a specific version, e.g. 1.5.1, type
 
 .. code-block:: bash
 
-    pip install metawards==1.4.0
+    pip install metawards==1.5.1
 
-This will install a binary version of metawards if it is avaiable for your
+This will install a binary version of metawards if it is available for your
 operating system / processor / version of python. If not, then
 the metawards pyx code that was compiled into C using
 `cython <https://cython.org>`__,
@@ -79,30 +79,85 @@ a different compiler, e.g. installing clang via
 `homebrew <https://brew.sh>`__. If you have any problems then please
 `post an issue on GitHub <https://github.com/metawards/MetaWards/issues>`__.
 
+Once installed, you can run `metawards` by typing
+
+.. code-block:: bash
+
+    metawards --version
+
+This should print out some version information about MetaWards.
+
+If this doesn't work, then it is possible that the directory into which
+`metawards` has been placed is not in your PATH (this is quite
+common on Windows). You can find the
+location of the `metawards` executable by starting Python and
+typing;
+
+.. code-block:: python
+
+    > import metawards
+    > print(metawards.find_mw_exe())
+
+You can then run `metawards` either by typing out the full path
+to the executable that is printed, or by adding the directory
+containing the executable to your PATH.
+
 Installation via R
 ==================
 
 MetaWards can be used within R via the `reticulate <https://rstudio.github.io/reticulate/>`_
 package. We have built a MetaWards R package that simplifies this use.
 
-First, open R or RStudio and install the MetaWards R package from GitHub;
+To use this, you must first have installed metawards as above,
+via the Python route. This is because the version of Python used
+by default in R is too old to run MetaWards (MetaWards needs
+Python 3.7 or newer, while the default in reticulate is to install
+and use Python 3.6).
+
+Once you have MetaWards installed in Python, you first need to
+get the reticulate command that you will need to tell R which
+Python interpreter to use. We have written a function to do
+this for you. Open Python and type;
+
+.. code-block:: python
+
+    import metawards
+    print(metawards.get_reticulate_command())
+
+You should see printed something like
+
+.. code-block:: R
+
+    reticulate::use_python("/path/to/python", required=TRUE)
+
+where `/path/to/python` is the full path to the python executable
+that you are using.
+
+Next, open R or RStudio and install reticulate (if you haven't
+done that already).
+
+.. code-block:: R
+
+   > install.packages("reticulate")
+
+Next, you should install the MetaWards R package from GitHub.
+You need to use the `devtools` library to do this.
 
 .. code-block:: R
 
    > library(devtools)
    > install_github("metawards/rpkg")
 
-Next, load the ``metawards`` package and use the ``py_install_metawards``
-function to install metawards into the Python that is supplied
-with reticulate.
+Next, you need to tell reticulate to use the Python
+executable you found earlier. Copy in the reticulate
+command exactly as it was printed by Python, e.g.
 
 .. code-block:: R
 
-   > metawards::py_install_metawards()
+   > reticulate::use_python("/path/to/python", required=TRUE)
 
-This may take a few minutes. If it works, then you can check that
-metawards is available by calling the ``py_metawards_available`` function,
-e.g.
+Next, load the ``metawards`` package and use the ``py_metawards_available``
+to check that MetaWards can be found and loaded.
 
 .. code-block:: R
 
@@ -111,12 +166,14 @@ e.g.
 
 .. note::
 
-   If you want to use a different Python environment, then this can be
-   set using ``reticulate::use_python("/path/to/python", required = TRUE)``
-   before you call any of the metawards functions.
+   In the future, once reticulate defaults to Python 3.7 or
+   above, you will be able to install MetaWards directly
+   by calling `metawards::py_install_metawards()`. This
+   command will install metawards into the default Python
+   that comes with reticulate.
 
-This will install the latest version of metawards. You can check if there
-are any updates available via;
+Once installed, you can check if there
+are any updates to MetaWards available directly in R, via;
 
 .. code-block:: R
 
@@ -181,6 +238,10 @@ of your computer than you will need to install
 a different compiler, e.g. installing clang via
 `homebrew <https://brew.sh>`__. If you have any problems then please
 `post an issue on GitHub <https://github.com/metawards/MetaWards/issues>`__.
+
+Just as for the normal Python install you may need to use the
+`find_mw_exe()` function to find the full path to the installed
+`metawards` executable if this hasn't been placed in your PATH.
 
 For developers
 ==============

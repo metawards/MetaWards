@@ -241,11 +241,11 @@ fades over time, meaning that an individual can be infected multiple times.</p>
 individuals from the R stage back to the S stage after a period of time.</p>
 <div class="section" id="slowing-progress">
 <h2>Slowing progress<a class="headerlink" href="#slowing-progress" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Disease.progress" title="metawards.Disease.progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Disease.progress</span></code></a> parameter controls
+<p>The <a class="reference internal" href="../../api/generated/metawards.Disease.html#metawards.Disease.progress" title="metawards.Disease.progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Disease.progress</span></code></a> parameter controls
 the rate at which an individual will move through a disease stage.
 Advancement through the disease stages is controlled by
 <a class="reference internal" href="../../api/generated/metawards.iterators.advance_recovery.html#metawards.iterators.advance_recovery" title="metawards.iterators.advance_recovery"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_recovery()</span></code></a>. This simply samples
-the fraction, <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Disease.progress" title="metawards.Disease.progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Disease.progress</span></code></a>,
+the fraction, <a class="reference internal" href="../../api/generated/metawards.Disease.html#metawards.Disease.progress" title="metawards.Disease.progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Disease.progress</span></code></a>,
 from the number of individuals who are at that disease stage via
 a random binomial distribution, and advances them to the next stage.</p>
 <p>The key code that does this is summarised here;</p>
@@ -652,7 +652,7 @@ of individuals who take a booster, to better model a real situation.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We have used <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Disease.progress" title="metawards.Disease.progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Disease.progress</span></code></a>
+<p>We have used <a class="reference internal" href="../../api/generated/metawards.Disease.html#metawards.Disease.progress" title="metawards.Disease.progress"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Disease.progress</span></code></a>
 to slow movement along the post-recovery and post-vaccinated stages.
 An alternative method would be to write a custom iterator to
 replace <a class="reference internal" href="../../api/generated/metawards.iterators.advance_recovery.html#metawards.iterators.advance_recovery" title="metawards.iterators.advance_recovery"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_recovery()</span></code></a>. This could

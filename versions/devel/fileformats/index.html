@@ -246,7 +246,7 @@ a comma or spaces as the separator (but must be consistent within a file).
 Comments can be added using a <code class="docutils literal notranslate"><span class="pre">#</span></code> character, and blank lines are
 ignored.</p>
 <p>Data within a flexible-format file is interpreted using
-<a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>. This can interpret simple data, such as
+<a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>. This can interpret simple data, such as
 strings, numbers, booleans (<code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>), as well as complex
 data such as dates (<code class="docutils literal notranslate"><span class="pre">next</span> <span class="pre">week</span></code>, <code class="docutils literal notranslate"><span class="pre">January</span> <span class="pre">10</span> <span class="pre">2020</span></code>), expressions
 (<code class="docutils literal notranslate"><span class="pre">10.0</span> <span class="pre">/</span> <span class="pre">3.0</span></code>, <code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">*</span> <span class="pre">2.3**2</span></code>) and random numbers
@@ -267,11 +267,11 @@ the parameters for a disease, or specifying the data associated with
 different demographics. These files are read using the
 <a class="reference external" href="https://docs.python.org/3/library/json.html">Python JSON module</a>
 into dictionaries, which are interpreted by the classes associated with
-each file (e.g. <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> in the case of disease parameters).
-Many of these classes use <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a> to interpret the
+each file (e.g. <a class="reference internal" href="../api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> in the case of disease parameters).
+Many of these classes use <a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a> to interpret the
 data from the JSON file, meaning that these support expressions, random
 numbers etc. We plan to ensure that as much data as possible is interpreted
-using <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>, so that there is a consistent
+using <a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>, so that there is a consistent
 experience across the code.</p>
 </div>
 <div class="section" id="detailed-descriptions">

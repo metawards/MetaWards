@@ -299,12 +299,12 @@ in the below;</p>
 </pre></div>
 </div>
 <p>This defines a new output function called <code class="docutils literal notranslate"><span class="pre">output_i1</span></code>. This calls the
-<code class="docutils literal notranslate"><span class="pre">open</span></code> function of the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> object held
+<code class="docutils literal notranslate"><span class="pre">open</span></code> function of the <a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> object held
 in <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> to open the file <code class="docutils literal notranslate"><span class="pre">total_i1.csv</span></code> in the output
 directory.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> class is clever enough to only
+<p>The <a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> class is clever enough to only
 open the file once, and will automatically close it when needed. It
 will also ensure that the file is opened in the correct output
 directory for a <em>model run</em> and will compress the file using bz2
@@ -334,7 +334,7 @@ stage 1 will be the first <code class="docutils literal notranslate"><span class
 <p>Now that we have the population in the <code class="docutils literal notranslate"><span class="pre">I1</span></code> stage in each ward in
 <code class="docutils literal notranslate"><span class="pre">I1_inf_tot</span></code>, we write this as a comma-separated line to the file,
 starting each line with the day number obtained from the passed
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">Population</span></code></a> typed <code class="docutils literal notranslate"><span class="pre">population</span></code> object.</p>
+<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">Population</span></code></a> typed <code class="docutils literal notranslate"><span class="pre">population</span></code> object.</p>
 <p>To use your extractor run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using;</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --extract extract_i1 -a ExtraSeedsLondon.dat --nsteps <span class="m">30</span>
 </pre></div>
@@ -438,10 +438,10 @@ worked, the data is beginning to get so large and multi-dimensional that
 we are reaching the limits of what a CSV or other data file can
 reasonably support. As data sizes get larger, it is better to start
 writing data to a database.</p>
-<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> class has in-built support for opening
+<p>The <a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> class has in-built support for opening
 connections to <a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">SQLite3</a>
 databases. To use this, we call the function
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a>. For example, let’s now create a new
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a>. For example, let’s now create a new
 extractor that will output the size of the population at each disease stage
 for each day, and the change compared to the previous day. To do this,
 open a file called <code class="docutils literal notranslate"><span class="pre">extract_db.py</span></code> and copy in the below;</p>
@@ -519,12 +519,12 @@ open a file called <code class="docutils literal notranslate"><span class="pre">
 </div>
 <p>Here, we have created a new function called <code class="docutils literal notranslate"><span class="pre">create_tables</span></code> that is called
 to create a function that is returned and passed to
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a>. This function creates two tables
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a>. This function creates two tables
 in the database; <code class="docutils literal notranslate"><span class="pre">totals</span></code> which contains the total population at each
 disease stage, and <code class="docutils literal notranslate"><span class="pre">deltas</span></code>, which contains the difference from the
 previous day.</p>
 <p>Next, we have <code class="docutils literal notranslate"><span class="pre">output_db</span></code>. This function calls
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a> to create the connection, <code class="docutils literal notranslate"><span class="pre">conn</span></code>
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a> to create the connection, <code class="docutils literal notranslate"><span class="pre">conn</span></code>
 to the SQLite3 database. This connection is a standard Python
 <a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">sqlite3 connection object</a>.</p>
 <p>We calculate the total population in each stage as the sum of

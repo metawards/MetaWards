@@ -255,7 +255,7 @@
         <span class="k">return</span> <span class="n">Interpret</span><span class="o">.</span><span class="n">number</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="Demographics"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics">[docs]</a><span class="nd">@_dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="viewcode-block" id="Demographics"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics">[docs]</a><span class="nd">@_dataclass</span><span class="p">(</span><span class="n">eq</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Demographics</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This class holds metadata about all of the demographics</span>
 <span class="sd">       being modelled</span>
@@ -288,17 +288,17 @@
     <span class="n">_repository_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">_repository_branch</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="Demographics.__str__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.__str__"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">])</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;[</span><span class="se">\n</span><span class="s2">  </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="se">\n</span><span class="s2">]&quot;</span></div>
 
-<div class="viewcode-block" id="Demographics.__repr__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.__repr__"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.__repr__">[docs]</a>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">)</span>
 
-<div class="viewcode-block" id="Demographics.__eq__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.__eq__"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.__eq__">[docs]</a>    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Demographics</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
 
@@ -323,7 +323,7 @@
             <span class="c1"># Lookup by index</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
 
-<div class="viewcode-block" id="Demographics.copy"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.copy"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of this demographics object that should</span>
 <span class="sd">           allow a safe reset between runs. This deepcopies things</span>
 <span class="sd">           that may change, while shallow copying things that won&#39;t</span>
@@ -351,7 +351,7 @@
 
         <span class="k">return</span> <span class="n">r</span>
 
-<div class="viewcode-block" id="Demographics.add"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demographic</span><span class="p">:</span> <span class="n">Demographic</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.add"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.add">[docs]</a>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demographic</span><span class="p">:</span> <span class="n">Demographic</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add a demographic to the set to be modelled&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">demographic</span><span class="o">.</span><span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -368,11 +368,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">demographic</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_names</span><span class="p">[</span><span class="n">demographic</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span></div>
 
-<div class="viewcode-block" id="Demographics.get_name"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.get_name"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.get_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the name of the demographic at &#39;item&#39;&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_index</span><span class="p">(</span><span class="n">item</span><span class="p">)]</span><span class="o">.</span><span class="n">name</span></div>
 
-<div class="viewcode-block" id="Demographics.get_index"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.get_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.get_index"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.get_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the index of the passed item&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">item</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
@@ -403,7 +403,7 @@
                        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_names</span><span class="si">}</span><span class="s2">. Available indexes are &quot;</span>
                        <span class="sa">f</span><span class="s2">&quot;0 -&gt; </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Demographics.uses_named_network"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.uses_named_network">[docs]</a>    <span class="k">def</span> <span class="nf">uses_named_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.uses_named_network"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.uses_named_network">[docs]</a>    <span class="k">def</span> <span class="nf">uses_named_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not at least one of these demographics</span>
 <span class="sd">           specifies the use of a named network model</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -413,7 +413,7 @@
 
         <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Demographics.is_multi_network"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.is_multi_network">[docs]</a>    <span class="k">def</span> <span class="nf">is_multi_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.is_multi_network"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.is_multi_network">[docs]</a>    <span class="k">def</span> <span class="nf">is_multi_network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not these demographics need to use multiple</span>
 <span class="sd">           custom networks (e.g. refer to different network models)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -428,7 +428,7 @@
 
             <span class="k">return</span> <span class="kc">False</span></div>
 
-<div class="viewcode-block" id="Demographics.load"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.load">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Demographics.load"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.load">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
              <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
              <span class="n">folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">_default_folder_name</span><span class="p">,</span>
@@ -513,7 +513,7 @@
 
         <span class="k">return</span> <span class="n">demographics</span></div>
 
-<div class="viewcode-block" id="Demographics.to_data"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.to_data">[docs]</a>    <span class="k">def</span> <span class="nf">to_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Demographics.to_data"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.to_data">[docs]</a>    <span class="k">def</span> <span class="nf">to_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a data dictionary for this object that can</span>
 <span class="sd">           be serialised to json</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -571,7 +571,7 @@
 
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="Demographics.to_json"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.to_json">[docs]</a>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="Demographics.to_json"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.to_json">[docs]</a>    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                 <span class="n">auto_bzip</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Serialise the Demographics to JSON. This will write to a file</span>
 <span class="sd">           if filename is set, otherwise it will return a JSON string.</span>
@@ -630,7 +630,7 @@
 
             <span class="k">return</span> <span class="n">filename</span></div>
 
-<div class="viewcode-block" id="Demographics.from_data"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.from_data">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Demographics.from_data"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.from_data">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">json_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Demographics</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Construct and return a Demographics object constructed</span>
 <span class="sd">           from a (json-deserialised) data dictionary</span>
@@ -693,7 +693,7 @@
 
         <span class="k">return</span> <span class="n">demos</span></div>
 
-<div class="viewcode-block" id="Demographics.from_json"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.from_json">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Demographics.from_json"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.from_json">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_json</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Construct and return Demographics loaded from the passed</span>
 <span class="sd">           json file</span>
@@ -731,7 +731,7 @@
 
         <span class="k">return</span> <span class="n">Demographics</span><span class="o">.</span><span class="n">from_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">json_dir</span><span class="o">=</span><span class="n">json_dir</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Demographics.build"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="Demographics.build"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.build">[docs]</a>    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
               <span class="n">max_nodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">16384</span><span class="p">,</span>
               <span class="n">max_links</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4194304</span><span class="p">,</span>
               <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -918,7 +918,7 @@
 
         <span class="k">return</span> <span class="n">networks</span></div>
 
-<div class="viewcode-block" id="Demographics.specialise"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Demographics.specialise">[docs]</a>    <span class="k">def</span> <span class="nf">specialise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span> <span class="n">profiler</span><span class="p">:</span> <span class="n">Profiler</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="Demographics.specialise"><a class="viewcode-back" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.specialise">[docs]</a>    <span class="k">def</span> <span class="nf">specialise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span> <span class="n">profiler</span><span class="p">:</span> <span class="n">Profiler</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                    <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Build the set of networks that will model this set</span>
 <span class="sd">           of demographics applied to the passed Network.</span>

@@ -248,11 +248,11 @@ MetaWards is using
 or you may have to <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">install pip</a>.
 If you have trouble installing pip then we recommend that you download
 and install <a class="reference external" href="https://anaconda.org">anaconda</a>, which has pip included)</p>
-<p>To install a specific version, e.g. 1.4.0, type</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">metawards</span><span class="o">==</span><span class="m">1</span>.4.0
+<p>To install a specific version, e.g. 1.5.1, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">metawards</span><span class="o">==</span><span class="m">1</span>.5.1
 </pre></div>
 </div>
-<p>This will install a binary version of metawards if it is avaiable for your
+<p>This will install a binary version of metawards if it is available for your
 operating system / processor / version of python. If not, then
 the metawards pyx code that was compiled into C using
 <a class="reference external" href="https://cython.org">cython</a>,
@@ -273,37 +273,80 @@ of your computer than you will need to install
 a different compiler, e.g. installing clang via
 <a class="reference external" href="https://brew.sh">homebrew</a>. If you have any problems then please
 <a class="reference external" href="https://github.com/metawards/MetaWards/issues">post an issue on GitHub</a>.</p>
+<p>Once installed, you can run <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --version
+</pre></div>
+</div>
+<p>This should print out some version information about MetaWards.</p>
+<p>If this doesn’t work, then it is possible that the directory into which
+<a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> has been placed is not in your PATH (this is quite
+common on Windows). You can find the
+location of the <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> executable by starting Python and
+typing;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">metawards</span>
+<span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">metawards</span><span class="o">.</span><span class="n">find_mw_exe</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You can then run <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> either by typing out the full path
+to the executable that is printed, or by adding the directory
+containing the executable to your PATH.</p>
 </div>
 <div class="section" id="installation-via-r">
 <h2>Installation via R<a class="headerlink" href="#installation-via-r" title="Permalink to this headline">¶</a></h2>
 <p>MetaWards can be used within R via the <a class="reference external" href="https://rstudio.github.io/reticulate/">reticulate</a>
 package. We have built a MetaWards R package that simplifies this use.</p>
-<p>First, open R or RStudio and install the MetaWards R package from GitHub;</p>
+<p>To use this, you must first have installed metawards as above,
+via the Python route. This is because the version of Python used
+by default in R is too old to run MetaWards (MetaWards needs
+Python 3.7 or newer, while the default in reticulate is to install
+and use Python 3.6).</p>
+<p>Once you have MetaWards installed in Python, you first need to
+get the reticulate command that you will need to tell R which
+Python interpreter to use. We have written a function to do
+this for you. Open Python and type;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metawards</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metawards</span><span class="o">.</span><span class="n">get_reticulate_command</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You should see printed something like</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">reticulate</span><span class="o">::</span><span class="nf">use_python</span><span class="p">(</span><span class="s">&quot;/path/to/python&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <em class="xref py py-obj">/path/to/python</em> is the full path to the python executable
+that you are using.</p>
+<p>Next, open R or RStudio and install reticulate (if you haven’t
+done that already).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;reticulate&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, you should install the MetaWards R package from GitHub.
+You need to use the <em class="xref py py-obj">devtools</em> library to do this.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">devtools</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;metawards/rpkg&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Next, load the <code class="docutils literal notranslate"><span class="pre">metawards</span></code> package and use the <code class="docutils literal notranslate"><span class="pre">py_install_metawards</span></code>
-function to install metawards into the Python that is supplied
-with reticulate.</p>
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_install_metawards</span><span class="p">()</span>
+<p>Next, you need to tell reticulate to use the Python
+executable you found earlier. Copy in the reticulate
+command exactly as it was printed by Python, e.g.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">reticulate</span><span class="o">::</span><span class="nf">use_python</span><span class="p">(</span><span class="s">&quot;/path/to/python&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This may take a few minutes. If it works, then you can check that
-metawards is available by calling the <code class="docutils literal notranslate"><span class="pre">py_metawards_available</span></code> function,
-e.g.</p>
+<p>Next, load the <code class="docutils literal notranslate"><span class="pre">metawards</span></code> package and use the <code class="docutils literal notranslate"><span class="pre">py_metawards_available</span></code>
+to check that MetaWards can be found and loaded.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_metawards_available</span><span class="p">()</span>
 <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you want to use a different Python environment, then this can be
-set using <code class="docutils literal notranslate"><span class="pre">reticulate::use_python(&quot;/path/to/python&quot;,</span> <span class="pre">required</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code>
-before you call any of the metawards functions.</p>
+<p>In the future, once reticulate defaults to Python 3.7 or
+above, you will be able to install MetaWards directly
+by calling <em class="xref py py-obj">metawards::py_install_metawards()</em>. This
+command will install metawards into the default Python
+that comes with reticulate.</p>
 </div>
-<p>This will install the latest version of metawards. You can check if there
-are any updates available via;</p>
+<p>Once installed, you can check if there
+are any updates to MetaWards available directly in R, via;</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_metawards_update_available</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -353,6 +396,9 @@ of your computer than you will need to install
 a different compiler, e.g. installing clang via
 <a class="reference external" href="https://brew.sh">homebrew</a>. If you have any problems then please
 <a class="reference external" href="https://github.com/metawards/MetaWards/issues">post an issue on GitHub</a>.</p>
+<p>Just as for the normal Python install you may need to use the
+<em class="xref py py-obj">find_mw_exe()</em> function to find the full path to the installed
+<a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> executable if this hasn’t been placed in your PATH.</p>
 </div>
 <div class="section" id="for-developers">
 <h2>For developers<a class="headerlink" href="#for-developers" title="Permalink to this headline">¶</a></h2>

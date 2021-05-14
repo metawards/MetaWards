@@ -210,13 +210,13 @@
     <span class="kn">import</span> <span class="nn">array</span>
 
 
-<div class="viewcode-block" id="Nodes"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes">[docs]</a><span class="k">class</span> <span class="nc">Nodes</span><span class="p">:</span>
+<div class="viewcode-block" id="Nodes"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes">[docs]</a><span class="k">class</span> <span class="nc">Nodes</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This is a container class for Nodes. This uses Python arrays</span>
 <span class="sd">       to store a list of Node objects as a &quot;struct of arrays&quot;.</span>
 <span class="sd">       This should improve speed of loading and access.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Nodes.__init__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.__init__"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create a container for up to &quot;N&quot; nodes&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span> <span class="o">=</span> <span class="kc">True</span>
@@ -310,14 +310,14 @@
     <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span>
 
-<div class="viewcode-block" id="Nodes.__len__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__len__">[docs]</a>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.__len__"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.__len__">[docs]</a>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the number of nodes in this container&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Nodes.copy"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.copy"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of this network, using deep copies for things</span>
 <span class="sd">           which are variable, but shallow copies for things which</span>
 <span class="sd">           should stay the same (e.g. x and y). This copy assumes that</span>
@@ -355,11 +355,11 @@
 
         <span class="k">return</span> <span class="n">nodes</span></div>
 
-<div class="viewcode-block" id="Nodes.assert_not_null"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.assert_not_null">[docs]</a>    <span class="k">def</span> <span class="nf">assert_not_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.assert_not_null"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.assert_not_null">[docs]</a>    <span class="k">def</span> <span class="nf">assert_not_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assert that this collection of nodes is not null&quot;&quot;&quot;</span>
         <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_null</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Nodes.assert_valid_index"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.assert_valid_index">[docs]</a>    <span class="k">def</span> <span class="nf">assert_valid_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.assert_valid_index"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.assert_valid_index">[docs]</a>    <span class="k">def</span> <span class="nf">assert_valid_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assert that the passed index &#39;i&#39; is valid for this collection.</span>
 <span class="sd">           This will return the index with  Python reverse indexing,</span>
 <span class="sd">           so that &quot;-1&quot; refers to the last node in the collection</span>
@@ -376,7 +376,7 @@
 
         <span class="k">return</span> <span class="n">i</span></div>
 
-<div class="viewcode-block" id="Nodes.get_index"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.get_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.get_index"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.get_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the mapped index for the ith node. This will raise an</span>
 <span class="sd">           IndexError if this is an invalid index. If not, it will map</span>
 <span class="sd">           a negative index into a canonical positive index</span>
@@ -388,7 +388,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">i</span></div>
 
-<div class="viewcode-block" id="Nodes.population"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.population">[docs]</a>    <span class="k">def</span> <span class="nf">population</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="viewcode-block" id="Nodes.population"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.population">[docs]</a>    <span class="k">def</span> <span class="nf">population</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the total population of the nodes</span>
 
 <span class="sd">           Returns</span>
@@ -398,7 +398,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Nodes.__getitem__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__getitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.__getitem__"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.__getitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the node at index &#39;i&#39;. Note that this is a</span>
 <span class="sd">           deep copy of the node. Changing the node will not change</span>
 <span class="sd">           the data in this container. To update the data in this</span>
@@ -449,7 +449,7 @@
                           <span class="sa">f</span><span class="s2">&quot;size = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">raise</span> <span class="n">e</span></div>
 
-<div class="viewcode-block" id="Nodes.__setitem__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__setitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Node</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.__setitem__"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.__setitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Node</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set the item as index &#39;i&#39; equal to &#39;value&#39;. This deep-copies</span>
 <span class="sd">           &#39;value&#39; into this container</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -505,7 +505,7 @@
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Nodes.resize"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.resize">[docs]</a>    <span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="Nodes.resize"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.resize">[docs]</a>    <span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Resize this container to hold &#39;N&#39; nodes. This will expand</span>
 <span class="sd">           the container if &#39;N&#39; is greater than len(self), or will</span>
 <span class="sd">           contract the container (deleting excess nodes) if &#39;N&#39;</span>
@@ -558,7 +558,7 @@
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Nodes.get_custom"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.get_custom">[docs]</a>    <span class="k">def</span> <span class="nf">get_custom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<div class="viewcode-block" id="Nodes.get_custom"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.get_custom">[docs]</a>    <span class="k">def</span> <span class="nf">get_custom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return the array of custom parameters for the key called &#39;key&#39;.</span>
 <span class="sd">           If these don&#39;t exist then create them with the specified</span>
 <span class="sd">           default value. Note that this returns a shallow copy of the</span>
@@ -573,7 +573,7 @@
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
 
-<div class="viewcode-block" id="Nodes.set_custom"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.set_custom">[docs]</a>    <span class="k">def</span> <span class="nf">set_custom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
+<div class="viewcode-block" id="Nodes.set_custom"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.set_custom">[docs]</a>    <span class="k">def</span> <span class="nf">set_custom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
                    <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Set the custom parameters for the key called &#39;key&#39; to &#39;value&#39;.</span>
 <span class="sd">           If the index is set then this just sets the value for that</span>
@@ -621,7 +621,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span></div>
 
-<div class="viewcode-block" id="Nodes.scale_susceptibles"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.scale_susceptibles">[docs]</a>    <span class="k">def</span> <span class="nf">scale_susceptibles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="Nodes.scale_susceptibles"><a class="viewcode-back" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.scale_susceptibles">[docs]</a>    <span class="k">def</span> <span class="nf">scale_susceptibles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                            <span class="n">work_ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">play_ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Scale the number of susceptibles in these Nodes</span>
 <span class="sd">           by the passed scale ratios. These can be values, e.g.</span>
