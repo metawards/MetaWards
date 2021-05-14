@@ -276,6 +276,55 @@
     <span class="n">directory</span><span class="o">.</span><span class="n">rmdir</span><span class="p">()</span>
 
 
+<span class="k">def</span> <span class="nf">_is_executable</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># determining if this is executable</span>
+    <span class="c1"># on windows is really difficult, so just</span>
+    <span class="c1"># assume it is...</span>
+    <span class="k">return</span> <span class="n">filename</span>
+
+
+<span class="k">def</span> <span class="nf">_find_metawards</span><span class="p">(</span><span class="n">dirname</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">_is_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">_is_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">_is_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">_is_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">_is_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="s2">&quot;bin&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="n">m</span> <span class="o">=</span> <span class="n">_is_executable</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span> <span class="s2">&quot;bin&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">m</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+
+
 <div class="viewcode-block" id="run"><a class="viewcode-back" href="../../api/generated/metawards.run.html#metawards.run">[docs]</a><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">help</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">version</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -365,30 +414,54 @@
     <span class="kn">import</span> <span class="nn">sys</span>
     <span class="kn">import</span> <span class="nn">os</span>
     <span class="kn">import</span> <span class="nn">tempfile</span>
+    <span class="kn">import</span> <span class="nn">metawards</span>
     <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
 
-    <span class="n">metawards</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">dirpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">))</span>
+    <span class="c1"># Search through the path based on where the metawards module</span>
+    <span class="c1"># has been installed.</span>
+    <span class="n">modpath</span> <span class="o">=</span> <span class="n">metawards</span><span class="o">.</span><span class="vm">__file__</span>
 
-    <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">),</span>
-                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">),</span>
-                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">),</span>
-                   <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">)]:</span>
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">option</span><span class="p">):</span>
-            <span class="n">metawards</span> <span class="o">=</span> <span class="n">option</span>
+    <span class="n">metawards</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Loop only 100 times - this should break before now,</span>
+    <span class="c1"># We are not using a while loop to avoid an infinite loop</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+        <span class="n">metawards</span> <span class="o">=</span> <span class="n">_find_metawards</span><span class="p">(</span><span class="n">modpath</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">metawards</span><span class="p">:</span>
             <span class="k">break</span>
+
+        <span class="n">newpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">modpath</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">newpath</span> <span class="o">==</span> <span class="n">modpath</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="n">modpath</span> <span class="o">=</span> <span class="n">newpath</span>
+
+    <span class="k">if</span> <span class="n">metawards</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># We couldn&#39;t find it that way - try another route...</span>
+        <span class="n">dirpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">),</span>
+                       <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">),</span>
+                       <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards.exe&quot;</span><span class="p">),</span>
+                       <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="s2">&quot;Scripts&quot;</span><span class="p">,</span> <span class="s2">&quot;metawards&quot;</span><span class="p">)]:</span>
+           <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">option</span><span class="p">):</span>
+                <span class="n">metawards</span> <span class="o">=</span> <span class="n">option</span>
+                <span class="k">break</span>
 
     <span class="k">if</span> <span class="n">metawards</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># last attempt - is &#39;metawards&#39; in the PATH?</span>
         <span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">which</span>
-        <span class="n">exe</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
+        <span class="n">metawards</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s2">&quot;metawards&quot;</span><span class="p">)</span>
             
-        <span class="k">if</span> <span class="n">exe</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Cannot find the metawards executable in </span><span class="si">{</span><span class="n">dirpath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">metawards</span> <span class="o">=</span> <span class="n">exe</span>
+    <span class="k">if</span> <span class="n">metawards</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+            <span class="s2">&quot;Cannot find the metawards executable. Please could you find &quot;</span>
+            <span class="s2">&quot;it and add it to the PATH. Or please post an issue on the &quot;</span>
+            <span class="s2">&quot;GitHub repository (https://github.com/metawards/MetaWards) &quot;</span>
+            <span class="s2">&quot;as this may indicate a bug in the code.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
     <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -647,6 +720,8 @@
         <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">Console</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing output to directory </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+        <span class="n">Console</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[RUNNING] </span><span class="si">{</span><span class="n">cmd</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;win&quot;</span><span class="p">):</span>
                 <span class="c1">#shlex.split doesn&#39;t work, but the command can </span>
@@ -732,7 +807,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 13, 2021.
+        Last updated on May 14, 2021.
       </span>
 
     </p>

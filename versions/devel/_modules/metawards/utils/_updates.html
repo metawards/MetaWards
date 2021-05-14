@@ -243,7 +243,7 @@
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 
 
-<div class="viewcode-block" id="check_for_updates"><a class="viewcode-back" href="../../../api/generated/metawards.utils.check_for_updates.html#metawards.utils.check_for_updates">[docs]</a><span class="k">def</span> <span class="nf">check_for_updates</span><span class="p">(</span><span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">check_for_updates</span><span class="p">(</span><span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Check if a newer version of MetaWards is available. If there is,</span>
 <span class="sd">       then return the version number string. If not, then return None.</span>
 
@@ -288,10 +288,10 @@
     <span class="k">if</span> <span class="n">installed</span> <span class="o">!=</span> <span class="n">latest</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">latest</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">None</span></div>
+        <span class="k">return</span> <span class="kc">None</span>
 
 
-<span class="k">def</span> <span class="nf">update_metawards</span><span class="p">(</span><span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="viewcode-block" id="update_metawards"><a class="viewcode-back" href="../../../api/generated/metawards.utils.update_metawards.html#metawards.utils.update_metawards">[docs]</a><span class="k">def</span> <span class="nf">update_metawards</span><span class="p">(</span><span class="n">dry_run</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Update MetaWards to the latest version. If dry_run is True</span>
 <span class="sd">       then only print the commands that will be called. If</span>
 <span class="sd">       user is True then install within the user space</span>
@@ -331,7 +331,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="kc">True</span>
 
-    <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="kc">None</span></div>
 </pre></div>
 
            </div>
@@ -344,7 +344,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 13, 2021.
+        Last updated on May 14, 2021.
       </span>
 
     </p>
