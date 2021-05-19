@@ -369,3 +369,153 @@ but then this growth falls back at weekends.
   By default the outbreak is modelled to start from today.
   You can control the start date using the ``--start-date``
   command line option.
+
+Changing iterators with stage
+-----------------------------
+
+This method of modelling the weekend, while simple, is not correct.
+We have modelled the weekend as a time when only the players move
+and can be infected. The workers are ignored, meaning that this model
+assumes that the workers spend their weekends at home, not interacting
+with anyone else, and thus have zero risk of contracting an infection.
+
+To model the weekend properly, we have to do something to advance the
+workers. One option is to advance workers at the weekend in the same way
+that we advance players. Because the data structure used to model
+workers is different, we can't just call the
+:meth:`~metawards.iterators.advance_play` function on the workers.
+Instead, metawards comes with
+:meth:`~metawards.iterators.advance_work_to_play`. This advances the
+workers as if they were players.
+
+Using this, the `iterate_week` iterator could look like;
+
+.. code-block:: python
+
+  from metawards.iterators import advance_infprob, \
+                                  advance_work_to_play, \
+                                  advance_play
+  from metawards.utils import Console
+
+
+  def iterate_week(population, **kwargs):
+      date = population.date
+
+      Console.debug(f"Creating functions for {date}")
+
+      if date.weekday() < 5:
+          Console.debug("This is a weekday")
+          return [advance_infprob,
+                  advance_fixed,
+                  advance_play]
+      else:
+          Console.debug("This is a weekend")
+          return [advance_infprob,
+                  advance_work_to_play,
+                  advance_play]
+
+However, this would also not be correct. The issue is that, as well
+as advancing the infection, the iterator is also responsible for
+calculating the force of infection (FOI) resulting from infected
+individuals. This is calculated during the "foi" stage of the day.
+
+Each model day is divided into a series of stages;
+
+1. `initialise` : used to initialise any variables that day
+2. `setup` : used to set up any additional variables or infections
+3. `foi` : used to calculate the FOI resulting from existing infections
+4. `infect` : used to calculate and enact new infections
+5. `analyse` : used to calculate / analyse the data from infections
+
+In addition, for a model run, there is a `finalise` stage,
+which is called once at the end of a model run, at which
+all outputs from a model run are written to disk or a database.
+Then, for a collection of model runs, there is a
+`summary` stage which is called once at the end of all model runs,
+to calculate and write out summary statistics from all runs.
+
+By default, a custom iterator will only specify the advance functions
+that are used for the `infect` stage. The advance functions used for
+other stages are supplied by
+:meth:`~metawards.iterators.iterate_default`. By default, the
+:meth:`~metawards.iterators.advance_foi` function is used to
+calculate the FOI. This assumes that all workers behave like
+workers, and all players behave like players. It does not work
+when we use :meth:`~metawards.iterators.advance_foi_work_to_play`,
+because this makes the workers behave like players.
+
+We thus need to use the :meth:`~metawards.iterators.advance_foi_work_to_play`
+function instead. To do this, we need to tell metawards to use that
+function in the `foi` stage. We can control which stage our iterator
+operates by passing in the `stage` argument. For example;
+
+.. code-block:: python
+
+  from metawards.iterators import advance_infprob, \
+                                  advance_work_to_play, \
+                                  advance_play, \
+                                  advance_foi, \
+                                  advance_foi_work_to_play, \
+                                  advance_recovery
+  from metawards.utils import Console
+
+
+  def iterate_week(stage, population, **kwargs):
+      date = population.date
+
+      Console.debug(f"Creating functions for {date}")
+
+      is_weekend = date.weekday() < 5
+
+
+      if is_weekend:
+          Console.debug("This is a weekend")
+          if stage == "foi":
+              return [advance_foi_work_to_play,
+                      advance_recovery]
+          elif stage == "infect":
+              return [advance_infprob,
+                      advance_work_to_play,
+                      advance_play]
+          else:
+              return iterator_default(stage=stage, **kwargs)
+
+       else:
+          Console.debug("This is a weekday")
+          if stage == "foi":
+              return [advance_foi,
+                      advance_recovery]
+          elif stage == "infect:
+              return [advance_infprob,
+                      advance_fixed,
+                      advance_play]
+          else:
+              return iterator_default(stage=stage, **kwargs)
+
+.. note::
+
+   :meth:`~metawards.iterators.advance_recovery` is another advance
+   function that must be returned at the `foi` stage. This advance
+   function is used to advance infected individuals along
+   the stages of the disease (e.g. E to I to R).
+
+.. note::
+
+   :meth:`~metawards.iterators.iterate_default` returns the default
+   set of advance functions for each stage. It makes sense
+   to call this for the stages that you are not explicitly
+   handling in your iterator, e.g.
+   `return iterate_default(stage=stage, **kwargs)` will return
+   the default advance functions for the specified stage.
+
+With those changes, the `iterate_week` iterator would work as a model
+where all workers become players at the weekends.
+
+To make things easier, metawards provides a built-in
+:meth:`~metawards.iterators.iterate_weekend` iterator for
+iterating a weekend day, plus a
+:meth:`~metawards.iterators.iterate_working_week` iterator that
+will use :meth:`~metawards.iterators.iterate_default` for weekdays,
+and :meth:`~metawards.iterators.iterate_weekend` for weekends.
+Use these if you want to model a working week where workers
+behave like players at the weekend.

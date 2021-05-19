@@ -331,16 +331,19 @@ This should improve speed of loading and access.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Links.copy" title="metawards.Links.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>()</p></td>
 <td><p>Return a copy of these links, using a shallow copy for things that stay the same (e.g.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_null</span></code>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Links.get_index_of_link" title="metawards.Links.get_index_of_link"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_index_of_link</span></code></a>(ifrom, ito)</p></td>
+<td><p>Return the index of the link from ward ifrom to ward ito.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_null</span></code>()</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Links.population" title="metawards.Links.population"><code class="xref py py-obj docutils literal notranslate"><span class="pre">population</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Links.population" title="metawards.Links.population"><code class="xref py py-obj docutils literal notranslate"><span class="pre">population</span></code></a>()</p></td>
 <td><p>Return the population of these links</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Links.resize" title="metawards.Links.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(N)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Links.resize" title="metawards.Links.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(N)</p></td>
 <td><p>Resize this container to hold ‘N’ links.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Links.scale_susceptibles" title="metawards.Links.scale_susceptibles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_susceptibles</span></code></a>([ratio])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Links.scale_susceptibles" title="metawards.Links.scale_susceptibles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_susceptibles</span></code></a>([ratio])</p></td>
 <td><p>Scale the number of susceptibles in these Links by the passed scale ratio.</p></td>
 </tr>
 </tbody>
@@ -422,6 +425,13 @@ and a deep copy for things that are variable
 <dt id="metawards.Links.distance">
 <code class="sig-name descname"><span class="pre">distance</span></code><a class="headerlink" href="#metawards.Links.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>The distance between the two wards of this link</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Links.get_index_of_link">
+<code class="sig-name descname"><span class="pre">get_index_of_link</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ifrom</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ito</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">int</span><a class="reference internal" href="../../_modules/metawards/_links.html#Links.get_index_of_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Links.get_index_of_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the index of the link from ward ifrom to ward ito.
+This raises an exception if there is no such link</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -508,7 +518,7 @@ weight if this is a player link</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 14, 2021.
+        Last updated on May 19, 2021.
       </span>
 
     </p>

@@ -40,6 +40,7 @@
       ~Links.assert_not_null
       ~Links.assert_valid_index
       ~Links.copy
+      ~Links.get_index_of_link
       ~Links.is_null
       ~Links.population
       ~Links.resize
