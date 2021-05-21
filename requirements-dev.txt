@@ -3,7 +3,7 @@ pytest-cov >= 2.2.0
 flake8 >= 3.7
 cython >= 0.29.13
 numpy >= 1.17.2
-sphinx == 3.5.4
+sphinx == 4.0.2
 sphinx_issues
 sphinx_rtd_theme
 sphinxcontrib-programoutput
