@@ -215,7 +215,9 @@
 <h1>Installation instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline">¶</a></h1>
 <p>MetaWards is a Python package, but it does come with R wrappers. This
 means that you can choose to install MetaWards either via Python or
-via R.</p>
+via R. Note that MetaWards depends on data files that are
+held in MetaWardsData. To use MetaWards, you must install MetaWardsData
+following <a class="reference internal" href="model_data.html"><span class="doc">these instructions</span></a>.</p>
 <div class="section" id="installation-via-python">
 <h2>Installation via Python<a class="headerlink" href="#installation-via-python" title="Permalink to this headline">¶</a></h2>
 <p>MetaWards is compiled and
@@ -277,7 +279,8 @@ a different compiler, e.g. installing clang via
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --version
 </pre></div>
 </div>
-<p>This should print out some version information about MetaWards.</p>
+<p>This should print out some version information about MetaWards,
+including whether or not it found MetaWardsData.</p>
 <p>If this doesn’t work, then it is possible that the directory into which
 <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> has been placed is not in your PATH (this is quite
 common on Windows). You can find the
@@ -300,7 +303,8 @@ via the Python route. This is because the version of Python used
 by default in R is too old to run MetaWards (MetaWards needs
 Python 3.7 or newer, while the default in reticulate is to install
 and use Python 3.6).</p>
-<p>Once you have MetaWards installed in Python, you first need to
+<p>Once you have MetaWards (and MetaWardsData)
+installed in Python, you first need to
 get the reticulate command that you will need to tell R which
 Python interpreter to use. We have written a function to do
 this for you. Open Python and type;</p>
@@ -442,7 +446,7 @@ and configured this as <a class="reference external" href="model_data.html">desc
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 21, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

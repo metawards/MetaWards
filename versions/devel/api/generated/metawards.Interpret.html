@@ -328,16 +328,19 @@ code that reads values from the user or from files</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#metawards.Interpret.integer" title="metawards.Interpret.integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">integer</span></code></a>(s[, rng, minval, maxval])</p></td>
 <td><p>Interpret and return an integer from ‘s’, using the passed random number generator if this is a request for a random integer, and within the specified bounds of ‘minval’ and ‘maxval’ if needed.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Interpret.number" title="metawards.Interpret.number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number</span></code></a>(s[, rng, minval, maxval])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Interpret.list" title="metawards.Interpret.list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>(s)</p></td>
+<td><p>Interpret and return a list from the passed string ‘s’</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Interpret.number" title="metawards.Interpret.number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number</span></code></a>(s[, rng, minval, maxval])</p></td>
 <td><p>Interpret and return a number (integer or float) using the passed random number generator if this is a request for a random number, and within the specified bound of ‘minval’ and ‘maxval’ is needed</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Interpret.random_integer" title="metawards.Interpret.random_integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_integer</span></code></a>([s, rng, minval, maxval])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Interpret.random_integer" title="metawards.Interpret.random_integer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_integer</span></code></a>([s, rng, minval, maxval])</p></td>
 <td><p>Interpret a random integer from the passed string, specifying the random number generator to use, and optionally adding additional constraints on the minimum and maximum values</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Interpret.random_number" title="metawards.Interpret.random_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_number</span></code></a>([s, rng, minval, maxval])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Interpret.random_number" title="metawards.Interpret.random_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_number</span></code></a>([s, rng, minval, maxval])</p></td>
 <td><p>Interpret a random number (float) from the passed string, specifying the random number generator to use, and optionally adding additional constraints on the minimum and maximum values</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Interpret.string" title="metawards.Interpret.string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a>(s)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Interpret.string" title="metawards.Interpret.string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string</span></code></a>(s)</p></td>
 <td><p>Interpret and return a string from ‘s’</p></td>
 </tr>
 </tbody>
@@ -404,6 +407,12 @@ of ‘minval’ and ‘maxval’ if needed.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="metawards.Interpret.list">
+<em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_interpret.html#Interpret.list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Interpret.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpret and return a list from the passed string ‘s’</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="metawards.Interpret.number">
 <em class="property"><span class="pre">static</span> </em><code class="sig-name descname"><span class="pre">number</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxval</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><a class="reference internal" href="../../_modules/metawards/_interpret.html#Interpret.number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Interpret.number" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpret and return a number (integer or float) using
@@ -456,7 +465,7 @@ and maximum values</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on May 21, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

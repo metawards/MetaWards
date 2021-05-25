@@ -4,7 +4,9 @@ Installation instructions
 
 MetaWards is a Python package, but it does come with R wrappers. This
 means that you can choose to install MetaWards either via Python or
-via R.
+via R. Note that MetaWards depends on data files that are
+held in MetaWardsData. To use MetaWards, you must install MetaWardsData
+following :doc:`these instructions <model_data>`.
 
 Installation via Python
 =======================
@@ -85,7 +87,8 @@ Once installed, you can run `metawards` by typing
 
     metawards --version
 
-This should print out some version information about MetaWards.
+This should print out some version information about MetaWards,
+including whether or not it found MetaWardsData.
 
 If this doesn't work, then it is possible that the directory into which
 `metawards` has been placed is not in your PATH (this is quite
@@ -114,7 +117,8 @@ by default in R is too old to run MetaWards (MetaWards needs
 Python 3.7 or newer, while the default in reticulate is to install
 and use Python 3.6).
 
-Once you have MetaWards installed in Python, you first need to
+Once you have MetaWards (and MetaWardsData)
+installed in Python, you first need to
 get the reticulate command that you will need to tell R which
 Python interpreter to use. We have written a function to do
 this for you. Open Python and type;

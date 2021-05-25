@@ -39,6 +39,7 @@
       ~Interpret.day
       ~Interpret.day_or_date
       ~Interpret.integer
+      ~Interpret.list
       ~Interpret.number
       ~Interpret.random_integer
       ~Interpret.random_number
