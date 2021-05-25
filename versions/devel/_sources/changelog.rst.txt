@@ -2,8 +2,46 @@
 Changelog
 =========
 
+`1.6.0 <https://github.com/metawards/MetaWards/compare/1.5.1...1.6.0>`__ - May 25th 2021
+--------------------------------------------------------------------------------------------
+
+* Added work_to_play iterators, that allow the weekend to be modelled
+  by treating workers as players. Updated
+  :doc:`the tutorial <tutorial/part03/02_weekend>` to include
+  this better model.
+* Added Apple M1 support. MetaWards now compiles and runs on Apple M1
+  processors. OpenMP support is included, so it can also run
+  in parallel. Setup scripts auto-detect if an M1 version of Python
+  is used, and will compile MetaWards appropriately.
+* Fixed a bug in :func:`metawards.run` whereby the MetaWards executable
+  was not found when running on Windows. This stopped MetaWards from
+  being run from Jupyter or RStudio on Windows. This should now
+  work correctly, including with proper handling of error output
+  (i.e. fixed the hanging reported in issue 169),
+  catching of failures, and passing of command line arguments.
+  To aid running, the API was extended with the following functions;
+  :func:`metawards.find_mw_exe`, :func:`metawards.find_mw_include`
+  and :func:`metawards.get_reticulate_command`.
+* Added the ability to seed infections in the worker population. By default,
+  infections will be seeded in the player population. However, if there
+  are any remaining infections to seed (or no players in a ward) then
+  the infections will be seeded in the workers.
+* Added support for compiling Cython plugins that link to MetaWards
+  C functions. This means that you can now write plugins that are compiled
+  dynamically that use the random number generators in metawards_random.
+  This is demonstrated in `tests/test_cython_iterator.py`, specifically
+  in the iterator `tests/iterators/cython_iterator.pyx`.
+* Fixed a bug in :func:`~metawards.VariableSet` whereby array variables
+  could not be parsed if they were on the first line of the file
+  (the commas confused the parser and put it into column mode).
+  Added a check so that arrays can now be detected on the first line,
+  and the parser put into row mode.
+* Added more docs to the installation instructions to let new users
+  know that they have to install MetaWardsData.
+
 `1.5.1 <https://github.com/metawards/MetaWards/compare/1.5.0...1.5.1>`__ - February 26th 2021
 --------------------------------------------------------------------------------------------
+
 * Fixed a bug in the new :func:`~metawards.mixers.merge_matrix_multi_population`
   function that caused it to calculate incorrect values when one or more
   of the demographics had zero members (it didn't catch this divide by
