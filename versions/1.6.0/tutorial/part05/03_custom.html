@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Using custom merge functions to model shielding &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Contact probabilities and Demographics" href="04_contacts.html" />
+    <link rel="prev" title="Mixers and Merge-functions" href="02_mixers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_demographics.html">Multi-demographic sub-networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_mixers.html">Mixers and Merge-functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Using custom merge functions to model shielding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interaction-matrix">Interaction matrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-mixers">Custom mixers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adjusting-shielding-parameters">Adjusting shielding parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04_contacts.html">Contact probabilities and Demographics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part05.html">Part 5 - Modelling multiple demographics</a> &raquo;</li>
+        
+      <li>Using custom merge functions to model shielding</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="04_contacts.html" class="btn btn-neutral float-right" title="Contact probabilities and Demographics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="02_mixers.html" class="btn btn-neutral float-left" title="Mixers and Merge-functions" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-custom-merge-functions-to-model-shielding">
+<h1>Using custom merge functions to model shielding<a class="headerlink" href="#using-custom-merge-functions-to-model-shielding" title="Permalink to this headline">¶</a></h1>
+<p>So far you have modelled multiple demographics, but they either
+interacted fully with each other during an outbreak, or have
+not interacted at all.</p>
+<p>One of the benefits of using demographics is that we can model
+different levels of interaction between different groups. To do
+this, we will need to set up an interaction matrix between
+demographics, and to call this via a custom mixer.</p>
+<div class="section" id="interaction-matrix">
+<h2>Interaction matrix<a class="headerlink" href="#interaction-matrix" title="Permalink to this headline">¶</a></h2>
+<p>An interaction matrix specifies how much the <em>force of infection</em> (FOI)
+calculated from one demographic influences another. It is an asymmetric
+matrix, e.g. for our <em>red</em> and <em>blue</em> demographics it could be;</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head stub"></th>
+<th class="head"><p>red</p></th>
+<th class="head"><p>blue</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><th class="stub"><p>red</p></th>
+<td><p>0.2</p></td>
+<td><p>0.1</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>blue</p></th>
+<td><p>0.8</p></td>
+<td><p>1.0</p></td>
+</tr>
+</tbody>
+</table>
+<p>The diagonals of this matrix show how much infections in each demographic
+affect that demographic, i.e. how easily the infection spreads within the
+demographic. It has a similar affect to <code class="docutils literal notranslate"><span class="pre">scale_uv</span></code>, though is not
+equivalent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">scale_uv</span></code> scales the precursor to the calculation of each ward’s day
+and night FOIs, while the <em>interaction matrix</em> mixes the day and night
+FOIs for each ward together.</p>
+</div>
+<p>The top-left value (0.2) says that <em>red</em> demographic is adopting lockdown
+measures that scale down the FOI between <em>red</em> individuals by 0.2.</p>
+<p>In contrast, the bottom-right value (1.0) says that no measures are being
+taken within the <em>blue</em> demographic, and the FOI calculated from infections
+within that demographic are not scaled.</p>
+<p>The top-right value (0.1) gives the amount by which the <em>red</em> demographic is
+affected by infections within the <em>blue</em> demographic.
+This describes how easily infections from the <em>blue</em>
+demographic can be transmitted to the <em>red</em> demographic. This low value of
+0.1 indicates that care is taken by members of the <em>blue</em> demographic to
+not infect members of the <em>red</em> demographic.</p>
+<p>The bottom-left value (0.8) is the reverse, namely how much the <em>blue</em>
+demographic is affected by infections within the <em>red</em> demographic,
+i.e. how easily infections
+from the <em>red</em> demographic can be transmitted to the <em>blue</em> demographic.
+The larger value of 0.8 indicates that the <em>blue</em> demographic are still
+being infected by members of the <em>red</em> demographic,
+e.g. perhaps because they are treating or caring for them and are thus
+exposed to large numbers of members.</p>
+<p>The values in this matrix correspond to a potential shielding scenario,
+whereby measures are taken by the <em>blue</em> demographic to shield the
+<em>red</em> demographic from infection.</p>
+</div>
+<div class="section" id="custom-mixers">
+<h2>Custom mixers<a class="headerlink" href="#custom-mixers" title="Permalink to this headline">¶</a></h2>
+<p>We can use this interaction matrix by creating a custom mixer.
+Create a file called <code class="docutils literal notranslate"><span class="pre">shield.py</span></code> and add the following;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.mixers</span> <span class="kn">import</span> <span class="n">merge_using_matrix</span>
+
+<span class="k">def</span> <span class="nf">mix_shield</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]</span> <span class="p">]</span>
+
+    <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">interaction_matrix</span> <span class="o">=</span> <span class="n">matrix</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">merge_using_matrix</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here we have created a new mixer called <code class="docutils literal notranslate"><span class="pre">mix_shield</span></code>. This function
+has two purposes:</p>
+<ol class="arabic simple">
+<li><p>It sets <a class="reference internal" href="../../api/generated/metawards.Demographics.html#metawards.Demographics.interaction_matrix" title="metawards.Demographics.interaction_matrix"><code class="xref py py-data docutils literal notranslate"><span class="pre">interaction_matrix</span></code></a> equal to
+the desired interaction matrix in the networks’
+<a class="reference internal" href="../../api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a> object.
+The matrix is as described above, and represents shielding of
+the <em>red</em> demographic by the <em>blue</em> demographic.</p></li>
+<li><p>It returns the <a class="reference internal" href="../../api/generated/metawards.mixers.merge_using_matrix.html#metawards.mixers.merge_using_matrix" title="metawards.mixers.merge_using_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge_using_matrix()</span></code></a> merge
+function as the function to use to merge the FOIs.
+<a class="reference internal" href="../../api/generated/metawards.mixers.merge_using_matrix.html#metawards.mixers.merge_using_matrix" title="metawards.mixers.merge_using_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge_using_matrix()</span></code></a>
+reads the interaction matrix from
+<code class="docutils literal notranslate"><span class="pre">network.demographics.interaction_matrix</span></code>, meaning that the
+value set in step 1 will be used for the merge.</p></li>
+</ol>
+<p>You set the mixer to use using the <code class="docutils literal notranslate"><span class="pre">--mixer</span></code> flag, e.g. run <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -D demographics.json -a ExtraSeedsLondon.dat --mixer shield
+</pre></div>
+</div>
+<p>You should see that, while the infection moves through most of the <em>blue</em>
+demographic, it is relatively contained within the <em>red</em> demographic.</p>
+<p>You can plot the trajectory using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/trajectory.csv.bz2
+</pre></div>
+</div>
+<p>You should see a plot similar to this;</p>
+<img alt="Disease trajectory for a shielding scenario for the red demographic" src="../../_images/tutorial_5_3_1_demographics.jpg" />
+</div>
+<div class="section" id="adjusting-shielding-parameters">
+<h2>Adjusting shielding parameters<a class="headerlink" href="#adjusting-shielding-parameters" title="Permalink to this headline">¶</a></h2>
+<p>This has worked well, in that the shielded <em>red</em> demographic has been
+protected from the disease. However, using scaling factors of 0.2 and
+0.1 is quite extreme, especially over the four months of the model
+outbreak.</p>
+<p>We can use adjustable parameters to investigate how much shielding is
+needed to protect the <em>red</em> demographic. To do this, update your
+<code class="docutils literal notranslate"><span class="pre">shield.py</span></code> file to contain;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.mixers</span> <span class="kn">import</span> <span class="n">merge_using_matrix</span>
+
+<span class="k">def</span> <span class="nf">mix_shield</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span>
+
+    <span class="n">red_red</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">user_params</span><span class="p">[</span><span class="s2">&quot;red_red&quot;</span><span class="p">]</span>
+    <span class="n">red_blue</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">user_params</span><span class="p">[</span><span class="s2">&quot;red_blue&quot;</span><span class="p">]</span>
+    <span class="n">blue_red</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">user_params</span><span class="p">[</span><span class="s2">&quot;blue_red&quot;</span><span class="p">]</span>
+    <span class="n">blue_blue</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">user_params</span><span class="p">[</span><span class="s2">&quot;blue_blue&quot;</span><span class="p">]</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="n">red_red</span> <span class="p">,</span> <span class="n">red_blue</span> <span class="p">],</span>
+               <span class="p">[</span><span class="n">blue_red</span><span class="p">,</span> <span class="n">blue_blue</span><span class="p">]</span> <span class="p">]</span>
+
+    <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">interaction_matrix</span> <span class="o">=</span> <span class="n">matrix</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">merge_using_matrix</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Here we have adapted our <code class="docutils literal notranslate"><span class="pre">mix_shield</span></code> function to get the values for
+the interaction matrix from adjustable user parameters that have been
+set using <a class="reference internal" href="../part03/05_scanning.html"><span class="doc">same mechanism as before</span></a>.
+In this case we have called the parameters <code class="docutils literal notranslate"><span class="pre">red_red</span></code>, for the impact
+of <em>red</em> on <em>red</em>, <code class="docutils literal notranslate"><span class="pre">red_blue</span></code> for the impact of <em>blue</em> on <em>red</em> etc.</p>
+<p>We then need to create an input file to set the initial values of these
+parameters. Create such a file called “shield.inp” and copy in;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">red_red</span>   <span class="o">=</span> <span class="mf">0.2</span>
+<span class="o">.</span><span class="n">red_blue</span>  <span class="o">=</span> <span class="mf">0.1</span>
+<span class="o">.</span><span class="n">blue_red</span>  <span class="o">=</span> <span class="mf">0.8</span>
+<span class="o">.</span><span class="n">blue_blue</span> <span class="o">=</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>Finally, we would like to scan through the different value of
+<code class="docutils literal notranslate"><span class="pre">red_red</span></code> and <code class="docutils literal notranslate"><span class="pre">red_blue</span></code> to see how much the <em>red</em> demographic
+needs to be shielded. Create a scan file called <code class="docutils literal notranslate"><span class="pre">scan.dat</span></code> and copy in;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">red_red</span>  <span class="o">.</span><span class="n">red_blue</span>
+   <span class="mf">0.2</span>       <span class="mf">0.1</span>
+   <span class="mf">0.2</span>       <span class="mf">0.2</span>
+   <span class="mf">0.2</span>       <span class="mf">0.3</span>
+   <span class="mf">0.2</span>       <span class="mf">0.4</span>
+   <span class="mf">0.2</span>       <span class="mf">0.5</span>
+
+   <span class="mf">0.3</span>       <span class="mf">0.1</span>
+   <span class="mf">0.3</span>       <span class="mf">0.2</span>
+   <span class="mf">0.3</span>       <span class="mf">0.3</span>
+   <span class="mf">0.3</span>       <span class="mf">0.4</span>
+   <span class="mf">0.3</span>       <span class="mf">0.5</span>
+
+   <span class="mf">0.4</span>       <span class="mf">0.1</span>
+   <span class="mf">0.4</span>       <span class="mf">0.2</span>
+   <span class="mf">0.4</span>       <span class="mf">0.3</span>
+   <span class="mf">0.4</span>       <span class="mf">0.4</span>
+   <span class="mf">0.4</span>       <span class="mf">0.5</span>
+
+   <span class="mf">0.5</span>       <span class="mf">0.1</span>
+   <span class="mf">0.5</span>       <span class="mf">0.2</span>
+   <span class="mf">0.5</span>       <span class="mf">0.3</span>
+   <span class="mf">0.5</span>       <span class="mf">0.4</span>
+   <span class="mf">0.5</span>       <span class="mf">0.5</span>
+</pre></div>
+</div>
+<p>This scans <code class="docutils literal notranslate"><span class="pre">red_red</span></code> between 0.2 and 0.5 while scanning <code class="docutils literal notranslate"><span class="pre">red_blue</span></code>
+from 0.1 to 0.5</p>
+<p>You can run these jobs using this command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -D demographics.json -a ExtraSeedsLondonBlue.dat --mixer shield --user-variables shield.inp -i scan.dat
+</pre></div>
+</div>
+<p>or, alternatively if you have a cluster you could use a job script such
+as this to run multiple repeats (always a good idea for a stochastic
+simulation).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -l walltime=12:00:00</span>
+<span class="c1">#PBS -l select=4:ncpus=64:mem=64GB</span>
+<span class="c1"># The above sets 4 nodes with 64 cores each</span>
+
+<span class="c1"># Assume you have metawards in $HOME/envs/metawards</span>
+<span class="nb">source</span> <span class="nv">$HOME</span>/metawards/bin/activate
+
+<span class="c1"># change into the directory from which this job was submitted</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+
+metawards -u shield.inp -i scan.dat -d lurgy3 <span class="se">\</span>
+          -D demographics.json -a ExtraSeedsLondonBlue.dat <span class="se">\</span>
+          --mixer shield <span class="se">\</span>
+          --repeats <span class="m">8</span> --nthreads <span class="m">16</span> --force-overwrite-output
+</pre></div>
+</div>
+<p>if you are using PBS, or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=64
+# The above sets 4 nodes with 64 cores each
+
+# Assume you have metawards in $HOME/envs/metawards
+source $HOME/metawards/bin/activate
+
+metawards -u shield.inp -i scan.dat -d lurgy3 \
+          -D demographics.json -a ExtraSeedsLondonBlue.dat \
+          --mixer shield \
+          --repeats 8 --nthreads 16 --force-overwrite-output
+</pre></div>
+</div>
+<p>This job may take a while (likely 1-2 minutes per <em>model run</em>, and then
+scaled by number of jobs divided by number of cores). In my case,
+this took about 16 minutes on 256 cores of
+<a class="reference external" href="https://www.bristol.ac.uk/news/2018/april/supercomputer-collaboration.html">Catalyst</a>.</p>
+<p>Once you have performed this calculation you can generate an animation
+of the overview graphs using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+metawards-plot --animate output/overview*.jpg -o output/overview.gif
+</pre></div>
+</div>
+<p>(assuming all of your output is in the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory)</p>
+<p>Your animation should look something like this;</p>
+<img alt="Overview image of shielding with custom parameters" src="../../_images/tutorial_5_3_2.gif" />
+<p>You can also generate the individual demographic trajectory overview plots
+and animate those using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/*x001/trajectory.csv.bz2
+metawards-plot --animate output/*x001/demographics.jpg -o output/demographics.gif
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ve only generated and animated the first repeat here (directories
+are all named “SOMETHINGx001”). This makes processing quicker and the
+resulting animation smaller, as each repeat has almost the same plot.</p>
+</div>
+<p>Your animation should look something like this;</p>
+<img alt="Demographic trajectories when shielding with custom parameters" src="../../_images/tutorial_5_3_3.gif" />
+<p>From this scan it is clear that the <code class="docutils literal notranslate"><span class="pre">red-blue</span></code> scale has a much bigger
+impact on the success of shielding than <code class="docutils literal notranslate"><span class="pre">red-red</span></code>.
+This suggests, at least in this model,
+that it is more important for the <em>blue</em> demographic to take care when
+interacting with the <em>red</em> demographic than it is to control the level
+of lockdown of the <em>red</em> demographic.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="04_contacts.html" class="btn btn-neutral float-right" title="Contact probabilities and Demographics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="02_mixers.html" class="btn btn-neutral float-left" title="Mixers and Merge-functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

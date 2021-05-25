@@ -1,0 +1,627 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Responding to changing conditions &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Custom variables" href="05_scanning.html" />
+    <link rel="prev" title="Custom advance functions" href="03_lockdown.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_iterators.html">How a day is modelled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_weekend.html">Where is the weekend?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_lockdown.html">Custom advance functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Responding to changing conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#releasing-lockdown">Releasing lockdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relaxing-not-removing-lockdown">Relaxing, not removing lockdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#returning-to-work">Returning to work</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05_scanning.html">Custom variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_scan_lockdown.html">Scanning lockdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07_cutoff.html">Alternative lockdowns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08_local_lockdown.html">Local lockdowns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part03.html">Part 3 - Customising the outbreak</a> &raquo;</li>
+        
+      <li>Responding to changing conditions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="05_scanning.html" class="btn btn-neutral float-right" title="Custom variables" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="03_lockdown.html" class="btn btn-neutral float-left" title="Custom advance functions" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="responding-to-changing-conditions">
+<h1>Responding to changing conditions<a class="headerlink" href="#responding-to-changing-conditions" title="Permalink to this headline">¶</a></h1>
+<p>We’ve now created a lock-down advance function, but are currently
+triggering this function in an iterator based on a fixed number
+of days since the outbreak started.</p>
+<p>A better approach would be to trigger the lock-down based on the
+number of individuals who are detected as infected in the model.</p>
+<p>To do this, edit your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code> script and copy in the following;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_working_week</span><span class="p">,</span> \
+                                <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_fixed</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;We are on lockdown&quot;</span><span class="p">)</span>
+    <span class="n">advance_infprob</span><span class="p">(</span><span class="n">scale_rate</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">advance_play</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="s2">&quot;lockdown_state&quot;</span><span class="p">):</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;before&quot;</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;before&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">5000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;lockdown&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_started</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iterate_working_week</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first thing we do here is see if the <code class="docutils literal notranslate"><span class="pre">population</span></code> has a
+<code class="docutils literal notranslate"><span class="pre">lockdown_state</span></code> variable using the standard Python
+<a class="reference external" href="https://docs.python.org/3/library/functions.html#hasattr">hasattr function</a>.
+This variable won’t exist on the first call to
+to <code class="docutils literal notranslate"><span class="pre">iterate_lockdown</span></code>, and so here we
+set the <code class="docutils literal notranslate"><span class="pre">lockdown_state</span></code> to <code class="docutils literal notranslate"><span class="pre">before</span></code>
+and set the flag <code class="docutils literal notranslate"><span class="pre">population.is_locked_down</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Next, we check if the lockdown is in the <code class="docutils literal notranslate"><span class="pre">before</span></code> state. If it is,
+then if the total infected population is greater than 5000 we change
+the <code class="docutils literal notranslate"><span class="pre">lockdown_state</span></code> to <code class="docutils literal notranslate"><span class="pre">lockdown</span></code>, save the day the lockdown
+started to <code class="docutils literal notranslate"><span class="pre">population.lockdown_started</span></code>, and set the flag
+<code class="docutils literal notranslate"><span class="pre">population.is_locked_down</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Finally, we either return our <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> advance function,
+or the standard advance functions for a working week depending
+on the value of the <code class="docutils literal notranslate"><span class="pre">population.is_locked_down</span></code> flag.</p>
+<p>Run the model and draw the overview graph using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --additional ExtraSeedsLondon.dat --iterator lockdown
+metawards-plot -i output/results.csv.bz2 --format jpg --dpi <span class="m">150</span>
+</pre></div>
+</div>
+<p>You should now see that the lockdown takes effect some time after the
+infected population grows above 5000. This tips the curve and reduces
+the spread of the disease. You can see what my graphs looked like here;</p>
+<img alt="Overview image of a automatic lockdown" src="../../_images/tutorial_3_4_1_overview.jpg" />
+<div class="section" id="releasing-lockdown">
+<h2>Releasing lockdown<a class="headerlink" href="#releasing-lockdown" title="Permalink to this headline">¶</a></h2>
+<p>We can use the data in <code class="docutils literal notranslate"><span class="pre">population</span></code> to decide when to release the
+lockdown as well. For example, we could release when the size of the
+infected population drops below 2000. To do this, edit your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code>
+file to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_working_week</span><span class="p">,</span> \
+                                <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_fixed</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;We are on lockdown&quot;</span><span class="p">)</span>
+    <span class="n">advance_infprob</span><span class="p">(</span><span class="n">scale_rate</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">advance_play</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="s2">&quot;lockdown_state&quot;</span><span class="p">):</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;before&quot;</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;before&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">5000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;lockdown&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_started</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;lockdown&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;after&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_ended</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iterate_working_week</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the model as before and see what happens…</p>
+<p>To start, the lockdown has worked and the number of infections has fallen,
+with the number falling below 2000 on day 78. However, releasing the
+lockdown completely leads to a rapid growth in the infection,
+with over 85,000 infected three weeks after lockdown ended. This
+is unsurprising, as there was still a lot of infected individuals
+remaining once lockdown ended, and a large population that was
+still susceptible to infection (as you can see from the print
+of my run and the overview graph below).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 76 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                We are on lockdown                        lockdown.py:9
+S: 56055907  E: 201  I: 2192  R: 23777  IW: 215  POPULATION: 56082077
+Number of infections: 2393
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 77 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                We are on lockdown                        lockdown.py:9
+S: 56055697  E: 223  I: 2144  R: 24013  IW: 202  POPULATION: 56082077
+Number of infections: 2367
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 78 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                We are on lockdown                        lockdown.py:9
+S: 56055515  E: 210  I: 2109  R: 24243  IW: 174  POPULATION: 56082077
+Number of infections: 2319
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 79 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[15:41:25]                        We are on lockdown                        lockdown.py:9
+S: 56055304  E: 182  I: 2099  R: 24492  IW: 205  POPULATION: 56082077
+Number of infections: 2281
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 80 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                We are on lockdown                        lockdown.py:9
+S: 56055121  E: 211  I: 2055  R: 24690  IW: 175  POPULATION: 56082077
+Number of infections: 2266
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 81 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                We are on lockdown                        lockdown.py:9
+S: 56054939  E: 183  I: 2004  R: 24951  IW: 176  POPULATION: 56082077
+Number of infections: 2187
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 82 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+                                We are on lockdown                        lockdown.py:9
+S: 56054770  E: 182  I: 1964  R: 25161  IW: 166  POPULATION: 56082077
+Number of infections: 2146
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 83 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56053695  E: 169  I: 1923  R: 26290  IW: 916  POPULATION: 56082077
+Number of infections: 2092
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 84 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56052615  E: 1075  I: 1879  R: 26508  IW: 920  POPULATION: 56082077
+Number of infections: 2954
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 85 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56051552  E: 1080  I: 2730  R: 26715  IW: 908  POPULATION: 56082077
+Number of infections: 3810
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 86 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56050161  E: 1063  I: 3598  R: 27255  IW: 1187  POPULATION: 56082077
+Number of infections: 4661
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 87 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56049050  E: 1391  I: 4452  R: 27184  IW: 966  POPULATION: 56082077
+Number of infections: 5843
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 88 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56047600  E: 1111  I: 5589  R: 27777  IW: 1236  POPULATION: 56082077
+Number of infections: 6700
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 89 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56044865  E: 1450  I: 6352  R: 29410  IW: 2072  POPULATION: 56082077
+Number of infections: 7802
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 90 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56041834  E: 2735  I: 7386  R: 30122  IW: 2246  POPULATION: 56082077
+Number of infections: 10121
+</pre></div>
+</div>
+<img alt="Overview image of a automatically released lockdown" src="../../_images/tutorial_3_4_4_overview.jpg" />
+<p>Note how the second wave of infection makes the initial wave almost invisible
+in this graph. The only visible evidence is the small peak in the number
+of infected wards (<strong>IW</strong>) plot.</p>
+</div>
+<div class="section" id="relaxing-not-removing-lockdown">
+<h2>Relaxing, not removing lockdown<a class="headerlink" href="#relaxing-not-removing-lockdown" title="Permalink to this headline">¶</a></h2>
+<p>The problem is that we treated lockdown like a binary switch, and
+immediately went back to normal once it was lifted.</p>
+<p>Instead, we need to release the lockdown in stages. To model this,
+edit your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code> to contain the following.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_working_week</span><span class="p">,</span> \
+                                <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_fixed</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;We are in lockdown&quot;</span><span class="p">,</span>
+                  <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span><span class="p">])</span>
+
+    <span class="n">advance_infprob</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                    <span class="n">scale_rate</span><span class="o">=</span><span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">advance_play</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;before&quot;</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;before&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">5000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;lockdown&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_started</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;lockdown&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;relaxed_lockdown&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_ended</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.10</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;relaxed_lockdown&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.20</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.10</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iterate_working_week</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this code we have created a new lockdown state that we’ve called
+<code class="docutils literal notranslate"><span class="pre">relaxed_lockdown</span></code>. This is entered when the number of infections
+drops below 2000. In this state controls can be released that
+correspond to now only halving the infection rate (<code class="docutils literal notranslate"><span class="pre">scale_rate</span></code>
+is increased to 0.10 from 0.05 during the strong lockdown).
+In the <code class="docutils literal notranslate"><span class="pre">relaxed_lockdown</span></code> state the infected population
+is always checked. If it is below 1000 then the lockdown can be
+relaxed even more, with the <code class="docutils literal notranslate"><span class="pre">scale_rate</span></code> increasing from 0.10
+to 0.20. However, if the infected population rises above 1000,
+then the lockdown is tightened and the <code class="docutils literal notranslate"><span class="pre">scale_rate</span></code> is lowered
+again to 0.10.</p>
+<p>Have a go at running using this iterator. What do you see? In my
+case I see the model moving from lockdown (<code class="docutils literal notranslate"><span class="pre">scale_factor==0.05</span></code>),
+through relaxed lockdown (<code class="docutils literal notranslate"><span class="pre">scale_factor==0.1</span></code>) to light
+lockdown (<code class="docutils literal notranslate"><span class="pre">scale_factor==0.2</span></code>) during the outbreak, which
+is brought under control. The overview plots are here;</p>
+<img alt="Overview image of a automatically relaxing lockdown" src="../../_images/tutorial_3_4_2_overview.jpg" />
+<p>There is a small second peak as the lockdown is relaxed, but
+this seems to be under control.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Remember, we cannot read too much into single <strong>model runs</strong>
+as these are very stochastic simulations. We would need to
+run models many times and average before we could gain real
+insight.</p>
+</div>
+</div>
+<div class="section" id="returning-to-work">
+<h2>Returning to work<a class="headerlink" href="#returning-to-work" title="Permalink to this headline">¶</a></h2>
+<p>Because Python is dynamically typed, we can set whatever flags
+or add whatever data we want to the <code class="docutils literal notranslate"><span class="pre">population</span></code> object that
+we need (or indeed to any Python object).</p>
+<p>Let’s now add an extra flag that will be used by
+<code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> to call <code class="docutils literal notranslate"><span class="pre">advance_fixed</span></code> if the lockdown
+has been lifted sufficiently for people to return to work.
+Copy the below into your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code> file;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_working_week</span><span class="p">,</span> \
+                                <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_fixed</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;We are in lockdown&quot;</span><span class="p">,</span>
+                  <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span><span class="p">,</span>
+                             <span class="n">population</span><span class="o">.</span><span class="n">is_work_locked_down</span><span class="p">])</span>
+
+    <span class="n">advance_infprob</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                    <span class="n">scale_rate</span><span class="o">=</span><span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">advance_play</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">population</span><span class="o">.</span><span class="n">is_work_locked_down</span><span class="p">:</span>
+        <span class="n">advance_fixed</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="s2">&quot;lockdown_state&quot;</span><span class="p">):</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;before&quot;</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.25</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">is_work_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;before&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&gt;</span> <span class="mi">5000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;lockdown&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_started</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_work_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;lockdown&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">=</span> <span class="s2">&quot;relaxed_lockdown&quot;</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_ended</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.5</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">is_work_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">lockdown_state</span> <span class="o">==</span> <span class="s2">&quot;relaxed_lockdown&quot;</span><span class="p">:</span>
+        <span class="n">population</span><span class="o">.</span><span class="n">is_work_locked_down</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">total</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.75</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">population</span><span class="o">.</span><span class="n">lockdown_scale_rate</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">is_locked_down</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iterate_working_week</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is getting longer, but I hope you can see that all we have
+added is a <code class="docutils literal notranslate"><span class="pre">population.is_work_locked_down</span></code> flag, plus some
+extra code to flip this between <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>. This flag
+is read by <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code>, which calls <code class="docutils literal notranslate"><span class="pre">advance_fixed</span></code>
+if the flag is <code class="docutils literal notranslate"><span class="pre">False</span></code>. We’ve also added a check to see if the
+infected population rises above 5000 while in “relaxed lockdown”,
+and if it does, to re-enter full lockdown.</p>
+<p>Run the model and plot the graphs. What do you see? Do you get
+a graph similar to below?</p>
+<img alt="Overview image of a automatically relaxing lockdown" src="../../_images/tutorial_3_4_3_overview.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="05_scanning.html" class="btn btn-neutral float-right" title="Custom variables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03_lockdown.html" class="btn btn-neutral float-left" title="Custom advance functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

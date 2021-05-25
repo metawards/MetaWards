@@ -1,0 +1,6 @@
+﻿metawards.utils.prepare\_worker
+===============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: prepare_worker

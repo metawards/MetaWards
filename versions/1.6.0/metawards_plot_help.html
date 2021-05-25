@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Command line options &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Running on a cluster" href="cluster_usage.html" />
+    <link rel="prev" title="Command line options" href="metawards_help.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">Usage</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="usage.html#metawards-program">metawards program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#getting-help">Getting help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#understanding-the-options">Understanding the options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#understanding-the-input">Understanding the input</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="usage.html#understanding-the-output">Understanding the output</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="usage.html#metawards-plot">metawards-plot</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Command line options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="usage.html">Usage</a> &raquo;</li>
+        
+      <li>Command line options</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="cluster_usage.html" class="btn btn-neutral float-right" title="Running on a cluster" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="metawards_help.html" class="btn btn-neutral float-left" title="Command line options" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="command-line-options">
+<h1>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h1>
+<p>The full set of command line options for metawards-plot is below;</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>usage: metawards-plot [-h] [--version] [-c CONFIG] [-i [INPUT [INPUT ...]]]
+                      [-a [ANIMATE [ANIMATE ...]]] [-o OUTPUT]
+                      [--format FORMAT] [--align-axes] [--no-align-axes]
+                      [--dpi DPI] [--delay DELAY] [--ordering ORDERING]
+
+MetaWards simple plotting program - see https://metawards.org for more
+information.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             Print the version information about metawards-plot
+                        (default: None)
+  -c CONFIG, --config CONFIG
+                        Config file that can be used to set some or all of
+                        these command line options. (default: None)
+  -i [INPUT [INPUT ...]], --input [INPUT [INPUT ...]]
+                        Full path to the &#39;results.csv.bz2&#39; file that you want
+                        to quickly plot. (default: None)
+  -a [ANIMATE [ANIMATE ...]], --animate [ANIMATE [ANIMATE ...]]
+                        Full path to the set of plots that you want to animate
+                        together into an animated gif (default: None)
+  -o OUTPUT, --output OUTPUT
+                        Location for the output. By default this is inferred
+                        from the input (default: None)
+  --format FORMAT       Desired format of the graphs that are produced. Good
+                        formats are &#39;pdf&#39; for publication graphics and &#39;png&#39;
+                        or &#39;jpeg&#39; for webpages (default: jpg)
+  --align-axes          Whether to align the axes of all graphs so that they
+                        are all plotted on the same scale (default true)
+                        (default: None)
+  --no-align-axes       Disable alignment of the axes of graphs. Each graph
+                        will be drawn using its own scale (default: None)
+  --dpi DPI             Resolution to use when creating bitmap outputs, e.g.
+                        jpg, png etc. (default: 150)
+  --delay DELAY         The delay in milliseconds between animation frames if
+                        an animation is being produced (default: 500)
+  --ordering ORDERING   Ordering to use for the frames. This can be
+                        fingerprint, filename or custom (default: fingerprint)
+
+Args that start with &#39;--&#39; (eg. --version) can also be set in a config file
+(specified via -c). Config file syntax allows: key=value, flag=true,
+stuff=[a,b,c] (for details, see syntax at https://goo.gl/R74nmi). If an arg is
+specified in more than one place, then commandline values override config file
+values which override defaults.
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cluster_usage.html" class="btn btn-neutral float-right" title="Running on a cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="metawards_help.html" class="btn btn-neutral float-left" title="Command line options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

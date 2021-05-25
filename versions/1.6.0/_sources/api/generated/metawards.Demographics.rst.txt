@@ -1,0 +1,82 @@
+﻿metawards.Demographics
+======================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Demographics
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Demographics.__add__
+      ~Demographics.__delattr__
+      ~Demographics.__dir__
+      ~Demographics.__eq__
+      ~Demographics.__format__
+      ~Demographics.__ge__
+      ~Demographics.__getattribute__
+      ~Demographics.__getitem__
+      ~Demographics.__gt__
+      ~Demographics.__init__
+      ~Demographics.__init_subclass__
+      ~Demographics.__le__
+      ~Demographics.__len__
+      ~Demographics.__lt__
+      ~Demographics.__ne__
+      ~Demographics.__new__
+      ~Demographics.__radd__
+      ~Demographics.__reduce__
+      ~Demographics.__reduce_ex__
+      ~Demographics.__repr__
+      ~Demographics.__setattr__
+      ~Demographics.__sizeof__
+      ~Demographics.__str__
+      ~Demographics.__subclasshook__
+      ~Demographics.add
+      ~Demographics.build
+      ~Demographics.copy
+      ~Demographics.from_data
+      ~Demographics.from_json
+      ~Demographics.get_index
+      ~Demographics.get_name
+      ~Demographics.is_multi_network
+      ~Demographics.load
+      ~Demographics.specialise
+      ~Demographics.to_data
+      ~Demographics.to_json
+      ~Demographics.uses_named_network
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Demographics.__annotations__
+      ~Demographics.__dataclass_fields__
+      ~Demographics.__dataclass_params__
+      ~Demographics.__dict__
+      ~Demographics.__doc__
+      ~Demographics.__hash__
+      ~Demographics.__module__
+      ~Demographics.__weakref__
+      ~Demographics._authors
+      ~Demographics._contacts
+      ~Demographics._filename
+      ~Demographics._name
+      ~Demographics._references
+      ~Demographics._repository
+      ~Demographics._repository_branch
+      ~Demographics._repository_version
+      ~Demographics._version
+      ~Demographics.interaction_matrix
+      ~Demographics.random_seed
+   
+   

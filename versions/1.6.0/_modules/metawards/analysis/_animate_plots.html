@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards.analysis._animate_plots &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards.analysis._animate_plots</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards.analysis._animate_plots</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;animate_plots&quot;</span><span class="p">,</span> <span class="s2">&quot;import_animate_modules&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">import_font_modules</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Imports matplotlib.font_manager&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">font_manager</span>
+        <span class="k">return</span> <span class="n">font_manager</span>
+    <span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to import the matplotlib.font_manager module...&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error is </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+
+<div class="viewcode-block" id="import_animate_modules"><a class="viewcode-back" href="../../../api/generated/metawards.analysis.import_animate_modules.html#metawards.analysis.import_animate_modules">[docs]</a><span class="k">def</span> <span class="nf">import_animate_modules</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Import the python modules needed to animate plots. This</span>
+<span class="sd">       imports Python Pillow</span>
+
+<span class="sd">       Returns</span>
+<span class="sd">       -------</span>
+<span class="sd">       (Image, ImageDraw)</span>
+<span class="sd">         The PIL.Image and PIL.ImageDraw modules</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Could not import Python Pillow to create animated plot.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please install using &#39;pip install Pillow&gt;=6.2.1&#39;,&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;or by running &#39;metawards-install --optional&#39;&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="animate_plots"><a class="viewcode-back" href="../../../api/generated/metawards.analysis.animate_plots.html#metawards.analysis.animate_plots">[docs]</a><span class="k">def</span> <span class="nf">animate_plots</span><span class="p">(</span><span class="n">plots</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                  <span class="n">delay</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span>
+                  <span class="n">ordering</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;fingerprint&quot;</span><span class="p">,</span>
+                  <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Animate the plots contained in the filenames &#39;plots&#39;, writing</span>
+<span class="sd">       the output to &#39;output&#39;. Creates an animated gif of the plots</span>
+<span class="sd">       and writes them to the file &#39;output&#39;</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       plots: List[str]</span>
+<span class="sd">         The list of files containing graphs to plot</span>
+<span class="sd">       output: str</span>
+<span class="sd">         The name of the file to write the animated gif to</span>
+<span class="sd">       delay: int</span>
+<span class="sd">         The delay in milliseconds between frames. Default is</span>
+<span class="sd">         500 milliseconds (2 frames per second) which is reasonable</span>
+<span class="sd">         for animated graphs</span>
+<span class="sd">       ordering: str</span>
+<span class="sd">         The ordering to use for the frames. This can be</span>
+<span class="sd">         &#39;fingerprint&#39;, &#39;filename&#39; or &#39;custom&#39;</span>
+<span class="sd">       verbose: bool</span>
+<span class="sd">         Whether to print out information to the screen during</span>
+<span class="sd">         processing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">ordering</span> <span class="o">==</span> <span class="s2">&quot;fingerprint&quot;</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">.._variableset</span> <span class="kn">import</span> <span class="n">VariableSet</span>
+
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arranging into fingerprint order...&quot;</span><span class="p">)</span>
+
+        <span class="n">fingerprints</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">filenames</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">legends</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">repeat_idx</span><span class="p">)</span> <span class="o">=</span> <span class="n">VariableSet</span><span class="o">.</span><span class="n">extract_values</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Could not extract a fingerprint from &#39;</span><span class="si">{</span><span class="n">plot</span><span class="si">}</span><span class="s2">&#39;. &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;Error was </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">repeat_idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># no fingerprint - write these first in filename order</span>
+                <span class="n">filenames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+                <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">repeat_idx</span><span class="p">:</span>
+                <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2"> x </span><span class="si">{</span><span class="n">repeat_idx</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">repeat_idx</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+                <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># now create a sortable string from these values</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([(</span><span class="s2">&quot;</span><span class="si">%.5f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">values</span><span class="p">])</span>
+            <span class="n">fingerprints</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">plot</span>
+
+        <span class="n">keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">fingerprints</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">keys</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="n">plots</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+            <span class="n">plots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fingerprints</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+
+        <span class="n">filenames</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="n">plots</span> <span class="o">=</span> <span class="n">plots</span> <span class="o">+</span> <span class="n">filenames</span>
+
+    <span class="k">elif</span> <span class="n">ordering</span> <span class="o">==</span> <span class="s2">&quot;filename&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arranging into filename order...&quot;</span><span class="p">)</span>
+
+        <span class="n">plots</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="n">legends</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">:</span>
+            <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]</span> <span class="o">=</span> <span class="n">plot</span>
+
+    <span class="k">elif</span> <span class="n">ordering</span> <span class="o">==</span> <span class="s2">&quot;custom&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using the user-supplied order...&quot;</span><span class="p">)</span>
+
+        <span class="n">legends</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">:</span>
+            <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]</span> <span class="o">=</span> <span class="n">plot</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not recognise ordering scheme </span><span class="si">{</span><span class="n">ordering</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unrecognised ordering scheme </span><span class="si">{</span><span class="n">ordering</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">os</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">commonprefix</span><span class="p">(</span><span class="n">plots</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">common</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">)):</span>
+            <span class="n">common</span> <span class="o">+=</span> <span class="s2">&quot;_&quot;</span>
+
+        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">common</span><span class="si">}</span><span class="s2">animate.gif&quot;</span>
+
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Animating the below frame in this order, with a delay &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;between frames of </span><span class="si">{</span><span class="n">delay</span><span class="si">}</span><span class="s2"> ms.&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">plot</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plots</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">plot</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output will be written to </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># open all of the images</span>
+    <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span><span class="p">,</span> <span class="n">ImageFont</span><span class="p">)</span> <span class="o">=</span> <span class="n">import_animate_modules</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">plot</span> <span class="ow">in</span> <span class="n">plots</span><span class="p">:</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">font_manager</span> <span class="o">=</span> <span class="n">import_font_modules</span><span class="p">()</span>
+
+                <span class="k">if</span> <span class="n">font_manager</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;writing </span><span class="si">{</span><span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="n">fontfile</span> <span class="o">=</span> <span class="n">font_manager</span><span class="o">.</span><span class="n">findfont</span><span class="p">(</span><span class="s2">&quot;Arial&quot;</span><span class="p">)</span>
+                    <span class="n">font</span> <span class="o">=</span> <span class="n">ImageFont</span><span class="o">.</span><span class="n">truetype</span><span class="p">(</span><span class="n">fontfile</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+                    <span class="n">draw</span> <span class="o">=</span> <span class="n">ImageDraw</span><span class="o">.</span><span class="n">Draw</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+                    <span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">legends</span><span class="p">[</span><span class="n">plot</span><span class="p">],</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="c1"># couldn&#39;t tag it - don&#39;t break the animation</span>
+                <span class="k">pass</span>
+
+        <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+
+    <span class="n">images</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">save_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">append_images</span><span class="o">=</span><span class="n">images</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span>
+                   <span class="n">optimize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">delay</span><span class="p">,</span> <span class="n">loop</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># now try to optimize the gif</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">pygifsicle</span> <span class="kn">import</span> <span class="n">optimize</span>
+        <span class="n">have_optimize</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">have_optimize</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="n">have_optimize</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimizing the resulting gif...&quot;</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">optimize</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Optimisation failed - using unoptimized gif&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

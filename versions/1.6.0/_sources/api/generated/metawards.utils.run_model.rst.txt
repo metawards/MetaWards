@@ -1,0 +1,6 @@
+﻿metawards.utils.run\_model
+==========================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: run_model

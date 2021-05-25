@@ -1,0 +1,60 @@
+﻿metawards.VariableSets
+======================
+
+.. currentmodule:: metawards
+
+.. autoclass:: VariableSets
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~VariableSets.__delattr__
+      ~VariableSets.__dir__
+      ~VariableSets.__eq__
+      ~VariableSets.__format__
+      ~VariableSets.__ge__
+      ~VariableSets.__getattribute__
+      ~VariableSets.__getitem__
+      ~VariableSets.__gt__
+      ~VariableSets.__init__
+      ~VariableSets.__init_subclass__
+      ~VariableSets.__le__
+      ~VariableSets.__len__
+      ~VariableSets.__lt__
+      ~VariableSets.__ne__
+      ~VariableSets.__new__
+      ~VariableSets.__reduce__
+      ~VariableSets.__reduce_ex__
+      ~VariableSets.__repr__
+      ~VariableSets.__setattr__
+      ~VariableSets.__sizeof__
+      ~VariableSets.__str__
+      ~VariableSets.__subclasshook__
+      ~VariableSets._read_horizontal
+      ~VariableSets._read_vertical
+      ~VariableSets.append
+      ~VariableSets.read
+      ~VariableSets.repeat
+      ~VariableSets.set_outdir_from_number
+      ~VariableSets.set_outdir_from_uid
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~VariableSets.__dict__
+      ~VariableSets.__doc__
+      ~VariableSets.__hash__
+      ~VariableSets.__module__
+      ~VariableSets.__weakref__
+   
+   

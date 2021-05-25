@@ -1,0 +1,765 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards._parameters &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards._parameters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards._parameters</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span> <span class="k">as</span> <span class="n">_dataclass</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">field</span> <span class="k">as</span> <span class="n">_field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span><span class="p">,</span> <span class="n">Dict</span> <span class="k">as</span> <span class="n">_Dict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span> <span class="k">as</span> <span class="n">_date</span>
+
+<span class="kn">from</span> <span class="nn">._inputfiles</span> <span class="kn">import</span> <span class="n">InputFiles</span>
+<span class="kn">from</span> <span class="nn">._disease</span> <span class="kn">import</span> <span class="n">Disease</span>
+<span class="kn">from</span> <span class="nn">._variableset</span> <span class="kn">import</span> <span class="n">VariableSets</span><span class="p">,</span> <span class="n">VariableSet</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span> <span class="s2">&quot;get_repository_version&quot;</span><span class="p">,</span> <span class="s2">&quot;get_repository&quot;</span><span class="p">]</span>
+
+<span class="n">_default_folder_name</span> <span class="o">=</span> <span class="s2">&quot;parameters&quot;</span>
+
+
+<span class="n">_repositories</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="k">def</span> <span class="nf">get_repository</span><span class="p">(</span><span class="n">repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">error_on_missing</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the full path to the passed MetaWardsData repository.</span>
+<span class="sd">       This will return the default repository if None is passed</span>
+
+<span class="sd">       Returns a tuple of the repository path and version information</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+    <span class="k">if</span> <span class="n">repository</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">repository</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;METAWARDSDATA&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">repository</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">repository</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">(),</span>
+                                      <span class="s2">&quot;GitHub&quot;</span><span class="p">,</span> <span class="s2">&quot;MetaWardsData&quot;</span><span class="p">)</span>
+
+    <span class="n">repository</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="n">repository</span><span class="p">))</span>
+    <span class="n">repository</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">())</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">repository</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">error_on_missing</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Cannot find the MetaWardsData repository &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;at </span><span class="si">{</span><span class="n">repository</span><span class="si">}</span><span class="s2">. Please follow the instructions &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;at https://metawards.org/model_data.html to download &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;and install the model data.&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">v</span> <span class="o">=</span> <span class="n">get_repository_version</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">generate_repository_version</span><span class="p">(</span><span class="n">repository</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Try to run the &#39;./version&#39; script within the passed repository,</span>
+<span class="sd">       to generate the required &#39;version.txt&#39; file</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">subprocess</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+
+    <span class="k">if</span> <span class="n">repository</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">script</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="s2">&quot;version&quot;</span><span class="p">)</span>
+        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">script</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="n">repository</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
+                       <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_repository_version</span><span class="p">(</span><span class="n">repository</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Read and return the Git version of the passed repository</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       repository: str</span>
+<span class="sd">         The full path to the repository whose version should be obtained.</span>
+<span class="sd">         If this is &#39;None&#39; then the default repository will be used</span>
+<span class="sd">         ($METAWARDSDATA or $HOME/GitHub/MetaWardsData)</span>
+
+<span class="sd">       Returns</span>
+<span class="sd">       -------</span>
+<span class="sd">       version_data: dict</span>
+<span class="sd">         A dictionary containing version information for the repository</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_repositories</span>
+
+    <span class="k">if</span> <span class="n">repository</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">repository</span> <span class="ow">in</span> <span class="n">_repositories</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_repositories</span><span class="p">[</span><span class="n">repository</span><span class="p">]</span>
+
+    <span class="kn">import</span> <span class="nn">os</span>
+
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="s2">&quot;version.txt&quot;</span><span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">FILE</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">json</span>
+            <span class="n">version</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">FILE</span><span class="p">)</span>
+            <span class="n">_repositories</span><span class="p">[</span><span class="n">repository</span><span class="p">]</span> <span class="o">=</span> <span class="n">version</span>
+            <span class="k">return</span> <span class="n">version</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="c1"># could not get the version, so see if we have permission</span>
+    <span class="c1"># to run the &#39;version&#39; program</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">generate_repository_version</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">FILE</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">json</span>
+            <span class="n">version</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">FILE</span><span class="p">)</span>
+            <span class="n">version</span><span class="p">[</span><span class="s2">&quot;filepath&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">repository</span>
+            <span class="n">_repositories</span><span class="p">[</span><span class="n">repository</span><span class="p">]</span> <span class="o">=</span> <span class="n">version</span>
+            <span class="k">return</span> <span class="n">version</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Could not find the repository version info in </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">. Please make sure</span>
+<span class="s2">that you have run &#39;./version&#39; in that repository to generate the version</span>
+<span class="s2">info.&quot;&quot;&quot;</span><span class="p">)</span>
+        <span class="n">_repositories</span><span class="p">[</span><span class="n">repository</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;filepath&quot;</span><span class="p">:</span> <span class="n">repository</span><span class="p">,</span>
+                                     <span class="s2">&quot;repository&quot;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;branch&quot;</span><span class="p">:</span> <span class="s2">&quot;unknown&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;is_dirty&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">_repositories</span><span class="p">[</span><span class="n">repository</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Parameters"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters">[docs]</a><span class="nd">@_dataclass</span>
+<span class="k">class</span> <span class="nc">Parameters</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;The full set of Parameters that are used to control the model</span>
+<span class="sd">       outbreak over a Network. The combination of a Network and</span>
+<span class="sd">       a Parameters defines the model outbreak.</span>
+
+<span class="sd">       Load the Parameters using the Parameters.load function, and</span>
+<span class="sd">       then add extra data using the various &quot;set&quot; and &quot;add&quot; functions,</span>
+<span class="sd">       e.g.</span>
+
+<span class="sd">       Examples</span>
+<span class="sd">       --------</span>
+<span class="sd">       &gt;&gt;&gt; params = Parameters.load(&quot;march29&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; params.set_disease(&quot;ncov&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; params.set_input_files(&quot;2011Data&quot;)</span>
+<span class="sd">       &gt;&gt;&gt; params.add_seeds(&quot;ExtraSeedsBrighton.dat&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#: The set of input files that define the model Network</span>
+    <span class="n">input_files</span><span class="p">:</span> <span class="n">InputFiles</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The set of parameters that define the disease</span>
+    <span class="n">disease_params</span><span class="p">:</span> <span class="n">Disease</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The set of files that contain additional seeds that</span>
+    <span class="c1">#: seed the outbreak during the model run</span>
+    <span class="n">additional_seeds</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The fraction of day considered &quot;day&quot; for work, e.g. 0.7 * 24 hours</span>
+    <span class="n">length_day</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.7</span>
+
+    <span class="n">static_play_at_home</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">dyn_play_at_home</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1">#: The cutoff distance in km beyond which workers or players cannot move</span>
+    <span class="n">dyn_dist_cutoff</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">10000000.0</span>
+
+    <span class="n">play_to_work</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">work_to_play</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1">#: proportion of daily imports if there are additional infections</span>
+    <span class="n">daily_imports</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1">#: The index of the seeding ward if there are daily imports</span>
+    <span class="n">ward_seed_index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The number of initial infections if there are daily imports</span>
+    <span class="n">initial_inf</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="c1">#: how to treat the * state (stage 0). This should be a string</span>
+    <span class="c1">#: describing the method. Currently &quot;R&quot;, &quot;E&quot; and &quot;disable&quot; are</span>
+    <span class="c1">#: supported. Not needed if the mapping is specified explicitly</span>
+    <span class="c1">#: in the disease</span>
+    <span class="n">stage_0</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;R&quot;</span>
+
+    <span class="c1">#: Seasonality parameter</span>
+    <span class="n">UV</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1">#: Date when transmission should be at a maximum</span>
+    <span class="n">UV_max</span><span class="p">:</span> <span class="n">_date</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The global scale_uv. This is combined with the population and</span>
+    <span class="c1">#: per-ward level scale_uvs to give a single value</span>
+    <span class="n">scale_uv</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="c1">#: The global background force of infection (FOI). This is combined</span>
+    <span class="c1">#: with the per-ward level bg_foi to give a single value</span>
+    <span class="n">bg_foi</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1">#: User parameters</span>
+    <span class="n">user_params</span><span class="p">:</span> <span class="n">_Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">_field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">dict</span><span class="p">)</span>
+
+    <span class="c1">#: All of the VariableSet adjustments that have been applied</span>
+    <span class="c1">#: to these parameters</span>
+    <span class="n">adjustments</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="n">VariableSet</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_authors</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_contacts</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_references</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_repository_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_repository_branch</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">_repository_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The parameters for demographic sub-networks. If this is None then</span>
+    <span class="c1">#: the parameters are the same as the overall parameters</span>
+    <span class="n">_subparams</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Parameters.__str__"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;Parameters&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;loaded_from&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;repository&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repository</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;repository_branch&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repository_branch</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;repository_version&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repository_version</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;length_day&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">length_day</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;initial_inf&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_inf</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;static_play_at_home&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_play_at_home</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;dyn_play_at_home&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dyn_play_at_home</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dyn_play_at_home</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;play_to_work&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">play_to_work</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;work_to_play&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">work_to_play</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;daily_imports&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">daily_imports</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;UV&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">UV</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;UV_max&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">UV_max</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;scale_uv&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;bg_foi&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span><span class="p">),</span>
+                           <span class="p">(</span><span class="s2">&quot;stage_0&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stage_0</span><span class="p">)]:</span>
+            <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;* </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Parameters.default"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.default">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">default</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Return the default set of parameters&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">get_repository</span><span class="p">()</span>
+            <span class="n">repository_dir</span> <span class="o">=</span> <span class="n">repository</span>
+            <span class="n">repository</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;repository&quot;</span><span class="p">]</span>
+            <span class="n">repository_branch</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;branch&quot;</span><span class="p">]</span>
+            <span class="n">repository_version</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>
+
+            <span class="k">return</span> <span class="n">Parameters</span><span class="p">(</span><span class="n">_repository</span><span class="o">=</span><span class="n">repository</span><span class="p">,</span>
+                              <span class="n">_repository_dir</span><span class="o">=</span><span class="n">repository_dir</span><span class="p">,</span>
+                              <span class="n">_repository_branch</span><span class="o">=</span><span class="n">repository_branch</span><span class="p">,</span>
+                              <span class="n">_repository_version</span><span class="o">=</span><span class="n">repository_version</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">return</span> <span class="n">Parameters</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Parameters.get_repository"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.get_repository">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_repository</span><span class="p">(</span><span class="n">repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the repository location and version information</span>
+<span class="sd">           for the passed repository</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           repository: str</span>
+<span class="sd">             Location on the filesystem of the repository. If this</span>
+<span class="sd">             is None then it will be searched for using first</span>
+<span class="sd">             the environment variable METAWARDSDATA, then</span>
+<span class="sd">             $HOME/GitHub/MetaWardsData, then ./METAWARDSDATA</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           (repository, version): tuple</span>
+<span class="sd">             A tuple of the location on disk of the repository,</span>
+<span class="sd">             plus the version information (git ID etc)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">get_repository</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Parameters.load"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.load">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">parameters</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;march29&quot;</span><span class="p">,</span>
+             <span class="n">repository</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+             <span class="n">folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">_default_folder_name</span><span class="p">,</span>
+             <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This will return a Parameters object containing all of the</span>
+<span class="sd">           parameters loaded from the parameters found in file</span>
+<span class="sd">           f&quot;{repository}/{folder}/{parameters}.json&quot;</span>
+
+<span class="sd">           By default this will load the march29 parameters from</span>
+<span class="sd">           $HOME/GitHub/model_data/2011Data/parameters/march29.json</span>
+
+<span class="sd">           Alternatively, you can provide the exact path to the</span>
+<span class="sd">           filename via the &#39;filename&#39; argument</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           parameters: str</span>
+<span class="sd">             The name of the parameters to load. This is the name that</span>
+<span class="sd">             will be searched for in the METAWARDSDATA parameters directory</span>
+<span class="sd">           repository: str</span>
+<span class="sd">             The location of the cloned METAWARDSDATA repository</span>
+<span class="sd">           folder: str</span>
+<span class="sd">             The name of the folder within the METAWARDSDATA repository</span>
+<span class="sd">             that contains the parameters</span>
+<span class="sd">           filename: str</span>
+<span class="sd">             The name of the file to load the parameters from - this directly</span>
+<span class="sd">             loads this file without searching through the METAWARDSDATA</span>
+<span class="sd">             repository</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           params: Parameters</span>
+<span class="sd">             The constructed and validated parameters</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">repository_version</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">repository_branch</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">repository_dir</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">os</span>
+            <span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">get_repository</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">repository</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">parameters</span><span class="si">}</span><span class="s2">.json&quot;</span><span class="p">)</span>
+            <span class="n">repository_dir</span> <span class="o">=</span> <span class="n">repository</span>
+            <span class="n">repository</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;repository&quot;</span><span class="p">]</span>
+            <span class="n">repository_branch</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;branch&quot;</span><span class="p">]</span>
+            <span class="n">repository_version</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>
+
+        <span class="n">json_file</span> <span class="o">=</span> <span class="n">filename</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">FILE</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">json</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">FILE</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Could not find the parameters file </span><span class="si">{</span><span class="n">json_file</span><span class="si">}</span><span class="s2">. Either it does not exist or</span>
+<span class="s2">was corrupted. Error was </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. &quot;Please see</span>
+<span class="s2">https://metawards.org/model_data for instructions on how to download and</span>
+<span class="s2">set the model data.&quot;&quot;&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not find or read </span><span class="si">{</span><span class="n">json_file</span><span class="si">}</span><span class="s2">: &quot;</span>
+                                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">par</span> <span class="o">=</span> <span class="n">Parameters</span><span class="p">(</span>
+            <span class="n">length_day</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;length_day&quot;</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
+            <span class="n">initial_inf</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;initial_inf&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">static_play_at_home</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;static_play_at_home&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="n">dyn_play_at_home</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dyn_play_at_home&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="n">dyn_dist_cutoff</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">,</span> <span class="mf">10000000.0</span><span class="p">),</span>
+            <span class="n">play_to_work</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;play_to_work&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="n">work_to_play</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;work_to_play&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="n">daily_imports</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;daily_imports&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="n">UV</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;UV&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="n">UV_max</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;UV_max&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="n">scale_uv</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;scale_uv&quot;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+            <span class="n">bg_foi</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;bg_foi&quot;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+            <span class="n">_name</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="n">parameters</span><span class="p">),</span>
+            <span class="n">_authors</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;author(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
+            <span class="n">_version</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;version&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
+            <span class="n">_contacts</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;contact(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;unknown&quot;</span><span class="p">),</span>
+            <span class="n">_references</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;reference(s)&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">),</span>
+            <span class="n">_filename</span><span class="o">=</span><span class="n">json_file</span><span class="p">,</span>
+            <span class="n">_repository</span><span class="o">=</span><span class="n">repository</span><span class="p">,</span>
+            <span class="n">_repository_dir</span><span class="o">=</span><span class="n">repository_dir</span><span class="p">,</span>
+            <span class="n">_repository_branch</span><span class="o">=</span><span class="n">repository_branch</span><span class="p">,</span>
+            <span class="n">_repository_version</span><span class="o">=</span><span class="n">repository_version</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">par</span></div>
+
+<div class="viewcode-block" id="Parameters.__getitem__"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.__getitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demographic</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the parameters that should be used for the demographic</span>
+<span class="sd">           subnetwork called &#39;demographic&#39;. If these have not been set</span>
+<span class="sd">           specifically then the parameters for the overall network</span>
+<span class="sd">           are used</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">demographic</span> <span class="o">==</span> <span class="s2">&quot;overall&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">if</span> <span class="n">demographic</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span><span class="o">.</span><span class="n">_subparams</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Parameters.copy"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">include_subparams</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a safe copy of these parameters, which does not</span>
+<span class="sd">           include any subnetwork parameters if &#39;include_subparams&#39; is False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">include_subparams</span><span class="p">:</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">_subparams</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">params</span></div>
+
+<div class="viewcode-block" id="Parameters.specialised_demographics"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.specialised_demographics">[docs]</a>    <span class="k">def</span> <span class="nf">specialised_demographics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Return the names of demographics that have specialised</span>
+<span class="sd">           parameters that are different to those of the overall</span>
+<span class="sd">           network</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_subparams</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Parameters.add_seeds"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.add_seeds">[docs]</a>    <span class="k">def</span> <span class="nf">add_seeds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add an &#39;additional seeds&#39; file that can be used to</span>
+<span class="sd">           seed wards with new infections at different times and</span>
+<span class="sd">           locations. Several additional_seed files can be added</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           filename: str</span>
+<span class="sd">             Name of the file containing the additional seeds</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># resolve the filename to the GitHub repo if possible...</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">additional_seeds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">additional_seeds</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="kn">import</span> <span class="nn">os</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_repository_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_repository_dir</span><span class="p">,</span> <span class="s2">&quot;extra_seeds&quot;</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+                    <span class="n">filename</span> <span class="o">=</span> <span class="n">f</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">additional_seeds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Parameters.set_input_files"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.set_input_files">[docs]</a>    <span class="k">def</span> <span class="nf">set_input_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_files</span><span class="p">:</span> <span class="n">InputFiles</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the input files that are used to initialise the</span>
+<span class="sd">           simulation</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           input_files: InputFiles</span>
+<span class="sd">             The set of input files that will be used to load the Network.</span>
+<span class="sd">             If a string is passed then the InputFiles will be loaded</span>
+<span class="sd">             based on that string.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span> <span class="n">InputFiles</span><span class="p">):</span>
+            <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">input_files</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">input_files</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_files</span> <span class="o">=</span> <span class="n">InputFiles</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">input_files</span><span class="p">,</span>
+                                           <span class="n">repository</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_repository_dir</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Parameters.set_disease"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.set_disease">[docs]</a>    <span class="k">def</span> <span class="nf">set_disease</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">disease</span><span class="p">:</span> <span class="n">Disease</span><span class="p">,</span> <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;Set the disease that will be modelled</span>
+
+<span class="sd">            Parameters:</span>
+<span class="sd">              disease: The disease to be modelled. If a string is passed</span>
+<span class="sd">              then the disease will be loaded using that string</span>
+<span class="sd">              silent: Whether or not to suppress printing out the disease</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">disease</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">disease</span> <span class="o">=</span> <span class="n">Disease</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">disease</span><span class="p">,</span>
+                                   <span class="n">repository</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_repository_dir</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">silent</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">disease</span><span class="p">,</span> <span class="n">markdown</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disease_params</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">disease</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Parameters.set_variables"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.set_variables">[docs]</a>    <span class="k">def</span> <span class="nf">set_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="n">VariableSet</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This function sets the adjustable variable values to those</span>
+<span class="sd">           specified in &#39;variables&#39; in A COPY OF THIS PARAMETERS OBJECT.</span>
+<span class="sd">           This returns the copy. It does not change this object</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           variables: VariableSet</span>
+<span class="sd">             The variables that will be adjusted before the model run.</span>
+<span class="sd">             This adjusts the parameters and returns them in a deep copy</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           params: Parameters</span>
+<span class="sd">             A copy of this set of parameters with the variables adjusted</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">variables</span> <span class="o">=</span> <span class="n">VariableSet</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
+
+        <span class="n">variables</span><span class="o">.</span><span class="n">adjust</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">params</span></div>
+
+<div class="viewcode-block" id="Parameters.read_variables"><a class="viewcode-back" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.read_variables">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">read_variables</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">line_numbers</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Read in extra variable parameters from the specified line number(s)</span>
+<span class="sd">           of the specified file, returning the list</span>
+<span class="sd">           of the dictionaries of variables that have been</span>
+<span class="sd">           read. You can then apply those variable parameters</span>
+<span class="sd">           using the &#39;set_variables&#39; function</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           filename: str</span>
+<span class="sd">             The file from which to read the adjustable variables</span>
+<span class="sd">           line_numbers: List[int]</span>
+<span class="sd">             All of the line numbers from which to read. If this is</span>
+<span class="sd">             None then all lines will be read.</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           variables: VariableSets</span>
+<span class="sd">             The VariableSets containing all of the adjustable variables</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">VariableSets</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">line_numbers</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

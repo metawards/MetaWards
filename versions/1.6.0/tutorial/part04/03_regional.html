@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Extracting by location &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extracting rates by ward" href="04_rates.html" />
+    <link rel="prev" title="Accumulating into a Workspace" href="02_default.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_extractors.html">Custom extractors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_default.html">Accumulating into a Workspace</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extracting by location</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#searching-using-wardinfo">Searching using WardInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#searching-by-local-authority">Searching by local authority</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-location-in-an-extractor">Using location in an extractor</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04_rates.html">Extracting rates by ward</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part04.html">Part 4 - Customising the output</a> &raquo;</li>
+        
+      <li>Extracting by location</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="04_rates.html" class="btn btn-neutral float-right" title="Extracting rates by ward" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="02_default.html" class="btn btn-neutral float-left" title="Accumulating into a Workspace" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extracting-by-location">
+<h1>Extracting by location<a class="headerlink" href="#extracting-by-location" title="Permalink to this headline">¶</a></h1>
+<p>Up to this point, we have only looked at the summary data from each
+<em>model run</em>. There is a lot more that can be explored, as <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+models the outbreak in every ward in the model (e.g. every electoral
+ward in the UK).</p>
+<p>Metadata about those wards is loaded into
+<a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network.info" title="metawards.Network.info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">info()</span></code></a> object, which is of class
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.WardInfos" title="metawards.WardInfos"><code class="xref py py-class docutils literal notranslate"><span class="pre">WardInfos</span></code></a>. This class can be queried to get
+the index of wards according to their name, their official ID code,
+or the local authority or region in which it belongs.</p>
+<div class="section" id="searching-using-wardinfo">
+<h2>Searching using WardInfo<a class="headerlink" href="#searching-using-wardinfo" title="Permalink to this headline">¶</a></h2>
+<p>For example, we can find all of the wards that match the name
+“Clifton” using the below code. Open up <code class="docutils literal notranslate"><span class="pre">ipython</span></code> or a Jupyter
+notebook and type;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Network</span><span class="p">,</span> <span class="n">Parameters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span> <span class="o">=</span> <span class="n">Parameters</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span><span class="o">.</span><span class="n">set_input_files</span><span class="p">(</span><span class="s2">&quot;2011Data&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span><span class="o">.</span><span class="n">set_disease</span><span class="p">(</span><span class="s2">&quot;lurgy&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">network</span> <span class="o">=</span> <span class="n">Network</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This has now built a network object that you can query, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clifton</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;Clifton&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">clifton</span><span class="p">)</span>
+<span class="go">[154, 403, 829, 3612, 3662, 3670, 3703, 3766, 3974, 3975, 8134, 8327, 8328]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="n">clifton</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="n">ward</span><span class="p">])</span>
+<span class="go">WardInfo(name=&#39;Clifton-with-Maidenway&#39;, alternate_names=[&#39;Clifton-with-Maidenway&#39;], code=&#39;E05002101&#39;, alternate_codes=[&#39;E36000654&#39;], authority=&#39;Torbay&#39;, authority_code=&#39;E06000027&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05003119&#39;, alternate_codes=[&#39;E36001870&#39;], authority=&#39;Allerdale&#39;, authority_code=&#39;E07000026&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton and Bradley&#39;, alternate_names=[&#39;Clifton and Bradley&#39;], code=&#39;E05003350&#39;, alternate_codes=[&#39;E36002100&#39;], authority=&#39;Derbyshire Dales&#39;, authority_code=&#39;E07000035&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Skelton, Rawcliffe and Clifton Without&#39;, alternate_names=[&#39;Skelton, Rawcliffe and Clifton Without&#39;], code=&#39;E05001763&#39;, alternate_codes=[&#39;E36000299&#39;], authority=&#39;York&#39;, authority_code=&#39;E06000014&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001980&#39;, alternate_codes=[&#39;E36000533&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton East&#39;, alternate_names=[&#39;Clifton East&#39;], code=&#39;E05001981&#39;, alternate_codes=[&#39;E36000534&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001747&#39;, alternate_codes=[&#39;E36000283&#39;], authority=&#39;York&#39;, authority_code=&#39;E06000014&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001648&#39;, alternate_codes=[&#39;E36000184&#39;], authority=&#39;Blackpool&#39;, authority_code=&#39;E06000009&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton North&#39;, alternate_names=[&#39;Clifton North&#39;], code=&#39;E05001831&#39;, alternate_codes=[&#39;E36000367&#39;], authority=&#39;Nottingham&#39;, authority_code=&#39;E06000018&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton South&#39;, alternate_names=[&#39;Clifton South&#39;], code=&#39;E05001832&#39;, alternate_codes=[&#39;E36000368&#39;], authority=&#39;Nottingham&#39;, authority_code=&#39;E06000018&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05005188&#39;, alternate_codes=[&#39;E36003801&#39;], authority=&#39;Fylde&#39;, authority_code=&#39;E07000119&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Cliftonville East&#39;, alternate_names=[&#39;Cliftonville East&#39;], code=&#39;E05005087&#39;, alternate_codes=[&#39;E36003700&#39;], authority=&#39;Thanet&#39;, authority_code=&#39;E07000114&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Cliftonville West&#39;, alternate_names=[&#39;Cliftonville West&#39;], code=&#39;E05005088&#39;, alternate_codes=[&#39;E36003701&#39;], authority=&#39;Thanet&#39;, authority_code=&#39;E07000114&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+</pre></div>
+</div>
+<p>This has returned all wards that have “Clifton” in the name. The search is
+actually performed as a <a class="reference external" href="https://chryswoods.com/intermediate_python/regexp.html">regular expression</a>,
+and is case-insensitive. You can pass a regular expression string directly,
+e.g. <code class="docutils literal notranslate"><span class="pre">`r&quot;^(Clifton)$&quot;`</span></code> would match “Clifton” at the beginning (<code class="docutils literal notranslate"><span class="pre">`^`</span></code>) and
+end (<code class="docutils literal notranslate"><span class="pre">`$`</span></code>) of the string, i.e. it only matches wards that exactly
+match “Clifton”. Try this by typing;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clifton</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(Clifton)$&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="n">clifton</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="n">ward</span><span class="p">])</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05003119&#39;, alternate_codes=[&#39;E36001870&#39;], authority=&#39;Allerdale&#39;, authority_code=&#39;E07000026&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001980&#39;, alternate_codes=[&#39;E36000533&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001747&#39;, alternate_codes=[&#39;E36000283&#39;], authority=&#39;York&#39;, authority_code=&#39;E06000014&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001648&#39;, alternate_codes=[&#39;E36000184&#39;], authority=&#39;Blackpool&#39;, authority_code=&#39;E06000009&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05005188&#39;, alternate_codes=[&#39;E36003801&#39;], authority=&#39;Fylde&#39;, authority_code=&#39;E07000119&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="searching-by-local-authority">
+<h2>Searching by local authority<a class="headerlink" href="#searching-by-local-authority" title="Permalink to this headline">¶</a></h2>
+<p>There are many “Clifton”s in the UK. We can limit to the “Clifton” in Bristol
+by specifying the local authority. Again, this can be a regular expression,
+although in this case just searching for “Bristol” will be enough.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clifton</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(Clifton)$&quot;</span><span class="p">,</span> <span class="n">authority</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="n">clifton</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">ward</span><span class="p">)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001980&#39;, alternate_codes=[&#39;E36000533&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this case the dataset does not include regional data (the <code class="docutils literal notranslate"><span class="pre">`region`</span></code>
+is empty). If regional data was available you could search by region
+using <code class="docutils literal notranslate"><span class="pre">`network.info.find(&quot;Clifton&quot;,</span> <span class="pre">region=&quot;South</span> <span class="pre">West&quot;)</span></code>.</p>
+</div>
+<p>This searching is very powerful. For example, we can now search for all
+wards that are in the same local authority as “Clifton, Bristol”, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">clifton</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^(Clifton)$&quot;</span><span class="p">,</span> <span class="n">authority</span><span class="o">=</span><span class="s2">&quot;Bristol&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">clifton</span> <span class="o">=</span> <span class="n">newwork</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="n">clifton</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">authority_code</span> <span class="o">=</span> <span class="n">clifton</span><span class="o">.</span><span class="n">authority_code</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wards</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">authority</span><span class="o">=</span><span class="n">authority_code</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="n">wards</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">ward</span><span class="p">)</span>
+<span class="go">WardInfo(name=&#39;Brislington West&#39;, alternate_names=[&#39;Brislington West&#39;], code=&#39;E05001978&#39;, alternate_codes=[&#39;E36000531&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Cabot&#39;, alternate_names=[&#39;Cabot&#39;], code=&#39;E05001979&#39;, alternate_codes=[&#39;E36000532&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton&#39;, alternate_names=[&#39;Clifton&#39;], code=&#39;E05001980&#39;, alternate_codes=[&#39;E36000533&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Clifton East&#39;, alternate_names=[&#39;Clifton East&#39;], code=&#39;E05001981&#39;, alternate_codes=[&#39;E36000534&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Cotham&#39;, alternate_names=[&#39;Cotham&#39;], code=&#39;E05001982&#39;, alternate_codes=[&#39;E36000535&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Easton&#39;, alternate_names=[&#39;Easton&#39;], code=&#39;E05001983&#39;, alternate_codes=[&#39;E36000536&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Eastville&#39;, alternate_names=[&#39;Eastville&#39;], code=&#39;E05001984&#39;, alternate_codes=[&#39;E36000537&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Filwood&#39;, alternate_names=[&#39;Filwood&#39;], code=&#39;E05001985&#39;, alternate_codes=[&#39;E36000538&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Frome Vale&#39;, alternate_names=[&#39;Frome Vale&#39;], code=&#39;E05001986&#39;, alternate_codes=[&#39;E36000539&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Hartcliffe&#39;, alternate_names=[&#39;Hartcliffe&#39;], code=&#39;E05001987&#39;, alternate_codes=[&#39;E36000540&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Henbury&#39;, alternate_names=[&#39;Henbury&#39;], code=&#39;E05001988&#39;, alternate_codes=[&#39;E36000541&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Hengrove&#39;, alternate_names=[&#39;Hengrove&#39;], code=&#39;E05001989&#39;, alternate_codes=[&#39;E36000542&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Henleaze&#39;, alternate_names=[&#39;Henleaze&#39;], code=&#39;E05001990&#39;, alternate_codes=[&#39;E36000543&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Hillfields&#39;, alternate_names=[&#39;Hillfields&#39;], code=&#39;E05001991&#39;, alternate_codes=[&#39;E36000544&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Horfield&#39;, alternate_names=[&#39;Horfield&#39;], code=&#39;E05001992&#39;, alternate_codes=[&#39;E36000545&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Kingsweston&#39;, alternate_names=[&#39;Kingsweston&#39;], code=&#39;E05001993&#39;, alternate_codes=[&#39;E36000546&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Ashley&#39;, alternate_names=[&#39;Ashley&#39;], code=&#39;E05001972&#39;, alternate_codes=[&#39;E36000525&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Avonmouth&#39;, alternate_names=[&#39;Avonmouth&#39;], code=&#39;E05001973&#39;, alternate_codes=[&#39;E36000526&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Bedminster&#39;, alternate_names=[&#39;Bedminster&#39;], code=&#39;E05001974&#39;, alternate_codes=[&#39;E36000527&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Bishopston&#39;, alternate_names=[&#39;Bishopston&#39;], code=&#39;E05001975&#39;, alternate_codes=[&#39;E36000528&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Bishopsworth&#39;, alternate_names=[&#39;Bishopsworth&#39;], code=&#39;E05001976&#39;, alternate_codes=[&#39;E36000529&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Brislington East&#39;, alternate_names=[&#39;Brislington East&#39;], code=&#39;E05001977&#39;, alternate_codes=[&#39;E36000530&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Knowle&#39;, alternate_names=[&#39;Knowle&#39;], code=&#39;E05001994&#39;, alternate_codes=[&#39;E36000547&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Lawrence Hill&#39;, alternate_names=[&#39;Lawrence Hill&#39;], code=&#39;E05001995&#39;, alternate_codes=[&#39;E36000548&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Lockleaze&#39;, alternate_names=[&#39;Lockleaze&#39;], code=&#39;E05001996&#39;, alternate_codes=[&#39;E36000549&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Redland&#39;, alternate_names=[&#39;Redland&#39;], code=&#39;E05001997&#39;, alternate_codes=[&#39;E36000550&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;St George East&#39;, alternate_names=[&#39;St George East&#39;], code=&#39;E05001998&#39;, alternate_codes=[&#39;E36000553&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;St George West&#39;, alternate_names=[&#39;St George West&#39;], code=&#39;E05001999&#39;, alternate_codes=[&#39;E36000554&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Southmead&#39;, alternate_names=[&#39;Southmead&#39;], code=&#39;E05002000&#39;, alternate_codes=[&#39;E36000551&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Southville&#39;, alternate_names=[&#39;Southville&#39;], code=&#39;E05002001&#39;, alternate_codes=[&#39;E36000552&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Stockwood&#39;, alternate_names=[&#39;Stockwood&#39;], code=&#39;E05002002&#39;, alternate_codes=[&#39;E36000555&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Stoke Bishop&#39;, alternate_names=[&#39;Stoke Bishop&#39;], code=&#39;E05002003&#39;, alternate_codes=[&#39;E36000556&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Westbury-on-Trym&#39;, alternate_names=[&#39;Westbury-on-Trym&#39;], code=&#39;E05002004&#39;, alternate_codes=[&#39;E36000557&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Whitchurch Park&#39;, alternate_names=[&#39;Whitchurch Park&#39;], code=&#39;E05002005&#39;, alternate_codes=[&#39;E36000558&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+<span class="go">WardInfo(name=&#39;Windmill Hill&#39;, alternate_names=[&#39;Windmill Hill&#39;], code=&#39;E05002006&#39;, alternate_codes=[&#39;E36000559&#39;], authority=&#39;Bristol, City of&#39;, authority_code=&#39;E06000023&#39;, region=&#39;&#39;, region_code=&#39;&#39;)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is true that we could have achieved this by just searching for
+Bristol alone. However, this method of searching for ward+authority
+is more robust against multiple authorities having similar names.
+For example, searching for the authority “Newcastle” returns
+both “Newcastle upon Tyne” and “Newcastle-under-Lyme”.</p>
+</div>
+</div>
+<div class="section" id="using-location-in-an-extractor">
+<h2>Using location in an extractor<a class="headerlink" href="#using-location-in-an-extractor" title="Permalink to this headline">¶</a></h2>
+<p>We can use the above search to track the total number of infections in each
+of the wards in Bristol. Create a new python file called <code class="docutils literal notranslate"><span class="pre">location.py</span></code>
+and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matched_wards</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">output_location</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">ward</span> <span class="o">=</span> <span class="s2">&quot;clifton&quot;</span>
+    <span class="n">authority</span> <span class="o">=</span> <span class="s2">&quot;bristol&quot;</span>
+
+    <span class="k">global</span> <span class="n">matched_wards</span><span class="p">,</span> <span class="n">headers</span>
+
+    <span class="k">if</span> <span class="n">matched_wards</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># This is performed only once, when this function is first called</span>
+        <span class="n">ward</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">ward</span><span class="p">,</span> <span class="n">authority</span><span class="o">=</span><span class="n">authority</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">ward</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span>
+        <span class="n">authority_code</span> <span class="o">=</span> <span class="n">ward</span><span class="o">.</span><span class="n">authority_code</span>
+        <span class="n">matched_wards</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">authority</span><span class="o">=</span><span class="n">authority_code</span><span class="p">)</span>
+
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="n">matched_wards</span><span class="p">:</span>
+            <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">network</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># open the file called &quot;authority.dat&quot;, e.g. &quot;bristol.dat&quot;</span>
+    <span class="c1"># Note we are using comma separators and have put the ward</span>
+    <span class="c1"># names in single quotes to make the output easier to parse</span>
+    <span class="n">locfile</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">authority</span><span class="si">}</span><span class="s2">.dat&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+    <span class="n">locfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">ward</span> <span class="ow">in</span> <span class="n">matched_wards</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">total_inf_ward</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span>
+        <span class="n">locfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+
+    <span class="n">locfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">extract_location</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+
+    <span class="k">return</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">output_location</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Save the file and run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using this extractor via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --extractor location
+</pre></div>
+</div>
+<p>You should see that a new output file called <code class="docutils literal notranslate"><span class="pre">bristol.dat.bz2</span></code> was
+created. Loading this up into pandas should show;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/bristol.dat.bz2&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">      &#39;Brislington West&#39;  &#39;Cabot&#39;  ...  &#39;Whitchurch Park&#39;  &#39;Windmill Hill&#39;</span>
+<span class="go"> day                               ...</span>
+<span class="go"> 0                     0        0  ...                  0                0</span>
+<span class="go"> 1                     0        0  ...                  0                0</span>
+<span class="go"> 2                     0        0  ...                  0                0</span>
+<span class="go"> 3                     0        0  ...                  0                0</span>
+<span class="go"> 4                     0        0  ...                  0                0</span>
+
+<span class="go"> [5 rows x 35 columns]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="04_rates.html" class="btn btn-neutral float-right" title="Extracting rates by ward" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="02_default.html" class="btn btn-neutral float-left" title="Accumulating into a Workspace" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

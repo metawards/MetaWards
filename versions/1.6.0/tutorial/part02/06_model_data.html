@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Model data &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 3 - Customising the outbreak" href="../index_part03.html" />
+    <link rel="prev" title="Refining the model" href="05_refining.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_disease.html">Refining the disease model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_adjustable.html">Adjustable Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_analysis.html">Analysing the output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_cluster.html">Running on a cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_refining.html">Refining the model</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Model data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#alternative-models">Alternative models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part02.html">Part 2 - Refining the model</a> &raquo;</li>
+        
+      <li>Model data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../index_part03.html" class="btn btn-neutral float-right" title="Part 3 - Customising the outbreak" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="05_refining.html" class="btn btn-neutral float-left" title="Refining the model" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="model-data">
+<h1>Model data<a class="headerlink" href="#model-data" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> is a geographical SIR model. This means that a separate
+progression of states from <strong>S</strong> through to <strong>R</strong> is performed in every
+<em>ward</em> that is modelled. A <em>ward</em> is just a geographic area or cell.
+It originally represented a single electoral ward in the UK (hence the name),
+but there is no technical reason why this has to be the case.</p>
+<p>Infected individuals who are resident in a <em>ward</em> contribute to the
+<em>force of infection</em> (FOI) of that ward. The higher the FOI, the more
+likely it is that another resident will be infected.</p>
+<p>In addition, some residents (called <em>workers</em>) make regular movements
+each day between their home <em>ward</em> and a work <em>ward</em>. They contribute
+to and are exposed to the FOI of their <em>work</em> ward, and so can
+spread the infection between wards.</p>
+<p>The number of wards, geographic data, populations and population flows
+between them are altogether called the <em>model data</em>. <code class="docutils literal notranslate"><span class="pre">metawards</span></code> was
+first developed to model electoral wards in England and Wales, with
+data based on the 2011 census. The default model used in <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+is thus this <code class="docutils literal notranslate"><span class="pre">2011Data</span></code> model.</p>
+<p>You can set the model used by <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using the <code class="docutils literal notranslate"><span class="pre">--model</span></code> or <code class="docutils literal notranslate"><span class="pre">-m</span></code>
+command line argument, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -m 2011Data
+</pre></div>
+</div>
+<p>would perform a <em>model run</em> using your new lurgy3 parameters on the default
+<code class="docutils literal notranslate"><span class="pre">2011Data</span></code> model data. We have been, and will continue to use
+this <code class="docutils literal notranslate"><span class="pre">2011Data</span></code> default model for
+all of the examples in this tutorial. However, please remember that
+you can create your own <em>model data</em> to represent any location, region,
+country or interacting sets of groups as you wish.</p>
+<div class="section" id="alternative-models">
+<h2>Alternative models<a class="headerlink" href="#alternative-models" title="Permalink to this headline">¶</a></h2>
+<p>Constructing this <em>model data</em> involves a lot of data science and careful
+consideration. The models are held in the
+<a class="reference external" href="https://github.com/metawards/MetaWardsData">MetaWardsData</a> repository,
+and the current models include;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">2011Data</span></code> : default data for England and Wales from the 2011 census</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2011UK</span></code> : work-in-progress model for the whole of the UK including Northern Ireland.</p></li>
+</ul>
+<p>In addition, there is a special model called <code class="docutils literal notranslate"><span class="pre">single</span></code>, that is used to
+perform validation <em>model runs</em> where the entire population is resident
+in only a single ward. This is useful if you want to validate the underlying
+models used in <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, or want to see if results obtained are
+influenced by geography.</p>
+<p>You should specify the size of the population when you use the <code class="docutils literal notranslate"><span class="pre">single</span></code>
+model via the <code class="docutils literal notranslate"><span class="pre">--population</span></code> or <code class="docutils literal notranslate"><span class="pre">-P</span></code> keyword, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -a ExtraSeedsOne.dat -m single -P <span class="m">50000000</span> --nsteps <span class="m">2000</span>
+</pre></div>
+</div>
+<p>would perform a run with 50 million individuals in a single ward.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have used <code class="docutils literal notranslate"><span class="pre">ExtraSeedsOne.dat</span></code> to seed this run, as this file
+seeds 5 infections into the first ward of a model on day 1. We’ve
+also set <code class="docutils literal notranslate"><span class="pre">nsteps</span></code> to 2000 to stop the model timing out after
+two years. This is because the lack of geographic mixing significantly
+slows the progression of the disease.</p>
+</div>
+<p>After running this command, you can create an overview plot using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+</pre></div>
+</div>
+<p>The output from your run should look something like this;</p>
+<img alt="Overview from a run using a single ward" src="../../_images/tutorial_2_6.jpg" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may find that the disease dies out quickly in a small number of runs.
+This is due to the random nature of the model, and random chance means
+that the disease in those runs could not catch light. If it does catch,
+then the epidemic should progress for ~1000 days.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../index_part03.html" class="btn btn-neutral float-right" title="Part 3 - Customising the outbreak" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="05_refining.html" class="btn btn-neutral float-left" title="Refining the model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

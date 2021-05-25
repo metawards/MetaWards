@@ -1,0 +1,467 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Getting Started in the Console &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extending the Model in the Console" href="02_console.html" />
+    <link rel="prev" title="Multiple pathways with Python" href="03_python.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Start Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#r-rstudio">R / RStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-jupyter">Python / Jupyter</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#console-command-line">Console / Command line</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Getting Started in the Console</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-disease">Creating the disease</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-wards-network">Creating the wards (network)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-model">Running the model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seeding-the-outbreak">Seeding the outbreak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#visualising-the-results">Visualising the results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_console.html">Extending the Model in the Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_console.html">Multiple pathways with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Quick Start Guide</a> &raquo;</li>
+        
+      <li>Getting Started in the Console</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02_console.html" class="btn btn-neutral float-right" title="Extending the Model in the Console" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="03_python.html" class="btn btn-neutral float-left" title="Multiple pathways with Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-in-the-console">
+<h1>Getting Started in the Console<a class="headerlink" href="#getting-started-in-the-console" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>First, you need to open the terminal (or console or command prompt) and
+type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --version
+</pre></div>
+</div>
+<p>You should see that MetaWards version information is printed to the screen.
+If not, then you need to <a class="reference internal" href="../install.html"><span class="doc">install MetaWards</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The output should show that MetaWardsData has been found. If you have
+not installed MetaWardsData then you need to install it by
+following <a class="reference internal" href="../model_data.html"><span class="doc">these instructions</span></a>.</p>
+</div>
+<p>You also need to be able to use a text editor, e.g. notepad, vim, emacs,
+nano or pico. This quick start will use nano. Please use the editor
+that you prefer.</p>
+</div>
+<div class="section" id="creating-the-disease">
+<h2>Creating the disease<a class="headerlink" href="#creating-the-disease" title="Permalink to this headline">¶</a></h2>
+<p>You should now be at an open terminal.</p>
+<p>To run a simulation you need to define the <a class="reference internal" href="../api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a>
+that you want to model. MetaWards implements a SEIR-style model, but
+you have complete control to define as many (or few) stages as you wish.</p>
+<p>First, we will create a disease, which we will call <code class="docutils literal notranslate"><span class="pre">lurgy</span></code>, that
+will consist of four stages: S, E, I and R. While you can use the
+Python or R API to create this model in Python or R, you can also write
+the required JSON data file directly at the console. Create a new
+text file called <code class="docutils literal notranslate"><span class="pre">lurgy.json</span></code>, e.g. by typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano lurgy.json
+</pre></div>
+</div>
+<p>and type in the below;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;lurgy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stage&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+  <span class="s2">&quot;progress&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This defines the three stages, “E”, “I” and “R”. You don’t define the “S”
+stage, as the model starts with a set of susceptible individuals by default.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">beta</span></code> (infectivity) parameters are set such that individuals
+are not infectious during the latent (“E”) stage or recovered (“R”) stage
+(<code class="docutils literal notranslate"><span class="pre">beta</span></code> equals 0), but are quite infectious in the “I” stage
+(<code class="docutils literal notranslate"><span class="pre">beta</span></code> equals 0.8).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">progress</span></code> parameter is set so that individuals progress quickly
+through the “E” stage (<code class="docutils literal notranslate"><span class="pre">progress</span></code> equals 0.5, meaning that 50% of
+individuals move to the next stage each day), while progress through
+the “I” stage is slower (<code class="docutils literal notranslate"><span class="pre">progress</span></code> equals 0.25). The <code class="docutils literal notranslate"><span class="pre">progress</span></code>
+value for the “R” stage must be 0, as once recovered, the individual
+no longer moves through the model.</p>
+</div>
+<div class="section" id="creating-the-wards-network">
+<h2>Creating the wards (network)<a class="headerlink" href="#creating-the-wards-network" title="Permalink to this headline">¶</a></h2>
+<p>Next, you need to define the wards (network) that will contain the individuals
+who will experience the model outbreak.</p>
+<p>We will first start with a single ward, called home, in a file called
+<code class="docutils literal notranslate"><span class="pre">network.json</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;info&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;home&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;num_players&quot;</span><span class="p">:</span> <span class="mi">10000</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>MetaWards works by assigning individuals as either <em class="xref py py-obj">workers</em> or <em class="xref py py-obj">players</em>.
+The difference is that <em class="xref py py-obj">workers</em> make fixed (predictable) movements
+between different wards each day, while <em class="xref py py-obj">players</em> make random movements.
+Since we have just a single ward, called “home”, and we start by populating it
+with 10,000 players.</p>
+</div>
+<div class="section" id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+<p>Now we have a disease and a network, we can now model an outbreak. To do this,
+we will run the <code class="docutils literal notranslate"><span class="pre">metawards</span></code> program directly.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --disease lurgy.json --model network.json
+</pre></div>
+</div>
+<p>This will print a lot to the screen. The key lines are these;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 5 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 10000  E: 0  I: 0  R: 0  IW: 0  POPULATION: 10000
+Number of infections: 0
+Ending on day 5
+</pre></div>
+</div>
+<p>This shows the number of people in the different stages of the outbreak.
+In this case, there was no infection seeded, and so the number of infections
+remained zero.</p>
+</div>
+<div class="section" id="seeding-the-outbreak">
+<h2>Seeding the outbreak<a class="headerlink" href="#seeding-the-outbreak" title="Permalink to this headline">¶</a></h2>
+<p>We need to seed the outbreak with some additional seeds. We do this using
+the <code class="docutils literal notranslate"><span class="pre">additional</span></code> option. This can be very powerful (e.g. adding seeds
+at different days, different wards etc.), but at its simplest, it is
+just the number of initial infections on the first day in the first
+ward. We will start with 100 initial infections;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --disease lurgy.json --model network.json --additonal <span class="m">100</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MetaWards writes its output to a directory called <code class="docutils literal notranslate"><span class="pre">output</span></code>. You can
+change this using the <code class="docutils literal notranslate"><span class="pre">--output</span></code> argument. By default, MetaWards will
+check before overwriting output. To remove this check, pass in the
+<code class="docutils literal notranslate"><span class="pre">--force-overwrite-output</span></code> option.</p>
+</div>
+<p>Now you get a lot more output, e.g. for me the outbreak runs for 71 days.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 67 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 520  E: 1  I: 1  R: 9478  IW: 1  POPULATION: 10000
+Number of infections: 2
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 68 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 520  E: 0  I: 1  R: 9479  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 69 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 520  E: 0  I: 1  R: 9479  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 70 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 520  E: 0  I: 1  R: 9479  IW: 0  POPULATION: 10000
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 71 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 520  E: 0  I: 0  R: 9480  IW: 0  POPULATION: 10000
+Number of infections: 0
+Ending on day 71
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualising-the-results">
+<h2>Visualising the results<a class="headerlink" href="#visualising-the-results" title="Permalink to this headline">¶</a></h2>
+<p>The output is written to the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory. In here is a
+comma-separated file called
+<code class="docutils literal notranslate"><span class="pre">results.csv.bz2</span></code> (MetaWards automatically bzip2 compresses most files to
+save space). This contains the full trajectory, e.g. reading this
+via <code class="docutils literal notranslate"><span class="pre">bunzip2</span> <span class="pre">-kc</span> <span class="pre">output/results.csv.bz2</span></code> should show something that
+starts with;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fingerprint</span><span class="p">,</span><span class="n">repeat</span><span class="p">,</span><span class="n">day</span><span class="p">,</span><span class="n">date</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">I</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">IW</span><span class="p">,</span><span class="n">SCALE_UV</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">22</span><span class="p">,</span><span class="mi">10000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span><span class="mi">9900</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mi">9867</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span><span class="mi">9818</span><span class="p">,</span><span class="mi">71</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">26</span><span class="p">,</span><span class="mi">9755</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">48</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">27</span><span class="p">,</span><span class="mi">9685</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">129</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">28</span><span class="p">,</span><span class="mi">9587</span><span class="p">,</span><span class="mi">151</span><span class="p">,</span><span class="mi">158</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">29</span><span class="p">,</span><span class="mi">9461</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">141</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">9317</span><span class="p">,</span><span class="mi">260</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">31</span><span class="p">,</span><span class="mi">9130</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">326</span><span class="p">,</span><span class="mi">244</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="n">REPEAT</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2020</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span><span class="mi">8869</span><span class="p">,</span><span class="mi">406</span><span class="p">,</span><span class="mi">399</span><span class="p">,</span><span class="mi">326</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>We can visualise the data by loading into Python (pandas), R or Excel.
+MetaWards also comes with a quick plotting program called <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code>.
+Use this to visualise the results using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This program may prompt you to install additional Python modules, e.g.
+pandas and matplotlib</p>
+</div>
+<p>This should produce a resulting image (<code class="docutils literal notranslate"><span class="pre">output/overview.png</span></code>)
+that looks something like this;</p>
+<img alt="Plot of the initial outbreak" src="../_images/console01.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_console.html" class="btn btn-neutral float-right" title="Extending the Model in the Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03_python.html" class="btn btn-neutral float-left" title="Multiple pathways with Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

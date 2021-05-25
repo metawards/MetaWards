@@ -1,0 +1,6 @@
+﻿metawards.find\_mw\_exe
+=======================
+
+.. currentmodule:: metawards
+
+.. autofunction:: find_mw_exe

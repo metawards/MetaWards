@@ -1,0 +1,62 @@
+﻿metawards.Demographic
+=====================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Demographic
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Demographic.__add__
+      ~Demographic.__delattr__
+      ~Demographic.__dir__
+      ~Demographic.__eq__
+      ~Demographic.__format__
+      ~Demographic.__ge__
+      ~Demographic.__getattribute__
+      ~Demographic.__gt__
+      ~Demographic.__init__
+      ~Demographic.__init_subclass__
+      ~Demographic.__le__
+      ~Demographic.__lt__
+      ~Demographic.__ne__
+      ~Demographic.__new__
+      ~Demographic.__reduce__
+      ~Demographic.__reduce_ex__
+      ~Demographic.__repr__
+      ~Demographic.__setattr__
+      ~Demographic.__sizeof__
+      ~Demographic.__str__
+      ~Demographic.__subclasshook__
+      ~Demographic.specialise
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Demographic.__annotations__
+      ~Demographic.__dataclass_fields__
+      ~Demographic.__dataclass_params__
+      ~Demographic.__dict__
+      ~Demographic.__doc__
+      ~Demographic.__hash__
+      ~Demographic.__module__
+      ~Demographic.__weakref__
+      ~Demographic.adjustment
+      ~Demographic.disease
+      ~Demographic.name
+      ~Demographic.network
+      ~Demographic.play_ratio
+      ~Demographic.work_ratio
+   
+   

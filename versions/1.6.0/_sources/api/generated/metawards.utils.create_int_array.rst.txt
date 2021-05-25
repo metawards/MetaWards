@@ -1,0 +1,6 @@
+﻿metawards.utils.create\_int\_array
+==================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: create_int_array

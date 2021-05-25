@@ -1,0 +1,6 @@
+﻿metawards.utils.get\_functions
+==============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: get_functions

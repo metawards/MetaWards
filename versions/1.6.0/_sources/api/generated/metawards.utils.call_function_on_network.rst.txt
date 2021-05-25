@@ -1,0 +1,6 @@
+﻿metawards.utils.call\_function\_on\_network
+===========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: call_function_on_network

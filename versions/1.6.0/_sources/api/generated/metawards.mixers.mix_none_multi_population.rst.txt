@@ -1,0 +1,6 @@
+﻿metawards.mixers.mix\_none\_multi\_population
+=============================================
+
+.. currentmodule:: metawards.mixers
+
+.. autofunction:: mix_none_multi_population

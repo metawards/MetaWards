@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Model data &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start Guide" href="quickstart/index.html" />
+    <link rel="prev" title="Installation instructions" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Model data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-the-data">Getting the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-the-data">Finding the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#versioning-the-data">Versioning the data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-data">Understanding the data</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Model data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="quickstart/index.html" class="btn btn-neutral float-right" title="Quick Start Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation instructions" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="model-data">
+<h1>Model data<a class="headerlink" href="#model-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-the-data">
+<h2>Getting the data<a class="headerlink" href="#getting-the-data" title="Permalink to this headline">¶</a></h2>
+<p>MetaWards uses a large amount of data to describe the network over which
+the model is run. This data is stored in a separate
+<a class="reference external" href="https://github.com/metawards/MetaWardsData">MetaWardsData</a> repository.</p>
+<p>You can download this data in one of two ways;</p>
+<dl>
+<dt>Direct download</dt><dd><p>Download one of the data releases from the
+<a class="reference external" href="https://github.com/metawards/MetaWardsData/releases">releases page</a>.
+It is best to choose the latest release unless you are trying to
+reproduce an earler calculation.</p>
+<p>You can download the data as a <code class="docutils literal notranslate"><span class="pre">zip</span></code> or a <code class="docutils literal notranslate"><span class="pre">tar.gz</span></code> archive, and
+can unpack it using either;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -zxvf MetaWardsData-0.2.0.tar.gz
+</pre></div>
+</div>
+<p>if you downloaded the 0.2.0 release tar.gz file, or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip MetaWardsData-0.2.0.zip
+</pre></div>
+</div>
+<p>if you downloaded the zip file.</p>
+</dd>
+<dt>Git clone</dt><dd><p>You can clone the data repository using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/metawards/MetaWardsData
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="finding-the-data">
+<h2>Finding the data<a class="headerlink" href="#finding-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Once you have downloaded the data you will need to tell metawards
+where the data is located. This can be done in one of three ways;</p>
+<ol class="arabic">
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">METAWARDSDATA</span></code> environment variable equal to the full path
+to the data, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">METAWARDSDATA</span><span class="o">=</span><span class="nv">$HOME</span>/MetaWardsData
+</pre></div>
+</div>
+<p>(assuming you have placed it in your home directory)</p>
+</li>
+<li><p>Pass the full path to the data to metawards using the command line argument
+<code class="docutils literal notranslate"><span class="pre">--repository</span></code>, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>    metawards --repository <span class="nv">$HOME</span>/MetaWardsData
+
+<span class="o">(</span>again assumes you have placed it <span class="k">in</span> your home directory<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Move the data to <code class="docutils literal notranslate"><span class="pre">$HOME/GitHub/MetaWardsData</span></code> as this is the default
+search location, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nv">$HOME</span>/GitHub
+mv <span class="nv">$HOME</span>/MetaWardsData <span class="nv">$HOME</span>/GitHub/
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="versioning-the-data">
+<h2>Versioning the data<a class="headerlink" href="#versioning-the-data" title="Permalink to this headline">¶</a></h2>
+<p>Provenance is very important for MetaWards. It is important to know what
+inputs were used for a model run so that it is possible to recreate the
+calculation and thus reproduce the result.</p>
+<p>To aid this, MetaWardsData has a small script that you should run after
+you have downloaded the data. This will version the data by finding the
+git tag of the data. Run this script using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$METAWARDSDATA</span>
+./version
+</pre></div>
+</div>
+<p>This will create a small file called <code class="docutils literal notranslate"><span class="pre">version.txt</span></code> which will look
+something like this;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s2">&quot;version&quot;</span>: <span class="s2">&quot;0.2.0&quot;</span>,<span class="s2">&quot;repository&quot;</span>: <span class="s2">&quot;https://github.com/metawards/MetaWardsData&quot;</span>,<span class="s2">&quot;branch&quot;</span>: <span class="s2">&quot;main&quot;</span><span class="o">}</span>
+</pre></div>
+</div>
+<p>This file will be read by metawards during a run to embed enough information
+in the outputs to enable others to download the same MetaWardsData input
+as you.</p>
+</div>
+<div class="section" id="understanding-the-data">
+<h2>Understanding the data<a class="headerlink" href="#understanding-the-data" title="Permalink to this headline">¶</a></h2>
+<p>The MetaWardData repository contains four types of data;</p>
+<dl class="simple">
+<dt>model_data</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">model_data</span></code> directory contains the data needed to construct
+a network of wards and links. Currently the 2011 model is included,
+in the <code class="docutils literal notranslate"><span class="pre">2011Data</span></code> directory. The manifest of files that
+comprise this model is <code class="docutils literal notranslate"><span class="pre">2011Data/description.json</span></code>. This json
+file is read by metawards to find and load all of the files that
+are needed for this model.</p>
+</dd>
+<dt>diseases</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">diseases</span></code> directory contains the parameters for different
+diseases. Each disease is described in its own json file, e.g.
+the parameters for SARS-Cov-2 are in <code class="docutils literal notranslate"><span class="pre">diseases/ncov.json</span></code>.
+Once of the main purposes of metawards is to perform parameter
+sweeps to adjust these disease parameters so that a model epidemic
+can more closely follow what is observed in reality. From there,
+more meaningful predictions should be able to be made.</p>
+</dd>
+<dt>parameters</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">parameters</span></code> directory contains parameters used to control
+metawards model runs. These represent “good defaults” for the
+values of the parameters, and are stored in the MetaWardsData
+repository to make it easier to version control and track
+provenance of the parameters used for different jobs.
+The parameters used for jobs in March 2020 (and correct as
+of March 29th) are in <code class="docutils literal notranslate"><span class="pre">parameters/march29.json</span></code>.</p>
+</dd>
+<dt>extra_seeds</dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">extra_seeds</span></code> directory contains files that can be used
+to seed new model disease clusters at different wards during
+a model run. Each file can contain as many additional seeds
+as needed. The format is three numbers per line;
+<code class="docutils literal notranslate"><span class="pre">t</span>&#160;&#160; <span class="pre">num</span>&#160;&#160; <span class="pre">loc</span></code>, where <code class="docutils literal notranslate"><span class="pre">t</span></code> is the step (day) on which
+the additional infection will be seeded, <code class="docutils literal notranslate"><span class="pre">num</span></code> is the number
+of additional infections, and <code class="docutils literal notranslate"><span class="pre">loc</span></code> is the index of the
+ward in the model network in which the infection will occur.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="quickstart/index.html" class="btn btn-neutral float-right" title="Quick Start Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="install.html" class="btn btn-neutral float-left" title="Installation instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

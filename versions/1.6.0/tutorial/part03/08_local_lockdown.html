@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Local lockdowns &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 4 - Customising the output" href="../index_part04.html" />
+    <link rel="prev" title="Alternative lockdowns" href="07_cutoff.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_iterators.html">How a day is modelled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_weekend.html">Where is the weekend?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_lockdown.html">Custom advance functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_dynamic.html">Responding to changing conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_scanning.html">Custom variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_scan_lockdown.html">Scanning lockdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07_cutoff.html">Alternative lockdowns</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Local lockdowns</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#limiting-movement-at-a-local-level">Limiting movement at a local level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scaling-foi-at-a-local-level">Scaling FOI at a local level</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-and-writing-local-parameters">Reading and writing local parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-ward-local-parameters">Custom ward-local parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part03.html">Part 3 - Customising the outbreak</a> &raquo;</li>
+        
+      <li>Local lockdowns</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../index_part04.html" class="btn btn-neutral float-right" title="Part 4 - Customising the output" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="07_cutoff.html" class="btn btn-neutral float-left" title="Alternative lockdowns" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="local-lockdowns">
+<h1>Local lockdowns<a class="headerlink" href="#local-lockdowns" title="Permalink to this headline">¶</a></h1>
+<p>In the <a class="reference internal" href="07_cutoff.html"><span class="doc">last chapter</span></a> it was implied that the parameters
+for equation 1, and the action of the <code class="docutils literal notranslate"><span class="pre">cutoff</span></code> parameter, were global,
+and applied to all wards equally. If this was true, then it would make
+it difficult for <code class="docutils literal notranslate"><span class="pre">metawards</span></code> to model ward-specific behaviour, such
+as local lockdowns, or differences in local behaviour.
+In reality, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> provides support for ward-specific values of
+the scaling and cutoff parameters.</p>
+<div class="section" id="limiting-movement-at-a-local-level">
+<h2>Limiting movement at a local level<a class="headerlink" href="#limiting-movement-at-a-local-level" title="Permalink to this headline">¶</a></h2>
+<p>Every ward can have its own value
+of the cutoff parameter. Movement between two wards is only permitted
+if the distance between wards is less than the minimum of the
+cutoff distance of each ward, and the value of
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>,
+e.g. if this condition is true;</p>
+<ol class="arabic simple" start="3">
+<li><p><span class="math notranslate nohighlight">\(D_\text{ij} &lt; \text{min}( C_i, C_j, C_\text{global} )\)</span></p></li>
+</ol>
+<p>where;</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(D_\text{ij}\)</span> is the distance between the centres of wards
+<span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_i\)</span> is the local cutoff parameter for ward <span class="math notranslate nohighlight">\(i\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_j\)</span> is the local cutoff parameter for ward <span class="math notranslate nohighlight">\(j\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_\text{global}\)</span> is the global cutoff distance set via
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a></p></li>
+</ul>
+</div>
+<div class="section" id="scaling-foi-at-a-local-level">
+<h2>Scaling FOI at a local level<a class="headerlink" href="#scaling-foi-at-a-local-level" title="Permalink to this headline">¶</a></h2>
+<p>Every ward can have its own value of the FOI scaling parameter. In reality,
+equation 1 is actually;</p>
+<ol class="arabic simple" start="4">
+<li><p><span class="math notranslate nohighlight">\(F(w) = S \times S_l(w) \times U(t) \times \sum_s [ C_s \beta_s N_s(w) ]\)</span></p></li>
+</ol>
+<p>where;</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(S_l(w)\)</span> is the local scaling factor for ward <span class="math notranslate nohighlight">\(w\)</span>. This acts
+together with <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(U(t)\)</span> and <span class="math notranslate nohighlight">\(C_s\)</span> to give you a lot
+of control over how infectious individuals at each disease stage in each
+ward contribute to the ward’s FOI.</p></li>
+</ul>
+</div>
+<div class="section" id="reading-and-writing-local-parameters">
+<h2>Reading and writing local parameters<a class="headerlink" href="#reading-and-writing-local-parameters" title="Permalink to this headline">¶</a></h2>
+<p>You can read and write local ward parameters from within a custom
+iterator. The local ward parameters are stored in the
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes" title="metawards.Nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.nodes</span></code></a> object. This provides arrays
+which are indexed by ward ID (i.e. counting up from <code class="docutils literal notranslate"><span class="pre">1</span></code> to <code class="docutils literal notranslate"><span class="pre">nnodes</span> <span class="pre">+</span> <span class="pre">1</span></code>).</p>
+<p><a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.scale_uv" title="metawards.Nodes.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.scale_uv</span></code></a> contains the
+<span class="math notranslate nohighlight">\(S_l(w)\)</span> values for each node, while
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.cutoff" title="metawards.Nodes.cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.cutoff</span></code></a> contains the
+cutoff values for each node (in kilometers).</p>
+<p>The scaling factors for each node default to <code class="docutils literal notranslate"><span class="pre">1.0</span></code> (meaning no local scaling),
+while the cutoff defaults to a large distance that is greater than the
+distance between any two points on Earth (meaning thus no local cutoff).</p>
+<p>As these values are used as part of the FOI calculation, they must be
+read and set during the <code class="docutils literal notranslate"><span class="pre">foi</span></code> stage of the model day. For example,
+create a new iterator called <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code> and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_default</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">scale_uv</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">scale_uv</span>
+    <span class="n">cutoff</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">cutoff</span>
+
+    <span class="c1"># set a lockdown in even-numbered wards</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># get the default functions for this stage</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">iterate_default</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;foi&quot;</span><span class="p">:</span>
+        <span class="c1"># make sure that advance_lockdown is called</span>
+        <span class="c1"># first in the foi stage</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span> <span class="o">+</span> <span class="n">funcs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<p>This iterator defines the <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> advance function. This
+simply loops over all even-numbered wards and sets
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.scale_uv" title="metawards.Nodes.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.scale_uv</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.cutoff" title="metawards.Nodes.cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.cutoff</span></code></a> to zero.
+In effect, this places half of the country into extreme lockdown,
+where the disease is unable to spread.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">iterate_lockdown</span></code> function takes the <code class="docutils literal notranslate"><span class="pre">stage</span></code> parameter. This
+tells <code class="docutils literal notranslate"><span class="pre">metawards</span></code> that this iterator wants to specify the advance
+functions to call at different stages. By default, this returns the
+default advance functions for that stage (as returned by
+<a class="reference internal" href="../../api/generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-func docutils literal notranslate"><span class="pre">iterate_default()</span></code></a>). For the <code class="docutils literal notranslate"><span class="pre">foi</span></code> stage,
+this return <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> before the default functions, thereby
+ensuring that <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> changes the
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.scale_uv" title="metawards.Nodes.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.scale_uv</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.cutoff" title="metawards.Nodes.cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.cutoff</span></code></a> ward-local parameters
+before they are used to calculate the force of infection of each ward.</p>
+<p>You can run this iterator using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -a ExtraSeedsLondon.dat --iterator lockdown
+</pre></div>
+</div>
+<p>You should see that the infection spreads to only half of the country,
+as the lurgy can only infect the half of the population that are
+resident of visiting wards that are not in complete lockdown. For example,
+I see;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>...
+
+─────────────────────────────────────────────── Day 67 ───────────────────────────────────────────────
+S: 45526353  E: 871045  I: 5537877  R: 4146802  IW: 4293  POPULATION: 56082077
+Number of infections: 6408922
+
+─────────────────────────────────────────────── Day 68 ───────────────────────────────────────────────
+S: 44593470  E: 901872  I: 5911611  R: 4675124  IW: 4294  POPULATION: 56082077
+Number of infections: 6813483
+
+─────────────────────────────────────────────── Day 69 ───────────────────────────────────────────────
+S: 43632470  E: 932883  I: 6269338  R: 5247386  IW: 4294  POPULATION: 56082077
+Number of infections: 7202221
+
+...
+
+────────────────────────────────────────────── Day 184 ───────────────────────────────────────────────
+S: 28691853  E: 0  I: 2  R: 27390222  IW: 0  POPULATION: 56082077
+Number of infections: 2
+
+────────────────────────────────────────────── Day 185 ───────────────────────────────────────────────
+S: 28691853  E: 0  I: 2  R: 27390222  IW: 0  POPULATION: 56082077
+Number of infections: 2
+
+────────────────────────────────────────────── Day 186 ───────────────────────────────────────────────
+S: 28691853  E: 0  I: 0  R: 27390224  IW: 0  POPULATION: 56082077
+Number of infections: 0
+Ending on day 186
+</pre></div>
+</div>
+</div>
+<div class="section" id="custom-ward-local-parameters">
+<h2>Custom ward-local parameters<a class="headerlink" href="#custom-ward-local-parameters" title="Permalink to this headline">¶</a></h2>
+<p>You can also read and write your own custom ward-local parameters.
+You do this by calling
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.get_custom" title="metawards.Nodes.get_custom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.get_custom</span></code></a>. For example;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_params</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_custom</span><span class="p">(</span><span class="s2">&quot;my_params&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>will return the custom ward-local parameters called <code class="docutils literal notranslate"><span class="pre">my_params</span></code>. If these
+don’t exist, then they are created, with each ward given a default
+starting value specified by <code class="docutils literal notranslate"><span class="pre">default</span></code> (here <code class="docutils literal notranslate"><span class="pre">0.0</span></code>). The return value
+is the array indexed by ward ID. This can be read and written in an identical
+way to <a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.scale_uv" title="metawards.Nodes.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.scale_uv</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.cutoff" title="metawards.Nodes.cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.cutoff</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Custom ward-level parameters are always stored as an array of
+floating point numbers.</p>
+</div>
+<p>You can use custom parameters to store or manipulate extra ward-level data.
+For example, edit your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code> iterator to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_default</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># get the ward-specific scaling and cutoff parameters</span>
+    <span class="n">scale_uv</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">scale_uv</span>
+    <span class="n">cutoff</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">cutoff</span>
+
+    <span class="c1"># get the custom parameter &#39;in_lockdown&#39; which we will</span>
+    <span class="c1"># initialise to 0 (meaning false)</span>
+    <span class="n">in_lockdown</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_custom</span><span class="p">(</span><span class="s2">&quot;in_lockdown&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># count of number of case-free days per ward</span>
+    <span class="n">case_free_days</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_custom</span><span class="p">(</span><span class="s2">&quot;case_free_days&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># get the total number of infections from the workspace</span>
+    <span class="n">I_in_wards</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">I_in_wards</span>
+
+    <span class="c1"># loop over all wards</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># is this ward in lockdown?</span>
+        <span class="k">if</span> <span class="n">in_lockdown</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="c1"># has the number of infections dropped to zero? If so,</span>
+            <span class="c1"># then leave lockdown</span>
+            <span class="k">if</span> <span class="n">I_in_wards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># we need 28 case-free days before releasing lockdown</span>
+                <span class="k">if</span> <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">28</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ward </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> leaving lockdown&quot;</span><span class="p">)</span>
+                    <span class="c1"># stay on high vigilence, so keep actions that</span>
+                    <span class="c1"># reduce beta to 20% of normal</span>
+                    <span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.2</span>
+                    <span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">99999.99</span>
+                    <span class="n">in_lockdown</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ward </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> case_free_days equals </span><span class="si">{</span><span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># if not, then enter lockdown if the number of infections</span>
+        <span class="c1"># goes above 5</span>
+        <span class="k">elif</span> <span class="n">I_in_wards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ward </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> entering lockdown&quot;</span><span class="p">)</span>
+            <span class="n">in_lockdown</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># stop all travel and enact measures that</span>
+            <span class="c1"># will scale down beta to 1% of normal</span>
+            <span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+    <span class="c1"># get the number of wards in lockdown</span>
+    <span class="n">num_lockdown</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">in_lockdown</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">num_lockdown</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of wards in lockdown equals </span><span class="si">{</span><span class="n">num_lockdown</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># get the default functions for this stage</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">iterate_default</span><span class="p">(</span><span class="n">stage</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;foi&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span> <span class="o">+</span> <span class="n">funcs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<p>In this case <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> will move individual wards in and out
+of local lockdowns depending on the number of infections in that ward
+(read from the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace.I_in_wards" title="metawards.Workspace.I_in_wards"><code class="xref py py-meth docutils literal notranslate"><span class="pre">workspace.I_in_wards</span></code></a>
+array from the passed <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workspace</span></code></a> object).</p>
+<p>Two ward-local custom parameters are used to record whether or not
+a ward is in a local lockdown;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in_lockdown</span></code> is 1 if the ward is in lockdown, and 0 if it is not</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">case_free_days</span></code> is the count of the number of consecutive days in
+a ward without an infection (really detectable infection, e.g. an
+individual in the <code class="docutils literal notranslate"><span class="pre">I</span></code> state).</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> function works by looping over all wards and
+seeing if the ward is in lockdown by checking the <code class="docutils literal notranslate"><span class="pre">in_lockdown</span></code> value
+for that ward. If it is, and if the number of infections is zero, then
+it checks if more than 28 case-free days have passed. If they have, then
+the local lockdown is relaxed, travel is allowed (cutoff is set to
+a large value) and the scaling factor is increased to <code class="docutils literal notranslate"><span class="pre">0.2</span></code> (implying
+that measures such as mask wearing, physical distancing etc. are still
+followed).</p>
+<p>If 28 days have not passed, then the number of case-free days is incremented.</p>
+<p>If the ward is not in local lockdown, then if the number of local detected
+infections goes above 5 then a local lockdown is initiated. Travel is
+halted (cutoff is set to 0) and stringent measures are taken such that
+the scaling factor is <code class="docutils literal notranslate"><span class="pre">0.01</span></code> (implying that <code class="docutils literal notranslate"><span class="pre">beta</span></code> is scaled down by 99%).</p>
+<p>Finally, the number of wards in lockdown is calculated as the sum of
+the <code class="docutils literal notranslate"><span class="pre">in_lockdown</span></code> custom parameter, and is printed to the screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that there are some additional <a class="reference internal" href="../../api/generated/metawards.utils.Console.html#metawards.utils.Console.debug" title="metawards.utils.Console.debug"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Console.debug</span></code></a>
+statements in the function that print out debug lines when wards move
+in and out of lockdown.</p>
+</div>
+<p>You can run this iterator using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -a ExtraSeedsLondon.dat --iterator lockdown
+</pre></div>
+</div>
+<p>You should see that the number of wards in lockdown increases as the
+disease spreads. The spread is slowed down, but as wards come out of
+lockdown they are sometimes re-infected, and have to re-lockdown. You
+may see wave like behaviour as the disease is slowly brought under
+control. For example, for me, the plot of the outbreak, produced via;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+</pre></div>
+</div>
+<p>shows the following <code class="docutils literal notranslate"><span class="pre">output/overview.jpg</span></code> plot;</p>
+<img alt="Outbreak controlled using local lockdowns" src="../../_images/tutorial_3_8.jpg" />
+<p>This wave behaviour is more clear if we make the entering of exiting of
+local lockdown more extreme. For example, update your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code>
+to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_default</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># get the ward-specific scaling and cutoff parameters</span>
+    <span class="n">scale_uv</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">scale_uv</span>
+    <span class="n">cutoff</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">cutoff</span>
+
+    <span class="c1"># get the custom parameter &#39;in_lockdown&#39; which we will</span>
+    <span class="c1"># initialise to 0 (meaning false)</span>
+    <span class="n">in_lockdown</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_custom</span><span class="p">(</span><span class="s2">&quot;in_lockdown&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># count of number of case-free days per ward</span>
+    <span class="n">case_free_days</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">get_custom</span><span class="p">(</span><span class="s2">&quot;case_free_days&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># get the total number of infections from the workspace</span>
+    <span class="n">I_in_wards</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">I_in_wards</span>
+
+    <span class="c1"># loop over all wards</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="c1"># is this ward in lockdown?</span>
+        <span class="k">if</span> <span class="n">in_lockdown</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="c1"># has the number of infections dropped to zero? If so,</span>
+            <span class="c1"># then leave lockdown</span>
+            <span class="k">if</span> <span class="n">I_in_wards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># we need 28 case-free days before releasing lockdown</span>
+                <span class="k">if</span> <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">28</span><span class="p">:</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ward </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> leaving lockdown&quot;</span><span class="p">)</span>
+                    <span class="c1"># completely relax the lockdown</span>
+                    <span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+                    <span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">99999.99</span>
+                    <span class="n">in_lockdown</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ward </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> case_free_days equals </span><span class="si">{</span><span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># if not, then enter lockdown if the number of infections</span>
+        <span class="c1"># goes above 5</span>
+        <span class="k">elif</span> <span class="n">I_in_wards</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ward </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> entering lockdown&quot;</span><span class="p">)</span>
+            <span class="n">in_lockdown</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">case_free_days</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="c1"># stop all travel and enact measures that</span>
+            <span class="c1"># stop all local transmission (beta is 0)</span>
+            <span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1"># get the number of wards in lockdown</span>
+    <span class="n">num_lockdown</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">in_lockdown</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">num_lockdown</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of wards in lockdown equals </span><span class="si">{</span><span class="n">num_lockdown</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># get the default functions for this stage</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">iterate_default</span><span class="p">(</span><span class="n">stage</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;foi&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span> <span class="o">+</span> <span class="n">funcs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<p>The only change is that <code class="docutils literal notranslate"><span class="pre">scale_uv[i]</span></code> is set to <code class="docutils literal notranslate"><span class="pre">0.0</span></code> for wards that
+are in lockdown (i.e. there is no more spread), while <code class="docutils literal notranslate"><span class="pre">scale_uv[i]</span></code>
+is returned to <code class="docutils literal notranslate"><span class="pre">1.0</span></code> for wards that leave lockdown. This extreme switching
+when entering and leaving lockdown causes waves of infection that
+spread across wards, e.g. when I run this model I see;</p>
+<img alt="Outbreak with local lockdowns resulting in waves of disease" src="../../_images/tutorial_3_8_2.jpg" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../index_part04.html" class="btn btn-neutral float-right" title="Part 4 - Customising the output" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="07_cutoff.html" class="btn btn-neutral float-left" title="Alternative lockdowns" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Changelog &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Acknowledgements" href="acknowledgements.html" />
+    <link rel="prev" title="metawards.themes.SpringFlowers" href="api/generated/metawards.themes.SpringFlowers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#may-25th-2021">1.6.0 - May 25th 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#february-26th-2021">1.5.1 - February 26th 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#february-9th-2021">1.5.0 - February 9th 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#november-18th-2020">1.4.1 - November 18th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#august-14th-2020">1.4.0 - August 14th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#july-22nd-2020">1.3.0 - July 22nd 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#june-26th-2020">1.2.0 - June 26th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#june-11th-2020">1.1.0 - June 11th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-23rd-2020">1.0.0 - May 23rd 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-18th-2020">0.12.0 - May 18th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-11th-2020">0.11.2 - May 11th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#may-10th-2020">0.11.1 - May 10th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.11.0 - May 10th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-27th-2020">0.10.0 - April 27th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-24th-2020">0.9.0 - April 24th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-22nd-2020">0.8.5 - April 22nd 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-21st-2020">0.8.3 - April 21st 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.8.0 - April 21st 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-17th-2020">0.7.1 - April 17th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.7.0 - April 17th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-9th-2020">0.6.0 - April 9th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-8th-2020">0.5.0 - April 8th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-7th-2020">0.4.0 - April 7th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#april-5th-2020">0.3.1 - April 5th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.3.0 - April 5th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#march-31st-2020">0.2.0 - March 31st 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#march-29th-2020">0.1.0 - March 29th 2020</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-of-the-python-port-march-25th-2020">Start of the Python port - March 25th 2020</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Changelog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="acknowledgements.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="api/generated/metawards.themes.SpringFlowers.html" class="btn btn-neutral float-left" title="metawards.themes.SpringFlowers" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="may-25th-2021">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.5.1...1.6.0">1.6.0</a> - May 25th 2021<a class="headerlink" href="#may-25th-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added work_to_play iterators, that allow the weekend to be modelled
+by treating workers as players. Updated
+<a class="reference internal" href="tutorial/part03/02_weekend.html"><span class="doc">the tutorial</span></a> to include
+this better model.</p></li>
+<li><p>Added Apple M1 support. MetaWards now compiles and runs on Apple M1
+processors. OpenMP support is included, so it can also run
+in parallel. Setup scripts auto-detect if an M1 version of Python
+is used, and will compile MetaWards appropriately.</p></li>
+<li><p>Fixed a bug in <a class="reference internal" href="api/generated/metawards.run.html#metawards.run" title="metawards.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.run()</span></code></a> whereby the MetaWards executable
+was not found when running on Windows. This stopped MetaWards from
+being run from Jupyter or RStudio on Windows. This should now
+work correctly, including with proper handling of error output
+(i.e. fixed the hanging reported in issue 169),
+catching of failures, and passing of command line arguments.
+To aid running, the API was extended with the following functions;
+<a class="reference internal" href="api/generated/metawards.find_mw_exe.html#metawards.find_mw_exe" title="metawards.find_mw_exe"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.find_mw_exe()</span></code></a>, <a class="reference internal" href="api/generated/metawards.find_mw_include.html#metawards.find_mw_include" title="metawards.find_mw_include"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.find_mw_include()</span></code></a>
+and <a class="reference internal" href="api/generated/metawards.get_reticulate_command.html#metawards.get_reticulate_command" title="metawards.get_reticulate_command"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.get_reticulate_command()</span></code></a>.</p></li>
+<li><p>Added the ability to seed infections in the worker population. By default,
+infections will be seeded in the player population. However, if there
+are any remaining infections to seed (or no players in a ward) then
+the infections will be seeded in the workers.</p></li>
+<li><p>Added support for compiling Cython plugins that link to MetaWards
+C functions. This means that you can now write plugins that are compiled
+dynamically that use the random number generators in metawards_random.
+This is demonstrated in <em class="xref py py-obj">tests/test_cython_iterator.py</em>, specifically
+in the iterator <em class="xref py py-obj">tests/iterators/cython_iterator.pyx</em>.</p></li>
+<li><p>Fixed a bug in <a class="reference internal" href="api/index_api_MetaWards.html#metawards.VariableSet" title="metawards.VariableSet"><code class="xref py py-func docutils literal notranslate"><span class="pre">VariableSet()</span></code></a> whereby array variables
+could not be parsed if they were on the first line of the file
+(the commas confused the parser and put it into column mode).
+Added a check so that arrays can now be detected on the first line,
+and the parser put into row mode.</p></li>
+<li><p>Added more docs to the installation instructions to let new users
+know that they have to install MetaWardsData.</p></li>
+</ul>
+</div>
+<div class="section" id="february-26th-2021">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.5.0...1.5.1">1.5.1</a> - February 26th 2021<a class="headerlink" href="#february-26th-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed a bug in the new <a class="reference internal" href="api/generated/metawards.mixers.merge_matrix_multi_population.html#metawards.mixers.merge_matrix_multi_population" title="metawards.mixers.merge_matrix_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_multi_population()</span></code></a>
+function that caused it to calculate incorrect values when one or more
+of the demographics had zero members (it didn’t catch this divide by
+zero case). This led to too-high FOIs which produced meaningless results.</p></li>
+<li><p>Updated the setup.cfg to correctly state that MetaWards supports
+Python 3.9</p></li>
+<li><p>Updated sphinx to the latest version</p></li>
+</ul>
+</div>
+<div class="section" id="february-9th-2021">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.4.1...1.5.0">1.5.0</a> - February 9th 2021<a class="headerlink" href="#february-9th-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added <a class="reference internal" href="api/generated/metawards.mixers.merge_matrix_single_population.html#metawards.mixers.merge_matrix_single_population" title="metawards.mixers.merge_matrix_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_single_population()</span></code></a> and
+<a class="reference internal" href="api/generated/metawards.mixers.merge_matrix_multi_population.html#metawards.mixers.merge_matrix_multi_population" title="metawards.mixers.merge_matrix_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_multi_population()</span></code></a> to account
+for different normalisation factors when merging FOIs calculated
+across multiple demographics. This is
+<a class="reference internal" href="tutorial/part05/04_contacts.html"><span class="doc">described in the tutorial here</span></a>.
+It allows the population dynamics to be better modelled, e.g.
+either as all demographics being part of the same population
+with equal contact probabilities, or the demographics having
+different contact probabilities, e.g. as in traditional
+age-based demographics.</p></li>
+<li><p>Added <a class="reference internal" href="api/generated/metawards.mixers.mix_evenly_single_population.html#metawards.mixers.mix_evenly_single_population" title="metawards.mixers.mix_evenly_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_evenly_single_population()</span></code></a>
+and <a class="reference internal" href="api/generated/metawards.mixers.mix_none_single_population.html#metawards.mixers.mix_none_single_population" title="metawards.mixers.mix_none_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_none_single_population()</span></code></a> as
+convenience mixers for the case where all demographics are
+part of the same population.</p></li>
+<li><p>Added <a class="reference internal" href="api/generated/metawards.mixers.mix_evenly_multi_population.html#metawards.mixers.mix_evenly_multi_population" title="metawards.mixers.mix_evenly_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_evenly_multi_population()</span></code></a>
+and <a class="reference internal" href="api/generated/metawards.mixers.mix_none_multi_population.html#metawards.mixers.mix_none_multi_population" title="metawards.mixers.mix_none_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_none_multi_population()</span></code></a> as
+convenience mixers for the case where the contacts between
+demographics depend on the number of individuals in each
+demographic.</p></li>
+<li><p>Fixed a small bug where MetaWards raised an exception
+in multi-demographic runs when a custom disease model
+doesn’t have a <em class="xref py py-obj">I</em> or <em class="xref py py-obj">R</em> stage.</p></li>
+</ul>
+</div>
+<div class="section" id="november-18th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.4.0...1.4.1">1.4.1</a> - November 18th 2020<a class="headerlink" href="#november-18th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed a small bug in <em class="xref py py-obj">output_core</em> where the Workspace of a demographic
+subnetwork (its subspace) was being zeroed incorrectly after statistics
+had been accumulated and processed, when the code was run on more than
+4 processors. This prevented extractors from getting this data for
+demographics. Simple fix :-). Bug does not impact any previous runs
+or would have been likely to have caused any issues.</p></li>
+<li><p>Added Python 3.9 to the GitHub Actions build matrix, and tested that
+the Python 3.9 packages are built and run correctly.</p></li>
+<li><p>Bumped Sphinx up to the latest version.</p></li>
+</ul>
+</div>
+<div class="section" id="august-14th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.3.0...1.4.0">1.4.0</a> - August 14th 2020<a class="headerlink" href="#august-14th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>MetaWards now includes ward-local parameters (e.g. cutoff and scale_uv), plus
+supports custom user ward-local parameters. This supports modelling of
+different ward-local behaviour, e.g. local control measures or
+local lockdowns. Examples of a local lockdown model is
+in <a class="reference internal" href="tutorial/part03/07_cutoff.html"><span class="doc">chapter 7</span></a> and
+<a class="reference internal" href="tutorial/part03/08_local_lockdown.html"><span class="doc">chapter 8</span></a> of
+<a class="reference internal" href="tutorial/index_part03.html"><span class="doc">part 3</span></a> of the tutorial, plus
+<a class="reference internal" href="tutorial/part08/05_local_network.html"><span class="doc">chapter 5 of part 8</span></a>.
+This can also be used to model
+<a class="reference internal" href="tutorial/part09/02_vaccinate.html"><span class="doc">ward-local vaccination strategies</span></a>.</p></li>
+<li><p>We have re-worked the go_functions. We have added
+<a class="reference internal" href="api/generated/metawards.movers.go_ward.html#metawards.movers.go_ward" title="metawards.movers.go_ward"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_ward()</span></code></a> that can be used with
+<a class="reference internal" href="api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a> to specify moves between
+any and all combinations of demographics, disease stages and wards
+(for players) and ward links (for workers). Individuals can move
+from worker to player, player to worker, move around the network,
+move to different networks in different demographics, move
+between different disease stages, move from susceptible to
+infected or infected to susceptible etc. etc. This enables
+some advanced modelling, e.g. of vaccinated or recovered individuals
+who gradually lose immunity and become susceptible again, movements
+associated with, e.g. start of university, and movements and
+quarantine associated with holidays.</p></li>
+<li><p>Added a <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Ward.bg_foi" title="metawards.Ward.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Ward.bg_foi</span></code></a> per-ward
+parameter to set a background force of infection that can be used
+to drive (or suppress) infections regardless of the number of
+infecteds in each ward.</p></li>
+<li><p>Added a global <a class="reference internal" href="api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a>
+to set a per-network background force of infection. This is
+useful as a way to model
+<a class="reference internal" href="tutorial/part09/05_holidays.html"><span class="doc">holiday destinations as different networks</span></a>.</p></li>
+<li><p>Added a global <code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span> <span class="pre">&lt;metawards.Parameters.scale_uv()</span></code>
+make it easier to set and control the scale_uv parameter via
+a design file, parameter or via an adjustment in a demographic.</p></li>
+<li><p>Finalised demographic adjustment support, enabling you to create
+demographics with adjusted parameters, e.g. see the
+<a class="reference internal" href="tutorial/part09/05_holidays.html"><span class="doc">holiday destinations example</span></a>.</p></li>
+<li><p>Added <a class="reference internal" href="api/generated/metawards.movers.MoveRecord.html#metawards.movers.MoveRecord" title="metawards.movers.MoveRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveRecord</span></code></a> that can be used to
+record all moves performed by a mover or go_function. Added
+<code class="xref py py-func docutils literal notranslate"><span class="pre">go_record()</span></code> that can move specific individuals
+according to specific moves indicated in the
+<a class="reference internal" href="api/generated/metawards.movers.MoveRecord.html#metawards.movers.MoveRecord" title="metawards.movers.MoveRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveRecord</span></code></a>. As there is a
+<a class="reference internal" href="api/generated/metawards.movers.MoveRecord.html#metawards.movers.MoveRecord.invert" title="metawards.movers.MoveRecord.invert"><code class="xref py py-func docutils literal notranslate"><span class="pre">MoveRecord.invert</span></code></a> you can
+use this to reverse moves.</p></li>
+<li><p>Added <a class="reference internal" href="api/generated/metawards.Disease.html#metawards.Disease.is_infected" title="metawards.Disease.is_infected"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_infected</span></code></a> parameter
+to <a class="reference internal" href="api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> to mark whether a disease stage is classed
+as being an infected stage. This is useful for non-recovered,
+non-susceptible and non-infected stages, e.g. vaccinated (V) stages.
+For example see <a class="reference internal" href="tutorial/part09/02_vaccinate.html"><span class="doc">this tutorial</span></a>.</p></li>
+<li><p>MetaWards now has a <a class="reference external" href="https://github.com/metawards/rpkg">proper R package</a>.
+You can now install and update
+MetaWards directly from within R. See the updated
+<a class="reference internal" href="install.html"><span class="doc">installation instructions</span></a> and the
+<a class="reference internal" href="quickstart/01_R.html"><span class="doc">R quickstart guide</span></a>.</p></li>
+<li><p>Added a <code class="docutils literal notranslate"><span class="pre">--UV-max</span></code> command line parameter so that you can specify
+the date in the year when disease transmission is highest (if UV is not
+equal to 1.0, and thus disease transmission is seasonal). This defaults
+to the first day of the outbreak.</p></li>
+<li><p>Optimised <a class="reference internal" href="api/generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_foi()</span></code></a> to skip calculations
+of FOI for a stage if beta[stage] is zero. This changes the order
+of random numbers, so meaning that this version of metawards will
+give different output than older versions for the same input and
+same random number seed. We’ve made a similar change to the original
+C code to make sure that this has not invalidated the results.</p></li>
+<li><p>Added a “null” or “scratch” ward that can be used to temporarily
+store individuals during a day. This is useful when implementing more
+complex moves that involve gathering and scattering populations.</p></li>
+<li><p>Removed all parameters and dead code that were ported from the original
+C code but are unused.</p></li>
+</ul>
+</div>
+<div class="section" id="july-22nd-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.2.0...1.3.0">1.3.0</a> - July 22nd 2020<a class="headerlink" href="#july-22nd-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added a new <a class="reference internal" href="quickstart/index.html"><span class="doc">quick start guide</span></a> that quickly
+showcases the main features of MetaWards. A Python, R and command line
+version is available, so this should suit a range of audiences.</p></li>
+<li><p>Added support for different demographics to use different networks.
+This is described partially in the <a class="reference internal" href="tutorial/index_part08.html"><span class="doc">Part 8 - Creating your own models / networks</span></a>,
+but mostly in the new <a class="reference internal" href="quickstart/index.html"><span class="doc">quick start guide</span></a>.
+This will be documented further in the tutorial in a future release
+(e.g. 1.3.1 or 1.4.0).</p></li>
+<li><p>Added a <a class="reference internal" href="api/generated/metawards.run.html#metawards.run" title="metawards.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.run()</span></code></a> function to run MetaWards jobs from the API.
+This enables jobs to be run from within Python or R scripts, or to run
+interactively from within, e.g. RStudio or Jupyter.</p></li>
+<li><p>Added in R support via reticulate. You can now use the MetaWards API
+within R, plus, via the new <a class="reference internal" href="api/generated/metawards.run.html#metawards.run" title="metawards.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.run()</span></code></a> function you can
+write nice tutorials or vignettes that include running the jobs.
+Aim to create a CRAN MetaWards package in a future release.</p></li>
+<li><p>Cleaned up the Python API so that this is as flexible as the R API.
+Made sure that key classes, like <a class="reference internal" href="api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a>,
+<a class="reference internal" href="api/generated/metawards.InputFiles.html#metawards.InputFiles" title="metawards.InputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputFiles</span></code></a> and <a class="reference internal" href="api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a>
+are easy to use and can serialised to/from JSON.</p></li>
+<li><p>New <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ward</span></code></a> / <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a> API to let
+you easily create new networks in Python or R.
+You can convert <a class="reference internal" href="api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> to and from a
+<a class="reference internal" href="api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a>, and these can be saved and loaded from JSON.
+You can harmonise multiple Wards objects, which enables different
+demographics to use different networks. Also can now refer to wards
+in a network by name rather than index.</p></li>
+<li><p>Fixed issues with the “single” ward model. This did not assign any
+player weights, so outbreaks were incorrect. This is now fixed, and the
+single-ward model now matches a manually-created single ward model.</p></li>
+<li><p>Added convenience executables (metawards-python, metawards-jupyter
+and metawards-reticulate) to make it easier for users to use the
+right Python executable if many are installed on the system.</p></li>
+<li><p>Cleaned up the output and changed “UV” to “scale_uv” as this clashed with
+the UV command-line parameter (and confused people).</p></li>
+<li><p>Fixed a bug where the “population” parameter was ignored for repeated
+single-ward network runs.</p></li>
+<li><p>More robust reading of the traditional network file format</p></li>
+<li><p>Added progress bars for slow operations :-)</p></li>
+<li><p>Better support for sequential naming of output directories for repeated runs</p></li>
+<li><p>“master” branch was renamed to “main”</p></li>
+</ul>
+</div>
+<div class="section" id="june-26th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.1.0...1.2.0">1.2.0</a> - June 26th 2020<a class="headerlink" href="#june-26th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added the ability to use custom-named disease stages. You can now run any
+type of model, and are not limited to <code class="docutils literal notranslate"><span class="pre">S</span></code>, <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code> and <code class="docutils literal notranslate"><span class="pre">R</span></code>.
+Learn more in the <a class="reference internal" href="tutorial/part07/05_named_stages.html"><span class="doc">tutorial here</span></a>.</p></li>
+<li><p>Improved formatting out information output to the user regarding different
+disease stages. This includes better console output and also more
+informative output data files. Again, this is all detailed in the
+above tutorial.</p></li>
+<li><p>Updated all output files to support the summary data for custom
+named disease stages. Now you can collect the data you want directly
+without needing to build a custom extractor - just say which mapping
+stage you want. Again, this is described in the above tutorial.</p></li>
+<li><p>Added really flexible support for reading in different formats of
+additional seeds. See the <a class="reference internal" href="tutorial/part08/01_networks.html"><span class="doc">tutorial here</span></a>
+and the new <a class="reference internal" href="fileformats/index.html"><span class="doc">fileformats documentation</span></a>.
+This includes being able to read extra seeds from the command line,
+rather than needing to always write a file.</p></li>
+<li><p>Added in the ability to seed infections by date as well as day. Also
+seeding wards by name as well as index (e.g. <code class="docutils literal notranslate"><span class="pre">Clifton/Bristol</span></code>).</p></li>
+<li><p>Added in <a class="reference internal" href="api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a> to consolidate all of the code
+used to interpret strings into data types. This increases the power
+and flexibility of the data parsers, and adds in new features such
+as reading in random data, or adding math functions to the
+expression support, e.g. <code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">*</span> <span class="pre">sqrt(3.5)</span></code> now works.</p></li>
+<li><p>Added cython support for plugins. If your plugin ends with <code class="docutils literal notranslate"><span class="pre">.pyx</span></code> and
+you have cython installed, then it will be compiled at run time.
+This should enable you to write plugin that are both powerful and fast.</p></li>
+<li><p>Fixed a deadlock on Linux when using multiprocessing and OpenMP together</p></li>
+<li><p>Removed the unused <code class="docutils literal notranslate"><span class="pre">.err</span></code> file.</p></li>
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">TotalInfections.dat.bz2</span></code> file (and similar) as these were
+difficult to work with and not well understood. Replaced with
+<code class="docutils literal notranslate"><span class="pre">total_infections.csv.bz2</span></code> (and similar) files, which have more
+information and are easier to work with (e.g. have column names).</p></li>
+</ul>
+</div>
+<div class="section" id="june-11th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.0.0...1.1.0">1.1.0</a> - June 11th 2020<a class="headerlink" href="#june-11th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Different demographics can now follow different disease pathways. This
+supports modelling of super-spreaders and hospitals, as described
+in <a class="reference internal" href="tutorial/index_part07.html"><span class="doc">part 7 of the tutorial</span></a>.</p></li>
+<li><p>Variables in demographic sub-networks can be scanned independently from
+the overal network or other sub-networks. This means you can, e.g.
+enact lock-downs in specific demographics, or scan disease parameters
+for different demographics.</p></li>
+<li><p>Added a <a class="reference internal" href="api/generated/metawards.movers.go_stage.html#metawards.movers.go_stage" title="metawards.movers.go_stage"><code class="xref py py-meth docutils literal notranslate"><span class="pre">go_stage()</span></code></a> function that moves individuals
+from and to specific disease stages in different demographics. This is
+used to support conditional branching, e.g. 20% of I2 infecteds go to
+hospital.</p></li>
+<li><p>Added “–star-as-E”, “–star-as-R” and “–disable-star” command line
+arguments to control how the “*” state is counted in the summary outputs.
+This enables it to be counted as an extra “E” state, which makes the
+output more meaningful and more easily interpretable.</p></li>
+<li><p>Clarified the meaning the “day 0” and “day 1”. Now “day 0” is before
+the model run starts (i.e. setup). The first iteration of the model
+run is “day 1”. This is a change from previous versions, which called
+the first half of the first iteration “day 0” and the second half “day 1”.
+Since seeding happens in the first half, this means that we now seed one
+day earlier than previous versions, so outbreaks are now one day ahead.</p></li>
+<li><p>Fixed a major bug in calculation of the demographic sub-networks
+denominators. These have not been used in production yet. If you
+are going to use demographic sub-networks then please make sure
+you use this version (1.1.0) or above.</p></li>
+<li><p>Added database support to <a class="reference internal" href="api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a>, so that you
+can now write data to SQLite3 databases. This is described in a new
+part of <a class="reference internal" href="tutorial/part04/04_rates.html"><span class="doc">tutorial chapter 4</span></a>.</p></li>
+<li><p>Added in extra output to <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workspace</span></code></a> so that you can
+get the populations of all disease stages for all demographics. This
+is demonstrated in a rate calculation, also in the
+<a class="reference internal" href="tutorial/part04/04_rates.html"><span class="doc">new tutorial chapter 4</span></a>.</p></li>
+<li><p>Fixed a directory permissions bug that appeared sometimes on windows.</p></li>
+<li><p>Fixed an existing bug from the C code whereby user-set values of
+contrib_foi are ignored. This had no impact as these values are always 1.0.</p></li>
+<li><p>Fixed a bug in distribute_remainders that meant that individuals could
+sometimes still be added to a demographic even if the desired percentage
+was zero.</p></li>
+</ul>
+</div>
+<div class="section" id="may-23rd-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.12.0...1.0.0">1.0.0</a> - May 23rd 2020<a class="headerlink" href="#may-23rd-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Improved “go_to” and “go_isolate” functions, which now support modelling
+self-isolation and quarantine. This is all demonstrated in a new
+part 6 of the tutorial.</p></li>
+<li><p>Added an InteractionMatrix class to make it easier to create more
+sophisticated interaction matricies.</p></li>
+<li><p>Added ability for any plugin to signal that the model run should end
+after the current iteration by raising a StopIteration exception</p></li>
+<li><p>Added a “–model single” mode that uses a single-ward model for
+debugging and validation purposes.</p></li>
+<li><p>Updated parallel runners (multiprocessing, scoop and MPI) to return
+results as they are available, so that the Console can report summaries
+and live progress.</p></li>
+<li><p>Added a developer’s “debug” mode to the Console, complete with nice
+variable printing.</p></li>
+<li><p>Lots of file and text encoding fixes, particularly to fix unicode
+issues on windows.</p></li>
+<li><p>Finally fixed the issue on windows where the wrong plugin would
+sometimes be loaded.</p></li>
+<li><p>Updated all tutorial outputs to the new format.</p></li>
+<li><p>Fixed a runtime check exception that occurred on rare occasions on Windows.
+This didn’t cause any errors in data, but did stop runs from continuing
+when the run-time test was failed.</p></li>
+</ul>
+</div>
+<div class="section" id="may-18th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.11.2...0.12.0">0.12.0</a> - May 18th 2020<a class="headerlink" href="#may-18th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Switched to configargparse to have better management of command line options,
+plus adding the ability to set options using a config file. This is now
+written to the output directory of each job to support reproducibility.</p></li>
+<li><p>metawards-plot defaults to png output if pillow (and jpeg) are not available</p></li>
+<li><p>Got basic movers working and added half of the sixth part of the tutorial,
+where self-isolation is modelled.</p></li>
+<li><p>Added rich-console support, which has significantly altered the look and
+feel of metawards. Output is now more robust, with more info given in
+real time for parallel jobs, plus all output now also being recorded
+to output/console.txt.bz2, so that no output is lost.</p></li>
+<li><p>Added theming support and a “simple” theme activated using “–theme simple”
+for those that don’t like colour ;-)</p></li>
+<li><p>Added support for setting the number of repeats for a VariableSet into
+the output file. Also can specify different number of repeats for different
+adjustable variable sets on the command line.</p></li>
+<li><p>Cleaned up the design file and user custom variable file parsing to use
+csv and support a wide range of formats, variable types and inputs.
+Can now directly work with dates, ints, floats, bools and strings. This
+is intelligent, and will use the best type it thinks, but it can be
+forced by the user via a d”3.4” numpy-type syntax</p></li>
+<li><p>Improved the robustness of the parallel runners (multiprocessing, scoop
+and mpi4py) such that errors in one job don’t break all jobs. These are
+now handled individually and recorded properly. Jobs are run async so
+that results are processed and feedback is given to the user as soon
+as it is available.</p></li>
+<li><p>Updated all of the tutorial to use lurgy3 - accidentally had gone back
+to lurgy2 in part 5.</p></li>
+</ul>
+</div>
+<div class="section" id="may-11th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.11.1...0.11.2">0.11.2</a> - May 11th 2020<a class="headerlink" href="#may-11th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Minor bugfixes</p></li>
+<li><p>Use last matching custom function rather than first, so
+that the examples in the tutorial work and behaviour is more natural</p></li>
+<li><p>Caching network builds so that they are more thoroughly tested, fixed
+bug in networks.copy that meant that independent copies weren’t made.
+This bug did not impact any past results or runs.</p></li>
+<li><p>Added more validation tests of the mixers</p></li>
+<li><p>Cleaned up website typos and fixed the version switcher</p></li>
+<li><p>Fixed packaging problems that caused broken builds when pip installing
+from a .tgz sdist package.</p></li>
+</ul>
+</div>
+<div class="section" id="may-10th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.11.0...0.11.1">0.11.1</a> - May 10th 2020<a class="headerlink" href="#may-10th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixed CI/CD to produce working sdist and bdist packages</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.10.0...0.11.0">0.11.0</a> - May 10th 2020<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Code now fully works and has been tested on Windows :-)</p></li>
+<li><p>Major update of the API to support a Networks of multiple Network objects</p></li>
+<li><p>This has been used to support modelling multiple demographics</p></li>
+<li><p>Added in movers and mixers to enable a user to customise how individuals
+are moved between demographics and how the FOIs of demographics are
+merged together (e.g. via an interaction matrix). This is demonstrated
+in part 5 of the tutorial which shows how this can be used to model
+shielding</p></li>
+<li><p>Allow compilation using compilers that don’t support OpenMP - now compiles
+even on stock OS X.</p></li>
+<li><p>Added more extractors and can now output files that are needed for graphics</p></li>
+<li><p>Added a special random number seed to support debugging</p></li>
+<li><p>Moved random number files to a separate library which is now properly
+compiled and linked.</p></li>
+<li><p>Updated CI to CI/CD and now build the OS X, Windows and ManyLinux wheels</p></li>
+<li><p>Updated URLs to metawards.org</p></li>
+<li><p>Allow multiple multi-node jobs to run from a single directory (they now
+have their own hostfiles)</p></li>
+<li><p>Updated metawards-plot to render multi-demographic trajectories and
+to make better animations.</p></li>
+<li><p>General bug fixes and speed-ups :-)</p></li>
+</ul>
+</div>
+<div class="section" id="april-27th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.9.0...0.10.0">0.10.0</a> - April 27th 2020<a class="headerlink" href="#april-27th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Created all of the extract framework to support customising the output
+and analysis during a run.</p></li>
+<li><p>Created a better Workspace class for holding accumulated data during extract</p></li>
+<li><p>Completed most of the extractor tutorial</p></li>
+<li><p>Added in WardInfo(s) to get metadata about wards, and to support searching
+for wards via their name, code, authority and region</p></li>
+</ul>
+</div>
+<div class="section" id="april-24th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.8.4...0.9.0">0.9.0</a> - April 24th 2020<a class="headerlink" href="#april-24th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Merged in latest changes from the C code. Now gives complete agreement,
+including via a custom iterator that repeats the lockdown model.</p></li>
+<li><p>Support x/y and lat/lon coordinates and distances. Now works properly
+with the 2011UK model data</p></li>
+<li><p>Added an example of a lockdown parameter set scan</p></li>
+</ul>
+</div>
+<div class="section" id="april-22nd-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.8.3...0.8.5">0.8.5</a> - April 22nd 2020<a class="headerlink" href="#april-22nd-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Small bugfixes to support the loading of the 2011UK model data</p></li>
+<li><p>Cleaned up the website and added the version combo box</p></li>
+</ul>
+</div>
+<div class="section" id="april-21st-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.8.0...0.8.3">0.8.3</a> - April 21st 2020<a class="headerlink" href="#april-21st-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fixing CI/CD so that I can build and deploy on a new tag (hopefully 0.8.2)</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.7.0...0.8.0">0.8.0</a> - April 21st 2020<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Automated github actions for building a versioned website plus automating
+building the packages.</p></li>
+<li><p>Switched default for UV parameter to 0.0, as this should not normally be 1.0</p></li>
+<li><p>Added custom user variables both for scanning and to act as inputs that
+may be used by custom advance and iterate functions. Detailed tutorial
+now shows how these can be used to model a lockdown.</p></li>
+<li><p>Improved speed of custom iterators</p></li>
+</ul>
+</div>
+<div class="section" id="april-17th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.6.0...0.7.1">0.7.1</a> - April 17th 2020<a class="headerlink" href="#april-17th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Small bugfixes to support all of the examples in part 3 of the tutorial</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.6.0...0.7.0">0.7.0</a> - April 17th 2020<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lots of progress with the project website, including a detailed tutorial</p></li>
+<li><p>Support fully customisable disease models, and can adjust any disease
+parameter using a more flexible input file format</p></li>
+<li><p>Can record the date in a model run, plus set the starting day and date</p></li>
+<li><p>Broken up the iterate function into <a class="reference internal" href="api/index_api_MetaWards_iterators.html#module-metawards.iterators" title="metawards.iterators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metawards.iterators</span></code></a>, and
+can now have the user create their own custom iterators. Tutorial on
+how to do this will appear soon.</p></li>
+<li><p>Broken up the extract_data function into <a class="reference internal" href="api/index_api_MetaWards_extractors.html#module-metawards.extractors" title="metawards.extractors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metawards.extractors</span></code></a>,
+and will soon enable a user to create their own. Tutorial on how
+to do this will appear soon.</p></li>
+<li><p>Added metawards-plot to create simple plots and animations. This is
+particularly useful when working through the tutorial.</p></li>
+<li><p>General code cleaning, documentation improvements and nice-to-haves
+that make the code easier to use.</p></li>
+</ul>
+</div>
+<div class="section" id="april-9th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.5.0...0.6.0">0.6.0</a> - April 9th 2020<a class="headerlink" href="#april-9th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Wrote an initial draft of the complete project website</p></li>
+<li><p>Fixed packaging problems that prevented installation of older packages
+on some systems</p></li>
+</ul>
+</div>
+<div class="section" id="april-8th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.4.0...0.5.0">0.5.0</a> - April 8th 2020<a class="headerlink" href="#april-8th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Support running multiple model runs in serial or in parallel</p></li>
+<li><p>Support aggregation and writing of model multiple model run outputs
+to the same directory, including to a single shared CSV data file.</p></li>
+<li><p>Support for parallel running via multiprocessing, mpi4py or scoop</p></li>
+</ul>
+</div>
+<div class="section" id="april-7th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.3.1...0.4.0">0.4.0</a> - April 7th 2020<a class="headerlink" href="#april-7th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Parallelisation of individual model runs using OpenMP</p></li>
+<li><p>Parallel code scales to large numbers of cores and can complete individual
+runs in 10-15 seconds.</p></li>
+</ul>
+</div>
+<div class="section" id="april-5th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/0.3.0...0.3.1">0.3.1</a> - April 5th 2020<a class="headerlink" href="#april-5th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Minor bug fixes in packaging and misplaced commits caused by move of
+repository</p></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/v0.2.0...0.3.0">0.3.0</a> - April 5th 2020<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Adding in a simple profiler to support optimisation of the code</p></li>
+<li><p>Replaced GSL random number generator with a more liberally licensed and
+easily bundled generator extracted from numpy.</p></li>
+<li><p>Switched code to the <a class="reference external" href="https://github.com/metawards">https://github.com/metawards</a> organisation</p></li>
+<li><p>Optimised more using cython and raw C for file reading</p></li>
+<li><p>Added automatic versioning of packages and files using versioneer</p></li>
+<li><p>Cleaned up the repository and added status badges</p></li>
+</ul>
+</div>
+<div class="section" id="march-31st-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/v0.1.0...v0.2.0">0.2.0</a> - March 31st 2020<a class="headerlink" href="#march-31st-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Cythonizing the bottleneck code to bring the python code up to a comparable
+performance as the original C code.</p></li>
+<li><p>Added in packaging information and general repository and file cleaning.</p></li>
+</ul>
+</div>
+<div class="section" id="march-29th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/releases/tag/v0.1.0">0.1.0</a> - March 29th 2020<a class="headerlink" href="#march-29th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fully working Python port of the original C code that completely reproduces
+the results of the C code when given the same random number seed. However,
+it is <em>significantly</em> slower! Python port has promise, so worth exploring
+different options for speeding the code up.</p></li>
+</ul>
+</div>
+<div class="section" id="start-of-the-python-port-march-25th-2020">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/commit/ef989ece450c40fe0ddb9f22e21693c90afb432e">Start of the Python port</a> - March 25th 2020<a class="headerlink" href="#start-of-the-python-port-march-25th-2020" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Imported code from <a class="reference external" href="https://github.com/ldanon/metawards">https://github.com/ldanon/metawards</a> and began thinking
+about what the code was and trying to understand it. Decided to write
+a port as I find that if I can translate something, then I can
+understand it.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="acknowledgements.html" class="btn btn-neutral float-right" title="Acknowledgements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="api/generated/metawards.themes.SpringFlowers.html" class="btn btn-neutral float-left" title="metawards.themes.SpringFlowers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

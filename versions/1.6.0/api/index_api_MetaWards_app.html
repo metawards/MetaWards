@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>MetaWards.app API Detail &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="metawards.app.get_parallel_scheme" href="generated/metawards.app.get_parallel_scheme.html" />
+    <link rel="prev" title="MetaWards.app" href="index_MetaWards_app.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index_MetaWards_app.html">MetaWards.app</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MetaWards.app API Detail</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards.html">MetaWards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_iterators.html">MetaWards.iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Documentation</a> &raquo;</li>
+        
+          <li><a href="index_MetaWards_app.html">MetaWards.app</a> &raquo;</li>
+        
+      <li>MetaWards.app API Detail</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="generated/metawards.app.get_parallel_scheme.html" class="btn btn-neutral float-right" title="metawards.app.get_parallel_scheme" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="index_MetaWards_app.html" class="btn btn-neutral float-left" title="MetaWards.app" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-metawards.app">
+<span id="metawards-app-api-detail"></span><h1>MetaWards.app API Detail<a class="headerlink" href="#module-metawards.app" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.app.get_parallel_scheme.html#metawards.app.get_parallel_scheme" title="metawards.app.get_parallel_scheme"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_parallel_scheme</span></code></a>()</p></td>
+<td><p>This function tries to work out which of the different parallel methods we should use to distribute work between multiple processes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.app.parse_args.html#metawards.app.parse_args" title="metawards.app.parse_args"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_args</span></code></a>()</p></td>
+<td><p>Parse all of the command line arguments</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.app.get_hostfile.html#metawards.app.get_hostfile" title="metawards.app.get_hostfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_hostfile</span></code></a>(args)</p></td>
+<td><p>Attempt to find the name of the hostfile used to specify the hosts to use in a cluster</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.app.get_cores_per_node.html#metawards.app.get_cores_per_node" title="metawards.app.get_cores_per_node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_cores_per_node</span></code></a>(args)</p></td>
+<td><p>Return the number of cores per node in the cluster</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.app.get_threads_per_task.html#metawards.app.get_threads_per_task" title="metawards.app.get_threads_per_task"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_threads_per_task</span></code></a>(args)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.app.scoop_supervisor.html#metawards.app.scoop_supervisor" title="metawards.app.scoop_supervisor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scoop_supervisor</span></code></a>(hostfile, args)</p></td>
+<td><p>Function used by the scoop supervisor to get the information needed to form the scoop call to run a scoop version of the program</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.app.mpi_supervisor.html#metawards.app.mpi_supervisor" title="metawards.app.mpi_supervisor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mpi_supervisor</span></code></a>(hostfile, args)</p></td>
+<td><p>Function used by the MPI supervisor to get the information needed to form the mpiexec call to run an MPI version of the program</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.app.cli.html#metawards.app.cli" title="metawards.app.cli"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cli</span></code></a>()</p></td>
+<td><p>Main function for the command line interface.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="generated/metawards.app.get_parallel_scheme.html" class="btn btn-neutral float-right" title="metawards.app.get_parallel_scheme" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index_MetaWards_app.html" class="btn btn-neutral float-left" title="MetaWards.app" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

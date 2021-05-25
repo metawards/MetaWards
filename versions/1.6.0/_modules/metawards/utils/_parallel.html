@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards.utils._parallel &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards.utils._parallel</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards.utils._parallel</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">platform</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;guess_num_threads_and_procs&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;get_available_num_threads&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;create_thread_generators&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">guess_num_threads_and_procs</span><span class="p">(</span><span class="n">njobs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+                                <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                                <span class="n">nprocs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                                <span class="n">ncores</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                                <span class="n">parallel_scheme</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Guess the number of processes and threads per process</span>
+<span class="sd">       to use to make most-efficient processing of</span>
+<span class="sd">       &#39;njobs&#39; jobs.</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       njobs: int</span>
+<span class="sd">         The number of jobs (model runs) that must be performed</span>
+<span class="sd">       nthreads: int</span>
+<span class="sd">         The number of threads requested - if None then this this will be</span>
+<span class="sd">         guessed</span>
+<span class="sd">       nprocs: int</span>
+<span class="sd">         The number of processes requested - if None then this will be</span>
+<span class="sd">         guessed</span>
+<span class="sd">       ncores: int</span>
+<span class="sd">         The number of available cores on each node (or this computer).</span>
+<span class="sd">         This will be obtained from the OS if it is not supplied</span>
+<span class="sd">       parallel_scheme: str</span>
+<span class="sd">         The parallelisation scheme that is being used to parallelise</span>
+<span class="sd">         over processes</span>
+
+<span class="sd">       Returns</span>
+<span class="sd">       -------</span>
+<span class="sd">       (nthreads, nprocs): Tuple[int, int]</span>
+<span class="sd">         Tuple of the best-guessed &#39;nthreads&#39; and &#39;nprocs&#39; values to use</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">nthreads</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">nprocs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">nprocs</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">njobs</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">njobs</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">is_openmp_supported</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_openmp_supported</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">nthreads</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Cannot use more than one thread as &quot;</span>
+                            <span class="s2">&quot;this MetaWards executable has been &quot;</span>
+                            <span class="s2">&quot;compiled without OpenMP support&quot;</span><span class="p">)</span>
+
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">parallel_scheme</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">parallel_scheme</span> <span class="o">=</span> <span class="s2">&quot;multiprocessing&quot;</span>
+
+    <span class="k">if</span> <span class="n">nprocs</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">parallel_scheme</span> <span class="o">!=</span> <span class="s2">&quot;multiprocessing&quot;</span><span class="p">:</span>
+        <span class="c1"># we have been told the number of processes to use by</span>
+        <span class="c1"># the scoop or mpi4py scheduler</span>
+        <span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">get_number_of_processes</span>
+        <span class="n">nprocs</span> <span class="o">=</span> <span class="n">get_number_of_processes</span><span class="p">(</span><span class="n">parallel_scheme</span><span class="p">,</span> <span class="n">nprocs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ncores</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">ncores</span> <span class="o">=</span> <span class="n">get_available_num_threads</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">nthreads</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">nprocs</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># we will need to calculate the best values of nprocs and</span>
+        <span class="c1"># nthreads to use to divide the work most efficiently. The</span>
+        <span class="c1"># goal should be to run as many model runs in parallel as</span>
+        <span class="c1"># possible</span>
+
+        <span class="k">if</span> <span class="n">njobs</span> <span class="o">&gt;=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">ncores</span><span class="p">:</span>   <span class="c1"># not worth going parallel for &lt;80%</span>
+            <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">ncores</span><span class="p">,</span> <span class="n">njobs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">math</span>
+            <span class="n">nthreads</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">njobs</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">nthreads</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">njobs</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">nthreads</span><span class="p">)))</span>
+            <span class="k">if</span> <span class="n">nprocs</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">nprocs</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">nthreads</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">math</span>
+        <span class="n">nthreads</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">nprocs</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">nthreads</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">nthreads</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">nprocs</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="kn">import</span> <span class="nn">math</span>
+        <span class="n">max_nprocs</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ncores</span><span class="o">/</span><span class="n">nthreads</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">max_nprocs</span> <span class="o">&gt;</span> <span class="n">njobs</span><span class="p">:</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="n">njobs</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">nprocs</span> <span class="o">=</span> <span class="n">max_nprocs</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">nprocs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="get_available_num_threads"><a class="viewcode-back" href="../../../api/generated/metawards.utils.get_available_num_threads.html#metawards.utils.get_available_num_threads">[docs]</a><span class="k">def</span> <span class="nf">get_available_num_threads</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return the maximum number of threads that are recommended</span>
+<span class="sd">       for this computer (the OMP_NUM_THREADS value)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">._check_openmp</span> <span class="kn">import</span> <span class="n">is_openmp_supported</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_openmp_supported</span><span class="p">():</span>
+        <span class="k">return</span> <span class="mi">1</span>
+
+    <span class="kn">import</span> <span class="nn">os</span>
+
+    <span class="c1"># try OMP_NUM_THREADS as this is the accepted way to</span>
+    <span class="c1"># override the number in a queueing system</span>
+    <span class="n">omp_num_threads</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OMP_NUM_THREADS&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">omp_num_threads</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">omp_num_threads</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="c1"># ok, get this from &#39;os&#39;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="create_thread_generators"><a class="viewcode-back" href="../../../api/generated/metawards.utils.create_thread_generators.html#metawards.utils.create_thread_generators">[docs]</a><span class="k">def</span> <span class="nf">create_thread_generators</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return a set of random number generators, one for each</span>
+<span class="sd">       thread - these are seeded using the next &#39;nthreads&#39;</span>
+<span class="sd">       random numbers drawn from the passed generator</span>
+
+<span class="sd">       If &#39;nthreads&#39; is 1, 0 or None, then then just</span>
+<span class="sd">       returns the passed &#39;rng&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">rngs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="n">nthreads</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">nthreads</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">rngs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">._ran_binomial</span> <span class="kn">import</span> <span class="n">seed_ran_binomial</span><span class="p">,</span> <span class="n">ran_int</span>
+
+        <span class="kn">from</span> <span class="nn">._console</span> <span class="kn">import</span> <span class="n">Console</span>
+
+        <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">):</span>
+            <span class="n">seed</span> <span class="o">=</span> <span class="n">ran_int</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
+            <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;* Random seed for thread </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> equals **</span><span class="si">{</span><span class="n">seed</span><span class="si">}</span><span class="s2">**&quot;</span><span class="p">)</span>
+            <span class="n">rngs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seed_ran_binomial</span><span class="p">(</span><span class="n">seed</span><span class="p">))</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">),</span> <span class="n">markdown</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># need to return these as an array so that they are more easily</span>
+    <span class="c1"># accessible from the OpenMP loops - rng is a unsigned 64-bit integer</span>
+    <span class="c1"># as a uintptr_t - this best corresponds to unsigned long (&quot;L&quot;)</span>
+    <span class="k">if</span> <span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+        <span class="c1"># Use unsigned long long (&quot;Q&quot;) on Windows since it has a 32-bit long.</span>
+        <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">,</span> <span class="n">rngs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">array</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">,</span> <span class="n">rngs</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

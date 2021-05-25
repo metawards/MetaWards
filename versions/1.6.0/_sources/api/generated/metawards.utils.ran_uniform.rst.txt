@@ -1,0 +1,6 @@
+﻿metawards.utils.ran\_uniform
+============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: ran_uniform

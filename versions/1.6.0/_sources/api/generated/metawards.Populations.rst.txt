@@ -1,0 +1,59 @@
+﻿metawards.Populations
+=====================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Populations
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Populations.__delattr__
+      ~Populations.__dir__
+      ~Populations.__eq__
+      ~Populations.__format__
+      ~Populations.__ge__
+      ~Populations.__getattribute__
+      ~Populations.__getitem__
+      ~Populations.__gt__
+      ~Populations.__init__
+      ~Populations.__init_subclass__
+      ~Populations.__le__
+      ~Populations.__len__
+      ~Populations.__lt__
+      ~Populations.__ne__
+      ~Populations.__new__
+      ~Populations.__reduce__
+      ~Populations.__reduce_ex__
+      ~Populations.__repr__
+      ~Populations.__setattr__
+      ~Populations.__sizeof__
+      ~Populations.__str__
+      ~Populations.__subclasshook__
+      ~Populations.append
+      ~Populations.strip_demographics
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Populations.__annotations__
+      ~Populations.__dataclass_fields__
+      ~Populations.__dataclass_params__
+      ~Populations.__dict__
+      ~Populations.__doc__
+      ~Populations.__hash__
+      ~Populations.__module__
+      ~Populations.__weakref__
+      ~Populations._trajectory
+   
+   

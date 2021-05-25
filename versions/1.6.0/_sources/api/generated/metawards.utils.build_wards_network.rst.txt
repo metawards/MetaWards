@@ -1,0 +1,6 @@
+﻿metawards.utils.build\_wards\_network
+=====================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: build_wards_network

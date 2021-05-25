@@ -1,0 +1,6 @@
+﻿metawards.extractors.extract\_small
+===================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: extract_small

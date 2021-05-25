@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards.Population &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="metawards.Populations" href="metawards.Populations.html" />
+    <link rel="prev" title="metawards.PersonType" href="metawards.PersonType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_MetaWards.html">MetaWards</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index_api_MetaWards.html">MetaWards API Detail</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index_api_MetaWards.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index_api_MetaWards.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_iterators.html">MetaWards.iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Documentation</a> &raquo;</li>
+        
+          <li><a href="../index_MetaWards.html">MetaWards</a> &raquo;</li>
+        
+          <li><a href="../index_api_MetaWards.html">MetaWards API Detail</a> &raquo;</li>
+        
+      <li>metawards.Population</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="metawards.Populations.html" class="btn btn-neutral float-right" title="metawards.Populations" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="metawards.PersonType.html" class="btn btn-neutral float-left" title="metawards.PersonType" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="metawards-population">
+<h1>metawards.Population<a class="headerlink" href="#metawards-population" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="metawards.Population">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">metawards.</span></code><code class="sig-name descname"><span class="pre">Population</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">susceptibles</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totals</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_totals</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recovereds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_inf_wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_uv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.date</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class holds information about the progress of the
+disease through the population</p>
+<dl class="py method">
+<dt id="metawards.Population.__init__">
+<code class="sig-name descname"><span class="pre">__init__</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">susceptibles</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">totals</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_totals</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recovereds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_inf_wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_uv</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">day</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime.date</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#metawards.Population.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__delattr__</span></code>(name, /)</p></td>
+<td><p>Implement delattr(self, name).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dir__</span></code>()</p></td>
+<td><p>Default dir() implementation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code>(other)</p></td>
+<td><p>Return self==value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__format__</span></code>(format_spec, /)</p></td>
+<td><p>Default object formatter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ge__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getattribute__</span></code>(name, /)</p></td>
+<td><p>Return getattr(self, name).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__gt__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.__init__" title="metawards.Population.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([initial, susceptibles, latent, …])</p></td>
+<td><p>Initialize self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init_subclass__</span></code></p></td>
+<td><p>This method is called when a class is subclassed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__le__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;=value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__lt__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ne__</span></code>(value, /)</p></td>
+<td><p>Return self!=value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__new__</span></code>(**kwargs)</p></td>
+<td><p>Create and return a new object.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce__</span></code>()</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce_ex__</span></code>(protocol, /)</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code>()</p></td>
+<td><p>Return repr(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setattr__</span></code>(name, value, /)</p></td>
+<td><p>Implement setattr(self, name, value).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__sizeof__</span></code>()</p></td>
+<td><p>Size of object in memory, in bytes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.__str__" title="metawards.Population.__str__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code></a>()</p></td>
+<td><p>Return str(self).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__subclasshook__</span></code></p></td>
+<td><p>Abstract classes can override this to customize issubclass().</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.assert_sane" title="metawards.Population.assert_sane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_sane</span></code></a>()</p></td>
+<td><p>Assert that this population is sane, i.e. the totals within this population and with the sub-populations all add up to the correct values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.has_equal_SEIR" title="metawards.Population.has_equal_SEIR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_equal_SEIR</span></code></a>(other)</p></td>
+<td><p>Return whether or not the SEIR values for this population equal ‘other’</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.headers" title="metawards.Population.headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">headers</span></code></a>()</p></td>
+<td><p>Return a list of the headers that should be used to report data from this population.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.increment_day" title="metawards.Population.increment_day"><code class="xref py py-obj docutils literal notranslate"><span class="pre">increment_day</span></code></a>([ndays])</p></td>
+<td><p>Advance the day count by ‘ndays’ (default 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.specialise" title="metawards.Population.specialise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">specialise</span></code></a>(network)</p></td>
+<td><p>Specialise this population for the passed Networks</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.summary" title="metawards.Population.summary"><code class="xref py py-obj docutils literal notranslate"><span class="pre">summary</span></code></a>([demographics])</p></td>
+<td><p>Return a short summary string that is suitable to be printed out during a model run</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__annotations__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dataclass_fields__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dataclass_params__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dict__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__doc__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__module__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__weakref__</span></code></p></td>
+<td><p>list of weak references to the object (if defined)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.date" title="metawards.Population.date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date</span></code></a></p></td>
+<td><p>The date in the outbreak of this record</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.day" title="metawards.Population.day"><code class="xref py py-obj docutils literal notranslate"><span class="pre">day</span></code></a></p></td>
+<td><p>The day in the outbreak of this record (e.g.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.infecteds" title="metawards.Population.infecteds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infecteds</span></code></a></p></td>
+<td><p>The number who are infected across all wards</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.initial" title="metawards.Population.initial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initial</span></code></a></p></td>
+<td><p>The initial population loaded into the model</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.latent" title="metawards.Population.latent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">latent</span></code></a></p></td>
+<td><p>The number of latent infections (E)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.n_inf_wards" title="metawards.Population.n_inf_wards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_inf_wards</span></code></a></p></td>
+<td><p>The number infected in all wards (IW)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.other_totals" title="metawards.Population.other_totals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">other_totals</span></code></a></p></td>
+<td><p>The total number of individuals in other non-infected states (X)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.others" title="metawards.Population.others"><code class="xref py py-obj docutils literal notranslate"><span class="pre">others</span></code></a></p></td>
+<td><p>Return the number who are in the ‘other’ state, i.e. not classed as susceptible, latent, infected or recovered/removed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.population" title="metawards.Population.population"><code class="xref py py-obj docutils literal notranslate"><span class="pre">population</span></code></a></p></td>
+<td><p>The total population in all wards</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.recovereds" title="metawards.Population.recovereds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recovereds</span></code></a></p></td>
+<td><p>The total number who are removed from the outbreak, either because they have recovered, or are otherwise no longer able to be infected (R)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_uv</span></code></a></p></td>
+<td><p>The scale_uv parameter that can be used to affect the foi calculation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.subpops" title="metawards.Population.subpops"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subpops</span></code></a></p></td>
+<td><p>The populations in each of the multi-demographic subnetworks</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.susceptibles" title="metawards.Population.susceptibles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">susceptibles</span></code></a></p></td>
+<td><p>The number of members who could be infected (S)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.Population.total" title="metawards.Population.total"><code class="xref py py-obj docutils literal notranslate"><span class="pre">total</span></code></a></p></td>
+<td><p>The total number of infections (I)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.Population.totals" title="metawards.Population.totals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">totals</span></code></a></p></td>
+<td><p>The total number of infections in other infected states (X)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt id="metawards.Population.__str__">
+<code class="sig-name descname"><span class="pre">__str__</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.assert_sane">
+<code class="sig-name descname"><span class="pre">assert_sane</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.assert_sane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.assert_sane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assert that this population is sane, i.e. the totals within
+this population and with the sub-populations all add up to
+the correct values</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.date">
+<code class="sig-name descname"><span class="pre">date</span></code><em class="property"><span class="pre">:</span> <span class="pre">datetime.date</span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Population.date" title="Permalink to this definition">¶</a></dt>
+<dd><p>The date in the outbreak of this record</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.day">
+<code class="sig-name descname"><span class="pre">day</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.day" title="Permalink to this definition">¶</a></dt>
+<dd><p>The day in the outbreak of this record (e.g. day 0, day 10 etc.)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.has_equal_SEIR">
+<code class="sig-name descname"><span class="pre">has_equal_SEIR</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.has_equal_SEIR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.has_equal_SEIR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return whether or not the SEIR values for this population
+equal ‘other’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.headers">
+<code class="sig-name descname"><span class="pre">headers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.headers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of the headers that should be used to report
+data from this population. This returns a list of headers,
+e.g. [“S”, “E”, “I”, “R”]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.increment_day">
+<code class="sig-name descname"><span class="pre">increment_day</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ndays</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.increment_day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.increment_day" title="Permalink to this definition">¶</a></dt>
+<dd><p>Advance the day count by ‘ndays’ (default 1)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.infecteds">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">infecteds</span></code><a class="headerlink" href="#metawards.Population.infecteds" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number who are infected across all wards</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.initial">
+<code class="sig-name descname"><span class="pre">initial</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.initial" title="Permalink to this definition">¶</a></dt>
+<dd><p>The initial population loaded into the model</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.latent">
+<code class="sig-name descname"><span class="pre">latent</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.latent" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of latent infections (E)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.n_inf_wards">
+<code class="sig-name descname"><span class="pre">n_inf_wards</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.n_inf_wards" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number infected in all wards (IW)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.other_totals">
+<code class="sig-name descname"><span class="pre">other_totals</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Population.other_totals" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total number of individuals in other non-infected states (X)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.others">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">others</span></code><a class="headerlink" href="#metawards.Population.others" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the number who are in the ‘other’ state, i.e.
+not classed as susceptible, latent, infected or recovered/removed.
+This is the sum of states that are set as “is_infected=False”
+in the disease model, e.g. V (vaccinated)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.population">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">population</span></code><a class="headerlink" href="#metawards.Population.population" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total population in all wards</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.recovereds">
+<code class="sig-name descname"><span class="pre">recovereds</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.recovereds" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total number who are removed from the outbreak,
+either because they have recovered, or are otherwise
+no longer able to be infected (R)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.scale_uv">
+<code class="sig-name descname"><span class="pre">scale_uv</span></code><em class="property"><span class="pre">:</span> <span class="pre">float</span></em><em class="property"> <span class="pre">=</span> <span class="pre">1.0</span></em><a class="headerlink" href="#metawards.Population.scale_uv" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scale_uv parameter that can be used to affect the
+foi calculation. A value of 1.0 means do nothing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.specialise">
+<code class="sig-name descname"><span class="pre">specialise</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">network</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.specialise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.specialise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specialise this population for the passed Networks</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.subpops">
+<code class="sig-name descname"><span class="pre">subpops</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Population.subpops" title="Permalink to this definition">¶</a></dt>
+<dd><p>The populations in each of the multi-demographic subnetworks</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="metawards.Population.summary">
+<code class="sig-name descname"><span class="pre">summary</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">demographics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_population.html#Population.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Population.summary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a short summary string that is suitable to be printed
+out during a model run</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>summary</strong> – The short summary string</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.susceptibles">
+<code class="sig-name descname"><span class="pre">susceptibles</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.susceptibles" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of members who could be infected (S)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.total">
+<code class="sig-name descname"><span class="pre">total</span></code><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#metawards.Population.total" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total number of infections (I)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="metawards.Population.totals">
+<code class="sig-name descname"><span class="pre">totals</span></code><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Population.totals" title="Permalink to this definition">¶</a></dt>
+<dd><p>The total number of infections in other infected states (X)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="metawards.Populations.html" class="btn btn-neutral float-right" title="metawards.Populations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="metawards.PersonType.html" class="btn btn-neutral float-left" title="metawards.PersonType" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

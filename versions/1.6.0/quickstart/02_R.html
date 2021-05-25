@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Extending the Model in R &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Multiple pathways with R" href="03_R.html" />
+    <link rel="prev" title="Getting Started in R" href="01_R.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Start Guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#r-rstudio">R / RStudio</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_R.html">Getting Started in R</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extending the Model in R</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-disease-stage">Adding a disease stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repeating-a-run">Repeating a run</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-more-wards">Adding more wards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-model">Running the model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complete-code">Complete code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_R.html">Multiple pathways with R</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-jupyter">Python / Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#console-command-line">Console / Command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Quick Start Guide</a> &raquo;</li>
+        
+      <li>Extending the Model in R</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="03_R.html" class="btn btn-neutral float-right" title="Multiple pathways with R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="01_R.html" class="btn btn-neutral float-left" title="Getting Started in R" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extending-the-model-in-r">
+<h1>Extending the Model in R<a class="headerlink" href="#extending-the-model-in-r" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adding-a-disease-stage">
+<h2>Adding a disease stage<a class="headerlink" href="#adding-a-disease-stage" title="Permalink to this headline">¶</a></h2>
+<p>Continuing in R from the last session, we will now extend the disease
+to include an additional, less-infectious, semi-recovering stage, which
+will come after I, and be called IR. We do this by inserting a new
+stage, named “IR”, at index 2, with <code class="docutils literal notranslate"><span class="pre">beta</span></code> value 0.2, and <code class="docutils literal notranslate"><span class="pre">progress</span></code>
+value 0.1</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">lurgy</span><span class="o">$</span><span class="nf">insert</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;IR&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="n">lurgy</span><span class="p">)</span>
+
+<span class="o">*</span> <span class="n">Disease</span><span class="o">:</span> <span class="n">lurgy</span>
+<span class="o">*</span> <span class="n">stage</span><span class="o">:</span> <span class="p">[</span><span class="s">&#39;E&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">,</span> <span class="s">&#39;IR&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">mapping</span><span class="o">:</span> <span class="p">[</span><span class="s">&#39;E&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">,</span> <span class="s">&#39;IR&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">beta</span><span class="o">:</span> <span class="p">[</span><span class="m">0.0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.0</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">progress</span><span class="o">:</span> <span class="p">[</span><span class="m">0.25</span><span class="p">,</span> <span class="m">0.25</span><span class="p">,</span> <span class="m">0.1</span><span class="p">,</span> <span class="m">0.0</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">too_ill_to_move</span><span class="o">:</span> <span class="p">[</span><span class="m">0.0</span><span class="p">,</span> <span class="m">0.0</span><span class="p">,</span> <span class="m">0.0</span><span class="p">,</span> <span class="m">0.0</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">start_symptom</span><span class="o">:</span> <span class="m">2</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MetaWards is a Python program, so the index is counted from 0.
+Index 0 is E, index 1 is I and (before this call), index 2 was R.
+Inserting at index 2 will insert IR between I and R</p>
+</div>
+<p>We can now run the model using <a class="reference internal" href="../api/generated/metawards.run.html#metawards.run" title="metawards.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.run()</span></code></a>. This time we will
+set <code class="docutils literal notranslate"><span class="pre">silent</span></code> to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> so that it doesn’t print so much output
+to the screen.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">home</span><span class="p">,</span> <span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span>
+                           <span class="n">additional</span><span class="o">=</span><span class="m">100</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class="n">INFO</span> ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ <span class="n">Writing</span> <span class="n">output</span> <span class="n">to</span> <span class="n">directory</span> <span class="n">.</span><span class="o">/</span><span class="n">output_n81uzd7l</span>
+
+ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of the output is written to the (randomly) named output directory
+indicated, e.g. for me to output_n81uzd7l. The full log of the run
+is recorded in the file called <code class="docutils literal notranslate"><span class="pre">console.log.bz2</span></code> which is in
+this directory.</p>
+</div>
+<p>We can now process and plot the results identically to before, e.g.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">results</span> <span class="o">%&gt;%</span>
+     <span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,</span> <span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="s">&quot;R&quot;</span><span class="p">),</span>
+     <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;stage&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">,</span>
+         <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="repeating-a-run">
+<h2>Repeating a run<a class="headerlink" href="#repeating-a-run" title="Permalink to this headline">¶</a></h2>
+<p>MetaWards model runs are stochastic, meaning that they use random numbers.
+While each individual run is reproducible (given the same random number
+seed and number of processor threads), it is best to run multiple runs
+so that you can look at averages.</p>
+<p>You can perform multiple runs using the <code class="docutils literal notranslate"><span class="pre">repeats</span></code> argument, e.g.
+to perform four runs, you should type;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">home</span><span class="p">,</span> <span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span>
+                           <span class="n">additional</span><span class="o">=</span><span class="m">100</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you look at the results, you will that there is a <em>repeat</em> column,
+which indexes each run with a repeat number, e.g.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+    <span class="n">fingerprint</span> <span class="n">repeat.</span> <span class="n">day</span>       <span class="n">date</span>     <span class="n">S</span>    <span class="n">E</span>    <span class="n">I</span>   <span class="n">IR</span>    <span class="n">R</span> <span class="n">IW</span> <span class="n">SCALE_UV</span>
+ <span class="m">1</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">0</span> <span class="m">2020-07-21</span> <span class="m">10000</span>    <span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span>  <span class="m">0</span>        <span class="m">1</span>
+ <span class="m">2</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">1</span> <span class="m">2020-07-22</span>  <span class="m">9900</span>   <span class="m">82</span>   <span class="m">18</span>    <span class="m">0</span>    <span class="m">0</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">3</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">2</span> <span class="m">2020-07-23</span>  <span class="m">9887</span>   <span class="m">81</span>   <span class="m">27</span>    <span class="m">5</span>    <span class="m">0</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">4</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">3</span> <span class="m">2020-07-24</span>  <span class="m">9869</span>   <span class="m">77</span>   <span class="m">44</span>    <span class="m">9</span>    <span class="m">1</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">5</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">4</span> <span class="m">2020-07-25</span>  <span class="m">9826</span>  <span class="m">102</span>   <span class="m">50</span>   <span class="m">20</span>    <span class="m">2</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">6</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">5</span> <span class="m">2020-07-26</span>  <span class="m">9783</span>  <span class="m">113</span>   <span class="m">67</span>   <span class="m">34</span>    <span class="m">3</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">7</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">6</span> <span class="m">2020-07-27</span>  <span class="m">9724</span>  <span class="m">149</span>   <span class="m">73</span>   <span class="m">48</span>    <span class="m">6</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">8</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">7</span> <span class="m">2020-07-28</span>  <span class="m">9653</span>  <span class="m">174</span>   <span class="m">96</span>   <span class="m">64</span>   <span class="m">13</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">9</span>       <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">8</span> <span class="m">2020-07-29</span>  <span class="m">9573</span>  <span class="m">209</span>  <span class="m">118</span>   <span class="m">80</span>   <span class="m">20</span>  <span class="m">1</span>        <span class="m">1</span>
+ <span class="m">10</span>      <span class="n">REPEAT</span>       <span class="m">1</span>   <span class="m">9</span> <span class="m">2020-07-30</span>  <span class="m">9472</span>  <span class="m">254</span>  <span class="m">145</span>   <span class="m">99</span>   <span class="m">30</span>  <span class="m">1</span>        <span class="m">1</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">repeat</span></code> is a keyword in R, the column is automatically renamed
+as <code class="docutils literal notranslate"><span class="pre">repeat.</span></code></p>
+</div>
+<p>We can pivot and graph these runs using;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">results</span> <span class="o">%&gt;%</span>
+     <span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,</span> <span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="s">&quot;IR&quot;</span><span class="p">,</span> <span class="s">&quot;R&quot;</span><span class="p">),</span>
+     <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;stage&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">,</span>
+         <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have used <code class="docutils literal notranslate"><span class="pre">geom_point()</span></code> rather than <code class="docutils literal notranslate"><span class="pre">geom_line()</span></code> as this better
+shows the different runs. With a bit more R you could adjust the
+point shape to match the repeat number.</p>
+</div>
+<p>You should get a result that looks something like this;</p>
+<img alt="Plot of the outbreak with a long recovery stage" src="../_images/r02.jpg" />
+<p>From this you can see the build-up of individuals in the green long
+recovery (IR) stage.</p>
+</div>
+<div class="section" id="adding-more-wards">
+<h2>Adding more wards<a class="headerlink" href="#adding-more-wards" title="Permalink to this headline">¶</a></h2>
+<p>Next, we will extend the model by adding more wards. We will model <em>home</em>,
+<em>work</em> and <em>school</em>, so let’s now add the <em>work</em> and <em>school</em> wards.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">work</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="s">&quot;work&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">school</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="s">&quot;school&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will now add some <em>workers</em> who will make daily, predictable movements
+from <em>home</em> to <em>work</em> or <em>school</em>.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="nf">add_workers</span><span class="p">(</span><span class="m">7500</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">work</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="nf">add_workers</span><span class="p">(</span><span class="m">5000</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">school</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The term <em>worker</em> is very broad in MetaWards. It means any individual
+that make regular, predictable movements each day. In this case, it
+refers to workers, teachers and students.</p>
+</div>
+<p>Next we need to combine these individual <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ward</span></code></a> objects
+into a single <a class="reference internal" href="../api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a> that represents the entire network.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">network</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Wards</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">work</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+<p>We can now run the model. In this case, we want to seed the infection in
+the <em>home</em> ward, so we need to pass this name into the <code class="docutils literal notranslate"><span class="pre">additional</span></code>
+parameter.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                           <span class="n">additional</span><span class="o">=</span><span class="s">&quot;1, 100, home&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The format is <strong>day number</strong> (in this case seed on day 1), then
+<strong>number to seed</strong> (seeding 100 infections), then
+<strong>ward name or number</strong> (in this case, home)</p>
+</div>
+<p>You will see a lot of output. MetaWards does print a table to confirm
+the seeding, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┏━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┓
+┃ Day ┃ Demographic ┃                     Ward                     ┃  Number   ┃
+┃     ┃             ┃                                              ┃  seeded   ┃
+┡━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━┩
+│  1  │    None     │ 1 : WardInfo(name=&#39;home&#39;, alternate_names=,  │    100    │
+│     │             │   code=&#39;&#39;, alternate_codes=, authority=&#39;&#39;,   │           │
+│     │             │        authority_code=&#39;&#39;, region=&#39;&#39;,         │           │
+│     │             │               region_code=&#39;&#39;)                │           │
+└─────┴─────────────┴──────────────────────────────────────────────┴───────────┘
+</pre></div>
+</div>
+<p>The results can be processed and visualised as before, e.g.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">results</span> <span class="o">&lt;-</span> <span class="n">results</span> <span class="o">%&gt;%</span>
+     <span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,</span> <span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="s">&quot;IR&quot;</span><span class="p">,</span> <span class="s">&quot;R&quot;</span><span class="p">),</span>
+     <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;stage&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">,</span>
+         <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="complete-code">
+<h2>Complete code<a class="headerlink" href="#complete-code" title="Permalink to this headline">¶</a></h2>
+<p>The complete R code for this part of the getting started guide is
+re-copied below (this continues from the code in the last part);</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># add the IR stage between the I and R stages</span>
+<span class="n">lurgy</span><span class="o">$</span><span class="nf">insert</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;IR&quot;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="m">0.2</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="m">0.1</span><span class="p">)</span>
+
+<span class="c1"># create the network of home, work and school wards</span>
+<span class="n">work</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="s">&quot;work&quot;</span><span class="p">)</span>
+<span class="n">school</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="s">&quot;school&quot;</span><span class="p">)</span>
+<span class="n">network</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Wards</span><span class="p">()</span>
+
+<span class="n">home</span><span class="o">$</span><span class="nf">add_workers</span><span class="p">(</span><span class="m">7500</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">work</span><span class="p">)</span>
+<span class="n">home</span><span class="o">$</span><span class="nf">add_workers</span><span class="p">(</span><span class="m">5000</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">school</span><span class="p">)</span>
+
+<span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">work</span><span class="p">)</span>
+<span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
+
+<span class="c1"># run the model using the updated disease and network</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">run</span><span class="p">(</span><span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                         <span class="n">additional</span><span class="o">=</span><span class="s">&quot;1, 100, home&quot;</span><span class="p">)</span>
+
+<span class="c1"># plot the resulting trajectory</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">&lt;-</span> <span class="n">results</span> <span class="o">%&gt;%</span>
+     <span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;S&quot;</span><span class="p">,</span> <span class="s">&quot;E&quot;</span><span class="p">,</span> <span class="s">&quot;I&quot;</span><span class="p">,</span> <span class="s">&quot;IR&quot;</span><span class="p">,</span> <span class="s">&quot;R&quot;</span><span class="p">),</span>
+     <span class="n">names_to</span> <span class="o">=</span> <span class="s">&quot;stage&quot;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">results</span><span class="p">,</span>
+       <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="03_R.html" class="btn btn-neutral float-right" title="Multiple pathways with R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01_R.html" class="btn btn-neutral float-left" title="Getting Started in R" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

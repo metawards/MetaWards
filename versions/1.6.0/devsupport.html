@@ -1,0 +1,533 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Developer Support &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Roadmap" href="roadmap.html" />
+    <link rel="prev" title="Contributing" href="contributing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#profiling">Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#profiler">Profiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#printf-debugging">printf Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-levels">Debugging levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-lambdas">Debugging lambdas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Developer Support</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="roadmap.html" class="btn btn-neutral float-right" title="Roadmap" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="developer-support">
+<h1>Developer Support<a class="headerlink" href="#developer-support" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> comes with a set of functionality that, we hope, will make
+it easier for you to develop the code.</p>
+<div class="section" id="profiling">
+<h2>Profiling<a class="headerlink" href="#profiling" title="Permalink to this headline">¶</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">--profile</span></code> command-line option to switch on profiling. This
+is very detailed and is free (doesn’t affect the run-time). Use this
+if you think the code is slow, or to examine the scaling of parallel
+sections.</p>
+<p>This will print out a tree showing the call path and the amount of time
+in each function or sub-section of the function (more on that later ;-)).</p>
+<p>For example, running;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy --profile
+</pre></div>
+</div>
+<p>gives;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Total time: 3548.695 ms (3548.695 ms)
+  \-Network.build: 3548.695 ms (3546.863 ms)
+      \-build_function: 3143.628 ms (3143.561 ms)
+          \-build_wards_network: 3143.561 ms (3081.800 ms)
+              \-read_work_file: 1232.249 ms
+              \-fill_in_gaps: 5.017 ms
+              \-build_play_matrix: 1752.456 ms (1752.430 ms)
+                  \-build_play_matrix: 1752.430 ms (1751.152 ms)
+                      \-allocate_memory: 353.156 ms
+                      \-read_play_file: 1367.946 ms
+                      \-renormalise?: 0.003 ms
+                      \-renormalise_loop: 5.227 ms
+                      \-fill_in_gaps: 10.288 ms
+                      \-read_play_size_file: 14.532 ms
+              \-resize_nodes_and_links: 92.078 ms
+      \-read_and_validate: 11.067 ms
+      \-add_distances: 256.749 ms
+      \-add_lookup: 88.264 ms
+      \-read_done_file: 3.898 ms
+      \-reset_everything: 9.651 ms (9.033 ms)
+          \-reset_work: 4.989 ms
+          \-reset_play: 4.008 ms
+          \-reset_susceptibles: 0.021 ms
+          \-reset_params: 0.015 ms
+      \-rescale_play_matrix: 11.787 ms
+      \-move_from_play_to_work: 21.819 ms
+</pre></div>
+</div>
+<p>for the timing for building the Network, and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Total</span> <span class="n">time</span><span class="p">:</span> <span class="mf">75.417</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">75.417</span> <span class="n">ms</span><span class="p">)</span>
+  \<span class="o">-</span><span class="n">timing</span> <span class="k">for</span> <span class="n">day</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">75.417</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">74.053</span> <span class="n">ms</span><span class="p">)</span>
+      \<span class="o">-&lt;</span><span class="n">function</span> <span class="n">advance_additional</span> <span class="n">at</span> <span class="mh">0x10186c0e0</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.014</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">0.002</span> <span class="n">ms</span><span class="p">)</span>
+          \<span class="o">-</span><span class="n">additional_seeds</span><span class="p">:</span> <span class="mf">0.002</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">advance_foi</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">13.983</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">13.942</span> <span class="n">ms</span><span class="p">)</span>
+          \<span class="o">-</span><span class="n">setup</span><span class="p">:</span> <span class="mf">0.031</span> <span class="n">ms</span>
+          \<span class="o">-</span><span class="n">loop_over_classes</span><span class="p">:</span> <span class="mf">13.911</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">13.843</span> <span class="n">ms</span><span class="p">)</span>
+              \<span class="o">-</span><span class="n">work_0</span><span class="p">:</span> <span class="mf">3.539</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">play_0</span><span class="p">:</span> <span class="mf">0.014</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">work_1</span><span class="p">:</span> <span class="mf">3.411</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">play_1</span><span class="p">:</span> <span class="mf">0.014</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">work_2</span><span class="p">:</span> <span class="mf">3.421</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">play_2</span><span class="p">:</span> <span class="mf">0.013</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">work_3</span><span class="p">:</span> <span class="mf">3.418</span> <span class="n">ms</span>
+              \<span class="o">-</span><span class="n">play_3</span><span class="p">:</span> <span class="mf">0.013</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">advance_recovery</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">6.339</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">6.311</span> <span class="n">ms</span><span class="p">)</span>
+          \<span class="o">-</span><span class="n">recovery</span><span class="p">:</span> <span class="mf">6.311</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">advance_infprob</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.067</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">0.042</span> <span class="n">ms</span><span class="p">)</span>
+          \<span class="o">-</span><span class="n">infprob</span><span class="p">:</span> <span class="mf">0.042</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">advance_fixed</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">11.027</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">10.990</span> <span class="n">ms</span><span class="p">)</span>
+          \<span class="o">-</span><span class="n">fixed</span><span class="p">:</span> <span class="mf">10.990</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">advance_play</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">5.347</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">5.297</span> <span class="n">ms</span><span class="p">)</span>
+          \<span class="o">-</span><span class="n">play</span><span class="p">:</span> <span class="mf">5.297</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">output_core</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">29.488</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">function</span> <span class="n">output_basic</span> <span class="n">at</span> <span class="mh">0x10185e8c0</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.710</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">output_dispersal</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">0.428</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">function</span> <span class="n">output_incidence</span> <span class="n">at</span> <span class="mh">0x10185ef80</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">3.333</span> <span class="n">ms</span>
+      \<span class="o">-&lt;</span><span class="n">function</span> <span class="n">output_prevalence</span> <span class="n">at</span> <span class="mh">0x101867320</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">3.317</span> <span class="n">ms</span>
+</pre></div>
+</div>
+<p>for the timing of each iteration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The timings will vary for each iteration as more individuals are
+infected. It will also vary depending on the computer and number
+of threads used.</p>
+</div>
+<p>Each level of the tree gives the total time within that tree, e.g.
+<code class="docutils literal notranslate"><span class="pre">timing</span> <span class="pre">for</span> <span class="pre">day</span> <span class="pre">3:</span> <span class="pre">75.417</span> <span class="pre">ms</span> <span class="pre">(74.053</span> <span class="pre">ms)</span></code> is the total time spent
+in all of the sub-functions used to calculate <code class="docutils literal notranslate"><span class="pre">day</span> <span class="pre">3</span></code>. The first
+number (<code class="docutils literal notranslate"><span class="pre">75.417</span> <span class="pre">ms</span></code>) is the actual measured time, while the number
+in brackets (<code class="docutils literal notranslate"><span class="pre">74.053</span> <span class="pre">ms</span></code>) is the sum of the reported measured times for
+the sub-functions. Any large different between the two indicates that
+some time is not being reported.</p>
+</div>
+<div class="section" id="profiler">
+<h2>Profiler<a class="headerlink" href="#profiler" title="Permalink to this headline">¶</a></h2>
+<p>You control what is reported using the <a class="reference internal" href="api/generated/metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils.Profiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.utils.Profiler</span></code></a> class.
+You start timing using <code class="docutils literal notranslate"><span class="pre">profiler</span> <span class="pre">=</span> <span class="pre">profiler.start(&quot;name</span> <span class="pre">of</span> <span class="pre">section&quot;)</span></code> and you
+stop timing using <code class="docutils literal notranslate"><span class="pre">profiler</span> <span class="pre">=</span> <span class="pre">profiler.stop()</span></code>. For example using the
+iterator <code class="docutils literal notranslate"><span class="pre">iterate_profile.py</span></code>;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Profiler</span>
+
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">advance_profile</span><span class="p">(</span><span class="n">profiler</span><span class="p">:</span> <span class="n">Profiler</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">profiler</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s2">&quot;timing advance_profile&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Timing loop iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+    <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">iterate_profile</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">advance_profile</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>and then running using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy --iterator iterate_profile
+</pre></div>
+</div>
+<p>gives this in the output;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="o">-&lt;</span><span class="n">function</span> <span class="n">advance_profile</span> <span class="n">at</span> <span class="mh">0x1092bc5f0</span><span class="o">&gt;</span><span class="p">:</span> <span class="mf">228.184</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">228.175</span> <span class="n">ms</span><span class="p">)</span>
+    \<span class="o">-</span><span class="n">timing</span> <span class="n">advance_profile</span><span class="p">:</span> <span class="mf">228.175</span> <span class="n">ms</span> <span class="p">(</span><span class="mf">228.038</span> <span class="n">ms</span><span class="p">)</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">0</span><span class="p">:</span> <span class="mf">20.354</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">1</span><span class="p">:</span> <span class="mf">25.021</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">2</span><span class="p">:</span> <span class="mf">23.624</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">3</span><span class="p">:</span> <span class="mf">22.029</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">4</span><span class="p">:</span> <span class="mf">20.011</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">5</span><span class="p">:</span> <span class="mf">25.011</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">6</span><span class="p">:</span> <span class="mf">21.608</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">7</span><span class="p">:</span> <span class="mf">25.014</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">8</span><span class="p">:</span> <span class="mf">21.466</span> <span class="n">ms</span>
+        \<span class="o">-</span><span class="n">Timing</span> <span class="n">loop</span> <span class="n">iteration</span> <span class="mi">9</span><span class="p">:</span> <span class="mf">23.900</span> <span class="n">ms</span>
+</pre></div>
+</div>
+<p>As you can see, the <code class="docutils literal notranslate"><span class="pre">time.sleep(0.02)</span></code> slept for a little-over
+20 milliseconds. As with all profiling, it is worth repeating runs
+several times and taking an average, especially if you are interested
+in plotting parallel scaling of the individual <code class="docutils literal notranslate"><span class="pre">metawards</span></code> functions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <a class="reference internal" href="api/generated/metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils.Profiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">Profiler</span></code></a> is always passed as the <code class="docutils literal notranslate"><span class="pre">profiler</span></code>
+keyword argument to all of the plugin classes (iterators, extractors etc.)</p>
+</div>
+<p>By default, all plugin functions are timed, hence why in the output
+you can see all of the <code class="docutils literal notranslate"><span class="pre">advance_functions</span></code> and <code class="docutils literal notranslate"><span class="pre">output_functions</span></code> that
+were called, in which order, and how long they took. This is actually
+the easiest way to debug whether your plugin function has been called - just
+run using <code class="docutils literal notranslate"><span class="pre">--profile</span></code> and see if your function is listed in the timing.</p>
+</div>
+<div class="section" id="printf-debugging">
+<h2>printf Debugging<a class="headerlink" href="#printf-debugging" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> developers are big fans of
+<a class="reference external" href="https://tedspence.com/the-art-of-printf-debugging-7d5274d6af44">printf debugging</a>.</p>
+<p>All printing in <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is handled using the
+<a class="reference internal" href="api/generated/metawards.utils.Console.html#metawards.utils.Console" title="metawards.utils.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.utils.Console</span></code></a> object, which comes with a handy
+<a class="reference internal" href="api/generated/metawards.utils.Console.html#metawards.utils.Console.debug" title="metawards.utils.Console.debug"><code class="xref py py-meth docutils literal notranslate"><span class="pre">debug()</span></code></a> function. Use this to print
+debug messages, and, optionally, also the values of variables by passing
+them as a list to the <code class="docutils literal notranslate"><span class="pre">variables</span></code> keyword, e.g. using an iterator
+in the file <code class="docutils literal notranslate"><span class="pre">iterate_debug.py</span></code>;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Population</span>
+<span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_default</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">iterate_debug</span><span class="p">(</span><span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">beta_scale</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="n">population</span><span class="p">,</span> <span class="n">beta_scale</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">iterate_default</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and running <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> keyword;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy --iterator iterate_debug --debug
+</pre></div>
+</div>
+<p>you will see;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[12:33:05]                           Hello!                            iterate_debug.py:7
+
+        Name │ Value
+ ════════════╪═══════════════════════════════════════════════════════════════════════════
+  population │ 2020-05-20: DAY: 0 S: 56082077    E: 0    I: 0    R: 0    IW: 0   UV: 1.0
+             │ TOTAL POPULATION 56082077
+  beta_scale │ 0.5
+</pre></div>
+</div>
+<p>printed for every iteration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The time of the printout is on the top-left, and the filename and line
+for the debug statement is on the top-right. The time is only printed
+once for each second, so if you have a lot of debug statements printed
+in a single second then they won’t show the time.</p>
+</div>
+<p>The debug output is only printed when you run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using the
+<code class="docutils literal notranslate"><span class="pre">--debug</span></code> command line argument, so it is safe to leave in
+production code.</p>
+</div>
+<div class="section" id="debugging-levels">
+<h2>Debugging levels<a class="headerlink" href="#debugging-levels" title="Permalink to this headline">¶</a></h2>
+<p>You can optionally set the debugging level of your output using
+the <code class="docutils literal notranslate"><span class="pre">level</span></code> keyword argument, e.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Population</span>
+<span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_default</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">iterate_debug</span><span class="p">(</span><span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">beta_scale</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="n">population</span><span class="p">,</span> <span class="n">beta_scale</span><span class="p">],</span>
+                  <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">iterate_default</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would only print out if the debugging level was <code class="docutils literal notranslate"><span class="pre">3</span></code> or above.</p>
+<p>You can set the level using the <code class="docutils literal notranslate"><span class="pre">--debug-level</span></code> command line argument,
+e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy --iterator iterate_debug --debug --debug-level <span class="m">5</span>
+</pre></div>
+</div>
+<p>would set the debug level to <code class="docutils literal notranslate"><span class="pre">5</span></code>, which is above <code class="docutils literal notranslate"><span class="pre">3</span></code>,
+and so the debug output will be printed;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[12:53:02]                      Level 3: Hello!                       iterate_debug.py:10
+
+        Name │ Value
+ ════════════╪═══════════════════════════════════════════════════════════════════════════
+  population │ 2020-05-22: DAY: 2 S: 56082077    E: 0    I: 0    R: 0    IW: 0   UV: 1.0
+             │ TOTAL POPULATION 56082077
+  beta_scale │ 0.5
+</pre></div>
+</div>
+<p>If the level was below <code class="docutils literal notranslate"><span class="pre">3</span></code>, or was not set, then this debug output would
+not be printed.</p>
+</div>
+<div class="section" id="debugging-lambdas">
+<h2>Debugging lambdas<a class="headerlink" href="#debugging-lambdas" title="Permalink to this headline">¶</a></h2>
+<p>It is better to avoid constructing expensive debug strings if they are
+not going to be printed to the screen. There are two ways to avoid this;</p>
+<ol class="arabic simple">
+<li><p>Use the <a class="reference internal" href="api/generated/metawards.utils.Console.html#metawards.utils.Console.debugging_enabled" title="metawards.utils.Console.debugging_enabled"><code class="xref py py-meth docutils literal notranslate"><span class="pre">debugging_enabled()</span></code></a> function of
+<a class="reference internal" href="api/generated/metawards.utils.Console.html#metawards.utils.Console" title="metawards.utils.Console"><code class="xref py py-class docutils literal notranslate"><span class="pre">Console</span></code></a> to see if debugging is enabled for
+the level you wish, and only call
+<a class="reference internal" href="api/generated/metawards.utils.Console.html#metawards.utils.Console.debug" title="metawards.utils.Console.debug"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Console.debug</span></code></a> if it is.</p></li>
+<li><p>Put your debug string into a lambda function. The
+<a class="reference internal" href="api/generated/metawards.utils.Console.html#metawards.utils.Console.debug" title="metawards.utils.Console.debug"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Console.debug</span></code></a>
+function will call this lambda function only if the debug output
+is enabled. This is really easy to do, e.g. here we change the
+debug statement to;</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Population</span>
+<span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_default</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">iterate_debug</span><span class="p">(</span><span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">beta_scale</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;Hello!&quot;</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="p">[</span><span class="n">population</span><span class="p">,</span> <span class="n">beta_scale</span><span class="p">],</span>
+                  <span class="n">level</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">iterate_default</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>such that we use <code class="docutils literal notranslate"><span class="pre">lambda:</span> <span class="pre">&quot;Hello!&quot;</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">&quot;Hello!&quot;</span></code>. This converts the string into a lambda function, meaning
+that it should not be generated unless the debug statement is
+actually printed.</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> has a
+<a class="reference external" href="https://github.com/metawards/MetaWards/tree/devel/tests">large test suite</a>
+built using <a class="reference external" href="https://docs.pytest.org/en/latest/">pytest</a>.
+We encourage you to
+look through the tests and use these to help learn how to use the classes.
+We also encourage you to write your own tests for your new code :-)</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="roadmap.html" class="btn btn-neutral float-right" title="Roadmap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

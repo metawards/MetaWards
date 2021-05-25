@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Running on a cluster &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Help and support" href="support.html" />
+    <link rel="prev" title="Command line options" href="metawards_plot_help.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running on a cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#example-pbs-job-script">Example PBS job script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-slurm-job-script">Example slurm job script</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Running on a cluster</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="support.html" class="btn btn-neutral float-right" title="Help and support" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="metawards_plot_help.html" class="btn btn-neutral float-left" title="Command line options" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-on-a-cluster">
+<h1>Running on a cluster<a class="headerlink" href="#running-on-a-cluster" title="Permalink to this headline">¶</a></h1>
+<p>One of the reasons for this Python port is to make it easier to run
+MetaWards analyses at scale on a HPC cluster. MetaWards supports
+parallelisation using MPI (via <a class="reference external" href="https://mpi4py.readthedocs.io">mpi4py</a>)
+or simple networking (via <a class="reference external" href="https://scoop.readthedocs.io">scoop</a>).</p>
+<p>MetaWards will automatically detect most of what it needs so that you
+don’t need to write a complicated HPC job script.</p>
+<p>MetaWards will look for a <code class="docutils literal notranslate"><span class="pre">hostfile</span></code> via either the PBS environment
+variable of <code class="docutils literal notranslate"><span class="pre">PBS_NODEFILE</span></code>, or the slurm <code class="docutils literal notranslate"><span class="pre">SLURM_HOSTFILE</span></code>, or
+for a <code class="docutils literal notranslate"><span class="pre">hostfile</span></code> passed directly via the <code class="docutils literal notranslate"><span class="pre">--hostfile</span></code> command
+line argument.</p>
+<p>It will then use the information combined there, together with the number of
+threads per model run requested by the user, and the number of
+cores per compute node (set in the environment variable
+<code class="docutils literal notranslate"><span class="pre">METAWARDS_CORES_PER_NODE</span></code>, or passed as the command line option
+<code class="docutils literal notranslate"><span class="pre">--cores-per-node</span></code>) to work out how many parallel scoop or MPI
+processes to start, and will start those in a round-robin fashion
+across the cluster. Distribution of work to nodes is via the
+scoop or mpi4py work pools.</p>
+<p>What this means is that the job scripts you need to write are very simple.</p>
+<div class="section" id="example-pbs-job-script">
+<h2>Example PBS job script<a class="headerlink" href="#example-pbs-job-script" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example job script for a PBS cluster;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#PBS -l walltime=01:00:00
+#PBS -l select=4:ncpus=64:mem=64GB
+# The above sets 4 nodes with 64 cores each
+
+# source the version of metawards we want to use
+# (assumes your python environments are in $HOME/envs)
+source $HOME/envs/metawards-0.6.0/bin/activate
+
+# change into the directory from which this job was submitted
+cd $PBS_O_WORKDIR
+
+# if you need to change the path to the MetaWardsData repository,
+# then update the below line and uncomment
+#export METAWARDSDATA=&quot;$HOME/GitHub/MetaWardsData&quot;
+
+metawards --additional ExtraSeedsBrighton.dat \
+          --input ncovparams.csv --repeats 8 --nthreads 16
+</pre></div>
+</div>
+<p>The above job script will run 8 repeats of the adjustable parameter sets
+in <code class="docutils literal notranslate"><span class="pre">ncovparams.csv</span></code>. The jobs will be run using 16 cores per model run,
+over 4 nodes with 64 cores per node (so 256 cores total, running
+16 model runs in parallel). The runs will take only a minute or two
+to complete, hence why it is not worth requesting more than one hour
+of walltime.</p>
+<p>The above job script can be submitted to the cluster using the PBS
+<code class="docutils literal notranslate"><span class="pre">qsub</span></code> command, e.g. if the script was called <code class="docutils literal notranslate"><span class="pre">submit.sh</span></code>, then you
+could type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub submit.sh
+</pre></div>
+</div>
+<p>You can see the status of your job using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qstat -n
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-slurm-job-script">
+<h2>Example slurm job script<a class="headerlink" href="#example-slurm-job-script" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example job script for a slurm cluster;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=64
+# The above sets 4 nodes with 64 cores each
+
+# source the version of metawards we want to use
+# (assumes your python environments are in $HOME/envs)
+source $HOME/envs/metawards-0.6.0/bin/activate
+
+# if you need to change the path to the MetaWardsData repository,
+# then update the below line and uncomment
+#export METAWARDSDATA=&quot;$HOME/GitHub/MetaWardsData&quot;
+
+metawards --additional ExtraSeedsBrighton.dat \
+          --input ncovparams.csv --repeats 8 --nthreads 16
+</pre></div>
+</div>
+<p>This script does the same job as the PBS job script above. Assuming
+you name this script <code class="docutils literal notranslate"><span class="pre">submit.slm</span></code> you can submit this job using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sbatch submit.slm
+</pre></div>
+</div>
+<p>You can check the status of your job using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue -u USER_NAME
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">USER_NAME</span></code> is your cluster username.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="support.html" class="btn btn-neutral float-right" title="Help and support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="metawards_plot_help.html" class="btn btn-neutral float-left" title="Command line options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

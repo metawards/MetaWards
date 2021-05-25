@@ -1,0 +1,6 @@
+﻿metawards.utils.get\_finalise\_functions
+========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: get_finalise_functions

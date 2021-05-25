@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards._networks &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards._networks</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards._networks</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">._outputfiles</span> <span class="kn">import</span> <span class="n">OutputFiles</span>
+<span class="kn">from</span> <span class="nn">._population</span> <span class="kn">import</span> <span class="n">Population</span>
+<span class="kn">from</span> <span class="nn">._demographics</span> <span class="kn">import</span> <span class="n">Demographics</span>
+<span class="kn">from</span> <span class="nn">._parameters</span> <span class="kn">import</span> <span class="n">Parameters</span>
+<span class="kn">from</span> <span class="nn">._network</span> <span class="kn">import</span> <span class="n">Network</span>
+
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span> <span class="k">as</span> <span class="n">_dataclass</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">field</span> <span class="k">as</span> <span class="n">_field</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Networks&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Networks"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks">[docs]</a><span class="nd">@_dataclass</span>
+<span class="k">class</span> <span class="nc">Networks</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This is a combination of Network objects which together represent</span>
+<span class="sd">       an entire diverse population. Each individual Network is used to</span>
+<span class="sd">       model the disease outbreak within a single demographic of the</span>
+<span class="sd">       population. Multiple demographics are modelled by combining</span>
+<span class="sd">       multiple networks. Special merge functions enable joint</span>
+<span class="sd">       FOIs to be calculated, through which an outbreak in one</span>
+<span class="sd">       network can cross-infect a demographic in another network.</span>
+
+<span class="sd">       The Networks can be very independent, and don&#39;t necessarily</span>
+<span class="sd">       need to have the same links. However, it is assumed (and checked)</span>
+<span class="sd">       that each network will have the same nodes.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: The overall Network, which contains a combination of all of the</span>
+    <span class="c1">#: sub-networks. This is used for summary analysis and also as</span>
+    <span class="c1">#: a means of merging and distributing data between sub-networks</span>
+    <span class="n">overall</span><span class="p">:</span> <span class="n">Network</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The list of Networks, one for each demographic, ordered in the</span>
+    <span class="c1">#: same order as the &quot;Demographics&quot; object. This is empty if</span>
+    <span class="c1">#: only a single demographic is modelled</span>
+    <span class="n">subnets</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="n">Network</span><span class="p">]</span> <span class="o">=</span> <span class="n">_field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+
+    <span class="c1">#: Metadata about each of the demographics being modelled. This is</span>
+    <span class="c1">#: None if only a single demographic is modelled</span>
+    <span class="n">demographics</span><span class="p">:</span> <span class="n">Demographics</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">params</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;The overall parameters that are then specialised for the</span>
+<span class="sd">           different demographics. Note that this returns a copy,</span>
+<span class="sd">           so changing this will not change any parameters in the</span>
+<span class="sd">           networks</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># return the parameters for all of the demographics</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="n">params</span><span class="o">.</span><span class="n">_subparams</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+                <span class="n">params</span><span class="o">.</span><span class="n">_subparams</span><span class="p">[</span><span class="n">subnet</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">subnet</span><span class="o">.</span><span class="n">params</span>
+
+            <span class="k">return</span> <span class="n">params</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Networks.num_demographics"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.num_demographics">[docs]</a>    <span class="k">def</span> <span class="nf">num_demographics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return the number of demographics&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Networks.assert_sane"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.assert_sane">[docs]</a>    <span class="k">def</span> <span class="nf">assert_sane</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="p">:</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Assert that the networks is sane. This checks that the</span>
+<span class="sd">           networks and all of the demographic sub-networks are</span>
+<span class="sd">           laid out correctly in memory and that they don&#39;t have</span>
+<span class="sd">           anything unexpected. Checking here will prevent us from having</span>
+<span class="sd">           to check every time the networks are accessed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">assert_sane</span><span class="p">(</span><span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">assert_sane</span><span class="p">(</span><span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span></div>
+
+        <span class="c1"># SHOULD ASSERT HERE THAT THE POPULATIONS OF ALL OF THE SUBNETS</span>
+        <span class="c1"># IN EACH WARD SUM UP TO THE POPULATION IN THE OVERALL NETWORK</span>
+        <span class="c1"># WARDS</span>
+
+<div class="viewcode-block" id="Networks.build"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.build">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span> <span class="n">demographics</span><span class="p">:</span> <span class="n">Demographics</span><span class="p">,</span>
+              <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Build the set of networks that will model the passed</span>
+<span class="sd">           demographics based on the overall population model</span>
+<span class="sd">           in the passed network</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           network: Network</span>
+<span class="sd">             The overall population model - this contains the base</span>
+<span class="sd">             parameters, wards, work and play links that define</span>
+<span class="sd">             the model outbreak</span>
+<span class="sd">           demographics: Demographics</span>
+<span class="sd">             Information about each of the demographics to be modelled.</span>
+<span class="sd">             Note that the sum of the &quot;work&quot; and &quot;play&quot; populations</span>
+<span class="sd">             across all demographics must be 1.0 in all wards in</span>
+<span class="sd">             the model</span>
+<span class="sd">           profiler: Profiler</span>
+<span class="sd">             Optional profiler used to profile this build</span>
+<span class="sd">           nthreads: int</span>
+<span class="sd">             Number of threads over which to distribute the work</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           networks: Networks</span>
+<span class="sd">             The set of Networks that represent the model run over the</span>
+<span class="sd">             full set of different demographics</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">Network</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You can only specialise a Network&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">demographics</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">demographics</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;You can only create a Networks object &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;with a valid Demographics that contains &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;more than one demographic&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">demographics</span><span class="o">.</span><span class="n">uses_named_network</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;You cannot specialise an existing network with demographics &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;that specify named networks - instead you need to call &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;demographics.build(...)&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">profiler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils._profiler</span> <span class="kn">import</span> <span class="n">NullProfiler</span>
+            <span class="n">profiler</span> <span class="o">=</span> <span class="n">NullProfiler</span><span class="p">()</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">profiler</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s2">&quot;specialise&quot;</span><span class="p">)</span>
+
+        <span class="n">subnets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># specialise the network for each demographic</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">demographics</span><span class="p">)):</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;demographic_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">subnets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">specialise</span><span class="p">(</span><span class="n">demographic</span><span class="o">=</span><span class="n">demographics</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                                              <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">,</span>
+                                              <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">))</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s2">&quot;distribute_remainders&quot;</span><span class="p">)</span>
+        <span class="kn">from</span> <span class="nn">.utils._scale_susceptibles</span> <span class="kn">import</span> <span class="n">distribute_remainders</span>
+        <span class="n">distribute_remainders</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span> <span class="n">subnets</span><span class="o">=</span><span class="n">subnets</span><span class="p">,</span>
+                              <span class="n">demographics</span><span class="o">=</span><span class="n">demographics</span><span class="p">,</span>
+                              <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span>
+                              <span class="n">random_seed</span><span class="o">=</span><span class="n">demographics</span><span class="o">.</span><span class="n">random_seed</span><span class="p">)</span>
+
+        <span class="c1"># we have changed the population, so need to recalculate the</span>
+        <span class="c1"># denominators again...</span>
+        <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="n">subnets</span><span class="p">:</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">rescale_play_matrix</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">move_from_play_to_work</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="n">total_pop</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">population</span>
+        <span class="n">sum_pop</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Specialising network - population: </span><span class="si">{</span><span class="n">total_pop</span><span class="si">}</span><span class="s2">, &quot;</span>
+                      <span class="sa">f</span><span class="s2">&quot;workers: </span><span class="si">{</span><span class="n">network</span><span class="o">.</span><span class="n">work_population</span><span class="si">}</span><span class="s2">, &quot;</span>
+                      <span class="sa">f</span><span class="s2">&quot;players: </span><span class="si">{</span><span class="n">network</span><span class="o">.</span><span class="n">play_population</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">subnets</span><span class="p">):</span>
+            <span class="n">pop</span> <span class="o">=</span> <span class="n">subnet</span><span class="o">.</span><span class="n">population</span>
+            <span class="n">sum_pop</span> <span class="o">+=</span> <span class="n">pop</span>
+
+            <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">demographics</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> - population: </span><span class="si">{</span><span class="n">pop</span><span class="si">}</span><span class="s2">, &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;workers: </span><span class="si">{</span><span class="n">subnet</span><span class="o">.</span><span class="n">work_population</span><span class="si">}</span><span class="s2">, &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;players: </span><span class="si">{</span><span class="n">subnet</span><span class="o">.</span><span class="n">play_population</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">subnet</span><span class="o">.</span><span class="n">work_population</span> <span class="o">+</span> <span class="n">subnet</span><span class="o">.</span><span class="n">play_population</span> <span class="o">!=</span> <span class="n">pop</span><span class="p">:</span>
+                <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Disagreement in subnet population. Should be &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pop</span><span class="si">}</span><span class="s2"> but is instead &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">subnet</span><span class="o">.</span><span class="n">work_population</span><span class="o">+</span><span class="n">subnet</span><span class="o">.</span><span class="n">play_population</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+                <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;Disagreement in subnet population.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">total_pop</span> <span class="o">!=</span> <span class="n">sum_pop</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The sum of the population of the demographic &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;sub-networks (</span><span class="si">{</span><span class="n">sum_pop</span><span class="si">}</span><span class="s2">) does not equal the population &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;of the total network (</span><span class="si">{</span><span class="n">total_pop</span><span class="si">}</span><span class="s2">). This is a bug!&quot;</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">Networks</span><span class="p">()</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">overall</span> <span class="o">=</span> <span class="n">network</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">subnets</span> <span class="o">=</span> <span class="n">subnets</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">demographics</span> <span class="o">=</span> <span class="n">demographics</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="Networks.copy"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a copy of this Networks. Use this to hold a copy of</span>
+<span class="sd">           the networks that you can use to reset between runs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
+        <span class="n">networks</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">networks</span><span class="o">.</span><span class="n">overall</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="n">subnets</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+            <span class="n">subnets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subnet</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+        <span class="n">networks</span><span class="o">.</span><span class="n">subnets</span> <span class="o">=</span> <span class="n">subnets</span>
+
+        <span class="n">networks</span><span class="o">.</span><span class="n">demographics</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">networks</span></div>
+
+<div class="viewcode-block" id="Networks.aggregate"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Aggregate all of the sub-network population infection data</span>
+<span class="sd">           so that this is available in the overall network</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.utils._aggregate</span> <span class="kn">import</span> <span class="n">aggregate_networks</span>
+        <span class="n">aggregate_networks</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Networks.run"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
+            <span class="n">output_dir</span><span class="p">:</span> <span class="n">OutputFiles</span><span class="p">,</span>
+            <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">nsteps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">iterator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">extractor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">mover</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">mixer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Population</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Run the model simulation for the passed population.</span>
+<span class="sd">           The random number seed is given in &#39;seed&#39;. If this</span>
+<span class="sd">           is None, then a random seed is used.</span>
+
+<span class="sd">           All output files are written to &#39;output_dir&#39;</span>
+
+<span class="sd">           The simulation will continue until the infection has</span>
+<span class="sd">           died out or until &#39;nsteps&#39; has passed (keep as &#39;None&#39;</span>
+<span class="sd">           to prevent exiting early).</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           population: Population</span>
+<span class="sd">             The initial population at the start of the model outbreak.</span>
+<span class="sd">             This is also used to set start date and day of the model</span>
+<span class="sd">             outbreak</span>
+<span class="sd">           output_dir: OutputFiles</span>
+<span class="sd">             The directory to write all of the output into</span>
+<span class="sd">           seed: int</span>
+<span class="sd">             The random number seed used for this model run. If this is</span>
+<span class="sd">             None then a very random random number seed will be used</span>
+<span class="sd">           nsteps: int</span>
+<span class="sd">             The maximum number of steps to run in the outbreak. If None</span>
+<span class="sd">             then run until the outbreak has finished</span>
+<span class="sd">           profiler: Profiler</span>
+<span class="sd">             The profiler to use - a new one is created if one isn&#39;t passed</span>
+<span class="sd">           nthreads: int</span>
+<span class="sd">             Number of threads over which to parallelise this model run</span>
+<span class="sd">           iterator: function</span>
+<span class="sd">             Function that is called at each iteration to get the functions</span>
+<span class="sd">             that are used to advance the model</span>
+<span class="sd">           extractor: function</span>
+<span class="sd">             Function that is called at each iteration to get the functions</span>
+<span class="sd">             that are used to extract data for analysis or writing to files</span>
+<span class="sd">           mixer: function</span>
+<span class="sd">             Function that is called to mix the data calculated for each</span>
+<span class="sd">             of the sub-networks for the different demographics and</span>
+<span class="sd">             merge it together so that this is shared</span>
+<span class="sd">           mover: function</span>
+<span class="sd">             Function that is called to move the population between</span>
+<span class="sd">             different demographics</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           population: Population</span>
+<span class="sd">             The final population at the end of the run</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Create the random number generator</span>
+        <span class="kn">from</span> <span class="nn">.utils._ran_binomial</span> <span class="kn">import</span> <span class="n">seed_ran_binomial</span><span class="p">,</span> <span class="n">ran_binomial</span>
+
+        <span class="k">if</span> <span class="n">seed</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># this is a special mode that a developer can use to force</span>
+            <span class="c1"># all jobs to use the same random number seed (15324) that</span>
+            <span class="c1"># is used for comparing outputs. This should NEVER be used</span>
+            <span class="c1"># for production code</span>
+            <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Using special mode to fix all random number &quot;</span>
+                            <span class="s2">&quot;seeds to 15324. DO NOT USE IN PRODUCTION!!!&quot;</span><span class="p">)</span>
+            <span class="n">rng</span> <span class="o">=</span> <span class="n">seed_ran_binomial</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">15324</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rng</span> <span class="o">=</span> <span class="n">seed_ran_binomial</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>
+
+        <span class="c1"># Print the first five random numbers so that we can</span>
+        <span class="c1"># compare to other codes/runs, and be sure that we are</span>
+        <span class="c1"># generating the same random sequence</span>
+        <span class="n">randnums</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+            <span class="n">randnums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ran_binomial</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)))</span>
+
+        <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;* First five random numbers equal **</span><span class="si">{</span><span class="s1">&#39;**, **&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">randnums</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">markdown</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">randnums</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">nthreads</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils._parallel</span> <span class="kn">import</span> <span class="n">get_available_num_threads</span>
+            <span class="n">nthreads</span> <span class="o">=</span> <span class="n">get_available_num_threads</span><span class="p">()</span>
+
+        <span class="kn">from</span> <span class="nn">.utils._parallel</span> <span class="kn">import</span> <span class="n">create_thread_generators</span>
+        <span class="n">rngs</span> <span class="o">=</span> <span class="n">create_thread_generators</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">)</span>
+
+        <span class="c1"># Create space to hold the results of the simulation</span>
+        <span class="n">infections</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialise_infections</span><span class="p">()</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="s2">&quot;Running the model&quot;</span><span class="p">)</span>
+
+        <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">run_model</span>
+        <span class="n">population</span> <span class="o">=</span> <span class="n">run_model</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+                               <span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                               <span class="n">infections</span><span class="o">=</span><span class="n">infections</span><span class="p">,</span>
+                               <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="n">output_dir</span><span class="p">,</span>
+                               <span class="n">nsteps</span><span class="o">=</span><span class="n">nsteps</span><span class="p">,</span>
+                               <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span>
+                               <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">,</span>
+                               <span class="n">iterator</span><span class="o">=</span><span class="n">iterator</span><span class="p">,</span> <span class="n">extractor</span><span class="o">=</span><span class="n">extractor</span><span class="p">,</span>
+                               <span class="n">mixer</span><span class="o">=</span><span class="n">mixer</span><span class="p">,</span> <span class="n">mover</span><span class="o">=</span><span class="n">mover</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">population</span></div>
+
+<div class="viewcode-block" id="Networks.reset_everything"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.reset_everything">[docs]</a>    <span class="k">def</span> <span class="nf">reset_everything</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Resets the networks ready for a new run of the model&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Networks.update"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+               <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Update this network with a new set of parameters</span>
+<span class="sd">           (and optionally demographics).</span>
+
+<span class="sd">           This is used to update the parameters for the network</span>
+<span class="sd">           for a new run. The network will be reset</span>
+<span class="sd">           and ready for a new run.</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           params: Parameters</span>
+<span class="sd">             The new parameters with which to update this Network</span>
+<span class="sd">           demographics: Demographics</span>
+<span class="sd">             The new demographics with which to update this Network.</span>
+<span class="sd">             Note that this will return a Network object that contains</span>
+<span class="sd">             the specilisation of this Network</span>
+<span class="sd">           nthreads: int</span>
+<span class="sd">             Number of threads over which to parallelise this update</span>
+<span class="sd">           profiler: Profiler</span>
+<span class="sd">             The profiler used to profile this update</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           network: Network or Networks</span>
+<span class="sd">             Either this Network after it has been updated, or the</span>
+<span class="sd">             resulting Networks from specialising this Network using</span>
+<span class="sd">             Demographics</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">profiler</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">NullProfiler</span>
+            <span class="n">profiler</span> <span class="o">=</span> <span class="n">NullProfiler</span><span class="p">()</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="n">profiler</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="s2">&quot;overall.update&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">demographics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">demographics</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.utils._worker</span> <span class="kn">import</span> <span class="n">must_rebuild_network</span>
+
+                <span class="k">if</span> <span class="n">must_rebuild_network</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span>
+                                        <span class="n">demographics</span><span class="o">=</span><span class="n">demographics</span><span class="p">):</span>
+                    <span class="n">networks</span> <span class="o">=</span> <span class="n">demographics</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
+                        <span class="n">params</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">params</span><span class="p">,</span>
+                        <span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                        <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span>
+                        <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># we have a change in demographics, so need to re-specialise</span>
+                    <span class="n">networks</span> <span class="o">=</span> <span class="n">demographics</span><span class="o">.</span><span class="n">specialise</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">,</span>
+                                                       <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">,</span>
+                                                       <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span>
+                <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+                <span class="k">return</span> <span class="n">networks</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">)):</span>
+            <span class="n">demographic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">demographics</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">demographic</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.update&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">demographic</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">specialised_demographics</span><span class="p">():</span>
+                <span class="n">subnet_params</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="n">demographic</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">subnet_params</span> <span class="o">=</span> <span class="n">params</span>
+
+            <span class="k">if</span> <span class="n">demographic</span><span class="o">.</span><span class="n">adjustment</span><span class="p">:</span>
+                <span class="n">subnet_params</span> <span class="o">=</span> <span class="n">subnet_params</span><span class="o">.</span><span class="n">set_variables</span><span class="p">(</span>
+                    <span class="n">demographic</span><span class="o">.</span><span class="n">adjustment</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">subnet_params</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Networks.initialise_infections"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.initialise_infections">[docs]</a>    <span class="k">def</span> <span class="nf">initialise_infections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialise and return the space that will be used</span>
+<span class="sd">           to track infections</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">._infections</span> <span class="kn">import</span> <span class="n">Infections</span>
+        <span class="k">return</span> <span class="n">Infections</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Networks.rescale_play_matrix"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.rescale_play_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">rescale_play_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Rescale the play matrix&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">rescale_play_matrix</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Networks.move_from_play_to_work"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.move_from_play_to_work">[docs]</a>    <span class="k">def</span> <span class="nf">move_from_play_to_work</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Move the population from play to work&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">move_from_play_to_work</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span>
+                                                <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+            <span class="n">subnet</span><span class="o">.</span><span class="n">move_from_play_to_work</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span>
+                                          <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

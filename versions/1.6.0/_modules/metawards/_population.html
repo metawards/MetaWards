@@ -1,0 +1,685 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards._population &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards._population</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards._population</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span> <span class="k">as</span> <span class="n">_dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span> <span class="k">as</span> <span class="n">_Dict</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">_deepcopy</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span> <span class="k">as</span> <span class="n">_date</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span> <span class="s2">&quot;Populations&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Population"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population">[docs]</a><span class="nd">@_dataclass</span>
+<span class="k">class</span> <span class="nc">Population</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class holds information about the progress of the</span>
+<span class="sd">       disease through the population</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#: The initial population loaded into the model</span>
+    <span class="n">initial</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The number of members who could be infected (S)</span>
+    <span class="n">susceptibles</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The number of latent infections (E)</span>
+    <span class="n">latent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The total number of infections (I)</span>
+    <span class="n">total</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The total number of infections in other infected states (X)</span>
+    <span class="n">totals</span><span class="p">:</span> <span class="n">_Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The total number of individuals in other non-infected states (X)</span>
+    <span class="n">other_totals</span><span class="p">:</span> <span class="n">_Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The total number who are removed from the outbreak,</span>
+    <span class="c1">#: either because they have recovered, or are otherwise</span>
+    <span class="c1">#: no longer able to be infected (R)</span>
+    <span class="n">recovereds</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The number infected in all wards (IW)</span>
+    <span class="n">n_inf_wards</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The scale_uv parameter that can be used to affect the</span>
+    <span class="c1">#: foi calculation. A value of 1.0 means do nothing</span>
+    <span class="n">scale_uv</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+    <span class="c1">#: The day in the outbreak of this record (e.g. day 0, day 10 etc.)</span>
+    <span class="n">day</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: The date in the outbreak of this record</span>
+    <span class="n">date</span><span class="p">:</span> <span class="n">_date</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The populations in each of the multi-demographic subnetworks</span>
+    <span class="n">subpops</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">population</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;The total population in all wards&quot;&quot;&quot;</span>
+        <span class="n">pop</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">latent</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">pop</span> <span class="o">+=</span> <span class="n">val</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">pop</span> <span class="o">+=</span> <span class="n">val</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">pop</span> <span class="o">+=</span> <span class="n">val</span>
+
+        <span class="k">return</span> <span class="n">pop</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">others</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return the number who are in the &#39;other&#39; state, i.e.</span>
+<span class="sd">           not classed as susceptible, latent, infected or recovered/removed.</span>
+<span class="sd">           This is the sum of states that are set as &quot;is_infected=False&quot;</span>
+<span class="sd">           in the disease model, e.g. V (vaccinated)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="n">t</span> <span class="o">+=</span> <span class="n">val</span>
+
+        <span class="k">return</span> <span class="n">t</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">infecteds</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;The number who are infected across all wards&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="o">-</span> \
+            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> \
+            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-</span> \
+            <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">others</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Population.has_equal_SEIR"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.has_equal_SEIR">[docs]</a>    <span class="k">def</span> <span class="nf">has_equal_SEIR</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return whether or not the SEIR values for this population</span>
+<span class="sd">           equal &#39;other&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">susceptibles</span> <span class="ow">and</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">latent</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">latent</span> <span class="ow">and</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">total</span> <span class="ow">and</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">and</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">others</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">others</span> <span class="ow">and</span> \
+            <span class="bp">self</span><span class="o">.</span><span class="n">totals</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">totals</span></div>
+
+<div class="viewcode-block" id="Population.increment_day"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.increment_day">[docs]</a>    <span class="k">def</span> <span class="nf">increment_day</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ndays</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Advance the day count by &#39;ndays&#39; (default 1)&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">day</span> <span class="o">+=</span> <span class="n">ndays</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">pop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span><span class="p">:</span>
+                <span class="n">pop</span><span class="o">.</span><span class="n">day</span> <span class="o">+=</span> <span class="n">ndays</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">date</span> <span class="o">+=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">pop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span><span class="p">:</span>
+                    <span class="n">pop</span><span class="o">.</span><span class="n">date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span></div>
+
+<div class="viewcode-block" id="Population.specialise"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.specialise">[docs]</a>    <span class="k">def</span> <span class="nf">specialise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">network</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Specialise this population for the passed Networks&quot;&quot;&quot;</span>
+        <span class="n">subpops</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">subnets</span><span class="p">)):</span>
+            <span class="n">subpops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span> <span class="o">=</span> <span class="n">subpops</span></div>
+
+<div class="viewcode-block" id="Population.__str__"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DAY: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;S: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">latent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_inf_wards</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IW: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_inf_wards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TOTAL POPULATION </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span></div>
+
+<div class="viewcode-block" id="Population.assert_sane"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.assert_sane">[docs]</a>    <span class="k">def</span> <span class="nf">assert_sane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Assert that this population is sane, i.e. the totals within</span>
+<span class="sd">           this population and with the sub-populations all add up to</span>
+<span class="sd">           the correct values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">infecteds</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">others</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">val</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">t</span> <span class="o">+=</span> <span class="n">val</span>
+
+        <span class="k">if</span> <span class="n">t</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="p">:</span>
+            <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in total overall population: &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2"> versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subpops</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">S</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">E</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">I</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">O</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">R</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">P</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">for</span> <span class="n">subpop</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span><span class="p">:</span>
+                <span class="n">S</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subpop</span><span class="o">.</span><span class="n">susceptibles</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">E</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subpop</span><span class="o">.</span><span class="n">latent</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">I</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subpop</span><span class="o">.</span><span class="n">total</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">O</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subpop</span><span class="o">.</span><span class="n">others</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">R</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subpop</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">P</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">subpop</span><span class="o">.</span><span class="n">population</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">S</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in S: </span><span class="si">{</span><span class="n">S</span><span class="si">}</span><span class="s2"> &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">E</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">latent</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in E: </span><span class="si">{</span><span class="n">E</span><span class="si">}</span><span class="s2"> &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">I</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in I: </span><span class="si">{</span><span class="n">I</span><span class="si">}</span><span class="s2"> &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">O</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">others</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in O: </span><span class="si">{</span><span class="n">O</span><span class="si">}</span><span class="s2"> &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">others</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">R</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in R: </span><span class="si">{</span><span class="n">R</span><span class="si">}</span><span class="s2"> &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">P</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span> <span class="ow">or</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in Population: </span><span class="si">{</span><span class="n">P</span><span class="si">}</span><span class="s2"> &quot;</span>
+                              <span class="sa">f</span><span class="s2">&quot;versus </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">errors</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">ERROR: &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+            <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Disagreement in population sums!&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Population.headers"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.headers">[docs]</a>    <span class="k">def</span> <span class="nf">headers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a list of the headers that should be used to report</span>
+<span class="sd">           data from this population. This returns a list of headers,</span>
+<span class="sd">           e.g. [&quot;S&quot;, &quot;E&quot;, &quot;I&quot;, &quot;R&quot;]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">latent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># use items as need to be same order as items below</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># use items as need to be same order as items below</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">headers</span></div>
+
+<div class="viewcode-block" id="Population.summary"><a class="viewcode-back" href="../../api/generated/metawards.Population.html#metawards.Population.summary">[docs]</a>    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a short summary string that is suitable to be printed</span>
+<span class="sd">           out during a model run</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           summary: str</span>
+<span class="sd">             The short summary string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;S: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">latent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;E: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_inf_wards</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IW: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_inf_wards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;POPULATION: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">subpops</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subpops</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">summary</span>
+
+        <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Table</span>
+
+        <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">show_edge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_footer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="s2">&quot;total&quot;</span><span class="p">)</span>
+        <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">susceptibles</span><span class="p">)</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">latent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">latent</span><span class="p">)</span>
+            <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">total</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">total</span><span class="p">)</span>
+            <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">columns</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="n">value</span><span class="p">)</span>
+                <span class="n">columns</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">recovereds</span><span class="p">)</span>
+            <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_inf_wards</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;IW&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_inf_wards</span><span class="p">)</span>
+            <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;IW&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;POPULATION&quot;</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">population</span><span class="p">)</span>
+        <span class="n">columns</span><span class="p">[</span><span class="s2">&quot;POPULATION&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">subpop</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subpops</span><span class="p">):</span>
+            <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">*</span> <span class="n">count</span>
+            <span class="k">if</span> <span class="n">demographics</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">demographics</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;S&quot;</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">subpop</span><span class="o">.</span><span class="n">susceptibles</span>
+
+            <span class="k">if</span> <span class="s2">&quot;E&quot;</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;E&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">subpop</span><span class="o">.</span><span class="n">latent</span>
+
+            <span class="k">if</span> <span class="s2">&quot;R&quot;</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;R&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">subpop</span><span class="o">.</span><span class="n">recovereds</span>
+
+            <span class="k">if</span> <span class="s2">&quot;I&quot;</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">subpop</span><span class="o">.</span><span class="n">total</span>
+
+            <span class="k">if</span> <span class="s2">&quot;IW&quot;</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="s2">&quot;IW&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">subpop</span><span class="o">.</span><span class="n">n_inf_wards</span>
+
+            <span class="k">if</span> <span class="n">subpop</span><span class="o">.</span><span class="n">totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">subpop</span><span class="o">.</span><span class="n">totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span> <span class="o">=</span> <span class="n">value</span>
+
+            <span class="k">if</span> <span class="n">subpop</span><span class="o">.</span><span class="n">other_totals</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">subpop</span><span class="o">.</span><span class="n">other_totals</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">row</span><span class="p">[</span><span class="n">columns</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span> <span class="o">=</span> <span class="n">value</span>
+
+            <span class="n">row</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">subpop</span><span class="o">.</span><span class="n">population</span>
+
+            <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">summary</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">table</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span></div></div>
+
+
+<div class="viewcode-block" id="Populations"><a class="viewcode-back" href="../../api/generated/metawards.Populations.html#metawards.Populations">[docs]</a><span class="nd">@_dataclass</span>
+<span class="k">class</span> <span class="nc">Populations</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class holds the trajectory of Population objects recorded</span>
+<span class="sd">       for every step (day) of a model outbreak</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#: The trajectory of Population objects</span>
+    <span class="n">_trajectory</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="n">Population</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Populations.__str__"><a class="viewcode-back" href="../../api/generated/metawards.Populations.html#metawards.Populations.__str__">[docs]</a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;Populations:empty&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Latest: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span></div>
+
+<div class="viewcode-block" id="Populations.__getitem__"><a class="viewcode-back" href="../../api/generated/metawards.Populations.html#metawards.Populations.__getitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the ith Population in the trajectory&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;No trajectory data collected&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Populations.strip_demographics"><a class="viewcode-back" href="../../api/generated/metawards.Populations.html#metawards.Populations.strip_demographics">[docs]</a>    <span class="k">def</span> <span class="nf">strip_demographics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Remove the demographics information from this trajectory. This</span>
+<span class="sd">           makes it much smaller and easier to transmit over a network</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="p">:</span>
+            <span class="n">value</span><span class="o">.</span><span class="n">_subpops</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="bp">self</span></div>
+
+<div class="viewcode-block" id="Populations.append"><a class="viewcode-back" href="../../api/generated/metawards.Populations.html#metawards.Populations.append">[docs]</a>    <span class="k">def</span> <span class="nf">append</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Append the next step in the trajectory.</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           population: Population</span>
+<span class="sd">             The population to append to this list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">Population</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Only Population objects should be recorded!&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trajectory</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_deepcopy</span><span class="p">(</span><span class="n">population</span><span class="p">))</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

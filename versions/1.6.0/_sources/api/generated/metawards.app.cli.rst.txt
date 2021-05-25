@@ -1,0 +1,6 @@
+﻿metawards.app.cli
+=================
+
+.. currentmodule:: metawards.app
+
+.. autofunction:: cli

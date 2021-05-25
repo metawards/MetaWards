@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>How a day is modelled &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Where is the weekend?" href="02_weekend.html" />
+    <link rel="prev" title="Part 3 - Customising the outbreak" href="../index_part03.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How a day is modelled</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#work-and-play">Work and play</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-a-normal-day">What is a normal day?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_weekend.html">Where is the weekend?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_lockdown.html">Custom advance functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_dynamic.html">Responding to changing conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_scanning.html">Custom variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_scan_lockdown.html">Scanning lockdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07_cutoff.html">Alternative lockdowns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08_local_lockdown.html">Local lockdowns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part03.html">Part 3 - Customising the outbreak</a> &raquo;</li>
+        
+      <li>How a day is modelled</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="02_weekend.html" class="btn btn-neutral float-right" title="Where is the weekend?" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="../index_part03.html" class="btn btn-neutral float-left" title="Part 3 - Customising the outbreak" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-a-day-is-modelled">
+<h1>How a day is modelled<a class="headerlink" href="#how-a-day-is-modelled" title="Permalink to this headline">¶</a></h1>
+<p>You have now used multiple <em>model runs</em> to refine the disease parameters
+for the lurgy. However, these parameters have been refined for the
+model that <code class="docutils literal notranslate"><span class="pre">metawards</span></code> uses to represent interactions of individuals.</p>
+<div class="section" id="work-and-play">
+<h2>Work and play<a class="headerlink" href="#work-and-play" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> models disease transmission via two main modes;</p>
+<ol class="arabic simple">
+<li><p>Infections at “work”</p></li>
+</ol>
+<blockquote>
+<div><p>These are random infections that individuals acquire in the electoral
+ward in which they “work”, based on random interactions with others
+who are also in that “work” ward. In this nomenclature, “work” means
+any regular (daily), predictable travel that an individual makes.</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Infections at “play”</p></li>
+</ol>
+<blockquote>
+<div><p>These are random infections that individuals acquire in the
+electoral ward in which they live, based on random interactions
+with others who are also in their ward. In this nomenclature, “play”
+means random, unpredictable interactions that are not regular.</p>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not read too much into the definitions of “work” and “play”. They
+have very broad meanings in <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, and, in essence, capture
+the difference between predicatable daily travel and interactions
+(commuting, colleagues in an office, students in a school), and
+the random interations (partying, shopping, playing in the park).
+Most of the hard data science behind <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is constructing
+the information in
+<a class="reference external" href="https://github.com/metawards/MetaWardsData">MetaWardsData</a>
+to gain this very broad overview of how individuals move and interact.</p>
+</div>
+</div>
+<div class="section" id="what-is-a-normal-day">
+<h2>What is a normal day?<a class="headerlink" href="#what-is-a-normal-day" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> uses an <code class="docutils literal notranslate"><span class="pre">iterator</span></code> to iterate the model outbreak forward
+day by day. All of the iterators are in the
+<a class="reference internal" href="../../api/index_MetaWards_iterators.html"><span class="doc">metawards.iterators</span></a> module.
+The default iterator is <a class="reference internal" href="../../api/generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-class docutils literal notranslate"><span class="pre">iterate_default</span></code></a>.</p>
+<p>An iterator applies a sequence of functions that advance the disease step
+by step through each day. These <code class="docutils literal notranslate"><span class="pre">advance_functions</span></code> control exactly
+what happens in each electoral ward on each day.</p>
+<p>The <a class="reference internal" href="../../api/generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-func docutils literal notranslate"><span class="pre">iterate_default()</span></code></a> iterator applies the
+following <code class="docutils literal notranslate"><span class="pre">advance_functions</span></code> in sequence;</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="../../api/generated/metawards.iterators.advance_additional.html#metawards.iterators.advance_additional" title="metawards.iterators.advance_additional"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_additional()</span></code></a> is applied to
+add any additional seeds of the disease in the ward,
+which leads to new infections. These additional seeds represent, e.g.
+new sources of infection arriving in the ward via outside travel.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_foi()</span></code></a> is applied to advance the
+calculation of the <em>force of infection (foi)</em> for each ward. This must
+be called at the beginning of the day after
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_additional.html#metawards.iterators.advance_additional" title="metawards.iterators.advance_additional"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_additional()</span></code></a>, as the <em>foi</em> parameters
+are used to guide the path of the outbreak in each ward for the
+rest of the day.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.iterators.advance_recovery.html#metawards.iterators.advance_recovery" title="metawards.iterators.advance_recovery"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_recovery()</span></code></a> is applied to all
+individuals in a ward who are infected. This will see whether an
+individual progresses from one stage of the disease to the next.
+This decision is based on the <strong>progress</strong> disease parameter for the stage
+that the individual is at.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_infprob()</span></code></a> is applied to recalculate
+the infection probabilities needed to guide new infections. These are
+based on the <em>foi</em> parameters for each ward and the number of
+individuals who are at each stage of the disease (based on the
+<strong>contrib_foi</strong> disease parameter).</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.iterators.advance_fixed.html#metawards.iterators.advance_fixed" title="metawards.iterators.advance_fixed"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_fixed()</span></code></a> is applied to advance
+all infections that are based on fixed (predictable) movements
+of individuals (the so-called “work” mode). Infected individuals
+continue to “work” unless they become too symptomatic
+(<strong>too_ill_to_move</strong>, based on the parameter for the stage of the
+disease at which the individual is at).</p></li>
+<li><p>Finally <a class="reference internal" href="../../api/generated/metawards.iterators.advance_play.html#metawards.iterators.advance_play" title="metawards.iterators.advance_play"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_play()</span></code></a> is applied to
+advance all infections that are based on random movements of
+individuals (the so-called “play” mode). Infected individuals
+continue to “play” unless they become too symptomatic
+(again controlled by the <strong>too_ill_to_move</strong> disease parameters).</p></li>
+</ol>
+<p>Once all of these functions have been applied, then a day is considered
+complete. The statistics for the day, e.g. numbers of individuals
+who are in the <strong>S</strong>, <strong>E</strong>, <strong>I</strong>, <strong>IW</strong>, and <strong>R</strong> states are
+collected and printed, and then the next day begins and all of
+these functions are applied again.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="02_weekend.html" class="btn btn-neutral float-right" title="Where is the weekend?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index_part03.html" class="btn btn-neutral float-left" title="Part 3 - Customising the outbreak" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

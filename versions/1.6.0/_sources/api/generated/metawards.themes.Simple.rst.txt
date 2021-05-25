@@ -1,0 +1,71 @@
+﻿metawards.themes.Simple
+=======================
+
+.. currentmodule:: metawards.themes
+
+.. autoclass:: Simple
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Simple.__delattr__
+      ~Simple.__dir__
+      ~Simple.__eq__
+      ~Simple.__format__
+      ~Simple.__ge__
+      ~Simple.__getattribute__
+      ~Simple.__gt__
+      ~Simple.__init__
+      ~Simple.__init_subclass__
+      ~Simple.__le__
+      ~Simple.__lt__
+      ~Simple.__ne__
+      ~Simple.__new__
+      ~Simple.__reduce__
+      ~Simple.__reduce_ex__
+      ~Simple.__repr__
+      ~Simple.__setattr__
+      ~Simple.__sizeof__
+      ~Simple.__str__
+      ~Simple.__subclasshook__
+      ~Simple.error
+      ~Simple.error_text
+      ~Simple.get_frames
+      ~Simple.highlighter
+      ~Simple.info
+      ~Simple.info_text
+      ~Simple.padding_style
+      ~Simple.panel
+      ~Simple.panel_box
+      ~Simple.rule
+      ~Simple.should_highlight
+      ~Simple.should_markup
+      ~Simple.spinner_failure
+      ~Simple.spinner_success
+      ~Simple.text
+      ~Simple.warning
+      ~Simple.warning_text
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Simple.__annotations__
+      ~Simple.__dataclass_fields__
+      ~Simple.__dataclass_params__
+      ~Simple.__dict__
+      ~Simple.__doc__
+      ~Simple.__hash__
+      ~Simple.__module__
+      ~Simple.__weakref__
+   
+   

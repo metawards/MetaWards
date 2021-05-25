@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Design (scan) files &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User input files" href="userinput.html" />
+    <link rel="prev" title="Extra seeds files" href="extraseeds.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Input files and formats</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#flexible-format-files">Flexible-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#rigid-format-files">Rigid-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#json-format-files">JSON-format files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#detailed-descriptions">Detailed descriptions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="network.html">Network Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extraseeds.html">Extra seeds files</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Design (scan) files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#column-headers">Column headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#special-columns">Special columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-columns">Default columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#column-data">Column data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="userinput.html">User input files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Input files and formats</a> &raquo;</li>
+        
+      <li>Design (scan) files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="userinput.html" class="btn btn-neutral float-right" title="User input files" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="extraseeds.html" class="btn btn-neutral float-left" title="Extra seeds files" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="design-scan-files">
+<h1>Design (scan) files<a class="headerlink" href="#design-scan-files" title="Permalink to this headline">¶</a></h1>
+<p>The design (or scan) file specifies which adjustable variables should be
+changed during
+a <code class="docutils literal notranslate"><span class="pre">metawards</span></code> calculation, and which value(s) they should be changed to.</p>
+<p>This is a column-orientated flexible-format file, using one column
+per adjustable variable. Like all flexible-format files you can use
+commas or spaces to separate columns. The separators used in the first line
+will be assumed to be used for the rest of the file.</p>
+<div class="section" id="column-headers">
+<h2>Column headers<a class="headerlink" href="#column-headers" title="Permalink to this headline">¶</a></h2>
+<p>You should name the variables you want to adjust in the column headers.
+The format of these is;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">variable</span></code> : Just the variable name will adjust that single variable
+for all copies in all demographics</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demographic:variable</span></code> : This will adjust the single variable in only
+the demographic named <code class="docutils literal notranslate"><span class="pre">demographic</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variable[1]</span></code> : This will adjust index <code class="docutils literal notranslate"><span class="pre">1</span></code> of the named variable
+in all demographics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">variable[&quot;E&quot;]</span></code> : This will adjust key <code class="docutils literal notranslate"><span class="pre">E</span></code> of the named variable,
+e.g. where the key refers to the disease stage.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demographic:variable[&quot;KEY&quot;]</span></code> : This will adjust key <code class="docutils literal notranslate"><span class="pre">KEY</span></code> of the
+named variable in the named demographic.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">user.myvariable</span></code> : This will adjust a custom user variable called
+<code class="docutils literal notranslate"><span class="pre">myvariable</span></code> in all demographics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.myvariable</span></code> : This will also adjust a custom user variable called
+<code class="docutils literal notranslate"><span class="pre">myvariable</span></code> in all demographic (we can drop the <code class="docutils literal notranslate"><span class="pre">user</span></code> to save
+space).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demographic:.myvariable[0]</span></code> : This will adjust index 0 of the custom
+user variable <code class="docutils literal notranslate"><span class="pre">myvariable</span></code> in the demographic called <code class="docutils literal notranslate"><span class="pre">demographic</span></code>.</p></li>
+</ul>
+<p>The full list of in-built parameters you can adjust are listed below;</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>UV:
+  Adjust the Parameters.UV parameter
+
+UV_max:
+  Adjust the Parameters.UV parameter
+
+beta:
+  Adjust the Disease.beta parameter
+
+bg_foi:
+  Adjust the Parameters.bg_foi parameter
+
+contrib_foi:
+  Adjust the Disease.contrib_foi parameter
+
+daily_imports:
+  Adjust the Parameters.daily_imports parameter
+
+dyn_dist_cutoff:
+  Adjust the Parameters.dyn_dist_cutoff parameter
+
+dyn_play_at_home:
+  Adjust the Parameters.dyn_play_at_home parameter
+
+initial_inf:
+  Adjust the Parameters.initial_inf parameter
+
+length_day:
+  Adjust the Parameters.length_day parameter
+
+play_to_work:
+  Adjust the Parameters.play_to_work parameter
+
+progress:
+  Adjust the Disease.progress parameter
+
+scale_uv:
+  Adjust the Parameters.scale_uv parameter
+
+static_play_at_home:
+  Adjust the Parameters.static_play_at_home parameter
+
+too_ill_to_move:
+  Adjust the Disease.too_ill_to_move parameter
+
+user:
+  Adjust a custom user-supplied parameter, held in
+  Parameters.user_params[name]. Set a user parameter
+  called &#39;name&#39; via &#39;user.name&#39; or &#39;.name&#39;.
+
+work_to_play:
+  Adjust the Parameters.work_to_play parameter
+</pre></div>
+</div>
+<p>In addition, you can create as many custom-user parameters to adjust
+as you would like.</p>
+</div>
+<div class="section" id="special-columns">
+<h2>Special columns<a class="headerlink" href="#special-columns" title="Permalink to this headline">¶</a></h2>
+<p>There are two special columns;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">repeats</span></code> : Specify the number of repeats of this row of values. This
+should be an integer (whole number) and gives more fine-grained control
+to specifying the number of repeats for different rows in a design.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output</span></code>: Specify the output directory in which to place the output
+of the model run using this row of adjustable variables. This overrides
+the default output directory, which is named using the fingerprint
+for this set of adjustable parameters. Use this if you want to have
+control over where all of the output is written. Note that <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+does not allow output for multiple model runs to be written to the
+same file, and will append numbers (e.g. <code class="docutils literal notranslate"><span class="pre">x002</span></code>, <code class="docutils literal notranslate"><span class="pre">x003</span></code>) to
+any duplicated names.</p></li>
+</ul>
+</div>
+<div class="section" id="default-columns">
+<h2>Default columns<a class="headerlink" href="#default-columns" title="Permalink to this headline">¶</a></h2>
+<p>We highly recommend that you name the columns in your design file. If you
+don’t, then the default columns will be used. These are;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="n">beta</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="n">progress</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="n">progress</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="n">progress</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These defaults came from the original C version of MetaWards, and are
+retained so we keep backwards compatibility with the original
+input files.</p>
+</div>
+</div>
+<div class="section" id="column-data">
+<h2>Column data<a class="headerlink" href="#column-data" title="Permalink to this headline">¶</a></h2>
+<p>Values in each column will be interpreted using <a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>.
+The code will try to guess the most appropriate data type, moving through
+simple numbers,
+then isoformat dates, then number expressions (including random number),
+then booleans, before returning the data as a string.</p>
+<p>You can force the type of the data using numpy-style quote characters. The
+type characters recognised are;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">d&quot;value&quot;</span></code> : forces <code class="docutils literal notranslate"><span class="pre">value</span></code> to be interpreted as a date (isoformat or
+fuzzy date via the <a class="reference external" href="https://dateparser.readthedocs.io/en/latest/">Python dateparser module</a>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f&quot;value&quot;</span></code> : forces <code class="docutils literal notranslate"><span class="pre">value</span></code> to be interpreted as a number (floating point
+or integer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i&quot;value&quot;</span></code> : forces <code class="docutils literal notranslate"><span class="pre">value</span></code> to be interpreted as an integer (whole number)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b&quot;value&quot;</span></code> : forces <code class="docutils literal notranslate"><span class="pre">value</span></code> to be interpreted as a boolean (true or
+false) value. The code recognises <code class="docutils literal notranslate"><span class="pre">true/false</span></code>, <code class="docutils literal notranslate"><span class="pre">on/off</span></code> and <code class="docutils literal notranslate"><span class="pre">yes/no</span></code>,
+as well as <code class="docutils literal notranslate"><span class="pre">1/0</span></code> (all case-insensitive).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s&quot;value&quot;</span></code> : forces <code class="docutils literal notranslate"><span class="pre">values</span></code> to be a string. Use this if you really want
+a string or want to interpret the value yourself in your plugin code.</p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>  <span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="n">beta</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+  <span class="mf">0.5</span>      <span class="mf">0.5</span>      <span class="mf">0.5</span>
+  <span class="mf">0.6</span>      <span class="mf">0.7</span>      <span class="mf">0.8</span>
+</pre></div>
+</div>
+<p>Two sets of variables, setting <code class="docutils literal notranslate"><span class="pre">beta[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">beta[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">beta[3]</span></code> to
+<code class="docutils literal notranslate"><span class="pre">0.5</span></code> in the first set, and <code class="docutils literal notranslate"><span class="pre">0.6</span></code>, <code class="docutils literal notranslate"><span class="pre">0.7</span></code> and <code class="docutils literal notranslate"><span class="pre">0.8</span></code> in the second
+set.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="s2">&quot;I1&quot;</span><span class="p">]</span>  <span class="n">beta</span><span class="p">[</span><span class="s2">&quot;I2&quot;</span><span class="p">]</span>  <span class="n">beta</span><span class="p">[</span><span class="s2">&quot;I3&quot;</span><span class="p">]</span>
+<span class="c1"># initial baseline</span>
+  <span class="mf">0.5</span>        <span class="mf">0.5</span>        <span class="mf">0.5</span>
+
+<span class="c1"># increasing infectivitiy</span>
+  <span class="mf">0.6</span>        <span class="mf">0.7</span>        <span class="mf">0.8</span>
+</pre></div>
+</div>
+<p>Same, except using the names of the disease stages and adding comments
+and extra whitespace to aid legibility.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">lockdown_start</span>    <span class="o">.</span><span class="n">scale_rate</span>   <span class="n">repeats</span>   <span class="n">output</span>
+ <span class="n">d</span><span class="s2">&quot;March 15 2020&quot;</span>      <span class="mf">0.2</span>         <span class="mi">5</span>       <span class="n">lockdown_march</span>
+ <span class="n">d</span><span class="s2">&quot;April 1 2020&quot;</span>       <span class="mf">0.1</span>         <span class="mi">3</span>       <span class="n">lockdown_april</span>
+</pre></div>
+</div>
+<p>Setting the user parameters <code class="docutils literal notranslate"><span class="pre">lockdown_start</span></code> and <code class="docutils literal notranslate"><span class="pre">scale_rate</span></code>
+to either March 15th 2020 / 0.2 or April 1st 2020 / 0.1. Asking for
+5 repeats of the March 15 data, outputting the results to directories
+called <code class="docutils literal notranslate"><span class="pre">lockdown_march</span></code>, and 3 repeats of the April lockdown,
+outputting the data to <code class="docutils literal notranslate"><span class="pre">lockdown_april</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first repeats will be written to <code class="docutils literal notranslate"><span class="pre">lockdown_march</span></code> and
+<code class="docutils literal notranslate"><span class="pre">lockdown_april</span></code>, while the remainder will be written to
+numbered directories, e.g. <code class="docutils literal notranslate"><span class="pre">lockdown_marchx002</span></code> etc.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">beta</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">progress</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">progress</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">progress</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+ <span class="mf">0.95</span><span class="p">,</span>   <span class="mf">0.95</span><span class="p">,</span>     <span class="mf">0.19</span><span class="p">,</span>        <span class="mf">0.91</span><span class="p">,</span>         <span class="mf">0.91</span>
+ <span class="mf">0.90</span><span class="p">,</span>   <span class="mf">0.93</span><span class="p">,</span>     <span class="mf">0.18</span><span class="p">,</span>        <span class="mf">0.92</span><span class="p">,</span>         <span class="mf">0.90</span>
+</pre></div>
+</div>
+<p>Named columns, using comma separators, and adding extra spaces for
+improved legibility.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="userinput.html" class="btn btn-neutral float-right" title="User input files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="extraseeds.html" class="btn btn-neutral float-left" title="Extra seeds files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

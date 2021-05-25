@@ -1,0 +1,6 @@
+﻿metawards.utils.seed\_ran\_binomial
+===================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: seed_ran_binomial

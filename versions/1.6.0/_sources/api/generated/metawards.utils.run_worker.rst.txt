@@ -1,0 +1,6 @@
+﻿metawards.utils.run\_worker
+===========================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: run_worker

@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards._workspace &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards._workspace</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards._workspace</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span> <span class="k">as</span> <span class="n">_dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span> <span class="k">as</span> <span class="n">_Dict</span>
+
+<span class="kn">from</span> <span class="nn">._network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">from</span> <span class="nn">._networks</span> <span class="kn">import</span> <span class="n">Networks</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Workspace&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="Workspace"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Workspace">[docs]</a><span class="nd">@_dataclass</span>
+<span class="k">class</span> <span class="nc">Workspace</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This class provides a workspace for the running calculation.</span>
+<span class="sd">       This pre-allocates all of the memory into arrays, which</span>
+<span class="sd">       can then be used via cython memory views</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#: Number of disease classes (stages)</span>
+    <span class="n">n_inf_classes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: Number of wards (nodes)</span>
+    <span class="n">nnodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1">#: Size of population in each disease stage for work infections</span>
+    <span class="n">inf_tot</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">#: Size of population in each disease stage for play infections</span>
+    <span class="n">pinf_tot</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="c1">#: Number of wards with at least one individual in this disease stage</span>
+    <span class="n">n_inf_wards</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: Size of population in each disease stage in each ward</span>
+    <span class="n">ward_inf_tot</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: Total number of infections in each ward over the last day</span>
+    <span class="c1">#: This is also equal to the prevalence</span>
+    <span class="n">total_inf_ward</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: Number of new infections in each ward over the last day</span>
+    <span class="n">total_new_inf_ward</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The incidence of the infection (sum of infections up to</span>
+    <span class="c1">#: disease_class == I_start)</span>
+    <span class="n">incidence</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The size of the S population in each ward</span>
+    <span class="n">S_in_wards</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The size of the E population in each ward</span>
+    <span class="n">E_in_wards</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The size of the I population in each ward</span>
+    <span class="n">I_in_wards</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The size of the R population in each ward</span>
+    <span class="n">R_in_wards</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The sizes of the X populations in each ward - this is</span>
+    <span class="c1">#: for named disease stages that don&#39;t fit into S, E, I or R</span>
+    <span class="n">X_in_wards</span><span class="p">:</span> <span class="n">_Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1">#: The sub-workspaces used for the subnets of a</span>
+    <span class="c1">#: multi-demographic Networks (list[Workspace])</span>
+    <span class="n">subspaces</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Workspace.build"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Workspace.build">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">Network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Create the workspace needed to run the model for the</span>
+<span class="sd">           passed network</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span>
+
+        <span class="n">workspace</span> <span class="o">=</span> <span class="n">Workspace</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">Network</span><span class="p">):</span>
+            <span class="n">disease</span> <span class="o">=</span> <span class="n">params</span><span class="o">.</span><span class="n">disease_params</span>
+            <span class="n">n_inf_classes</span> <span class="o">=</span> <span class="n">disease</span><span class="o">.</span><span class="n">N_INF_CLASSES</span><span class="p">()</span>
+
+            <span class="n">workspace</span><span class="o">.</span><span class="n">n_inf_classes</span> <span class="o">=</span> <span class="n">n_inf_classes</span>
+            <span class="n">workspace</span><span class="o">.</span><span class="n">nnodes</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span>
+
+            <span class="n">size</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">nnodes</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># 1-indexed</span>
+
+            <span class="kn">from</span> <span class="nn">.utils._array</span> <span class="kn">import</span> <span class="n">create_int_array</span>
+
+            <span class="n">workspace</span><span class="o">.</span><span class="n">inf_tot</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">n_inf_classes</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">workspace</span><span class="o">.</span><span class="n">pinf_tot</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">n_inf_classes</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">workspace</span><span class="o">.</span><span class="n">n_inf_wards</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">n_inf_classes</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">workspace</span><span class="o">.</span><span class="n">total_inf_ward</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">workspace</span><span class="o">.</span><span class="n">total_new_inf_ward</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">workspace</span><span class="o">.</span><span class="n">incidence</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">workspace</span><span class="o">.</span><span class="n">S_in_wards</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;E&quot;</span> <span class="ow">in</span> <span class="n">disease</span><span class="o">.</span><span class="n">mapping</span><span class="p">:</span>
+                <span class="n">workspace</span><span class="o">.</span><span class="n">E_in_wards</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;I&quot;</span> <span class="ow">in</span> <span class="n">disease</span><span class="o">.</span><span class="n">mapping</span><span class="p">:</span>
+                <span class="n">workspace</span><span class="o">.</span><span class="n">I_in_wards</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="s2">&quot;R&quot;</span> <span class="ow">in</span> <span class="n">disease</span><span class="o">.</span><span class="n">mapping</span><span class="p">:</span>
+                <span class="n">workspace</span><span class="o">.</span><span class="n">R_in_wards</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">mapping</span> <span class="ow">in</span> <span class="n">disease</span><span class="o">.</span><span class="n">mapping</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">mapping</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">workspace</span><span class="o">.</span><span class="n">X_in_wards</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">workspace</span><span class="o">.</span><span class="n">X_in_wards</span> <span class="o">=</span> <span class="p">{}</span>
+
+                    <span class="k">if</span> <span class="n">mapping</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">workspace</span><span class="o">.</span><span class="n">X_in_wards</span><span class="p">:</span>
+                        <span class="n">workspace</span><span class="o">.</span><span class="n">X_in_wards</span><span class="p">[</span><span class="n">mapping</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span>
+                            <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">workspace</span><span class="o">.</span><span class="n">ward_inf_tot</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_inf_classes</span><span class="p">):</span>
+                <span class="n">workspace</span><span class="o">.</span><span class="n">ward_inf_tot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">create_int_array</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">):</span>
+            <span class="n">workspace</span> <span class="o">=</span> <span class="n">Workspace</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">overall</span><span class="p">)</span>
+
+            <span class="n">subspaces</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
+                <span class="n">subspaces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Workspace</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">subnet</span><span class="p">))</span>
+
+            <span class="n">workspace</span><span class="o">.</span><span class="n">subspaces</span> <span class="o">=</span> <span class="n">subspaces</span>
+
+        <span class="k">return</span> <span class="n">workspace</span></div>
+
+<div class="viewcode-block" id="Workspace.zero_all"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Workspace.zero_all">[docs]</a>    <span class="k">def</span> <span class="nf">zero_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zero_subspaces</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reset the values of all of the arrays to zero.</span>
+<span class="sd">           By default we zero the subspace networks</span>
+<span class="sd">           (change this by setting zero_subspaces to False)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.utils._zero_workspace</span> <span class="kn">import</span> <span class="n">zero_workspace</span>
+        <span class="n">zero_workspace</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">zero_subspaces</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">subspaces</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">subspace</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subspaces</span><span class="p">:</span>
+                <span class="n">subspace</span><span class="o">.</span><span class="n">zero_all</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

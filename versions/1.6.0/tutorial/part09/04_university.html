@@ -1,0 +1,646 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Modelling population movements &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Holidays and quarantine" href="05_holidays.html" />
+    <link rel="prev" title="Fading immunity" href="03_fading_immunity.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_move_ward.html">Creating intricate moves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_vaccinate.html">Modelling vaccination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_fading_immunity.html">Fading immunity</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Modelling population movements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ward-0-the-null-ward">Ward 0, the null ward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moving-to-university">Moving to university</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#go-null">go_null</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#go-university">go_university</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#performing-the-run">Performing the run</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05_holidays.html">Holidays and quarantine</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+        
+          <li><a href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a> &raquo;</li>
+        
+      <li>Modelling population movements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="05_holidays.html" class="btn btn-neutral float-right" title="Holidays and quarantine" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="03_fading_immunity.html" class="btn btn-neutral float-left" title="Fading immunity" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modelling-population-movements">
+<h1>Modelling population movements<a class="headerlink" href="#modelling-population-movements" title="Permalink to this headline">¶</a></h1>
+<p>We can use <a class="reference internal" href="../../api/generated/metawards.movers.go_ward.html#metawards.movers.go_ward" title="metawards.movers.go_ward"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_ward()</span></code></a> to model population movements.
+There are many mass population movements that occur through the year,
+e.g. people travelling to holiday destinations in the summer, people
+travelling home to family at Christmas, and students going to university
+in the autumn. Each of these have the potential to spread a local
+disease outbreak and seed it in many new locations.</p>
+<div class="section" id="ward-0-the-null-ward">
+<h2>Ward 0, the null ward<a class="headerlink" href="#ward-0-the-null-ward" title="Permalink to this headline">¶</a></h2>
+<p>To perform this move, we first need to gather together all of the students,
+into a single “scratch” or “null” ward, from where they can then
+be dispersed to the various university wards. We want to do this because
+it is much more efficient than trying to sample the double loop of
+from each ward to each university ward.</p>
+<p>To help with this, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> provides a single null (or scratch) ward,
+which is not used in any calculation. This is ward 0. It is at index 0
+in the internal arrays used by <code class="docutils literal notranslate"><span class="pre">metawards</span></code>. You can use this ward
+as a temporary space to hold individuals during the day. However, you
+must ensure that there are no individuals left in this ward at the
+end of the day, when <a class="reference internal" href="../../api/generated/metawards.extractors.output_core.html#metawards.extractors.output_core" title="metawards.extractors.output_core"><code class="xref py py-func docutils literal notranslate"><span class="pre">output_core()</span></code></a>
+is called.</p>
+</div>
+<div class="section" id="moving-to-university">
+<h2>Moving to university<a class="headerlink" href="#moving-to-university" title="Permalink to this headline">¶</a></h2>
+<p>We will model the first day of university, when (in this ideal model),
+all students will travel from their home ward to live in their
+university ward. Students will be modelled as workers in the university
+ward, who commute to the university ward each day.</p>
+<p>Create a mover called <code class="docutils literal notranslate"><span class="pre">move_university.py</span></code> and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">WardID</span>
+<span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span><span class="p">,</span> <span class="n">MoveRecord</span><span class="p">,</span> <span class="n">go_ward</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span><span class="p">,</span> <span class="n">ran_int</span>
+
+
+<span class="k">def</span> <span class="nf">move_university</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">go_null</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">to_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Moving students to the null ward...&quot;</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+            <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of students: </span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">ninfected</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">suscept</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of infected students: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">ninfected</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">go_university</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">rngs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># get the first random number generator from the</span>
+        <span class="c1"># list of thread-local generators</span>
+        <span class="n">rng</span> <span class="o">=</span> <span class="n">rngs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># how many wards are there?</span>
+        <span class="n">nwards</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span>
+
+        <span class="c1"># generate a list of 50 random wards that</span>
+        <span class="c1"># represent 50 university towns</span>
+        <span class="n">uni_wards</span> <span class="o">=</span> <span class="p">[</span><span class="n">ran_int</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nwards</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
+
+        <span class="k">for</span> <span class="n">uni_ward</span> <span class="ow">in</span> <span class="n">uni_wards</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+            <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                                <span class="n">to_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="n">uni_ward</span><span class="p">,</span> <span class="n">uni_ward</span><span class="p">),</span>
+                                <span class="n">fraction</span><span class="o">=</span><span class="mf">0.075</span><span class="p">)</span>
+            <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                    <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+                <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+            <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2"> went to university ward </span><span class="si">{</span><span class="n">uni_ward</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># move the remainder of the students to the last university</span>
+        <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                            <span class="n">to_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+            <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2"> went to university ward </span><span class="si">{</span><span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">go_null</span><span class="p">,</span> <span class="n">go_university</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>There is a lot to discuss with this code, so we will explore each bit
+separately.</p>
+<p>This code defines a mover (<code class="docutils literal notranslate"><span class="pre">move_university</span></code>), which, on the 20th
+day of the outbreak, returns two go functions (<code class="docutils literal notranslate"><span class="pre">go_null</span></code> and
+<code class="docutils literal notranslate"><span class="pre">go_university</span></code>). This is controlled by the code at the end of the
+function;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">go_null</span><span class="p">,</span> <span class="n">go_university</span><span class="p">]</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="go-null">
+<h2>go_null<a class="headerlink" href="#go-null" title="Permalink to this headline">¶</a></h2>
+<p>This is the <code class="docutils literal notranslate"><span class="pre">go_null</span></code> function again;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">go_null</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">to_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.02</span><span class="p">)</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Moving students to the null ward...&quot;</span><span class="p">)</span>
+    <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+        <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of students: </span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">ninfected</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">suscept</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of infected students: </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">ninfected</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This creates a <a class="reference internal" href="../../api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a> that moves
+2% of individuals from every ward and disease stage to become workers
+in the null ward.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Workers in the null ward have a <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.WardID" title="metawards.WardID"><code class="xref py py-class docutils literal notranslate"><span class="pre">WardID</span></code></a> of
+<code class="docutils literal notranslate"><span class="pre">WardID(0,0)</span></code>, while players have <code class="docutils literal notranslate"><span class="pre">WardID(0)</span></code>, or, simply <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</div>
+<p>We use a <a class="reference internal" href="../../api/generated/metawards.movers.MoveRecord.html#metawards.movers.MoveRecord" title="metawards.movers.MoveRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveRecord</span></code></a> to record the moves,
+and count up the total number of individuals moved, which is the
+total number of students.</p>
+<p>The total number of workers in a ward is held in
+<a class="reference internal" href="../../api/generated/metawards.Links.html#metawards.Links.weight" title="metawards.Links.weight"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.links.weight</span></code></a>. The current number
+of susceptible workers in a ward is held in
+<a class="reference internal" href="../../api/generated/metawards.Links.html#metawards.Links.suscept" title="metawards.Links.suscept"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.links.suscept</span></code></a>. The null ward
+is at index 0, and so;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ninfected</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">network</span><span class="o">.</span><span class="n">links</span><span class="o">.</span><span class="n">suscept</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>gives the number of infected workers in the null ward.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similarly, <a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.save_play_suscept" title="metawards.Nodes.save_play_suscept"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.save_play_suscept</span></code></a>
+is the number of players in a ward, while
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.play_suscept" title="metawards.Nodes.play_suscept"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.play_suscept</span></code></a> is the
+number of susceptible players in a ward. The difference between these
+is the number of infected individuals in a ward.</p>
+</div>
+</div>
+<div class="section" id="go-university">
+<h2>go_university<a class="headerlink" href="#go-university" title="Permalink to this headline">¶</a></h2>
+<p>This is the <code class="docutils literal notranslate"><span class="pre">go_university</span></code> function again;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">go_university</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">rngs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># get the first random number generator from the</span>
+    <span class="c1"># list of thread-local generators</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">rngs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># how many wards are there?</span>
+    <span class="n">nwards</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span>
+
+    <span class="c1"># generate a list of 50 random wards that</span>
+    <span class="c1"># represent 50 university towns</span>
+    <span class="n">uni_wards</span> <span class="o">=</span> <span class="p">[</span><span class="n">ran_int</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nwards</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
+
+    <span class="k">for</span> <span class="n">uni_ward</span> <span class="ow">in</span> <span class="n">uni_wards</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">to_ward</span><span class="o">=</span><span class="n">uni_ward</span><span class="p">,</span>
+                            <span class="n">fraction</span><span class="o">=</span><span class="mf">0.075</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+            <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2"> went to university ward </span><span class="si">{</span><span class="n">uni_ward</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># move the remainder of the students to the last university</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">to_ward</span><span class="o">=</span><span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+            <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+        <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2"> went to university ward </span><span class="si">{</span><span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Because this is an illustrative model, we are not using any real world
+data. As such, we first need to randomly generate the IDs of 50 wards
+that will be designated as the locations of the 50 universities in this
+model.</p>
+<p>To do this, we use <code class="docutils literal notranslate"><span class="pre">rngs</span></code>, which is a list of random number generators,
+one for each running thread of <code class="docutils literal notranslate"><span class="pre">metawards</span></code>. As this is a single-threaded
+function, we will take the first random number generator, and
+assign that to the variable <code class="docutils literal notranslate"><span class="pre">rng</span></code>, via,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">rngs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The 50 random ward IDs are 50 integers randomly picked between 1 and
+the number of wards in the network, using the <a class="reference internal" href="../../api/generated/metawards.utils.ran_int.html#metawards.utils.ran_int" title="metawards.utils.ran_int"><code class="xref py py-func docutils literal notranslate"><span class="pre">ran_int()</span></code></a>
+function;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># how many wards are there?</span>
+<span class="n">nwards</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span>
+
+<span class="c1"># generate a list of 50 random wards that</span>
+<span class="c1"># represent 50 university towns</span>
+<span class="n">uni_wards</span> <span class="o">=</span> <span class="p">[</span><span class="n">ran_int</span><span class="p">(</span><span class="n">rng</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nwards</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we haven’t checked for duplicated random ward IDs because
+this is just meant to be a simple, illustrative model.</p>
+</div>
+<p>Next, we loop over the first 49 of those random wards, and create
+a <a class="reference internal" href="../../api/generated/metawards.movers.MoveGenerator.html#metawards.movers.MoveGenerator" title="metawards.movers.MoveGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveGenerator</span></code></a> that moves 7.5% of the
+students (on average) from being workers in the null ward
+(<code class="docutils literal notranslate"><span class="pre">WardID(0,0)</span></code>), to being workers in the university ward
+(<code class="docutils literal notranslate"><span class="pre">WardID(uni_ward,</span> <span class="pre">uni_ward)</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">uni_ward</span> <span class="ow">in</span> <span class="n">uni_wards</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                        <span class="n">to_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="n">uni_ward</span><span class="p">,</span> <span class="n">uni_ward</span><span class="p">),</span>
+                        <span class="n">fraction</span><span class="o">=</span><span class="mf">0.075</span><span class="p">)</span>
+    <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+            <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+        <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2"> went to university ward </span><span class="si">{</span><span class="n">uni_ward</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, we move the remaining students from the null ward to the 50th
+university;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># move the remainder of the students to the last university</span>
+<span class="n">record</span> <span class="o">=</span> <span class="n">MoveRecord</span><span class="p">()</span>
+<span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_ward</span><span class="o">=</span><span class="n">WardID</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">to_ward</span><span class="o">=</span><span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+        <span class="n">rngs</span><span class="o">=</span><span class="n">rngs</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">nstudents</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">record</span><span class="p">:</span>
+    <span class="n">nstudents</span> <span class="o">+=</span> <span class="n">r</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nstudents</span><span class="si">}</span><span class="s2"> went to university ward </span><span class="si">{</span><span class="n">uni_wards</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>50 universities should have 2% of the students each, so why did we use 7.5%?
+The reason is because <code class="docutils literal notranslate"><span class="pre">fraction</span></code> is used with a random binomial distribution
+to sample a random number of individuals with that fraction. This
+underestimates the number as we draw more students. Thus the number
+of students sampled reduces as we loop through the 49 universities,
+to the point that far too many are remaining to go into the 50th university.
+Through trial and error, we found that 7.5% gave a reasonable number remaining
+for the 50th university.</p>
+</div>
+<div class="section" id="performing-the-run">
+<h2>Performing the run<a class="headerlink" href="#performing-the-run" title="Permalink to this headline">¶</a></h2>
+<p>We will run this model using <code class="docutils literal notranslate"><span class="pre">lurgy5.json</span></code> developed in the last chapter.
+We can run our mover using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy5.json -m 2011Data --mover move_university.py -a ExtraSeedsLondon.dat --nsteps <span class="m">40</span>
+</pre></div>
+</div>
+<p>We are using the 2011Data England and Wales model, and have seeded five infections
+in London. We’ve limited the run to 40 steps as we are only interested in the
+change in the outbreak caused by the movement of students to universities
+which, in this model, occurs on day 20.</p>
+<p>You can plot the results using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+</pre></div>
+</div>
+<p>The resulting graph shows that the movement to university had no
+perceptible impact on the outbreak, e.g.</p>
+<img alt="Outbreak during which students went to university" src="../../_images/tutorial_9_4.jpg" />
+<p>This is unsurprising when you look at the number of students going to
+university, as printed in the output. For example, I got;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Moving</span> <span class="n">students</span> <span class="n">to</span> <span class="n">the</span> <span class="n">null</span> <span class="n">ward</span><span class="o">...</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">students</span><span class="p">:</span> <span class="mi">1122060</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">infected</span> <span class="n">students</span><span class="p">:</span> <span class="mi">25</span>
+<span class="mi">84257</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">8253</span>
+<span class="mi">77500</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">7782</span>
+<span class="mi">72120</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5122</span>
+<span class="mi">66461</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2257</span>
+<span class="mi">61307</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">7124</span>
+<span class="mi">56873</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2241</span>
+<span class="mi">53190</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">1776</span>
+<span class="mi">49065</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4896</span>
+<span class="mi">44821</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">7752</span>
+<span class="mi">42100</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4987</span>
+<span class="mi">38481</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6981</span>
+<span class="mi">35484</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4100</span>
+<span class="mi">32644</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5628</span>
+<span class="mi">30619</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6048</span>
+<span class="mi">28363</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4480</span>
+<span class="mi">26001</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5377</span>
+<span class="mi">24077</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">1395</span>
+<span class="mi">22415</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">3738</span>
+<span class="mi">20795</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">3999</span>
+<span class="mi">19507</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5433</span>
+<span class="mi">17863</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">8282</span>
+<span class="mi">16316</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4203</span>
+<span class="mi">15206</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6343</span>
+<span class="mi">13909</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5494</span>
+<span class="mi">12823</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6732</span>
+<span class="mi">12102</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">1645</span>
+<span class="mi">11238</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">8275</span>
+<span class="mi">10269</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4975</span>
+<span class="mi">9476</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">8339</span>
+<span class="mi">8869</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5837</span>
+<span class="mi">7943</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2057</span>
+<span class="mi">7668</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4077</span>
+<span class="mi">6915</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">1506</span>
+<span class="mi">6469</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">1405</span>
+<span class="mi">5863</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2197</span>
+<span class="mi">5563</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6986</span>
+<span class="mi">5137</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6863</span>
+<span class="mi">4851</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">6086</span>
+<span class="mi">4229</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2494</span>
+<span class="mi">3999</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">4986</span>
+<span class="mi">3747</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">7534</span>
+<span class="mi">3447</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">1583</span>
+<span class="mi">3108</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2696</span>
+<span class="mi">2966</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2020</span>
+<span class="mi">2597</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">398</span>
+<span class="mi">2473</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2202</span>
+<span class="mi">2329</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">5530</span>
+<span class="mi">2089</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">8114</span>
+<span class="mi">1978</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">3328</span>
+<span class="mi">24538</span> <span class="n">went</span> <span class="n">to</span> <span class="n">university</span> <span class="n">ward</span> <span class="mi">2293</span>
+</pre></div>
+</div>
+<p>Of the 1.1M students who moved, only 25 were infected. These 25 were
+dispersed over 50 wards, and so had little impact on an outbreak
+that was already spreading rapidly due to normal movements.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="05_holidays.html" class="btn btn-neutral float-right" title="Holidays and quarantine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03_fading_immunity.html" class="btn btn-neutral float-left" title="Fading immunity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿metawards.Node
+==============
+
+.. currentmodule:: metawards
+
+.. autoclass:: Node
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Node.__delattr__
+      ~Node.__dir__
+      ~Node.__eq__
+      ~Node.__format__
+      ~Node.__ge__
+      ~Node.__getattribute__
+      ~Node.__gt__
+      ~Node.__init__
+      ~Node.__init_subclass__
+      ~Node.__le__
+      ~Node.__lt__
+      ~Node.__ne__
+      ~Node.__new__
+      ~Node.__reduce__
+      ~Node.__reduce_ex__
+      ~Node.__repr__
+      ~Node.__setattr__
+      ~Node.__sizeof__
+      ~Node.__str__
+      ~Node.__subclasshook__
+      ~Node.get_custom
+      ~Node.set_custom
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Node.__annotations__
+      ~Node.__dataclass_fields__
+      ~Node.__dataclass_params__
+      ~Node.__dict__
+      ~Node.__doc__
+      ~Node.__hash__
+      ~Node.__module__
+      ~Node.__weakref__
+      ~Node._custom_params
+      ~Node.begin_p
+      ~Node.begin_to
+      ~Node.bg_foi
+      ~Node.cutoff
+      ~Node.day_foi
+      ~Node.denominator_d
+      ~Node.denominator_n
+      ~Node.denominator_p
+      ~Node.denominator_pd
+      ~Node.end_p
+      ~Node.end_to
+      ~Node.label
+      ~Node.night_foi
+      ~Node.play_suscept
+      ~Node.save_play_suscept
+      ~Node.scale_uv
+      ~Node.self_p
+      ~Node.self_w
+      ~Node.weekend_foi
+      ~Node.x
+      ~Node.y
+   
+   

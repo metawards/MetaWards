@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>metawards.movers._go_isolate &mdash; MetaWards Documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/logo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MetaWards</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../metawards.html">metawards</a> &raquo;</li>
+        
+      <li>metawards.movers._go_isolate</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for metawards.movers._go_isolate</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
+
+<span class="kn">from</span> <span class="nn">.._network</span> <span class="kn">import</span> <span class="n">Network</span>
+<span class="kn">from</span> <span class="nn">.._networks</span> <span class="kn">import</span> <span class="n">Networks</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;go_isolate&quot;</span><span class="p">]</span>
+
+<span class="n">_str_or_int</span> <span class="o">=</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+<span class="n">_list_str_or_int</span> <span class="o">=</span> <span class="n">_List</span><span class="p">[</span><span class="n">_str_or_int</span><span class="p">]</span>
+<span class="n">_strs_or_ints</span> <span class="o">=</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_str_or_int</span><span class="p">,</span> <span class="n">_list_str_or_int</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="go_isolate"><a class="viewcode-back" href="../../../api/generated/metawards.movers.go_isolate.html#metawards.movers.go_isolate">[docs]</a><span class="k">def</span> <span class="nf">go_isolate</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">Network</span><span class="p">,</span> <span class="n">Networks</span><span class="p">],</span>
+               <span class="n">go_from</span><span class="p">:</span> <span class="n">_strs_or_ints</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">from_demographic</span><span class="p">:</span> <span class="n">_strs_or_ints</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">go_to</span><span class="p">:</span> <span class="n">_strs_or_ints</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">to_demographic</span><span class="p">:</span> <span class="n">_strs_or_ints</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">self_isolate_stage</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+               <span class="n">fraction</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="n">_List</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+               <span class="n">number</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This go function will move individuals from the &quot;from&quot;</span>
+<span class="sd">       demographic(s) to the &quot;to&quot; demographic if they show any</span>
+<span class="sd">       signs of infection (the disease stage is greater or equal</span>
+<span class="sd">       to &#39;self_isolate_stage&#39;. This can move</span>
+<span class="sd">       a subset of individuals if &#39;fraction&#39; is less than 1, e.g.</span>
+<span class="sd">       0.5 would move 50% of individuals (chosen using</span>
+<span class="sd">       a random binomial distribution)</span>
+
+<span class="sd">       This can move a subset of individuals if &#39;fraction&#39; is less than 1,</span>
+<span class="sd">       e.g. 0.5 would move 50% of individuals (chosen using</span>
+<span class="sd">       a random binomial distribution). You can also specify the</span>
+<span class="sd">       maximum number of individuals to move per ward by</span>
+<span class="sd">       specifying the &#39;number&#39; parameters</span>
+
+<span class="sd">       Parameters</span>
+<span class="sd">       ----------</span>
+<span class="sd">       go_from: int, str or list of int / str</span>
+<span class="sd">         The ID(s) of the demographic(s) to move from. This is the old</span>
+<span class="sd">         parameter name used to maintain backwards compatibility.</span>
+<span class="sd">         Prefer to use from_demo if you can</span>
+<span class="sd">       go_to: int, str or list of int / str</span>
+<span class="sd">         The ID(s) of the demographic(s) to move to. This is the old</span>
+<span class="sd">         parameter name used to maintain backwards compatibility.</span>
+<span class="sd">         Prefer to use to_demo if you can</span>
+<span class="sd">       from_demographic: int, str or list of int / str</span>
+<span class="sd">         The ID(s) of the demographic(s) to move from. This can be either</span>
+<span class="sd">         a single demographic (identified by an integer ID or string),</span>
+<span class="sd">         a list of demographics, or, if None, then all demographics.</span>
+<span class="sd">       to_demographic: int, str or list of int / str</span>
+<span class="sd">         The ID(s) of the demographic to move to. This can be either</span>
+<span class="sd">         a single demographic (identified by an integer ID or string),</span>
+<span class="sd">         a list of demographics, or, if None, then all demographics.</span>
+<span class="sd">         If this is not set, then it is equal to &quot;from_demo&quot;</span>
+<span class="sd">       self_isolate_stage: int or List[int]</span>
+<span class="sd">         The stage of infection an individual must be at before they</span>
+<span class="sd">         are moved into this demographic. If a list is passed then</span>
+<span class="sd">         this can be multiple stages, e.g. [2, 3] will move at</span>
+<span class="sd">         stages 2 and 3. Multiple stages are needed if only</span>
+<span class="sd">         a fraction of individuals move.</span>
+<span class="sd">       fraction: float or List[float]</span>
+<span class="sd">         The fraction (percentage) of individuals who are moved from</span>
+<span class="sd">         this stage into isolation. If this is a single value then</span>
+<span class="sd">         the same fraction applies to all self_isolation_stages. Otherwise,</span>
+<span class="sd">         the fraction for self_isolate_stage[i] is fraction[i]</span>
+<span class="sd">       number: int</span>
+<span class="sd">         The maximum number of individuals in each ward / ward-link to move.</span>
+<span class="sd">         The fraction is taken from min(number, number_in_ward). By</span>
+<span class="sd">         default all individuals in a ward / ward-link are sampled.</span>
+<span class="sd">       **kwargs:</span>
+<span class="sd">         This calls go_ward, so any options that are acceptible to go_ward</span>
+<span class="sd">         (with the exception of &#39;generator&#39;) can be passed here too</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">from</span> <span class="nn">._movegenerator</span> <span class="kn">import</span> <span class="n">MoveGenerator</span>
+    <span class="kn">from</span> <span class="nn">._go_ward</span> <span class="kn">import</span> <span class="n">go_ward</span>
+
+    <span class="k">if</span> <span class="n">from_demographic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">from_demographic</span> <span class="o">=</span> <span class="n">go_from</span>
+
+    <span class="k">if</span> <span class="n">to_demographic</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">to_demographic</span> <span class="o">=</span> <span class="n">go_to</span>
+
+    <span class="c1"># first get the base moves...</span>
+    <span class="n">generator</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="n">from_demographic</span><span class="p">,</span>
+                              <span class="n">to_demographic</span><span class="o">=</span><span class="n">to_demographic</span><span class="p">)</span>
+
+    <span class="c1"># find the largest index of the disease stage</span>
+    <span class="n">N_INF_CLASSES</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">stage</span> <span class="ow">in</span> <span class="n">generator</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">network</span><span class="p">):</span>
+        <span class="n">N_INF_CLASSES</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">N_INF_CLASSES</span><span class="p">,</span> <span class="n">stage</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">stage</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">self_isolate_stage</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">stages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">stage</span><span class="p">)</span> <span class="k">for</span> <span class="n">stage</span> <span class="ow">in</span> <span class="n">self_isolate_stage</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">stages</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">self_isolate_stage</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fraction</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">fractions</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">frac</span><span class="p">)</span> <span class="k">for</span> <span class="n">frac</span> <span class="ow">in</span> <span class="n">fraction</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fractions</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">fraction</span><span class="p">)]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">stages</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">fraction</span> <span class="ow">in</span> <span class="n">fractions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fraction</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">fraction</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The move fractions </span><span class="si">{</span><span class="n">fractions</span><span class="si">}</span><span class="s2"> should all be 0 to 1&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">stage</span> <span class="ow">in</span> <span class="n">stages</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stage</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">stage</span> <span class="o">&gt;=</span> <span class="n">N_INF_CLASSES</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;The stage(s) of self-isolation </span><span class="si">{</span><span class="n">stages</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;is invalid for a disease with </span><span class="si">{</span><span class="n">N_INF_CLASSES</span><span class="si">}</span><span class="s2"> stages&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stages</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">fractions</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;The number of self isolation stages </span><span class="si">{</span><span class="n">stages</span><span class="si">}</span><span class="s2"> must equal &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;the number of fractions </span><span class="si">{</span><span class="n">fractions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">stage</span><span class="p">,</span> <span class="n">fraction</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">stages</span><span class="p">,</span> <span class="n">fractions</span><span class="p">):</span>
+        <span class="n">from_stage</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="n">N_INF_CLASSES</span><span class="p">))</span>
+        <span class="n">to_stage</span> <span class="o">=</span> <span class="n">from_stage</span>
+
+        <span class="n">generator</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="n">from_demographic</span><span class="p">,</span>
+                                  <span class="n">to_demographic</span><span class="o">=</span><span class="n">to_demographic</span><span class="p">,</span>
+                                  <span class="n">from_stage</span><span class="o">=</span><span class="n">from_stage</span><span class="p">,</span>
+                                  <span class="n">to_stage</span><span class="o">=</span><span class="n">to_stage</span><span class="p">,</span>
+                                  <span class="n">fraction</span><span class="o">=</span><span class="n">fraction</span><span class="p">)</span>
+
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">generator</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">
+        Last updated on May 25, 2021.
+      </span>
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
