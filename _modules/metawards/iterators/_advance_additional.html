@@ -302,7 +302,7 @@
 
         <span class="n">words</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="c1"># yes, the original files really do mix tabe and spaces... need</span>
+        <span class="c1"># yes, the original files really do mix tabs and spaces... need</span>
         <span class="c1"># to extract these separately!</span>
         <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
             <span class="n">rest_commented</span> <span class="o">=</span> <span class="kc">False</span>
@@ -521,37 +521,65 @@
 
                 <span class="n">seed_network</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">subnets</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span>
                 <span class="n">seed_wards</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">nodes</span>
+                <span class="n">seed_links</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">links</span>
                 <span class="n">seed_infections</span> <span class="o">=</span> <span class="n">infections</span><span class="o">.</span><span class="n">subinfs</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span><span class="o">.</span><span class="n">play</span>
+                <span class="n">seed_work_infections</span> <span class="o">=</span> <span class="n">infections</span><span class="o">.</span><span class="n">subinfs</span><span class="p">[</span><span class="n">demographic</span><span class="p">]</span><span class="o">.</span><span class="n">work</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">demographic</span> <span class="o">=</span> <span class="kc">None</span>
                 <span class="n">seed_network</span> <span class="o">=</span> <span class="n">network</span>
                 <span class="n">seed_wards</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">nodes</span>
+                <span class="n">seed_links</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">links</span>
                 <span class="n">seed_infections</span> <span class="o">=</span> <span class="n">infections</span><span class="o">.</span><span class="n">play</span>
+                <span class="n">seed_work_infections</span> <span class="o">=</span> <span class="n">infections</span><span class="o">.</span><span class="n">work</span>
 
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">ward</span> <span class="o">=</span> <span class="n">seed_network</span><span class="o">.</span><span class="n">get_node_index</span><span class="p">(</span><span class="n">ward</span><span class="p">)</span>
 
-                <span class="k">if</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                    <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;Cannot seed </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2"> infection(s) in ward </span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2"> &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;as there are no susceptibles remaining&quot;</span><span class="p">)</span>
+                <span class="n">num_to_seed</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">])</span>
+
+                <span class="k">if</span> <span class="n">num_to_seed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num_to_seed</span>
+                    <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;seeding demographic </span><span class="si">{</span><span class="n">demographic</span><span class="si">}</span><span class="s2"> &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;play_infections[0][</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">] += </span><span class="si">{</span><span class="n">num_to_seed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;seeding play_infections[0][</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">] &quot;</span>
+                                      <span class="sa">f</span><span class="s2">&quot;+= </span><span class="si">{</span><span class="n">num_to_seed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                    <span class="n">seed_infections</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">ward</span><span class="p">]</span> <span class="o">+=</span> <span class="n">num_to_seed</span>
+
+                <span class="n">num</span> <span class="o">-=</span> <span class="n">num_to_seed</span>
+
+                <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="k">continue</span>
 
-                <span class="k">elif</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">link</span> <span class="o">=</span> <span class="n">seed_links</span><span class="o">.</span><span class="n">get_index_of_link</span><span class="p">(</span><span class="n">ward</span><span class="p">,</span> <span class="n">ward</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">link</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="k">if</span> <span class="n">link</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">num_to_seed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">seed_links</span><span class="o">.</span><span class="n">suscept</span><span class="p">[</span><span class="n">link</span><span class="p">]))</span>
+
+                    <span class="k">if</span> <span class="n">num_to_seed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">seed_links</span><span class="o">.</span><span class="n">suscept</span><span class="p">[</span><span class="n">link</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num_to_seed</span>
+                        <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
+                                <span class="sa">f</span><span class="s2">&quot;seeding demographic </span><span class="si">{</span><span class="n">demographic</span><span class="si">}</span><span class="s2"> &quot;</span>
+                                <span class="sa">f</span><span class="s2">&quot;work_infections[0][</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">] += </span><span class="si">{</span><span class="n">num_to_seed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;seeding work_infections[0][</span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">]&quot;</span>
+                                          <span class="sa">f</span><span class="s2">&quot; += </span><span class="si">{</span><span class="n">num_to_seed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+                        <span class="n">seed_work_infections</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">link</span><span class="p">]</span> <span class="o">+=</span> <span class="n">num_to_seed</span>
+
+                    <span class="n">num</span> <span class="o">-=</span> <span class="n">num_to_seed</span>
+
+                <span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                     <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;Not enough susceptibles in ward to see all </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                    <span class="n">num</span> <span class="o">=</span> <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span>
-
-                <span class="n">seed_wards</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">ward</span><span class="p">]</span> <span class="o">-=</span> <span class="n">num</span>
-                <span class="k">if</span> <span class="n">demographic</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;seeding demographic </span><span class="si">{</span><span class="n">demographic</span><span class="si">}</span><span class="s2"> &quot;</span>
-                        <span class="sa">f</span><span class="s2">&quot;play_infections[0][</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">] += </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span>
-                        <span class="sa">f</span><span class="s2">&quot;seeding play_infections[0][</span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">] += </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-                <span class="n">seed_infections</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">ward</span><span class="p">]</span> <span class="o">+=</span> <span class="n">num</span>
+                        <span class="sa">f</span><span class="s2">&quot;Could not fully seed the ward </span><span class="si">{</span><span class="n">ward</span><span class="si">}</span><span class="s2">. &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;Number remaining equals </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
@@ -574,7 +602,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 26, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

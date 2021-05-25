@@ -128,6 +128,7 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#may-25th-2021">1.6.0 - May 25th 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#february-26th-2021">1.5.1 - February 26th 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#february-9th-2021">1.5.0 - February 9th 2021</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#november-18th-2020">1.4.1 - November 18th 2020</a></li>
@@ -236,6 +237,44 @@
             
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="may-25th-2021">
+<h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.5.1...1.6.0">1.6.0</a> - May 25th 2021<a class="headerlink" href="#may-25th-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Added work_to_play iterators, that allow the weekend to be modelled
+by treating workers as players. Updated
+<a class="reference internal" href="tutorial/part03/02_weekend.html"><span class="doc">the tutorial</span></a> to include
+this better model.</p></li>
+<li><p>Added Apple M1 support. MetaWards now compiles and runs on Apple M1
+processors. OpenMP support is included, so it can also run
+in parallel. Setup scripts auto-detect if an M1 version of Python
+is used, and will compile MetaWards appropriately.</p></li>
+<li><p>Fixed a bug in <a class="reference internal" href="api/generated/metawards.run.html#metawards.run" title="metawards.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.run()</span></code></a> whereby the MetaWards executable
+was not found when running on Windows. This stopped MetaWards from
+being run from Jupyter or RStudio on Windows. This should now
+work correctly, including with proper handling of error output
+(i.e. fixed the hanging reported in issue 169),
+catching of failures, and passing of command line arguments.
+To aid running, the API was extended with the following functions;
+<a class="reference internal" href="api/generated/metawards.find_mw_exe.html#metawards.find_mw_exe" title="metawards.find_mw_exe"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.find_mw_exe()</span></code></a>, <a class="reference internal" href="api/generated/metawards.find_mw_include.html#metawards.find_mw_include" title="metawards.find_mw_include"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.find_mw_include()</span></code></a>
+and <a class="reference internal" href="api/generated/metawards.get_reticulate_command.html#metawards.get_reticulate_command" title="metawards.get_reticulate_command"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.get_reticulate_command()</span></code></a>.</p></li>
+<li><p>Added the ability to seed infections in the worker population. By default,
+infections will be seeded in the player population. However, if there
+are any remaining infections to seed (or no players in a ward) then
+the infections will be seeded in the workers.</p></li>
+<li><p>Added support for compiling Cython plugins that link to MetaWards
+C functions. This means that you can now write plugins that are compiled
+dynamically that use the random number generators in metawards_random.
+This is demonstrated in <em class="xref py py-obj">tests/test_cython_iterator.py</em>, specifically
+in the iterator <em class="xref py py-obj">tests/iterators/cython_iterator.pyx</em>.</p></li>
+<li><p>Fixed a bug in <a class="reference internal" href="api/index_api_MetaWards.html#metawards.VariableSet" title="metawards.VariableSet"><code class="xref py py-func docutils literal notranslate"><span class="pre">VariableSet()</span></code></a> whereby array variables
+could not be parsed if they were on the first line of the file
+(the commas confused the parser and put it into column mode).
+Added a check so that arrays can now be detected on the first line,
+and the parser put into row mode.</p></li>
+<li><p>Added more docs to the installation instructions to let new users
+know that they have to install MetaWardsData.</p></li>
+</ul>
+</div>
 <div class="section" id="february-26th-2021">
 <h2><a class="reference external" href="https://github.com/metawards/MetaWards/compare/1.5.0...1.5.1">1.5.1</a> - February 26th 2021<a class="headerlink" href="#february-26th-2021" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -319,7 +358,7 @@ quarantine associated with holidays.</p></li>
 parameter to set a background force of infection that can be used
 to drive (or suppress) infections regardless of the number of
 infecteds in each ward.</p></li>
-<li><p>Added a global <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a>
+<li><p>Added a global <a class="reference internal" href="api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a>
 to set a per-network background force of infection. This is
 useful as a way to model
 <a class="reference internal" href="tutorial/part09/05_holidays.html"><span class="doc">holiday destinations as different networks</span></a>.</p></li>
@@ -336,8 +375,8 @@ according to specific moves indicated in the
 <a class="reference internal" href="api/generated/metawards.movers.MoveRecord.html#metawards.movers.MoveRecord" title="metawards.movers.MoveRecord"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveRecord</span></code></a>. As there is a
 <a class="reference internal" href="api/generated/metawards.movers.MoveRecord.html#metawards.movers.MoveRecord.invert" title="metawards.movers.MoveRecord.invert"><code class="xref py py-func docutils literal notranslate"><span class="pre">MoveRecord.invert</span></code></a> you can
 use this to reverse moves.</p></li>
-<li><p>Added <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Disease.is_infected" title="metawards.Disease.is_infected"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_infected</span></code></a> parameter
-to <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> to mark whether a disease stage is classed
+<li><p>Added <a class="reference internal" href="api/generated/metawards.Disease.html#metawards.Disease.is_infected" title="metawards.Disease.is_infected"><code class="xref py py-meth docutils literal notranslate"><span class="pre">is_infected</span></code></a> parameter
+to <a class="reference internal" href="api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> to mark whether a disease stage is classed
 as being an infected stage. This is useful for non-recovered,
 non-susceptible and non-infected stages, e.g. vaccinated (V) stages.
 For example see <a class="reference internal" href="tutorial/part09/02_vaccinate.html"><span class="doc">this tutorial</span></a>.</p></li>
@@ -382,12 +421,12 @@ within R, plus, via the new <a class="reference internal" href="api/generated/me
 write nice tutorials or vignettes that include running the jobs.
 Aim to create a CRAN MetaWards package in a future release.</p></li>
 <li><p>Cleaned up the Python API so that this is as flexible as the R API.
-Made sure that key classes, like <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a>,
-<a class="reference internal" href="api/index_api_MetaWards.html#metawards.InputFiles" title="metawards.InputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputFiles</span></code></a> and <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a>
+Made sure that key classes, like <a class="reference internal" href="api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a>,
+<a class="reference internal" href="api/generated/metawards.InputFiles.html#metawards.InputFiles" title="metawards.InputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputFiles</span></code></a> and <a class="reference internal" href="api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a>
 are easy to use and can serialised to/from JSON.</p></li>
 <li><p>New <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ward</span></code></a> / <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a> API to let
 you easily create new networks in Python or R.
-You can convert <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> to and from a
+You can convert <a class="reference internal" href="api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> to and from a
 <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a>, and these can be saved and loaded from JSON.
 You can harmonise multiple Wards objects, which enables different
 demographics to use different networks. Also can now refer to wards
@@ -429,7 +468,7 @@ This includes being able to read extra seeds from the command line,
 rather than needing to always write a file.</p></li>
 <li><p>Added in the ability to seed infections by date as well as day. Also
 seeding wards by name as well as index (e.g. <code class="docutils literal notranslate"><span class="pre">Clifton/Bristol</span></code>).</p></li>
-<li><p>Added in <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a> to consolidate all of the code
+<li><p>Added in <a class="reference internal" href="api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a> to consolidate all of the code
 used to interpret strings into data types. This increases the power
 and flexibility of the data parsers, and adds in new features such
 as reading in random data, or adding math functions to the
@@ -473,7 +512,7 @@ day earlier than previous versions, so outbreaks are now one day ahead.</p></li>
 denominators. These have not been used in production yet. If you
 are going to use demographic sub-networks then please make sure
 you use this version (1.1.0) or above.</p></li>
-<li><p>Added database support to <a class="reference internal" href="api/index_api_MetaWards.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a>, so that you
+<li><p>Added database support to <a class="reference internal" href="api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a>, so that you
 can now write data to SQLite3 databases. This is described in a new
 part of <a class="reference internal" href="tutorial/part04/04_rates.html"><span class="doc">tutorial chapter 4</span></a>.</p></li>
 <li><p>Added in extra output to <a class="reference internal" href="api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workspace</span></code></a> so that you can
@@ -752,7 +791,7 @@ understand it.</p></li>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 26, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

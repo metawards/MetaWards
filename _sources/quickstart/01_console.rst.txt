@@ -15,6 +15,12 @@ type;
 You should see that MetaWards version information is printed to the screen.
 If not, then you need to :doc:`install MetaWards <../install>`.
 
+.. note::
+
+   The output should show that MetaWardsData has been found. If you have
+   not installed MetaWardsData then you need to install it by
+   following :doc:`these instructions <../model_data>`.
+
 You also need to be able to use a text editor, e.g. notepad, vim, emacs,
 nano or pico. This quick start will use nano. Please use the editor
 that you prefer.

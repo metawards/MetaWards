@@ -113,6 +113,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#printing-debug-output">Printing debug output</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#advancing-the-outbreak">Advancing the outbreak</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#changing-iterators-with-time">Changing iterators with time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-iterators-with-stage">Changing iterators with stage</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="03_lockdown.html">Custom advance functions</a></li>
@@ -519,7 +520,7 @@ the <code class="docutils literal notranslate"><span class="pre">population</spa
 arguments, most of which are ignored by the <code class="docutils literal notranslate"><span class="pre">**kwarg</span></code> variables.</p>
 <p>When you need an argument you name it in the function. In this case,
 we need the <code class="docutils literal notranslate"><span class="pre">population</span></code> argument. This is a
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">Population</span></code></a> object, which contains the distribution
+<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">Population</span></code></a> object, which contains the distribution
 of the population across the different <strong>S</strong>, <strong>E</strong>, <strong>I</strong> states,
 plus the current date of the outbreak (
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.date</span></code>).</p>
@@ -557,6 +558,145 @@ You can control the start date using the <code class="docutils literal notransla
 command line option.</p>
 </div>
 </div>
+<div class="section" id="changing-iterators-with-stage">
+<h2>Changing iterators with stage<a class="headerlink" href="#changing-iterators-with-stage" title="Permalink to this headline">¶</a></h2>
+<p>This method of modelling the weekend, while simple, is not correct.
+We have modelled the weekend as a time when only the players move
+and can be infected. The workers are ignored, meaning that this model
+assumes that the workers spend their weekends at home, not interacting
+with anyone else, and thus have zero risk of contracting an infection.</p>
+<p>To model the weekend properly, we have to do something to advance the
+workers. One option is to advance workers at the weekend in the same way
+that we advance players. Because the data structure used to model
+workers is different, we can’t just call the
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_play.html#metawards.iterators.advance_play" title="metawards.iterators.advance_play"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_play()</span></code></a> function on the workers.
+Instead, metawards comes with
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_work_to_play.html#metawards.iterators.advance_work_to_play" title="metawards.iterators.advance_work_to_play"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_work_to_play()</span></code></a>. This advances the
+workers as if they were players.</p>
+<p>Using this, the <em class="xref py py-obj">iterate_week</em> iterator could look like;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_work_to_play</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+
+<span class="k">def</span> <span class="nf">iterate_week</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">date</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating functions for </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a weekday&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_infprob</span><span class="p">,</span>
+                <span class="n">advance_fixed</span><span class="p">,</span>
+                <span class="n">advance_play</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a weekend&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_infprob</span><span class="p">,</span>
+                <span class="n">advance_work_to_play</span><span class="p">,</span>
+                <span class="n">advance_play</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>However, this would also not be correct. The issue is that, as well
+as advancing the infection, the iterator is also responsible for
+calculating the force of infection (FOI) resulting from infected
+individuals. This is calculated during the “foi” stage of the day.</p>
+<p>Each model day is divided into a series of stages;</p>
+<ol class="arabic simple">
+<li><p><em class="xref py py-obj">initialise</em> : used to initialise any variables that day</p></li>
+<li><p><em class="xref py py-obj">setup</em> : used to set up any additional variables or infections</p></li>
+<li><p><em class="xref py py-obj">foi</em> : used to calculate the FOI resulting from existing infections</p></li>
+<li><p><em class="xref py py-obj">infect</em> : used to calculate and enact new infections</p></li>
+<li><p><em class="xref py py-obj">analyse</em> : used to calculate / analyse the data from infections</p></li>
+</ol>
+<p>In addition, for a model run, there is a <em class="xref py py-obj">finalise</em> stage,
+which is called once at the end of a model run, at which
+all outputs from a model run are written to disk or a database.
+Then, for a collection of model runs, there is a
+<em class="xref py py-obj">summary</em> stage which is called once at the end of all model runs,
+to calculate and write out summary statistics from all runs.</p>
+<p>By default, a custom iterator will only specify the advance functions
+that are used for the <em class="xref py py-obj">infect</em> stage. The advance functions used for
+other stages are supplied by
+<a class="reference internal" href="../../api/generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_default()</span></code></a>. By default, the
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_foi()</span></code></a> function is used to
+calculate the FOI. This assumes that all workers behave like
+workers, and all players behave like players. It does not work
+when we use <a class="reference internal" href="../../api/generated/metawards.iterators.advance_foi_work_to_play.html#metawards.iterators.advance_foi_work_to_play" title="metawards.iterators.advance_foi_work_to_play"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_foi_work_to_play()</span></code></a>,
+because this makes the workers behave like players.</p>
+<p>We thus need to use the <a class="reference internal" href="../../api/generated/metawards.iterators.advance_foi_work_to_play.html#metawards.iterators.advance_foi_work_to_play" title="metawards.iterators.advance_foi_work_to_play"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_foi_work_to_play()</span></code></a>
+function instead. To do this, we need to tell metawards to use that
+function in the <em class="xref py py-obj">foi</em> stage. We can control which stage our iterator
+operates by passing in the <em class="xref py py-obj">stage</em> argument. For example;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_work_to_play</span><span class="p">,</span> \
+                                <span class="n">advance_play</span><span class="p">,</span> \
+                                <span class="n">advance_foi</span><span class="p">,</span> \
+                                <span class="n">advance_foi_work_to_play</span><span class="p">,</span> \
+                                <span class="n">advance_recovery</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+
+<span class="k">def</span> <span class="nf">iterate_week</span><span class="p">(</span><span class="n">stage</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">date</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating functions for </span><span class="si">{</span><span class="n">date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">is_weekend</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">5</span>
+
+
+    <span class="k">if</span> <span class="n">is_weekend</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a weekend&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;foi&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">advance_foi_work_to_play</span><span class="p">,</span>
+                    <span class="n">advance_recovery</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;infect&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">advance_infprob</span><span class="p">,</span>
+                    <span class="n">advance_work_to_play</span><span class="p">,</span>
+                    <span class="n">advance_play</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">iterator_default</span><span class="p">(</span><span class="n">stage</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+     <span class="k">else</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a weekday&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;foi&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">advance_foi</span><span class="p">,</span>
+                    <span class="n">advance_recovery</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">stage</span> <span class="o">==</span> <span class="s2">&quot;infect:</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">advance_infprob</span><span class="p">,</span>
+                    <span class="n">advance_fixed</span><span class="p">,</span>
+                    <span class="n">advance_play</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">iterator_default</span><span class="p">(</span><span class="n">stage</span><span class="o">=</span><span class="n">stage</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../../api/generated/metawards.iterators.advance_recovery.html#metawards.iterators.advance_recovery" title="metawards.iterators.advance_recovery"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_recovery()</span></code></a> is another advance
+function that must be returned at the <em class="xref py py-obj">foi</em> stage. This advance
+function is used to advance infected individuals along
+the stages of the disease (e.g. E to I to R).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../../api/generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_default()</span></code></a> returns the default
+set of advance functions for each stage. It makes sense
+to call this for the stages that you are not explicitly
+handling in your iterator, e.g.
+<em class="xref py py-obj">return iterate_default(stage=stage, **kwargs)</em> will return
+the default advance functions for the specified stage.</p>
+</div>
+<p>With those changes, the <em class="xref py py-obj">iterate_week</em> iterator would work as a model
+where all workers become players at the weekends.</p>
+<p>To make things easier, metawards provides a built-in
+<a class="reference internal" href="../../api/generated/metawards.iterators.iterate_weekend.html#metawards.iterators.iterate_weekend" title="metawards.iterators.iterate_weekend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_weekend()</span></code></a> iterator for
+iterating a weekend day, plus a
+<a class="reference internal" href="../../api/generated/metawards.iterators.iterate_working_week.html#metawards.iterators.iterate_working_week" title="metawards.iterators.iterate_working_week"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_working_week()</span></code></a> iterator that
+will use <a class="reference internal" href="../../api/generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_default()</span></code></a> for weekdays,
+and <a class="reference internal" href="../../api/generated/metawards.iterators.iterate_weekend.html#metawards.iterators.iterate_weekend" title="metawards.iterators.iterate_weekend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_weekend()</span></code></a> for weekends.
+Use these if you want to model a working week where workers
+behave like players at the weekend.</p>
+</div>
 </div>
 
 
@@ -574,7 +714,7 @@ command line option.</p>
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 26, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

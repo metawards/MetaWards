@@ -353,7 +353,7 @@
                 <span class="n">BZ2FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">compressed</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="OutputFiles"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles">[docs]</a><span class="k">class</span> <span class="nc">OutputFiles</span><span class="p">:</span>
+<div class="viewcode-block" id="OutputFiles"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles">[docs]</a><span class="k">class</span> <span class="nc">OutputFiles</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This is a class that manages all of the output files that</span>
 <span class="sd">       are written to during a model outbreak. This object is used</span>
 <span class="sd">       to hold the &#39;FILE&#39; objects for open files, and will</span>
@@ -384,7 +384,7 @@
 <span class="sd">       &gt;&gt;&gt;     FILE.write(&quot;something\\n&quot;)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="OutputFiles.__init__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span>
+<div class="viewcode-block" id="OutputFiles.__init__"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;output&quot;</span><span class="p">,</span>
                  <span class="n">check_empty</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
                  <span class="n">force_empty</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
                  <span class="n">prompt</span><span class="o">=</span><span class="nb">input</span><span class="p">,</span>
@@ -556,11 +556,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_filenames</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_database</span> <span class="o">=</span> <span class="p">{}</span>
 
-<div class="viewcode-block" id="OutputFiles.is_database"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.is_database">[docs]</a>    <span class="k">def</span> <span class="nf">is_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.is_database"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.is_database">[docs]</a>    <span class="k">def</span> <span class="nf">is_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not &#39;filename&#39; is an open database&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_database</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="OutputFiles.remove"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.remove">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="OutputFiles.remove"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.remove">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="nb">input</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Remove the passed filename or directory</span>
 
@@ -574,21 +574,21 @@
         <span class="n">path</span> <span class="o">=</span> <span class="n">_Path</span><span class="p">(</span><span class="n">_expand</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
         <span class="n">_force_remove</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">prompt</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="OutputFiles.is_open"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.is_open">[docs]</a>    <span class="k">def</span> <span class="nf">is_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.is_open"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.is_open">[docs]</a>    <span class="k">def</span> <span class="nf">is_open</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not the output files are open&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_open</span></div>
 
-<div class="viewcode-block" id="OutputFiles.is_closed"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.is_closed">[docs]</a>    <span class="k">def</span> <span class="nf">is_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.is_closed"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.is_closed">[docs]</a>    <span class="k">def</span> <span class="nf">is_closed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether or not the output files are closed&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_open</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="OutputFiles.output_dir"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.output_dir">[docs]</a>    <span class="k">def</span> <span class="nf">output_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.output_dir"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.output_dir">[docs]</a>    <span class="k">def</span> <span class="nf">output_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the absolute path of the directory to which</span>
 <span class="sd">           the output files will be written</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_dir</span></div>
 
-<div class="viewcode-block" id="OutputFiles.open_db"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open_db">[docs]</a>    <span class="k">def</span> <span class="nf">open_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initialise</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.open_db"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db">[docs]</a>    <span class="k">def</span> <span class="nf">open_db</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initialise</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Open up a SQLite3 database connection to a file called</span>
 <span class="sd">           &#39;filename&#39; in the output directory, returning the</span>
 <span class="sd">           SQLite3 connection to the database. Note that this will</span>
@@ -672,7 +672,7 @@
 
         <span class="k">return</span> <span class="n">CONN</span></div>
 
-<div class="viewcode-block" id="OutputFiles.open"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">,</span>
+<div class="viewcode-block" id="OutputFiles.open"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open">[docs]</a>    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">,</span>
              <span class="n">headers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Open the file called &#39;filename&#39; in the output directory,</span>
 <span class="sd">           returning a handle to that file. Note that this will</span>
@@ -792,7 +792,7 @@
 
         <span class="k">return</span> <span class="n">FILE</span></div>
 
-<div class="viewcode-block" id="OutputFiles.open_subdir"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.open_subdir">[docs]</a>    <span class="k">def</span> <span class="nf">open_subdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dirname</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.open_subdir"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_subdir">[docs]</a>    <span class="k">def</span> <span class="nf">open_subdir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dirname</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create and open a sub-directory in this OutputFiles</span>
 <span class="sd">           called &#39;dirname&#39;. This will inherit all properties,</span>
 <span class="sd">           e.g. check_empty, auto_bzip etc from this OutputFiles</span>
@@ -829,15 +829,15 @@
                            <span class="n">force_empty</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_force_empty</span><span class="p">,</span> <span class="n">prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_prompt</span><span class="p">,</span>
                            <span class="n">auto_bzip</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_auto_bzip</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="OutputFiles.auto_bzip"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.auto_bzip">[docs]</a>    <span class="k">def</span> <span class="nf">auto_bzip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.auto_bzip"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.auto_bzip">[docs]</a>    <span class="k">def</span> <span class="nf">auto_bzip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return whether the default is to automatically bzip2 files&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auto_bzip</span></div>
 
-<div class="viewcode-block" id="OutputFiles.get_path"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.get_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.get_path"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.get_path">[docs]</a>    <span class="k">def</span> <span class="nf">get_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the full expanded path to this directory&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_dir</span></div>
 
-<div class="viewcode-block" id="OutputFiles.get_filename"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.get_filename">[docs]</a>    <span class="k">def</span> <span class="nf">get_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.get_filename"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.get_filename">[docs]</a>    <span class="k">def</span> <span class="nf">get_filename</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return the full expanded filename for &#39;filename&#39;&quot;&quot;&quot;</span>
         <span class="kn">import</span> <span class="nn">os</span>
 
@@ -856,11 +856,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No open file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="OutputFiles.close"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.close"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Close all of the files and this directory&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_close_dir</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="OutputFiles.flush"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.OutputFiles.flush">[docs]</a>    <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="OutputFiles.flush"><a class="viewcode-back" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.flush">[docs]</a>    <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Flush the contents of all files to disk&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">filename</span><span class="p">,</span> <span class="n">handle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open_files</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">try</span><span class="p">:</span>
@@ -879,7 +879,7 @@
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 26, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

@@ -235,8 +235,8 @@
 <h1>Specifying ward-local parameters<a class="headerlink" href="#specifying-ward-local-parameters" title="Permalink to this headline">¶</a></h1>
 <p>In <a class="reference internal" href="../part03/08_local_lockdown.html"><span class="doc">part 3</span></a> you learned how to read
 and write ward-local parameters, e.g.
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Nodes.scale_uv" title="metawards.Nodes.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.scale_uv</span></code></a> and
-<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Nodes.cutoff" title="metawards.Nodes.cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.cutoff</span></code></a>.</p>
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.scale_uv" title="metawards.Nodes.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.scale_uv</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes.cutoff" title="metawards.Nodes.cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">network.nodes.cutoff</span></code></a>.</p>
 <p>You can also set these parameters (and custom parameters) using
 the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ward</span></code></a> object.</p>
 <p>For example, in Python;</p>
@@ -328,8 +328,8 @@ Python;</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">wards</span> <span class="o">=</span> <span class="n">bristol</span> <span class="o">+</span> <span class="n">london</span>
 </pre></div>
 </div>
-<p>You can now convert this into a <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Network</span></code></a>. We can then
-read the parameters using the <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Nodes" title="metawards.Nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.nodes</span></code></a>
+<p>You can now convert this into a <a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Network</span></code></a>. We can then
+read the parameters using the <a class="reference internal" href="../../api/generated/metawards.Nodes.html#metawards.Nodes" title="metawards.Nodes"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.nodes</span></code></a>
 object, as we did in <a class="reference internal" href="../part03/08_local_lockdown.html"><span class="doc">part 3</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Network</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">network</span> <span class="o">=</span> <span class="n">Network</span><span class="o">.</span><span class="n">from_wards</span><span class="p">(</span><span class="n">wards</span><span class="p">)</span>
@@ -404,7 +404,7 @@ note how <code class="docutils literal notranslate"><span class="pre">case_free_
   <div role="contentinfo">
     <p>
       <span class="lastupdated">
-        Last updated on Feb 26, 2021.
+        Last updated on May 25, 2021.
       </span>
 
     </p>

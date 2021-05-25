@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for build/lib.linux-x86_64-3.8/metawards/_ward.py: 69.28%</title>
+    <title>Coverage for build/lib.linux-x86_64-3.8/metawards/_ward.py: 69.72%</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -18,13 +18,13 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>build/lib.linux-x86_64-3.8/metawards/_ward.py</b> :
-            <span class="pc_cov">69.28%</span>
+            <span class="pc_cov">69.72%</span>
         </h1>
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
         <h2 class="stats">
             607 statements &nbsp;
-            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">438 run</button>
-            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">169 missing</button>
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">440 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">167 missing</button>
             <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
             <button type="button" class="par run show_par shortkey_p button_toggle_par" title="Toggle lines partially run">65 partial</button>
         </h2>
@@ -512,20 +512,20 @@
     <p id="t457" class="run"><span class="n"><a href="#t457">457</a></span><span class="t">                <span class="nam">destination</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_id</span>&nbsp;</span><span class="r"></span></p>
     <p id="t458" class="pln"><span class="n"><a href="#t458">458</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t459" class="run"><span class="n"><a href="#t459">459</a></span><span class="t">        <span class="key">elif</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">destination</span><span class="op">,</span> <span class="nam">Ward</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t460" class="par run show_par"><span class="n"><a href="#t460">460</a></span><span class="t">            <span class="key">if</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">id</span><span class="op">(</span><span class="op">)</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">460&#x202F;&#x219B;&#x202F;467</span><span class="annotate long">line 460 didn't jump to line 467, because the condition on line 460 was never false</span></span></p>
+    <p id="t460" class="run"><span class="n"><a href="#t460">460</a></span><span class="t">            <span class="key">if</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">id</span><span class="op">(</span><span class="op">)</span> <span class="key">is</span> <span class="key">None</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t461" class="run"><span class="n"><a href="#t461">461</a></span><span class="t">                <span class="nam">destination</span> <span class="op">=</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">_info</span>&nbsp;</span><span class="r"></span></p>
     <p id="t462" class="pln"><span class="n"><a href="#t462">462</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t463" class="par run show_par"><span class="n"><a href="#t463">463</a></span><span class="t">                <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_id</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span> <span class="key">and</span> <span class="nam">destination</span> <span class="op">==</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_info</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">463&#x202F;&#x219B;&#x202F;465</span><span class="annotate long">line 463 didn't jump to line 465, because the condition on line 463 was never true</span></span></p>
     <p id="t464" class="pln"><span class="n"><a href="#t464">464</a></span><span class="t">                    <span class="com"># this is this ward</span>&nbsp;</span><span class="r"></span></p>
     <p id="t465" class="mis show_mis"><span class="n"><a href="#t465">465</a></span><span class="t">                    <span class="nam">destination</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_id</span>&nbsp;</span><span class="r"></span></p>
     <p id="t466" class="pln"><span class="n"><a href="#t466">466</a></span><span class="t">            <span class="key">else</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
-    <p id="t467" class="mis show_mis"><span class="n"><a href="#t467">467</a></span><span class="t">                <span class="key">if</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">id</span><span class="op">(</span><span class="op">)</span> <span class="op">==</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_id</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t467" class="par run show_par"><span class="n"><a href="#t467">467</a></span><span class="t">                <span class="key">if</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">id</span><span class="op">(</span><span class="op">)</span> <span class="op">==</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_id</span><span class="op">:</span>&nbsp;</span><span class="r"><span class="annotate short">467&#x202F;&#x219B;&#x202F;468</span><span class="annotate long">line 467 didn't jump to line 468, because the condition on line 467 was never true</span></span></p>
     <p id="t468" class="mis show_mis"><span class="n"><a href="#t468">468</a></span><span class="t">                    <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">_info</span> <span class="op">!=</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">_info</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t469" class="mis show_mis"><span class="n"><a href="#t469">469</a></span><span class="t">                        <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p id="t470" class="pln"><span class="n"><a href="#t470">470</a></span><span class="t">                            <span class="str">f"Disagreement in info for Ward {self}: "</span>&nbsp;</span><span class="r"></span></p>
     <p id="t471" class="pln"><span class="n"><a href="#t471">471</a></span><span class="t">                            <span class="str">f"{self._info} versus {destination._info}."</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t472" class="pln"><span class="n"><a href="#t472">472</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
-    <p id="t473" class="mis show_mis"><span class="n"><a href="#t473">473</a></span><span class="t">                <span class="nam">destination</span> <span class="op">=</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">id</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t473" class="run"><span class="n"><a href="#t473">473</a></span><span class="t">                <span class="nam">destination</span> <span class="op">=</span> <span class="nam">destination</span><span class="op">.</span><span class="nam">id</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p id="t474" class="pln"><span class="n"><a href="#t474">474</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p id="t475" class="run"><span class="n"><a href="#t475">475</a></span><span class="t">        <span class="key">if</span> <span class="key">not</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">destination</span><span class="op">,</span> <span class="nam">WardInfo</span><span class="op">)</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p id="t476" class="run"><span class="n"><a href="#t476">476</a></span><span class="t">            <span class="nam">destination</span> <span class="op">=</span> <span class="nam">_as_positive_integer</span><span class="op">(</span><span class="nam">destination</span><span class="op">,</span> <span class="nam">zero_allowed</span><span class="op">=</span><span class="key">False</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
@@ -1270,8 +1270,8 @@
 <div id="footer">
     <div class="content">
         <p>
-            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.4</a>,
-            created at 2021-02-26 11:52 +0000
+            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.5</a>,
+            created at 2021-05-25 15:27 +0000
         </p>
     </div>
 </div>

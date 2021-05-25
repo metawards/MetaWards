@@ -6,7 +6,10 @@ Quick Start Guide
 
    Please make sure you have installed ``metawards``, e.g. by following these
    :doc:`installation instructions <../install>`. You can test this by
-   typing ``metawards --version`` on the terminal/console.
+   typing ``metawards --version`` on the terminal/console. Note that this
+   should show that MetaWardsData has been found. If you have
+   not installed MetaWardsData then you need to install it by
+   following :doc:`these instructions <../model_data>`.
 
 You have three choices for how you use MetaWards, and thus three choices
 for how you will follow this quick start guide;

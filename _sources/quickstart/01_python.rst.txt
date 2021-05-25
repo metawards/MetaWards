@@ -28,6 +28,12 @@ analysing and plotting the results.
 
    >>> import pandas as pd
 
+.. note::
+
+   You also need to have installed MetaWardsData. If you have
+   not installed MetaWardsData then you need to install it by
+   following :doc:`these instructions <../model_data>`.
+
 Importing metawards
 -------------------
 

@@ -1,0 +1,6 @@
+﻿metawards.iterators.advance\_foi\_work\_to\_play
+================================================
+
+.. currentmodule:: metawards.iterators
+
+.. autofunction:: advance_foi_work_to_play

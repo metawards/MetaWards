@@ -18,6 +18,12 @@ the case by typing;
 
 If you don't see ``TRUE`` returned, then double-check your installation.
 
+.. note::
+
+   You also need to have installed MetaWardsData. If you have
+   not installed MetaWardsData then you need to install it by
+   following :doc:`these instructions <../model_data>`.
+
 Now make sure that you have installed the
 `tidyverse <https://www.tidyverse.org>`__, e.g. via;
 
