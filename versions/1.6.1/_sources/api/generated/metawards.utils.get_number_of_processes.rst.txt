@@ -1,0 +1,6 @@
+﻿metawards.utils.get\_number\_of\_processes
+==========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: get_number_of_processes

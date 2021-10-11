@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modelling the ICU &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Named Disease Stages" href="05_named_stages.html" />
+    <link rel="prev" title="Conditional Pathways" href="03_conditional.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_pathways.html">Disease pathways and stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_scanning.html">Scanning demographics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_conditional.html">Conditional Pathways</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Modelling the ICU</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-go-functions-go-home">Multiple go functions go home</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="05_named_stages.html">Named Disease Stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_hospital.html">Modelling a Hospital</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part07.html">Part 7 - Different pathways for different demographics</a> &raquo;</li>
+      <li>Modelling the ICU</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="03_conditional.html" class="btn btn-neutral float-left" title="Conditional Pathways" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05_named_stages.html" class="btn btn-neutral float-right" title="Named Disease Stages" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modelling-the-icu">
+<h1>Modelling the ICU<a class="headerlink" href="#modelling-the-icu" title="Permalink to this headline"></a></h1>
+<p>We have modelled the hospital as single patient population. However,
+for a small proportion of cases, we need to model an extra stage
+in the hospital for patients that need to go to the
+intensive care unit (ICU).</p>
+<p>We will use the <code class="docutils literal notranslate"><span class="pre">H2</span></code> state to model this. We will model that 10%
+of patients in the <code class="docutils literal notranslate"><span class="pre">H2</span></code> state go to the <code class="docutils literal notranslate"><span class="pre">H2</span></code> state of an <code class="docutils literal notranslate"><span class="pre">ICU</span></code>
+demographic, while the remainder are immediately moved back home
+to the <code class="docutils literal notranslate"><span class="pre">R</span></code> state, as they will have recovered from the disease.</p>
+<p>To do this, modify your <code class="docutils literal notranslate"><span class="pre">demographics.json</span></code> file to read;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;demographics&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;staff&quot;</span><span class="p">,</span> <span class="s2">&quot;patients&quot;</span><span class="p">,</span> <span class="s2">&quot;icu&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;work_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.99</span><span class="p">,</span>   <span class="mf">0.01</span><span class="p">,</span>     <span class="mf">0.00</span><span class="p">,</span>     <span class="mf">0.00</span> <span class="p">],</span>
+    <span class="s2">&quot;play_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">1.00</span><span class="p">,</span>   <span class="mf">0.00</span><span class="p">,</span>     <span class="mf">0.00</span><span class="p">,</span>     <span class="mf">0.00</span> <span class="p">],</span>
+    <span class="s2">&quot;diseases&quot;</span>     <span class="p">:</span> <span class="p">[</span> <span class="n">null</span><span class="p">,</span>   <span class="n">null</span><span class="p">,</span>   <span class="s2">&quot;lurgy_hospital&quot;</span><span class="p">,</span> <span class="s2">&quot;lurgy_hospital&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Now you can see the reason for the <code class="docutils literal notranslate"><span class="pre">H2</span></code> state - it is being used to
+model the ICU. Using two states like this enables us to use the
+same <code class="docutils literal notranslate"><span class="pre">lurgy_hospital</span></code> disease file to model the hospital.</p>
+</div>
+<p>Next, we need to modify the <code class="docutils literal notranslate"><span class="pre">mix_hospital.py</span></code> to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.mixers</span> <span class="kn">import</span> <span class="n">merge_using_matrix</span>
+
+<span class="k">def</span> <span class="nf">mix_shield</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span> <span class="p">]</span>
+
+    <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">interaction_matrix</span> <span class="o">=</span> <span class="n">matrix</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">merge_using_matrix</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The only change here is adding in the fourth row and column for the ICU
+population. They don’t contribute to the FOI of each other, other patients
+or home, but can infect and be infected by the hospital staff.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we are using <a class="reference internal" href="../../api/generated/metawards.mixers.merge_using_matrix.html#metawards.mixers.merge_using_matrix" title="metawards.mixers.merge_using_matrix"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_using_matrix()</span></code></a>.
+This may not be the right choice depending on how we want the
+population dynamics to mix, e.g.
+<a class="reference internal" href="../../api/generated/metawards.mixers.merge_matrix_single_population.html#metawards.mixers.merge_matrix_single_population" title="metawards.mixers.merge_matrix_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_single_population()</span></code></a> or
+<a class="reference internal" href="../../api/generated/metawards.mixers.merge_matrix_multi_population.html#metawards.mixers.merge_matrix_multi_population" title="metawards.mixers.merge_matrix_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_multi_population()</span></code></a> may
+be a better choice. <a class="reference internal" href="../part05/04_contacts.html"><span class="doc">See here for more information</span></a>.</p>
+</div>
+<p>Next we need to modify <code class="docutils literal notranslate"><span class="pre">extract_hospital.py</span></code> to obtain the ICU
+statistics. Edit the file and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+
+
+<span class="k">def</span> <span class="nf">output_patients</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="n">population</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># Open the file &quot;patients.csv&quot; in the output directory,</span>
+    <span class="c1"># using the supplied headers for the columns</span>
+    <span class="n">FILE</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;patients.csv&quot;</span><span class="p">,</span>
+                           <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;H1&quot;</span><span class="p">,</span> <span class="s2">&quot;H2&quot;</span><span class="p">,</span> <span class="s2">&quot;ICU&quot;</span><span class="p">],</span>
+                           <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Now get the workspace for the &quot;patients&quot; demographic</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">get_index</span><span class="p">(</span><span class="s2">&quot;patients&quot;</span><span class="p">)</span>
+    <span class="n">subspace</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">subspaces</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1"># The total population at each infection stage is the sum</span>
+    <span class="c1"># of the work and play infections</span>
+    <span class="n">inf_tot</span> <span class="o">=</span> <span class="p">[</span><span class="n">inf</span> <span class="o">+</span> <span class="n">pinf</span> <span class="k">for</span> <span class="n">inf</span><span class="p">,</span> <span class="n">pinf</span> <span class="ow">in</span>
+               <span class="nb">zip</span><span class="p">(</span><span class="n">subspace</span><span class="o">.</span><span class="n">inf_tot</span><span class="p">,</span> <span class="n">subspace</span><span class="o">.</span><span class="n">pinf_tot</span><span class="p">)]</span>
+
+    <span class="n">H1</span> <span class="o">=</span> <span class="n">inf_tot</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">H2</span> <span class="o">=</span> <span class="n">inf_tot</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># Now get the ICU demographic</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">demographics</span><span class="o">.</span><span class="n">get_index</span><span class="p">(</span><span class="s2">&quot;icu&quot;</span><span class="p">)</span>
+    <span class="n">subspace</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">subspaces</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="n">inf_tot</span> <span class="o">=</span> <span class="p">[</span><span class="n">inf</span> <span class="o">+</span> <span class="n">pinf</span> <span class="k">for</span> <span class="n">inf</span><span class="p">,</span> <span class="n">pinf</span> <span class="ow">in</span>
+               <span class="nb">zip</span><span class="p">(</span><span class="n">subspace</span><span class="o">.</span><span class="n">inf_tot</span><span class="p">,</span> <span class="n">subspace</span><span class="o">.</span><span class="n">pinf_tot</span><span class="p">)]</span>
+
+    <span class="n">ICU</span> <span class="o">=</span> <span class="n">inf_tot</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="n">H1</span><span class="p">,</span> <span class="n">H2</span><span class="p">,</span> <span class="n">ICU</span><span class="p">]])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">extract_patients</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># return all of the functions from &quot;extract_default&quot;</span>
+    <span class="c1"># plus our new &quot;output_i1&quot;</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_patients</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The change here is that we extract only <code class="docutils literal notranslate"><span class="pre">H1</span></code> and <code class="docutils literal notranslate"><span class="pre">H2</span></code> from the
+<code class="docutils literal notranslate"><span class="pre">patients</span></code> demographic, before getting what we will call <code class="docutils literal notranslate"><span class="pre">ICU</span></code>
+from the <code class="docutils literal notranslate"><span class="pre">icu</span></code> demographic.</p>
+</div>
+<section id="multiple-go-functions-go-home">
+<h2>Multiple go functions go home<a class="headerlink" href="#multiple-go-functions-go-home" title="Permalink to this headline"></a></h2>
+<p>Finally, we will now update the <code class="docutils literal notranslate"><span class="pre">move_hospital.py</span></code> file so that
+we will have four “go functions”:</p>
+<ul class="simple">
+<li><p>First we start with the function that moves 20% of the <code class="docutils literal notranslate"><span class="pre">`home</span></code>
+and <code class="docutils literal notranslate"><span class="pre">staff</span></code> <code class="docutils literal notranslate"><span class="pre">I2</span></code> population to <code class="docutils literal notranslate"><span class="pre">H1</span></code> patients.</p></li>
+<li><p>Next, we move 10% of the <code class="docutils literal notranslate"><span class="pre">H2</span></code> <code class="docutils literal notranslate"><span class="pre">patients</span></code> to the same stage
+in the <code class="docutils literal notranslate"><span class="pre">icu</span></code> demographic. We will refer to this as <code class="docutils literal notranslate"><span class="pre">ICU</span></code>.</p></li>
+<li><p>Next, we move the remainder of <code class="docutils literal notranslate"><span class="pre">H2</span></code> <code class="docutils literal notranslate"><span class="pre">patients</span></code> to <code class="docutils literal notranslate"><span class="pre">R</span></code> in <code class="docutils literal notranslate"><span class="pre">home</span></code>,
+as these patients have now fully recovered and can go home.</p></li>
+<li><p>Finally, we move all <code class="docutils literal notranslate"><span class="pre">R</span></code> <code class="docutils literal notranslate"><span class="pre">patients</span></code> and <code class="docutils literal notranslate"><span class="pre">icu</span></code> members to <code class="docutils literal notranslate"><span class="pre">R</span></code>
+in <code class="docutils literal notranslate"><span class="pre">home</span></code> as they have fully recovered and can go home.</p></li>
+</ul>
+<p>You can implement this by editing your <code class="docutils literal notranslate"><span class="pre">move_hospital.py</span></code> file and
+copying in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">go_stage</span>
+
+
+<span class="k">def</span> <span class="nf">move_hospital</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># move 20% of I2 home/staff population to H1 patients</span>
+    <span class="n">func1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_stage</span><span class="p">(</span><span class="n">go_from</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;staff&quot;</span><span class="p">],</span>
+                                      <span class="n">go_to</span><span class="o">=</span><span class="s2">&quot;patients&quot;</span><span class="p">,</span>
+                                      <span class="n">from_stage</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                                      <span class="n">to_stage</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                                      <span class="n">fraction</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                                      <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># move 10% of H2 patients to H2 ICU</span>
+    <span class="n">func2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_stage</span><span class="p">(</span><span class="n">go_from</span><span class="o">=</span><span class="s2">&quot;patients&quot;</span><span class="p">,</span>
+                                      <span class="n">go_to</span><span class="o">=</span><span class="s2">&quot;icu&quot;</span><span class="p">,</span>
+                                      <span class="n">from_stage</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">to_stage</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">fraction</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+                                      <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># move the remainder of H2 patients to home R</span>
+    <span class="n">func3</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_stage</span><span class="p">(</span><span class="n">go_from</span><span class="o">=</span><span class="s2">&quot;patients&quot;</span><span class="p">,</span>
+                                      <span class="n">go_to</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">,</span>
+                                      <span class="n">from_stage</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                                      <span class="n">to_stage</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                                      <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="c1"># move R ICU and patients to home R</span>
+    <span class="n">func4</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_stage</span><span class="p">(</span><span class="n">go_from</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;patients&quot;</span><span class="p">,</span> <span class="s2">&quot;icu&quot;</span><span class="p">],</span>
+                                      <span class="n">go_to</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">,</span>
+                                      <span class="n">from_stage</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">to_stage</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                                      <span class="n">fraction</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+                                      <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">func1</span><span class="p">,</span> <span class="n">func2</span><span class="p">,</span> <span class="n">func3</span><span class="p">,</span> <span class="n">func4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can then run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using the command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -D demographics.json -d lurgy4 --mixer mix_hospital --mover move_hospital --extract extract_hospital -a ExtraSeedsLondon.dat
+</pre></div>
+</div>
+<p>You should see patients arriving in hospital, with some moving to the ICU.
+By the end of the outbreak everyone has recovered and has returned home.</p>
+<p>You can plot the demographics trajectory using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/trajectory.csv.bz2
+</pre></div>
+</div>
+<p>You should see a plot similar to this;</p>
+<img alt="Demographic trajectories for the simple hospital plus ICU model" src="../../_images/tutorial_7_4_1.jpg" />
+<p>The ICU population is just visible on this plot, and is seen to lag behind
+the patient population. You can see this more clearly by plotting the data
+that was output to the <code class="docutils literal notranslate"><span class="pre">output/patients.csv.bz2</span></code> file, e.g. using
+pandas;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/patients.csv.bz2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;hospital.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should see output something similar to this;</p>
+<img alt="Populations of the H1, H2 and ICU states" src="../../_images/tutorial_7_4_2.jpg" />
+<p>Similarly, we can extract the peak patient and ICU populations, via;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/patients.csv.bz2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;H1&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;H1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">]</span>
+<span class="go">     day       H1      H2     ICU</span>
+<span class="go">127  127  1890553  472957  172004</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ICU&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ICU&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">]</span>
+<span class="go">     day       H1      H2     ICU</span>
+<span class="go">132  132  1779346  445783  180845</span>
+</pre></div>
+</div>
+<p>This again shows that the time around 130 days since the start of the
+outbreak would be most challenging, with a peak of nearly 1.9 million
+normal patients, and over 180 thousand ICU patients.</p>
+<p>Note that this is a very simplified model and data fitting would be
+needed to optimise the various parameters (e.g. the interaction matrix
+or the percentages of population who move from, e.g. <code class="docutils literal notranslate"><span class="pre">H2</span></code> to <code class="docutils literal notranslate"><span class="pre">ICU</span></code>).
+Also this is missing lots of other movements.</p>
+<p>However, we hope that this gives you a good idea of how you can use
+demographics, mixing functions / interaction matrices, plus
+move functions to conditionally move to different disease stages in
+different demographics, to model a wide range of different scenarios.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03_conditional.html" class="btn btn-neutral float-left" title="Conditional Pathways" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05_named_stages.html" class="btn btn-neutral float-right" title="Named Disease Stages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

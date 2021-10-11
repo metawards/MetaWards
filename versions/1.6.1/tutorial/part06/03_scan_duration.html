@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How many days of self-isolation is needed? &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conditional Compliance" href="04_compliance.html" />
+    <link rel="prev" title="Self-isolation duration" href="02_duration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_movers.html">Movers and go functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_duration.html">Self-isolation duration</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">How many days of self-isolation is needed?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analysing-the-results">Analysing the results</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relections-on-results">Relections on results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04_compliance.html">Conditional Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_quarantine.html">Staying under quarantine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part06.html">Part 6 - Moving between demographics</a> &raquo;</li>
+      <li>How many days of self-isolation is needed?</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="02_duration.html" class="btn btn-neutral float-left" title="Self-isolation duration" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_compliance.html" class="btn btn-neutral float-right" title="Conditional Compliance" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-many-days-of-self-isolation-is-needed">
+<h1>How many days of self-isolation is needed?<a class="headerlink" href="#how-many-days-of-self-isolation-is-needed" title="Permalink to this headline"></a></h1>
+<p>In the last page you saw that about 1000 individuals were still
+infected after seven days of self-isolation, and were released
+back into the community. This was just 1-1.5% of the total number of
+infections, so it was unlikely to have a big impact. We can
+investigate this impact by scanning the number of days of
+self-isolation required. Edit your <code class="docutils literal notranslate"><span class="pre">move_isolate.py</span></code> to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Population</span>
+<span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Networks</span>
+<span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">go_isolate</span><span class="p">,</span> <span class="n">go_to</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">move_isolate</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">Networks</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">user_params</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">user_params</span>
+
+    <span class="n">ndays</span> <span class="o">=</span> <span class="n">user_params</span><span class="p">[</span><span class="s2">&quot;isolate_ndays&quot;</span><span class="p">]</span>
+    <span class="n">isolate_stage</span> <span class="o">=</span> <span class="n">user_params</span><span class="p">[</span><span class="s2">&quot;isolate_stage&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">ndays</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;move_isolate supports a maximum of 7 days of &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;isolation, so </span><span class="si">{</span><span class="n">ndays</span><span class="si">}</span><span class="s2"> is too many!&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Too many days of isolation requested&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ndays</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># just send infected individuals straight to &quot;released&quot;</span>
+        <span class="c1"># (this is the control)</span>
+        <span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_isolate</span><span class="p">(</span>
+                                    <span class="n">go_from</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">,</span>
+                                    <span class="n">go_to</span><span class="o">=</span><span class="s2">&quot;released&quot;</span><span class="p">,</span>
+                                    <span class="n">self_isolate_stage</span><span class="o">=</span><span class="n">isolate_stage</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">func</span><span class="p">]</span>
+
+    <span class="n">day</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">%</span> <span class="n">ndays</span>
+    <span class="n">isolate</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;isolate_</span><span class="si">{</span><span class="n">day</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">go_isolate_day</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_isolate</span><span class="p">(</span>
+                                        <span class="n">go_from</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">,</span>
+                                        <span class="n">go_to</span><span class="o">=</span><span class="n">isolate</span><span class="p">,</span>
+                                        <span class="n">self_isolate_stage</span><span class="o">=</span><span class="n">isolate_stage</span><span class="p">,</span>
+                                        <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">go_released</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">go_to</span><span class="p">(</span><span class="n">go_from</span><span class="o">=</span><span class="n">isolate</span><span class="p">,</span>
+                                        <span class="n">go_to</span><span class="o">=</span><span class="s2">&quot;released&quot;</span><span class="p">,</span>
+                                        <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">go_released</span><span class="p">,</span> <span class="n">go_isolate_day</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This move function will now read the number of days to isolate from
+the <code class="docutils literal notranslate"><span class="pre">isolate_ndays</span></code> user parameter. It will also move an individual
+into self-isolation when they reach disease stage <code class="docutils literal notranslate"><span class="pre">isolate_stage</span></code>.</p>
+<p>There is a little error-catching, e.g. as we only have seven available
+<code class="docutils literal notranslate"><span class="pre">isolate_N</span></code> demographics, we can only model up to seven days of
+self-isolation. If more than seven days is requested this calls
+<a class="reference internal" href="../../api/generated/metawards.utils.Console.html#metawards.utils.Console.error" title="metawards.utils.Console.error"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Console.error</span></code></a> to write an
+error to the output, and raises a Python <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>To add a control, we’ve set that if <code class="docutils literal notranslate"><span class="pre">isolate_ndays</span></code> is zero, then
+infected individuals are sent straight from <code class="docutils literal notranslate"><span class="pre">home</span></code> to <code class="docutils literal notranslate"><span class="pre">released</span></code>.
+This way we can compare runs that use self-isolation against a run
+where self-isolation is not performed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could of course increase the number of days of self-isolation that
+could be modelled by editing <code class="docutils literal notranslate"><span class="pre">demographics.json</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mix_isolate.py</span></code> and just increasing the number of <code class="docutils literal notranslate"><span class="pre">isolate_N</span></code>
+demographics.</p>
+</div>
+<p>Next create a file called <code class="docutils literal notranslate"><span class="pre">scan_isolate.dat</span></code> and copy in;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan through self-isolation from 0 to 7 days,</span>
+<span class="c1"># with self-isolation starting from disease</span>
+<span class="c1"># stages 2-4</span>
+
+<span class="o">.</span><span class="n">isolate_stage</span>   <span class="o">.</span><span class="n">isolate_ndays</span>
+        <span class="mi">2</span>               <span class="mi">0</span>
+        <span class="mi">2</span>               <span class="mi">1</span>
+        <span class="mi">2</span>               <span class="mi">2</span>
+        <span class="mi">2</span>               <span class="mi">3</span>
+        <span class="mi">2</span>               <span class="mi">4</span>
+        <span class="mi">2</span>               <span class="mi">5</span>
+        <span class="mi">2</span>               <span class="mi">6</span>
+        <span class="mi">2</span>               <span class="mi">7</span>
+
+        <span class="mi">3</span>               <span class="mi">0</span>
+        <span class="mi">3</span>               <span class="mi">1</span>
+        <span class="mi">3</span>               <span class="mi">2</span>
+        <span class="mi">3</span>               <span class="mi">3</span>
+        <span class="mi">3</span>               <span class="mi">4</span>
+        <span class="mi">3</span>               <span class="mi">5</span>
+        <span class="mi">3</span>               <span class="mi">6</span>
+        <span class="mi">3</span>               <span class="mi">7</span>
+
+        <span class="mi">4</span>               <span class="mi">0</span>
+        <span class="mi">4</span>               <span class="mi">1</span>
+        <span class="mi">4</span>               <span class="mi">2</span>
+        <span class="mi">4</span>               <span class="mi">3</span>
+        <span class="mi">4</span>               <span class="mi">4</span>
+        <span class="mi">4</span>               <span class="mi">5</span>
+        <span class="mi">4</span>               <span class="mi">6</span>
+        <span class="mi">4</span>               <span class="mi">7</span>
+</pre></div>
+</div>
+<p>This file will scan <code class="docutils literal notranslate"><span class="pre">isolate_stage</span></code> from 2 to 4, while scanning
+<code class="docutils literal notranslate"><span class="pre">isolate_ndays</span></code> from 0 to 7.</p>
+<p>You can run this job locally using the command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy4 -D demographics.json -a ExtraSeedsLondon.dat --mixer mix_isolate --mover move_isolate --extractor extract_none --nsteps <span class="m">365</span> -i scan_isolate.dat
+</pre></div>
+</div>
+<p>Given that it is good to repeat the runs several times, and there are a lot
+of jobs, you may want to run this on a cluster. To do this, the PBS
+job script could look like;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -l walltime=12:00:00</span>
+<span class="c1">#PBS -l select=4:ncpus=64:mem=64GB</span>
+<span class="c1"># The above sets 4 nodes with 64 cores each</span>
+
+<span class="nb">source</span> <span class="nv">$HOME</span>/envs/metawards/bin/activate
+
+<span class="c1"># change into the directory from which this job was submitted</span>
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+
+metawards -d lurgy4 -D demographics.json -a ExtraSeedsLondon.dat <span class="se">\</span>
+          --mixer mix_isolate --mover move_isolate --extractor extract_none <span class="se">\</span>
+          --nsteps <span class="m">365</span> -i scan_isolate.dat --repeats <span class="m">8</span> <span class="se">\</span>
+          --nthreads <span class="m">16</span> --force-overwrite-output --no-spinner --theme simple
+</pre></div>
+</div>
+<p>while the slurm job script would be;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --time=01:00:00</span>
+<span class="c1">#SBATCH --ntasks=4</span>
+<span class="c1">#SBATCH --cpus-per-task=64</span>
+<span class="c1"># The above sets 4 nodes with 64 cores each</span>
+
+<span class="nb">source</span> <span class="nv">$HOME</span>/envs/metawards/bin/activate
+
+metawards -d lurgy4 -D demographics.json -a ExtraSeedsLondon.dat <span class="se">\</span>
+          --mixer mix_isolate --mover move_isolate --extractor extract_none <span class="se">\</span>
+          --nsteps <span class="m">365</span> -i scan_isolate.dat --repeats <span class="m">8</span> <span class="se">\</span>
+          --nthreads <span class="m">16</span> --force-overwrite-output --no-spinner --theme simple
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that we’ve set the output theme to <code class="docutils literal notranslate"><span class="pre">simple</span></code> using
+<code class="docutils literal notranslate"><span class="pre">--theme</span> <span class="pre">simple</span></code> and have switched off the progress spinner
+using <code class="docutils literal notranslate"><span class="pre">--no-spinner</span></code> as these are unnecessary when run in batch
+mode on a cluster. All of the output will be written to the
+<code class="docutils literal notranslate"><span class="pre">output/console.log.bz2</span></code> file.</p>
+</div>
+<section id="analysing-the-results">
+<h2>Analysing the results<a class="headerlink" href="#analysing-the-results" title="Permalink to this headline"></a></h2>
+<p>Once the job has completed you can generate and animate the overview plots
+using <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code>, e.g. via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+metawards-plot --animate -i output/overview_*.jpg
+</pre></div>
+</div>
+<p>The resulting animation should look something like this;</p>
+<img alt="Animated overview of different self-isolation durations" src="../../_images/tutorial_6_3_1.gif" />
+<p>It is clear from these plots that self-isolation can work <em>if</em> it is
+started at an early stage, e.g. stage 2 or 3. Self-isolating for 5-7 days
+significantly reduces the numbers infected by the lurgy after a year,
+if started as soon as possible.</p>
+<p>However, what is also clear is that self-isolation has little impact
+if it starts too late, e.g. by stage 4 of the lurgy. In this case,
+even using the full seven days of self-isolation, more than 40 M
+individuals are infected with six months.</p>
+<p>The reason is clear when looking at the demographic plots. These can
+be generated using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/*/trajectory.csv.bz2
+metawards-plot --animate -i output/*x001/demographics.jpg -o demographics.gif
+</pre></div>
+</div>
+<p>Mine are shown here;</p>
+<img alt="Animated demographic plots for different self-isolation durations" src="../../_images/tutorial_6_3_2.gif" />
+<p>When caught early, most of the infected individuals are in one of the
+<code class="docutils literal notranslate"><span class="pre">isolate_N</span></code> demographics. However, when starting isolation from stage 4,
+the vast majority of infected individuals are in the <code class="docutils literal notranslate"><span class="pre">home</span></code> demographic.
+The epidemic experienced exponential growth within the <code class="docutils literal notranslate"><span class="pre">home</span></code> demographic
+before individuals self-isolated, meaning the impact of self-isolation
+on the course of the outbreak was minimal.</p>
+</section>
+<section id="relections-on-results">
+<h2>Relections on results<a class="headerlink" href="#relections-on-results" title="Permalink to this headline"></a></h2>
+<p>For the lurgy, these results indicate that there is a very short window
+of time between an individual showing symptoms and electively going
+into self-isolation, for which self-isolation is effective.</p>
+<p>Self-isolation (and by extensions, testing, contact-tracing etc.) would
+not work for the lurgy in this model if individuals waited until
+they’d reached stage 4 (showing larger symptoms and being more infectious),
+or if the time it took to confirm an infection or trace infected
+individuals was longer than the time it took to progress from stage
+3 to stage 4.</p>
+<p>It has to be done immediately from stage 3, when individuals start to
+notice symptoms (even though, at this stage, the symptoms are not
+limiting their movement).</p>
+<p>It should also be noted that, in this model, <code class="docutils literal notranslate"><span class="pre">beta</span></code> for the asymptomatic
+infectious stage had already been much reduced to account for society
+adopting some control measures.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="02_duration.html" class="btn btn-neutral float-left" title="Self-isolation duration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_compliance.html" class="btn btn-neutral float-right" title="Conditional Compliance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

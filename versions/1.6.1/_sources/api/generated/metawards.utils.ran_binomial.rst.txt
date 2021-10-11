@@ -1,0 +1,6 @@
+﻿metawards.utils.ran\_binomial
+=============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: ran_binomial

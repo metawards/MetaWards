@@ -1,0 +1,6 @@
+﻿metawards.utils.reset\_play\_matrix
+===================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: reset_play_matrix

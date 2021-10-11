@@ -1,0 +1,6 @@
+﻿metawards.mixers.merge\_using\_matrix
+=====================================
+
+.. currentmodule:: metawards.mixers
+
+.. autofunction:: merge_using_matrix

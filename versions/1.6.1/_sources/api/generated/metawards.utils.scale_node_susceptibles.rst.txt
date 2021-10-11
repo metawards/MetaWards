@@ -1,0 +1,6 @@
+﻿metawards.utils.scale\_node\_susceptibles
+=========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: scale_node_susceptibles

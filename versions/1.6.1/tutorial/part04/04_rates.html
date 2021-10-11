@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extracting rates by ward &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 5 - Modelling multiple demographics" href="../index_part05.html" />
+    <link rel="prev" title="Extracting by location" href="03_regional.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_extractors.html">Custom extractors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_default.html">Accumulating into a Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_regional.html">Extracting by location</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extracting rates by ward</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#workspace">Workspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extracting-the-population-in-i1">Extracting the population in I1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calculating-rates">Calculating rates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-to-a-database">Writing to a database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part04.html">Part 4 - Customising the output</a> &raquo;</li>
+      <li>Extracting rates by ward</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="03_regional.html" class="btn btn-neutral float-left" title="Extracting by location" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part05.html" class="btn btn-neutral float-right" title="Part 5 - Modelling multiple demographics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="extracting-rates-by-ward">
+<h1>Extracting rates by ward<a class="headerlink" href="#extracting-rates-by-ward" title="Permalink to this headline"></a></h1>
+<p>One of the major applications of a custom extractor is to enable you
+to add your own live-analysis that is performed while the simulation
+is running. This is much faster than having <code class="docutils literal notranslate"><span class="pre">metawards</span></code> write all
+data to disk, and then running analysis in a post-processing step.</p>
+<p>To analyse data, you need to understand the
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workspace</span></code></a> class.</p>
+<section id="workspace">
+<h2>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Workspace" title="metawards.Workspace"><code class="xref py py-class docutils literal notranslate"><span class="pre">Workspace</span></code></a> class provides a workspace in which data
+is accumulated and analysis performed. It is cleared between iterations,
+and holds the following information;</p>
+<dl class="simple">
+<dt>Data indexed by disease stage:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inf_tot</span></code>: The total number of workers in each disease stage, summed over all wards.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pinf_tot</span></code>: The total number of players in each disease stage, summed over all wards.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_inf_wards</span></code>: The number of wards which have at least one individual in the disease stage,</p></li>
+</ul>
+</dd>
+<dt>Data indexed by ward:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">total_inf_ward</span></code>: The total number of infections in each ward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">total_new_inf_ward</span></code>: The total number of new infections in each ward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">incidence</span></code>: The incidence of infection in each ward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S_in_wards</span></code>: The total population in the <code class="docutils literal notranslate"><span class="pre">S</span></code> state in each ward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E_in_wards</span></code>: The total population in the <code class="docutils literal notranslate"><span class="pre">E</span></code> state in each ward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I_in_wards</span></code>: The total population in the <code class="docutils literal notranslate"><span class="pre">I</span></code> state in each ward</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R_in_wards</span></code>: The total population in the <code class="docutils literal notranslate"><span class="pre">R</span></code> state in each ward</p></li>
+</ul>
+</dd>
+<dt>Data indexed by disease stage and then by ward</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ward_inf_tot</span></code>: The total population in each disease stage in each ward</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="extracting-the-population-in-i1">
+<h2>Extracting the population in I1<a class="headerlink" href="#extracting-the-population-in-i1" title="Permalink to this headline"></a></h2>
+<p>We can use a custom extractor to report the total number of individuals
+who are in the first <code class="docutils literal notranslate"><span class="pre">I</span></code> stage (I1) for each ward for each day.</p>
+<p>To do this, create a new extractor called <code class="docutils literal notranslate"><span class="pre">extract_i1.py</span></code> and copy
+in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+
+
+<span class="k">def</span> <span class="nf">output_i1</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># Open the file &quot;total_i1.csv&quot; in the output directory</span>
+    <span class="n">FILE</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;total_i1.csv&quot;</span><span class="p">)</span>
+
+    <span class="n">ward_inf_tot</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">ward_inf_tot</span>
+
+    <span class="c1"># The I1 state is stage 2</span>
+    <span class="n">I1_inf_tot</span> <span class="o">=</span> <span class="n">ward_inf_tot</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span><span class="p">)</span>
+    <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">I1_inf_tot</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">extract_i1</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="c1"># return all of the functions from &quot;extract_default&quot;</span>
+    <span class="c1"># plus our new &quot;output_i1&quot;</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_i1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<p>This defines a new output function called <code class="docutils literal notranslate"><span class="pre">output_i1</span></code>. This calls the
+<code class="docutils literal notranslate"><span class="pre">open</span></code> function of the <a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> object held
+in <code class="docutils literal notranslate"><span class="pre">output_dir</span></code> to open the file <code class="docutils literal notranslate"><span class="pre">total_i1.csv</span></code> in the output
+directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> class is clever enough to only
+open the file once, and will automatically close it when needed. It
+will also ensure that the file is opened in the correct output
+directory for a <em>model run</em> and will compress the file using bz2
+if the <code class="docutils literal notranslate"><span class="pre">--auto-bzip</span></code> command-line option has been passed (the default),
+or will disable automatic compression if <code class="docutils literal notranslate"><span class="pre">--no-auto-bzip</span></code> is set.</p>
+</div>
+<p>The function then gets <code class="docutils literal notranslate"><span class="pre">I1_inf_tot</span></code> from the third disease stage data
+held in <code class="docutils literal notranslate"><span class="pre">workspace.ward_inf_tot</span></code>. The third stage is the first <code class="docutils literal notranslate"><span class="pre">I</span></code>
+stage as the first stage (<code class="docutils literal notranslate"><span class="pre">ward_inf_tot[0]</span></code>) is a special <code class="docutils literal notranslate"><span class="pre">*</span></code> stage,
+used for advanced bookkeeping, while the second stage (<code class="docutils literal notranslate"><span class="pre">ward_inf_tot[1]</span></code>)
+is the latent, <code class="docutils literal notranslate"><span class="pre">E</span></code> stage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">*</span></code> stage is used to help evaluate how many wards see new infections.
+Individuals are moved into the <code class="docutils literal notranslate"><span class="pre">*</span></code> stage at the point of infection,
+and are moved into the <code class="docutils literal notranslate"><span class="pre">E</span></code> stage on the day after infection. By default,
+individuals in the <code class="docutils literal notranslate"><span class="pre">*</span></code> stage are counted into <code class="docutils literal notranslate"><span class="pre">R</span></code>, which is why this
+does not appear to rise continuously. You can control how individuals
+in the <code class="docutils literal notranslate"><span class="pre">*</span></code> stage are counted using either <code class="docutils literal notranslate"><span class="pre">--star-is-E</span></code> to count them
+as <code class="docutils literal notranslate"><span class="pre">E</span></code> (additional latent stage), <code class="docutils literal notranslate"><span class="pre">--star-is-R</span></code> to count them as
+<code class="docutils literal notranslate"><span class="pre">R</span></code> (default behaviour) or <code class="docutils literal notranslate"><span class="pre">--disable-star</span></code> to remove the <code class="docutils literal notranslate"><span class="pre">*</span></code>
+stage and instead treat this first stage as the one and only <code class="docutils literal notranslate"><span class="pre">E</span></code> stage.
+Note that if you do this, you will need to update the disease files to
+remove the <code class="docutils literal notranslate"><span class="pre">*</span></code> stage, and to update your above extractor as now
+stage 1 will be the first <code class="docutils literal notranslate"><span class="pre">I</span></code> stage.</p>
+</div>
+<p>Now that we have the population in the <code class="docutils literal notranslate"><span class="pre">I1</span></code> stage in each ward in
+<code class="docutils literal notranslate"><span class="pre">I1_inf_tot</span></code>, we write this as a comma-separated line to the file,
+starting each line with the day number obtained from the passed
+<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">Population</span></code></a> typed <code class="docutils literal notranslate"><span class="pre">population</span></code> object.</p>
+<p>To use your extractor run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --extract extract_i1 -a ExtraSeedsLondon.dat --nsteps <span class="m">30</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that we’ve set <code class="docutils literal notranslate"><span class="pre">nsteps</span></code> to 30 for illustration only,
+just to limit the runtime and the size of the file. In a real production
+run you wouldn’t need to set the number of steps.</p>
+</div>
+<p>You should see that your file called <code class="docutils literal notranslate"><span class="pre">total_i1.csv.bz2</span></code> has been created
+in the output directory, and that this contains the populations of the <code class="docutils literal notranslate"><span class="pre">I1</span></code>
+state for each ward.</p>
+</section>
+<section id="calculating-rates">
+<h2>Calculating rates<a class="headerlink" href="#calculating-rates" title="Permalink to this headline"></a></h2>
+<p>As well as outputting raw data, you can also perform some simple analysis
+that is run live during the <em>model run</em>. For example, you may want to record
+the number of individuals entering each state, so that you can calculate
+the rate of progress across states.</p>
+<p>To do this, you will need to save the <code class="docutils literal notranslate"><span class="pre">ward_inf_tot</span></code> data from the previous
+day’s state. You can do this by adding it as a custom attribute to the
+workspace.</p>
+<p>Create a new extractor by creating <code class="docutils literal notranslate"><span class="pre">extract_rate.py</span></code> and copying in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+
+
+<span class="k">def</span> <span class="nf">output_rate</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">workspace</span><span class="p">,</span> <span class="s2">&quot;output_rate_previous&quot;</span><span class="p">):</span>
+        <span class="c1"># This is the first day, so we cannot calculate the rate.</span>
+        <span class="c1"># Instead, just save today&#39;s data so that it can be</span>
+        <span class="c1"># be used tomorrow</span>
+        <span class="n">workspace</span><span class="o">.</span><span class="n">output_rate_previous</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">workspace</span><span class="o">.</span><span class="n">ward_inf_tot</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># get yesterday&#39;s data</span>
+    <span class="n">ward_inf_previous</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">output_rate_previous</span>
+
+    <span class="c1"># get today&#39;s data</span>
+    <span class="n">ward_inf_tot</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">ward_inf_tot</span>
+
+    <span class="c1"># calculate and write the difference between the two to files for</span>
+    <span class="c1"># each disease stage...</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">workspace</span><span class="o">.</span><span class="n">n_inf_classes</span><span class="p">):</span>
+        <span class="n">FILE</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rate_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">)</span>
+
+        <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+
+        <span class="c1"># loop over the data for each ward and write the</span>
+        <span class="c1"># difference to the file</span>
+        <span class="k">for</span> <span class="n">old</span><span class="p">,</span> <span class="n">new</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ward_inf_previous</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ward_inf_tot</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
+            <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">new</span> <span class="o">-</span> <span class="n">old</span><span class="p">))</span>
+
+        <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># save today&#39;s data so that it can be used tomorrow</span>
+    <span class="n">workspace</span><span class="o">.</span><span class="n">output_rate_previous</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">ward_inf_tot</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">extract_rate</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_rate</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<p>This extractor looks a little more complex, but it builds on what you have
+seen before. It defines <code class="docutils literal notranslate"><span class="pre">output_rate</span></code>, which if the function that will
+output the rates, and <code class="docutils literal notranslate"><span class="pre">extract_rate</span></code> which returns all of the functions
+from <code class="docutils literal notranslate"><span class="pre">extract_default</span></code>, plus your new <code class="docutils literal notranslate"><span class="pre">output_rate</span></code> function.</p>
+<p>The first job of <code class="docutils literal notranslate"><span class="pre">output_rate</span></code> is to determine if it has been called on
+the first day of the model. If it has, then there is no previous data
+from “yesterday” that can be used to calculate the rate. The function
+detects if this is the case by checking for a new custom attribute
+that will be under the control of this function. We will call this
+attribute <code class="docutils literal notranslate"><span class="pre">output_rate_previous</span></code>, so to minimise the risk of a name
+collision. If this attribute doesn’t exist, then we must be on the first
+day. We this save today’s data so that it can be used tomorrow.</p>
+<p>If the attribute does exist, then we can calculate a rate. We do that by
+getting yesterday’s data from <code class="docutils literal notranslate"><span class="pre">output_rate_previous</span></code> and todays data
+from <code class="docutils literal notranslate"><span class="pre">workspace.ward_inf_tot</span></code>. We then loop over all of the disease
+stages, and open an output file for each stage (called <code class="docutils literal notranslate"><span class="pre">rate_{i}.csv</span></code>).
+We then write into this file the day, then the difference between today’s
+and yesterday’s population in ward, for this <code class="docutils literal notranslate"><span class="pre">ith</span></code> disease stage.</p>
+<p>Finally, we save today’s data into <code class="docutils literal notranslate"><span class="pre">workspace.output_rate_previous</span></code>, so
+that it can be used tomorrow as yesterday’s data.</p>
+<p>Run this extractor in <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --extract extract_rate -a ExtraSeedsLondon.dat --nsteps <span class="m">30</span>
+</pre></div>
+</div>
+<p>(again, we are limiting this to 30 steps just for demonstration reasons)</p>
+<p>You should see that you have files <code class="docutils literal notranslate"><span class="pre">rate_0.csv.bz2</span></code>, <code class="docutils literal notranslate"><span class="pre">rate_1.csv.bz2</span></code> etc.
+now created in the output directory. If you look at these files you should
+see that they contain the differences between the populations in each ward
+for each disease stage between each day.</p>
+</section>
+<section id="writing-to-a-database">
+<h2>Writing to a database<a class="headerlink" href="#writing-to-a-database" title="Permalink to this headline"></a></h2>
+<p>In the last example we wrote rates to a large number of files. While this has
+worked, the data is beginning to get so large and multi-dimensional that
+we are reaching the limits of what a CSV or other data file can
+reasonably support. As data sizes get larger, it is better to start
+writing data to a database.</p>
+<p>The <a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputFiles</span></code></a> class has in-built support for opening
+connections to <a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">SQLite3</a>
+databases. To use this, we call the function
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a>. For example, let’s now create a new
+extractor that will output the size of the population at each disease stage
+for each day, and the change compared to the previous day. To do this,
+open a file called <code class="docutils literal notranslate"><span class="pre">extract_db.py</span></code> and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+
+
+<span class="k">def</span> <span class="nf">create_tables</span><span class="p">(</span><span class="n">N_INF_CLASSES</span><span class="p">):</span>
+    <span class="c1"># return a function that creates the tables</span>
+    <span class="c1"># for the specified number of disease classes</span>
+
+    <span class="k">def</span> <span class="nf">initialise</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
+        <span class="c1"># create a table for the values...</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;stage_</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> int&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N_INF_CLASSES</span><span class="p">)])</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;create table totals(day int, S int, </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+        <span class="c1"># create a table for the rates...</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;create table deltas(day int, S int, </span><span class="si">{</span><span class="n">values</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+        <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">initialise</span>
+
+
+<span class="k">def</span> <span class="nf">output_db</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">workspace</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">have_yesterday</span> <span class="o">=</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">workspace</span><span class="p">,</span> <span class="s2">&quot;output_rate_previous&quot;</span><span class="p">)</span>
+
+    <span class="c1"># get today&#39;s data</span>
+    <span class="n">inf_tot</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">inf_tot</span>
+    <span class="n">pinf_tot</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">pinf_tot</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">population</span><span class="o">.</span><span class="n">susceptibles</span>
+
+    <span class="n">N_INF_CLASSES</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">n_inf_classes</span>
+
+    <span class="c1"># open a database to hold the data - call the &#39;create_tables&#39;</span>
+    <span class="c1"># function on this database when it is first opened</span>
+    <span class="n">conn</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open_db</span><span class="p">(</span><span class="s2">&quot;stages.db&quot;</span><span class="p">,</span>
+                            <span class="n">initialise</span><span class="o">=</span><span class="n">create_tables</span><span class="p">(</span><span class="n">N_INF_CLASSES</span><span class="p">))</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+
+    <span class="c1"># get the values for today</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="p">[</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">S</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">inf</span><span class="o">+</span><span class="n">pinf</span> <span class="k">for</span> <span class="n">inf</span><span class="p">,</span> <span class="n">pinf</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">inf_tot</span><span class="p">,</span> <span class="n">pinf_tot</span><span class="p">)]</span>
+
+    <span class="c1"># convert this to a string</span>
+    <span class="n">today_str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">today</span><span class="p">])</span>
+
+    <span class="c1"># write these to the database</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;insert into totals VALUES (</span><span class="si">{</span><span class="n">today_str</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">workspace</span><span class="p">,</span> <span class="s2">&quot;output_rate_db&quot;</span><span class="p">):</span>
+        <span class="n">yesterday</span> <span class="o">=</span> <span class="n">workspace</span><span class="o">.</span><span class="n">output_rate_db</span>
+
+        <span class="c1"># calculate the difference in all columns of today and yesterday</span>
+        <span class="n">deltas</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="n">y</span> <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">today</span><span class="p">,</span> <span class="n">yesterday</span><span class="p">)]</span>
+        <span class="c1"># (except for the day, which should be today)</span>
+        <span class="n">deltas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">today</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="n">delta_str</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">deltas</span><span class="p">])</span>
+
+        <span class="c1"># write this to the database</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;insert into deltas values (</span><span class="si">{</span><span class="n">delta_str</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="c1"># save today&#39;s data so that it can be used tomorrow</span>
+    <span class="n">workspace</span><span class="o">.</span><span class="n">output_rate_db</span> <span class="o">=</span> <span class="n">today</span>
+
+
+<span class="k">def</span> <span class="nf">extract_db</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_db</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">funcs</span>
+</pre></div>
+</div>
+<p>Here, we have created a new function called <code class="docutils literal notranslate"><span class="pre">create_tables</span></code> that is called
+to create a function that is returned and passed to
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a>. This function creates two tables
+in the database; <code class="docutils literal notranslate"><span class="pre">totals</span></code> which contains the total population at each
+disease stage, and <code class="docutils literal notranslate"><span class="pre">deltas</span></code>, which contains the difference from the
+previous day.</p>
+<p>Next, we have <code class="docutils literal notranslate"><span class="pre">output_db</span></code>. This function calls
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open_db" title="metawards.OutputFiles.open_db"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open_db()</span></code></a> to create the connection, <code class="docutils literal notranslate"><span class="pre">conn</span></code>
+to the SQLite3 database. This connection is a standard Python
+<a class="reference external" href="https://docs.python.org/3/library/sqlite3.html">sqlite3 connection object</a>.</p>
+<p>We calculate the total population in each stage as the sum of
+<code class="docutils literal notranslate"><span class="pre">inf_tot</span></code> (the workers at each stage) and <code class="docutils literal notranslate"><span class="pre">pinf_tot</span></code> (the players
+at each stage). We prepend the number of susceptibles and also the
+day number.</p>
+<p>We then write this, as today’s data, to the database via a cursor.</p>
+<p>Next, we check if there is any data from yesterday by looking for the
+custom attribute <code class="docutils literal notranslate"><span class="pre">workspace.output_rate_db</span></code>. If there is, then we
+get this data, and then calculate the difference from the previous day.
+This is then written to the <code class="docutils literal notranslate"><span class="pre">deltas</span></code> table via the cursor.</p>
+<p>Finally, we commit the changes to the database, and then save today’s
+data to <code class="docutils literal notranslate"><span class="pre">workspace.output_rate_db</span></code> so that it can be used tomorrow.</p>
+<p>Run this extractor by typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --extract extract_db -a ExtraSeedsLondon.dat --nsteps <span class="m">30</span>
+</pre></div>
+</div>
+<p>(again, we limit to 30 days just for illustration purposes)</p>
+<p>Once this has finished, you should see a file called <code class="docutils literal notranslate"><span class="pre">output/stages.db.bz2</span></code>.</p>
+<p>Uncompress this file and then examine it using any SQLite3 database viewer,
+e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># sqlite3 output/stages.db</span>
+SQLite version <span class="m">3</span>.31.1 <span class="m">2020</span>-01-27 <span class="m">19</span>:55:54
+Enter <span class="s2">&quot;.help&quot;</span> <span class="k">for</span> usage hints.
+sqlite&gt; .dump
+PRAGMA <span class="nv">foreign_keys</span><span class="o">=</span>OFF<span class="p">;</span>
+BEGIN TRANSACTION<span class="p">;</span>
+CREATE TABLE totals<span class="o">(</span>day int, S int, stage_0 int,stage_1 int,stage_2 int,stage_3 int,stage_4 int,stage_5 int<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">0</span>,56082077,0,0,0,0,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">1</span>,56082072,0,5,0,0,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">2</span>,56082072,0,0,5,0,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">3</span>,56082067,5,0,3,2,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">4</span>,56082064,3,5,2,1,2,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">5</span>,56082061,3,3,6,1,2,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">6</span>,56082051,10,3,8,1,3,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">7</span>,56082039,12,10,9,3,2,2<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">8</span>,56082026,13,12,17,4,2,3<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">9</span>,56082002,24,13,26,4,4,4<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">10</span>,56081982,20,24,34,8,3,6<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">11</span>,56081950,32,20,55,5,8,7<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">12</span>,56081887,63,32,66,10,6,13<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">13</span>,56081827,60,63,76,30,6,15<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">14</span>,56081733,94,60,128,25,20,17<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">15</span>,56081588,145,94,169,31,21,29<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">16</span>,56081405,183,145,222,58,22,42<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">17</span>,56081131,274,183,317,78,42,52<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">18</span>,56080808,323,274,434,105,57,76<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">19</span>,56080318,490,323,618,144,82,102<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">20</span>,56079687,631,490,798,229,96,146<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">21</span>,56078886,801,631,1134,273,159,193<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">22</span>,56077748,1138,801,1539,356,224,271<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">23</span>,56076190,1558,1138,2028,488,301,374<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">24</span>,56074172,2018,1558,2759,652,388,530<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">25</span>,56071530,2642,2018,3760,883,525,719<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">26</span>,56067981,3549,2642,4997,1226,714,968<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">27</span>,56063321,4660,3549,6723,1522,961,1341<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">28</span>,56057020,6301,4660,8943,2095,1221,1837<span class="o">)</span><span class="p">;</span>
+INSERT INTO totals VALUES<span class="o">(</span><span class="m">29</span>,56048552,8468,6301,11808,2834,1631,2483<span class="o">)</span><span class="p">;</span>
+CREATE TABLE deltas<span class="o">(</span>day int, S int, stage_0 int,stage_1 int,stage_2 int,stage_3 int,stage_4 int,stage_5 int<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">1</span>,-5,0,5,0,0,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">2</span>,0,0,-5,5,0,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">3</span>,-5,5,0,-2,2,0,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">4</span>,-3,-2,5,-1,-1,2,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">5</span>,-3,0,-2,4,0,0,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">6</span>,-10,7,0,2,0,1,0<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">7</span>,-12,2,7,1,2,-1,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">8</span>,-13,1,2,8,1,0,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">9</span>,-24,11,1,9,0,2,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">10</span>,-20,-4,11,8,4,-1,2<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">11</span>,-32,12,-4,21,-3,5,1<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">12</span>,-63,31,12,11,5,-2,6<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">13</span>,-60,-3,31,10,20,0,2<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">14</span>,-94,34,-3,52,-5,14,2<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">15</span>,-145,51,34,41,6,1,12<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">16</span>,-183,38,51,53,27,1,13<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">17</span>,-274,91,38,95,20,20,10<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">18</span>,-323,49,91,117,27,15,24<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">19</span>,-490,167,49,184,39,25,26<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">20</span>,-631,141,167,180,85,14,44<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">21</span>,-801,170,141,336,44,63,47<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">22</span>,-1138,337,170,405,83,65,78<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">23</span>,-1558,420,337,489,132,77,103<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">24</span>,-2018,460,420,731,164,87,156<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">25</span>,-2642,624,460,1001,231,137,189<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">26</span>,-3549,907,624,1237,343,189,249<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">27</span>,-4660,1111,907,1726,296,247,373<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">28</span>,-6301,1641,1111,2220,573,260,496<span class="o">)</span><span class="p">;</span>
+INSERT INTO deltas VALUES<span class="o">(</span><span class="m">29</span>,-8468,2167,1641,2865,739,410,646<span class="o">)</span><span class="p">;</span>
+COMMIT<span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03_regional.html" class="btn btn-neutral float-left" title="Extracting by location" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part05.html" class="btn btn-neutral float-right" title="Part 5 - Modelling multiple demographics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

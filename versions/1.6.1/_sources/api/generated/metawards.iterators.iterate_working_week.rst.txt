@@ -1,0 +1,6 @@
+﻿metawards.iterators.iterate\_working\_week
+==========================================
+
+.. currentmodule:: metawards.iterators
+
+.. autofunction:: iterate_working_week

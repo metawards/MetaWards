@@ -1,0 +1,6 @@
+﻿metawards.app.mpi\_supervisor
+=============================
+
+.. currentmodule:: metawards.app
+
+.. autofunction:: mpi_supervisor

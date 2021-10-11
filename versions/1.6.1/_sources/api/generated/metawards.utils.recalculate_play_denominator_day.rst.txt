@@ -1,0 +1,6 @@
+﻿metawards.utils.recalculate\_play\_denominator\_day
+===================================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: recalculate_play_denominator_day

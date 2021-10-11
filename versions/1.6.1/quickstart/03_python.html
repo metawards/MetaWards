@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiple pathways with Python &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started in the Console" href="01_console.html" />
+    <link rel="prev" title="Extending the Model in Python" href="02_python.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Quick Start Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#r-rstudio">R / RStudio</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#python-jupyter">Python / Jupyter</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_python.html">Getting Started in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_python.html">Extending the Model in Python</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Multiple pathways with Python</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-mild-disease">Creating a mild disease</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-networks">Creating the networks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-the-demographics">Creating the demographics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-model">Running the model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complete-code">Complete code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#console-command-line">Console / Command line</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Quick Start Guide</a> &raquo;</li>
+      <li>Multiple pathways with Python</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="02_python.html" class="btn btn-neutral float-left" title="Extending the Model in Python" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01_console.html" class="btn btn-neutral float-right" title="Getting Started in the Console" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="multiple-pathways-with-python">
+<h1>Multiple pathways with Python<a class="headerlink" href="#multiple-pathways-with-python" title="Permalink to this headline"></a></h1>
+<p>MetaWards uses <a class="reference internal" href="../api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Demographics</span></code></a> to model different groups
+of individuals in different ways. Individuals can move between
+different demographics, and different demographics can experience
+different disease models and move within different networks. This
+is very powerful, and enables MetaWards to model multiple pathways
+for different individuals.</p>
+<p>This is explored in more depth in the <a class="reference internal" href="../tutorial/index.html"><span class="doc">tutorial</span></a>.
+For this quick start guide, we will create three demographics;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">students</span></code> : experience a mild version of the lurgy and travel to school each day</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">teachers</span></code> : experience the normal version of the lurgy, and also travel to school each day</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> : experience the normal version of the lurgy and either travel to work each day or stay home and play</p></li>
+</ul>
+<section id="creating-a-mild-disease">
+<h2>Creating a mild disease<a class="headerlink" href="#creating-a-mild-disease" title="Permalink to this headline"></a></h2>
+<p>First, we need to save the current version of the lurgy to a file called
+<code class="docutils literal notranslate"><span class="pre">lurgy.json.bz2</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lurgy</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;lurgy.json.bz2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we must create a milder version of the lurgy and save this to
+<code class="docutils literal notranslate"><span class="pre">mild_lurgy.json.bz2</span></code> using;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mild_lurgy</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Disease</span><span class="p">(</span><span class="s2">&quot;mild_lurgy&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mild_lurgy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mild_lurgy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mild_lurgy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mild_lurgy</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;mild_lurgy.json.bz2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-networks">
+<h2>Creating the networks<a class="headerlink" href="#creating-the-networks" title="Permalink to this headline"></a></h2>
+<p>We now need to create the three networks for the three demographics.
+We will start with the students, who will move between home and school.
+This will be saved to <code class="docutils literal notranslate"><span class="pre">students.json.bz2</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">home</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">school</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">school</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">students</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Wards</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">students</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">students</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">students</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;students.json.bz2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will next do the same for the teachers, who will also move between
+home and school (saving to <code class="docutils literal notranslate"><span class="pre">teachers.json.bz2</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">home</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">school</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">school</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">teachers</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Wards</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">teachers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">teachers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">teachers</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;teachers.json.bz2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, we will create the default network. This will consist of some players
+who stay at home, and workers who go to work.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">home</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">work</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;work&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">set_num_players</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">7000</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">work</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Wards</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">work</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;default.json.bz2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-demographics">
+<h2>Creating the demographics<a class="headerlink" href="#creating-the-demographics" title="Permalink to this headline"></a></h2>
+<p>Next, we create the demographics. We do this by creating
+<a class="reference internal" href="../api/generated/metawards.Demographic.html#metawards.Demographic" title="metawards.Demographic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographic</span></code></a> objects for each demographic that
+specify the network and disease to use for each group. These are then
+combined into a single <a class="reference internal" href="../api/generated/metawards.Demographics.html#metawards.Demographics" title="metawards.Demographics"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographics</span></code></a> object.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">students</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;students&quot;</span><span class="p">,</span>
+<span class="go">                              disease=&quot;mild_lurgy.json.bz2&quot;,</span>
+<span class="go">                              network=&quot;students.json.bz2&quot;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">teachers</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;teachers&quot;</span><span class="p">,</span>
+<span class="go">                              disease=&quot;lurgy.json.bz2&quot;,</span>
+<span class="go">                              network=&quot;teachers.json.bz2&quot;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">default</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+<span class="go">                             disease=&quot;lurgy.json.bz2&quot;,</span>
+<span class="go">                             network=&quot;default.json.bz2&quot;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographics</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">teachers</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">demographics</span><span class="p">)</span>
+
+<span class="go">[</span>
+<span class="go">  Demographic(name=&#39;default&#39;, work_ratio=0.0, play_ratio=0.0, disease=lurgy.json.bz2, network=&#39;default.json.bz2&#39;)</span>
+<span class="go">  Demographic(name=&#39;teachers&#39;, work_ratio=0.0, play_ratio=0.0, disease=lurgy.json.bz2, network=&#39;teachers.json.bz2&#39;)</span>
+<span class="go">  Demographic(name=&#39;students&#39;, work_ratio=0.0, play_ratio=0.0, disease=mild_lurgy.json.bz2, network=&#39;students.json.bz2&#39;)</span>
+<span class="go">]</span>
+</pre></div>
+</div>
+</section>
+<section id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline"></a></h2>
+<p>We can run the model by passing in the demographics. Note that we don’t need
+to specify the model as this is now fully specified in the demographics.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="n">demographics</span><span class="p">,</span>
+<span class="go">                     additional=&quot;1, 5, home, default&quot;, silent=True)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have added <code class="docutils literal notranslate"><span class="pre">default</span></code> to the additional seeding to specify that the
+initial infections will be in this demographic. This is needed as a current
+limitation of MetaWards is that you can only seed infections in players,
+and only the default demographic in this example has players.</p>
+</div>
+<p>You can then process and graph the results as before;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="s2">&quot;IR&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>When you do this, you will notice that the number of susceptibles falls
+until it reaches a number above 3200. This is because we seeded the outbreak
+in the <code class="docutils literal notranslate"><span class="pre">default</span></code> demographic. By default, demographics do not mix with
+each other, and so the outbreak does not spread to the teachers or
+students.</p>
+<p>We can control the amount of mixing of demographics using the <code class="docutils literal notranslate"><span class="pre">mixer</span></code>
+argument. This specifies a mixing function to use. We will use
+<a class="reference internal" href="../api/generated/metawards.mixers.mix_evenly.html#metawards.mixers.mix_evenly" title="metawards.mixers.mix_evenly"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_evenly()</span></code></a>, which sets that all demographics will
+mix evenly with each other.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="n">demographics</span><span class="p">,</span>
+<span class="go">                     additional=&quot;1, 5, home, default&quot;,</span>
+<span class="go">                     mixer=&quot;mix_evenly&quot;, silent=True)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="s2">&quot;IR&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Now you should see that the outbreak spreads through the entire population.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">trajectory.csv.bz2</span></code> file in the output directory of the run
+contains the trajectory for each of the demographics in each
+disease state. You can load this to generate demographic graphs.</p>
+</div>
+</section>
+<section id="complete-code">
+<h2>Complete code<a class="headerlink" href="#complete-code" title="Permalink to this headline"></a></h2>
+<p>The complete Python code for this part of the getting started guide is
+re-copied below (this continues from the code in the last part);</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the lurgy to disk</span>
+<span class="n">lurgy</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;lurgy.json.bz2&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a milder lurgy and save to disk</span>
+<span class="n">mild_lurgy</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Disease</span><span class="p">(</span><span class="s2">&quot;mild_lurgy&quot;</span><span class="p">)</span>
+<span class="n">mild_lurgy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">mild_lurgy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">mild_lurgy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;R&quot;</span><span class="p">)</span>
+<span class="n">mild_lurgy</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;mild_lurgy.json.bz2&quot;</span><span class="p">)</span>
+
+<span class="c1"># create the students network</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="n">school</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">)</span>
+<span class="n">home</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">school</span><span class="p">)</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Wards</span><span class="p">()</span>
+<span class="n">students</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="n">students</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
+<span class="n">students</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;students.json.bz2&quot;</span><span class="p">)</span>
+
+<span class="c1"># create the teachers network</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="n">school</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">)</span>
+<span class="n">home</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">school</span><span class="p">)</span>
+<span class="n">teachers</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Wards</span><span class="p">()</span>
+<span class="n">teachers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="n">teachers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
+<span class="n">teachers</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;teachers.json.bz2&quot;</span><span class="p">)</span>
+
+<span class="c1"># create the default network</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="n">work</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Ward</span><span class="p">(</span><span class="s2">&quot;work&quot;</span><span class="p">)</span>
+<span class="n">home</span><span class="o">.</span><span class="n">set_num_players</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">home</span><span class="o">.</span><span class="n">add_workers</span><span class="p">(</span><span class="mi">7000</span><span class="p">,</span> <span class="n">destination</span><span class="o">=</span><span class="n">work</span><span class="p">)</span>
+<span class="n">default</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Wards</span><span class="p">()</span>
+<span class="n">default</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="n">default</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">work</span><span class="p">)</span>
+<span class="n">default</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;default.json.bz2&quot;</span><span class="p">)</span>
+
+<span class="c1"># now create the demographics</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;students&quot;</span><span class="p">,</span>
+                          <span class="n">disease</span><span class="o">=</span><span class="s2">&quot;mild_lurgy.json.bz2&quot;</span><span class="p">,</span>
+                          <span class="n">network</span><span class="o">=</span><span class="s2">&quot;students.json.bz2&quot;</span><span class="p">)</span>
+<span class="n">teachers</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;teachers&quot;</span><span class="p">,</span>
+                          <span class="n">disease</span><span class="o">=</span><span class="s2">&quot;lurgy.json.bz2&quot;</span><span class="p">,</span>
+                          <span class="n">network</span><span class="o">=</span><span class="s2">&quot;teachers.json.bz2&quot;</span><span class="p">)</span>
+<span class="n">default</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+                         <span class="n">disease</span><span class="o">=</span><span class="s2">&quot;lurgy.json.bz2&quot;</span><span class="p">,</span>
+                         <span class="n">network</span><span class="o">=</span><span class="s2">&quot;default.json.bz2&quot;</span><span class="p">)</span>
+<span class="n">demographics</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">Demographics</span><span class="p">()</span>
+<span class="n">demographics</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">default</span><span class="p">)</span>
+<span class="n">demographics</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">teachers</span><span class="p">)</span>
+<span class="n">demographics</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+
+<span class="c1"># run the model</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">mw</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">disease</span><span class="o">=</span><span class="n">lurgy</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="n">demographics</span><span class="p">,</span>
+                 <span class="n">additional</span><span class="o">=</span><span class="s2">&quot;1, 5, home, default&quot;</span><span class="p">,</span>
+                 <span class="n">mixer</span><span class="o">=</span><span class="s2">&quot;mix_evenly&quot;</span><span class="p">,</span> <span class="n">silent</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># graph the results</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;S&quot;</span><span class="p">,</span><span class="s2">&quot;E&quot;</span><span class="p">,</span><span class="s2">&quot;I&quot;</span><span class="p">,</span><span class="s2">&quot;IR&quot;</span><span class="p">,</span><span class="s2">&quot;R&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="what-s-next">
+<h2>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline"></a></h2>
+<p>This was a quick start guide to show some of the capabilities of MetaWards.
+To learn more, e.g. how to create custom iterators to model lockdowns,
+how to write extractors to get more detailed information output,
+how to write mixers for modelling shielding etc., or how to write movers
+to model conditional branching, please do now follow the
+<a class="reference internal" href="../tutorial/index.html"><span class="doc">tutorial</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="02_python.html" class="btn btn-neutral float-left" title="Extending the Model in Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01_console.html" class="btn btn-neutral float-right" title="Getting Started in the Console" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

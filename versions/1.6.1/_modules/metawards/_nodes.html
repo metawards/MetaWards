@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metawards._nodes &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+          <li><a href="../metawards.html">metawards</a> &raquo;</li>
+      <li>metawards._nodes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for metawards._nodes</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">._node</span> <span class="kn">import</span> <span class="n">Node</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nodes&quot;</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">array</span>
+
+
+<div class="viewcode-block" id="Nodes"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes">[docs]</a><span class="k">class</span> <span class="nc">Nodes</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This is a container class for Nodes. This uses Python arrays</span>
+<span class="sd">       to store a list of Node objects as a &quot;struct of arrays&quot;.</span>
+<span class="sd">       This should improve speed of loading and access.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Nodes.__init__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create a container for up to &quot;N&quot; nodes&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="kn">from</span> <span class="nn">.utils._array</span> <span class="kn">import</span> <span class="n">create_double_array</span><span class="p">,</span> <span class="n">create_int_array</span>
+
+            <span class="c1"># Struct of arrays for each piece of data. See the</span>
+            <span class="c1"># Node class for information about what each variable</span>
+            <span class="c1"># holds. Code uses &quot;-1&quot; to represent a null value</span>
+
+            <span class="c1">#: ID number for each node. This should equal the node index</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: The start index for work links</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">begin_to</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: The end index for work links</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">end_to</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: The index of the home commuter work link</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">self_w</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: The start index for play links</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">begin_p</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: The end index for play links</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">end_p</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: The index of the home player play link</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">self_p</span> <span class="o">=</span> <span class="n">create_int_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1">#: Dayime force of infection for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">day_foi</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Nighttime force of infection for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">night_foi</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Number of susceptible players in each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">play_suscept</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Saved value of the number of susceptible players</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Night time work denominator for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denominator_n</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Day time work denominator for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denominator_d</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Night time play denominator for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denominator_p</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Day time play denominator for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">denominator_pd</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Daytime infection probability for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">day_inf_prob</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Nighttime infection probability for each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">night_inf_prob</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: X-coordinate of the center of each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># no good initialiser for x</span>
+            <span class="c1">#: Y-coordinate of the center of each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># no good initialiser for y</span>
+
+            <span class="c1">#: per-ward UV scaling parameter</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+            <span class="c1">#: per-ward cutoff value - default to a large number that</span>
+            <span class="c1">#: is greater than any distance between points on Earth</span>
+            <span class="c1">#: (distance in k)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">99999.99</span><span class="p">)</span>
+
+            <span class="c1">#: per-ward bg_foi value - this the starting FOI for the</span>
+            <span class="c1">#: ward in the FOI calculation. This defaults to 0.0,</span>
+            <span class="c1">#: but can be set to larger values if you want the ward</span>
+            <span class="c1">#: to have a background FOI that drives infections</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="c1">#: Coordinate system used (x/y for X,Y in km, lat/long for</span>
+            <span class="c1">#: latitude and longitude)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">coordinates</span> <span class="o">=</span> <span class="s2">&quot;x/y&quot;</span>
+
+            <span class="c1">#: Dictionary of all user-provided custom parameters for</span>
+            <span class="c1">#: each ward</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span> <span class="o">=</span> <span class="p">{}</span></div>
+
+    <span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span>
+
+<div class="viewcode-block" id="Nodes.__len__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__len__">[docs]</a>    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the number of nodes in this container&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_null</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nodes.copy"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return a copy of this network, using deep copies for things</span>
+<span class="sd">           which are variable, but shallow copies for things which</span>
+<span class="sd">           should stay the same (e.g. x and y). This copy assumes that</span>
+<span class="sd">           you are not changing the actual links between nodes, e.g.</span>
+<span class="sd">           it shallow-copies label, begin_to, end_to, self_w, begin_p, end_p</span>
+<span class="sd">           and self_p. If you are changing the links then you will</span>
+<span class="sd">           need to recreate these arrays.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span><span class="p">,</span> <span class="n">deepcopy</span>
+
+        <span class="n">nodes</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># shallow copy</span>
+
+        <span class="c1"># now deep copy the required elements</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">day_foi</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">day_foi</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">night_foi</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">night_foi</span><span class="p">)</span>
+
+        <span class="n">nodes</span><span class="o">.</span><span class="n">play_suscept</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">save_play_suscept</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span><span class="p">)</span>
+
+        <span class="n">nodes</span><span class="o">.</span><span class="n">denominator_n</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_n</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">denominator_d</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_d</span><span class="p">)</span>
+
+        <span class="n">nodes</span><span class="o">.</span><span class="n">denominator_p</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_p</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">denominator_pd</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_pd</span><span class="p">)</span>
+
+        <span class="n">nodes</span><span class="o">.</span><span class="n">day_inf_prob</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">day_inf_prob</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">night_inf_prob</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">night_inf_prob</span><span class="p">)</span>
+
+        <span class="n">nodes</span><span class="o">.</span><span class="n">scale_uv</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">cutoff</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span><span class="p">)</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="n">bg_foi</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span><span class="p">)</span>
+
+        <span class="n">nodes</span><span class="o">.</span><span class="n">_custom_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">nodes</span></div>
+
+<div class="viewcode-block" id="Nodes.assert_not_null"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.assert_not_null">[docs]</a>    <span class="k">def</span> <span class="nf">assert_not_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Assert that this collection of nodes is not null&quot;&quot;&quot;</span>
+        <span class="k">assert</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_null</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Nodes.assert_valid_index"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.assert_valid_index">[docs]</a>    <span class="k">def</span> <span class="nf">assert_valid_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Assert that the passed index &#39;i&#39; is valid for this collection.</span>
+<span class="sd">           This will return the index with  Python reverse indexing,</span>
+<span class="sd">           so that &quot;-1&quot; refers to the last node in the collection</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_not_null</span><span class="p">()</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">i</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid node index </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. Number of nodes &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;in this container equals </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">i</span></div>
+
+<div class="viewcode-block" id="Nodes.get_index"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.get_index">[docs]</a>    <span class="k">def</span> <span class="nf">get_index</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the mapped index for the ith node. This will raise an</span>
+<span class="sd">           IndexError if this is an invalid index. If not, it will map</span>
+<span class="sd">           a negative index into a canonical positive index</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_valid_index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span></div>
+
+<div class="viewcode-block" id="Nodes.population"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.population">[docs]</a>    <span class="k">def</span> <span class="nf">population</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return the total population of the nodes</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           int</span>
+<span class="sd">               Total population</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nodes.__getitem__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__getitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return the node at index &#39;i&#39;. Note that this is a</span>
+<span class="sd">           deep copy of the node. Changing the node will not change</span>
+<span class="sd">           the data in this container. To update the data in this</span>
+<span class="sd">           container you need to use __setitem__, e.g. via the</span>
+<span class="sd">           index operator (see __setitem__)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">assert_valid_index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">custom_params</span> <span class="o">=</span> <span class="p">{}</span>
+
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            <span class="k">return</span> <span class="n">Node</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">begin_to</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">begin_to</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">end_to</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">end_to</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">self_w</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">self_w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">begin_p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">begin_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">end_p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">end_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">self_p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">self_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">day_foi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">day_foi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">night_foi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">night_foi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">play_suscept</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">save_play_suscept</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">denominator_n</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_n</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">denominator_d</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_d</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">denominator_p</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">denominator_pd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_pd</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">scale_uv</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">cutoff</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                        <span class="n">bg_foi</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+
+                        <span class="n">_custom_params</span><span class="o">=</span><span class="n">custom_params</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils._console</span> <span class="kn">import</span> <span class="n">Console</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error at index </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: &quot;</span>
+                          <span class="sa">f</span><span class="s2">&quot;size = </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">e</span></div>
+
+<div class="viewcode-block" id="Nodes.__setitem__"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.__setitem__">[docs]</a>    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Node</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the item as index &#39;i&#39; equal to &#39;value&#39;. This deep-copies</span>
+<span class="sd">           &#39;value&#39; into this container</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">assert_valid_index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">label</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">label</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">begin_to</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">begin_to</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_to</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">end_to</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">end_to</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">self_w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">self_w</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">self_w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">begin_p</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">begin_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">end_p</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">end_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">self_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">self</span><span class="o">.</span><span class="n">_p</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">self_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">day_foi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">day_foi</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">day_foi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">night_foi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">night_foi</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">night_foi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">play_suscept</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">play_suscept</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">save_play_suscept</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">save_play_suscept</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_n</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_n</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_d</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_d</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_p</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_p</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_pd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_pd</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">denominator_pd</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">x</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">y</span> <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">y</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">scale_uv</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">scale_uv</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">1.0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">cutoff</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">cutoff</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">99999.99</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">bg_foi</span> \
+            <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">bg_foi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mf">0.0</span>
+
+        <span class="kn">from</span> <span class="nn">.utils._array</span> <span class="kn">import</span> <span class="n">create_double_array</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">value</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nodes.resize"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.resize">[docs]</a>    <span class="k">def</span> <span class="nf">resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Resize this container to hold &#39;N&#39; nodes. This will expand</span>
+<span class="sd">           the container if &#39;N&#39; is greater than len(self), or will</span>
+<span class="sd">           contract the container (deleting excess nodes) if &#39;N&#39;</span>
+<span class="sd">           is less than len(self). This function is called typically</span>
+<span class="sd">           when you pre-allocate a large Nodes container, and then</span>
+<span class="sd">           want to reduce the size to fit the number of loaded nodes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_null</span><span class="p">():</span>
+            <span class="c1"># Assign to a new Nodes object created with this size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="n">Nodes</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="o">.</span><span class="vm">__dict__</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">N</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span> <span class="o">=</span> <span class="n">Nodes</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="vm">__dict__</span>
+
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="n">size</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="kn">from</span> <span class="nn">.utils._array</span> <span class="kn">import</span> <span class="n">resize_array</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_to</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">begin_to</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_to</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_to</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">self_w</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">self_w</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">begin_p</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">begin_p</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_p</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_p</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">self_p</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">self_p</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">day_foi</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">day_foi</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">night_foi</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">night_foi</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">play_suscept</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">play_suscept</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_play_suscept</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_n</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_n</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_d</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_d</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_p</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_p</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">denominator_pd</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">denominator_pd</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_uv</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cutoff</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">99999.99</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bg_foi</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">resize_array</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Nodes.get_custom"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.get_custom">[docs]</a>    <span class="k">def</span> <span class="nf">get_custom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">array</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot;Return the array of custom parameters for the key called &#39;key&#39;.</span>
+<span class="sd">           If these don&#39;t exist then create them with the specified</span>
+<span class="sd">           default value. Note that this returns a shallow copy of the</span>
+<span class="sd">           array, meaning that you can modify this directly and it</span>
+<span class="sd">           will change the value of the nodes. This is identical</span>
+<span class="sd">           to the behaviour of the other arrays in this Nodes</span>
+<span class="sd">           object (it is optimised for speed, not safety)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">.utils._array</span> <span class="kn">import</span> <span class="n">create_double_array</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">default</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Nodes.set_custom"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.set_custom">[docs]</a>    <span class="k">def</span> <span class="nf">set_custom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span>
+                   <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Set the custom parameters for the key called &#39;key&#39; to &#39;value&#39;.</span>
+<span class="sd">           If the index is set then this just sets the value for that</span>
+<span class="sd">           index. You pass in either an array of floats (thus setting</span>
+<span class="sd">           all node parameters, or a single float, which is for the</span>
+<span class="sd">           single ward, or will set all wards to have that value.</span>
+
+<span class="sd">           Note that custom parameters can only be floats!</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.utils._array</span> <span class="kn">import</span> <span class="n">create_double_array</span>
+
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Cannot set parameters for empty Nodes&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid index </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">return</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">!=</span> <span class="n">N</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;You must set the parameters using an array of size </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">. &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;Not a </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">v</span> <span class="o">=</span> <span class="n">create_double_array</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+            <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_custom_params</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span></div>
+
+<div class="viewcode-block" id="Nodes.scale_susceptibles"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Nodes.scale_susceptibles">[docs]</a>    <span class="k">def</span> <span class="nf">scale_susceptibles</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                           <span class="n">work_ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">play_ratio</span><span class="p">:</span> <span class="nb">any</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Scale the number of susceptibles in these Nodes</span>
+<span class="sd">           by the passed scale ratios. These can be values, e.g.</span>
+<span class="sd">           ratio = 2.0 will scale the total number of susceptibles</span>
+<span class="sd">           in each ward by 2.0. They can also be lists of values,</span>
+<span class="sd">           where ward[i] will be scaled by ratio[i]. They can also</span>
+<span class="sd">           be dictionaries, e.g. ward[i] scaled by ratio[i]</span>
+
+<span class="sd">           Parameters</span>
+<span class="sd">           ----------</span>
+<span class="sd">           ratio: None, float, list or dict</span>
+<span class="sd">             The amount by which to scale the total population of</span>
+<span class="sd">             susceptibles - evenly scales the work and play populations</span>
+<span class="sd">           work_ratio: None, float, list or dict</span>
+<span class="sd">             Scale only the work population of susceptibles</span>
+<span class="sd">           play_ratio: None, float, list or dict</span>
+<span class="sd">             Scale only the play population of susceptibles</span>
+
+<span class="sd">           Returns</span>
+<span class="sd">           -------</span>
+<span class="sd">           None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">.utils._scale_susceptibles</span> <span class="kn">import</span> <span class="n">scale_node_susceptibles</span>
+        <span class="n">scale_node_susceptibles</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">,</span>
+                                <span class="n">work_ratio</span><span class="o">=</span><span class="n">work_ratio</span><span class="p">,</span>
+                                <span class="n">play_ratio</span><span class="o">=</span><span class="n">play_ratio</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

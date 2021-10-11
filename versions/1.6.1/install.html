@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installation instructions &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Model data" href="model_data.html" />
+    <link rel="prev" title="Features" href="features.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html">
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation-via-python">Installation via Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-via-r">Installation via R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-install">Source install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-developers">For developers</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Installation instructions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="features.html" class="btn btn-neutral float-left" title="Features" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="model_data.html" class="btn btn-neutral float-right" title="Model data" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installation-instructions">
+<h1>Installation instructions<a class="headerlink" href="#installation-instructions" title="Permalink to this headline"></a></h1>
+<p>MetaWards is a Python package, but it does come with R wrappers. This
+means that you can choose to install MetaWards either via Python or
+via R. Note that MetaWards depends on data files that are
+held in MetaWardsData. To use MetaWards, you must install MetaWardsData
+following <a class="reference internal" href="model_data.html"><span class="doc">these instructions</span></a>.</p>
+<section id="installation-via-python">
+<h2>Installation via Python<a class="headerlink" href="#installation-via-python" title="Permalink to this headline"></a></h2>
+<p>MetaWards is compiled and
+<a class="reference external" href="https://github.com/metawards/MetaWards/actions">tested on Windows, Linux and OS X</a>,
+but should be able to compile and install on any operating system
+with a working Python &gt;= 3.7 and a C compiler.</p>
+<p>To install MetaWards, you first need to install Python &gt;= 3.7. To check
+if you have Python 3.7 installed type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -V
+</pre></div>
+</div>
+<p>This should print out the version number of the Python you have available.
+If the version number is <code class="docutils literal notranslate"><span class="pre">2.???</span></code> then you have a very old Python 2. If
+this is the case, try;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -V
+</pre></div>
+</div>
+<p>and see if you have a Python 3 that has a version number &gt;= 3.7. If so,
+please use <code class="docutils literal notranslate"><span class="pre">python3</span></code> instead of <code class="docutils literal notranslate"><span class="pre">python</span></code>.</p>
+<p>If you don’t have Python &gt;=3.7 installed, then you can install Python
+either via your package manager, or more simply, by using
+<a class="reference external" href="https://anaconda.org">anaconda</a>.</p>
+<p>Once you have a working Python &gt;= 3.7, the easiest way to install
+MetaWards is using
+<a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install metawards
+</pre></div>
+</div>
+<p>(if this doesn’t work, then you may need to use the command <code class="docutils literal notranslate"><span class="pre">pip3</span></code>,
+or you may have to <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">install pip</a>.
+If you have trouble installing pip then we recommend that you download
+and install <a class="reference external" href="https://anaconda.org">anaconda</a>, which has pip included)</p>
+<p>To install a specific version, e.g. 1.5.1, type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install <span class="nv">metawards</span><span class="o">==</span><span class="m">1</span>.5.1
+</pre></div>
+</div>
+<p>This will install a binary version of metawards if it is available for your
+operating system / processor / version of python. If not, then
+the metawards pyx code that was compiled into C using
+<a class="reference external" href="https://cython.org">cython</a>,
+will be compiled into an executable using your system C compiler
+(e.g. <a class="reference external" href="https://gcc.gnu.org">gcc</a> or <a class="reference external" href="https://clang.llvm.org">clang</a>).
+You can control which C compiler to use by setting the <code class="docutils literal notranslate"><span class="pre">CC</span></code> environment
+variable, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CC</span><span class="o">=</span>gcc pip install metawards
+</pre></div>
+</div>
+<p>MetaWards is written in standard C, using
+<a class="reference external" href="https://www.openmp.org">OpenMP</a> for parallelisation,
+and it has no external dependencies, so
+it should compile without issue. Note that the system C compiler on
+OS X (Mac) does not support OpenMP. In this case you the code will
+compile with OpenMP disabled. If you want to use all of the cores
+of your computer than you will need to install
+a different compiler, e.g. installing clang via
+<a class="reference external" href="https://brew.sh">homebrew</a>. If you have any problems then please
+<a class="reference external" href="https://github.com/metawards/MetaWards/issues">post an issue on GitHub</a>.</p>
+<p>Once installed, you can run <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --version
+</pre></div>
+</div>
+<p>This should print out some version information about MetaWards,
+including whether or not it found MetaWardsData.</p>
+<p>If this doesn’t work, then it is possible that the directory into which
+<a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> has been placed is not in your PATH (this is quite
+common on Windows). You can find the
+location of the <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> executable by starting Python and
+typing;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">metawards</span>
+<span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">metawards</span><span class="o">.</span><span class="n">find_mw_exe</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You can then run <a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> either by typing out the full path
+to the executable that is printed, or by adding the directory
+containing the executable to your PATH.</p>
+</section>
+<section id="installation-via-r">
+<h2>Installation via R<a class="headerlink" href="#installation-via-r" title="Permalink to this headline"></a></h2>
+<p>MetaWards can be used within R via the <a class="reference external" href="https://rstudio.github.io/reticulate/">reticulate</a>
+package. We have built a MetaWards R package that simplifies this use.</p>
+<p>To use this, you must first have installed metawards as above,
+via the Python route. This is because the version of Python used
+by default in R is too old to run MetaWards (MetaWards needs
+Python 3.7 or newer, while the default in reticulate is to install
+and use Python 3.6).</p>
+<p>Once you have MetaWards (and MetaWardsData)
+installed in Python, you first need to
+get the reticulate command that you will need to tell R which
+Python interpreter to use. We have written a function to do
+this for you. Open Python and type;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metawards</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">metawards</span><span class="o">.</span><span class="n">get_reticulate_command</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>You should see printed something like</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">reticulate</span><span class="o">::</span><span class="nf">use_python</span><span class="p">(</span><span class="s">&quot;/path/to/python&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <em class="xref py py-obj">/path/to/python</em> is the full path to the python executable
+that you are using.</p>
+<p>Next, open R or RStudio and install reticulate (if you haven’t
+done that already).</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;reticulate&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, you should install the MetaWards R package from GitHub.
+You need to use the <em class="xref py py-obj">devtools</em> library to do this.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">devtools</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">install_github</span><span class="p">(</span><span class="s">&quot;metawards/rpkg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, you need to tell reticulate to use the Python
+executable you found earlier. Copy in the reticulate
+command exactly as it was printed by Python, e.g.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">reticulate</span><span class="o">::</span><span class="nf">use_python</span><span class="p">(</span><span class="s">&quot;/path/to/python&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, load the <code class="docutils literal notranslate"><span class="pre">metawards</span></code> package and use the <code class="docutils literal notranslate"><span class="pre">py_metawards_available</span></code>
+to check that MetaWards can be found and loaded.</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_metawards_available</span><span class="p">()</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="kc">TRUE</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, once reticulate defaults to Python 3.7 or
+above, you will be able to install MetaWards directly
+by calling <em class="xref py py-obj">metawards::py_install_metawards()</em>. This
+command will install metawards into the default Python
+that comes with reticulate.</p>
+</div>
+<p>Once installed, you can check if there
+are any updates to MetaWards available directly in R, via;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_metawards_update_available</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>and you can update to the lastest version using;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">metawards</span><span class="o">::</span><span class="nf">py_update_metawards</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="source-install">
+<h2>Source install<a class="headerlink" href="#source-install" title="Permalink to this headline"></a></h2>
+<p>You can download a source release of MetaWards from the
+<a class="reference external" href="https://github.com/metawards/MetaWards/releases">project release page</a>.</p>
+<p>Once you have downloaded the file you can unpack it and change into
+that directory using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -zxvf MetaWards-X.Y.Z.tar.gz
+<span class="nb">cd</span> MetaWards-X.Y.Z
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code> is the version you downloaded. For the 1.4.0 release
+this would be;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -zxvf MetaWards-1.4.0.tar.gz
+<span class="nb">cd</span> MetaWards-X.Y.Z
+</pre></div>
+</div>
+<p>Next you need to install the dependencies of MetaWards. Do this by typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
+<p>Now you are ready to compile and install MetaWards itself;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+make install
+</pre></div>
+</div>
+<p>You can choose the C compiler to use by setting the <code class="docutils literal notranslate"><span class="pre">CC</span></code> environment
+variable, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CC</span><span class="o">=</span>clang make
+<span class="nv">CC</span><span class="o">=</span>clang make install
+</pre></div>
+</div>
+<p>MetaWards is written in standard C, using
+<a class="reference external" href="https://www.openmp.org">OpenMP</a> for parallelisation,
+and it has no external dependencies, so
+it should compile without issue. Note that the system C compiler on
+OS X (Mac) does not support OpenMP. In this case you the code will
+compile with OpenMP disabled. If you want to use all of the cores
+of your computer than you will need to install
+a different compiler, e.g. installing clang via
+<a class="reference external" href="https://brew.sh">homebrew</a>. If you have any problems then please
+<a class="reference external" href="https://github.com/metawards/MetaWards/issues">post an issue on GitHub</a>.</p>
+<p>Just as for the normal Python install you may need to use the
+<em class="xref py py-obj">find_mw_exe()</em> function to find the full path to the installed
+<a class="reference internal" href="api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards</span></code></a> executable if this hasn’t been placed in your PATH.</p>
+</section>
+<section id="for-developers">
+<h2>For developers<a class="headerlink" href="#for-developers" title="Permalink to this headline"></a></h2>
+<p>You can clone the MetaWards repository to your computer and install from
+there;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/metawards/MetaWards
+<span class="nb">cd</span> MetaWards
+pip install -r requirements-dev.txt
+</pre></div>
+</div>
+<p>From this point you can compile as if you have downloaded from source.
+As a developer you may want to run the tests and create the website.
+To do this type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest tests
+make doc
+</pre></div>
+</div>
+<p>There are shortcuts for running the quick or slow tests, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="nb">test</span>
+make quicktest
+</pre></div>
+</div>
+<p>Note that the tests assume that you have already downloaded the
+model data from <a class="reference external" href="https://github.com/metawards/MetaWardsData">MetaWardsData</a>
+and configured this as <a class="reference external" href="model_data.html">described here</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="features.html" class="btn btn-neutral float-left" title="Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="model_data.html" class="btn btn-neutral float-right" title="Model data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

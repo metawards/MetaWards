@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metawards.utils._add_lookup &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../../metawards.html">metawards</a> &raquo;</li>
+      <li>metawards.utils._add_lookup</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for metawards.utils._add_lookup</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">.._network</span> <span class="kn">import</span> <span class="n">Network</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;add_lookup&quot;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="add_lookup"><a class="viewcode-back" href="../../../api/generated/metawards.utils.add_lookup.html#metawards.utils.add_lookup">[docs]</a><span class="k">def</span> <span class="nf">add_lookup</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add in metadata about the network that can be used</span>
+<span class="sd">       to look up wards by name of location or region etc.</span>
+
+<span class="sd">       This will add the data to the network.ward_info object,</span>
+<span class="sd">       as a list ensuring that network.nodes[i] has its</span>
+<span class="sd">       info in network.ward_info[i]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lookup_file</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">input_files</span><span class="o">.</span><span class="n">lookup</span>
+
+    <span class="k">if</span> <span class="n">lookup_file</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">._console</span> <span class="kn">import</span> <span class="n">Console</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;No ward lookup information available.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="n">lines</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">lookup_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+
+    <span class="n">columns</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">input_files</span><span class="o">.</span><span class="n">lookup_columns</span>
+
+    <span class="n">WDCD</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">WDNM</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">CMWDCD</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;alternate_code&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">CMWDNM</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;alternate_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">LADCD</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authority_code&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">LADNM</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;authority_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">REGCD</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;region_code&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">REGNM</span> <span class="o">=</span> <span class="n">columns</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;region_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="kn">from</span> <span class="nn">.._wardinfo</span> <span class="kn">import</span> <span class="n">WardInfo</span><span class="p">,</span> <span class="n">WardInfos</span>
+
+    <span class="n">ward_infos</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ward_infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>   <span class="c1"># 1-indexed</span>
+
+    <span class="kn">import</span> <span class="nn">csv</span>
+
+    <span class="k">for</span> <span class="n">parts</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">quotechar</span><span class="o">=</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                            <span class="n">quoting</span><span class="o">=</span><span class="n">csv</span><span class="o">.</span><span class="n">QUOTE_ALL</span><span class="p">,</span> <span class="n">skipinitialspace</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+        <span class="n">info</span> <span class="o">=</span> <span class="n">WardInfo</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">WDCD</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="n">WDCD</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">WDNM</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="n">WDNM</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">CMWDCD</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">alternate_codes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="n">CMWDCD</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">CMWDNM</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">alternate_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="n">CMWDNM</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+        <span class="k">if</span> <span class="n">LADCD</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">authority_code</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="n">LADCD</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">LADNM</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">authority</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="n">LADNM</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">REGCD</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">region_code</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="n">REGCD</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">REGNM</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">info</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="n">REGNM</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+        <span class="n">ward_infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ward_infos</span><span class="p">)</span> <span class="o">!=</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="kn">from</span> <span class="nn">._console</span> <span class="kn">import</span> <span class="n">Console</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Number of wards from </span><span class="si">{</span><span class="n">lookup_file</span><span class="si">}</span><span class="s2"> &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">ward_infos</span><span class="p">)</span><span class="si">}</span><span class="s2">) disagrees with the number &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;of wards in the network (</span><span class="si">{</span><span class="n">network</span><span class="o">.</span><span class="n">nnodes</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ward_infos</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">ward_infos</span> <span class="o">=</span> <span class="n">ward_infos</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">network</span><span class="o">.</span><span class="n">nnodes</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">ward_infos</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">network</span><span class="o">.</span><span class="n">nnodes</span><span class="p">:</span>
+                <span class="n">ward_infos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="n">network</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">WardInfos</span><span class="p">(</span><span class="n">wards</span><span class="o">=</span><span class="n">ward_infos</span><span class="p">)</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer’s guide &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Snag list" href="snaglist.html" />
+    <link rel="prev" title="Packaging releases" href="packaging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html">
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer’s guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-your-computer">Setting up your computer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-environments">Virtual environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#developer-dependencies">Developer dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#coding-style">Coding Style</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#naming">Naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#feature-branches">Feature branches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-tests">Running tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#writing-tests">Writing tests</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#continuous-integration-and-delivery">Continuous integration and delivery</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#committing">Committing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thanks">Thanks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Developer’s guide</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="packaging.html" class="btn btn-neutral float-left" title="Packaging releases" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="snaglist.html" class="btn btn-neutral float-right" title="Snag list" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="developer-s-guide">
+<h1>Developer’s guide<a class="headerlink" href="#developer-s-guide" title="Permalink to this headline"></a></h1>
+<p>The source code for MetaWards is available on
+<a class="reference external" href="https://github.com/metawards/MetaWards">GitHub</a>.</p>
+<p>The data needed to run a MetaWards simulation is also on GitHub
+in the <a class="reference external" href="https://github.com/metawards/MetaWardsData">MetaWardsData</a>
+repository.</p>
+<section id="setting-up-your-computer">
+<h2>Setting up your computer<a class="headerlink" href="#setting-up-your-computer" title="Permalink to this headline"></a></h2>
+<p>MetaWards requires Python &gt;= 3.7, so please install this before continuing
+further. <a class="reference external" href="https://anaconda.org">Anaconda</a> provides easy installers for
+Python that work on a range of operating systems and that don’t need
+root or admin permissions.</p>
+<section id="virtual-environments">
+<h3>Virtual environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline"></a></h3>
+<p>It is recommended that you develop MetaWards in a Python
+<a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">virtual environment</a>.
+You can create a new environment in the directory <code class="docutils literal notranslate"><span class="pre">venvs/metawards-devel</span></code>
+by typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir venvs
+python -m venv venvs/metawards-devel
+</pre></div>
+</div>
+<p>Feel free to place the environment in any directory you want.</p>
+<p>Virtual environments provide sandboxes which make it easier to develop
+and test code. They also allow you to install Python modules without
+interfering with other Python installations.</p>
+<p>You activate you environment by typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> venvs/metawards-devel/bin/activate
+</pre></div>
+</div>
+<p>This will update your shell so that all python commands (such as
+<code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code> etc.) will use the virtual environment. You can
+deactivate the environment and return to the “standard” Python using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+<p>If you no longer want the environment then you can remove it using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -rf venvs/metawards-devel
+</pre></div>
+</div>
+</section>
+<section id="developer-dependencies">
+<h3>Developer dependencies<a class="headerlink" href="#developer-dependencies" title="Permalink to this headline"></a></h3>
+<p>If is recommended that you have the following modules installed when
+developing metawards;</p>
+<ul class="simple">
+<li><p>cython</p></li>
+<li><p>numpy</p></li>
+<li><p>flake8</p></li>
+<li><p>pytest</p></li>
+<li><p>sphinx (plus sphinx_issues sphinx_rtd_theme)</p></li>
+</ul>
+<p>You can install these manually, or all at once using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r requirements-dev.txt
+</pre></div>
+</div>
+</section>
+</section>
+<section id="coding-style">
+<h2>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this headline"></a></h2>
+<p>MetaWards is written in Python 3 (&gt;= 3.7), with time-critical functions
+written using <a class="reference external" href="https://cython.org">Cython</a> and parallelised using
+<a class="reference external" href="https://openmp.org">OpenMP</a>. The Cython code is written strictly
+in comformant C, meaning that the package should compile and work on
+any system on which Python &gt;= 3.7 runs. We ourselves are running production
+MetaWards models on ARM64 on Linux, and develop on X86-64 on Linux and
+Mac laptops. The program is tested with CI/CD on Windows 10, and
+we thank the windows users who’ve helped us make the tutorial
+cross-platform.</p>
+<p>The aim of the Python port is to provide a simple and robust API that
+is a strong foundation for robust growth and scale-up of MetaWards, and
+one in which unnecessary implementation details are hidden from the user.</p>
+<p>We aim as much as possible to follow a
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> python coding style and
+recommend that developers install and use
+a linter such as <a class="reference external" href="https://flake8.pycqa.org/en/latest/">flake8</a>.</p>
+<p>For the Cython pyx code we also try to maintain a PEP8 style where possible,
+and recommend using a tool such as <a class="reference external" href="https://pypi.org/project/autopep8/">autopep8</a>
+to keep this style (it is used by the lead developers, so contributions
+will be formatted using it eventually ;-)).</p>
+<p>We require that non-python code is strictly C. While C++ is an excellent
+language, it is too bulky for use in MetaWards and makes it more
+challenging to create portable binary distributions.</p>
+<p>For ease of installation and support, we also minimise or bundle
+external dependencies (e.g. we use a
+<a class="reference external" href="https://github.com/metawards/MetaWards/tree/devel/src/metawards/ran_binomial">bundled version</a>
+of the binomial random number generator from <a class="reference external" href="https://numpy.org">numpy</a>).
+This code has to run on a wide variety of architectures, operating
+systems and machines - some of which don’t have any graphic libraries,
+so please be careful when adding a dependency.</p>
+<p>With this in mind, we use the following coding conventions:</p>
+<section id="naming">
+<h3>Naming<a class="headerlink" href="#naming" title="Permalink to this headline"></a></h3>
+<p>We follow a Python style naming convention.</p>
+<ul class="simple">
+<li><p>Packages: lowercase, singleword</p></li>
+<li><p>Classes: CamelCase</p></li>
+<li><p>Methods: snake_case</p></li>
+<li><p>Functions: snake_case</p></li>
+<li><p>Variables: snake_case</p></li>
+<li><p>Source Files: snake_case with a leading underscore</p></li>
+</ul>
+<p>Functions or variables that are private should be named with a leading
+underscore. This prevents them from being prominantly visible in Python’s
+help and tab completion.</p>
+<p>Relative imports should be used at all times, with imports ideally delayed
+until they are needed.</p>
+<p>For example, to import the Network object into a function that is in the
+utils module, you would type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.._network</span> <span class="kn">import</span> <span class="n">Network</span>
+
+<span class="n">network</span> <span class="o">=</span> <span class="n">Network</span><span class="p">()</span>
+<span class="n">network</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or to import the Parameters from code that is the main MetaWards package,
+you would type</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">._parameters</span> <span class="kn">import</span> <span class="n">Parameters</span>
+
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">Parameters</span><span class="p">()</span>
+<span class="n">parameters</span><span class="o">.</span><span class="n">add_seeds</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;additional_seeds.dat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that many classes are Python
+<a class="reference external" href="https://realpython.com/python-data-classes/">dataclasses</a>, which
+are really useful for quick and safe development of code.
+Python dataclasses should be preferred over writing your own
+data-style classes.</p>
+</section>
+<section id="modules">
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h3>
+<p>MetaWards consists of the main module, e.g. <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, plus
+a <code class="docutils literal notranslate"><span class="pre">metawards.utils</span></code> module that contains useful utilities.</p>
+<p>The main module should be the focus of external developers, while
+the utils module should only be needed by developers of metawards
+itself.</p>
+<p>In addition, there is a <code class="docutils literal notranslate"><span class="pre">metawards.app</span></code> module which contains the
+code for the various command-line applications (e.g. the
+metawards executable).</p>
+<p>MetaWards uses a plugin-style interface for most new development.
+The plugins are for <a class="reference internal" href="api/index_MetaWards_iterators.html"><span class="doc">iterators</span></a>,
+<a class="reference internal" href="api/index_MetaWards_extractors.html"><span class="doc">extractors</span></a>,
+<a class="reference internal" href="api/index_MetaWards_mixers.html"><span class="doc">mixers</span></a> and
+<a class="reference internal" href="api/index_MetaWards_movers.html"><span class="doc">movers</span></a>. Ideally, most new code
+should be added as one of these plugins. If you can’t fit your code
+into a plugin then please
+<a class="reference external" href="https://github.com/metawards/MetaWards/issues">raise an issue</a>
+to discuss your idea with the core developers, so that a way
+forward can be found. We really appreciate your help, and want
+to make sure that your ideas can be included in the most compatible
+way in the code.</p>
+<p>To make MetaWards easy for new developers
+to understand, we have a set of rules that will ensure that only
+necessary public functions, classes and implementation details are
+exposed to the Python help system.</p>
+<ul class="simple">
+<li><p>Module files containing implementation details are prefixed with
+an underscore, i.e. <code class="docutils literal notranslate"><span class="pre">_parameters.py</span></code></p></li>
+<li><p>Where possible, external packages are hidden inside each module,
+e.g. <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span> <span class="pre">as</span> <span class="pre">_sys</span></code></p></li>
+<li><p>Each module file contains an <code class="docutils literal notranslate"><span class="pre">__all__</span></code> variable that lists the
+specific items that should be imported.</p></li>
+<li><p>The package <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> can be used to safely expose the required
+functionality to the user with:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>This results in a clean API and documentation, with all extraneous information,
+e.g. external modules, hidden from the user. This is important when working
+interactively, since <a class="reference external" href="https://ipython.org">IPython</a>
+and <a class="reference external" href="https://jupyter.org">Jupyter</a>
+do not respect the <code class="docutils literal notranslate"><span class="pre">__all__</span></code> variable when auto-completing, meaning that the
+user will see a full list of the available names when hitting tab. When
+following the conventions above, the user will only be able to access the
+exposed names. This greatly improves the clarity of the package, allowing
+a new user to quickly determine the available functionality. Any user wishing
+expose further implementation detail can, of course, type an underscore to
+show the hidden names when searching.</p>
+</section>
+</section>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline"></a></h2>
+<section id="feature-branches">
+<h3>Feature branches<a class="headerlink" href="#feature-branches" title="Permalink to this headline"></a></h3>
+<p>First make sure that you are on the development branch of MetaWards:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout devel
+</pre></div>
+</div>
+<p>Now create and switch to a feature branch. This should be prefixed with
+<em>feature</em>, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -b feature-process
+</pre></div>
+</div>
+<p>While working on your feature branch you won’t want to continually re-install
+in order to make the changes active. To avoid this, you can either make use
+of <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+<span class="nv">PYTHONPATH</span><span class="o">=</span>./build/lib.<span class="o">{</span>XXX<span class="o">}</span> python script.py
+<span class="nv">PYTHONPATH</span><span class="o">=</span>./build/lib.<span class="o">{</span>XXX<span class="o">}</span> pytest tests
+</pre></div>
+</div>
+<p>(where <code class="docutils literal notranslate"><span class="pre">{XXX}</span></code> is the build directory for Cython on your computer, e.g.
+<code class="docutils literal notranslate"><span class="pre">./build/lib.macosx-10.9-x86_64-3.7</span></code> - remember that you need to
+type <code class="docutils literal notranslate"><span class="pre">make</span></code> to rebuild any Cython code and to copy your updated
+files into that directory)</p>
+<p>or use the <code class="docutils literal notranslate"><span class="pre">develop</span></code> argument when running the <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> script, i.e.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python setup.py develop
+</pre></div>
+</div>
+<p>(this installs your current version of metawards into your current python
+environment)</p>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline"></a></h2>
+<p>When working on your feature it is important to write tests to ensure that it
+does what is expected and doesn’t break any existing functionality. Tests
+should be placed inside the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory, creating an appropriately
+named sub-directory for any new packages.</p>
+<p>The test suite is intended to be run using
+<a class="reference external" href="https://docs.pytest.org/en/latest/contents.html">pytest</a>.
+When run, <code class="docutils literal notranslate"><span class="pre">pytest</span></code> searches for tests in all directories and files
+below the current directory, collects the tests together, then runs
+them. Pytest uses name matching to locate the tests. Valid names start
+or end with <em>test</em>, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Files:</span>
+<span class="n">test_file</span><span class="o">.</span><span class="n">py</span>       <span class="n">file_test</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions:</span>
+<span class="k">def</span> <span class="nf">test_func</span><span class="p">():</span>
+   <span class="c1"># code to perform tests...</span>
+   <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">func_test</span><span class="p">():</span>
+   <span class="c1"># code to perform tests...</span>
+   <span class="k">return</span>
+</pre></div>
+</div>
+<p>We use the convention of <code class="docutils literal notranslate"><span class="pre">test_*</span></code> when naming files and functions.</p>
+<section id="running-tests">
+<h3>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline"></a></h3>
+<p>To run the full test suite, simply type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest tests
+</pre></div>
+</div>
+<p>To run tests for a specific sub-module, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest tests/utils
+</pre></div>
+</div>
+<p>To only run the unit tests in a particular file, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest tests/test_integration.py
+</pre></div>
+</div>
+<p>To run a specific unit tests in a particular file, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest tests/test_read_variables.py::test_parameterset
+</pre></div>
+</div>
+<p>To get more detailed information about each test, run pytests using the
+<em>verbose</em> flag, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest -v
+</pre></div>
+</div>
+<p>More details regarding how to invoke <code class="docutils literal notranslate"><span class="pre">pytest</span></code> can be
+found <a class="reference external" href="https://docs.pytest.org/en/latest/usage.html">here</a>.</p>
+<section id="writing-tests">
+<h4>Writing tests<a class="headerlink" href="#writing-tests" title="Permalink to this headline"></a></h4>
+<section id="basics">
+<h5>Basics<a class="headerlink" href="#basics" title="Permalink to this headline"></a></h5>
+<p>Try to keep individual unit tests short and clear. Aim to test one thing, and
+test it well. Where possible, try to minimise the use of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements
+within a unit test. Since the test will return on the first failed assertion,
+additional contextual information may be lost.</p>
+</section>
+<section id="floating-point-comparisons">
+<h5>Floating point comparisons<a class="headerlink" href="#floating-point-comparisons" title="Permalink to this headline"></a></h5>
+<p>Make use of the
+<a class="reference external" href="https://docs.pytest.org/en/latest/builtin.html#comparing-floating-point-numbers">approx</a>
+function from the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> package for performing floating
+point comparisons, e.g:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span> <span class="n">approx</span>
+
+<span class="k">assert</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">approx</span></code> function compares the result using a
+relative tolerance of 1e-6. This can be changed by passing a keyword
+argument to the function, e.g:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">==</span> <span class="n">approx</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="skipping-tests">
+<h5>Skipping tests<a class="headerlink" href="#skipping-tests" title="Permalink to this headline"></a></h5>
+<p>If you are using
+<a class="reference external" href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a>
+it might be desirable to write your tests before implementing the functionality,
+i.e. you are asserting what the <em>output</em> of a function should be, not how it should
+be <em>implemented</em>. In this case, you can make use of
+the <code class="docutils literal notranslate"><span class="pre">pytest</span></code> <em>skip</em> decorator
+to flag that a unit test should be skipped, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="n">reason</span><span class="o">=</span><span class="s2">&quot;Not yet implemented.&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_new_feature</span><span class="p">():</span>
+    <span class="c1"># A unit test for an, as yet, unimplemented feature.</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</section>
+<section id="parametrizing-tests">
+<h5>Parametrizing tests<a class="headerlink" href="#parametrizing-tests" title="Permalink to this headline"></a></h5>
+<p>Often it is desirable to run a test for a range of different input parameters.
+This can be achieved using the <code class="docutils literal notranslate"><span class="pre">parametrize</span></code> decorator, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">mul</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">test_mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Test the mul function. &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="n">mul</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here the function test_mul is parametrized with two parameters, <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.
+By marking the test in this manner it will be executed using all possible
+parameter pairs <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">3),</span> <span class="pre">(1,</span> <span class="pre">4),</span> <span class="pre">(2,</span> <span class="pre">3),</span> <span class="pre">(2,</span> <span class="pre">4)</span></code>.</p>
+<p>Alternatively:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">sub</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">&quot;x, y, expected&quot;</span><span class="p">,</span>
+                        <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+                         <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">),</span>
+                         <span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="o">-</span><span class="mi">37</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">test_sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Test the sub function. &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="n">sub</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="n">sub</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">expected</span>
+</pre></div>
+</div>
+<p>Here we are passing a list containing different parameter sets, with the names
+of the parameters matched against the arguments of the test function.</p>
+</section>
+<section id="testing-exceptions">
+<h5>Testing exceptions<a class="headerlink" href="#testing-exceptions" title="Permalink to this headline"></a></h5>
+<p>Pytest provides a way of testing your code for known exceptions. For example,
+suppose we had a function that raises an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">indexError</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; A function that raises an IndexError. &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We could then write a test to validate that the error is thrown as expected:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_indexError</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">IndexError</span><span class="p">):</span>
+        <span class="n">indexError</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="custom-attributes">
+<h5>Custom attributes<a class="headerlink" href="#custom-attributes" title="Permalink to this headline"></a></h5>
+<p>It’s possible to mark test functions with any attribute you like. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">slow</span>
+<span class="k">def</span> <span class="nf">test_slow_function</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; A unit test that takes a really long time. &quot;&quot;&quot;</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Here we have marked the test function with the attribute <code class="docutils literal notranslate"><span class="pre">slow</span></code> in order to
+indicate that it takes a while to run. From the command line it is possible
+to run or skip tests with a particular mark.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest mypkg -m <span class="s2">&quot;slow&quot;</span>        <span class="c1"># only run the slow tests</span>
+pytest mypkg -m <span class="s2">&quot;not slow&quot;</span>    <span class="c1"># skip the slow tests</span>
+</pre></div>
+</div>
+<p>The custom attribute can just be a label, as in this case, or could be your
+own function decorator.</p>
+</section>
+</section>
+</section>
+<section id="continuous-integration-and-delivery">
+<h3>Continuous integration and delivery<a class="headerlink" href="#continuous-integration-and-delivery" title="Permalink to this headline"></a></h3>
+<p>We use GitHub Actions to run a full continuous integration (CI)
+on all pull requests to devel and
+main, and all pushes to devel and main. We will not merge a pull
+request until all tests pass. We only accept pull requests to devel.
+We only allow pull requests from devel to main. In addition to CI,
+we also perform a build of the website on pushes to devel and tags
+to main. The website is versioned, so that old the docs for old
+versions of the code are always available. Finally, we have set up
+continuous delivery (CD) on pushes to main and devel, which build the
+pypi source and binary wheels for Windows, Linux (manylinux2010)
+and OS X. These are manually uploaded to pypi when we tag
+releases, but we expect to automate this process soon.</p>
+</section>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h2>
+<p>MetaWards is fully documented using a combination of hand-written files
+(in the <code class="docutils literal notranslate"><span class="pre">doc</span></code> folder) and auto-generated api documentation created from
+<a class="reference external" href="https://numpy.org">NumPy</a> style docstrings.
+See <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">here</a>
+for details. The documentation is automatically built using
+<a class="reference external" href="http://sphinx-doc.org">Sphinx</a> whenever a commit is pushed to devel, which
+will then update this website.</p>
+<p>To build the documentation locally you will first need to install some
+additional packages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx sphinx_issues sphinx_rtd_theme
+</pre></div>
+</div>
+<p>Then move to the <code class="docutils literal notranslate"><span class="pre">doc</span></code> directory and run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make html
+</pre></div>
+</div>
+<p>When finished, point your browser to <code class="docutils literal notranslate"><span class="pre">build/html/index.html</span></code>.</p>
+</section>
+<section id="committing">
+<h2>Committing<a class="headerlink" href="#committing" title="Permalink to this headline"></a></h2>
+<p>If you create new tests, please make sure that they pass locally before
+commiting. When happy, commit your changes, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit src/metawards/_new_feature.py tests/test_feature <span class="se">\</span>
+    -m <span class="s2">&quot;Implementation and test for new feature.&quot;</span>
+</pre></div>
+</div>
+<p>Remember that it is better to make small changes and commit frequently.</p>
+<p>If your edits don’t change the MetaWards source code, or documentation,
+e.g. fixing typos, then please add <code class="docutils literal notranslate"><span class="pre">ci</span> <span class="pre">skip</span></code> to your commit message, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -a -m <span class="s2">&quot;Updating docs [ci skip]&quot;</span>
+</pre></div>
+</div>
+<p>This will avoid unnecessarily running the
+<a class="reference external" href="https://github.com/metawards/MetaWards/actions">GitHub Actions</a>, e.g.
+building a new MetaWards package, updating the website, etc.
+(the GitHub actions are configured in the file
+<code class="docutils literal notranslate"><span class="pre">.github/workflows/main.yaml</span></code>). To this end, we
+have provided a git hook that will append <code class="docutils literal notranslate"><span class="pre">[ci</span> <span class="pre">skip]</span></code> if the commit only
+modifies files in a blacklist that is specified in the file <code class="docutils literal notranslate"><span class="pre">.ciignore</span></code>
+(analagous to the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> used to ignore untracked files). To enable
+the hook, simply copy it into the <code class="docutils literal notranslate"><span class="pre">.git/hooks</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp git_hooks/commit-msg .git/hooks
+</pre></div>
+</div>
+<p>Any additional files or paths that shouldn’t trigger a re-build can be added
+to the <code class="docutils literal notranslate"><span class="pre">.ciignore</span></code> file.</p>
+<p>Next, push your changes to the remote server, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Push to the feature branch on the main MetaWards repo, if you have access.</span>
+git push origin feature
+
+<span class="c1"># Push to the feature branch your own fork.</span>
+git push fork feature
+</pre></div>
+</div>
+<p>When the feature is complete, create a <em>pull request</em> on GitHub so that the
+changes can be merged back into the development branch.
+For information, see the documentation
+<a class="reference external" href="https://help.github.com/articles/about-pull-requests">here</a>.</p>
+</section>
+<section id="thanks">
+<h2>Thanks<a class="headerlink" href="#thanks" title="Permalink to this headline"></a></h2>
+<p>First, thanks to you for your interest in MetaWards and for reading this
+far. We hope you enjoy having a play with the code and having a go
+at adding new functionality, fixing bugs, writing docs etc.</p>
+<p>We would also like to thank Lester Hedges and the
+<a class="reference external" href="https://biosimspace.org">BioSimSpace</a> team who provided great advice
+to set up the above, and from whose
+<a class="reference external" href="https://github.com/michellab/biosimspace">GitHub repo</a>
+most of the procedures, scripts and documentation above is derived.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="packaging.html" class="btn btn-neutral float-left" title="Packaging releases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="snaglist.html" class="btn btn-neutral float-right" title="Snag list" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

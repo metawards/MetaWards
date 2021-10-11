@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Getting Started &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple model runs" href="02_repeating.html" />
+    <link rel="prev" title="Part 1 - Modelling outbreaks" href="../index_part01.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introducing-the-lurgy">Introducing the Lurgy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seeding-an-outbreak">Seeding an outbreak</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repeating-a-calculation">Repeating a calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-config-files-for-inputs">Using config files for inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_repeating.html">Multiple model runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_plotting.html">Plotting outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part01.html">Part 1 - Modelling outbreaks</a> &raquo;</li>
+      <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../index_part01.html" class="btn btn-neutral float-left" title="Part 1 - Modelling outbreaks" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_repeating.html" class="btn btn-neutral float-right" title="Multiple model runs" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h1>
+<p>This tutorial assumes that you have installed <code class="docutils literal notranslate"><span class="pre">metawards</span></code>. To check
+that you have, type the following into your console;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --version
+</pre></div>
+</div>
+<p>and then press return. You should see something similar to the below
+printed to your screen.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ metawards --version
+┌──────────────────────────────────────────────────────────────────────┐
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                   MetaWards version 1.6.1                    ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                    https://metawards.org                     ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                      Source information                      ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│    • repository: https://github.com/metawards/MetaWards              │
+│    • branch: 1.6.1)                                                  │
+│    • revision: 47e7c50d34e87c0e17d5380ce8892439fdf2afc6              │
+│    • last modified: 2021-10-11T18:04:44+0100                         │
+│                                                                      │
+│   WARNING: MetaWardsData cannot be found! Please see                 │
+│   https://metawards.org/model_data for instructions on how to        │
+│   download and install this necessary data.                          │
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                    Additional information                    ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│   Visit https://metawards.org for more information about             │
+│   metawards, its authors and its license                             │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>If you don’t see this, or the output includes a warning about not being
+about to find <em class="xref py py-obj">MetaWardsData</em>, then please try
+<a class="reference internal" href="../../install.html"><span class="doc">installing MetaWards</span></a> or
+<a class="reference internal" href="../../model_data.html"><span class="doc">installing and configuring MetaWardsData</span></a> again.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This tutorial is written for <code class="docutils literal notranslate"><span class="pre">metawards</span></code> version 1.6.1 or
+higher. If you are using an older version then please upgrade.</p>
+</div>
+<section id="introducing-the-lurgy">
+<h2>Introducing the Lurgy<a class="headerlink" href="#introducing-the-lurgy" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://en.wiktionary.org/wiki/lurgy">The Lurgy</a> is a
+<strong>completely ficticious</strong> disease that we will use throughout this
+tutorial. We can run a simulation of an outbreak of the lurgy using
+the <code class="docutils literal notranslate"><span class="pre">--disease</span></code> command line argument. Type the following;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --disease lurgy
+</pre></div>
+</div>
+<p>Press return and you should see a lot of output printed. Near the end
+of the output you will see these lines;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+Infection died ... Ending on day 5
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not worry if you don’t see exactly this output. You may be using
+a different version of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> compared to the one used to write
+this tutorial. The main thing to look for is the line
+<code class="docutils literal notranslate"><span class="pre">Infection</span> <span class="pre">died</span> <span class="pre">...</span> <span class="pre">Ending</span> <span class="pre">on</span> <span class="pre">day</span> <span class="pre">5</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">--disease</span></code> option also has the shorthand <code class="docutils literal notranslate"><span class="pre">-d</span></code>. You can get the same
+output as above by typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This time when you ran <code class="docutils literal notranslate"><span class="pre">metawards</span></code> it stopped to say that the output
+directory already exists, and if you want to remove it.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">metawards</span></code> program takes care not to overwrite any of your output.
+By default a lot of output files from this run have been written to a
+directory called <code class="docutils literal notranslate"><span class="pre">output</span></code> (we will take a look at these files later).
+<code class="docutils literal notranslate"><span class="pre">metawards</span></code> will ask you if you want to remove any existing output.
+Press <code class="docutils literal notranslate"><span class="pre">y</span></code> and hit return to do so. If you want to automatically
+remove existing output then use the <code class="docutils literal notranslate"><span class="pre">--force-overwrite-output</span></code> option,
+e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy --force-overwrite-output
+</pre></div>
+</div>
+<p>You can also set the output directory using the <code class="docutils literal notranslate"><span class="pre">--output</span></code> or <code class="docutils literal notranslate"><span class="pre">-o</span></code>
+options, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy -o output2
+</pre></div>
+</div>
+</section>
+<section id="seeding-an-outbreak">
+<h2>Seeding an outbreak<a class="headerlink" href="#seeding-an-outbreak" title="Permalink to this headline"></a></h2>
+<p>The key output from <code class="docutils literal notranslate"><span class="pre">metawards</span></code> are the lines which read;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+Infection died ... Ending on day 5
+</pre></div>
+</div>
+<p>These tell you how long the outbreak lasted (in this case, 5 days),
+together with how many people were infected. These are the numbers next
+to the codes;</p>
+<ul class="simple">
+<li><p><strong>S</strong>: The number of the population who are <em>susceptible</em> to infection</p></li>
+<li><p><strong>E</strong>: The number of the population who are <em>latent</em>, meaning they are
+infected, but not yet infectious.</p></li>
+<li><p><strong>I</strong>: The number of the population who are <em>infected</em>, meaning they
+have symptoms and are infectious</p></li>
+<li><p><strong>R</strong>: The number of the population who are removed from being susceptible,
+either because they have been newly infected that day, or because they
+have recovered from the infection and are no longer susceptible to infection</p></li>
+<li><p><strong>IW</strong>: The number of electoral wards that contain at least one
+individual who was newly infected that day.</p></li>
+</ul>
+<p>For more information about these values, please
+<a class="reference external" href="https://doi.org/10.1016/j.epidem.2009.11.002">read</a>
+<a class="reference external" href="https://doi.org/10.1073/pnas.1000416107">the</a>
+<a class="reference external" href="https://doi.org/10.1101/2020.02.12.20022566">papers</a> detailed
+in the <a class="reference internal" href="../../index.html"><span class="doc">scientific background</span></a>.</p>
+<p>From this output it is clear that no-one has been infected by the lurgy.
+This is because we haven’t yet seeded any outbreaks. We can seed an
+outbreak in a specific electoral ward by using an additional seeds file.
+In this case, we will seed an infection of the lurgy in London using
+the <a class="reference external" href="https://github.com/metawards/MetaWardsData/blob/main/extra_seeds/ExtraSeedsLondon.dat">ExtraSeedsLondon.dat</a>
+file that comes in <code class="docutils literal notranslate"><span class="pre">MetaWardsData</span></code>. You specify the additional seeds
+file to use via the <code class="docutils literal notranslate"><span class="pre">--additional</span></code> or <code class="docutils literal notranslate"><span class="pre">-a</span></code> options.</p>
+<p>Try typing the below into your console and press return;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy -a ExtraSeedsLondon.dat
+</pre></div>
+</div>
+<p>Now the program will run for a long time (minutes), and you will see
+an outbreak move through the population. The final lines of your output
+may look something like this;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 214 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 11780863  E: 0  I: 1  R: 44301213  IW: 1  POPULATION: 56082077
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 215 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 11780863  E: 1  I: 0  R: 44301213  IW: 0  POPULATION: 56082077
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 216 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 11780863  E: 0  I: 1  R: 44301213  IW: 0  POPULATION: 56082077
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 217 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 11780863  E: 0  I: 1  R: 44301213  IW: 0  POPULATION: 56082077
+Number of infections: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 218 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 11780863  E: 0  I: 0  R: 44301214  IW: 0  POPULATION: 56082077
+Number of infections: 0
+Infection died ... Ending on day 219
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not worry if your numbers are different. All will be explained :-)</p>
+</div>
+</section>
+<section id="repeating-a-calculation">
+<h2>Repeating a calculation<a class="headerlink" href="#repeating-a-calculation" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> runs a stochastic simulation. This means that random numbers
+are used in the decisions on how individuals in the model are infected,
+and how quickly they progress through the infection. This means that
+every <code class="docutils literal notranslate"><span class="pre">metawards</span></code> run is different.</p>
+<p>Fortunately, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> prints enough information in the output
+to enable a job to be repeated. Look the for line the reads;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Repeating this run ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+To repeat this job use the command;
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│metawards –repeats 1 –seed 85564100 –additional ExtraSeedsLondon.dat –output output     │
+│–disease lurgy –start-date 2020-05-20 –start-day 0 –parameters march29 –repository      │
+│/Users/chris/GitHub/MetaWardsData –population 57104043 –nsteps 730 –UV 0.0 –nthreads 4  │
+│–nprocs 1 –max-nodes 16384 –max-links 4194304                                           │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Or alternatively use the config.yaml file that will be written to the output directory and
+use the command;
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│metawards -c config.yaml                                                                │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>This is the command line that you can use to repeat a job (note that
+the command line you see will be different). We have been careful to
+write <code class="docutils literal notranslate"><span class="pre">metawards</span></code> so that it gives the same output when you use
+the same inputs, using the same version of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> and same version
+of data in <code class="docutils literal notranslate"><span class="pre">MetaWardsData</span></code>, for the same random number seed and running
+the calculation over the same number of threads. We consider it a bug
+if <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is not reproducible, and ask that you
+<a class="reference external" href="https://github.com/metawards/MetaWards/issues">submit an issue</a> if
+you find you cannot repeat a run.</p>
+<p>As the command line can be quite long, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> will also print out
+a config file in the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory called <code class="docutils literal notranslate"><span class="pre">output/config.yaml</span></code>.
+This file contains everything needed to reproduce the calculation, which
+can be re-run using the command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -c config.yaml
+</pre></div>
+</div>
+<p>(assuming you have copied the <code class="docutils literal notranslate"><span class="pre">config.yaml</span></code> file into your current
+directory)</p>
+</section>
+<section id="using-config-files-for-inputs">
+<h2>Using config files for inputs<a class="headerlink" href="#using-config-files-for-inputs" title="Permalink to this headline"></a></h2>
+<p>You can use this config file directly to run a job using the <code class="docutils literal notranslate"><span class="pre">--config</span></code>
+or <code class="docutils literal notranslate"><span class="pre">-c</span></code> options, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --config config.yaml
+</pre></div>
+</div>
+<p>This should repeat the calculation that generated this config. You can
+also edit this file and use it to store commonly used options, e.g.
+if you always want to model the lurgy, then the config file would read;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">disease</span><span class="p">:</span> <span class="n">lurgy</span>
+</pre></div>
+</div>
+<p>and you could use this via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -c config.yaml
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> uses the <a class="reference external" href="https://pypi.org/project/ConfigArgParse/">ConfigArgParse</a>
+python module for parsing command line arguments. Options can be passed
+on the command line, in a yaml or ini format config file, or in
+some identified cases as an environment variable. If an arg is
+specified in more than one place, then commandline values override
+environment variables which override config file values which
+override defaults.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index_part01.html" class="btn btn-neutral float-left" title="Part 1 - Modelling outbreaks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_repeating.html" class="btn btn-neutral float-right" title="Multiple model runs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

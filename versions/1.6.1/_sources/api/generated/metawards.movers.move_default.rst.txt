@@ -1,0 +1,6 @@
+﻿metawards.movers.move\_default
+==============================
+
+.. currentmodule:: metawards.movers
+
+.. autofunction:: move_default

@@ -1,0 +1,6 @@
+﻿metawards.extractors.extract\_none
+==================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: extract_none

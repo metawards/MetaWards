@@ -1,0 +1,70 @@
+﻿metawards.Infections
+====================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Infections
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Infections.__delattr__
+      ~Infections.__dir__
+      ~Infections.__eq__
+      ~Infections.__format__
+      ~Infections.__ge__
+      ~Infections.__getattribute__
+      ~Infections.__gt__
+      ~Infections.__init__
+      ~Infections.__init_subclass__
+      ~Infections.__le__
+      ~Infections.__lt__
+      ~Infections.__ne__
+      ~Infections.__new__
+      ~Infections.__reduce__
+      ~Infections.__reduce_ex__
+      ~Infections.__repr__
+      ~Infections.__setattr__
+      ~Infections.__sizeof__
+      ~Infections.__str__
+      ~Infections.__subclasshook__
+      ~Infections._set_stage_mapping
+      ~Infections.aggregate
+      ~Infections.build
+      ~Infections.clear
+      ~Infections.get_stage_mapping
+      ~Infections.get_work_index
+      ~Infections.has_different_stage_mapping
+      ~Infections.has_different_work_matrix
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Infections.N_INF_CLASSES
+      ~Infections.__dataclass_fields__
+      ~Infections.__dataclass_params__
+      ~Infections.__dict__
+      ~Infections.__doc__
+      ~Infections.__hash__
+      ~Infections.__module__
+      ~Infections.__weakref__
+      ~Infections._stage_mapping
+      ~Infections._work_index
+      ~Infections.nlinks
+      ~Infections.nnodes
+      ~Infections.nsubnets
+      ~Infections.play
+      ~Infections.subinfs
+      ~Infections.work
+   
+   

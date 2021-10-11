@@ -1,0 +1,6 @@
+﻿metawards.app.scoop\_supervisor
+===============================
+
+.. currentmodule:: metawards.app
+
+.. autofunction:: scoop_supervisor

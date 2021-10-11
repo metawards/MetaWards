@@ -1,0 +1,58 @@
+﻿metawards.utils.Profiler
+========================
+
+.. currentmodule:: metawards.utils
+
+.. autoclass:: Profiler
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Profiler.__delattr__
+      ~Profiler.__dir__
+      ~Profiler.__eq__
+      ~Profiler.__format__
+      ~Profiler.__ge__
+      ~Profiler.__getattribute__
+      ~Profiler.__gt__
+      ~Profiler.__hash__
+      ~Profiler.__init__
+      ~Profiler.__init_subclass__
+      ~Profiler.__le__
+      ~Profiler.__lt__
+      ~Profiler.__ne__
+      ~Profiler.__new__
+      ~Profiler.__reduce__
+      ~Profiler.__reduce_ex__
+      ~Profiler.__repr__
+      ~Profiler.__setattr__
+      ~Profiler.__sizeof__
+      ~Profiler.__str__
+      ~Profiler.__subclasshook__
+      ~Profiler._to_string
+      ~Profiler.child_total
+      ~Profiler.is_null
+      ~Profiler.name
+      ~Profiler.start
+      ~Profiler.stop
+      ~Profiler.total
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Profiler.__dict__
+      ~Profiler.__doc__
+      ~Profiler.__module__
+      ~Profiler.__weakref__
+   
+   

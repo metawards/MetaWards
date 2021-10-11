@@ -1,0 +1,6 @@
+﻿metawards.utils.move\_population\_from\_work\_to\_play
+======================================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: move_population_from_work_to_play

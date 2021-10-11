@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaWards.iterators &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MetaWards.iterators API Detail" href="index_api_MetaWards_iterators.html" />
+    <link rel="prev" title="metawards.get_reticulate_command" href="generated/metawards.get_reticulate_command.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards.html">MetaWards</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MetaWards.iterators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index_api_MetaWards_iterators.html">MetaWards.iterators API Detail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Documentation</a> &raquo;</li>
+      <li>MetaWards.iterators</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="generated/metawards.get_reticulate_command.html" class="btn btn-neutral float-left" title="metawards.get_reticulate_command" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index_api_MetaWards_iterators.html" class="btn btn-neutral float-right" title="MetaWards.iterators API Detail" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="metawards-iterators">
+<h1>MetaWards.iterators<a class="headerlink" href="#metawards-iterators" title="Permalink to this headline"></a></h1>
+<p>These are the iterator functions that are used by the model to advance
+the outbreak from day to day. The functions divide into two main types,
+the most important of which are described below;</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">iterate_functions</span></code> which control which functions are called to advance the outbreak</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="generated/metawards.iterators.iterate_default.html#metawards.iterators.iterate_default" title="metawards.iterators.iterate_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_default()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.iterate_custom.html#metawards.iterators.iterate_custom" title="metawards.iterators.iterate_custom"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_custom()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.iterate_weekday.html#metawards.iterators.iterate_weekday" title="metawards.iterators.iterate_weekday"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_weekday()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.iterate_weekend.html#metawards.iterators.iterate_weekend" title="metawards.iterators.iterate_weekend"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_weekend()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.iterate_working_week.html#metawards.iterators.iterate_working_week" title="metawards.iterators.iterate_working_week"><code class="xref py py-meth docutils literal notranslate"><span class="pre">iterate_working_week()</span></code></a></p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">advance_functions</span></code> which perform the actual work of advancing the outbreak</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_foi()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.advance_additional.html#metawards.iterators.advance_additional" title="metawards.iterators.advance_additional"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_additional()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_infprob()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.advance_fixed.html#metawards.iterators.advance_fixed" title="metawards.iterators.advance_fixed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_fixed()</span></code></a></p></li>
+<li><p><a class="reference internal" href="generated/metawards.iterators.advance_play.html#metawards.iterators.advance_play" title="metawards.iterators.advance_play"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_play()</span></code></a></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_work()</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>All of the above functions (and the many others in metawards.iterators) are
+described <a class="reference internal" href="index_api_MetaWards_iterators.html"><span class="doc">in more detail here</span></a>;</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index_api_MetaWards_iterators.html">MetaWards.iterators API Detail</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="generated/metawards.get_reticulate_command.html" class="btn btn-neutral float-left" title="metawards.get_reticulate_command" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index_api_MetaWards_iterators.html" class="btn btn-neutral float-right" title="MetaWards.iterators API Detail" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

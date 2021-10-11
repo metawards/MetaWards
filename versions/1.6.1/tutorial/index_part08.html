@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 8 - Creating your own models / networks &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Understanding the Model Network" href="part08/01_networks.html" />
+    <link rel="prev" title="Modelling a Hospital" href="part07/06_hospital.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 8 - Creating your own models / networks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="part08/01_networks.html">Understanding the Model Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part08/02_custom_network.html">Creating a Custom Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part08/03_reticulate.html">Creating Networks in R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part08/04_using_custom.html">Using a Custom Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part08/05_local_network.html">Specifying ward-local parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part08/06_network_demographics.html">Different networks for different demographics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Tutorial</a> &raquo;</li>
+      <li>Part 8 - Creating your own models / networks</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="part07/06_hospital.html" class="btn btn-neutral float-left" title="Modelling a Hospital" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="part08/01_networks.html" class="btn btn-neutral float-right" title="Understanding the Model Network" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-8-creating-your-own-models-networks">
+<h1>Part 8 - Creating your own models / networks<a class="headerlink" href="#part-8-creating-your-own-models-networks" title="Permalink to this headline"></a></h1>
+<p>In this eighth part of the tutorial you will;</p>
+<ul class="simple">
+<li><p>Learn how the model network of wards and metapopulation movements is
+defined.</p></li>
+<li><p>Explore how to create your own model networks using the Python or R
+interface.</p></li>
+<li><p>Learn how to run MetaWards directly from within a Python or R script.</p></li>
+<li><p>Build more complex networks with ward-local parameters</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="part08/01_networks.html">Understanding the Model Network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part08/01_networks.html#the-single-node-network">The single-node network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part08/01_networks.html#seeding-the-outbreak">Seeding the outbreak</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part08/02_custom_network.html">Creating a Custom Network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part08/02_custom_network.html#network-file-formats">Network file formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part08/02_custom_network.html#creating-and-editing-networks-in-python">Creating and editing Networks in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part08/03_reticulate.html">Creating Networks in R</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part08/03_reticulate.html#installing-metawards-in-r">Installing MetaWards in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part08/03_reticulate.html#using-metawards-in-r">Using metawards in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part08/03_reticulate.html#going-further">Going further</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part08/04_using_custom.html">Using a Custom Network</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part08/04_using_custom.html#running-metawards-from-within-python-or-r">Running MetaWards from within Python or R</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part08/05_local_network.html">Specifying ward-local parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part08/05_local_network.html#networks-with-ward-local-parameters">Networks with ward-local parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part08/06_network_demographics.html">Different networks for different demographics</a></li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="part07/06_hospital.html" class="btn btn-neutral float-left" title="Modelling a Hospital" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="part08/01_networks.html" class="btn btn-neutral float-right" title="Understanding the Model Network" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

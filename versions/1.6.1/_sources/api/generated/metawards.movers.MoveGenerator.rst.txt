@@ -1,0 +1,56 @@
+﻿metawards.movers.MoveGenerator
+==============================
+
+.. currentmodule:: metawards.movers
+
+.. autoclass:: MoveGenerator
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~MoveGenerator.__delattr__
+      ~MoveGenerator.__dir__
+      ~MoveGenerator.__eq__
+      ~MoveGenerator.__format__
+      ~MoveGenerator.__ge__
+      ~MoveGenerator.__getattribute__
+      ~MoveGenerator.__gt__
+      ~MoveGenerator.__hash__
+      ~MoveGenerator.__init__
+      ~MoveGenerator.__init_subclass__
+      ~MoveGenerator.__le__
+      ~MoveGenerator.__lt__
+      ~MoveGenerator.__ne__
+      ~MoveGenerator.__new__
+      ~MoveGenerator.__reduce__
+      ~MoveGenerator.__reduce_ex__
+      ~MoveGenerator.__repr__
+      ~MoveGenerator.__setattr__
+      ~MoveGenerator.__sizeof__
+      ~MoveGenerator.__str__
+      ~MoveGenerator.__subclasshook__
+      ~MoveGenerator.fraction
+      ~MoveGenerator.generate
+      ~MoveGenerator.generate_wards
+      ~MoveGenerator.number
+      ~MoveGenerator.should_move_all
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~MoveGenerator.__dict__
+      ~MoveGenerator.__doc__
+      ~MoveGenerator.__module__
+      ~MoveGenerator.__weakref__
+   
+   

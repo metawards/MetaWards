@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metawards.mixers.InteractionMatrix &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="metawards.mixers.merge_evenly" href="metawards.mixers.merge_evenly.html" />
+    <link rel="prev" title="MetaWards.mixers API Detail" href="../index_api_MetaWards_mixers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards.html">MetaWards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_iterators.html">MetaWards.iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_MetaWards_mixers.html">MetaWards.mixers</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index_api_MetaWards_mixers.html">MetaWards.mixers API Detail</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index_api_MetaWards_mixers.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Documentation</a> &raquo;</li>
+          <li><a href="../index_MetaWards_mixers.html">MetaWards.mixers</a> &raquo;</li>
+          <li><a href="../index_api_MetaWards_mixers.html">MetaWards.mixers API Detail</a> &raquo;</li>
+      <li>metawards.mixers.InteractionMatrix</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../index_api_MetaWards_mixers.html" class="btn btn-neutral float-left" title="MetaWards.mixers API Detail" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metawards.mixers.merge_evenly.html" class="btn btn-neutral float-right" title="metawards.mixers.merge_evenly" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="metawards-mixers-interactionmatrix">
+<h1>metawards.mixers.InteractionMatrix<a class="headerlink" href="#metawards-mixers-interactionmatrix" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">metawards.mixers.</span></span><span class="sig-name descname"><span class="pre">InteractionMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix" title="Permalink to this definition"></a></dt>
+<dd><p>This is an interaction matrix, which is used to control
+how the FOIs of different demographics are merged together.</p>
+<p>An interaction matrix is just a square matrix, with
+a list[][] being perfectly acceptable. This is really
+a convenience class that makes it easier to create
+more complex interaction matrixes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Construct an interaction matrix that is n x n in size,
+where all values equal ‘value’</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__delattr__</span></code>(name, /)</p></td>
+<td><p>Implement delattr(self, name).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dir__</span></code>()</p></td>
+<td><p>Default dir() implementation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.__eq__" title="metawards.mixers.InteractionMatrix.__eq__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code></a>(other)</p></td>
+<td><p>Return self==value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__format__</span></code>(format_spec, /)</p></td>
+<td><p>Default object formatter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ge__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getattribute__</span></code>(name, /)</p></td>
+<td><p>Return getattr(self, name).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.__getitem__" title="metawards.mixers.InteractionMatrix.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(i)</p></td>
+<td><p>Return the ith row of the matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__gt__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#id0" title="metawards.mixers.InteractionMatrix.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(n[, value])</p></td>
+<td><p>Construct an interaction matrix that is n x n in size, where all values equal 'value'</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init_subclass__</span></code></p></td>
+<td><p>This method is called when a class is subclassed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__le__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__lt__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ne__</span></code>(value, /)</p></td>
+<td><p>Return self!=value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__new__</span></code>(**kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce__</span></code>()</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce_ex__</span></code>(protocol, /)</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code>()</p></td>
+<td><p>Return repr(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setattr__</span></code>(name, value, /)</p></td>
+<td><p>Implement setattr(self, name, value).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.__setitem__" title="metawards.mixers.InteractionMatrix.__setitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setitem__</span></code></a>(i, row)</p></td>
+<td><p>&quot;Set the ith row of the matrix equal to 'row'</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__sizeof__</span></code>()</p></td>
+<td><p>Size of object in memory, in bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.__str__" title="metawards.mixers.InteractionMatrix.__str__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code></a>()</p></td>
+<td><p>Return str(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__subclasshook__</span></code></p></td>
+<td><p>Abstract classes can override this to customize issubclass().</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.detach" title="metawards.mixers.InteractionMatrix.detach"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detach</span></code></a>(n)</p></td>
+<td><p>Detach the 'nth' demographic from interacting with any other demographics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.diagonal" title="metawards.mixers.InteractionMatrix.diagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diagonal</span></code></a>(n[, value, off_diagonal])</p></td>
+<td><p>Return a n x n matrix where each diagonal element equals 'value' and each off-diagonal element equals 'off_diagonal'</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.identity" title="metawards.mixers.InteractionMatrix.identity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">identity</span></code></a>(n[, value, off_diagonal])</p></td>
+<td><p>Return a n x n matrix where each diagonal element equals 'value' and each off-diagonal element equals 'off_diagonal'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.ones" title="metawards.mixers.InteractionMatrix.ones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ones</span></code></a>(n[, value])</p></td>
+<td><p>Return a n x n matrix where each element equals 'value'</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.resize" title="metawards.mixers.InteractionMatrix.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize</span></code></a>(n[, value])</p></td>
+<td><p>Resize this matrix to 'n x n', adding in extra values equal to 'value' if needed</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.zeroes" title="metawards.mixers.InteractionMatrix.zeroes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeroes</span></code></a>(n[, value])</p></td>
+<td><p>Return a n x n matrix where each element equals 'value'</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dict__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__doc__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#metawards.mixers.InteractionMatrix.__hash__" title="metawards.mixers.InteractionMatrix.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__module__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__weakref__</span></code></p></td>
+<td><p>list of weak references to the object (if defined)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__eq__" title="Permalink to this definition"></a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__getitem__" title="Permalink to this definition"></a></dt>
+<dd><p>Return the ith row of the matrix</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__hash__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Construct an interaction matrix that is n x n in size,
+where all values equal ‘value’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.__setitem__">
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__setitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__setitem__" title="Permalink to this definition"></a></dt>
+<dd><p>“Set the ith row of the matrix equal to ‘row’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.__str__" title="Permalink to this definition"></a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.detach">
+<span class="sig-name descname"><span class="pre">detach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.detach"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.detach" title="Permalink to this definition"></a></dt>
+<dd><p>Detach the ‘nth’ demographic from interacting with
+any other demographics. This sets the ith row and ith
+column equal to zero (which not changing m[n][n])</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.diagonal">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">diagonal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">off_diagonal</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.diagonal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.diagonal" title="Permalink to this definition"></a></dt>
+<dd><p>Return a n x n matrix where each diagonal element equals
+‘value’ and each off-diagonal element equals ‘off_diagonal’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.identity">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">off_diagonal</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.identity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.identity" title="Permalink to this definition"></a></dt>
+<dd><p>Return a n x n matrix where each diagonal element equals
+‘value’ and each off-diagonal element equals ‘off_diagonal’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.ones">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">ones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.ones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.ones" title="Permalink to this definition"></a></dt>
+<dd><p>Return a n x n matrix where each element equals ‘value’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.resize">
+<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.resize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.resize" title="Permalink to this definition"></a></dt>
+<dd><p>Resize this matrix to ‘n x n’, adding in extra
+values equal to ‘value’ if needed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.mixers.InteractionMatrix.zeroes">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">zeroes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/mixers/_interaction_matrix.html#InteractionMatrix.zeroes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.mixers.InteractionMatrix.zeroes" title="Permalink to this definition"></a></dt>
+<dd><p>Return a n x n matrix where each element equals ‘value’</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index_api_MetaWards_mixers.html" class="btn btn-neutral float-left" title="MetaWards.mixers API Detail" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metawards.mixers.merge_evenly.html" class="btn btn-neutral float-right" title="metawards.mixers.merge_evenly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

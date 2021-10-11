@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom advance functions &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Responding to changing conditions" href="04_dynamic.html" />
+    <link rel="prev" title="Where is the weekend?" href="02_weekend.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_iterators.html">How a day is modelled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_weekend.html">Where is the weekend?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Custom advance functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-advance-lockdown">Creating advance_lockdown</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scaling-the-infection-rate">Scaling the infection rate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="04_dynamic.html">Responding to changing conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_scanning.html">Custom variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_scan_lockdown.html">Scanning lockdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="07_cutoff.html">Alternative lockdowns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="08_local_lockdown.html">Local lockdowns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part03.html">Part 3 - Customising the outbreak</a> &raquo;</li>
+      <li>Custom advance functions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="02_weekend.html" class="btn btn-neutral float-left" title="Where is the weekend?" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_dynamic.html" class="btn btn-neutral float-right" title="Responding to changing conditions" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="custom-advance-functions">
+<h1>Custom advance functions<a class="headerlink" href="#custom-advance-functions" title="Permalink to this headline"></a></h1>
+<p>So far we have just been creating our own custom iterator functions.
+You can also create your own custom advance functions.</p>
+<p>Create a new python file called <code class="docutils literal notranslate"><span class="pre">advance.py</span></code> and copy in the
+below text;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_function</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello advance_function&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">iterate_advance</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello iterate_advance&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">advance_function</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This defines two functions. One is the advance function we will use.
+This takes <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> as arguments, but returns nothing.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">iterate_advance</span></code> function is our iterator, which returns
+a list of just our <code class="docutils literal notranslate"><span class="pre">advance_function</span></code> to run.</p>
+<p>Use this iterator via the <code class="docutils literal notranslate"><span class="pre">metawards</span></code> command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --additional ExtraSeedsLondon.dat --iterator advance --debug
+</pre></div>
+</div>
+<p>You should see that your “Hellos” from these functions are printed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[15:35:18]                       Hello iterate_advance                       advance.py:9
+                                Hello advance_function                       advance.py:5
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+</pre></div>
+</div>
+<section id="creating-advance-lockdown">
+<h2>Creating advance_lockdown<a class="headerlink" href="#creating-advance-lockdown" title="Permalink to this headline"></a></h2>
+<p>We can write a custom advance function that represents a lockdown. To do
+this we will assume that there are no new work infections during a lockdown.
+We want to create an iterator that advances normally before the lockdown
+is triggered, and then advances using only the play function afterwards.</p>
+<p>To do this, create a new python file called <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code>, and copy in;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_working_week</span><span class="p">,</span> \
+                                <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_fixed</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;We are on lockdown&quot;</span><span class="p">)</span>
+    <span class="n">advance_infprob</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">advance_play</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iterate_working_week</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">iterate_lockdown</span></code> function behaves identically
+to <code class="docutils literal notranslate"><span class="pre">iterate_working_week</span></code> for the first 20 days of the
+outbreak. However, after day 20, <code class="docutils literal notranslate"><span class="pre">advance_lockdown</span></code> is called.
+This function calls <a class="reference internal" href="../../api/generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_infprob()</span></code></a>
+to advance the infection probabilities before calling
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_play.html#metawards.iterators.advance_play" title="metawards.iterators.advance_play"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_play()</span></code></a> to advance the
+“play” infections only. This is the equivalent of making
+every day into a weekend, e.g. there is no fixed or predictable
+travelling from home to work (or school).</p>
+<p>Run this iterator and draw a graph using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --additional ExtraSeedsLondon.dat --iterator lockdown
+metawards-plot -i output/results.csv.bz2 --format jpg --dpi <span class="m">150</span>
+</pre></div>
+</div>
+<p>You should see that the overview plot is very similar to your
+“weekend” only graphs that you created <a class="reference internal" href="02_weekend.html"><span class="doc">on the last page</span></a>.
+This is unsurprising, as this “lockdown” has not reduced the random
+infections.</p>
+</section>
+<section id="scaling-the-infection-rate">
+<h2>Scaling the infection rate<a class="headerlink" href="#scaling-the-infection-rate" title="Permalink to this headline"></a></h2>
+<p>To model a reduction in the rate of new infections, the
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_infprob()</span></code></a> function can take
+and extra <code class="docutils literal notranslate"><span class="pre">scale_rate</span></code> argument that is used to scale all of the
+infection rates that are calculated. This is a blunt tool, but it can
+be used to model the reduced infection rates that a lockdown aim to
+achieve.</p>
+<p>To set <code class="docutils literal notranslate"><span class="pre">scale_rate</span></code>, edit your <code class="docutils literal notranslate"><span class="pre">lockdown.py</span></code> file to contain;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.iterators</span> <span class="kn">import</span> <span class="n">iterate_working_week</span><span class="p">,</span> \
+                                <span class="n">advance_infprob</span><span class="p">,</span> \
+                                <span class="n">advance_fixed</span><span class="p">,</span> \
+                                <span class="n">advance_play</span>
+
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">advance_lockdown</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;We are on lockdown&quot;</span><span class="p">)</span>
+    <span class="n">advance_infprob</span><span class="p">(</span><span class="n">scale_rate</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">advance_play</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">iterate_lockdown</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">advance_lockdown</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">iterate_working_week</span><span class="p">(</span><span class="n">population</span><span class="o">=</span><span class="n">population</span><span class="p">,</span>
+                                    <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All we have done is set <code class="docutils literal notranslate"><span class="pre">scale_rate=0.25</span></code> in
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-meth docutils literal notranslate"><span class="pre">advance_infprob()</span></code></a>. This represents
+a four-fold reduction in the infection rate.</p>
+<p>Run the model and generate graphs again using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 --additional ExtraSeedsLondon.dat --iterator lockdown
+metawards-plot -i output/results.csv.bz2 --format jpg --dpi <span class="m">150</span>
+</pre></div>
+</div>
+<p>You should now see a dramatic reduction in the infection, e.g.
+my overview graph looks like this;</p>
+<img alt="Overview image of a quick lockdown" src="../../_images/tutorial_3_3_overview.jpg" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="02_weekend.html" class="btn btn-neutral float-left" title="Where is the weekend?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_dynamic.html" class="btn btn-neutral float-right" title="Responding to changing conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

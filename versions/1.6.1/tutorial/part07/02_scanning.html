@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanning demographics &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Conditional Pathways" href="03_conditional.html" />
+    <link rel="prev" title="Disease pathways and stages" href="01_pathways.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_pathways.html">Disease pathways and stages</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scanning demographics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scanning-disease-parameters">Scanning disease parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scanning-demographic-percentage">Scanning demographic percentage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-the-models">Running the models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#analysing-the-results">Analysing the results</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_conditional.html">Conditional Pathways</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_icu.html">Modelling the ICU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_named_stages.html">Named Disease Stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_hospital.html">Modelling a Hospital</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part07.html">Part 7 - Different pathways for different demographics</a> &raquo;</li>
+      <li>Scanning demographics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="01_pathways.html" class="btn btn-neutral float-left" title="Disease pathways and stages" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_conditional.html" class="btn btn-neutral float-right" title="Conditional Pathways" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scanning-demographics">
+<h1>Scanning demographics<a class="headerlink" href="#scanning-demographics" title="Permalink to this headline"></a></h1>
+<p>Now that we can model super-spreaders, it is important to be able to
+scan through their parameters to so that we can investigate their impact.</p>
+<p>There are three parameters that we want to scan;</p>
+<ul class="simple">
+<li><p><strong>beta[2]</strong> for <code class="docutils literal notranslate"><span class="pre">lurgy_super</span></code>, which controls how infectious super-spreaders
+are in the asymptomatic (or pre-symptomatic) phase.</p></li>
+<li><p><strong>progress[2]</strong> for <code class="docutils literal notranslate"><span class="pre">lurgy_super</span></code>, which controls how long the super-spreaders
+remain in this phase.</p></li>
+<li><p>The percentage of super-spreaders in the normal population.</p></li>
+</ul>
+<section id="scanning-disease-parameters">
+<h2>Scanning disease parameters<a class="headerlink" href="#scanning-disease-parameters" title="Permalink to this headline"></a></h2>
+<p>We can scan the <code class="docutils literal notranslate"><span class="pre">lurgy_super</span></code> parameters using a scan file (also called
+a design file), as you have done <a class="reference internal" href="../part02/02_adjustable.html"><span class="doc">previously</span></a>.
+The difference now is that instead of changing the disease parameter for
+all demographics, we want to change it only for the <code class="docutils literal notranslate"><span class="pre">super</span></code> demographic.</p>
+<p>To do this, create a design file called <code class="docutils literal notranslate"><span class="pre">scan.dat</span></code> and copy in the below;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">:</span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="nb">super</span><span class="p">:</span><span class="n">progress</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="mf">0.5</span>             <span class="mf">0.5</span>
+    <span class="mf">0.5</span>             <span class="mf">0.6</span>
+    <span class="mf">0.5</span>             <span class="mf">0.7</span>
+    <span class="mf">0.5</span>             <span class="mf">0.8</span>
+    <span class="mf">0.5</span>             <span class="mf">0.9</span>
+    <span class="mf">0.5</span>             <span class="mf">1.0</span>
+
+    <span class="mf">0.6</span>             <span class="mf">0.5</span>
+    <span class="mf">0.6</span>             <span class="mf">0.6</span>
+    <span class="mf">0.6</span>             <span class="mf">0.7</span>
+    <span class="mf">0.6</span>             <span class="mf">0.8</span>
+    <span class="mf">0.6</span>             <span class="mf">0.9</span>
+    <span class="mf">0.6</span>             <span class="mf">1.0</span>
+
+    <span class="mf">0.7</span>             <span class="mf">0.5</span>
+    <span class="mf">0.7</span>             <span class="mf">0.6</span>
+    <span class="mf">0.7</span>             <span class="mf">0.7</span>
+    <span class="mf">0.7</span>             <span class="mf">0.8</span>
+    <span class="mf">0.7</span>             <span class="mf">0.9</span>
+    <span class="mf">0.7</span>             <span class="mf">1.0</span>
+
+    <span class="mf">0.8</span>             <span class="mf">0.5</span>
+    <span class="mf">0.8</span>             <span class="mf">0.6</span>
+    <span class="mf">0.8</span>             <span class="mf">0.7</span>
+    <span class="mf">0.8</span>             <span class="mf">0.8</span>
+    <span class="mf">0.8</span>             <span class="mf">0.9</span>
+    <span class="mf">0.8</span>             <span class="mf">1.0</span>
+
+    <span class="mf">0.9</span>             <span class="mf">0.5</span>
+    <span class="mf">0.9</span>             <span class="mf">0.6</span>
+    <span class="mf">0.9</span>             <span class="mf">0.7</span>
+    <span class="mf">0.9</span>             <span class="mf">0.8</span>
+    <span class="mf">0.9</span>             <span class="mf">0.9</span>
+    <span class="mf">0.9</span>             <span class="mf">1.0</span>
+
+    <span class="mf">1.0</span>             <span class="mf">0.5</span>
+    <span class="mf">1.0</span>             <span class="mf">0.6</span>
+    <span class="mf">1.0</span>             <span class="mf">0.7</span>
+    <span class="mf">1.0</span>             <span class="mf">0.8</span>
+    <span class="mf">1.0</span>             <span class="mf">0.9</span>
+    <span class="mf">1.0</span>             <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>This scans through <code class="docutils literal notranslate"><span class="pre">beta[2]</span></code> from 0.5 to 1.0, while scanning <code class="docutils literal notranslate"><span class="pre">progress[2]</span></code>
+also from 0.5 to 1.0. We specify that we are only changing these parameters
+for the <code class="docutils literal notranslate"><span class="pre">super</span></code> demographic by prefixing <code class="docutils literal notranslate"><span class="pre">beta[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">super[2]</span></code> with
+<code class="docutils literal notranslate"><span class="pre">super:</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">demographic_name:</span></code> before a parameter means that you will only
+change that parameter for the demographic called <code class="docutils literal notranslate"><span class="pre">demographic_name</span></code>.
+Note that the name <code class="docutils literal notranslate"><span class="pre">overall</span></code> is reserved, and refers to the overall
+set of networks. Setting a parameter using <code class="docutils literal notranslate"><span class="pre">overall:</span></code> will only change
+the parameter in the overall <a class="reference internal" href="../../api/generated/metawards.Networks.html#metawards.Networks" title="metawards.Networks"><code class="xref py py-class docutils literal notranslate"><span class="pre">Networks</span></code></a> object, and
+not the demographic sub-networks. To change in all networks you should
+not specify the demographic name.</p>
+</div>
+</section>
+<section id="scanning-demographic-percentage">
+<h2>Scanning demographic percentage<a class="headerlink" href="#scanning-demographic-percentage" title="Permalink to this headline"></a></h2>
+<p>As of the current version of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> it is not possible to use a
+scan/design file to change the percentage of individuals in different
+demographics. Instead, we need to create several <code class="docutils literal notranslate"><span class="pre">demographics.json</span></code>
+files, and then run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> independently for each file.
+To do this, create the following four demographics files, which we
+will use to scan the super-spreader percentage from 5% to 20%.</p>
+<p><code class="docutils literal notranslate"><span class="pre">demographics_05.json</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;demographics&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;super&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;work_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.05</span> <span class="p">],</span>
+    <span class="s2">&quot;play_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.05</span> <span class="p">],</span>
+    <span class="s2">&quot;diseases&quot;</span>     <span class="p">:</span> <span class="p">[</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;lurgy_super&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">demographics_10.json</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;demographics&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;super&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;work_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.10</span> <span class="p">],</span>
+    <span class="s2">&quot;play_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.90</span><span class="p">,</span> <span class="mf">0.10</span> <span class="p">],</span>
+    <span class="s2">&quot;diseases&quot;</span>     <span class="p">:</span> <span class="p">[</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;lurgy_super&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">demographics_15.json</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;demographics&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;super&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;work_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.15</span> <span class="p">],</span>
+    <span class="s2">&quot;play_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.15</span> <span class="p">],</span>
+    <span class="s2">&quot;diseases&quot;</span>     <span class="p">:</span> <span class="p">[</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;lurgy_super&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">demographics_20.json</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;demographics&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;super&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;work_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.20</span> <span class="p">],</span>
+    <span class="s2">&quot;play_ratios&quot;</span>  <span class="p">:</span> <span class="p">[</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.20</span> <span class="p">],</span>
+    <span class="s2">&quot;diseases&quot;</span>     <span class="p">:</span> <span class="p">[</span> <span class="n">null</span><span class="p">,</span> <span class="s2">&quot;lurgy_super&quot;</span> <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="running-the-models">
+<h2>Running the models<a class="headerlink" href="#running-the-models" title="Permalink to this headline"></a></h2>
+<p>We now have four demographic files to run, each of which have 36 parameter
+combinations to scan, which we would like to repeat 8 times. This will be
+1152 individual <em>model runs</em>, so we need to use a cluster. Here are example
+slurm and PBS job submission scripts for these runs;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#PBS -l walltime=12:00:00
+#PBS -l select=4:ncpus=64:mem=64GB
+# The above sets 4 nodes with 64 cores each
+
+source $HOME/envs/metawards/bin/activate
+
+# change into the directory from which this job was submitted
+cd $PBS_O_WORKDIR
+
+metawards -d lurgy_home -D demographics_05.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_05
+
+metawards -d lurgy_home -D demographics_10.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_10
+
+metawards -d lurgy_home -D demographics_15.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_15
+
+metawards -d lurgy_home -D demographics_20.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_20
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#SBATCH --time=12:00:00
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=64
+# The above sets 4 nodes with 64 cores each
+
+source $HOME/envs/metawards/bin/activate
+
+metawards -d lurgy_home -D demographics_05.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_05
+
+metawards -d lurgy_home -D demographics_10.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_10
+
+metawards -d lurgy_home -D demographics_15.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_15
+
+metawards -d lurgy_home -D demographics_20.json -a ExtraSeedsLondon.dat \
+        --extractor extract_none -i scan.dat --repeats 8 \
+        --nthreads 16 --force-overwrite-output --mixer mix_evenly \
+        --no-spinner --theme simple \
+        --output output_20
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">--output</span></code> command line option is used to direct the
+output from each different demographic file to a different output
+directory. Also notice how we run the four <code class="docutils literal notranslate"><span class="pre">metawards</span></code> calculations
+one after another. There is little need to run them in parallel as
+each calculation is already parallelising its 36 x 8 = 288 <em>model runs</em>,
+each of which is running over 16 cores. This means that you would need
+to be running over more than 4608 cores before it is worth parallelising
+the four individual <code class="docutils literal notranslate"><span class="pre">metawards</span></code> calculations. In the above job scripts,
+we’ve only asked for 256 cores. You should adjust the request depending
+on how many cores are available on your cluster.</p>
+</div>
+<p>The jobs will take a while to run, e.g. in my case it took 90 minutes using
+256 cores, with each individual <em>model run</em> taking about 3 minutes.</p>
+</section>
+<section id="analysing-the-results">
+<h2>Analysing the results<a class="headerlink" href="#analysing-the-results" title="Permalink to this headline"></a></h2>
+<p>The first stage in the analysis is to look at the four overview plots.
+These can be generated via;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output_05/results.csv.bz2
+metawards-plot --animate output_05/overview_*.jpg
+metawards-plot -i output_10/results.csv.bz2
+metawards-plot --animate output_10/overview_*.jpg
+metawards-plot -i output_15/results.csv.bz2
+metawards-plot --animate output_15/overview_*.jpg
+metawards-plot -i output_20/results.csv.bz2
+metawards-plot --animate output_20/overview_*.jpg
+</pre></div>
+</div>
+<p>You will see plots similar to this (which is for the <code class="docutils literal notranslate"><span class="pre">output_20</span></code> 20%
+super-spreader demographic)</p>
+<img alt="Overview of the scan of the 20% super-spreader demographic" src="../../_images/tutorial_7_2_1.gif" />
+<p>You should see in these that, regardless of the percentage of super-spreaders,
+the larger the value of <code class="docutils literal notranslate"><span class="pre">super:beta[2]</span></code>, the more intense the outbreak,
+and the smaller the value of <code class="docutils literal notranslate"><span class="pre">super:progress[2]</span></code>, the more intense
+the outbreak. This makes sense, as you would expect a stronger outbreak
+the more infectious the super-spreaders are, and the longer they spend in
+the infective state.</p>
+<p>By eye you can see that this effect is greatest for the run with the
+largest percentage of super-spreaders. We can plot the demographics
+for the first run of the <code class="docutils literal notranslate"><span class="pre">super:beta[2]==1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">super:progress[2]==1.0</span></code>
+parameters, and animate using the commands;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output_*/1i0v0i5x001/trajectory.csv.bz2
+metawards-plot --animate output_*/1i0v0i5x001/demographics.jpg -o demographics_1i0v0i5.gif --order filename
+</pre></div>
+</div>
+<p>This should result in an animation that looks something like this;</p>
+<img alt="Overview of the scan of the 20% super-spreader demographic" src="../../_images/tutorial_7_2_2.gif" />
+<p>You can see in this plot that the greater the percentage of super-spreaders,
+the faster the outbreak and the more individuals who are infected. Again,
+this is what you would expect. As we are modelling the lurgy, we don’t have
+real data to compare against. For a real outbreak, you would fit the parameters
+for the super-spreaders to match observed data.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_pathways.html" class="btn btn-neutral float-left" title="Disease pathways and stages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_conditional.html" class="btn btn-neutral float-right" title="Conditional Pathways" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

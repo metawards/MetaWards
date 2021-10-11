@@ -1,0 +1,83 @@
+﻿metawards.Wards
+===============
+
+.. currentmodule:: metawards
+
+.. autoclass:: Wards
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Wards.__add__
+      ~Wards.__contains__
+      ~Wards.__delattr__
+      ~Wards.__dir__
+      ~Wards.__eq__
+      ~Wards.__format__
+      ~Wards.__ge__
+      ~Wards.__getattribute__
+      ~Wards.__getitem__
+      ~Wards.__gt__
+      ~Wards.__iadd__
+      ~Wards.__imul__
+      ~Wards.__init__
+      ~Wards.__init_subclass__
+      ~Wards.__le__
+      ~Wards.__len__
+      ~Wards.__lt__
+      ~Wards.__mul__
+      ~Wards.__ne__
+      ~Wards.__new__
+      ~Wards.__radd__
+      ~Wards.__reduce__
+      ~Wards.__reduce_ex__
+      ~Wards.__repr__
+      ~Wards.__rmul__
+      ~Wards.__setattr__
+      ~Wards.__sizeof__
+      ~Wards.__str__
+      ~Wards.__subclasshook__
+      ~Wards._harmonise_links
+      ~Wards._harmonise_nodes
+      ~Wards._resolve
+      ~Wards.add
+      ~Wards.assert_sane
+      ~Wards.contains
+      ~Wards.from_data
+      ~Wards.from_json
+      ~Wards.get
+      ~Wards.getinfo
+      ~Wards.harmonise
+      ~Wards.index
+      ~Wards.insert
+      ~Wards.is_resolved
+      ~Wards.num_play_links
+      ~Wards.num_players
+      ~Wards.num_work_links
+      ~Wards.num_workers
+      ~Wards.population
+      ~Wards.scale
+      ~Wards.to_data
+      ~Wards.to_json
+      ~Wards.unresolved_wards
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Wards.__dict__
+      ~Wards.__doc__
+      ~Wards.__hash__
+      ~Wards.__module__
+      ~Wards.__weakref__
+   
+   

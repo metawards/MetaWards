@@ -1,0 +1,86 @@
+﻿metawards.Disease
+=================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Disease
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Disease.N_INF_CLASSES
+      ~Disease.__delattr__
+      ~Disease.__dir__
+      ~Disease.__eq__
+      ~Disease.__format__
+      ~Disease.__ge__
+      ~Disease.__getattribute__
+      ~Disease.__getitem__
+      ~Disease.__gt__
+      ~Disease.__init__
+      ~Disease.__init_subclass__
+      ~Disease.__le__
+      ~Disease.__len__
+      ~Disease.__lt__
+      ~Disease.__ne__
+      ~Disease.__new__
+      ~Disease.__reduce__
+      ~Disease.__reduce_ex__
+      ~Disease.__repr__
+      ~Disease.__setattr__
+      ~Disease.__setitem__
+      ~Disease.__sizeof__
+      ~Disease.__str__
+      ~Disease.__subclasshook__
+      ~Disease._validate
+      ~Disease.add
+      ~Disease.assert_sane
+      ~Disease.from_data
+      ~Disease.from_json
+      ~Disease.get_index
+      ~Disease.get_mapping_to
+      ~Disease.insert
+      ~Disease.load
+      ~Disease.to_data
+      ~Disease.to_json
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Disease.__annotations__
+      ~Disease.__dataclass_fields__
+      ~Disease.__dataclass_params__
+      ~Disease.__dict__
+      ~Disease.__doc__
+      ~Disease.__hash__
+      ~Disease.__module__
+      ~Disease.__weakref__
+      ~Disease._authors
+      ~Disease._contacts
+      ~Disease._filename
+      ~Disease._references
+      ~Disease._repository
+      ~Disease._repository_branch
+      ~Disease._repository_version
+      ~Disease._version
+      ~Disease.beta
+      ~Disease.contrib_foi
+      ~Disease.is_infected
+      ~Disease.mapping
+      ~Disease.name
+      ~Disease.progress
+      ~Disease.stage
+      ~Disease.start_symptom
+      ~Disease.too_ill_to_move
+   
+   

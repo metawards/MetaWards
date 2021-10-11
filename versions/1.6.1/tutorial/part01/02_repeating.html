@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiple model runs &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plotting outputs" href="03_plotting.html" />
+    <link rel="prev" title="Getting Started" href="01_getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_getting_started.html">Getting Started</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Multiple model runs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#performing-multiple-model-runs">Performing multiple model runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-results-csv-bz2-file">The results.csv.bz2 file</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_plotting.html">Plotting outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part01.html">Part 1 - Modelling outbreaks</a> &raquo;</li>
+      <li>Multiple model runs</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="01_getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_plotting.html" class="btn btn-neutral float-right" title="Plotting outputs" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="multiple-model-runs">
+<h1>Multiple model runs<a class="headerlink" href="#multiple-model-runs" title="Permalink to this headline"></a></h1>
+<p>In the last page you successfully performed a single run modelling
+an outbreak of the lurgy that started in London. This run
+(which we call a <em>model run</em>) is stochastic, meaning that the results
+will be slightly different every time it is performed.</p>
+<p>To gain confidence in any predictions, we need to perform a <em>model run</em>
+multiple times, and average over the results.</p>
+<section id="performing-multiple-model-runs">
+<h2>Performing multiple model runs<a class="headerlink" href="#performing-multiple-model-runs" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> has the command line option <code class="docutils literal notranslate"><span class="pre">--repeats</span></code> (or <code class="docutils literal notranslate"><span class="pre">-r</span></code>) to
+set the number of times a <code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">run</span></code> should be repeated. For example,
+run the below command to repeat the <em>model run</em> four times;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy -a ExtraSeedsLondon.dat --repeats <span class="m">4</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> will automatically use as many of the cores on your computer
+as it can to parallelise the jobs. On my computer, the output shows;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Running the model ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Using random number seed: 87340504
+Running 4 jobs using 4 process(es)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ MULTIPROCESSING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</pre></div>
+</div>
+<p>I have four processor cores on my laptop, so I see the four repeats run
+in parallel using four processes, with each <em>model run</em> performed
+using 1 thread. You will see a different distribution of threads
+and processes if you have a different number of cores on your computer.
+You can set the number of processes that <code class="docutils literal notranslate"><span class="pre">metawards</span></code> should use via
+the <code class="docutils literal notranslate"><span class="pre">--nprocs</span></code> command line option. You can set the number of threads
+that <code class="docutils literal notranslate"><span class="pre">metawards</span></code> should use via the <code class="docutils literal notranslate"><span class="pre">--nthreads</span></code> command line option.</p>
+<p>This calculation may take some time (2-3 minutes). This time, instead
+of seeing a summary of the outbreak, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> will show a summary
+of the different <em>model run</em> jobs. Something similar to this should
+be printed;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ MULTIPROCESSING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 1 of 4                                                                  │
+│  (NO_CHANGE)[repeat 1]                                                                 │
+│  2021-01-13: DAY: 238 S: 11784852    E: 0    I: 0    R: 44297225    IW: 0   UV: 1.0    │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 2 of 4                                                                  │
+│  (NO_CHANGE)[repeat 2]                                                                 │
+│  2021-01-05: DAY: 230 S: 11770162    E: 0    I: 0    R: 44311915    IW: 1   UV: 1.0    │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 3 of 4                                                                  │
+│  (NO_CHANGE)[repeat 3]                                                                 │
+│  2021-02-05: DAY: 261 S: 11789449    E: 0    I: 0    R: 44292628    IW: 1   UV: 1.0    │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 4 of 4                                                                  │
+│  (NO_CHANGE)[repeat 4]                                                                 │
+│  2021-01-04: DAY: 229 S: 11779688    E: 0    I: 0    R: 44302389    IW: 0   UV: 1.0    │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Writing a summary of all results into the csv file                                    │
+│  /Users/chris/GitHub/tutorial/test/output/results.csv.bz2. You can use this to         │
+│  quickly look at statistics across all runs using e.g. R or pandas                     │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> prints a progress spinner to the screen while the jobs
+are running, so show you that it hasn’t crashed. You can switch off
+the spinner using the <code class="docutils literal notranslate"><span class="pre">--no-spinner</span></code> option if it annoys you.
+Similarly, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> by default writes output to the screen using
+a very colourful theme. You can change this to a more simple and
+less-colourful theme by passing in the option <code class="docutils literal notranslate"><span class="pre">--theme</span> <span class="pre">simple</span></code>.</p>
+</div>
+<p>In this case, all four outbreaks completed within 229-261 days, while the
+number of the population who progressed to the ‘<strong>R</strong>’ state were all
+around 44.3 million.</p>
+</section>
+<section id="the-results-csv-bz2-file">
+<h2>The results.csv.bz2 file<a class="headerlink" href="#the-results-csv-bz2-file" title="Permalink to this headline"></a></h2>
+<p>The day-by-day progress of each the outbreak for each <em>model run</em> is
+recorded in the output file <code class="docutils literal notranslate"><span class="pre">results.csv.bz2</span></code>. This is a comma-separated
+file that has been compressed using <a class="reference external" href="https://en.wikipedia.org/wiki/Bzip2">bzip2</a>.</p>
+<p>You can read this file easily using
+<a class="reference external" href="https://pandas.pydata.org">Python Pandas</a>  or with
+<a class="reference external" href="https://www.r-project.org">R</a>. You can even import this into Excel
+(although you may need to uncompress this file first using <code class="docutils literal notranslate"><span class="pre">bunzip2</span></code>).</p>
+<p>For example, if you have Pandas installed, then you can read this
+file via an <a class="reference external" href="https://ipython.org">ipython</a> or
+<a class="reference external" href="https://jupyter.org">Jupyter notebook</a> session via;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/results.csv.bz2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">    fingerprint  repeat  day        date         S  E  I         R  IW</span>
+<span class="go">0     NO_CHANGE       1    0  2020-04-20  56082077  0  0         0   0</span>
+<span class="go">1     NO_CHANGE       1    1  2020-04-21  56082077  0  0         0   0</span>
+<span class="go">2     NO_CHANGE       1    2  2020-04-22  56082072  5  0         0   0</span>
+<span class="go">3     NO_CHANGE       1    3  2020-04-23  56082072  0  5         0   0</span>
+<span class="go">4     NO_CHANGE       1    4  2020-04-24  56082068  0  5         4   4</span>
+<span class="go">..          ...     ...  ...         ...       ... .. ..       ...  ..</span>
+<span class="go">929   NO_CHANGE       4  224  2020-11-30  11782419  0  4  44299654   0</span>
+<span class="go">930   NO_CHANGE       4  225  2020-12-01  11782419  0  3  44299655   0</span>
+<span class="go">931   NO_CHANGE       4  226  2020-12-02  11782419  0  1  44299657   0</span>
+<span class="go">932   NO_CHANGE       4  227  2020-12-03  11782419  0  1  44299657   0</span>
+<span class="go">933   NO_CHANGE       4  228  2020-12-04  11782418  0  0  44299659   1</span>
+
+<span class="go">[934 rows x 9 columns]</span>
+</pre></div>
+</div>
+<p>Each repeat is given its own number, which is in the <code class="docutils literal notranslate"><span class="pre">repeat</span></code> column.
+The day of the outbreak is given in the <code class="docutils literal notranslate"><span class="pre">day</span></code> column. This counts up
+from <em>day zero</em> when the outbreak started, to the last day when the
+outbreak was over. You can control the start day of the outbreak using
+the <code class="docutils literal notranslate"><span class="pre">--start-day</span></code> command line option.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">date</span></code> column contains the date of each day in the outbreak. By
+default, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> assumes that <em>day zero</em> is today. You can set the
+date of <em>day zero</em> using the <code class="docutils literal notranslate"><span class="pre">--start-date</span></code> command line option, e.g.
+<code class="docutils literal notranslate"><span class="pre">--start-date</span> <span class="pre">tomorrow</span></code> would start tomorrow, while
+<code class="docutils literal notranslate"><span class="pre">--start-date</span> <span class="pre">Jan</span> <span class="pre">1</span></code> would start on January 1st this year.</p>
+<p>The values of <strong>S</strong>, <strong>E</strong>, <strong>I</strong>, <strong>R</strong> and <strong>IW</strong> for each repeat for
+each day are then given in their correspondingly named columns.</p>
+<p>The <em>fingerprint</em> column not used for this calculation - we will see what it is
+later.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_getting_started.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_plotting.html" class="btn btn-neutral float-right" title="Plotting outputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

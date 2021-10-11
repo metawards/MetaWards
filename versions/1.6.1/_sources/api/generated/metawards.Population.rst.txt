@@ -1,0 +1,75 @@
+﻿metawards.Population
+====================
+
+.. currentmodule:: metawards
+
+.. autoclass:: Population
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Population.__delattr__
+      ~Population.__dir__
+      ~Population.__eq__
+      ~Population.__format__
+      ~Population.__ge__
+      ~Population.__getattribute__
+      ~Population.__gt__
+      ~Population.__init__
+      ~Population.__init_subclass__
+      ~Population.__le__
+      ~Population.__lt__
+      ~Population.__ne__
+      ~Population.__new__
+      ~Population.__reduce__
+      ~Population.__reduce_ex__
+      ~Population.__repr__
+      ~Population.__setattr__
+      ~Population.__sizeof__
+      ~Population.__str__
+      ~Population.__subclasshook__
+      ~Population.assert_sane
+      ~Population.has_equal_SEIR
+      ~Population.headers
+      ~Population.increment_day
+      ~Population.specialise
+      ~Population.summary
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Population.__annotations__
+      ~Population.__dataclass_fields__
+      ~Population.__dataclass_params__
+      ~Population.__dict__
+      ~Population.__doc__
+      ~Population.__hash__
+      ~Population.__module__
+      ~Population.__weakref__
+      ~Population.date
+      ~Population.day
+      ~Population.infecteds
+      ~Population.initial
+      ~Population.latent
+      ~Population.n_inf_wards
+      ~Population.other_totals
+      ~Population.others
+      ~Population.population
+      ~Population.recovereds
+      ~Population.scale_uv
+      ~Population.subpops
+      ~Population.susceptibles
+      ~Population.total
+      ~Population.totals
+   
+   

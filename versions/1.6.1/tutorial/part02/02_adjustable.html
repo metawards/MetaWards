@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adjustable Variables &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Analysing the output" href="03_analysis.html" />
+    <link rel="prev" title="Refining the disease model" href="01_disease.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_disease.html">Refining the disease model</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Adjustable Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#choosing-what-to-adjust">Choosing what to adjust</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-directories">Output directories</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_analysis.html">Analysing the output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_cluster.html">Running on a cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_refining.html">Refining the model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_model_data.html">Model data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part02.html">Part 2 - Refining the model</a> &raquo;</li>
+      <li>Adjustable Variables</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="01_disease.html" class="btn btn-neutral float-left" title="Refining the disease model" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_analysis.html" class="btn btn-neutral float-right" title="Analysing the output" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adjustable-variables">
+<h1>Adjustable Variables<a class="headerlink" href="#adjustable-variables" title="Permalink to this headline"></a></h1>
+<p>We have now adjusted the <strong>disease file</strong> for the lurgy, which has
+resulted in a <em>model run</em> that has involved a larger section of the
+population in the disease outbreak. However, the values we chose
+for the parameters in the <strong>disease file</strong> were made up. They had
+no basis in reality, which means that it is difficult to use this
+model to make good predictions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> is designed to support parameter searches that seek to
+adjust the disease parameters so that predictions from <em>model runs</em>
+can be matched to observed reality. The idea is that variables are
+adjusted until the <em>model runs</em> can reliably capture the observed
+behaviour of an outbreak, at which point the model may then act
+as a good prediction of the future.</p>
+<section id="choosing-what-to-adjust">
+<h2>Choosing what to adjust<a class="headerlink" href="#choosing-what-to-adjust" title="Permalink to this headline"></a></h2>
+<p>In the last section we introduced a new stage to the lurgy in which
+infected individuals were very mobile (<strong>too_ill_to_move</strong> was 0.0),
+but also very infectious (<strong>beta</strong> was 0.5).</p>
+<p>This was introduced as stage 3 of the lurgy. We need therefore to tune
+the <strong>beta[2]</strong> and <strong>too_ill_to_move[2]</strong> parameters (remembering that
+we count from zero). What we want to do is vary these two parameters
+and see how they affect the model outbreak.</p>
+<p>To do this, in your current directory create a file called <code class="docutils literal notranslate"><span class="pre">lurgyparams.csv</span></code>
+and copy in the text below;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="n">too_ill_to_move</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="mf">0.3</span>         <span class="mf">0.00</span>
+  <span class="mf">0.4</span>         <span class="mf">0.00</span>
+  <span class="mf">0.5</span>         <span class="mf">0.00</span>
+  <span class="mf">0.3</span>         <span class="mf">0.25</span>
+  <span class="mf">0.4</span>         <span class="mf">0.25</span>
+  <span class="mf">0.5</span>         <span class="mf">0.25</span>
+  <span class="mf">0.3</span>         <span class="mf">0.50</span>
+  <span class="mf">0.4</span>         <span class="mf">0.50</span>
+  <span class="mf">0.5</span>         <span class="mf">0.50</span>
+</pre></div>
+</div>
+<p>This file has two columns of numbers; <code class="docutils literal notranslate"><span class="pre">beta[2]</span></code> which shows how to
+adjust the <strong>beta[2]</strong> value, and <code class="docutils literal notranslate"><span class="pre">too_ill_to_move[2]</span></code> which shows
+how to adjust the <strong>too_ill_to_move[2]</strong> value. Each row of this file
+represents a single model run using this pair of values. For example,
+the line <code class="docutils literal notranslate"><span class="pre">0.3</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00</span></code> will set <strong>beta[2]</strong> to 0.3 and
+<strong>too_ill_to_move[2]</strong> to 0.0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The format of this file is very flexible. Columns can be space-separated
+or comma-separated, as long as this is consistent in the entire file.
+You can choose to adjust any of the parameters for any stage
+of a disease. Simply title the column with the parameter name, e.g.
+<code class="docutils literal notranslate"><span class="pre">beta</span></code>, <code class="docutils literal notranslate"><span class="pre">progress</span></code>, <code class="docutils literal notranslate"><span class="pre">too_ill_to_move</span></code> or <code class="docutils literal notranslate"><span class="pre">contrib_foi</span></code>, and
+add the stage number in square brackets, e.g. <code class="docutils literal notranslate"><span class="pre">beta[0]</span></code>. Remember
+that we count from zero, so stage one has index zero.</p>
+</div>
+<p>You can pass <code class="docutils literal notranslate"><span class="pre">metawards</span></code> this input file using the <code class="docutils literal notranslate"><span class="pre">--input</span></code>
+(or <code class="docutils literal notranslate"><span class="pre">-i</span></code>) command-line option. This input file has nine pairs
+of values of <strong>beta[2]</strong> and <strong>too_ill_to_move[2]</strong>, which means that
+nine <em>model runs</em> need to be performed. To run them all, use this command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy2 -a ExtraSeedsLondon.dat --input lurgyparams.csv
+</pre></div>
+</div>
+<p>This will run all nine jobs. If you have nine or more processor cores
+on your computer then all of them will be run in parallel (with
+individual <em>model runs</em> then using any other cores you have). If, like me,
+you are running this on your laptop, then this may take 10+ minutes
+to complete.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to distribute this work over a set of disconnected
+computers, you can tell <code class="docutils literal notranslate"><span class="pre">metawards</span></code> to only adjust parameters
+from a subset of the lines of the input file. To do this,
+use the <code class="docutils literal notranslate"><span class="pre">--line</span></code> (or <code class="docutils literal notranslate"><span class="pre">-l</span></code>) command line argument to specify
+the line or lines to process. Lines are counted from 0 being the
+top line (containing the header), and multiple lines or ranges
+can be specified, e.g. <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code> will use lines one to three,
+while <code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">4-6</span></code> would use lines four to six (inclusive).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We are only going to use one repeat of each pair of values, which means
+that our results will suffer from a lot of random error. Ideally you
+should ask for multiple repeats using the <code class="docutils literal notranslate"><span class="pre">--repeats</span></code> command-line
+argument. A good value would be at least eight repeats. In this case,
+eight repeats would require 72 <em>model runs</em>. If you parallelise
+each run over 16 cores then this needs 1152 cores. Fortunately, for
+these jobs, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> runs well in parallel
+<a class="reference internal" href="../../cluster_usage.html"><span class="doc">across a slurm or PBS cluster</span></a>.</p>
+</div>
+<p>Once the jobs are complete (which took 15 minutes on my laptop), you
+should have output that looks similar to this;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ MULTIPROCESSING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 1 of 9                                                                  │
+│  (beta[2]=0.3, too_ill_to_move[2]=0)[repeat 1]                                         │
+│  2020-12-15: DAY: 209 S: 7978312    E: 0    I: 0    R: 48103765    IW: 1   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 2 of 9                                                                  │
+│  (beta[2]=0.4, too_ill_to_move[2]=0)[repeat 1]                                         │
+│  2020-11-28: DAY: 192 S: 7046459    E: 0    I: 0    R: 49035618    IW: 0   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 3 of 9                                                                  │
+│  (beta[2]=0.5, too_ill_to_move[2]=0)[repeat 1]                                         │
+│  2020-11-17: DAY: 181 S: 6221586    E: 0    I: 0    R: 49860491    IW: 1   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 4 of 9                                                                  │
+│  (beta[2]=0.3, too_ill_to_move[2]=0.25)[repeat 1]                                      │
+│  2020-12-13: DAY: 207 S: 8010218    E: 0    I: 0    R: 48071859    IW: 0   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 5 of 9                                                                  │
+│  (beta[2]=0.4, too_ill_to_move[2]=0.25)[repeat 1]                                      │
+│  2020-12-02: DAY: 196 S: 7071208    E: 0    I: 0    R: 49010869    IW: 1   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 6 of 9                                                                  │
+│  (beta[2]=0.5, too_ill_to_move[2]=0.25)[repeat 1]                                      │
+│  2020-12-01: DAY: 195 S: 6260263    E: 0    I: 0    R: 49821814    IW: 0   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 7 of 9                                                                  │
+│  (beta[2]=0.3, too_ill_to_move[2]=0.5)[repeat 1]                                       │
+│  2021-01-01: DAY: 226 S: 8031161    E: 0    I: 0    R: 48050916    IW: 0   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 8 of 9                                                                  │
+│  (beta[2]=0.4, too_ill_to_move[2]=0.5)[repeat 1]                                       │
+│  2020-11-27: DAY: 191 S: 7103861    E: 0    I: 0    R: 48978216    IW: 0   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+Computing model run ✔
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Completed job 9 of 9                                                                  │
+│  (beta[2]=0.5, too_ill_to_move[2]=0.5)[repeat 1]                                       │
+│  2020-11-16: DAY: 180 S: 6293958    E: 0    I: 0    R: 49788119    IW: 0   UV: 1.0     │
+│  TOTAL POPULATION 56082077                                                             │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                        │
+│  Writing a summary of all results into the csv file                                    │
+│  /Users/chris/GitHub/tutorial/test/output/results.csv.bz2. You can use this to         │
+│  quickly look at statistics across all runs using e.g. R or pandas                     │
+│                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+</section>
+<section id="output-directories">
+<h2>Output directories<a class="headerlink" href="#output-directories" title="Permalink to this headline"></a></h2>
+<p>The output files for each repeat are placed into subdirectories of the
+main output directory. By default, these subdirectories are named
+according to the fingerprint of the adjustable variables used for each
+run, e.g. listing the contents of the output directory using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls output
+0i3v0i0x001     0i3v0i5x001     0i4v0i25x001    0i5v0i0x001     0i5v0i5x001     console.log.bz2
+0i3v0i25x001    0i4v0i0x001     0i4v0i5x001     0i5v0i25x001    config.yaml     results.csv.bz2
+</pre></div>
+</div>
+<p>The fingerprint is a unique key used for each run, e.g.
+<code class="docutils literal notranslate"><span class="pre">0i3v0i0x001</span></code> refers to the run using values <code class="docutils literal notranslate"><span class="pre">0.3</span> <span class="pre">0.0</span></code>, and the
+first repeat. The <code class="docutils literal notranslate"><span class="pre">i</span></code> represents a decimal point, <code class="docutils literal notranslate"><span class="pre">v</span></code> is used to
+separate values, and <code class="docutils literal notranslate"><span class="pre">x001</span></code> means the first repeat.</p>
+<p>Similarly, <code class="docutils literal notranslate"><span class="pre">0i4v0i25x001</span></code> refers to the first repeat of the values
+<code class="docutils literal notranslate"><span class="pre">0.4</span> <span class="pre">0.25</span></code>.</p>
+<p>Sometimes you may want to specify the names of the output directories
+yourself. You can do this by adding a <code class="docutils literal notranslate"><span class="pre">output</span></code> column to your scan file,
+e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="n">too_ill_to_move</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>      <span class="n">output</span>
+  <span class="mf">0.3</span>         <span class="mf">0.00</span>           <span class="n">beta_0i3_ill_0i00</span>
+  <span class="mf">0.4</span>         <span class="mf">0.00</span>           <span class="n">beta_0i4_ill_0i00</span>
+  <span class="mf">0.5</span>         <span class="mf">0.00</span>           <span class="n">beta_0i5_ill_0i00</span>
+  <span class="mf">0.3</span>         <span class="mf">0.25</span>           <span class="n">beta_0i3_ill_0i25</span>
+  <span class="mf">0.4</span>         <span class="mf">0.25</span>           <span class="n">beta_0i4_ill_0i25</span>
+  <span class="mf">0.5</span>         <span class="mf">0.25</span>           <span class="n">beta_0i5_ill_0i25</span>
+  <span class="mf">0.3</span>         <span class="mf">0.50</span>           <span class="n">beta_0i3_ill_0i50</span>
+  <span class="mf">0.4</span>         <span class="mf">0.50</span>           <span class="n">beta_0i4_ill_0i50</span>
+  <span class="mf">0.5</span>         <span class="mf">0.50</span>           <span class="n">beta_0i5_ill_0i50</span>
+</pre></div>
+</div>
+<p>Running <code class="docutils literal notranslate"><span class="pre">metawards</span></code> with this file would place output in the following
+directories;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls output
+beta_0i3_ill_0i00 beta_0i4_ill_0i00 beta_0i5_ill_0i00 config.yaml
+beta_0i3_ill_0i25 beta_0i4_ill_0i25 beta_0i5_ill_0i25 console.log.bz2
+beta_0i3_ill_0i50 beta_0i4_ill_0i50 beta_0i5_ill_0i50 results.csv.bz2
+</pre></div>
+</div>
+<p>If you run multiple repeats of these jobs, e.g. using the <code class="docutils literal notranslate"><span class="pre">--repeats</span></code>
+keyword via;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy2 -a ExtraSeedsLondon.dat --input lurgyparams.csv --repeats <span class="m">2</span>
+</pre></div>
+</div>
+<p>then the repeat number will be automatically added to the directory names,
+e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ls output
+beta_0i3_ill_0i00     beta_0i4_ill_0i00     beta_0i5_ill_0i00     config.yaml
+beta_0i3_ill_0i00x002 beta_0i4_ill_0i00x002 beta_0i5_ill_0i00x002 console.log.bz2
+beta_0i3_ill_0i25     beta_0i4_ill_0i25     beta_0i5_ill_0i25     results.csv.bz2
+beta_0i3_ill_0i25x002 beta_0i4_ill_0i25x002 beta_0i5_ill_0i25x002
+beta_0i3_ill_0i50     beta_0i4_ill_0i50     beta_0i5_ill_0i50
+beta_0i3_ill_0i50x002 beta_0i4_ill_0i50x002 beta_0i5_ill_0i50x002
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_disease.html" class="btn btn-neutral float-left" title="Refining the disease model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_analysis.html" class="btn btn-neutral float-right" title="Analysing the output" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

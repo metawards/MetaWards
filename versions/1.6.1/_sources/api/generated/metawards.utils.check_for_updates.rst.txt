@@ -1,0 +1,6 @@
+﻿metawards.utils.check\_for\_updates
+===================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: check_for_updates

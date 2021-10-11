@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input files and formats &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Network Files" href="network.html" />
+    <link rel="prev" title="Holidays and quarantine" href="../tutorial/part09/05_holidays.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Input files and formats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#flexible-format-files">Flexible-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rigid-format-files">Rigid-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json-format-files">JSON-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-descriptions">Detailed descriptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="network.html">Network Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="extraseeds.html">Extra seeds files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html">Design (scan) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userinput.html">User input files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Input files and formats</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../tutorial/part09/05_holidays.html" class="btn btn-neutral float-left" title="Holidays and quarantine" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="network.html" class="btn btn-neutral float-right" title="Network Files" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="input-files-and-formats">
+<h1>Input files and formats<a class="headerlink" href="#input-files-and-formats" title="Permalink to this headline"></a></h1>
+<p>Input data in <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is provided via a variety of different files,
+many of which are described below.</p>
+<p>There are three types of input files:</p>
+<ol class="arabic simple">
+<li><p>Flexible-format: These are a very flexible format, and support a wide
+range of input data types and layout options. Examples include
+the <a class="reference internal" href="extraseeds.html"><span class="doc">extra seeds</span></a>, <a class="reference internal" href="design.html"><span class="doc">design</span></a>
+and <a class="reference internal" href="userinput.html"><span class="doc">user input</span></a> files.</p></li>
+<li><p>Rigid-format: These have a rigid format, which is specific to their
+type. The main examples of this are the files used to specify
+a model (e.g. <a class="reference internal" href="network.html"><span class="doc">the network, connections etc.</span></a>)</p></li>
+<li><p>JSON-format: These are files that are in standard
+<a class="reference external" href="https://en.wikipedia.org/wiki/JSON">JSON</a> format. Examples include
+the disease and demographics files, plus many of the files
+in MetaWardsData (e.g. the description of the model data, and the
+static parameters file).</p></li>
+</ol>
+<section id="flexible-format-files">
+<h2>Flexible-format files<a class="headerlink" href="#flexible-format-files" title="Permalink to this headline"></a></h2>
+<p>Flexible-format files are read using the
+<a class="reference external" href="https://docs.python.org/3/library/csv.html">Python CSV module</a>.
+These files are either column or row based (depending on the file type),
+and you are free to use
+a comma or spaces as the separator (but must be consistent within a file).
+Comments can be added using a <code class="docutils literal notranslate"><span class="pre">#</span></code> character, and blank lines are
+ignored.</p>
+<p>Data within a flexible-format file is interpreted using
+<a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>. This can interpret simple data, such as
+strings, numbers, booleans (<code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code>), as well as complex
+data such as dates (<code class="docutils literal notranslate"><span class="pre">next</span> <span class="pre">week</span></code>, <code class="docutils literal notranslate"><span class="pre">January</span> <span class="pre">10</span> <span class="pre">2020</span></code>), expressions
+(<code class="docutils literal notranslate"><span class="pre">10.0</span> <span class="pre">/</span> <span class="pre">3.0</span></code>, <code class="docutils literal notranslate"><span class="pre">pi</span> <span class="pre">*</span> <span class="pre">2.3**2</span></code>) and random numbers
+(<code class="docutils literal notranslate"><span class="pre">rand(0,10)</span></code>, <code class="docutils literal notranslate"><span class="pre">rand()</span></code>, <code class="docutils literal notranslate"><span class="pre">rand(2.5,</span> <span class="pre">2.6)</span></code>).</p>
+</section>
+<section id="rigid-format-files">
+<h2>Rigid-format files<a class="headerlink" href="#rigid-format-files" title="Permalink to this headline"></a></h2>
+<p>Rigid-format files are read using a custom parser for each file type. As
+such, the files have a rigid format that is specified for each file type.
+We plan to migrate as many rigid-format files across to either
+flexible-format or JSON-format as possible.</p>
+</section>
+<section id="json-format-files">
+<h2>JSON-format files<a class="headerlink" href="#json-format-files" title="Permalink to this headline"></a></h2>
+<p>JSON-format files are standard <a class="reference external" href="https://en.wikipedia.org/wiki/JSON">JSON</a>
+files that are used for small or less-structured files, e.g. specifying
+the parameters for a disease, or specifying the data associated with
+different demographics. These files are read using the
+<a class="reference external" href="https://docs.python.org/3/library/json.html">Python JSON module</a>
+into dictionaries, which are interpreted by the classes associated with
+each file (e.g. <a class="reference internal" href="../api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> in the case of disease parameters).
+Many of these classes use <a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a> to interpret the
+data from the JSON file, meaning that these support expressions, random
+numbers etc. We plan to ensure that as much data as possible is interpreted
+using <a class="reference internal" href="../api/generated/metawards.Interpret.html#metawards.Interpret" title="metawards.Interpret"><code class="xref py py-class docutils literal notranslate"><span class="pre">metawards.Interpret</span></code></a>, so that there is a consistent
+experience across the code.</p>
+</section>
+<section id="detailed-descriptions">
+<h2>Detailed descriptions<a class="headerlink" href="#detailed-descriptions" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="network.html#description-json">description.json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#work">work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#work-size">work_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#play">play</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#play-size">play_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#position">position</a></li>
+<li class="toctree-l2"><a class="reference internal" href="network.html#lookup">lookup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extraseeds.html">Extra seeds files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extraseeds.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design (scan) files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="design.html#column-headers">Column headers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#special-columns">Special columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#default-columns">Default columns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#column-data">Column data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userinput.html">User input files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="userinput.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../tutorial/part09/05_holidays.html" class="btn btn-neutral float-left" title="Holidays and quarantine" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="network.html" class="btn btn-neutral float-right" title="Network Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

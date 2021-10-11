@@ -1,0 +1,6 @@
+﻿metawards.utils.safe\_eval\_number
+==================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: safe_eval_number

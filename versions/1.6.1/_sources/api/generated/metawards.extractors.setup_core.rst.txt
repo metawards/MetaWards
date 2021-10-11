@@ -1,0 +1,6 @@
+﻿metawards.extractors.setup\_core
+================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: setup_core

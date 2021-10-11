@@ -1,0 +1,6 @@
+﻿metawards.utils.create\_thread\_generators
+==========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: create_thread_generators

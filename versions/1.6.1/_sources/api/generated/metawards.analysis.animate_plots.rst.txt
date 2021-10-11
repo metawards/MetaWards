@@ -1,0 +1,6 @@
+﻿metawards.analysis.animate\_plots
+=================================
+
+.. currentmodule:: metawards.analysis
+
+.. autofunction:: animate_plots

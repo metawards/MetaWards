@@ -1,0 +1,6 @@
+﻿metawards.iterators.advance\_additional
+=======================================
+
+.. currentmodule:: metawards.iterators
+
+.. autofunction:: advance_additional

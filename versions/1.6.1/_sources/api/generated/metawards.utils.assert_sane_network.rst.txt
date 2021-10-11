@@ -1,0 +1,6 @@
+﻿metawards.utils.assert\_sane\_network
+=====================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: assert_sane_network

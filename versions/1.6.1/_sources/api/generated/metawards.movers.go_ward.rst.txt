@@ -1,0 +1,6 @@
+﻿metawards.movers.go\_ward
+=========================
+
+.. currentmodule:: metawards.movers
+
+.. autofunction:: go_ward

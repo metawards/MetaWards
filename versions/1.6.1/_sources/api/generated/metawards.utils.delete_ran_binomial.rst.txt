@@ -1,0 +1,6 @@
+﻿metawards.utils.delete\_ran\_binomial
+=====================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: delete_ran_binomial

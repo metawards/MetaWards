@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start Guide &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started in R" href="01_R.html" />
+    <link rel="prev" title="Model data" href="../model_data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#r-rstudio">R / RStudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01_R.html">Getting Started in R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_R.html">Extending the Model in R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_R.html">Multiple pathways with R</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#python-jupyter">Python / Jupyter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01_python.html">Getting Started in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_python.html">Extending the Model in Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_python.html">Multiple pathways with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#console-command-line">Console / Command line</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="01_console.html">Getting Started in the Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_console.html">Extending the Model in the Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_console.html">Multiple pathways with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next steps</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Quick Start Guide</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../model_data.html" class="btn btn-neutral float-left" title="Model data" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01_R.html" class="btn btn-neutral float-right" title="Getting Started in R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please make sure you have installed <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, e.g. by following these
+<a class="reference internal" href="../install.html"><span class="doc">installation instructions</span></a>. You can test this by
+typing <code class="docutils literal notranslate"><span class="pre">metawards</span> <span class="pre">--version</span></code> on the terminal/console. Note that this
+should show that MetaWardsData has been found. If you have
+not installed MetaWardsData then you need to install it by
+following <a class="reference internal" href="../model_data.html"><span class="doc">these instructions</span></a>.</p>
+</div>
+<p>You have three choices for how you use MetaWards, and thus three choices
+for how you will follow this quick start guide;</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="01_R.html"><span class="doc">R interface</span></a>. You can choose to use MetaWards from directly
+within R (including interactively, e.g. within RStudio).</p></li>
+<li><p><a class="reference internal" href="01_python.html"><span class="doc">Python interface</span></a>. You can choose to use MetaWards from
+directly within Python (including interactively, e.g. within ipython or
+Jupyter notebook or lab).</p></li>
+<li><p><a class="reference internal" href="01_console.html"><span class="doc">Command-line interface</span></a>. You can choose to use MetaWards
+from the command line (terminal/console/command prompt).</p></li>
+</ol>
+<p>There is no one right or wrong interface to use, so please feel free to use
+the one (or many) that fit your needs.</p>
+<p>This quick start should take about 30 minutes to follow. It is a precursor
+to the <a class="reference internal" href="../tutorial/index.html"><span class="doc">detailed tutorial</span></a>. If you want to learn more,
+please follow that tutorial, or read the
+<a class="reference internal" href="../api/index.html"><span class="doc">detailed API documentation</span></a>. Please choose to follow
+either the R, Python and console versions.</p>
+<section id="r-rstudio">
+<h2>R / RStudio<a class="headerlink" href="#r-rstudio" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_R.html">Getting Started in R</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#creating-the-disease">Creating the disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#creating-the-wards-network">Creating the wards (network)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#seeding-the-outbreak">Seeding the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#visualising-the-results">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_R.html#complete-code">Complete code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_R.html">Extending the Model in R</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_R.html#adding-a-disease-stage">Adding a disease stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_R.html#repeating-a-run">Repeating a run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_R.html#adding-more-wards">Adding more wards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_R.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_R.html#complete-code">Complete code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_R.html">Multiple pathways with R</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_R.html#creating-a-mild-disease">Creating a mild disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_R.html#creating-the-networks">Creating the networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_R.html#creating-the-demographics">Creating the demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_R.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_R.html#complete-code">Complete code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_R.html#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="python-jupyter">
+<h2>Python / Jupyter<a class="headerlink" href="#python-jupyter" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_python.html">Getting Started in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#importing-metawards">Importing metawards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#creating-the-disease">Creating the disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#creating-the-wards-network">Creating the wards (network)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#seeding-the-outbreak">Seeding the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#visualising-the-results">Visualising the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_python.html#complete-code">Complete code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_python.html">Extending the Model in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_python.html#adding-a-disease-stage">Adding a disease stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_python.html#repeating-a-run">Repeating a run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_python.html#adding-more-wards">Adding more wards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_python.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_python.html#complete-code">Complete code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_python.html">Multiple pathways with Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_python.html#creating-a-mild-disease">Creating a mild disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_python.html#creating-the-networks">Creating the networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_python.html#creating-the-demographics">Creating the demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_python.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_python.html#complete-code">Complete code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_python.html#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="console-command-line">
+<h2>Console / Command line<a class="headerlink" href="#console-command-line" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_console.html">Getting Started in the Console</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_console.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_console.html#creating-the-disease">Creating the disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_console.html#creating-the-wards-network">Creating the wards (network)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_console.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_console.html#seeding-the-outbreak">Seeding the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_console.html#visualising-the-results">Visualising the results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="02_console.html">Extending the Model in the Console</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_console.html#adding-a-disease-stage">Adding a disease stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_console.html#repeating-a-run">Repeating a run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_console.html#adding-more-wards">Adding more wards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_console.html#running-the-model">Running the model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_console.html">Multiple pathways with Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_console.html#creating-a-mild-disease">Creating a mild disease</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_console.html#creating-the-networks">Creating the networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_console.html#creating-the-demographics">Creating the demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_console.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_console.html#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
+<p>Go to the <a class="reference internal" href="../tutorial/index.html"><span class="doc">tutorial</span></a> to learn more.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../model_data.html" class="btn btn-neutral float-left" title="Model data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="01_R.html" class="btn btn-neutral float-right" title="Getting Started in R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

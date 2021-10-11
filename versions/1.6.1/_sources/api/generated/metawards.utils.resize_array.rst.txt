@@ -1,0 +1,6 @@
+﻿metawards.utils.resize\_array
+=============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: resize_array
