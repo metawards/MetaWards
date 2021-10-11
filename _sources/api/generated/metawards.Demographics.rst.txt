@@ -78,5 +78,7 @@
       ~Demographics._version
       ~Demographics.interaction_matrix
       ~Demographics.random_seed
+      ~Demographics.demographics
+      ~Demographics._names
    
    

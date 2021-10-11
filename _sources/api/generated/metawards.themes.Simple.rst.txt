@@ -67,5 +67,6 @@
       ~Simple.__hash__
       ~Simple.__module__
       ~Simple.__weakref__
+      ~Simple.frames
    
    

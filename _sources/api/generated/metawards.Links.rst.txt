@@ -58,5 +58,11 @@
       ~Links.__doc__
       ~Links.__module__
       ~Links.__weakref__
+      ~Links._is_null
+      ~Links.ifrom
+      ~Links.ito
+      ~Links.weight
+      ~Links.suscept
+      ~Links.distance
    
    

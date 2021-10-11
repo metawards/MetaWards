@@ -63,5 +63,6 @@
       ~WardInfos.__module__
       ~WardInfos.__weakref__
       ~WardInfos._index
+      ~WardInfos.wards
    
    

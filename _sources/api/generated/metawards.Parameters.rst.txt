@@ -90,5 +90,6 @@
       ~Parameters.static_play_at_home
       ~Parameters.ward_seed_index
       ~Parameters.work_to_play
+      ~Parameters.user_params
    
    

@@ -60,5 +60,7 @@
       ~WardInfo.name
       ~WardInfo.region
       ~WardInfo.region_code
+      ~WardInfo.alternate_names
+      ~WardInfo.alternate_codes
    
    

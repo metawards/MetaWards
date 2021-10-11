@@ -1,72 +1,35 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>metawards._networks &mdash; MetaWards Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -76,18 +39,7 @@
   <div id="version_box"></div>
 </div>
 
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 </ul>
@@ -131,71 +83,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">MetaWards</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../index.html">Module code</a> &raquo;</li>
-        
           <li><a href="../metawards.html">metawards</a> &raquo;</li>
-        
       <li>metawards._networks</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <h1>Source code for metawards._networks</h1><div class="highlight"><pre>
 <span></span>
 <span class="kn">from</span> <span class="nn">._outputfiles</span> <span class="kn">import</span> <span class="n">OutputFiles</span>
@@ -212,7 +124,7 @@
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Networks&quot;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="Networks"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks">[docs]</a><span class="nd">@_dataclass</span>
+<div class="viewcode-block" id="Networks"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks">[docs]</a><span class="nd">@_dataclass</span>
 <span class="k">class</span> <span class="nc">Networks</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;This is a combination of Network objects which together represent</span>
 <span class="sd">       an entire diverse population. Each individual Network is used to</span>
@@ -260,11 +172,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
 
-<div class="viewcode-block" id="Networks.num_demographics"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.num_demographics">[docs]</a>    <span class="k">def</span> <span class="nf">num_demographics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="viewcode-block" id="Networks.num_demographics"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.num_demographics">[docs]</a>    <span class="k">def</span> <span class="nf">num_demographics</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Return the number of demographics&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Networks.assert_sane"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.assert_sane">[docs]</a>    <span class="k">def</span> <span class="nf">assert_sane</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="p">:</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.assert_sane"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.assert_sane">[docs]</a>    <span class="k">def</span> <span class="nf">assert_sane</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="p">:</span> <span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Assert that the networks is sane. This checks that the</span>
 <span class="sd">           networks and all of the demographic sub-networks are</span>
 <span class="sd">           laid out correctly in memory and that they don&#39;t have</span>
@@ -281,7 +193,7 @@
         <span class="c1"># IN EACH WARD SUM UP TO THE POPULATION IN THE OVERALL NETWORK</span>
         <span class="c1"># WARDS</span>
 
-<div class="viewcode-block" id="Networks.build"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.build">[docs]</a>    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="Networks.build"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.build">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">network</span><span class="p">:</span> <span class="n">Network</span><span class="p">,</span> <span class="n">demographics</span><span class="p">:</span> <span class="n">Demographics</span><span class="p">,</span>
               <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Build the set of networks that will model the passed</span>
@@ -396,7 +308,7 @@
 
         <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="Networks.copy"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.copy"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Return a copy of this Networks. Use this to hold a copy of</span>
 <span class="sd">           the networks that you can use to reset between runs</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -415,14 +327,14 @@
 
         <span class="k">return</span> <span class="n">networks</span></div>
 
-<div class="viewcode-block" id="Networks.aggregate"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.aggregate"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.aggregate">[docs]</a>    <span class="k">def</span> <span class="nf">aggregate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Aggregate all of the sub-network population infection data</span>
 <span class="sd">           so that this is available in the overall network</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">.utils._aggregate</span> <span class="kn">import</span> <span class="n">aggregate_networks</span>
         <span class="n">aggregate_networks</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">,</span> <span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Networks.run"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
+<div class="viewcode-block" id="Networks.run"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.run">[docs]</a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
             <span class="n">output_dir</span><span class="p">:</span> <span class="n">OutputFiles</span><span class="p">,</span>
             <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">nsteps</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -532,7 +444,7 @@
 
         <span class="k">return</span> <span class="n">population</span></div>
 
-<div class="viewcode-block" id="Networks.reset_everything"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.reset_everything">[docs]</a>    <span class="k">def</span> <span class="nf">reset_everything</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.reset_everything"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.reset_everything">[docs]</a>    <span class="k">def</span> <span class="nf">reset_everything</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Resets the networks ready for a new run of the model&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span>
@@ -540,7 +452,7 @@
         <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
             <span class="n">subnet</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Networks.update"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="Networks.update"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params</span><span class="p">:</span> <span class="n">Parameters</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">population</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Update this network with a new set of parameters</span>
 <span class="sd">           (and optionally demographics).</span>
@@ -611,14 +523,14 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">subnet_params</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
             <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></div>
 
-<div class="viewcode-block" id="Networks.initialise_infections"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.initialise_infections">[docs]</a>    <span class="k">def</span> <span class="nf">initialise_infections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.initialise_infections"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.initialise_infections">[docs]</a>    <span class="k">def</span> <span class="nf">initialise_infections</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Initialise and return the space that will be used</span>
 <span class="sd">           to track infections</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">._infections</span> <span class="kn">import</span> <span class="n">Infections</span>
         <span class="k">return</span> <span class="n">Infections</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Networks.rescale_play_matrix"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.rescale_play_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">rescale_play_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.rescale_play_matrix"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.rescale_play_matrix">[docs]</a>    <span class="k">def</span> <span class="nf">rescale_play_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Rescale the play matrix&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">reset_everything</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span>
@@ -626,7 +538,7 @@
         <span class="k">for</span> <span class="n">subnet</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subnets</span><span class="p">:</span>
             <span class="n">subnet</span><span class="o">.</span><span class="n">rescale_play_matrix</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="n">profiler</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Networks.move_from_play_to_work"><a class="viewcode-back" href="../../api/generated/metawards.Networks.html#metawards.Networks.move_from_play_to_work">[docs]</a>    <span class="k">def</span> <span class="nf">move_from_play_to_work</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Networks.move_from_play_to_work"><a class="viewcode-back" href="../../api/index_api_MetaWards.html#metawards.Networks.move_from_play_to_work">[docs]</a>    <span class="k">def</span> <span class="nf">move_from_play_to_work</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nthreads</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">profiler</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Move the population from play to work&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">overall</span><span class="o">.</span><span class="n">move_from_play_to_work</span><span class="p">(</span><span class="n">nthreads</span><span class="o">=</span><span class="n">nthreads</span><span class="p">,</span>
@@ -638,7 +550,6 @@
 </pre></div>
 
            </div>
-           
           </div>
           <footer>
 
@@ -646,32 +557,22 @@
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">
-        Last updated on May 25, 2021.
-      </span>
+      <span class="lastupdated">Last updated on Oct 11, 2021.
+      </span></p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
