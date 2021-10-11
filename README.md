@@ -4,6 +4,7 @@
 
 * For the most accurate and up to date information please [visit the project website](https://metawards.org).
 * For an overview of features please [visit the features page](https://metawards.org/features).
+* Please cite according to the CITATION.cff file in this repo.
 
 ## Scientific Background
 
