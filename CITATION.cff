@@ -1,0 +1,36 @@
+# YAML 1.2
+---
+authors: 
+  -
+    family-names: Woods
+    given-names: Christopher
+    orcid: "https://orcid.org/0000-0001-6563-9903"
+  -
+    family-names: Hedges
+    given-names: Lester
+    orcid: "https://orcid.org/0000-0002-5624-0500"
+  -
+    family-names: Edsall
+    given-names: Christopher
+    orcid: "https://orcid.org/0000-0001-6863-2184"
+  -
+    family-names: "Brooks-Pollock"
+    given-names: Ellen
+    orcid: "https://orcid.org/0000-0002-5984-4932"
+  -
+    family-names: Fenton
+    given-names: Christopher
+  -
+    family-names: McKinley
+    given-names: "Trevelyan J"
+    orcid: "https://orcid.org/0000-0002-9485-3236"
+  -
+    family-names: Danon
+    given-names: Leon
+    orcid: "https://orcid.org/0000-0002-7076-1871"
+cff-version: "1.1.0"
+message: "If you use this software, please cite it as described here."
+title: MetaWards
+version: "1.6.1"
+...
+
