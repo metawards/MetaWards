@@ -1,74 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Creating a Custom Network &mdash; MetaWards Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Creating Networks in R" href="03_reticulate.html" />
     <link rel="prev" title="Understanding the Model Network" href="01_networks.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -78,18 +42,7 @@
   <div id="version_box"></div>
 </div>
 
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 </ul>
@@ -156,84 +109,36 @@
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">MetaWards</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../index.html">Tutorial</a> &raquo;</li>
-        
           <li><a href="../index_part08.html">Part 8 - Creating your own models / networks</a> &raquo;</li>
-        
       <li>Creating a Custom Network</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="03_reticulate.html" class="btn btn-neutral float-right" title="Creating Networks in R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="01_networks.html" class="btn btn-neutral float-left" title="Understanding the Model Network" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-      
+        <a href="03_reticulate.html" class="btn btn-neutral float-right" title="Creating Networks in R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="creating-a-custom-network">
-<h1>Creating a Custom Network<a class="headerlink" href="#creating-a-custom-network" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="creating-a-custom-network">
+<h1>Creating a Custom Network<a class="headerlink" href="#creating-a-custom-network" title="Permalink to this headline"></a></h1>
 <p>While the default networks supplied in <code class="docutils literal notranslate"><span class="pre">MetaWardsData</span></code> model the UK, there
 is nothing to stop you creating your own network to model any country or
 region. Indeed, you can use the concepts of <code class="docutils literal notranslate"><span class="pre">wards</span></code>, <code class="docutils literal notranslate"><span class="pre">workers</span></code> and
@@ -246,8 +151,8 @@ disease spread between buildings as staff and students move around.</p></li>
 region, and then model the motion of staff, patients and the general
 population between these different environments.</p></li>
 </ul>
-<div class="section" id="network-file-formats">
-<h2>Network file formats<a class="headerlink" href="#network-file-formats" title="Permalink to this headline">¶</a></h2>
+<section id="network-file-formats">
+<h2>Network file formats<a class="headerlink" href="#network-file-formats" title="Permalink to this headline"></a></h2>
 <p>A lot of data needs to be loaded to define the network. There are two
 file formats for specifying this data;</p>
 <ol class="arabic simple">
@@ -259,9 +164,9 @@ older model networks.</p></li>
 network in a single file. This file should only be manipulated or
 edited using the Python API described below.</p></li>
 </ol>
-</div>
-<div class="section" id="creating-and-editing-networks-in-python">
-<h2>Creating and editing Networks in Python<a class="headerlink" href="#creating-and-editing-networks-in-python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-and-editing-networks-in-python">
+<h2>Creating and editing Networks in Python<a class="headerlink" href="#creating-and-editing-networks-in-python" title="Permalink to this headline"></a></h2>
 <p>The best way to create a new network is to use the Python API. A
 <a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> is edited or created via the
 <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a> class. This represents an editable collection
@@ -390,49 +295,37 @@ It won’t affect the included information - just its human-readability.</p>
 <span class="go">[ Ward( id=1, name=Bristol, num_workers=1000, num_players=750 ), Ward( id=2, name=London, num_workers=8600, num_players=10000 ) ]</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="03_reticulate.html" class="btn btn-neutral float-right" title="Creating Networks in R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="01_networks.html" class="btn btn-neutral float-left" title="Understanding the Model Network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_reticulate.html" class="btn btn-neutral float-right" title="Creating Networks in R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">
-        Last updated on May 28, 2021.
-      </span>
+      <span class="lastupdated">Last updated on Oct 12, 2021.
+      </span></p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

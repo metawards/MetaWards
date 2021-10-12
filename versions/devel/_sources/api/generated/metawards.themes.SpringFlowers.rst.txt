@@ -65,5 +65,7 @@
       ~SpringFlowers.__module__
       ~SpringFlowers.__weakref__
       ~SpringFlowers.panel_color_count
+      ~SpringFlowers.frames
+      ~SpringFlowers.panel_colors
    
    

@@ -10,10 +10,6 @@ MetaWards
    :target: https://pypi.python.org/pypi/metawards
    :alt: PyPi version
 
-.. image:: https://img.shields.io/pypi/pyversions/metawards.svg
-   :target: https://pypi.org/project/metawards
-   :alt: PyPi project
-
 .. image:: https://pepy.tech/badge/metawards
    :target: https://pepy.tech/project/metawards
    :alt: Number of downloads
@@ -22,10 +18,20 @@ MetaWards
    :target: https://www.gnu.org/licenses/gpl-3.0.html
    :alt: License
 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5562737.svg
+   :target: https://doi.org/10.5281/zenodo.5562737
+
 Please take a look at the :doc:`features <features>` to see what
 MetaWards can do. Follow the :doc:`quick start guide <quickstart/index>` to
 see how to quickly get up and running using MetaWards to model your own custom
 disease or metapopulation model.
+
+Citation
+========
+
+Please cite use of this software following the instructions in the 
+"Cite this repository" link in the `GitHub repository <https://github.com/metawards/MetaWards>`__.
+
 
 Scientific Background
 =====================

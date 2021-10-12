@@ -1,74 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Using custom merge functions to model shielding &mdash; MetaWards Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/custom.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Contact probabilities and Demographics" href="04_contacts.html" />
     <link rel="prev" title="Mixers and Merge-functions" href="02_mixers.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../../index.html">
-          
-
-          
-            
             <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -78,18 +42,7 @@
   <div id="version_box"></div>
 </div>
 
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
 </ul>
@@ -155,84 +108,36 @@
 <li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">MetaWards</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../index.html">Tutorial</a> &raquo;</li>
-        
           <li><a href="../index_part05.html">Part 5 - Modelling multiple demographics</a> &raquo;</li>
-        
       <li>Using custom merge functions to model shielding</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="04_contacts.html" class="btn btn-neutral float-right" title="Contact probabilities and Demographics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="02_mixers.html" class="btn btn-neutral float-left" title="Mixers and Merge-functions" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-      
+        <a href="04_contacts.html" class="btn btn-neutral float-right" title="Contact probabilities and Demographics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="using-custom-merge-functions-to-model-shielding">
-<h1>Using custom merge functions to model shielding<a class="headerlink" href="#using-custom-merge-functions-to-model-shielding" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="using-custom-merge-functions-to-model-shielding">
+<h1>Using custom merge functions to model shielding<a class="headerlink" href="#using-custom-merge-functions-to-model-shielding" title="Permalink to this headline"></a></h1>
 <p>So far you have modelled multiple demographics, but they either
 interacted fully with each other during an outbreak, or have
 not interacted at all.</p>
@@ -240,8 +145,8 @@ not interacted at all.</p>
 different levels of interaction between different groups. To do
 this, we will need to set up an interaction matrix between
 demographics, and to call this via a custom mixer.</p>
-<div class="section" id="interaction-matrix">
-<h2>Interaction matrix<a class="headerlink" href="#interaction-matrix" title="Permalink to this headline">¶</a></h2>
+<section id="interaction-matrix">
+<h2>Interaction matrix<a class="headerlink" href="#interaction-matrix" title="Permalink to this headline"></a></h2>
 <p>An interaction matrix specifies how much the <em>force of infection</em> (FOI)
 calculated from one demographic influences another. It is an asymmetric
 matrix, e.g. for our <em>red</em> and <em>blue</em> demographics it could be;</p>
@@ -300,9 +205,9 @@ exposed to large numbers of members.</p>
 <p>The values in this matrix correspond to a potential shielding scenario,
 whereby measures are taken by the <em>blue</em> demographic to shield the
 <em>red</em> demographic from infection.</p>
-</div>
-<div class="section" id="custom-mixers">
-<h2>Custom mixers<a class="headerlink" href="#custom-mixers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="custom-mixers">
+<h2>Custom mixers<a class="headerlink" href="#custom-mixers" title="Permalink to this headline"></a></h2>
 <p>We can use this interaction matrix by creating a custom mixer.
 Create a file called <code class="docutils literal notranslate"><span class="pre">shield.py</span></code> and add the following;</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.mixers</span> <span class="kn">import</span> <span class="n">merge_using_matrix</span>
@@ -344,9 +249,9 @@ demographic, it is relatively contained within the <em>red</em> demographic.</p>
 </div>
 <p>You should see a plot similar to this;</p>
 <img alt="Disease trajectory for a shielding scenario for the red demographic" src="../../_images/tutorial_5_3_1_demographics.jpg" />
-</div>
-<div class="section" id="adjusting-shielding-parameters">
-<h2>Adjusting shielding parameters<a class="headerlink" href="#adjusting-shielding-parameters" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adjusting-shielding-parameters">
+<h2>Adjusting shielding parameters<a class="headerlink" href="#adjusting-shielding-parameters" title="Permalink to this headline"></a></h2>
 <p>This has worked well, in that the shielded <em>red</em> demographic has been
 protected from the disease. However, using scaling factors of 0.2 and
 0.1 is quite extreme, especially over the four months of the model
@@ -489,49 +394,37 @@ This suggests, at least in this model,
 that it is more important for the <em>blue</em> demographic to take care when
 interacting with the <em>red</em> demographic than it is to control the level
 of lockdown of the <em>red</em> demographic.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="04_contacts.html" class="btn btn-neutral float-right" title="Contact probabilities and Demographics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="02_mixers.html" class="btn btn-neutral float-left" title="Mixers and Merge-functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_contacts.html" class="btn btn-neutral float-right" title="Contact probabilities and Demographics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">
-        Last updated on May 28, 2021.
-      </span>
+      <span class="lastupdated">Last updated on Oct 12, 2021.
+      </span></p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

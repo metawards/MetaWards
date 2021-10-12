@@ -1,74 +1,38 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Extending the Model in R &mdash; MetaWards Documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-  
-  
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-
-  
-  
-
-  
-
-  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/custom.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Multiple pathways with R" href="03_R.html" />
     <link rel="prev" title="Getting Started in R" href="01_R.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="../index.html">
-          
-
-          
-            
             <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
-          
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -78,18 +42,7 @@
   <div id="version_box"></div>
 </div>
 
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
 </ul>
@@ -151,84 +104,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MetaWards</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="index.html">Quick Start Guide</a> &raquo;</li>
-        
       <li>Extending the Model in R</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
-  </ul>
-
-  
-  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
-      
-        <a href="03_R.html" class="btn btn-neutral float-right" title="Multiple pathways with R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-      
-      
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
         <a href="01_R.html" class="btn btn-neutral float-left" title="Getting Started in R" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-      
+        <a href="03_R.html" class="btn btn-neutral float-right" title="Multiple pathways with R" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
   </div>
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="extending-the-model-in-r">
-<h1>Extending the Model in R<a class="headerlink" href="#extending-the-model-in-r" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="adding-a-disease-stage">
-<h2>Adding a disease stage<a class="headerlink" href="#adding-a-disease-stage" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="extending-the-model-in-r">
+<h1>Extending the Model in R<a class="headerlink" href="#extending-the-model-in-r" title="Permalink to this headline"></a></h1>
+<section id="adding-a-disease-stage">
+<h2>Adding a disease stage<a class="headerlink" href="#adding-a-disease-stage" title="Permalink to this headline"></a></h2>
 <p>Continuing in R from the last session, we will now extend the disease
 to include an additional, less-infectious, semi-recovering stage, which
 will come after I, and be called IR. We do this by inserting a new
@@ -280,9 +186,9 @@ this directory.</p>
          <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_line</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="repeating-a-run">
-<h2>Repeating a run<a class="headerlink" href="#repeating-a-run" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="repeating-a-run">
+<h2>Repeating a run<a class="headerlink" href="#repeating-a-run" title="Permalink to this headline"></a></h2>
 <p>MetaWards model runs are stochastic, meaning that they use random numbers.
 While each individual run is reproducible (given the same random number
 seed and number of processor threads), it is best to run multiple runs
@@ -334,9 +240,9 @@ point shape to match the repeat number.</p>
 <img alt="Plot of the outbreak with a long recovery stage" src="../_images/r02.jpg" />
 <p>From this you can see the build-up of individuals in the green long
 recovery (IR) stage.</p>
-</div>
-<div class="section" id="adding-more-wards">
-<h2>Adding more wards<a class="headerlink" href="#adding-more-wards" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adding-more-wards">
+<h2>Adding more wards<a class="headerlink" href="#adding-more-wards" title="Permalink to this headline"></a></h2>
 <p>Next, we will extend the model by adding more wards. We will model <em>home</em>,
 <em>work</em> and <em>school</em>, so let’s now add the <em>work</em> and <em>school</em> wards.</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">work</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Ward</span><span class="p">(</span><span class="s">&quot;work&quot;</span><span class="p">)</span>
@@ -363,9 +269,9 @@ into a single <a class="reference internal" href="../api/index_api_MetaWards.htm
 <span class="o">&gt;</span> <span class="n">network</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">school</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="running-the-model">
-<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-the-model">
+<h2>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline"></a></h2>
 <p>We can now run the model. In this case, we want to seed the infection in
 the <em>home</em> ward, so we need to pass this name into the <code class="docutils literal notranslate"><span class="pre">additional</span></code>
 parameter.</p>
@@ -401,9 +307,9 @@ the seeding, e.g.</p>
          <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="complete-code">
-<h2>Complete code<a class="headerlink" href="#complete-code" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="complete-code">
+<h2>Complete code<a class="headerlink" href="#complete-code" title="Permalink to this headline"></a></h2>
 <p>The complete R code for this part of the getting started guide is
 re-copied below (this continues from the code in the last part);</p>
 <div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="c1"># add the IR stage between the I and R stages</span>
@@ -434,49 +340,37 @@ re-copied below (this continues from the code in the last part);</p>
        <span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">day</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">count</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">stage</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="03_R.html" class="btn btn-neutral float-right" title="Multiple pathways with R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="01_R.html" class="btn btn-neutral float-left" title="Getting Started in R" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_R.html" class="btn btn-neutral float-right" title="Multiple pathways with R" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">
-        Last updated on May 28, 2021.
-      </span>
+      <span class="lastupdated">Last updated on Oct 12, 2021.
+      </span></p>
+  </div>
 
-    </p>
-  </div> 
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

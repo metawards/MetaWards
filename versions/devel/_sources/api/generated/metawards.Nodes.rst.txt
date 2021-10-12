@@ -60,5 +60,29 @@
       ~Nodes.__doc__
       ~Nodes.__module__
       ~Nodes.__weakref__
+      ~Nodes.label
+      ~Nodes.begin_to
+      ~Nodes.end_to
+      ~Nodes.self_w
+      ~Nodes.begin_p
+      ~Nodes.end_p
+      ~Nodes.self_p
+      ~Nodes.day_foi
+      ~Nodes.night_foi
+      ~Nodes.play_suscept
+      ~Nodes.save_play_suscept
+      ~Nodes.denominator_n
+      ~Nodes.denominator_d
+      ~Nodes.denominator_p
+      ~Nodes.denominator_pd
+      ~Nodes.day_inf_prob
+      ~Nodes.night_inf_prob
+      ~Nodes.x
+      ~Nodes.y
+      ~Nodes.scale_uv
+      ~Nodes.cutoff
+      ~Nodes.bg_foi
+      ~Nodes.coordinates
+      ~Nodes._custom_params
    
    
