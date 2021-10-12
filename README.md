@@ -1,6 +1,6 @@
 # MetaWards
 
-[![Build status](https://github.com/metawards/MetaWards/workflows/Build/badge.svg)](https://github.com/metawards/MetaWards/actions?query=workflow%3ABuild) [![PyPI version](https://badge.fury.io/py/metawards.svg)](https://pypi.python.org/pypi/metawards) [![Downloads](https://pepy.tech/badge/metawards)](https://pepy.tech/project/metawards) [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5562738.svg)](https://doi.org/10.5281/zenodo.5562738)
+[![Build status](https://github.com/metawards/MetaWards/workflows/Build/badge.svg)](https://github.com/metawards/MetaWards/actions?query=workflow%3ABuild) [![PyPI version](https://badge.fury.io/py/metawards.svg)](https://pypi.python.org/pypi/metawards) [![Downloads](https://pepy.tech/badge/metawards)](https://pepy.tech/project/metawards) [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5562737.svg)](https://doi.org/10.5281/zenodo.5562737)
 
 * For the most accurate and up to date information please [visit the project website](https://metawards.org).
 * For an overview of features please [visit the features page](https://metawards.org/features).
