@@ -2,8 +2,8 @@
 Changelog
 =========
 
-`1.6.1 <https://github.com/metawards/MetaWards/compare/1.6.0...1.6.1>`__ - May 25th 2021
-----------------------------------------------------------------------------------------
+`1.6.1 <https://github.com/metawards/MetaWards/compare/1.6.0...1.6.1>`__ - October 11th 2021
+--------------------------------------------------------------------------------------------
 
 * Added CITATION.cff file
 * Fixed a bug where custom parameters were not being copied into runs correctly
