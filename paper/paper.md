@@ -81,7 +81,7 @@ identically reproduce the outputs from the original C code.
 It has been optimised and parallelised, with extensive unit testing
 added to build trust and robustness. Use of Cython [@Cython] enabled the ported
 code to run as quickly as the original C code, and then parallelisation via
-OpenMM provided a significant speed-up on multi-core machines.
+OpenMP provided a significant speed-up on multi-core machines.
 Re-architecting of the code, including creating a new multi-network (demographic)
 framework, enabled extension of the traditional SIR epidemiological model
 across multiple dimensions; horizontally by adding disease stages,
