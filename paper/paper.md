@@ -16,25 +16,27 @@ authors:
     affiliation: 1
   - name: Christopher Edsall
     orcid: 0000-0001-6863-2184
-    affiliation: 2
+    affiliation: 3
   - name: Ellen Brooks-Pollock
     orcid: 0000-0002-5984-4932
-    affiliation: 1
+    affiliation: 2
   - name: Chris Fenton
-    affiliation: 3
+    affiliation: 4
   - name: Trevelyan J McKinley
     orcid: 0000-0002-9485-3236
-    affiliation: 3
+    affiliation: 4
   - name: Leon Danon
     orcid: 0000-0002-7076-1871
-    affiliation: 1
+    affiliation: 2
 affiliations:
- - name: University of Bristol
+ - name: Research Software Engineering, Advanced Computing Research Centre, University of Bristol, United Kingdom
    index: 1
- - name: University of Cambridge
+ - name: Department of Engineering Mathematics, University of Bristol, United Kingdom
    index: 2
- - name: University of Exeter
+ - name: Research Software Engineering, Research Computing Services, University of Cambridge, United Kingdom
    index: 3
+ - name: College of Engineering, Mathematics and Physical Sciences, University of Exeter, United Kingdom
+   index: 4
 date: 15 October 2021
 bibliography: paper.bib
 ---
@@ -42,8 +44,8 @@ bibliography: paper.bib
 # Summary
 
 Understanding how disease spreads through populations is important when
-designing and implementing control measures. `MetaWards`,
-available at https://metawards.org, implements a stochastic
+designing and implementing control measures. [`MetaWards`](https://metawards.org),
+implements a stochastic
 metapopulation model of disease transmission that enables geographical
 modelling of disease spread that can scale all the way from modelling
 local transmission up to full national- or international-scale outbreaks.
@@ -55,7 +57,7 @@ movement restrictions, availability of different types of vaccines etc.
 It implements a multi-dimensional SIR model that can be dynamically
 extended via multiple disease stages, multiple demographics or
 sub-populations, and multiple geographical regions. It is accelerated
-via cython, OpenMP and MPI to scale efficiently from running on
+via Cython, OpenMP and MPI to scale efficiently from running on
 personal laptops to large supercomputers. Flexible Python, R and
 command line interfaces and a complete set of tutorials support
 researchers adapting the model to a variety of scenarios.
