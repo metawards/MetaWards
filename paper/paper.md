@@ -42,7 +42,8 @@ bibliography: paper.bib
 # Summary
 
 Understanding how disease spreads through populations is important when
-designing and implementing control measures. `MetaWards` implements a stochastic
+designing and implementing control measures. `MetaWards`,
+available at https://metawards.org, implements a stochastic
 metapopulation model of disease transmission that enables geographical
 modelling of disease spread that can scale all the way from modelling
 local transmission up to full national- or international-scale outbreaks.
@@ -146,7 +147,7 @@ To this end, `MetaWards` features;
   with individuals returned from the R or V stages back to S,
 * flexible data output support - again handled using an array of in-built
   or user-supplied data extraction plugin functions. Data can be output in
-  whatever format is needed for analysis, either to text files or to databasesm
+  whatever format is needed for analysis, either to text files or to databases,
 * full reproducibility support baked in throughout. The code records enough
   data to make reproduction easy, with results designed to be the same given
   the same inputs, random number seed and number of threads,
@@ -155,22 +156,23 @@ To this end, `MetaWards` features;
   England and Wales have been created, and a Python and R API are provided
   to make it easy to create custom networks. These can model everything from
   individual wards or local geographies, up to full national- or
-  international-scale metapopulation models.
+  international-scale metapopulation models,
 * support for scanning design files for optimisation or sensitivity analysis
   of nearly all input parameters, plus any user custom parameters used in
   the main code or any plugins. These scans can use as much compute as
   available, parallelising individual runs over multiple cores,
-  and scaling multiple runs up to full supercomputers (\autoref{fig:parallel}),
+  and scaling multiple runs up to full supercomputers (\autoref{fig:parallel}).
 
 ![Multiple scans performed in parallel, with live summary updates as jobs finish.\label{fig:parallel}](parallel.jpg)
 
-`MetaWards` is optimised and can run happily on small laptops.
-Individual national-scale networks fit in approximately 80 MB of memory,
-and model runs can take 15-90 seconds to perform. This scales with the
+`MetaWards` is optimised and can run happily on small laptops. Individual
+national-scale networks fit in approximately 80 MB of memory,
+and model runs can take 15-90 seconds to perform. Compute and
+memory costs scale with the
 number of demographics that are added, but high performance and low memory
 consumption are design goals. Models using only a few wards are kilobytes,
-and take less than a second to run. A built-in `metawards-plot` tool
-for simple visualisation of key results (\autoref{fig:plot}).
+and take less than a second to run. Finally, a built-in `metawards-plot` tool
+is included in the package for simple visualisation of key results (\autoref{fig:plot}).
 
 ![`metawards-plot` visualisation of results, including across multiple networks.\label{fig:plot}](plot.jpg)
 
