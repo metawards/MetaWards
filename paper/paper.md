@@ -64,16 +64,12 @@ support researchers adapting the model to a variety of scenarios.
 
 # Statement of need
 
-`MetaWards` implements a stochastic metapopulation model of disease transmission.
-It can scale from modelling local transmission up to full national- or
-international-scale metapopulation models.
-
-It is was originally developed as a C program to support modelling of disease transmission
-in Great Britain [@Danon:2009,@Danon:2010]. The original C code has been
+`MetaWards` was originally developed as a C program to support modelling of disease transmission
+in Great Britain [@Danon:2009; @Danon:2010]. The original C code has been
 published on GitHub separately [@MetaWards] and is included in the
 main `MetaWards` repository for reference. In a metapopulation model,
-individuals are divided into different geographical regions, e.g. as in
-the original work, into electoral wards. Disease transmission between
+individuals are divided into different geographical regions, e.g. into
+electoral wards as in the original code. Disease transmission between
 regions occurs via the daily movement of individuals.
 
 This model was recently adapted to model COVID-19 transmission in England and
