@@ -1,0 +1,64 @@
+{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "https://orcid.org/0000-0001-6563-9903",
+      "@type": "Person",
+      "email": "Christopher.Woods@bristol.ac.uk",
+      "name": "Christopher Woods",
+      "affiliation": "University of Bristol"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5624-0500",
+      "@type": "Person",
+      "email": "Lester.Hedges@bristol.ac.uk",
+      "name": "Lester Hedges",
+      "affiliation": "University of Bristol"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-6863-2184",
+      "@type": "Person",
+      "email": "cje57@cam.ac.uk",
+      "name": "Christopher Edsall",
+      "affiliation": "University of Cambridge"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-5984-4932",
+      "@type": "Person",
+      "email": "ellen.brooks-pollock@bristol.ac.uk",
+      "name": "Ellen Brooks-Pollock",
+      "affiliation": "University of Bristol"
+    },
+    {
+      "@type": "Person",
+      "email": "cf502@exeter.ac.uk",
+      "name": "Chris Fenton",
+      "affiliation": "University of Essex"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-9485-3236",
+      "@type": "Person",
+      "email": "t.mckinley@exeter.ac.uk",
+      "name": "Trevelyan J McKinley",
+      "affiliation": "University of Essex"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7076-1871",
+      "@type": "Person",
+      "email": "l.danon@bristol.ac.uk",
+      "name": "Leon Danon",
+      "affiliation": "University of Bristol"
+    }
+  ],
+  "identifier": "https://doi.org/10.5281/zenodo.5562737",
+  "codeRepository": "https://github.com/metawards/MetaWards",
+  "datePublished": "2021-10-15",
+  "dateModified": "2021-10-15",
+  "dateCreated": "2021-10-15",
+  "description": "Disease metapopulation analysis and modelling software. Professional geographical SIR model with a flexible plugin architecture to support complex scenario modelling",
+  "keywords": "epidemiology, epidemics, sir-model, covid, python, cython",
+  "license": "GPL3",
+  "title": "MetaWards",
+  "version": "v1.6.1"
+}
