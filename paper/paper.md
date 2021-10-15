@@ -65,18 +65,18 @@ researchers adapting the model to a variety of scenarios.
 It can scale from modelling local transmission up to full national- or
 international-scale metapopulation models.
 
-It is was originally developed to support modelling of disease transmission
+It is was originally developed as a C program to support modelling of disease transmission
 in Great Britain [@Danon:2009,@Danon:2010]. The original C code has been
 published on GitHub separately [@MetaWards] and is included in the
 main `MetaWards` repository for reference. In a metapopulation model,
-individuals are divided into different geographical regions, e.g. in
-the original case, into electoral wards. Disease transmission between
-wards occurs via the daily movement of individuals.
+individuals are divided into different geographical regions, e.g. as in
+the original work, into electoral wards. Disease transmission between
+regions occurs via the daily movement of individuals.
 
 This model was recently adapted to model COVID-19 transmission in England and
 Wales [@Danon:2021]. Upon adaption it became clear that the original C
 code needed to be made more robust, more trustable, faster, and
-easier to adapt to new scenarios. This Python version was created to
+easier to extend to model new scenarios. This Python version was created to
 meet all of those needs. This Python version of `MetaWards` can
 identically reproduce the outputs from the original C code.
 It has been optimised and parallelised, with extensive unit testing
@@ -103,11 +103,11 @@ the UQ4Covid [@UQ4Covid] project.
 interfaces. A tutorial-driven development model was used for `MetaWards`.
 Development started with a discussion of the new scenarios that needed
 modelling. This was followed with tutorials that described how `MetaWards`
-would be used to model that scenario. Finally, the code (and unit tests)
-were written so that `MetaWards` behaved as described in the tutorial.
-The project took the view that if functionality was not described in
-a tutorial, then it didn't exist (as users would not know how to make
-use of it). The tutorials [@MetaWardsTutorials] evolved in lock-step
+would be used to model those scenarios. Finally, the code (and unit tests)
+were written so that `MetaWards` behaved as described in the tutorials.
+The project team took the view that if functionality was not described in
+a tutorial, then it didn't exist, as users would not know how to make
+use of it. The tutorials [@MetaWardsTutorials] evolved in lock-step
 with the code. Development was rapid, with new versions released
 regularly during 2020. To manage this change, `MetaWards` rigidly
 used the semantic versioning (SemVer) scheme[@semver] and provided strong guarantees
@@ -119,7 +119,7 @@ retroactively view how the tutorials developed alongside the code.
 # Features
 
 `MetaWards` is designed to enable researchers to model how an infection may
-spread geographically,\autoref{fig:geographical}
+spread geographically (\autoref{fig:geographical}),
 and what impact different control measures or individual behaviours
 may make.
 
@@ -130,47 +130,47 @@ To this end, `MetaWards` features;
 * a flexible plugin architecture that makes it easy to implement new control
   measures. For example, the tutorial shows how this can be used to
   model shielding, different lockdown scenarios and to investigate
-  necessary durations of quarantine or self-isolation.
+  necessary durations of quarantine or self-isolation,
 * multi-network demographic support. Multiple networks can be run as a single
   combined group, with custom plugins used to merge data between networks,
   and conditionally move individuals between different demographics.
-  Tutorials demonstrate how this can be used to model shielding and
+  Tutorials demonstrate how this can be used to model, for example, shielding and
   self-isolation, hospital admissions, impact of individuals returning
-  from holidays etc.
+  from holidays,
 * per-ward custom parameter support. Different wards can have different
   parameters, meaning that local behaviour can be easily modelled
-  (e.g. local lockdowns, changes in local control measures etc.).
+  (e.g. local lockdowns, changes in local control measures),
 * complete-detail and full control over horizontal and vertical movements
   through disease stages or across demographics. Tutorials show how this
   can be used this to model vaccination and also to model waning immunity,
-  with individuals returned from the R or V stages back to S.
+  with individuals returned from the R or V stages back to S,
 * flexible data output support - again handled using an array of in-built
-  or user-supplied data extraction plugin functions.
-  Data can be output in whatever format is needed for analysis, either to
-  text files or to databases.
+  or user-supplied data extraction plugin functions. Data can be output in
+  whatever format is needed for analysis, either to text files or to databasesm
 * full reproducibility support baked in throughout. The code records enough
   data to make reproduction easy, with results designed to be the same given
-  the same inputs, random number seed and number of threads.
-* support for scanning design files for optimisation or sensitivity analysis
-  of nearly all input parameters, plus any user custom parameters used in
-  the main code or any plugins. These scans can use as much compute as
-  available, parallelising individual runs over multiple cores,
-  and scaling multiple runs up to full supercomputers.\autoref{fig:parallel}
-* the individual code is optimised and can run happily on small laptops.
-  Individual national-scale networks fit in approximately 80 MB of memory,
-  and model runs can take 15-90 seconds to perform. This scales with the
-  number of demographics that are added, but high performance and low memory
-  consumption are design goals. Models using only a few wards are kilobytes,
-  and take less than a second to run.
+  the same inputs, random number seed and number of threads,
 * flexible input files that would enable modelling of any region or country
   to be undertaken (subject to good input data). Models of the UK and
   England and Wales have been created, and a Python and R API are provided
   to make it easy to create custom networks. These can model everything from
   individual wards or local geographies, up to full national- or
   international-scale metapopulation models.
-* a built-in `metawards-plot` tool for rapid visualisation of key results.\autoref{fig:plot}
+* support for scanning design files for optimisation or sensitivity analysis
+  of nearly all input parameters, plus any user custom parameters used in
+  the main code or any plugins. These scans can use as much compute as
+  available, parallelising individual runs over multiple cores,
+  and scaling multiple runs up to full supercomputers (\autoref{fig:parallel}),
 
 ![Multiple scans performed in parallel, with live summary updates as jobs finish.\label{fig:parallel}](parallel.jpg)
+
+`MetaWards` is optimised and can run happily on small laptops.
+Individual national-scale networks fit in approximately 80 MB of memory,
+and model runs can take 15-90 seconds to perform. This scales with the
+number of demographics that are added, but high performance and low memory
+consumption are design goals. Models using only a few wards are kilobytes,
+and take less than a second to run. A built-in `metawards-plot` tool
+for simple visualisation of key results (\autoref{fig:plot}).
 
 ![`metawards-plot` visualisation of results, including across multiple networks.\label{fig:plot}](plot.jpg)
 
