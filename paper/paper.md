@@ -44,7 +44,7 @@ bibliography: paper.bib
 # Summary
 
 Understanding how disease spreads through populations is important when
-designing and implementing control measures. [`MetaWards`](https://metawards.org),
+designing and implementing control measures. [`MetaWards`](https://metawards.org)
 implements a stochastic
 metapopulation model of disease transmission that enables geographical
 modelling of disease spread that can scale all the way from modelling
@@ -57,10 +57,10 @@ movement restrictions, availability of different types of vaccines etc.
 It implements a multi-dimensional SIR model that can be dynamically
 extended via multiple disease stages, multiple demographics or
 sub-populations, and multiple geographical regions. It is accelerated
-via Cython, OpenMP and MPI to scale efficiently from running on
-personal laptops to large supercomputers. Flexible Python, R and
-command line interfaces and a complete set of tutorials support
-researchers adapting the model to a variety of scenarios.
+via Cython [@Cython], OpenMP, Scoop [@Scoop] and MPI4Py [@MPI4Py] to scale
+efficiently from running on personal laptops to large supercomputers.
+Flexible Python, R and command line interfaces and a complete set of tutorials
+support researchers adapting the model to a variety of scenarios.
 
 # Statement of need
 
