@@ -16,10 +16,10 @@ authors:
     affiliation: 1
   - name: Christopher Edsall
     orcid: 0000-0001-6863-2184
-    affiliation: 3
+    affiliation: 2
   - name: Ellen Brooks-Pollock
     orcid: 0000-0002-5984-4932
-    affiliation: 2
+    affiliation: 3
   - name: Chris Fenton
     affiliation: 4
   - name: Trevelyan J McKinley
@@ -27,13 +27,13 @@ authors:
     affiliation: 4
   - name: Leon Danon
     orcid: 0000-0002-7076-1871
-    affiliation: 2
+    affiliation: 3
 affiliations:
  - name: Research Software Engineering, Advanced Computing Research Centre, University of Bristol, United Kingdom
    index: 1
- - name: Department of Engineering Mathematics, University of Bristol, United Kingdom
-   index: 2
  - name: Research Software Engineering, Research Computing Services, University of Cambridge, United Kingdom
+   index: 2
+ - name: Department of Engineering Mathematics, University of Bristol, United Kingdom
    index: 3
  - name: College of Engineering, Mathematics and Physical Sciences, University of Exeter, United Kingdom
    index: 4
