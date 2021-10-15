@@ -42,7 +42,7 @@ bibliography: paper.bib
 # Summary
 
 Understanding how disease spreads through populations is important when
-designing and implementing control measures. MetaWards implements a stochastic
+designing and implementing control measures. `MetaWards` implements a stochastic
 metapopulation model of disease transmission that enables geographical
 modelling of disease spread that can scale all the way from modelling
 local transmission up to full national- or international-scale outbreaks.
@@ -61,7 +61,7 @@ researchers adapting the model to a variety of scenarios.
 
 # Statement of need
 
-MetaWards implements a stochastic metapopulation model of disease transmission.
+`MetaWards` implements a stochastic metapopulation model of disease transmission.
 It can scale from modelling local transmission up to full national- or
 international-scale metapopulation models.
 
@@ -93,7 +93,7 @@ plugin architecture together with a tutorial-driven development style
 has created a flexible modelling framework with a rich set of tutorials and
 documentation. These demonstrate
 how `MetaWards` can be adapted easily via a Python, R or command-line
-interface to model a variety of complex scenarios. MetaWards is being
+interface to model a variety of complex scenarios. `MetaWards` is being
 used for on-going modelling of COVID-19 transmission, e.g. via
 the UQ4Covid [@UQ4Covid] project.
 
@@ -110,7 +110,7 @@ a tutorial, then it didn't exist (as users would not know how to make
 use of it). The tutorials [@MetaWardsTutorials] evolved in lock-step
 with the code. Development was rapid, with new versions released
 regularly during 2020. To manage this change, `MetaWards` rigidly
-used the symver versioning scheme[@symver] and provided strong guarantees
+used the semantic versioning (SemVer) scheme[@semver] and provided strong guarantees
 of backwards compatibility. The website was versioned, so that
 tutorials for older versions of the software were easily accessible
 via a drop-down selector. Today, this versioning can be used to
@@ -123,9 +123,9 @@ spread geographically,\autoref{fig:geographical}
 and what impact different control measures or individual behaviours
 may make.
 
-![Analysis of a simulation run [@GeoSim] that used MetaWards to chart disease spread across England and Wales.\label{fig:geographical}](geographical.png){width=20%}
+![Analysis of a simulation run [@GeoSim] that used `MetaWards` to chart disease spread across England and Wales.\label{fig:geographical}](geographical.png)
 
-To this end, MetaWards features;
+To this end, `MetaWards` features;
 
 * a flexible plugin architecture that makes it easy to implement new control
   measures. For example, the tutorial shows how this can be used to
@@ -170,9 +170,9 @@ To this end, MetaWards features;
   international-scale metapopulation models.
 * a built-in `metawards-plot` tool for rapid visualisation of key results.\autoref{fig:plot}
 
-![Multiple scans performed in parallel, with live summary updates as jobs finish.\label{fig:parallel}](parallel.jpg){width=20%}
+![Multiple scans performed in parallel, with live summary updates as jobs finish.\label{fig:parallel}](parallel.jpg)
 
-![`metawards-plot` visualisation of results, including across multiple networks.\label{fig:plot}](plot.jpg){width=20%}
+![`metawards-plot` visualisation of results, including across multiple networks.\label{fig:plot}](plot.jpg)
 
 # Acknowledgements
 
