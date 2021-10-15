@@ -109,7 +109,7 @@ a tutorial, then it didn't exist, as users would not know how to make
 use of it. The tutorials [@MetaWardsTutorials] evolved in lock-step
 with the code. Development was rapid, with new versions released
 regularly during 2020. To manage this change, `MetaWards` rigidly
-used the semantic versioning (SemVer) scheme[@semver] and provided strong guarantees
+used the semantic versioning (SemVer) scheme [@semver] and provided strong guarantees
 of backwards compatibility. The website was versioned, so that
 tutorials for older versions of the software were easily accessible
 via a drop-down selector. Today, this versioning can be used to
