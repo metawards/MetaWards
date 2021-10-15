@@ -30,3 +30,4 @@ __pycache__
 R/output_*
 /_cython_cython_iterator.pyx
 /_pyxbld
+/paper/metawards_paper.pdf
