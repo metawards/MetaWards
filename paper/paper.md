@@ -131,8 +131,8 @@ may make.
 To this end, `MetaWards` features;
 
 * a generic compartmental tranmission model, with user-definable compartments
-  and transmission algorithms. Supports both traditional SIR, SEIR, SI, SIS models,
-  as well as custom models,
+  and transmission algorithms. Supports both traditional (e.g. SIR, SEIR, SI, SIS)
+  and custom models,
 * a flexible plugin architecture that makes it easy to implement new control
   measures. For example, the tutorial shows how this can be used to
   model shielding, different lockdown scenarios and to investigate
