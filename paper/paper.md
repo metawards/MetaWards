@@ -4,6 +4,7 @@ tags:
   - epidemiology
   - epidemics
   - sir-model
+  - compartmental transmission model
   - covid
   - python
   - cython
@@ -20,7 +21,7 @@ authors:
   - name: Ellen Brooks-Pollock
     orcid: 0000-0002-5984-4932
     affiliation: 3
-  - name: Chris Fenton
+  - name: Christopher Parton-Fenton
     affiliation: 4
   - name: Trevelyan J McKinley
     orcid: 0000-0002-9485-3236
@@ -29,13 +30,13 @@ authors:
     orcid: 0000-0002-7076-1871
     affiliation: 3
 affiliations:
- - name: Research Software Engineering, Advanced Computing Research Centre, University of Bristol, United Kingdom
+ - name: Research Software Engineering, Advanced Computing Research Centre, University of Bristol, UK
    index: 1
- - name: Research Software Engineering, Research Computing Services, University of Cambridge, United Kingdom
+ - name: Research Software Engineering, Research Computing Services, University of Cambridge, UK
    index: 2
- - name: Department of Engineering Mathematics, University of Bristol, United Kingdom
+ - name: Department of Engineering Mathematics, University of Bristol, UK
    index: 3
- - name: College of Engineering, Mathematics and Physical Sciences, University of Exeter, United Kingdom
+ - name: College and Medicine and Health, University of Exeter, UK
    index: 4
 date: 15 October 2021
 bibliography: paper.bib
@@ -54,8 +55,9 @@ support complex scenario modelling. This enables the code to be adapted
 to model new situations and new control measures as they arise, e.g.
 emergence of new variants of disease, enaction of different types of
 movement restrictions, availability of different types of vaccines etc.
-It implements a multi-dimensional SIR model that can be dynamically
-extended via multiple disease stages, multiple demographics or
+It implements a user-definable compartmental transmission model, such
+as an SIR model, that can be
+extended multi-dimensionally via multiple demographics or
 sub-populations, and multiple geographical regions. It is accelerated
 via Cython [@Cython], OpenMP, Scoop [@Scoop] and MPI4Py [@MPI4Py] to scale
 efficiently from running on personal laptops to large supercomputers.
@@ -83,7 +85,7 @@ added to build trust and robustness. Use of Cython [@Cython] enabled the ported
 code to run as quickly as the original C code, and then parallelisation via
 OpenMP provided a significant speed-up on multi-core machines.
 Re-architecting of the code, including creating a new multi-network (demographic)
-framework, enabled extension of the traditional SIR epidemiological model
+framework, enabled extension of the traditional compartmental transmission model
 across multiple dimensions; horizontally by adding disease stages,
 vertically by adding multiple networks to represent different demographics
 or sub-populations, and geographically via movement of modelled individuals
@@ -93,13 +95,15 @@ has created a flexible modelling framework with a rich set of tutorials and
 documentation. These demonstrate
 how `MetaWards` can be adapted easily via a Python, R or command-line
 interface to model a variety of complex scenarios. `MetaWards` is being
-used for on-going modelling of COVID-19 transmission, e.g. via
-the UQ4Covid [@UQ4Covid] project.
+used for on-going modelling of COVID-19 transmission, e.g. via the
+model [@UQ4CovidModel] developed by the UQ4Covid project [@UQ4Covid].
 
-# Usage and Development
+# Tutorial-Driven Development
 
-`MetaWards` can be run via a command-line tool, or via Python or R
-interfaces. A tutorial-driven development model was used for `MetaWards`.
+A tutorial-driven development model was used for `MetaWards`. This model
+was inspire by test-driven development, where the tests are written first.
+For tutorial-driven development, we aimed to write the tutorials first.
+
 Development started with a discussion of the new scenarios that needed
 modelling. This was followed with tutorials that described how `MetaWards`
 would be used to model those scenarios. Finally, the code (and unit tests)
@@ -126,6 +130,9 @@ may make.
 
 To this end, `MetaWards` features;
 
+* a generic compartmental tranmission model, with user-definable compartments
+  and transmission algorithms. Supports both traditional SIR, SEIR, SI, SIS models,
+  as well as custom models,
 * a flexible plugin architecture that makes it easy to implement new control
   measures. For example, the tutorial shows how this can be used to
   model shielding, different lockdown scenarios and to investigate
@@ -177,6 +184,8 @@ is included in the package for simple visualisation of key results (\autoref{fig
 # Acknowledgements
 
 Christopher Woods acknowledges funding via an EPSRC Research Software
-Engineering Fellowship (EP/N018591/1).
+Engineering Fellowship (EP/N018591/1).  TJM is supported by an "Expanding
+Excellence in England" award from Research England and
+UKRI grants: EP/V051555/1 (UQ4Covid) and MR/V038613/ (JUNIPER Consortium).
 
 # References
