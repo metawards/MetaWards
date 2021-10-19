@@ -26,10 +26,10 @@ authors:
     affiliation: 4
   - name: Trevelyan J McKinley
     orcid: 0000-0002-9485-3236
-    affiliation: 4
+    affiliation: 5
   - name: Matt J Keeling
     orcid: 0000-0003-4639-4765
-    affiliation: 5
+    affiliation: 6
   - name: Leon Danon
     orcid: 0000-0002-7076-1871
     affiliation: 3
@@ -40,10 +40,12 @@ affiliations:
    index: 2
  - name: Department of Engineering Mathematics, University of Bristol, UK
    index: 3
- - name: College and Medicine and Health, University of Exeter, UK
+ - name: College of Engineering, Mathematics and Physical Sciences, University of Exeter, UK
    index: 4
- - name: Zeeman Institute (SBIDER), University of Warwick, Coventry, UK
+ - name: College of Medicine and Health, University of Exeter, UK
    index: 5
+ - name: Zeeman Institute (SBIDER), University of Warwick, Coventry, UK
+   index: 6
 date: 15 October 2021
 bibliography: paper.bib
 ---
