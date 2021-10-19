@@ -22,10 +22,14 @@ authors:
     orcid: 0000-0002-5984-4932
     affiliation: 3
   - name: Christopher Parton-Fenton
+    orcid: 0000-0003-0052-8430
     affiliation: 4
   - name: Trevelyan J McKinley
     orcid: 0000-0002-9485-3236
     affiliation: 4
+  - name: Matt J Keeling
+    orcid: 0000-0003-4639-4765
+    affiliation: 5
   - name: Leon Danon
     orcid: 0000-0002-7076-1871
     affiliation: 3
@@ -38,6 +42,8 @@ affiliations:
    index: 3
  - name: College and Medicine and Health, University of Exeter, UK
    index: 4
+ - name: Zeeman Institute (SBIDER), University of Warwick, Coventry, UK
+   index: 5
 date: 15 October 2021
 bibliography: paper.bib
 ---

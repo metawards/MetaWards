@@ -31,6 +31,7 @@
       "affiliation": "University of Bristol"
     },
     {
+      "@id": "https://orcid.org/0000-0003-0052-8430",
       "@type": "Person",
       "email": "cf502@exeter.ac.uk",
       "name": "Christopher Parton-Fenton",
@@ -42,6 +43,13 @@
       "email": "t.mckinley@exeter.ac.uk",
       "name": "Trevelyan J McKinley",
       "affiliation": "University of Essex"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-4639-4765",
+      "@type": "Person",
+      "email": "M.J.Keeling@warwick.ac.uk",
+      "name": "Matt J Keeling",
+      "affiliation": "University of Warwick"
     },
     {
       "@id": "https://orcid.org/0000-0002-7076-1871",
