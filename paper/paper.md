@@ -179,7 +179,7 @@ To this end, `MetaWards` features;
   available, parallelising individual runs over multiple cores,
   and scaling multiple runs up to full supercomputers (\autoref{fig:parallel}).
 
-![Multiple scans performed in parallel, with live summary updates as jobs finish.\label{fig:parallel}](parallel.jpg)
+![Multiple scans performed in parallel, with live summary updates as jobs finish.\label{fig:parallel}](parallel.png)
 
 `MetaWards` is optimised and can run happily on small laptops. Individual
 national-scale networks fit in approximately 80 MB of memory,
