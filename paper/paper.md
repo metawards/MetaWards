@@ -111,7 +111,7 @@ model [@UQ4CovidModel] developed by the UQ4Covid project [@UQ4Covid].
 # Tutorial-Driven Development
 
 A tutorial-driven development process was used for `MetaWards`. This process
-was inspire by test-driven development, where the tests are written first.
+was inspired by test-driven development, where the tests are written first.
 For tutorial-driven development, we aimed to write the tutorials first.
 
 Development started with a discussion of the new scenarios that needed
