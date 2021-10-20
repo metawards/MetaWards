@@ -67,12 +67,12 @@ It implements a user-definable compartmental transmission model, such
 as an SIR model, that can be
 extended multi-dimensionally via multiple demographics or
 sub-populations, and multiple geographical regions.
-`MetaWards` can be used with that various sources of movement
-and demographic data that are available, and is accelerated
+Models can be constructed from the various sources of movement
+and demographic data that are available, and are accelerated
 via Cython [@Cython], OpenMP, Scoop [@Scoop] and MPI4Py [@MPI4Py] to scale
 efficiently from running on personal laptops to large supercomputers.
-Flexible Python, R and command line interfaces and a complete set of tutorials
-support researchers adapting the model to a variety of scenarios.
+Python, R and command line interfaces and a complete set of tutorials
+empower researchers to adapt their models to a variety of scenarios.
 
 # Statement of need
 
@@ -168,8 +168,8 @@ To this end, `MetaWards` features;
   the same inputs, random number seed and number of threads,
 * flexible input files that would enable modelling of any region or country
   to be undertaken, based on the various sources of movement and
-  demographic data that are available. Models of the UK and
-  England and Wales have been created, and a Python and R API are provided
+  demographic data that are available. Models of England and Wales, and
+  the UK have been created, and a Python and R API are provided
   to make it easy to create custom networks. These support everything from
   individual wards or local geographies, up to full national- or
   international-scale metapopulation models,
