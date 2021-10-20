@@ -66,7 +66,9 @@ movement restrictions, availability of different types of vaccines etc.
 It implements a user-definable compartmental transmission model, such
 as an SIR model, that can be
 extended multi-dimensionally via multiple demographics or
-sub-populations, and multiple geographical regions. It is accelerated
+sub-populations, and multiple geographical regions.
+`MetaWards` can be used with that various sources of movement
+and demographic data that are available, and is accelerated
 via Cython [@Cython], OpenMP, Scoop [@Scoop] and MPI4Py [@MPI4Py] to scale
 efficiently from running on personal laptops to large supercomputers.
 Flexible Python, R and command line interfaces and a complete set of tutorials
@@ -165,9 +167,10 @@ To this end, `MetaWards` features;
   data to make reproduction easy, with results designed to be the same given
   the same inputs, random number seed and number of threads,
 * flexible input files that would enable modelling of any region or country
-  to be undertaken (subject to good input data). Models of the UK and
+  to be undertaken, based on the various sources of movement and
+  demographic data that are available. Models of the UK and
   England and Wales have been created, and a Python and R API are provided
-  to make it easy to create custom networks. These can model everything from
+  to make it easy to create custom networks. These support everything from
   individual wards or local geographies, up to full national- or
   international-scale metapopulation models,
 * support for scanning design files for optimisation or sensitivity analysis
@@ -191,9 +194,14 @@ is included in the package for simple visualisation of key results (\autoref{fig
 
 # Acknowledgements
 
-Christopher Woods acknowledges funding via an EPSRC Research Software
-Engineering Fellowship (EP/N018591/1).  TJM is supported by an "Expanding
+CW acknowledges funding via an EPSRC Research Software
+Engineering Fellowship (EP/N018591/1). TJM is supported by an "Expanding
 Excellence in England" award from Research England and
 UKRI grants: EP/V051555/1 (UQ4Covid) and MR/V038613/ (JUNIPER Consortium).
+LD, EBP and MJK are supported by MRC (grant number MC/PC/19067) and
+UKRI through the JUNIPER consortium (grant number MR/V038613/1).
+LD is further supported by EPSRC (EP/V051555/1 and The Alan Turing Institute,
+grant EP/N510129/1), and Pfizer through investigator-led grants
+on respiratory tract infections.
 
 # References
