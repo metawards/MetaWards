@@ -18,12 +18,17 @@ authors:
     given-names: Ellen
     orcid: "https://orcid.org/0000-0002-5984-4932"
   -
-    family-names: Fenton
+    family-names: "Parton-Fenton"
     given-names: Christopher
+    orcid: "https://orcid.org/0000-0003-0052-8430"
   -
     family-names: McKinley
     given-names: "Trevelyan J"
     orcid: "https://orcid.org/0000-0002-9485-3236"
+  -
+    family-names: Keeling
+    given-names: "Matt J"
+    orcid: "https://orcid.org/0000-0003-4639-4765"
   -
     family-names: Danon
     given-names: Leon
