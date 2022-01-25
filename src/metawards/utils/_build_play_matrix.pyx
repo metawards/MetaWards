@@ -188,6 +188,9 @@ def build_play_matrix(network: Network,
         nlines = len(lines)
         update_freq = int(nlines / 1000)
 
+        if update_freq < 10:
+            update_freq = 10
+
         with Console.progress() as progress:
             task = progress.add_task("Parsing contents", total=nlines)
 
