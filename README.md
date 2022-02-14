@@ -4,6 +4,7 @@
 
 * For the most accurate and up to date information please [visit the project website](https://metawards.org).
 * For an overview of features please [visit the features page](https://metawards.org/features).
+* Please take a read of our [Journal of Open Source Software paper](https://joss.theoj.org/papers/10.21105/joss.03914)
 * Please cite according to the CITATION.cff file in this repo.
 
 ## Scientific Background
@@ -20,9 +21,9 @@ It is was originally developed to support modelling of disease transmission in G
 
 In this model, the population is divided into electoral wards. Disease transmission between wards occurs via the daily movement of individuals. For each ward, individuals contribute to the *force of infection* (FOI) in their *home* ward during the night, and their *work* ward during the day.
 
-This model was recently adapted to model CoVID-19 transmission in England and Wales, with result of the original C code published (pre-print) here;
+This model was recently adapted to model CoVID-19 transmission in England and Wales, with result of the original C code published here;
 
-* *"A spatial model of CoVID-19 transmission in England and Wales: early spread and peak timing"*, Leon Danon, Ellen Brooks-Pollock, Mick Bailey, Matt J Keeling, medRxiv 2020 02.12.20022566; DOI:[10.1101/2020.02.12.20022566](https://doi.org/10.1101/2020.02.12.20022566)
+* *"A spatial model of CoVID-19 transmission in England and Wales: early spread and peak timing"*, Leon Danon, Ellen Brooks-Pollock, Mick Bailey, Matt J Keeling, Philosophical Transactions of the Royal Society B, 376(1829); DOI:[10.1098/rstb.2020.0272](https://doi.org/10.1098/rstb.2020.0272)
 
 This Python code is a port which can identically reproduce the outputs from the original C code as used in that work. This Python code has been optimised and parallelised, with additional testing added to ensure that development and scale-up of MetaWards has been robustly and efficiently conducted.
 
