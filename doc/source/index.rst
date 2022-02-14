@@ -14,9 +14,9 @@ MetaWards
    :target: https://pepy.tech/project/metawards
    :alt: Number of downloads
 
-.. image:: https://img.shields.io/badge/License-GPLv3-blue.svg
-   :target: https://www.gnu.org/licenses/gpl-3.0.html
-   :alt: License
+.. image:: https://camo.githubusercontent.com/1f42db8f4826e53d3ffb6c3d298ced7b0ec73a2547d44c023882d47dd021b95d/68747470733a2f2f6a6f73732e7468656f6a2e6f72672f7061706572732f31302e32313130352f6a6f73732e30333931342f7374617475732e737667
+   :target: https://doi.org/10.21105/joss.03914
+   :alt: JOSS paper
 
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5562737.svg
    :target: https://doi.org/10.5281/zenodo.5562737
@@ -30,7 +30,8 @@ Citation
 ========
 
 Please cite use of this software following the instructions in the 
-"Cite this repository" link in the `GitHub repository <https://github.com/metawards/MetaWards>`__.
+"Cite this repository" link in the `GitHub repository <https://github.com/metawards/MetaWards>`__,
+and also please cite our [Journal of Open Source Software paper](https://doi.org/10.21105/joss.03914).
 
 
 Scientific Background
@@ -69,12 +70,12 @@ day.
 
 This model was recently adapted to model CoVID-19 transmission in
 England and Wales, with result of the original C code
-published (pre-print) here;
+published here;
 
 * *"A spatial model of CoVID-19 transmission in England and Wales:
   early spread and peak timing"*, Leon Danon, Ellen Brooks-Pollock,
-  Mick Bailey, Matt J Keeling, medRxiv 2020.02.12.20022566; DOI:
-  `10.1101/2020.02.12.20022566 <https://doi.org/10.1101/2020.02.12.20022566>`__
+  Mick Bailey, Matt J Keeling, Philosophical Transactions of the Royal Society B, 376(1829); DOI:
+  `10.1098/rstb.2020.0272 <https://doi.org/10.1098/rstb.2020.0272>`__
 
 This Python code is a port which can identically reproduce the outputs
 from the original C code as used in that work. This Python code has
