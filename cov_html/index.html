@@ -5,75 +5,61 @@
     <title>Coverage report</title>
     <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.ba-throttle-debounce.min.js"></script>
-    <script type="text/javascript" src="jquery.tablesorter.min.js"></script>
-    <script type="text/javascript" src="jquery.hotkeys.js"></script>
-    <script type="text/javascript" src="coverage_html.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(coverage.index_ready);
-    </script>
+    <script type="text/javascript" src="coverage_html.js" defer></script>
 </head>
 <body class="indexfile">
-<div id="header">
+<header>
     <div class="content">
         <h1>Coverage report:
-            <span class="pc_cov">42.68%</span>
+            <span class="pc_cov">42.86%</span>
         </h1>
-        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+        <div id="help_panel_wrapper">
+            <input id="help_panel_state" type="checkbox">
+            <label for="help_panel_state">
+                <img id="keyboard_icon" src="keybd_closed.png" alt="Show/hide keyboard shortcuts" />
+            </label>
+            <div id="help_panel">
+                <p class="legend">Shortcuts on this page</p>
+                <div>
+                    <p class="keyhelp">
+                        <kbd>n</kbd>
+                        <kbd>s</kbd>
+                        <kbd>m</kbd>
+                        <kbd>x</kbd>
+                        <kbd>b</kbd>
+                        <kbd>p</kbd>
+                        <kbd>c</kbd> &nbsp; change column sorting
+                    </p>
+                </div>
+            </div>
+        </div>
         <form id="filter_container">
             <input id="filter" type="text" value="" placeholder="filter..." />
         </form>
     </div>
-</div>
-<div class="help_panel">
-    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
-    <p class="legend">Hot-keys on this page</p>
-    <div>
-    <p class="keyhelp">
-        <span class="key">n</span>
-        <span class="key">s</span>
-        <span class="key">m</span>
-        <span class="key">x</span>
-        <span class="key">b</span>
-        <span class="key">p</span>
-        <span class="key">c</span> &nbsp; change column sorting
-    </p>
-    </div>
-</div>
-<div id="index">
-    <table class="index">
+</header>
+<main id="index">
+    <table class="index" data-sortable>
         <thead>
             <tr class="tablehead" title="Click to sort">
-                <th class="name left headerSortDown shortkey_n">Module</th>
-                <th class="shortkey_s">statements</th>
-                <th class="shortkey_m">missing</th>
-                <th class="shortkey_x">excluded</th>
-                <th class="shortkey_b">branches</th>
-                <th class="shortkey_p">partial</th>
-                <th class="right shortkey_c">coverage</th>
+                <th class="name left" aria-sort="none" data-shortcut="n">Module</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="s">statements</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="m">missing</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="x">excluded</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="b">branches</th>
+                <th aria-sort="none" data-default-sort-order="descending" data-shortcut="p">partial</th>
+                <th class="right" aria-sort="none" data-shortcut="c">coverage</th>
             </tr>
         </thead>
-        <tfoot>
-            <tr class="total">
-                <td class="name left">Total</td>
-                <td>18746</td>
-                <td>9973</td>
-                <td>0</td>
-                <td>8192</td>
-                <td>1074</td>
-                <td class="right" data-ratio="11497 26938">42.68%</td>
-            </tr>
-        </tfoot>
         <tbody>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007___init___py.html">build/lib.linux-x86_64-3.8/metawards/__init__.py</a></td>
                 <td>115</td>
                 <td>39</td>
                 <td>0</td>
-                <td>18</td>
+                <td>20</td>
                 <td>3</td>
-                <td class="right" data-ratio="79 133">59.40%</td>
+                <td class="right" data-ratio="81 135">60.00%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__demographic_py.html">build/lib.linux-x86_64-3.8/metawards/_demographic.py</a></td>
@@ -125,9 +111,9 @@
                 <td>200</td>
                 <td>44</td>
                 <td>0</td>
-                <td>78</td>
+                <td>80</td>
                 <td>12</td>
-                <td class="right" data-ratio="210 278">75.54%</td>
+                <td class="right" data-ratio="212 280">75.71%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__link_py.html">build/lib.linux-x86_64-3.8/metawards/_link.py</a></td>
@@ -143,18 +129,18 @@
                 <td>73</td>
                 <td>25</td>
                 <td>0</td>
-                <td>20</td>
+                <td>22</td>
                 <td>7</td>
-                <td class="right" data-ratio="57 93">61.29%</td>
+                <td class="right" data-ratio="59 95">62.11%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__network_py.html">build/lib.linux-x86_64-3.8/metawards/_network.py</a></td>
                 <td>284</td>
                 <td>53</td>
                 <td>0</td>
-                <td>66</td>
+                <td>68</td>
                 <td>15</td>
-                <td class="right" data-ratio="270 350">77.14%</td>
+                <td class="right" data-ratio="272 352">77.27%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__networks_py.html">build/lib.linux-x86_64-3.8/metawards/_networks.py</a></td>
@@ -179,18 +165,18 @@
                 <td>184</td>
                 <td>73</td>
                 <td>0</td>
-                <td>44</td>
+                <td>46</td>
                 <td>11</td>
-                <td class="right" data-ratio="124 228">54.39%</td>
+                <td class="right" data-ratio="126 230">54.78%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__outputfiles_py.html">build/lib.linux-x86_64-3.8/metawards/_outputfiles.py</a></td>
                 <td>299</td>
                 <td>138</td>
                 <td>0</td>
-                <td>129</td>
+                <td>131</td>
                 <td>33</td>
-                <td class="right" data-ratio="217 428">50.70%</td>
+                <td class="right" data-ratio="219 430">50.93%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__parameters_py.html">build/lib.linux-x86_64-3.8/metawards/_parameters.py</a></td>
@@ -224,9 +210,9 @@
                 <td>746</td>
                 <td>200</td>
                 <td>0</td>
-                <td>410</td>
+                <td>414</td>
                 <td>64</td>
-                <td class="right" data-ratio="832 1156">71.97%</td>
+                <td class="right" data-ratio="836 1160">72.07%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__version_py.html">build/lib.linux-x86_64-3.8/metawards/_version.py</a></td>
@@ -242,18 +228,18 @@
                 <td>607</td>
                 <td>167</td>
                 <td>0</td>
-                <td>298</td>
+                <td>300</td>
                 <td>65</td>
-                <td class="right" data-ratio="631 905">69.72%</td>
+                <td class="right" data-ratio="633 907">69.79%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__wardid_py.html">build/lib.linux-x86_64-3.8/metawards/_wardid.py</a></td>
                 <td>45</td>
                 <td>18</td>
                 <td>0</td>
-                <td>18</td>
+                <td>20</td>
                 <td>4</td>
-                <td class="right" data-ratio="33 63">52.38%</td>
+                <td class="right" data-ratio="35 65">53.85%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__wardinfo_py.html">build/lib.linux-x86_64-3.8/metawards/_wardinfo.py</a></td>
@@ -269,9 +255,9 @@
                 <td>392</td>
                 <td>83</td>
                 <td>0</td>
-                <td>214</td>
+                <td>216</td>
                 <td>34</td>
-                <td class="right" data-ratio="479 606">79.04%</td>
+                <td class="right" data-ratio="481 608">79.11%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f8cb3c138509c007__workspace_py.html">build/lib.linux-x86_64-3.8/metawards/_workspace.py</a></td>
@@ -521,9 +507,9 @@
                 <td>70</td>
                 <td>11</td>
                 <td>0</td>
-                <td>38</td>
+                <td>40</td>
                 <td>5</td>
-                <td class="right" data-ratio="86 108">79.63%</td>
+                <td class="right" data-ratio="88 110">80.00%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_bc667ecd2beadf3d__mix_custom_py.html">build/lib.linux-x86_64-3.8/metawards/mixers/_mix_custom.py</a></td>
@@ -656,18 +642,18 @@
                 <td>134</td>
                 <td>18</td>
                 <td>0</td>
-                <td>102</td>
+                <td>104</td>
                 <td>14</td>
-                <td class="right" data-ratio="196 236">83.05%</td>
+                <td class="right" data-ratio="198 238">83.19%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_dc01b9ec5a0f8646__moverecord_py.html">build/lib.linux-x86_64-3.8/metawards/movers/_moverecord.py</a></td>
                 <td>22</td>
                 <td>1</td>
                 <td>0</td>
-                <td>2</td>
+                <td>4</td>
                 <td>0</td>
-                <td class="right" data-ratio="23 24">95.83%</td>
+                <td class="right" data-ratio="25 26">96.15%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_aab1887f8af1f700___init___py.html">build/lib.linux-x86_64-3.8/metawards/scripts/__init__.py</a></td>
@@ -782,9 +768,9 @@
                 <td>326</td>
                 <td>62</td>
                 <td>0</td>
-                <td>82</td>
+                <td>92</td>
                 <td>14</td>
-                <td class="right" data-ratio="320 408">78.43%</td>
+                <td class="right" data-ratio="330 418">78.95%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_a729285749d26269__get_functions_py.html">build/lib.linux-x86_64-3.8/metawards/utils/_get_functions.py</a></td>
@@ -836,9 +822,9 @@
                 <td>81</td>
                 <td>10</td>
                 <td>0</td>
-                <td>34</td>
+                <td>38</td>
                 <td>7</td>
-                <td class="right" data-ratio="96 115">83.48%</td>
+                <td class="right" data-ratio="100 119">84.03%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_a729285749d26269__read_done_file_py.html">build/lib.linux-x86_64-3.8/metawards/utils/_read_done_file.py</a></td>
@@ -908,9 +894,9 @@
                 <td>115</td>
                 <td>22</td>
                 <td>0</td>
-                <td>18</td>
+                <td>20</td>
                 <td>8</td>
-                <td class="right" data-ratio="101 133">75.94%</td>
+                <td class="right" data-ratio="103 135">76.30%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__demographic_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_demographic.py</a></td>
@@ -962,9 +948,9 @@
                 <td>200</td>
                 <td>166</td>
                 <td>0</td>
-                <td>78</td>
+                <td>80</td>
                 <td>3</td>
-                <td class="right" data-ratio="39 278">14.03%</td>
+                <td class="right" data-ratio="41 280">14.64%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__link_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_link.py</a></td>
@@ -980,18 +966,18 @@
                 <td>73</td>
                 <td>48</td>
                 <td>0</td>
-                <td>20</td>
+                <td>22</td>
                 <td>2</td>
-                <td class="right" data-ratio="27 93">29.03%</td>
+                <td class="right" data-ratio="29 95">30.53%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__network_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_network.py</a></td>
                 <td>284</td>
                 <td>149</td>
                 <td>0</td>
-                <td>66</td>
+                <td>68</td>
                 <td>10</td>
-                <td class="right" data-ratio="149 350">42.57%</td>
+                <td class="right" data-ratio="151 352">42.90%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__networks_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_networks.py</a></td>
@@ -1016,18 +1002,18 @@
                 <td>184</td>
                 <td>135</td>
                 <td>0</td>
-                <td>44</td>
+                <td>46</td>
                 <td>2</td>
-                <td class="right" data-ratio="51 228">22.37%</td>
+                <td class="right" data-ratio="53 230">23.04%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__outputfiles_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_outputfiles.py</a></td>
                 <td>299</td>
                 <td>171</td>
                 <td>0</td>
-                <td>129</td>
+                <td>131</td>
                 <td>26</td>
-                <td class="right" data-ratio="167 428">39.02%</td>
+                <td class="right" data-ratio="169 430">39.30%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__parameters_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_parameters.py</a></td>
@@ -1061,9 +1047,9 @@
                 <td>746</td>
                 <td>611</td>
                 <td>0</td>
-                <td>410</td>
+                <td>414</td>
                 <td>15</td>
-                <td class="right" data-ratio="150 1156">12.98%</td>
+                <td class="right" data-ratio="154 1160">13.28%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__version_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_version.py</a></td>
@@ -1079,18 +1065,18 @@
                 <td>607</td>
                 <td>425</td>
                 <td>0</td>
-                <td>298</td>
+                <td>300</td>
                 <td>34</td>
-                <td class="right" data-ratio="218 905">24.09%</td>
+                <td class="right" data-ratio="220 907">24.26%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__wardid_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_wardid.py</a></td>
                 <td>45</td>
                 <td>31</td>
                 <td>0</td>
-                <td>18</td>
+                <td>20</td>
                 <td>0</td>
-                <td class="right" data-ratio="14 63">22.22%</td>
+                <td class="right" data-ratio="16 65">24.62%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__wardinfo_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_wardinfo.py</a></td>
@@ -1106,9 +1092,9 @@
                 <td>392</td>
                 <td>256</td>
                 <td>0</td>
-                <td>214</td>
+                <td>216</td>
                 <td>26</td>
-                <td class="right" data-ratio="184 606">30.36%</td>
+                <td class="right" data-ratio="186 608">30.59%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_e32e842940953cc6__workspace_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/_workspace.py</a></td>
@@ -1358,9 +1344,9 @@
                 <td>70</td>
                 <td>51</td>
                 <td>0</td>
-                <td>38</td>
+                <td>40</td>
                 <td>0</td>
-                <td class="right" data-ratio="19 108">17.59%</td>
+                <td class="right" data-ratio="21 110">19.09%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_f442b37fb623ce4e__mix_custom_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/mixers/_mix_custom.py</a></td>
@@ -1493,18 +1479,18 @@
                 <td>134</td>
                 <td>111</td>
                 <td>0</td>
-                <td>102</td>
+                <td>104</td>
                 <td>0</td>
-                <td class="right" data-ratio="23 236">9.75%</td>
+                <td class="right" data-ratio="25 238">10.50%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_8e0a79e8982867bb__moverecord_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/movers/_moverecord.py</a></td>
                 <td>22</td>
                 <td>11</td>
                 <td>0</td>
-                <td>2</td>
+                <td>4</td>
                 <td>0</td>
-                <td class="right" data-ratio="11 24">45.83%</td>
+                <td class="right" data-ratio="13 26">50.00%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_55575ffe3d912a38___init___py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/scripts/__init__.py</a></td>
@@ -1619,9 +1605,9 @@
                 <td>326</td>
                 <td>175</td>
                 <td>0</td>
-                <td>82</td>
+                <td>92</td>
                 <td>7</td>
-                <td class="right" data-ratio="166 408">40.69%</td>
+                <td class="right" data-ratio="176 418">42.11%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c39c40af79634276__get_functions_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/utils/_get_functions.py</a></td>
@@ -1673,9 +1659,9 @@
                 <td>81</td>
                 <td>59</td>
                 <td>0</td>
-                <td>34</td>
+                <td>38</td>
                 <td>0</td>
-                <td class="right" data-ratio="22 115">19.13%</td>
+                <td class="right" data-ratio="26 119">21.85%</td>
             </tr>
             <tr class="file">
                 <td class="name left"><a href="d_c39c40af79634276__read_done_file_py.html">/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/metawards/utils/_read_done_file.py</a></td>
@@ -1741,18 +1727,29 @@
                 <td class="right" data-ratio="12 103">11.65%</td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>18746</td>
+                <td>9973</td>
+                <td>0</td>
+                <td>8276</td>
+                <td>1074</td>
+                <td class="right" data-ratio="11581 27022">42.86%</td>
+            </tr>
+        </tfoot>
     </table>
     <p id="no_rows">
         No items found using the specified filter.
     </p>
-</div>
-<div id="footer">
+</main>
+<footer>
     <div class="content">
         <p>
-            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.0.2</a>,
-            created at 2021-10-12 13:20 +0000
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v6.3.2</a>,
+            created at 2022-03-18 11:55 +0000
         </p>
     </div>
-</div>
+</footer>
 </body>
 </html>

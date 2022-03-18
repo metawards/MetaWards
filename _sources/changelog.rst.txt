@@ -2,6 +2,12 @@
 Changelog
 =========
 
+`1.6.2 <https://github.com/metawards/MetaWards/compare/1.6.1...1.6.2>`__ - March 18th 2022
+
+* Added links to our published JOSS paper!
+* Updated links in the website
+* Fixed a crash in the progress bar code if the update frequency is too small
+
 `1.6.1 <https://github.com/metawards/MetaWards/compare/1.6.0...1.6.1>`__ - October 11th 2021
 --------------------------------------------------------------------------------------------
 
