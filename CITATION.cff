@@ -36,6 +36,5 @@ authors:
 cff-version: "1.1.0"
 message: "If you use this software, please cite it as described here."
 title: MetaWards
-version: "1.6.1"
+version: "1.6.2"
 ...
-
