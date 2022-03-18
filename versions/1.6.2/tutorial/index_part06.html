@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 6 - Moving between demographics &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Movers and go functions" href="part06/01_movers.html" />
+    <link rel="prev" title="Contact probabilities and Demographics" href="part05/04_contacts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Part 6 - Moving between demographics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="part06/01_movers.html">Movers and go functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part06/02_duration.html">Self-isolation duration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part06/03_scan_duration.html">How many days of self-isolation is needed?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part06/04_compliance.html">Conditional Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="part06/05_quarantine.html">Staying under quarantine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Tutorial</a> &raquo;</li>
+      <li>Part 6 - Moving between demographics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="part05/04_contacts.html" class="btn btn-neutral float-left" title="Contact probabilities and Demographics" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="part06/01_movers.html" class="btn btn-neutral float-right" title="Movers and go functions" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-6-moving-between-demographics">
+<h1>Part 6 - Moving between demographics<a class="headerlink" href="#part-6-moving-between-demographics" title="Permalink to this headline"></a></h1>
+<p>In this sixth part of the tutorial you will:</p>
+<ul class="simple">
+<li><p>Understand how you can move individuals between demographics using
+<a class="reference internal" href="../api/index_MetaWards_movers.html"><span class="doc">metawards.movers</span></a>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">go</span> <span class="pre">functions</span></code> to model the movement of individuals as they
+go into isolation and then are released back to their normal life</p></li>
+<li><p>Learn how to write custom movers to investigate when individuals
+should isolate, and how many days they should stay quarantined.</p></li>
+<li><p>Learn how to conditionally send a fraction of individuals to
+another demographic, so you can investigate different levels of
+compliance with self-isolation orders, and different compliance
+rates for quarantine</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="part06/01_movers.html">Movers and go functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part06/01_movers.html#demographic-for-self-isolation">Demographic for self-isolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/01_movers.html#moving-individuals-to-isolation">Moving individuals to isolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/01_movers.html#mixing-without-infection">Mixing without infection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/01_movers.html#running-the-model">Running the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/01_movers.html#the-asymptomatic-stage">The asymptomatic stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/01_movers.html#adjusting-progress">Adjusting progress</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part06/02_duration.html">Self-isolation duration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part06/02_duration.html#using-demographics-to-represent-days">Using demographics to represent days</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/02_duration.html#moving-daily">Moving daily</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/02_duration.html#mixing-home-and-released">Mixing home and released</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part06/03_scan_duration.html">How many days of self-isolation is needed?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part06/03_scan_duration.html#analysing-the-results">Analysing the results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/03_scan_duration.html#relections-on-results">Relections on results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part06/04_compliance.html">Conditional Compliance</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part06/04_compliance.html#moving-a-fraction-of-individuals">Moving a fraction of individuals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/04_compliance.html#scanning-compliance">Scanning compliance</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part06/05_quarantine.html">Staying under quarantine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part06/05_quarantine.html#go-early-functions">go_early functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/05_quarantine.html#scanning-quarantine">Scanning quarantine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/05_quarantine.html#analysis">Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part06/05_quarantine.html#reflections-on-results">Reflections on results</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="part05/04_contacts.html" class="btn btn-neutral float-left" title="Contact probabilities and Demographics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="part06/01_movers.html" class="btn btn-neutral float-right" title="Movers and go functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

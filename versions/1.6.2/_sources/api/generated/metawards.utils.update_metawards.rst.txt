@@ -1,0 +1,6 @@
+﻿metawards.utils.update\_metawards
+=================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: update_metawards

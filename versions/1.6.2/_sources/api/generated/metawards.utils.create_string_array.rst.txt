@@ -1,0 +1,6 @@
+﻿metawards.utils.create\_string\_array
+=====================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: create_string_array

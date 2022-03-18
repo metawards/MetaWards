@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holidays and quarantine &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Input files and formats" href="../../fileformats/index.html" />
+    <link rel="prev" title="Modelling population movements" href="04_university.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_move_ward.html">Creating intricate moves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_vaccinate.html">Modelling vaccination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_fading_immunity.html">Fading immunity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_university.html">Modelling population movements</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Holidays and quarantine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#background-force-of-infection">Background force of infection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#holiday-to-a-different-demographic">Holiday to a different demographic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#go-holiday-and-go-home">go_holiday and go_home</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modelling-quarantine">Modelling quarantine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#go-quarantine">go_quarantine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#what-next">What next?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a> &raquo;</li>
+      <li>Holidays and quarantine</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="04_university.html" class="btn btn-neutral float-left" title="Modelling population movements" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../fileformats/index.html" class="btn btn-neutral float-right" title="Input files and formats" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="holidays-and-quarantine">
+<h1>Holidays and quarantine<a class="headerlink" href="#holidays-and-quarantine" title="Permalink to this headline"></a></h1>
+<p>Another use for <a class="reference internal" href="../../api/generated/metawards.movers.go_ward.html#metawards.movers.go_ward" title="metawards.movers.go_ward"><code class="xref py py-func docutils literal notranslate"><span class="pre">go_ward()</span></code></a> is to provide a good
+model of the impact of individuals taking holidays to infected
+destinations.</p>
+<section id="background-force-of-infection">
+<h2>Background force of infection<a class="headerlink" href="#background-force-of-infection" title="Permalink to this headline"></a></h2>
+<p>We can model this by making use of the background force of infection
+(<code class="docutils literal notranslate"><span class="pre">bg_foi</span></code>) parameter. This can be set on a per-ward basis via
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Ward.bg_foi" title="metawards.Ward.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Ward.bg_foi</span></code></a>, or globally for a
+network via the <a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a>
+parameters.</p>
+<p>The background FOI is the starting value for the FOI calculation in each
+ward. If this is positive, then this implies that the ward has a background
+outbreak that will drive infections in addition to any impact on the
+FOI from infected individuals. If this is negative, then this implies
+that the ward has a background mitigation that reduces the FOI by a
+fixed amount regardless of the number of infected individuals (subject
+to the FOI not dropping below zero).</p>
+<p>It is a constant that is added to the FOI for each ward. The global
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> is added first
+to all wards, and then the per-ward
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Ward.bg_foi" title="metawards.Ward.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Ward.bg_foi</span></code></a> is added for each ward.</p>
+</section>
+<section id="holiday-to-a-different-demographic">
+<h2>Holiday to a different demographic<a class="headerlink" href="#holiday-to-a-different-demographic" title="Permalink to this headline"></a></h2>
+<p>We will model the holiday destination as being a different demographic,
+where the global background FOI is set to a high positive value. This means
+that individuals who are moved to this demographic will be exposed to
+infection. When they then return from the holiday demographic back to
+their home demographic, they will carry the infection with them and
+then drive the epidemic back at home.</p>
+<p>We will start by creating two demographic, <code class="docutils literal notranslate"><span class="pre">home</span></code> and <code class="docutils literal notranslate"><span class="pre">holiday</span></code>.
+You can do this using Python, R, or by copying the file from below,
+e.g. in Python;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Demographic</span><span class="p">,</span> <span class="n">VariableSet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span> <span class="o">=</span> <span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">work_ratio</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">play_ratio</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span> <span class="o">=</span> <span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;holiday&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span><span class="o">.</span><span class="n">work_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span><span class="o">.</span><span class="n">play_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span> <span class="o">=</span> <span class="n">VariableSet</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;scale_uv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;bg_foi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span><span class="o">.</span><span class="n">adjustment</span> <span class="o">=</span> <span class="n">adjustment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span> <span class="o">=</span> <span class="n">home</span> <span class="o">+</span> <span class="n">holiday</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;demographics.json&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or in R;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">metawards</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">home</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographic</span><span class="p">(</span><span class="s">&quot;home&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="n">work_ratio</span> <span class="o">&lt;-</span> <span class="m">1.0</span>
+<span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="n">play_ratio</span> <span class="o">&lt;-</span> <span class="m">1.0</span>
+<span class="o">&gt;</span> <span class="n">holiday</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographic</span><span class="p">(</span><span class="s">&quot;holiday&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">holiday</span><span class="o">$</span><span class="n">work_ratio</span> <span class="o">&lt;-</span> <span class="m">0.0</span>
+<span class="o">&gt;</span> <span class="n">holiday</span><span class="o">$</span><span class="n">play_ratio</span> <span class="o">&lt;-</span> <span class="m">0.0</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">VariableSet</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;scale_uv&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;dyn_dist_cutoff&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;bg_foi&quot;</span><span class="p">,</span> <span class="m">0.05</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">holiday</span><span class="o">$</span><span class="n">adjustment</span> <span class="o">&lt;-</span> <span class="n">adjustment</span>
+<span class="o">&gt;</span> <span class="n">demographics</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographics</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">holiday</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">to_json</span><span class="p">(</span><span class="s">&quot;demographics.json&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="n">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or copy this text to the file <code class="docutils literal notranslate"><span class="pre">demographics.json</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;demographics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;holiday&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;work_ratios&quot;</span><span class="p">:</span>  <span class="p">[</span>  <span class="mf">1.0</span><span class="p">,</span>     <span class="mf">0.0</span>   <span class="p">],</span>
+  <span class="s2">&quot;play_ratios&quot;</span><span class="p">:</span>  <span class="p">[</span>  <span class="mf">1.0</span><span class="p">,</span>     <span class="mf">0.0</span>   <span class="p">],</span>
+  <span class="s2">&quot;adjustments&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="n">null</span><span class="p">,</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;scale_uv&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;bg_foi&quot;</span><span class="p">:</span> <span class="mf">0.05</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This create <code class="docutils literal notranslate"><span class="pre">home</span></code>, which will start with all of the population
+of the network. <code class="docutils literal notranslate"><span class="pre">holiday</span></code> is created as an empty network.</p>
+<p><code class="docutils literal notranslate"><span class="pre">holiday</span></code> has its parameters adjusted according to;</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.scale_uv" title="metawards.Parameters.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span></code></a> is set to
+zero. This stops members of the <code class="docutils literal notranslate"><span class="pre">holiday</span></code> demographic from infecting
+each other. They will only experince the force of infection as set
+by the background FOI. This is realistic, as holidaymakers are unlikely
+to travel together in large groups, and so are unlikely to infect
+one another. This of course could be changed by setting scale_uv
+to a value above zero.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a> is
+also set to zero. This stops holidaymakers from travelling outside
+their ward. This is because this is because they are not really in
+their home ward - it is used just as a marker so we can remember which
+ward they came from so that they can return their at the end of their
+holiday.</p></li>
+<li><p><a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> is set to 0.05.
+This is a reasonable starting value for the FOI, which will drive
+a small outbreak infecting ~0.2% of susceptibles per day.</p></li>
+</ul>
+</section>
+<section id="go-holiday-and-go-home">
+<h2>go_holiday and go_home<a class="headerlink" href="#go-holiday-and-go-home" title="Permalink to this headline"></a></h2>
+<p>Next we will create <code class="docutils literal notranslate"><span class="pre">move_holiday</span></code>. Open a file called <code class="docutils literal notranslate"><span class="pre">move_holiday.py</span></code>
+and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span><span class="p">,</span> <span class="n">go_ward</span>
+
+
+<span class="k">def</span> <span class="nf">move_holiday</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">go_holiday</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">,</span>
+                            <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;holiday&quot;</span><span class="p">,</span>
+                            <span class="n">fraction</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">go_home</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;holiday&quot;</span><span class="p">,</span>
+                            <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">go_holiday</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="mi">14</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">go_home</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>This defines <code class="docutils literal notranslate"><span class="pre">move_holiday</span></code>. This move function returns <code class="docutils literal notranslate"><span class="pre">go_holiday</span></code>
+on day 1 of the model, which will send individuals on holiday. It then
+returns <code class="docutils literal notranslate"><span class="pre">go_home</span></code> on day 14 of the outbreak, which will bring
+the holidaymakers back home.</p>
+<p>Both <code class="docutils literal notranslate"><span class="pre">go_holiday</span></code> and <code class="docutils literal notranslate"><span class="pre">go_home</span></code> are simple go functions that
+move individuals between the <code class="docutils literal notranslate"><span class="pre">home</span></code> and <code class="docutils literal notranslate"><span class="pre">holiday</span></code> demographics.
+<code class="docutils literal notranslate"><span class="pre">go_holiday</span></code> moves 0.5% of the population to <code class="docutils literal notranslate"><span class="pre">holiday</span></code>, while
+<code class="docutils literal notranslate"><span class="pre">go_home</span></code> brings them all back home.</p>
+<p>We can run this model using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy5.json -D demographics.json -m 2011Data --mover move_holiday.py --nsteps <span class="m">28</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We are still using lurgy5.json from the last chapter, and the 2011 England
+and Wales model. We have set <code class="docutils literal notranslate"><span class="pre">nsteps</span></code> to 28 as we are only interested
+in how the epidemic spreads in the first two weeks after the
+holidaymakers return.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note also that we haven’t seeded the infection. Holidaymakers picked
+up the infection based only on the <code class="docutils literal notranslate"><span class="pre">bg_foi</span></code> of the holiday demographic.</p>
+</div>
+<p>You will see that the ~280k individuals went on holiday, with about
+800 per day becoming infected;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>─────────────────────────────────────────────── Day 0 ────────────────────────────────────────────────
+S: 56082077  E: 0  I: 0  V: 0  R: 0  IW: 0  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━┳━━━┳━━━┳━━━┳━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃ E ┃ I ┃ V ┃ R ┃ IW ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━╇━━━╇━━━╇━━━╇━━━━╇━━━━━━━━━━━━┩
+│  home   │ 56082077 │ 0 │ 0 │ 0 │ 0 │ 0  │  56082077  │
+│ holiday │    0     │ 0 │ 0 │ 0 │ 0 │ 0  │     0      │
+├─────────┼──────────┼───┼───┼───┼───┼────┼────────────┤
+│  total  │ 56082077 │ 0 │ 0 │ 0 │ 0 │ 0  │  56082077  │
+└─────────┴──────────┴───┴───┴───┴───┴────┴────────────┘
+
+
+─────────────────────────────────────────────── Day 1 ────────────────────────────────────────────────
+S: 56081266  E: 811  I: 0  V: 0  R: 0  IW: 742  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━┳━━━┳━━━┳━━━┳━━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃  E  ┃ I ┃ V ┃ R ┃ IW  ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━╇━━━╇━━━╇━━━╇━━━━━╇━━━━━━━━━━━━┩
+│  home   │ 55801092 │  0  │ 0 │ 0 │ 0 │  0  │  55801092  │
+│ holiday │  280174  │ 811 │ 0 │ 0 │ 0 │ 742 │   280985   │
+├─────────┼──────────┼─────┼───┼───┼───┼─────┼────────────┤
+│  total  │ 56081266 │ 811 │ 0 │ 0 │ 0 │ 742 │  56082077  │
+└─────────┴──────────┴─────┴───┴───┴───┴─────┴────────────┘
+
+Number of infections: 811
+
+─────────────────────────────────────────────── Day 2 ────────────────────────────────────────────────
+S: 56080493  E: 773  I: 811  V: 0  R: 0  IW: 721  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━┳━━━━━┳━━━┳━━━┳━━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃  E  ┃  I  ┃ V ┃ R ┃ IW  ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━╇━━━━━╇━━━╇━━━╇━━━━━╇━━━━━━━━━━━━┩
+│  home   │ 55801092 │  0  │  0  │ 0 │ 0 │  0  │  55801092  │
+│ holiday │  279401  │ 773 │ 811 │ 0 │ 0 │ 721 │   280985   │
+├─────────┼──────────┼─────┼─────┼───┼───┼─────┼────────────┤
+│  total  │ 56080493 │ 773 │ 811 │ 0 │ 0 │ 721 │  56082077  │
+└─────────┴──────────┴─────┴─────┴───┴───┴─────┴────────────┘
+
+Number of infections: 1584
+</pre></div>
+</div>
+<p>By the time they return, there are over 8000 infected holidaymakers,
+who spread the virus throughout the country. There is a rapid
+increase in the number of infected wards as the infected holidaymakers
+make their random (player) or fixed (worker) movements between wards;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>─────────────────────────────────────────────── Day 13 ───────────────────────────────────────────────
+S: 56072036  E: 718  I: 5657  V: 0  R: 3666  IW: 662  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━┳━━━━━━┳━━━┳━━━━━━┳━━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃  E  ┃  I   ┃ V ┃  R   ┃ IW  ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━╇━━━━━━╇━━━╇━━━━━━╇━━━━━╇━━━━━━━━━━━━┩
+│  home   │ 55801092 │  0  │  0   │ 0 │  0   │  0  │  55801092  │
+│ holiday │  270944  │ 718 │ 5657 │ 0 │ 3666 │ 662 │   280985   │
+├─────────┼──────────┼─────┼──────┼───┼──────┼─────┼────────────┤
+│  total  │ 56072036 │ 718 │ 5657 │ 0 │ 3666 │ 662 │  56082077  │
+└─────────┴──────────┴─────┴──────┴───┴──────┴─────┴────────────┘
+
+Number of infections: 6375
+
+─────────────────────────────────────────────── Day 14 ───────────────────────────────────────────────
+S: 56069022  E: 3014  I: 5727  V: 0  R: 4314  IW: 2396  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━┳━━━━━━┳━━━┳━━━━━━┳━━━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃  E   ┃  I   ┃ V ┃  R   ┃  IW  ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━╇━━━━━━╇━━━╇━━━━━━╇━━━━━━╇━━━━━━━━━━━━┩
+│  home   │ 56069022 │ 3014 │ 5727 │ 0 │ 4314 │ 2396 │  56082077  │
+│ holiday │    0     │  0   │  0   │ 0 │  0   │  0   │     0      │
+├─────────┼──────────┼──────┼──────┼───┼──────┼──────┼────────────┤
+│  total  │ 56069022 │ 3014 │ 5727 │ 0 │ 4314 │ 2396 │  56082077  │
+└─────────┴──────────┴──────┴──────┴───┴──────┴──────┴────────────┘
+
+Number of infections: 8741
+
+─────────────────────────────────────────────── Day 15 ───────────────────────────────────────────────
+S: 56065953  E: 3069  I: 8059  V: 0  R: 4996  IW: 2389  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━┳━━━━━━┳━━━┳━━━━━━┳━━━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃  E   ┃  I   ┃ V ┃  R   ┃  IW  ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━╇━━━━━━╇━━━╇━━━━━━╇━━━━━━╇━━━━━━━━━━━━┩
+│  home   │ 56065953 │ 3069 │ 8059 │ 0 │ 4996 │ 2389 │  56082077  │
+│ holiday │    0     │  0   │  0   │ 0 │  0   │  0   │     0      │
+├─────────┼──────────┼──────┼──────┼───┼──────┼──────┼────────────┤
+│  total  │ 56065953 │ 3069 │ 8059 │ 0 │ 4996 │ 2389 │  56082077  │
+└─────────┴──────────┴──────┴──────┴───┴──────┴──────┴────────────┘
+
+Number of infections: 11128
+</pre></div>
+</div>
+<p>The outbreak grows rapidly, until by day 28 there have been over 300k
+infections;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>─────────────────────────────────────────────── Day 28 ───────────────────────────────────────────────
+S: 55768352  E: 65734  I: 194526  V: 0  R: 53465  IW: 8454  POPULATION: 56082077
+┏━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━┳━━━━━━━━┳━━━┳━━━━━━━┳━━━━━━┳━━━━━━━━━━━━┓
+┃         ┃    S     ┃   E   ┃   I    ┃ V ┃   R   ┃  IW  ┃ POPULATION ┃
+┡━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━╇━━━━━━━━╇━━━╇━━━━━━━╇━━━━━━╇━━━━━━━━━━━━┩
+│  home   │ 55768352 │ 65734 │ 194526 │ 0 │ 53465 │ 8454 │  56082077  │
+│ holiday │    0     │   0   │   0    │ 0 │   0   │  0   │     0      │
+├─────────┼──────────┼───────┼────────┼───┼───────┼──────┼────────────┤
+│  total  │ 55768352 │ 65734 │ 194526 │ 0 │ 53465 │ 8454 │  56082077  │
+└─────────┴──────────┴───────┴────────┴───┴───────┴──────┴────────────┘
+
+Number of infections: 260260
+</pre></div>
+</div>
+</section>
+<section id="modelling-quarantine">
+<h2>Modelling quarantine<a class="headerlink" href="#modelling-quarantine" title="Permalink to this headline"></a></h2>
+<p>One method of preventing holidaymakers from spreading the infection when
+they return home is to require them all to enter quarantine. We can
+model this by creating a third, <code class="docutils literal notranslate"><span class="pre">quarantine</span></code> demographic. You can
+do this in python by typing;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">metawards</span> <span class="kn">import</span> <span class="n">Demographic</span><span class="p">,</span> <span class="n">VariableSet</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span> <span class="o">=</span> <span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">work_ratio</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">home</span><span class="o">.</span><span class="n">play_ratio</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span> <span class="o">=</span> <span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;holiday&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span><span class="o">.</span><span class="n">work_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span><span class="o">.</span><span class="n">play_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span> <span class="o">=</span> <span class="n">VariableSet</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;scale_uv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;bg_foi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">holiday</span><span class="o">.</span><span class="n">adjustment</span> <span class="o">=</span> <span class="n">adjustment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quarantine</span> <span class="o">=</span> <span class="n">Demographic</span><span class="p">(</span><span class="s2">&quot;quarantine&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quarantine</span><span class="o">.</span><span class="n">work_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quarantine</span><span class="o">.</span><span class="n">play_ratio</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span> <span class="o">=</span> <span class="n">VariableSet</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;scale_uv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">adjustment</span><span class="p">[</span><span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quarantine</span><span class="o">.</span><span class="n">adjustment</span> <span class="o">=</span> <span class="n">adjustment</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span> <span class="o">=</span> <span class="n">home</span> <span class="o">+</span> <span class="n">holiday</span> <span class="o">+</span> <span class="n">quarantine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">demographics</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;demographics.json&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or in R;</p>
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="n">metawards</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">home</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographic</span><span class="p">(</span><span class="s">&quot;home&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="n">work_ratio</span> <span class="o">&lt;-</span> <span class="m">1.0</span>
+<span class="o">&gt;</span> <span class="n">home</span><span class="o">$</span><span class="n">play_ratio</span> <span class="o">&lt;-</span> <span class="m">1.0</span>
+<span class="o">&gt;</span> <span class="n">holiday</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographic</span><span class="p">(</span><span class="s">&quot;holiday&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">holiday</span><span class="o">$</span><span class="n">work_ratio</span> <span class="o">&lt;-</span> <span class="m">0.0</span>
+<span class="o">&gt;</span> <span class="n">holiday</span><span class="o">$</span><span class="n">play_ratio</span> <span class="o">&lt;-</span> <span class="m">0.0</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">VariableSet</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;scale_uv&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;dyn_dist_cutoff&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;bg_foi&quot;</span><span class="p">,</span> <span class="m">0.05</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">holiday</span><span class="o">$</span><span class="n">adjustment</span> <span class="o">&lt;-</span> <span class="n">adjustment</span>
+<span class="o">&gt;</span> <span class="n">quarantine</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographic</span><span class="p">(</span><span class="s">&quot;quarantine&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">quarantine</span><span class="o">$</span><span class="n">work_ratio</span> <span class="o">&lt;-</span> <span class="m">0.0</span>
+<span class="o">&gt;</span> <span class="n">quarantine</span><span class="o">$</span><span class="n">play_ratio</span> <span class="o">&lt;-</span> <span class="m">0.0</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">VariableSet</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;scale_uv&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">adjustment</span><span class="o">$</span><span class="nf">set_value</span><span class="p">(</span><span class="s">&quot;dyn_dist_cutoff&quot;</span><span class="p">,</span> <span class="m">0.0</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">quarantine</span><span class="o">$</span><span class="n">adjustment</span> <span class="o">&lt;-</span> <span class="n">adjustment</span>
+<span class="o">&gt;</span> <span class="n">demographics</span> <span class="o">&lt;-</span> <span class="n">metawards</span><span class="o">$</span><span class="nf">Demographics</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">home</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">holiday</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">add</span><span class="p">(</span><span class="n">quarantine</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">demographics</span><span class="o">$</span><span class="nf">to_json</span><span class="p">(</span><span class="s">&quot;demographics.json&quot;</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="o">=</span><span class="n">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or copy this text to the file <code class="docutils literal notranslate"><span class="pre">demographics.json</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;demographics&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;home&quot;</span><span class="p">,</span> <span class="s2">&quot;holiday&quot;</span><span class="p">,</span> <span class="s2">&quot;quarantine&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;work_ratios&quot;</span><span class="p">:</span> <span class="p">[</span>  <span class="mf">1.0</span><span class="p">,</span>     <span class="mf">0.0</span><span class="p">,</span>      <span class="mf">0.0</span> <span class="p">],</span>
+  <span class="s2">&quot;play_ratios&quot;</span><span class="p">:</span> <span class="p">[</span>  <span class="mf">1.0</span><span class="p">,</span>     <span class="mf">0.0</span><span class="p">,</span>      <span class="mf">0.0</span> <span class="p">],</span>
+  <span class="s2">&quot;adjustments&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="n">null</span><span class="p">,</span>
+      <span class="p">{</span>
+      <span class="s2">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;scale_uv&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;bg_foi&quot;</span><span class="p">:</span> <span class="mf">0.05</span>
+          <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+      <span class="s2">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;scale_uv&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s2">&quot;dyn_dist_cutoff&quot;</span><span class="p">:</span> <span class="mi">0</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">qurantine</span></code> demographic has both
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.scale_uv" title="metawards.Parameters.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.scale_uv</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>
+as zero, just like the holiday demographic, because holidaymakers
+should be self-isolating and thus not infecting one another. The
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.bg_foi" title="metawards.Parameters.bg_foi"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.bg_foi</span></code></a> parameter is
+not set, meaning that it keeps its default value of zero, meaning that
+there is no background driver for more infections.</p>
+</section>
+<section id="go-quarantine">
+<h2>go_quarantine<a class="headerlink" href="#go-quarantine" title="Permalink to this headline"></a></h2>
+<p>We now need to write a <code class="docutils literal notranslate"><span class="pre">go_quarantine</span></code> function and add it to
+<code class="docutils literal notranslate"><span class="pre">move_holiday</span></code>. Edit <code class="docutils literal notranslate"><span class="pre">move_holiday.py</span></code> and copy in the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.movers</span> <span class="kn">import</span> <span class="n">MoveGenerator</span><span class="p">,</span> <span class="n">go_ward</span>
+
+
+<span class="k">def</span> <span class="nf">move_holiday</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">go_holiday</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">,</span>
+                            <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;holiday&quot;</span><span class="p">,</span>
+                            <span class="n">fraction</span><span class="o">=</span><span class="mf">0.005</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">go_quarantine</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;holiday&quot;</span><span class="p">,</span>
+                            <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;quarantine&quot;</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">go_home</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">gen</span> <span class="o">=</span> <span class="n">MoveGenerator</span><span class="p">(</span><span class="n">from_demographic</span><span class="o">=</span><span class="s2">&quot;quarantine&quot;</span><span class="p">,</span>
+                            <span class="n">to_demographic</span><span class="o">=</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+        <span class="n">go_ward</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">gen</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">holiday_length</span> <span class="o">=</span> <span class="mi">14</span>
+    <span class="n">quarantine_length</span> <span class="o">=</span> <span class="mi">14</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">go_holiday</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="n">holiday_length</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">go_quarantine</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">==</span> <span class="n">holiday_length</span><span class="o">+</span><span class="n">quarantine_length</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">go_home</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Here we have changed <code class="docutils literal notranslate"><span class="pre">go_holiday</span></code> so that individuals go to
+<code class="docutils literal notranslate"><span class="pre">quarantine</span></code> instead of <code class="docutils literal notranslate"><span class="pre">home</span></code>. We have then added <code class="docutils literal notranslate"><span class="pre">go_quarantine</span></code>
+that moves all individuals from <code class="docutils literal notranslate"><span class="pre">quarantine</span></code> to <code class="docutils literal notranslate"><span class="pre">home</span></code>.
+We’ve then set <code class="docutils literal notranslate"><span class="pre">move_holiday</span></code> to return <code class="docutils literal notranslate"><span class="pre">go_quarantine</span></code> at the
+end of their 14-day holiday, and then return <code class="docutils literal notranslate"><span class="pre">go_home</span></code> at the end
+of the 14-day quarantine.</p>
+<p>We can run this using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy5.json -D demographics.json -m 2011Data --mover move_holiday.py --nsteps <span class="m">48</span>
+</pre></div>
+</div>
+<p>and then plot using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/results.csv.bz2
+</pre></div>
+</div>
+<p>What I see is that the 14 days of quarantine is not quite long enough for the
+lurgy. There are still ~400 infections, which drive a further 300 infections
+when the holidaymakers leave quarantine. This can be see in the infection
+graphs, e.g.</p>
+<img alt="Outbreak amongst holidaymakers, spreading after quarantine" src="../../_images/tutorial_9_5.jpg" />
+</section>
+<section id="what-next">
+<h2>What next?<a class="headerlink" href="#what-next" title="Permalink to this headline"></a></h2>
+<p>You could extend the above model in many ways;</p>
+<ul class="simple">
+<li><p>You could model different lengths of quarantine by setting quarantine_length
+via a custom user parameter, and then scanning it to see the impact
+on the outbreak.</p></li>
+<li><p>You could model different holiday destinations with different background
+FOIs, to see how you could classify destinations according to the risk
+they pose to home.</p></li>
+<li><p>You could model different levels of compliance with quarantine by having
+a fraction of holidaymakers go straight home (set <code class="docutils literal notranslate"><span class="pre">fraction</span></code> to a value
+less than one in <code class="docutils literal notranslate"><span class="pre">go_quarantine</span></code> and have the remainder <code class="docutils literal notranslate"><span class="pre">go_home</span></code>).</p></li>
+<li><p>You could model quarantine fatigue, similarly to how you modelled
+self-isolation fatigue in <a class="reference internal" href="../part06/04_compliance.html"><span class="doc">part 6</span></a>.</p></li>
+<li><p>You could model the impact of holidaymakers during different stages
+in an outbreak at home, by seeding the outbreak at home, and then
+having the holiday start later in the year.</p></li>
+<li><p>You could model the impact of different lockdown measures at home,
+and see how they are disrupted by holidaymakers returning from holiday.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Congratulations on reaching the end of the tutorial. Hopefully this
+has given you a good insight into what you could do with <code class="docutils literal notranslate"><span class="pre">metawards</span></code>.
+If you have any questions then please
+<a class="reference external" href="https://github.com/metawards/MetaWards/issues">post an issue to our GitHub repository</a>.
+Please feel free to post issues to request more tutorials, or to
+ask for more documentation.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are moving on to developing <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, or writing more
+complex code on top of <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, then you should read the
+developer documentation for the <a class="reference internal" href="../../api/index_api_MetaWards.html#module-metawards" title="metawards"><code class="xref py py-mod docutils literal notranslate"><span class="pre">metawards</span></code></a> module, which can be
+<a class="reference internal" href="../../api/index.html"><span class="doc">found here</span></a>.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="04_university.html" class="btn btn-neutral float-left" title="Modelling population movements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../fileformats/index.html" class="btn btn-neutral float-right" title="Input files and formats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

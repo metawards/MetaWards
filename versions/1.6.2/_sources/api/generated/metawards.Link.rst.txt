@@ -1,0 +1,59 @@
+﻿metawards.Link
+==============
+
+.. currentmodule:: metawards
+
+.. autoclass:: Link
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Link.__delattr__
+      ~Link.__dir__
+      ~Link.__eq__
+      ~Link.__format__
+      ~Link.__ge__
+      ~Link.__getattribute__
+      ~Link.__gt__
+      ~Link.__init__
+      ~Link.__init_subclass__
+      ~Link.__le__
+      ~Link.__lt__
+      ~Link.__ne__
+      ~Link.__new__
+      ~Link.__reduce__
+      ~Link.__reduce_ex__
+      ~Link.__repr__
+      ~Link.__setattr__
+      ~Link.__sizeof__
+      ~Link.__str__
+      ~Link.__subclasshook__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Link.__annotations__
+      ~Link.__dataclass_fields__
+      ~Link.__dataclass_params__
+      ~Link.__dict__
+      ~Link.__doc__
+      ~Link.__hash__
+      ~Link.__module__
+      ~Link.__weakref__
+      ~Link.distance
+      ~Link.ifrom
+      ~Link.ito
+      ~Link.suscept
+      ~Link.weight
+   
+   

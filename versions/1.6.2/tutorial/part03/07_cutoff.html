@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alternative lockdowns &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Local lockdowns" href="08_local_lockdown.html" />
+    <link rel="prev" title="Scanning lockdown" href="06_scan_lockdown.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_iterators.html">How a day is modelled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_weekend.html">Where is the weekend?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_lockdown.html">Custom advance functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_dynamic.html">Responding to changing conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_scanning.html">Custom variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_scan_lockdown.html">Scanning lockdown</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Alternative lockdowns</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#force-of-infection">Force of infection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metapopulation-movements">Metapopulation movements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rates-of-infection">Rates of infection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enacting-lockdown">Enacting lockdown</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="08_local_lockdown.html">Local lockdowns</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part03.html">Part 3 - Customising the outbreak</a> &raquo;</li>
+      <li>Alternative lockdowns</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="06_scan_lockdown.html" class="btn btn-neutral float-left" title="Scanning lockdown" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="08_local_lockdown.html" class="btn btn-neutral float-right" title="Local lockdowns" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="alternative-lockdowns">
+<h1>Alternative lockdowns<a class="headerlink" href="#alternative-lockdowns" title="Permalink to this headline"></a></h1>
+<p>The flexibility of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> means that there are multiple different
+ways you could choose to model a lockdown.</p>
+<p>To understand how, we must look at how <code class="docutils literal notranslate"><span class="pre">metawards</span></code> calculates the
+<em>force of infection</em> (FOI) of each ward. The FOI of a ward is used
+to calculate the infection rate, which determines the rate by which
+individuals in a ward become infected.</p>
+<section id="force-of-infection">
+<h2>Force of infection<a class="headerlink" href="#force-of-infection" title="Permalink to this headline"></a></h2>
+<p>The <em>force of infection</em> (FOI) is calculated for each ward individually,
+using the equation;</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(F(w) = S \times U(t) \times \sum_s [ C_s \beta_s N_s(w) ]\)</span></p></li>
+</ol>
+<p>where;</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F(w)\)</span> is the <em>force of infection</em>, <span class="math notranslate nohighlight">\(F\)</span>, calculated for a specific ward, <span class="math notranslate nohighlight">\(w\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> is a constant scaling parameter, set via <a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.scale_uv</span></code></a>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(U(t)\)</span> is a seasonal scaling function (UV) calculated for the specified day <span class="math notranslate nohighlight">\(t\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_s\)</span> is the sum over all disease stages, <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(C_s\)</span> is the <code class="docutils literal notranslate"><span class="pre">contrib_foi</span></code> disease parameter for stage <span class="math notranslate nohighlight">\(s\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_s\)</span> is the <code class="docutils literal notranslate"><span class="pre">beta</span></code> disease parameter for stage <span class="math notranslate nohighlight">\(s\)</span>, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_s(w)\)</span> is the number of infected individuals in ward <span class="math notranslate nohighlight">\(w\)</span> in disease stage <span class="math notranslate nohighlight">\(s\)</span>.</p></li>
+</ul>
+<p>The seasonal scaling function, <span class="math notranslate nohighlight">\(U(t)\)</span> is calculated via;</p>
+<ol class="arabic simple" start="2">
+<li><p><span class="math notranslate nohighlight">\(U(t) = 1.0 - \frac{U_v}{2.0} + U_v \frac{\text{cos}(2 \pi t / 365)}{2.0}\)</span></p></li>
+</ol>
+<p>where;</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U_v\)</span> is the <code class="docutils literal notranslate"><span class="pre">UV</span></code> parameter supplied by the user <code class="docutils literal notranslate"><span class="pre">--UV</span></code> command line argument, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\)</span> is the number of days between the current date of the model run and the
+date at which seasonal spread is at a maximum, <code class="docutils literal notranslate"><span class="pre">UV_max</span></code>, set via the user
+<code class="docutils literal notranslate"><span class="pre">--UV-max</span></code> command line argument.</p></li>
+</ul>
+<p>The seasonal scaling function acts to scale down the force of infection
+from a seasonal maximum (typically 1st January to model winter diseases in
+the northern hemisphere) to a seasonal minimum 6 months later. <span class="math notranslate nohighlight">\(U_v\)</span>
+should be set to between 0 and 1, and is the scaling factor at the
+six month minimum. The <span class="math notranslate nohighlight">\(U(t)\)</span> functions for different values of
+<span class="math notranslate nohighlight">\(U_v\)</span> are shown below;</p>
+<img alt="Plots of U(t) for different values of U_v" src="../../_images/uv.jpg" />
+</section>
+<section id="metapopulation-movements">
+<h2>Metapopulation movements<a class="headerlink" href="#metapopulation-movements" title="Permalink to this headline"></a></h2>
+<p>The force of infection calculation is based on the number of infected individuals
+at each disease stage in each ward, <span class="math notranslate nohighlight">\(N_s(w)\)</span>. The metapopulation
+part of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is because individuals move between wards, and thus
+will contribute to <span class="math notranslate nohighlight">\(N_s(w)\)</span> differently depending on when and where
+they are.</p>
+<p>The force of infection is calculated both for <em>daytime</em> and <em>nighttime</em>.
+Individuals contribute to the force of infection calculation for wards
+they visit during the <em>daytime</em>, and to their home ward at <em>nighttime</em>.</p>
+<p>Workers visit their fixed work ward during the <em>daytime</em>, as long as they
+are not too sick to go to work (controlled by <code class="docutils literal notranslate"><span class="pre">too_sick_to_move</span></code>, and
+in which case they stay at home). Players
+will visit a randomly chosen play ward during the <em>daytime</em>.</p>
+<p>However, these movements are controlled by a cutoff parameter,
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>.
+If the distance between the home and work ward, or home and play ward, is
+greater than the cutoff (measured in kilometers), then the worker or player
+will stay at home, and contribute to the force of infection of their home
+ward.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is all calculated in the <a class="reference internal" href="../../api/generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_foi()</span></code></a>
+advance function. If you want to change this, you can write your
+own version of <a class="reference internal" href="../../api/generated/metawards.iterators.advance_foi.html#metawards.iterators.advance_foi" title="metawards.iterators.advance_foi"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_foi()</span></code></a> and set that
+to be used instead via a custom iterator.</p>
+</div>
+</section>
+<section id="rates-of-infection">
+<h2>Rates of infection<a class="headerlink" href="#rates-of-infection" title="Permalink to this headline"></a></h2>
+<p>The daytime and nighttime forces of infection for each ward are converted
+into daytime and nighttime infection probabilities by the
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_infprob.html#metawards.iterators.advance_infprob" title="metawards.iterators.advance_infprob"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_infprob()</span></code></a> advance function. These give
+the probability that an individual staying in the ward that day or night
+would be infected. These probablities are used by the
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_fixed.html#metawards.iterators.advance_fixed" title="metawards.iterators.advance_fixed"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_fixed()</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.iterators.advance_play.html#metawards.iterators.advance_play" title="metawards.iterators.advance_play"><code class="xref py py-func docutils literal notranslate"><span class="pre">advance_play()</span></code></a> advance functions to determine
+whether workers or players, as they move between wards each day, would
+be infected.</p>
+</section>
+<section id="enacting-lockdown">
+<h2>Enacting lockdown<a class="headerlink" href="#enacting-lockdown" title="Permalink to this headline"></a></h2>
+<p>Based on this knowledge, we could enact a lockdown by adjusting the
+parameters used to calculate the force of infection, and the parameters
+used to control movement of individuals between wards. For example,
+we could reduce <a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population.scale_uv" title="metawards.Population.scale_uv"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Population.scale_uv</span></code></a>,
+thereby reducing <span class="math notranslate nohighlight">\(S\)</span> in equation 1. This would have the same effect
+on scaling down the FOI as scaling down <span class="math notranslate nohighlight">\(\beta\)</span>. This would mean that
+you could relate different values of <span class="math notranslate nohighlight">\(S\)</span> to different lockdown
+control measures, e.g. closing schools, wearing masks, limiting number
+of contacts etc.</p>
+<p>We could also reduce
+<a class="reference internal" href="../../api/generated/metawards.Parameters.html#metawards.Parameters.dyn_dist_cutoff" title="metawards.Parameters.dyn_dist_cutoff"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Parameters.dyn_dist_cutoff</span></code></a>
+to, e.g. 5 km, to prevent most work and play movements. Indeed, we could
+even reduce this to 0 km to stop all movement between wards.</p>
+<p>A good example of an
+<a class="reference external" href="https://github.com/metawards/MetaWards/tree/devel/examples/lockdown">alternative lockdown model is here</a>.
+This is provided as an example in the MetaWards GitHub repository, and
+enacts lockdown by directly changing these two parameters.
+This has the effect of reducing the contribution from each infected
+individual to the overall <em>force of infection</em> of each ward, and reducing
+the movement of individuals between wards.</p>
+<p>There are many parameters to adjust. You can also add these
+to your scan to investigate their impact.
+The full list of built-in adjustable parameters is below;</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>UV:
+  Adjust the Parameters.UV parameter
+
+UV_max:
+  Adjust the Parameters.UV parameter
+
+beta:
+  Adjust the Disease.beta parameter
+
+bg_foi:
+  Adjust the Parameters.bg_foi parameter
+
+contrib_foi:
+  Adjust the Disease.contrib_foi parameter
+
+daily_imports:
+  Adjust the Parameters.daily_imports parameter
+
+dyn_dist_cutoff:
+  Adjust the Parameters.dyn_dist_cutoff parameter
+
+dyn_play_at_home:
+  Adjust the Parameters.dyn_play_at_home parameter
+
+initial_inf:
+  Adjust the Parameters.initial_inf parameter
+
+length_day:
+  Adjust the Parameters.length_day parameter
+
+play_to_work:
+  Adjust the Parameters.play_to_work parameter
+
+progress:
+  Adjust the Disease.progress parameter
+
+scale_uv:
+  Adjust the Parameters.scale_uv parameter
+
+static_play_at_home:
+  Adjust the Parameters.static_play_at_home parameter
+
+too_ill_to_move:
+  Adjust the Disease.too_ill_to_move parameter
+
+user:
+  Adjust a custom user-supplied parameter, held in
+  Parameters.user_params[name]. Set a user parameter
+  called &#39;name&#39; via &#39;user.name&#39; or &#39;.name&#39;.
+
+work_to_play:
+  Adjust the Parameters.work_to_play parameter
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="06_scan_lockdown.html" class="btn btn-neutral float-left" title="Scanning lockdown" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="08_local_lockdown.html" class="btn btn-neutral float-right" title="Local lockdowns" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿metawards.utils.is\_openmp\_supported
+=====================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: is_openmp_supported

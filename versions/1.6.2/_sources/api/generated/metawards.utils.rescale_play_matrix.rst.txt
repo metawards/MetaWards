@@ -1,0 +1,6 @@
+﻿metawards.utils.rescale\_play\_matrix
+=====================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: rescale_play_matrix

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metawards.Wards &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="metawards.Workspace" href="metawards.Workspace.html" />
+    <link rel="prev" title="metawards.WardInfos" href="metawards.WardInfos.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_MetaWards.html">MetaWards</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index_api_MetaWards.html">MetaWards API Detail</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index_api_MetaWards.html#classes">Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index_api_MetaWards.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_iterators.html">MetaWards.iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_utils.html">MetaWards.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Documentation</a> &raquo;</li>
+          <li><a href="../index_MetaWards.html">MetaWards</a> &raquo;</li>
+          <li><a href="../index_api_MetaWards.html">MetaWards API Detail</a> &raquo;</li>
+      <li>metawards.Wards</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="metawards.WardInfos.html" class="btn btn-neutral float-left" title="metawards.WardInfos" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metawards.Workspace.html" class="btn btn-neutral float-right" title="metawards.Workspace" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="metawards-wards">
+<h1>metawards.Wards<a class="headerlink" href="#metawards-wards" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="metawards.Wards">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">metawards.</span></span><span class="sig-name descname"><span class="pre">Wards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards" title="Permalink to this definition"></a></dt>
+<dd><p>This class holds an entire network of Ward objects</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Construct, optionally from a list of Ward objects</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__add__</span></code>(other)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__contains__" title="metawards.Wards.__contains__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__contains__</span></code></a>(id)</p></td>
+<td><p>Return whether or not the passed id - which can be an integer ID or WardInfo - is in this Wards object</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__delattr__</span></code>(name, /)</p></td>
+<td><p>Implement delattr(self, name).</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dir__</span></code>()</p></td>
+<td><p>Default dir() implementation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__eq__" title="metawards.Wards.__eq__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__eq__</span></code></a>(other)</p></td>
+<td><p>Return self==value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__format__</span></code>(format_spec, /)</p></td>
+<td><p>Default object formatter.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ge__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getattribute__</span></code>(name, /)</p></td>
+<td><p>Return getattr(self, name).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__getitem__" title="metawards.Wards.__getitem__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__getitem__</span></code></a>(id)</p></td>
+<td><p>Return the ward with specified id - this can be the integer ID of the ward, or the WardInfo of the ward.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__gt__</span></code>(value, /)</p></td>
+<td><p>Return self&gt;value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__iadd__</span></code>(other)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__imul__" title="metawards.Wards.__imul__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__imul__</span></code></a>(scale)</p></td>
+<td><p>In-place multiply the number of workers and players by 'scale'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__init__" title="metawards.Wards.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>([wards])</p></td>
+<td><p>Construct, optionally from a list of Ward objects</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init_subclass__</span></code></p></td>
+<td><p>This method is called when a class is subclassed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__le__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__len__</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__lt__</span></code>(value, /)</p></td>
+<td><p>Return self&lt;value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__mul__" title="metawards.Wards.__mul__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__mul__</span></code></a>(scale)</p></td>
+<td><p>Scale the number of workers and players by 'scale'</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__ne__</span></code>(value, /)</p></td>
+<td><p>Return self!=value.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__new__</span></code>(**kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__radd__</span></code>(other)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce__</span></code>()</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__reduce_ex__</span></code>(protocol, /)</p></td>
+<td><p>Helper for pickle.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__repr__" title="metawards.Wards.__repr__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__repr__</span></code></a>()</p></td>
+<td><p>Return repr(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__rmul__" title="metawards.Wards.__rmul__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__rmul__</span></code></a>(scale)</p></td>
+<td><p>Scale the number of workers and players by 'scale'</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__setattr__</span></code>(name, value, /)</p></td>
+<td><p>Implement setattr(self, name, value).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__sizeof__</span></code>()</p></td>
+<td><p>Size of object in memory, in bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__str__" title="metawards.Wards.__str__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__str__</span></code></a>()</p></td>
+<td><p>Return str(self).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__subclasshook__</span></code></p></td>
+<td><p>Abstract classes can override this to customize issubclass().</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_harmonise_links</span></code>(other)</p></td>
+<td><p>Make sure that the wards in this object  has exactly the same links as the wards in 'other'.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_harmonise_nodes</span></code>(other)</p></td>
+<td><p>Make sure that this set of Wards contains all of the wards in 'other', and that all have the same ID and info.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">_resolve</span></code>()</p></td>
+<td><p>Try to resolve all of the links.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.add" title="metawards.Wards.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a>(ward)</p></td>
+<td><p>Synonym for insert</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.assert_sane" title="metawards.Wards.assert_sane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_sane</span></code></a>()</p></td>
+<td><p>Make sure that we don't refer to any non-existent wards</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.contains" title="metawards.Wards.contains"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contains</span></code></a>(id)</p></td>
+<td><p>Return whether or not the passed id - which can be an integer ID or WardInfo - is in this Wards object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.from_data" title="metawards.Wards.from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_data</span></code></a>(data[, profiler])</p></td>
+<td><p>Return the Wards constructed from a data represnetation, which may have come from deserialised JSON</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.from_json" title="metawards.Wards.from_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_json</span></code></a>(s)</p></td>
+<td><p>Return the Wards constructed from the passed json.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.get" title="metawards.Wards.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a>(id[, dereference])</p></td>
+<td><p>Return the ward with the specified id - this can eb the integer ID of the ward or the WardInfo of the ward.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.getinfo" title="metawards.Wards.getinfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getinfo</span></code></a>(id)</p></td>
+<td><p>Return the WardInfo matching the ward with the passed ID</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.harmonise" title="metawards.Wards.harmonise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">harmonise</span></code></a>(wardss)</p></td>
+<td><p>Harmonise the passed list of wards, returning a tuple that contains the overall sum of all of these wards, plus a new list where all Wards use IDs that are correct and valid across the entire group</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.index" title="metawards.Wards.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a>(id)</p></td>
+<td><p>Return the index of the ward that matches the passed id - which can be the integer ID or WardInfo - in this Wards object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.insert" title="metawards.Wards.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>(wards[, overwrite, _need_deep_copy])</p></td>
+<td><p>Insert the passed wards onto this list.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.is_resolved" title="metawards.Wards.is_resolved"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_resolved</span></code></a>()</p></td>
+<td><p>Return whether or not this is a fully resolved set of Wards (i.e.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.num_play_links" title="metawards.Wards.num_play_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_play_links</span></code></a>()</p></td>
+<td><p>Return the total number of play links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.num_players" title="metawards.Wards.num_players"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_players</span></code></a>()</p></td>
+<td><p>Return the total number of players in this network</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.num_work_links" title="metawards.Wards.num_work_links"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_work_links</span></code></a>()</p></td>
+<td><p>Return the total number of work links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.num_workers" title="metawards.Wards.num_workers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_workers</span></code></a>()</p></td>
+<td><p>Return the total number of workers in this network</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.population" title="metawards.Wards.population"><code class="xref py py-obj docutils literal notranslate"><span class="pre">population</span></code></a>()</p></td>
+<td><p>Return the total population in this network</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.scale" title="metawards.Wards.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a>([work_ratio, play_ratio, _inplace])</p></td>
+<td><p>Return a copy of these wards where the number of workers and players have been scaled by 'work_ratios' and 'play_ratios' respectively.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.to_data" title="metawards.Wards.to_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_data</span></code></a>([profiler])</p></td>
+<td><p>Return a data representation of these wards that can be serialised to JSON</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.to_json" title="metawards.Wards.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a>([filename, indent, auto_bzip])</p></td>
+<td><p>Serialise the wards to JSON.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.unresolved_wards" title="metawards.Wards.unresolved_wards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unresolved_wards</span></code></a>()</p></td>
+<td><p>Return the list of IDs of unresolved wards</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__dict__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__doc__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards.__hash__" title="metawards.Wards.__hash__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__hash__</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__module__</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__weakref__</span></code></p></td>
+<td><p>list of weak references to the object (if defined)</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__contains__">
+<span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__contains__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__contains__" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether or not the passed id - which can be an integer
+ID or WardInfo - is in this Wards object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__eq__" title="Permalink to this definition"></a></dt>
+<dd><p>Return self==value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__getitem__" title="Permalink to this definition"></a></dt>
+<dd><p>Return the ward with specified id - this can be the integer
+ID of the ward, or the WardInfo of the ward. Note that
+this returns a copy of the Ward</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="metawards.Wards.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#metawards.Wards.__hash__" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__imul__">
+<span class="sig-name descname"><span class="pre">__imul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards._wards.Wards"><span class="pre">metawards._wards.Wards</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__imul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__imul__" title="Permalink to this definition"></a></dt>
+<dd><p>In-place multiply the number of workers and players by ‘scale’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Construct, optionally from a list of Ward objects</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards._wards.Wards"><span class="pre">metawards._wards.Wards</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__mul__" title="Permalink to this definition"></a></dt>
+<dd><p>Scale the number of workers and players by ‘scale’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__repr__" title="Permalink to this definition"></a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__rmul__">
+<span class="sig-name descname"><span class="pre">__rmul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards._wards.Wards"><span class="pre">metawards._wards.Wards</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__rmul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__rmul__" title="Permalink to this definition"></a></dt>
+<dd><p>Scale the number of workers and players by ‘scale’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.__str__" title="Permalink to this definition"></a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ward</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.add" title="Permalink to this definition"></a></dt>
+<dd><p>Synonym for insert</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.assert_sane">
+<span class="sig-name descname"><span class="pre">assert_sane</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.assert_sane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.assert_sane" title="Permalink to this definition"></a></dt>
+<dd><p>Make sure that we don’t refer to any non-existent wards</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.contains"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.contains" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether or not the passed id - which can be an integer
+ID or WardInfo - is in this Wards object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.from_data">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profiler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils._profiler.Profiler"><span class="pre">metawards.utils._profiler.Profiler</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.from_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.from_data" title="Permalink to this definition"></a></dt>
+<dd><p>Return the Wards constructed from a data represnetation,
+which may have come from deserialised JSON</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.from_json">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.from_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.from_json" title="Permalink to this definition"></a></dt>
+<dd><p>Return the Wards constructed from the passed json. This will
+either load from a passed json string, or from json loaded
+from the passed file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dereference</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.get" title="Permalink to this definition"></a></dt>
+<dd><p>Return the ward with the specified id - this can eb the integer
+ID of the ward or the WardInfo of the ward. If ‘dereference’
+is True then this will dereference all of the IDs into
+WardInfo objects. This is useful if you want to use the
+resulting Ward with other Wards collections</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.getinfo">
+<span class="sig-name descname"><span class="pre">getinfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.getinfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.getinfo" title="Permalink to this definition"></a></dt>
+<dd><p>Return the WardInfo matching the ward with the passed ID</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.harmonise">
+<em class="property"><span class="pre">static</span> </em><span class="sig-name descname"><span class="pre">harmonise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wardss</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><span class="pre">Wards</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><span class="pre">Wards</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><span class="pre">Wards</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.harmonise"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.harmonise" title="Permalink to this definition"></a></dt>
+<dd><p>Harmonise the passed list of wards, returning a tuple that
+contains the overall sum of all of these wards, plus a new list
+where all Wards use IDs that are correct and valid
+across the entire group</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.WardInfo" title="metawards._wardinfo.WardInfo"><span class="pre">metawards._wardinfo.WardInfo</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.index" title="Permalink to this definition"></a></dt>
+<dd><p>Return the index of the ward that matches the passed
+id - which can be the integer ID or WardInfo - in this
+Wards object. This raises a ValueError if the
+ward doens’t exist</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wards</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../index_api_MetaWards.html#metawards.Ward" title="metawards._ward.Ward"><span class="pre">metawards._ward.Ward</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_need_deep_copy</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.insert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.insert" title="Permalink to this definition"></a></dt>
+<dd><p>Insert the passed wards onto this list. This will overwrite
+the existing ward if ‘overwrite’ is true, otherwise it will
+add the ward’s data to the existing ward</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.is_resolved">
+<span class="sig-name descname"><span class="pre">is_resolved</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.is_resolved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.is_resolved" title="Permalink to this definition"></a></dt>
+<dd><p>Return whether or not this is a fully resolved set of Wards
+(i.e. each ward only links to other wards in this set)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.num_play_links">
+<span class="sig-name descname"><span class="pre">num_play_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.num_play_links"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.num_play_links" title="Permalink to this definition"></a></dt>
+<dd><p>Return the total number of play links</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.num_players">
+<span class="sig-name descname"><span class="pre">num_players</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.num_players"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.num_players" title="Permalink to this definition"></a></dt>
+<dd><p>Return the total number of players in this network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.num_work_links">
+<span class="sig-name descname"><span class="pre">num_work_links</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.num_work_links"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.num_work_links" title="Permalink to this definition"></a></dt>
+<dd><p>Return the total number of work links</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.num_workers">
+<span class="sig-name descname"><span class="pre">num_workers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.num_workers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.num_workers" title="Permalink to this definition"></a></dt>
+<dd><p>Return the total number of workers in this network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.population">
+<span class="sig-name descname"><span class="pre">population</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.population"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.population" title="Permalink to this definition"></a></dt>
+<dd><p>Return the total population in this network</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">work_ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">play_ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_inplace</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../index_api_MetaWards.html#metawards.Wards" title="metawards._wards.Wards"><span class="pre">metawards._wards.Wards</span></a></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.scale" title="Permalink to this definition"></a></dt>
+<dd><p>Return a copy of these wards where the number of workers
+and players have been scaled by ‘work_ratios’ and ‘play_ratios’
+respectively. These can be greater than 1.0, e.g. if you want
+to scale up the number of workers and players</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>work_ratio</strong> (<em>float</em>) – The scaling ratio for workers</p></li>
+<li><p><strong>play_ratio</strong> (<em>float</em>) – The scaling ratio for players</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Wards</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>A copy of this Wards scaled by the requested amount</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.to_data">
+<span class="sig-name descname"><span class="pre">to_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">profiler</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils._profiler.Profiler"><span class="pre">metawards.utils._profiler.Profiler</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.to_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.to_data" title="Permalink to this definition"></a></dt>
+<dd><p>Return a data representation of these wards that can
+be serialised to JSON</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bzip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.to_json" title="Permalink to this definition"></a></dt>
+<dd><p>Serialise the wards to JSON. This will write to a file
+if filename is set, otherwise it will return a JSON string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – The name of the file to write the JSON to. The absolute
+path to the written file will be returned. If filename is None
+then this will serialise to a JSON string which will be
+returned.</p></li>
+<li><p><strong>indent</strong> (<em>int</em>) – The number of spaces of indent to use when writing the json</p></li>
+<li><p><strong>auto_bzip</strong> (<em>bool</em>) – Whether or not to automatically bzip2 the written json file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns either the absolute path to the written file, or
+the json-serialised string</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="metawards.Wards.unresolved_wards">
+<span class="sig-name descname"><span class="pre">unresolved_wards</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/metawards/_wards.html#Wards.unresolved_wards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Wards.unresolved_wards" title="Permalink to this definition"></a></dt>
+<dd><p>Return the list of IDs of unresolved wards</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="metawards.WardInfos.html" class="btn btn-neutral float-left" title="metawards.WardInfos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metawards.Workspace.html" class="btn btn-neutral float-right" title="metawards.Workspace" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

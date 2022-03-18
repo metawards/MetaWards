@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>metawards.utils._console &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/custom.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+          <li><a href="../../metawards.html">metawards</a> &raquo;</li>
+      <li>metawards.utils._console</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for metawards.utils._console</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span> <span class="k">as</span> <span class="n">_Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span> <span class="k">as</span> <span class="n">_List</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">IO</span> <span class="k">as</span> <span class="n">_IO</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">_datetime</span>
+
+<span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span> <span class="k">as</span> <span class="n">_contextmanager</span>
+
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Console&quot;</span><span class="p">,</span> <span class="s2">&quot;Table&quot;</span><span class="p">]</span>
+
+
+<span class="c1"># Global rich.Console()</span>
+<span class="n">_console</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># Global console theme</span>
+<span class="n">_theme</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">class</span> <span class="nc">_NullProgress</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Null progress to use if user disables progress&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span>
+
+
+<span class="k">class</span> <span class="nc">_Progress</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">rich.progress</span> <span class="kn">import</span> <span class="n">Progress</span><span class="p">,</span> <span class="n">BarColumn</span><span class="p">,</span> <span class="n">TimeRemainingColumn</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span>
+            <span class="s2">&quot;[progress.description]</span><span class="si">{task.description}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">BarColumn</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;bar.back&quot;</span><span class="p">,</span>
+                      <span class="n">complete_style</span><span class="o">=</span><span class="s2">&quot;bar.complete&quot;</span><span class="p">,</span>
+                      <span class="n">finished_style</span><span class="o">=</span><span class="s2">&quot;bar.complete&quot;</span><span class="p">),</span>
+            <span class="s2">&quot;[progress.percentage]</span><span class="si">{task.percentage:&gt;3.0f}</span><span class="s2">%&quot;</span><span class="p">,</span>
+            <span class="n">TimeRemainingColumn</span><span class="p">(),</span>
+            <span class="n">auto_refresh</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_update</span> <span class="o">=</span> <span class="n">_datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_show_limit</span> <span class="o">=</span> <span class="n">show_limit</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_have_entered</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_enter_args</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_enter_args</span> <span class="o">=</span> <span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_have_entered</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="fm">__exit__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">add_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">total</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">total</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_show_limit</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_have_entered</span><span class="p">:</span>
+                <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enter_args</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="fm">__enter__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_have_entered</span> <span class="o">=</span> <span class="kc">True</span>
+
+            <span class="n">task_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">add_task</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+                                              <span class="n">total</span><span class="o">=</span><span class="n">total</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">return</span> <span class="n">task_id</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">completed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">advance</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">force_update</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">task_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">elif</span> <span class="n">completed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">completed</span>
+        <span class="k">elif</span> <span class="n">advance</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_completed</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">+=</span> <span class="n">advance</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="n">now</span> <span class="o">=</span> <span class="n">_datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">force_update</span> <span class="ow">or</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_update</span><span class="p">)</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">task_id</span><span class="o">=</span><span class="n">task_id</span><span class="p">,</span>
+                                  <span class="n">completed</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_completed</span><span class="p">[</span><span class="n">task_id</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_progress</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_update</span> <span class="o">=</span> <span class="n">now</span>
+
+
+<span class="k">class</span> <span class="nc">_NullSpinner</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Null spinner to use if yaspin is not available</span>
+<span class="sd">       disables spinners&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">success</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">failure</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Table</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This a rich.table, with an additional &quot;to_string()&quot; function&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">show_footer</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">show_edge</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">rich.table</span> <span class="kn">import</span> <span class="n">Table</span> <span class="k">as</span> <span class="n">_Table</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span> <span class="o">=</span> <span class="n">_Table</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">show_edge</span><span class="o">=</span><span class="n">show_edge</span><span class="p">,</span>
+                             <span class="n">show_footer</span><span class="o">=</span><span class="n">show_footer</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">header</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">no_wrap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                   <span class="n">footer</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add a column called &#39;header&#39;, with specified justification,</span>
+<span class="sd">           style and wrapping</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">footer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">footer</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">footer</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="n">justify</span><span class="p">,</span>
+                               <span class="n">no_wrap</span><span class="o">=</span><span class="n">no_wrap</span><span class="p">,</span> <span class="n">footer</span><span class="o">=</span><span class="n">footer</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_row</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Add the passed row of data to the table&quot;&quot;&quot;</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="o">*</span><span class="n">row</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return this table rendered to a string&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span> <span class="k">as</span> <span class="n">_Console</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">_Console</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">console</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">):</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="n">s</span><span class="o">.</span><span class="n">text</span>
+
+        <span class="k">return</span> <span class="n">output</span>
+
+
+<div class="viewcode-block" id="Console"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console">[docs]</a><span class="k">class</span> <span class="nc">Console</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;This is a singleton class that provides access to printing</span>
+<span class="sd">       and logging functions to the console. This uses &#39;rich&#39;</span>
+<span class="sd">       for rich console printing</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Console.supports_emojis"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.supports_emojis">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">supports_emojis</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Return whether or not you can print emojis to this console&quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">sys</span>
+        <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;win32&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
+
+<div class="viewcode-block" id="Console.set_debugging_enabled"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.set_debugging_enabled">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">set_debugging_enabled</span><span class="p">(</span><span class="n">enabled</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Switch on or off debugging output&quot;&quot;&quot;</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">_debugging_enabled</span> <span class="o">=</span> <span class="nb">bool</span><span class="p">(</span><span class="n">enabled</span><span class="p">)</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">_debugging_level</span> <span class="o">=</span> <span class="n">level</span></div>
+
+<div class="viewcode-block" id="Console.set_theme"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.set_theme">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">set_theme</span><span class="p">(</span><span class="n">theme</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the theme used for the console - this should be</span>
+<span class="sd">           one of the themes in metawards.themes</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">global</span> <span class="n">_theme</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">theme</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">theme</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;simple&quot;</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">metawards.themes</span> <span class="kn">import</span> <span class="n">Simple</span>
+                <span class="n">_theme</span> <span class="o">=</span> <span class="n">Simple</span><span class="p">()</span>
+            <span class="k">elif</span> <span class="n">theme</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;default&quot;</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">metawards.themes</span> <span class="kn">import</span> <span class="n">SpringFlowers</span>
+                <span class="n">_theme</span> <span class="o">=</span> <span class="n">SpringFlowers</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_theme</span> <span class="o">=</span> <span class="n">theme</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_theme</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">_theme</span>
+
+        <span class="k">if</span> <span class="n">_theme</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">metawards.themes</span> <span class="kn">import</span> <span class="n">SpringFlowers</span>
+            <span class="n">_theme</span> <span class="o">=</span> <span class="n">SpringFlowers</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">_theme</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_console</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">_console</span>
+
+        <span class="k">if</span> <span class="n">_console</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span> <span class="k">as</span> <span class="n">_Console</span>
+            <span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_theme</span><span class="p">()</span>
+
+            <span class="n">_console</span> <span class="o">=</span> <span class="n">_Console</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                <span class="n">highlight</span><span class="o">=</span><span class="n">theme</span><span class="o">.</span><span class="n">should_highlight</span><span class="p">(),</span>
+                                <span class="n">highlighter</span><span class="o">=</span><span class="n">theme</span><span class="o">.</span><span class="n">highlighter</span><span class="p">(),</span>
+                                <span class="n">markup</span><span class="o">=</span><span class="n">theme</span><span class="o">.</span><span class="n">should_markup</span><span class="p">(),</span>
+                                <span class="n">log_time</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                <span class="n">emoji</span><span class="o">=</span><span class="n">Console</span><span class="o">.</span><span class="n">supports_emojis</span><span class="p">())</span>
+
+            <span class="n">_console</span><span class="o">.</span><span class="n">_use_spinner</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">_console</span><span class="o">.</span><span class="n">_use_progress</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">_console</span><span class="o">.</span><span class="n">_debugging_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">_console</span><span class="o">.</span><span class="n">_debugging_level</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="c1"># also install pretty traceback support</span>
+            <span class="kn">from</span> <span class="nn">rich.traceback</span> <span class="kn">import</span> <span class="n">install</span> <span class="k">as</span> <span class="n">_install_rich</span>
+            <span class="n">_install_rich</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">_console</span>
+
+<div class="viewcode-block" id="Console.redirect_output"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.redirect_output">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@_contextmanager</span>
+    <span class="k">def</span> <span class="nf">redirect_output</span><span class="p">(</span><span class="n">outdir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">auto_bzip</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Redirect all output and error to the directory &#39;outdir&#39;&quot;&quot;&quot;</span>
+        <span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">os</span>
+        <span class="kn">import</span> <span class="nn">sys</span> <span class="k">as</span> <span class="nn">sys</span>
+        <span class="kn">import</span> <span class="nn">bz2</span>
+        <span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span> <span class="k">as</span> <span class="n">_Console</span>
+
+        <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outdir</span><span class="p">,</span> <span class="s2">&quot;output.txt&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">auto_bzip</span><span class="p">:</span>
+            <span class="n">outfile</span> <span class="o">+=</span> <span class="s2">&quot;.bz2&quot;</span>
+
+            <span class="n">OUTFILE</span> <span class="o">=</span> <span class="n">bz2</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">OUTFILE</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">console</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;The global console should never be None&quot;</span><span class="p">)</span>
+
+        <span class="n">new_out</span> <span class="o">=</span> <span class="n">_Console</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="n">OUTFILE</span><span class="p">,</span> <span class="n">record</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_time</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                           <span class="n">log_path</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">emoji</span><span class="o">=</span><span class="n">Console</span><span class="o">.</span><span class="n">supports_emojis</span><span class="p">())</span>
+        <span class="n">new_out</span><span class="o">.</span><span class="n">_use_spinner</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">new_out</span><span class="o">.</span><span class="n">_use_progress</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">new_out</span><span class="o">.</span><span class="n">_debugging_enabled</span> <span class="o">=</span> <span class="n">console</span><span class="o">.</span><span class="n">_debugging_enabled</span>
+        <span class="n">new_out</span><span class="o">.</span><span class="n">_debugging_level</span> <span class="o">=</span> <span class="n">console</span><span class="o">.</span><span class="n">_debugging_level</span>
+        <span class="n">old_out</span> <span class="o">=</span> <span class="n">console</span>
+
+        <span class="k">global</span> <span class="n">_console</span>
+        <span class="n">_console</span> <span class="o">=</span> <span class="n">new_out</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">new_out</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">_console</span> <span class="o">=</span> <span class="n">old_out</span>
+            <span class="n">OUTFILE</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Console.debugging_enabled"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.debugging_enabled">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">debugging_enabled</span><span class="p">(</span><span class="n">level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Return whether debug output is enabled (optionally for</span>
+<span class="sd">           the specified level) - if not, then</span>
+<span class="sd">           anything sent to &#39;debug&#39; (for that level) is not printed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">console</span><span class="o">.</span><span class="n">_debugging_enabled</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">elif</span> <span class="n">console</span><span class="o">.</span><span class="n">_debugging_level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">level</span> <span class="o">&lt;=</span> <span class="n">console</span><span class="o">.</span><span class="n">_debugging_level</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">level</span> <span class="ow">is</span> <span class="kc">None</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_retrieve_name</span><span class="p">(</span><span class="n">variable</span><span class="p">):</span>
+        <span class="c1"># thanks to scohe001 on stackoverflow</span>
+        <span class="c1"># https://stackoverflow.com/questions/18425225/getting-the-name-of-a-variable-as-a-string</span>
+        <span class="kn">import</span> <span class="nn">inspect</span>
+        <span class="n">callers_local_vars</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_locals</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">var_name</span> <span class="k">for</span> <span class="n">var_name</span><span class="p">,</span> <span class="n">var_val</span> <span class="ow">in</span> <span class="n">callers_local_vars</span>
+                <span class="k">if</span> <span class="n">var_val</span> <span class="ow">is</span> <span class="n">variable</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<div class="viewcode-block" id="Console.debug"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.debug">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">variables</span><span class="p">:</span> <span class="n">_List</span><span class="p">[</span><span class="nb">any</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">markdown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print a debug string to the console. This will only be</span>
+<span class="sd">           printed if debugging is enabled. You can also print the</span>
+<span class="sd">           values of variables by passing them as a list to</span>
+<span class="sd">           &#39;variables&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">Console</span><span class="o">.</span><span class="n">debugging_enabled</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;__call__&quot;</span><span class="p">):</span>
+            <span class="c1"># the user passed in a lambda for delayed printing</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">level</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Level </span><span class="si">{</span><span class="n">level</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">markdown</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">rich.markdown</span> <span class="kn">import</span> <span class="n">Markdown</span> <span class="k">as</span> <span class="n">_Markdown</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">_Markdown</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">_Markdown</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">_stack_offset</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">variables</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">rich.table</span> <span class="kn">import</span> <span class="n">Table</span>
+            <span class="kn">from</span> <span class="nn">rich</span> <span class="kn">import</span> <span class="n">box</span>
+            <span class="kn">import</span> <span class="nn">inspect</span>
+            <span class="c1"># get the local variables in the caller&#39;s scope</span>
+            <span class="n">callers_local_vars</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">currentframe</span><span class="p">()</span><span class="o">.</span><span class="n">f_back</span><span class="o">.</span><span class="n">f_locals</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+
+            <span class="n">table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="o">.</span><span class="n">MINIMAL_DOUBLE_HEAD</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;on magenta&quot;</span><span class="p">)</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span>
+                             <span class="n">no_wrap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">table</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+                <span class="c1"># get the name of the variable in the caller</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="c1"># go for the last matching variable in the caller&#39;s scope</span>
+                    <span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">var_name</span> <span class="k">for</span> <span class="n">var_name</span><span class="p">,</span> <span class="n">var_val</span>
+                            <span class="ow">in</span> <span class="n">callers_local_vars</span>
+                            <span class="k">if</span> <span class="n">var_val</span> <span class="ow">is</span> <span class="n">variable</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;variable&quot;</span>
+
+                <span class="n">table</span><span class="o">.</span><span class="n">add_row</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">variable</span><span class="p">))</span>
+
+            <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">table</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Console.print"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.print">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">markdown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">markup</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print to the console&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">markdown</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">rich.markdown</span> <span class="kn">import</span> <span class="n">Markdown</span> <span class="k">as</span> <span class="n">_Markdown</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">_Markdown</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">_Markdown</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+        <span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_theme</span><span class="p">()</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">markup</span><span class="o">=</span><span class="n">markup</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">UnicodeEncodeError</span><span class="p">:</span>
+            <span class="c1"># this output can&#39;t cope with a complex theme - switch</span>
+            <span class="c1"># to theme &#39;simple&#39;</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="s2">&quot;simple&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="c1"># try to print this as latin-1</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;latin-1&quot;</span><span class="p">,</span>
+                                       <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
+                    <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">markup</span><span class="o">=</span><span class="n">markup</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="c1"># accept that this isn&#39;t going to be printable</span>
+                    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="Console.rule"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.rule">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">rule</span><span class="p">(</span><span class="n">title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Write a rule across the screen with optional title&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">rich.rule</span> <span class="kn">import</span> <span class="n">Rule</span> <span class="k">as</span> <span class="n">_Rule</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_theme</span><span class="p">()</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">_Rule</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Console.panel"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.panel">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">panel</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">markdown</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+              <span class="n">padding</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+              <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print within a panel to the console&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">rich.panel</span> <span class="kn">import</span> <span class="n">Panel</span> <span class="k">as</span> <span class="n">_Panel</span>
+
+        <span class="k">if</span> <span class="n">markdown</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">rich.markdown</span> <span class="kn">import</span> <span class="n">Markdown</span> <span class="k">as</span> <span class="n">_Markdown</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">_Markdown</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_theme</span><span class="p">()</span>
+        <span class="n">padding_style</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">padding_style</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+        <span class="n">style</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+        <span class="n">box</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">panel_box</span><span class="p">(</span><span class="n">style</span><span class="p">)</span>
+
+        <span class="kn">from</span> <span class="nn">rich.padding</span> <span class="kn">import</span> <span class="n">Padding</span> <span class="k">as</span> <span class="n">_Padding</span>
+
+        <span class="k">if</span> <span class="n">padding</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">_Padding</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">style</span><span class="o">=</span><span class="n">padding_style</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">_Padding</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">style</span><span class="o">=</span><span class="n">padding_style</span><span class="p">)</span>
+
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">_Panel</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">box</span><span class="o">=</span><span class="n">box</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+                             <span class="n">expand</span><span class="o">=</span><span class="n">expand</span><span class="p">,</span>
+                             <span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Console.error"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.error">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print an error to the console&quot;&quot;&quot;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="s2">&quot;ERROR&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Console.warning"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.warning">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">warning</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print a warning to the console&quot;&quot;&quot;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="s2">&quot;WARNING&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;warning&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Console.info"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.info">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print an info section to the console&quot;&quot;&quot;</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">rule</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;info&quot;</span><span class="p">)</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">center</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">rich.text</span> <span class="kn">import</span> <span class="n">Text</span> <span class="k">as</span> <span class="n">_Text</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">_Text</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">),</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">command</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">panel</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;command&quot;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">print_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">demographics</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                         <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">population</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">demographics</span><span class="o">=</span><span class="n">demographics</span><span class="p">))</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">print_profiler</span><span class="p">(</span><span class="n">profiler</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">profiler</span><span class="p">))</span>
+
+<div class="viewcode-block" id="Console.print_exception"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.print_exception">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">print_exception</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Print the current-handled exception&quot;&quot;&quot;</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print_exception</span><span class="p">()</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">set_use_spinner</span><span class="p">(</span><span class="n">use_spinner</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">_use_spinner</span> <span class="o">=</span> <span class="n">use_spinner</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">set_use_progress</span><span class="p">(</span><span class="n">use_progress</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">_use_progress</span> <span class="o">=</span> <span class="n">use_progress</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">progress</span><span class="p">(</span><span class="n">visible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">show_limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">50</span><span class="p">):</span>
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">visible</span> <span class="ow">and</span> <span class="n">console</span><span class="o">.</span><span class="n">_use_progress</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_Progress</span><span class="p">(</span><span class="n">show_limit</span><span class="o">=</span><span class="n">show_limit</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_NullProgress</span><span class="p">()</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">spinner</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">yaspin</span> <span class="kn">import</span> <span class="n">yaspin</span><span class="p">,</span> <span class="n">Spinner</span>
+            <span class="n">have_yaspin</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+            <span class="n">have_yaspin</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">have_yaspin</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_NullSpinner</span><span class="p">()</span>
+
+        <span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">console</span><span class="o">.</span><span class="n">_use_spinner</span><span class="p">:</span>
+            <span class="n">theme</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_theme</span><span class="p">()</span>
+            <span class="n">frames</span><span class="p">,</span> <span class="n">delay</span> <span class="o">=</span> <span class="n">theme</span><span class="o">.</span><span class="n">get_frames</span><span class="p">(</span>
+                <span class="n">width</span><span class="o">=</span><span class="n">console</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+            <span class="n">sp</span> <span class="o">=</span> <span class="n">Spinner</span><span class="p">(</span><span class="n">frames</span><span class="p">,</span> <span class="n">delay</span><span class="p">)</span>
+
+            <span class="n">y</span> <span class="o">=</span> <span class="n">yaspin</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+
+            <span class="n">y</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">theme</span><span class="o">.</span><span class="n">spinner_success</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+            <span class="n">y</span><span class="o">.</span><span class="n">failure</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">theme</span><span class="o">.</span><span class="n">spinner_failure</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">y</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_NullSpinner</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Console.save"><a class="viewcode-back" href="../../../api/generated/metawards.utils.Console.html#metawards.utils.Console.save">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">file</span><span class="p">:</span> <span class="n">_Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">_IO</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;Save the accumulated printing to the console to &#39;file&#39;.</span>
+<span class="sd">           This can be a file or a filehandle. The buffer is</span>
+<span class="sd">           cleared after saving</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># get the console contents</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">Console</span><span class="o">.</span><span class="n">_get_console</span><span class="p">()</span><span class="o">.</span><span class="n">export_text</span><span class="p">(</span><span class="n">clear</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                                      <span class="n">styles</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">Console</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot get console output: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">FILE</span><span class="p">:</span>
+                <span class="n">FILE</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">encoding</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">:</span>
+                    <span class="c1"># make sure that encoding the file to the right character</span>
+                    <span class="c1"># set will replace invalid characters, rather than throw</span>
+                    <span class="c1"># unicode encoding errors</span>
+                    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+                                       <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">encoding</span><span class="p">)</span>
+
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">UnicodeEncodeError</span><span class="p">:</span>
+                <span class="c1"># this still didn&#39;t work - use a latin-1 round-robin</span>
+                <span class="c1"># to make everything ascii...</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;latin-1&quot;</span><span class="p">,</span>
+                                   <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;replace&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

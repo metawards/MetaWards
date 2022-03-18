@@ -1,0 +1,32 @@
+﻿metawards.PersonType
+====================
+
+.. currentmodule:: metawards
+
+.. autoclass:: PersonType
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PersonType.__eq__
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~PersonType.WORKER
+      ~PersonType.PLAYER
+      ~PersonType.__doc__
+      ~PersonType.__members__
+      ~PersonType.__module__
+   
+   

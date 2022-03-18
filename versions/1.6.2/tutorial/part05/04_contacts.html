@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact probabilities and Demographics &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 6 - Moving between demographics" href="../index_part06.html" />
+    <link rel="prev" title="Using custom merge functions to model shielding" href="03_custom.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_demographics.html">Multi-demographic sub-networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_mixers.html">Mixers and Merge-functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_custom.html">Using custom merge functions to model shielding</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Contact probabilities and Demographics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modelling-demographics-as-part-of-the-same-population">Modelling demographics as part of the same population</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modelling-demographics-as-multiple-populations">Modelling demographics as multiple populations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modelling-more-complex-population-dynamics">Modelling more complex population dynamics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part05.html">Part 5 - Modelling multiple demographics</a> &raquo;</li>
+      <li>Contact probabilities and Demographics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="03_custom.html" class="btn btn-neutral float-left" title="Using custom merge functions to model shielding" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part06.html" class="btn btn-neutral float-right" title="Part 6 - Moving between demographics" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contact-probabilities-and-demographics">
+<h1>Contact probabilities and Demographics<a class="headerlink" href="#contact-probabilities-and-demographics" title="Permalink to this headline"></a></h1>
+<p>MetaWards implements the mixing of demographics by merging together
+the <em>force of infections</em> (FOIs) calculated for each network. By default
+this mixing takes no account of the number of individuals (N) in each
+ward in each demographic.</p>
+<p>The FOI, <span class="math notranslate nohighlight">\(F(w)\)</span> calculated in each ward, <span class="math notranslate nohighlight">\(w\)</span> is calculated
+separately for each demographic via the equations
+<a class="reference internal" href="../part03/07_cutoff.html"><span class="doc">described here</span></a>.</p>
+<p>The merged FOI for ward <span class="math notranslate nohighlight">\(w\)</span> for demographic <span class="math notranslate nohighlight">\(i\)</span>,
+<span class="math notranslate nohighlight">\(F_i'(w)\)</span>, is calculated as
+the sum of the FOIs calculated for ward <span class="math notranslate nohighlight">\(w\)</span> across
+all demographics, <span class="math notranslate nohighlight">\(i, j, k...\)</span>
+scaling by row <span class="math notranslate nohighlight">\(i\)</span> of the interaction matrix <span class="math notranslate nohighlight">\(M\)</span> via;</p>
+<p><span class="math notranslate nohighlight">\(F_i'(w) = M_{ii} F_i(w) + M_{ij} F_j(w) + M_{ik} F_k(w) + ...\)</span></p>
+<p>This is then divided by the number of individuals in ward <span class="math notranslate nohighlight">\(w\)</span> in
+demographic <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(N_i(w)\)</span> before it is converted into a probability
+of infection.</p>
+<p>This normalisation by <span class="math notranslate nohighlight">\(N_i(w)\)</span> means that it is up to you to
+account for the contact probability in the interation matrix. The individual
+terms should account for both the different infectivity of the different
+demographics, as well as the probability that individuals in one
+demographic will come into contact with individuals of other demographics.</p>
+<p>However, accounting for these different contact rates using just
+the interaction matrix is difficult (or impossible) for cases where
+you have multiple wards that have different numbers of individuals. This
+is because different normalisation factors would be needed for the
+FOIs calculated for different wards in different demographics.</p>
+<section id="modelling-demographics-as-part-of-the-same-population">
+<h2>Modelling demographics as part of the same population<a class="headerlink" href="#modelling-demographics-as-part-of-the-same-population" title="Permalink to this headline"></a></h2>
+<p>If all demographics are part of the same population then we assume
+that any member in a ward of any demographic is equally likely to contact
+any other member of the same ward in any other demographic.</p>
+<p>In this case, the normalisation factor should be the total number of
+individuals in that ward summed over all demographics,
+<span class="math notranslate nohighlight">\(N(w)\)</span>. This is calculated via;</p>
+<p><span class="math notranslate nohighlight">\(N(w) = N_i(w) + N_j(w) + N_k(w) + ...\)</span></p>
+<p>The merge function <a class="reference internal" href="../../api/generated/metawards.mixers.merge_matrix_single_population.html#metawards.mixers.merge_matrix_single_population" title="metawards.mixers.merge_matrix_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_single_population()</span></code></a>
+calculates the merged FOI via the equation;</p>
+<p><span class="math notranslate nohighlight">\(F_i'(w) = M_{ii} F_i(w) \frac{N_i(w)}{N(w)} + M_{ij} \frac{N_i(w)}{N(w)} F_j(w) + M_{ik} \frac{N_i(w)}{N(w)} F_k(w) + ...\)</span></p>
+<p>Because this FOI is divided by <span class="math notranslate nohighlight">\(N_i(w)\)</span> before it is converted into
+an infection probability, this is equivalent to using <span class="math notranslate nohighlight">\(N(w)\)</span> as the
+normalisation factor for ward <span class="math notranslate nohighlight">\(w\)</span> in all demographics.</p>
+<p>This therefore models the demographics as a single population where individuals
+in a ward across all demographics have an equal probability of contact with
+each other. The interaction matrix has the effect of scaling <span class="math notranslate nohighlight">\(\beta\)</span>,
+i.e. the probability of infection at each contact between members of
+different demographics. You can pass in a custom interaction matrix
+if you want control of this, or can use the convenience mixer functions
+<a class="reference internal" href="../../api/generated/metawards.mixers.mix_evenly_single_population.html#metawards.mixers.mix_evenly_single_population" title="metawards.mixers.mix_evenly_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_evenly_single_population()</span></code></a>,
+and <a class="reference internal" href="../../api/generated/metawards.mixers.mix_none_single_population.html#metawards.mixers.mix_none_single_population" title="metawards.mixers.mix_none_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_none_single_population()</span></code></a> if you want
+to use an interactions matrix of all ones (<span class="math notranslate nohighlight">\(M = |1|\)</span>) that
+represents even infections, or a identity interaction matrix with
+a diagonal of 1 and off-diagonal of 0, that represents no infections between
+members of different demographics, respectively.</p>
+</section>
+<section id="modelling-demographics-as-multiple-populations">
+<h2>Modelling demographics as multiple populations<a class="headerlink" href="#modelling-demographics-as-multiple-populations" title="Permalink to this headline"></a></h2>
+<p>It may be that the demographics represent different populations that
+have a differnet probability of meeting each other. This would be
+the case for the classic use of demographics, e.g. using demographics
+to represent different age groups, and having a different contact
+probability between individuals of different age groups.</p>
+<p>In this case, the FOI calculated from each demographic must be normalised
+by the number of individuals in that demographic before it is combined
+into the merged demographic. To achieve this,
+the merge function <a class="reference internal" href="../../api/generated/metawards.mixers.merge_matrix_multi_population.html#metawards.mixers.merge_matrix_multi_population" title="metawards.mixers.merge_matrix_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_multi_population()</span></code></a>
+calculates the merged FOI via the equation;</p>
+<p><span class="math notranslate nohighlight">\(F_i'(w) = M_{ii} F_i(w) \frac{N_i(w)}{N_i(w)} + M_{ij} \frac{N_i(w)}{N_j(w)} F_j(w) + M_{ik} \frac{N_i(w)}{N_k(w)} F_k(w) + ...\)</span></p>
+<p>Because this FOI is divided by <span class="math notranslate nohighlight">\(N_i(w)\)</span> before it is converted into
+an infection probability, this is equivalent to using <span class="math notranslate nohighlight">\(N_x(w)\)</span> as the
+normalisation factor for ward <span class="math notranslate nohighlight">\(w\)</span> for demographic <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>This therefore models the demographics as being part of separate populations
+where the probability of contact between individuals in the same ward
+in different demographics depends on the number of individuals in each
+demographic.</p>
+<p>The interaction matrix has the effect of scaling <span class="math notranslate nohighlight">\(\beta\)</span>,
+i.e. the probability of infection at each contact between members of
+different demographics. You can pass in a custom interaction matrix
+if you want control of this, or can use the convenience mixer functions
+<a class="reference internal" href="../../api/generated/metawards.mixers.mix_evenly_multi_population.html#metawards.mixers.mix_evenly_multi_population" title="metawards.mixers.mix_evenly_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_evenly_multi_population()</span></code></a>,
+and <a class="reference internal" href="../../api/generated/metawards.mixers.mix_none_multi_population.html#metawards.mixers.mix_none_multi_population" title="metawards.mixers.mix_none_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_none_multi_population()</span></code></a> if you want
+to use an interactions matrix of all ones (<span class="math notranslate nohighlight">\(M = |1|\)</span>) that
+represents even infections, or a identity interaction matrix with
+a diagonal of 1 and off-diagonal of 0, that represents no infections between
+members of different demographics, respectively.</p>
+</section>
+<section id="modelling-more-complex-population-dynamics">
+<h2>Modelling more complex population dynamics<a class="headerlink" href="#modelling-more-complex-population-dynamics" title="Permalink to this headline"></a></h2>
+<p>For more complex population dynamics you will need to write your own
+custom mixer function that accounts for the number of individuals
+in each demographic in each ward, <span class="math notranslate nohighlight">\(N_x(w)\)</span>. Because this will
+be potentially an expensive function, you should write it as a
+cython plugin using the <em class="xref py py-obj">pyx</em> extension. MetaWards will automatically
+compile and load this plugin at runtime.</p>
+<p>You should take inspiration from <a class="reference internal" href="../../api/generated/metawards.mixers.merge_matrix_single_population.html#metawards.mixers.merge_matrix_single_population" title="metawards.mixers.merge_matrix_single_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_single_population()</span></code></a>
+and <a class="reference internal" href="../../api/generated/metawards.mixers.merge_matrix_multi_population.html#metawards.mixers.merge_matrix_multi_population" title="metawards.mixers.merge_matrix_multi_population"><code class="xref py py-func docutils literal notranslate"><span class="pre">merge_matrix_multi_population()</span></code></a>. These show
+how the FOIs calculated for each ward are combined with the interaction
+matrix and the number of individuals in each ward in each demographic.
+Note that the code is slightly more complex than described here, as the
+FOIs and number of individuals are calculated separately both for
+daytime and nighttime, and the number of individuals is the sum
+of the number of players (who make random movements during the day)
+and the number of workers (who make predictable movements during the day).</p>
+<p>If you have any questions or would like help, please feel free to get
+in touch by <a class="reference external" href="https://github.com/metawards/MetaWards/issues">raising an issue on the GitHub repository</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03_custom.html" class="btn btn-neutral float-left" title="Using custom merge functions to model shielding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part06.html" class="btn btn-neutral float-right" title="Part 6 - Moving between demographics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

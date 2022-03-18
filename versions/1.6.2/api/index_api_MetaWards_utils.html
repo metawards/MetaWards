@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MetaWards.utils API Detail &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="metawards.utils.accepts_stage" href="generated/metawards.utils.accepts_stage.html" />
+    <link rel="prev" title="MetaWards.utils" href="index_MetaWards_utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_app.html">MetaWards.app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards.html">MetaWards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_iterators.html">MetaWards.iterators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_extractors.html">MetaWards.extractors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_mixers.html">MetaWards.mixers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_movers.html">MetaWards.movers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_analysis.html">MetaWards.analysis</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index_MetaWards_utils.html">MetaWards.utils</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MetaWards.utils API Detail</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index_MetaWards_themes.html">MetaWards.themes</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Documentation</a> &raquo;</li>
+          <li><a href="index_MetaWards_utils.html">MetaWards.utils</a> &raquo;</li>
+      <li>MetaWards.utils API Detail</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index_MetaWards_utils.html" class="btn btn-neutral float-left" title="MetaWards.utils" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="generated/metawards.utils.accepts_stage.html" class="btn btn-neutral float-right" title="metawards.utils.accepts_stage" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-metawards.utils">
+<span id="metawards-utils-api-detail"></span><h1>MetaWards.utils API Detail<a class="headerlink" href="#module-metawards.utils" title="Permalink to this headline"></a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.accepts_stage.html#metawards.utils.accepts_stage" title="metawards.utils.accepts_stage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accepts_stage</span></code></a>(func)</p></td>
+<td><p>Return whether the passed function accepts the &quot;stage&quot; argument, meaning that it can do different things for different day stages</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.add_lookup.html#metawards.utils.add_lookup" title="metawards.utils.add_lookup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_lookup</span></code></a>(network[, nthreads])</p></td>
+<td><p>Add in metadata about the network that can be used to look up wards by name of location or region etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.add_wards_network_distance.html#metawards.utils.add_wards_network_distance" title="metawards.utils.add_wards_network_distance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_wards_network_distance</span></code></a>(network[, nthreads])</p></td>
+<td><p>Reads the location data in network.parameters.input_files.position and adds those locations to all of the nodes in the passed network.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.aggregate_networks.html#metawards.utils.aggregate_networks" title="metawards.utils.aggregate_networks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate_networks</span></code></a>(network, profiler[, nthreads])</p></td>
+<td><p>Aggregate all of the Susceptibles data from the demographic sub-networks into an overall total set of data that is stored in the overall network</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.assert_sane_network.html#metawards.utils.assert_sane_network" title="metawards.utils.assert_sane_network"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_sane_network</span></code></a>(network, profiler)</p></td>
+<td><p>This function runs through and checks that the passed network is sane.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.build_play_matrix.html#metawards.utils.build_play_matrix" title="metawards.utils.build_play_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_play_matrix</span></code></a>(network, max_nodes, max_links)</p></td>
+<td><p>Build the play matrix for the passed network</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.build_wards_network.html#metawards.utils.build_wards_network" title="metawards.utils.build_wards_network"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_wards_network</span></code></a>(params[, profiler, ...])</p></td>
+<td><p>Creates a network of wards using the information provided in the file specified in parameters.input_files.work.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.call_function_on_network.html#metawards.utils.call_function_on_network" title="metawards.utils.call_function_on_network"><code class="xref py py-obj docutils literal notranslate"><span class="pre">call_function_on_network</span></code></a>(network, ...[, ...])</p></td>
+<td><p>Call either 'func' or 'parallel' (depending on the number of threads, nthreads) on the passed Network, or on all demographic subnetworks</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.check_for_updates.html#metawards.utils.check_for_updates" title="metawards.utils.check_for_updates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_for_updates</span></code></a>([dry_run])</p></td>
+<td><p>Check if a newer version of MetaWards is available.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.clear_all_infections.html#metawards.utils.clear_all_infections" title="metawards.utils.clear_all_infections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_all_infections</span></code></a>(infections, play_infections)</p></td>
+<td><p>Clears all infections associated with a model run</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.Console.html#metawards.utils.Console" title="metawards.utils.Console"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Console</span></code></a>()</p></td>
+<td><p>This is a singleton class that provides access to printing and logging functions to the console.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.create_int_array.html#metawards.utils.create_int_array" title="metawards.utils.create_int_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_int_array</span></code></a>(size[, default])</p></td>
+<td><p>Create a new array.array of the specified size.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.create_double_array.html#metawards.utils.create_double_array" title="metawards.utils.create_double_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_double_array</span></code></a>(size[, default])</p></td>
+<td><p>Create a new array.array of the specified size.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.create_string_array.html#metawards.utils.create_string_array" title="metawards.utils.create_string_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_string_array</span></code></a>(size, unicode default)</p></td>
+<td><p>Create an array of python strings of size 'size', optionally initialised with 'default'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.create_thread_generators.html#metawards.utils.create_thread_generators" title="metawards.utils.create_thread_generators"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_thread_generators</span></code></a>(rng, nthreads)</p></td>
+<td><p>Return a set of random number generators, one for each thread - these are seeded using the next 'nthreads' random numbers drawn from the passed generator</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.delete_ran_binomial.html#metawards.utils.delete_ran_binomial" title="metawards.utils.delete_ran_binomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_ran_binomial</span></code></a>(rng)</p></td>
+<td><p>Delete the passed random number generator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.fill_in_gaps.html#metawards.utils.fill_in_gaps" title="metawards.utils.fill_in_gaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_in_gaps</span></code></a>(network, max_nodes)</p></td>
+<td><p>Fills in gaps in the network</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.get_available_num_threads.html#metawards.utils.get_available_num_threads" title="metawards.utils.get_available_num_threads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_available_num_threads</span></code></a>()</p></td>
+<td><p>Return the maximum number of threads that are recommended for this computer (the OMP_NUM_THREADS value)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.get_functions.html#metawards.utils.get_functions" title="metawards.utils.get_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_functions</span></code></a>(stage, network, population, ...)</p></td>
+<td><p>Return the functions that must be called for the specified stage of the day;</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.get_initialise_functions.html#metawards.utils.get_initialise_functions" title="metawards.utils.get_initialise_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_initialise_functions</span></code></a>(**kwargs)</p></td>
+<td><p>Convenience function that returns all of the functions that should be called during the initialisation step of the model (e.g.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.get_finalise_functions.html#metawards.utils.get_finalise_functions" title="metawards.utils.get_finalise_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_finalise_functions</span></code></a>(trajectory, **kwargs)</p></td>
+<td><p>Convenience function that returns all of the functions that should be called during the finalisation step of the model (e.g.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.get_model_loop_functions.html#metawards.utils.get_model_loop_functions" title="metawards.utils.get_model_loop_functions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_model_loop_functions</span></code></a>(**kwargs)</p></td>
+<td><p>Convenience function that returns all of the functions that should be called during the model loop (i.e.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.get_min_max_distances.html#metawards.utils.get_min_max_distances" title="metawards.utils.get_min_max_distances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_min_max_distances</span></code></a>(network[, nthreads, ...])</p></td>
+<td><p>Return the minimum and maximum distances recorded in the network</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.get_number_of_processes.html#metawards.utils.get_number_of_processes" title="metawards.utils.get_number_of_processes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_number_of_processes</span></code></a>(parallel_scheme[, ...])</p></td>
+<td><p>This function works out how many processes have been set by the paralellisation system called 'parallel_scheme'</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.initialise_infections.html#metawards.utils.initialise_infections" title="metawards.utils.initialise_infections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialise_infections</span></code></a>(network)</p></td>
+<td><p>Initialise the data structure used to store the infections</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.initialise_play_infections.html#metawards.utils.initialise_play_infections" title="metawards.utils.initialise_play_infections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">initialise_play_infections</span></code></a>(network)</p></td>
+<td><p>Initialise the space used to store the play infections</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.is_openmp_supported.html#metawards.utils.is_openmp_supported" title="metawards.utils.is_openmp_supported"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_openmp_supported</span></code></a>()</p></td>
+<td><p>Return whether or not this MetaWards executable supports OpenMP</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.move_population_from_work_to_play.html#metawards.utils.move_population_from_work_to_play" title="metawards.utils.move_population_from_work_to_play"><code class="xref py py-obj docutils literal notranslate"><span class="pre">move_population_from_work_to_play</span></code></a>(network[, ...])</p></td>
+<td><p>This function is not used or implemented, but is implied by the naming scheme...</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.move_population_from_play_to_work.html#metawards.utils.move_population_from_play_to_work" title="metawards.utils.move_population_from_play_to_work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">move_population_from_play_to_work</span></code></a>(network[, ...])</p></td>
+<td><p>And Vice Versa From Work to Play The relevant parameters are network.params.play_to_work and network.params.work_to_play</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.prepare_worker.html#metawards.utils.prepare_worker" title="metawards.utils.prepare_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_worker</span></code></a>(params, demographics, options)</p></td>
+<td><p>Prepare a worker to receive work to run a model using the passed parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.ran_binomial.html#metawards.utils.ran_binomial" title="metawards.utils.ran_binomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ran_binomial</span></code></a>(rng, double p, n)</p></td>
+<td><p>Return a random number drawn from the binomial distribution [p,n] (see gsl_ran_binomial for documentation)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.ran_int.html#metawards.utils.ran_int" title="metawards.utils.ran_int"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ran_int</span></code></a>(rng[, lower, upper])</p></td>
+<td><p>Draw a random integer from [0,upper] inclusive</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.ran_uniform.html#metawards.utils.ran_uniform" title="metawards.utils.ran_uniform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ran_uniform</span></code></a>(rng)</p></td>
+<td><p>Return a random double drawn from a uniform distribution between zero and one</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.read_done_file.html#metawards.utils.read_done_file" title="metawards.utils.read_done_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_done_file</span></code></a>(filename)</p></td>
+<td><p>This function reads the 'done_file' from 'filename' returning the list of seeded nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.recalculate_work_denominator_day.html#metawards.utils.recalculate_work_denominator_day" title="metawards.utils.recalculate_work_denominator_day"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recalculate_work_denominator_day</span></code></a>(network[, ...])</p></td>
+<td><p>Recalculate the denominator_d for the wards (nodes) in the network for the normal links</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.recalculate_play_denominator_day.html#metawards.utils.recalculate_play_denominator_day" title="metawards.utils.recalculate_play_denominator_day"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recalculate_play_denominator_day</span></code></a>(network[, ...])</p></td>
+<td><p>Recalculate the denominator_d for the wards (nodes) in the network for the play links</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.rescale_play_matrix.html#metawards.utils.rescale_play_matrix" title="metawards.utils.rescale_play_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rescale_play_matrix</span></code></a>(network[, nthreads, ...])</p></td>
+<td><p>Static Play At Home rescaling.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.resize_array.html#metawards.utils.resize_array" title="metawards.utils.resize_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resize_array</span></code></a>(a, size[, default])</p></td>
+<td><p>Resize the passed array to size 'size', adding 'default' if this will grow the array</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.reset_everything.html#metawards.utils.reset_everything" title="metawards.utils.reset_everything"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_everything</span></code></a>(network, profiler[, nthreads])</p></td>
+<td><p>Reset everything in the passed network so that it can be used for a new model run</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.reset_play_matrix.html#metawards.utils.reset_play_matrix" title="metawards.utils.reset_play_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_play_matrix</span></code></a>(network[, nthreads])</p></td>
+<td><p>Resets the play entries in the passed Network.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.reset_play_susceptibles.html#metawards.utils.reset_play_susceptibles" title="metawards.utils.reset_play_susceptibles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_play_susceptibles</span></code></a>(network[, nthreads])</p></td>
+<td><p>Resets the ward entries in the passed Network.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.reset_work_matrix.html#metawards.utils.reset_work_matrix" title="metawards.utils.reset_work_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_work_matrix</span></code></a>(network[, nthreads])</p></td>
+<td><p>Resets the work entries in the passed Network.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.run_model.html#metawards.utils.run_model" title="metawards.utils.run_model"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_model</span></code></a>(network, infections, rngs, output_dir)</p></td>
+<td><p>Actually run the model.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.run_models.html#metawards.utils.run_models" title="metawards.utils.run_models"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_models</span></code></a>(network, variables, population, ...)</p></td>
+<td><p>Run all of the models on the passed Network that are described by the passed VariableSets</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.run_worker.html#metawards.utils.run_worker" title="metawards.utils.run_worker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_worker</span></code></a>(arguments)</p></td>
+<td><p>Ask the worker to run a model using the passed variables and options.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.safe_eval_number.html#metawards.utils.safe_eval_number" title="metawards.utils.safe_eval_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">safe_eval_number</span></code></a>(s)</p></td>
+<td><p>Convert 's' to a number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.scale_link_susceptibles.html#metawards.utils.scale_link_susceptibles" title="metawards.utils.scale_link_susceptibles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_link_susceptibles</span></code></a>(links, ratio)</p></td>
+<td><p>Scale the number of susceptibles in the passed Links by the passed scale ratio.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.scale_node_susceptibles.html#metawards.utils.scale_node_susceptibles" title="metawards.utils.scale_node_susceptibles"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_node_susceptibles</span></code></a>(nodes[, ratio, ...])</p></td>
+<td><p>Scale the number of susceptibles in the passed Nodes by the passed scale ratios.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.seed_ran_binomial.html#metawards.utils.seed_ran_binomial" title="metawards.utils.seed_ran_binomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed_ran_binomial</span></code></a>([seed])</p></td>
+<td><p>Seed and return the random binomial generator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.string_to_ints.html#metawards.utils.string_to_ints" title="metawards.utils.string_to_ints"><code class="xref py py-obj docutils literal notranslate"><span class="pre">string_to_ints</span></code></a>([string, strings])</p></td>
+<td><p>Convert the passed string (or strings) containing integers (or ranges of integers) into a single sorted list of integers where no value is repeated</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.update_metawards.html#metawards.utils.update_metawards" title="metawards.utils.update_metawards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_metawards</span></code></a>([dry_run, user])</p></td>
+<td><p>Update MetaWards to the latest version.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.zero_workspace.html#metawards.utils.zero_workspace" title="metawards.utils.zero_workspace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zero_workspace</span></code></a>(workspace)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/metawards.utils.Profiler.html#metawards.utils.Profiler" title="metawards.utils.Profiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Profiler</span></code></a>([name, parent])</p></td>
+<td><p>This is a simple profiling class that supports manual instrumenting of the code.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/metawards.utils.NullProfiler.html#metawards.utils.NullProfiler" title="metawards.utils.NullProfiler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NullProfiler</span></code></a>([name, parent])</p></td>
+<td><p>This is a null profiler that does nothing</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index_MetaWards_utils.html" class="btn btn-neutral float-left" title="MetaWards.utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="generated/metawards.utils.accepts_stage.html" class="btn btn-neutral float-right" title="metawards.utils.accepts_stage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

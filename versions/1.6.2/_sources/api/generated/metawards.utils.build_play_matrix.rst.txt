@@ -1,0 +1,6 @@
+﻿metawards.utils.build\_play\_matrix
+===================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: build_play_matrix

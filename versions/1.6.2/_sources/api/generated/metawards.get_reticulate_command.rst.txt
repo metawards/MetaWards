@@ -1,0 +1,6 @@
+﻿metawards.get\_reticulate\_command
+==================================
+
+.. currentmodule:: metawards
+
+.. autofunction:: get_reticulate_command

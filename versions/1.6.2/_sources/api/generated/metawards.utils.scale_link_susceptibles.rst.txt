@@ -1,0 +1,6 @@
+﻿metawards.utils.scale\_link\_susceptibles
+=========================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: scale_link_susceptibles

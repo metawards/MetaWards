@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Network Files &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/custom.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extra seeds files" href="extraseeds.html" />
+    <link rel="prev" title="Input files and formats" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Input files and formats</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#flexible-format-files">Flexible-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#rigid-format-files">Rigid-format files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#json-format-files">JSON-format files</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#detailed-descriptions">Detailed descriptions</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Network Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description-json">description.json</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#work">work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#work-size">work_size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play">play</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#play-size">play_size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#position">position</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lookup">lookup</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="extraseeds.html">Extra seeds files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html">Design (scan) files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userinput.html">User input files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Input files and formats</a> &raquo;</li>
+      <li>Network Files</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="Input files and formats" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="extraseeds.html" class="btn btn-neutral float-right" title="Extra seeds files" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="network-files">
+<h1>Network Files<a class="headerlink" href="#network-files" title="Permalink to this headline"></a></h1>
+<p>Network files are those that define the nodes (wards) of the network,
+and the links (communiting/movement) of individuals between nodes.</p>
+<p>The Network files are a collection of files that must all exist in the
+same directory. They comprise;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">description.json</span></code>: This file must exist in the directory, and provides
+the metadata needed to locate all of the other necessary files.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">work_size</span> <span class="pre">/</span> <span class="pre">play_size</span></code>: These files list the index and population of</dt><dd><p>workers (in <code class="docutils literal notranslate"><span class="pre">work_size</span></code>) and players (in <code class="docutils literal notranslate"><span class="pre">play_size</span></code>) in
+each ward in the network. The total population in each ward (node) is
+the sum of the work and play populations.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work</span></code>: This file lists all of the work connections between nodes, giving
+the population of workers who commute from the source node to the
+destination.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">play</span></code>: This file lists all of the play connections between nodes, giving
+the <strong>proportion</strong> of players who make random movements from the source
+node to the destination node.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code>: This file contains the coordinates of the centre of each node.
+These coordinates can be X/Y or latitude/longitude coordinates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lookup</span></code>: This file contains the names and other metadata about each
+node, e.g. the name, local authority, region etc.</p></li>
+</ul>
+<p>These files are all described below.</p>
+<section id="description-json">
+<h2>description.json<a class="headerlink" href="#description-json" title="Permalink to this headline"></a></h2>
+<p>This is a JSON-formatted file that provides metadata about the network model
+that is contained in the directory. The file describes a simple dictionary
+of the following key-value pairs;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">work</span></code>: Filename of the <code class="docutils literal notranslate"><span class="pre">work</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work_size</span></code>: Filename of the <code class="docutils literal notranslate"><span class="pre">work_size</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">play</span></code>: Filename of the <code class="docutils literal notranslate"><span class="pre">play</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">play_size</span></code>: Filename of the <code class="docutils literal notranslate"><span class="pre">play_size</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">position</span></code>: Filename of the <code class="docutils literal notranslate"><span class="pre">position</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coordinates</span></code>: Whether the coordinates in the <code class="docutils literal notranslate"><span class="pre">position</span></code> file are
+in x/y (<code class="docutils literal notranslate"><span class="pre">x/y</span></code>) or latitude/longitude (<code class="docutils literal notranslate"><span class="pre">lat/long</span></code>) format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coordinate_units</span></code>: (Optional) - the units for x/y coordinates. This should
+be either <code class="docutils literal notranslate"><span class="pre">m</span></code> for meters, or <code class="docutils literal notranslate"><span class="pre">km</span></code> for kilometers. Distances in
+<code class="docutils literal notranslate"><span class="pre">metawards</span></code> are always reported as kilometers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lookup</span></code>: (Optional) Filename of the <code class="docutils literal notranslate"><span class="pre">lookup</span></code> file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lookup_columns</span></code>: (Optional) A dictionary that gives the column numbers
+(zero-indexed)for the <code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">alternate_code</span></code>,
+<code class="docutils literal notranslate"><span class="pre">alternate_name</span></code>, <code class="docutils literal notranslate"><span class="pre">authority_code</span></code> and <code class="docutils literal notranslate"><span class="pre">authority_name</span></code> fields for
+the ward metadata.</p></li>
+</ul>
+</section>
+<section id="work">
+<h2>work<a class="headerlink" href="#work" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">work</span></code> file contains the list of all work connections between nodes,
+giving the number of individuals who commute from the source node to the
+destination node. This is a column-based file with three columns of numbers
+that can be space or comma separated. For example;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">290</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="mi">1</span> <span class="mi">5</span> <span class="mi">139</span>
+<span class="mi">1</span> <span class="mi">6</span> <span class="mi">59</span>
+<span class="mi">1</span> <span class="mi">7</span> <span class="mi">17</span>
+<span class="mi">1</span> <span class="mi">8</span> <span class="mi">119</span>
+<span class="mi">1</span> <span class="mi">9</span> <span class="mi">37</span>
+<span class="mi">1</span> <span class="mi">10</span> <span class="mi">121</span>
+</pre></div>
+</div>
+<p>The first number is the (1-indexed) index of the source node, while the
+second number is the (1-indexed) index of the destination node. The
+third number is the number of individuals who commute from the source
+to the destination node.</p>
+<p>In this example, this lists workers who commute from ward 1 to wards
+1 to 10. 290 workers commute from ward 1 to ward 1 (so work in the same
+ward in which they live). 3 workers commute from ward 1 to ward 2,
+139 commute from ward 1 to ward 5 etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of the source wards have to be listed contiguously, i.e.
+you must list all of the connections where the source ward is
+equal to <code class="docutils literal notranslate"><span class="pre">1</span></code> before you list all of the connections where the
+source ward is equal to <code class="docutils literal notranslate"><span class="pre">2</span></code> etc.</p>
+</div>
+</section>
+<section id="work-size">
+<h2>work_size<a class="headerlink" href="#work-size" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">work_size</span></code> file contains the number of workers who reside in each ward.
+This is a column-based file with two columns of numbers that can be space or
+comma separated. For example;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">6800</span>
+<span class="mi">2</span> <span class="mi">1091</span>
+<span class="mi">3</span> <span class="mi">7148</span>
+<span class="mi">4</span> <span class="mi">5684</span>
+<span class="mi">5</span> <span class="mi">7226</span>
+<span class="mi">6</span> <span class="mi">6561</span>
+<span class="mi">7</span> <span class="mi">6904</span>
+<span class="mi">8</span> <span class="mi">7213</span>
+<span class="mi">9</span> <span class="mi">6715</span>
+<span class="mi">10</span> <span class="mi">7452</span>
+</pre></div>
+</div>
+<p>The first number is the (1-indexed) index of the ward, while the second
+is the number of workers in that ward. The number of workers in a ward must
+equal the sum of the number of workers from the <code class="docutils literal notranslate"><span class="pre">work</span></code> file that say
+that they commute from that ward.</p>
+<p>In this example, ward 1 has 6800 workers, ward 2 has 1091 workers etc.</p>
+</section>
+<section id="play">
+<h2>play<a class="headerlink" href="#play" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">play</span></code> file contains the list of play connections between wards.
+This is a column-based file with three columns of numbers that can be
+space or comma separated. For example;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">1</span> <span class="mf">0.0426470588235294</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mf">0.000441176470588235</span>
+<span class="mi">1</span> <span class="mi">5</span> <span class="mf">0.0204411764705882</span>
+<span class="mi">1</span> <span class="mi">6</span> <span class="mf">0.00867647058823529</span>
+<span class="mi">1</span> <span class="mi">7</span> <span class="mf">0.0025</span>
+<span class="mi">1</span> <span class="mi">8</span> <span class="mf">0.0175</span>
+<span class="mi">1</span> <span class="mi">9</span> <span class="mf">0.00544117647058823</span>
+<span class="mi">1</span> <span class="mi">10</span> <span class="mf">0.0177941176470588</span>
+</pre></div>
+</div>
+<p>The first number is the (1-indexed) index of the source ward, while the
+second is the (1-indexed) index of the destination ward. The third number
+is the fraction of players who will randomly travel from the source
+ward to the destination ward.</p>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">0.0426...</span></code> of players will remain in ward 1, while
+<code class="docutils literal notranslate"><span class="pre">0.00044...</span></code> of players will randomly move from ward 1 to ward 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful as the third number is a fraction (floating point number
+between 0 and 1) and not the number of players that move. Also note
+that the same ordering requirements as for the <code class="docutils literal notranslate"><span class="pre">work</span></code> file apply,
+namely that all connections for source ward 1 have to be listed before
+all connections for source ward 2 etc.</p>
+</div>
+</section>
+<section id="play-size">
+<h2>play_size<a class="headerlink" href="#play-size" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">play_size</span></code> file contains the number of players in each ward.
+This is a column-based file with two columns of numbers that can be
+space or comma separated. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">8915</span>
+<span class="mi">2</span> <span class="mi">374</span>
+<span class="mi">3</span> <span class="mi">7012</span>
+<span class="mi">4</span> <span class="mi">10579</span>
+<span class="mi">5</span> <span class="mi">8703</span>
+<span class="mi">6</span> <span class="mi">12257</span>
+<span class="mi">7</span> <span class="mi">10533</span>
+<span class="mi">8</span> <span class="mi">11259</span>
+<span class="mi">9</span> <span class="mi">8592</span>
+<span class="mi">10</span> <span class="mi">10999</span>
+</pre></div>
+</div>
+<p>The first number is the (1-indexed) index of the ward, while the second
+is the number of players in that ward. In this case, there are 8915
+players in ward 1, 374 players in ward 2 etc.</p>
+</section>
+<section id="position">
+<h2>position<a class="headerlink" href="#position" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">position</span></code> file contains the coordinates of the center of each ward.
+This is a column-based file with three columns of numbers that can be
+space or comma separated. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mf">524693.890435782</span> <span class="mf">190136.324582048</span>
+<span class="mi">2</span> <span class="mf">532169.852194767</span> <span class="mf">181663.72329877</span>
+<span class="mi">3</span> <span class="mf">522106.698233411</span> <span class="mf">179737.792519091</span>
+<span class="mi">4</span> <span class="mf">533388.404693453</span> <span class="mf">193451.026467071</span>
+<span class="mi">5</span> <span class="mf">525973.729674732</span> <span class="mf">188464.548078951</span>
+<span class="mi">6</span> <span class="mf">523953.505171282</span> <span class="mf">187729.710513154</span>
+<span class="mi">7</span> <span class="mf">520763.019103366</span> <span class="mf">193360.422742775</span>
+<span class="mi">8</span> <span class="mf">523100.570665414</span> <span class="mf">189524.60815157</span>
+<span class="mi">9</span> <span class="mf">523747.496973864</span> <span class="mf">196638.656771657</span>
+<span class="mi">10</span> <span class="mf">523019.549069799</span> <span class="mf">192050.596775831</span>
+</pre></div>
+</div>
+<p>The coordinates are either x/y or latitude/longitude, depending on what
+is set in the <code class="docutils literal notranslate"><span class="pre">description.json</span></code> file. If x/y, then the units are also
+set in this file.</p>
+<p>In this case, this is for x/y coordinates in meters. The first column
+is the (1-indexed) index of the ward. The second column is the X coordinate,
+while the third is the Y coordinate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If lat/long was used, then the second column would be the latitude, and
+the third column the longitude.</p>
+</div>
+<p>So ward 1 has its center are (524.7km, 190.1km), while ward 2 has its center
+at (532.1km, 181.7km) etc.</p>
+</section>
+<section id="lookup">
+<h2>lookup<a class="headerlink" href="#lookup" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">lookup</span></code> file contains metadata information about a ward that allows
+it to be looked up by name, region etc. This is a column-based file with
+a header row, and columns separated by spaces or commas. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">WD11CD</span><span class="p">,</span><span class="n">WD11NM</span><span class="p">,</span><span class="n">WD11NMW</span><span class="p">,</span><span class="n">CMWD11CD</span><span class="p">,</span><span class="n">CMWD11NM</span><span class="p">,</span><span class="n">CMWD11NMW</span><span class="p">,</span><span class="n">IND</span><span class="p">,</span><span class="n">LAD11CD</span><span class="p">,</span><span class="n">LAD11NM</span><span class="p">,</span><span class="n">LAD11NMW</span><span class="p">,</span><span class="n">FID</span>
+<span class="n">E05002337</span><span class="p">,</span><span class="n">Central</span><span class="p">,,</span><span class="n">E36000890</span><span class="p">,</span><span class="n">Central</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2001</span>
+<span class="n">E05002338</span><span class="p">,</span><span class="n">Chalvey</span><span class="p">,,</span><span class="n">E36000891</span><span class="p">,</span><span class="n">Chalvey</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2002</span>
+<span class="n">E05002339</span><span class="p">,</span><span class="n">Cippenham</span> <span class="n">Green</span><span class="p">,,</span><span class="n">E36000892</span><span class="p">,</span><span class="n">Cippenham</span> <span class="n">Green</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2003</span>
+<span class="n">E05002340</span><span class="p">,</span><span class="n">Cippenham</span> <span class="n">Meadows</span><span class="p">,,</span><span class="n">E36000893</span><span class="p">,</span><span class="n">Cippenham</span> <span class="n">Meadows</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2004</span>
+<span class="n">E05002341</span><span class="p">,</span><span class="n">Colnbrook</span> <span class="k">with</span> <span class="n">Poyle</span><span class="p">,,</span><span class="n">E36000894</span><span class="p">,</span><span class="n">Colnbrook</span> <span class="k">with</span> <span class="n">Poyle</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2005</span>
+<span class="n">E05002342</span><span class="p">,</span><span class="n">Farnham</span><span class="p">,,</span><span class="n">E36000895</span><span class="p">,</span><span class="n">Farnham</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2006</span>
+<span class="n">E05002343</span><span class="p">,</span><span class="n">Foxborough</span><span class="p">,,</span><span class="n">E36000896</span><span class="p">,</span><span class="n">Foxborough</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2007</span>
+<span class="n">E05002344</span><span class="p">,</span><span class="n">Haymill</span><span class="p">,,</span><span class="n">E36000897</span><span class="p">,</span><span class="n">Haymill</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2008</span>
+<span class="n">E05002345</span><span class="p">,</span><span class="n">Kedermister</span><span class="p">,,</span><span class="n">E36000898</span><span class="p">,</span><span class="n">Kedermister</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2009</span>
+<span class="n">E05002346</span><span class="p">,</span><span class="n">Langley</span> <span class="n">St</span> <span class="n">Mary</span><span class="s1">&#39;s,,E36000899,Langley St Mary&#39;</span><span class="n">s</span><span class="p">,,</span><span class="mi">0</span><span class="p">,</span><span class="n">E06000039</span><span class="p">,</span><span class="n">Slough</span><span class="p">,,</span><span class="mi">2010</span>
+</pre></div>
+</div>
+<p>The first row provides the names of each of the columns. These are ignored
+by the code. Each row gives the information for the ward whose index is equal
+to the line number (so line 1 give the information for ward at index 1).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">lookup_columns</span></code> field in <code class="docutils literal notranslate"><span class="pre">description.json</span></code> specifies which columns
+from this file to use for the name, code, authority etc. for each ward.
+For example, this has set column 0 for the code, column 1 for the name,
+and so the first ward has code <code class="docutils literal notranslate"><span class="pre">E05002337</span></code> and name <code class="docutils literal notranslate"><span class="pre">Central</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Input files and formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="extraseeds.html" class="btn btn-neutral float-right" title="Extra seeds files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

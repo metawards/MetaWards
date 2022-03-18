@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mixers and Merge-functions &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using custom merge functions to model shielding" href="03_custom.html" />
+    <link rel="prev" title="Multi-demographic sub-networks" href="01_demographics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_demographics.html">Multi-demographic sub-networks</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mixers and Merge-functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#force-of-infection-foi">Force of infection (FOI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mix-evenly">Mix evenly</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_custom.html">Using custom merge functions to model shielding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_contacts.html">Contact probabilities and Demographics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part05.html">Part 5 - Modelling multiple demographics</a> &raquo;</li>
+      <li>Mixers and Merge-functions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="01_demographics.html" class="btn btn-neutral float-left" title="Multi-demographic sub-networks" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_custom.html" class="btn btn-neutral float-right" title="Using custom merge functions to model shielding" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mixers-and-merge-functions">
+<h1>Mixers and Merge-functions<a class="headerlink" href="#mixers-and-merge-functions" title="Permalink to this headline"></a></h1>
+<p>In the last page you modelled outbreaks that were seeded either in
+the <em>red</em> population, who were all <em>players</em>, and the <em>blue</em> population,
+which contained both <em>players</em> and all of the <em>workers</em>.</p>
+<p>This resulted in two different outbreaks, which was understandable given
+that only <em>workers</em> move between wards. One issue was that the demographics
+were completely separate - infected individuals in the <em>red</em> population
+couldn’t infect individuals in the <em>blue</em> population and vice-versa.</p>
+<p>This is because the <a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> for each demographic was
+advanced independently, and no mixing took place.</p>
+<section id="force-of-infection-foi">
+<h2>Force of infection (FOI)<a class="headerlink" href="#force-of-infection-foi" title="Permalink to this headline"></a></h2>
+<p>Infected individuals in a ward contribute to the <em>force of infection</em> (FOI)
+of that ward. The higher the FOI, the more likely it is that other
+individuals in a ward will become infected.</p>
+<p>The FOIs for each demographic sub-network are calculated independently,
+based only on the infected individuals from that demographic. We can thus
+use the FOI calculation as a way of enabling different demographics to
+mix. We do this in <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using custom functions, called
+<a class="reference internal" href="../../api/index_MetaWards_mixers.html"><span class="doc">MetaWards.mixers</span></a>. These choose different
+<code class="docutils literal notranslate"><span class="pre">merge</span> <span class="pre">functions</span></code> that are
+used to mix and merge calculations of FOIs across different demographics.</p>
+<p>The default mixer is <a class="reference internal" href="../../api/generated/metawards.mixers.mix_none.html#metawards.mixers.mix_none" title="metawards.mixers.mix_none"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_none()</span></code></a>, which, as the
+name suggests, performs no mixing between demographics.</p>
+</section>
+<section id="mix-evenly">
+<h2>Mix evenly<a class="headerlink" href="#mix-evenly" title="Permalink to this headline"></a></h2>
+<p>An alternative is to use <a class="reference internal" href="../../api/generated/metawards.mixers.mix_evenly.html#metawards.mixers.mix_evenly" title="metawards.mixers.mix_evenly"><code class="xref py py-func docutils literal notranslate"><span class="pre">mix_evenly()</span></code></a>. This evenly
+mixes all demographics. It sets the FOI in each ward in each demographic
+equal to the sum of the FOIs in that ward across all demographics.</p>
+<p>You can choose this mixer using the <code class="docutils literal notranslate"><span class="pre">--mixer</span></code> argument. Run <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -D demographics.json -a ExtraSeedsLondon.dat --mixer mix_evenly
+</pre></div>
+</div>
+<p>You should now see that the outbreak spreads from the initial infection in
+the <em>red</em> demographic to the <em>blue workers</em>, who then spread it around
+the country to both the <em>red</em> and <em>blue</em> groups.</p>
+<p>The trajectories for each of the demographics are written into a single
+csv file called <code class="docutils literal notranslate"><span class="pre">output/trajectory.csv.bz2</span></code>. This can be loaded
+into tools such as Excel, R or Pandas for detailed analysis. For example,
+in Pandas you can load the file using;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/trajectory.csv.bz2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">      day        date demographic         S  E  I         R  IW</span>
+<span class="go"> 0      0  2020-05-07     overall  56082077  0  0         0   0</span>
+<span class="go"> 1      0  2020-05-07         red  16806501  0  0         0   0</span>
+<span class="go"> 2      0  2020-05-07        blue  39275576  0  0         0   0</span>
+<span class="go"> 3      1  2020-05-08     overall  56082077  0  0         0   0</span>
+<span class="go"> 4      0  2020-05-08         red  16806501  0  0         0   0</span>
+<span class="go"> ..   ...         ...         ...       ... .. ..       ...  ..</span>
+<span class="go"> 388    0  2020-09-13         red   1609032  0  0  15197469   0</span>
+<span class="go"> 389    0  2020-09-13        blue   1101473  0  1  38174102   0</span>
+<span class="go"> 390  130  2020-09-14     overall   2710505  0  0  53371572   0</span>
+<span class="go"> 391    0  2020-09-14         red   1609032  0  0  15197469   0</span>
+<span class="go"> 392    0  2020-09-14        blue   1101473  0  0  38174103   0</span>
+
+<span class="go"> [393 rows x 8 columns]</span>
+</pre></div>
+</div>
+<p>You can see that the values for each day for each demographic are printed
+in turn. The column called <code class="docutils literal notranslate"><span class="pre">demographic</span></code> holds the name of the demographic,
+with the overall total network called <code class="docutils literal notranslate"><span class="pre">overall</span></code>.</p>
+<p>You can plot this data easily using <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code>, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot -i output/trajectory.csv.bz2
+</pre></div>
+</div>
+<p>This will produce a graph called <code class="docutils literal notranslate"><span class="pre">output/demographics.jpg</span></code>.
+This should look similar to this;</p>
+<img alt="Disease trajectory across the red and blue demographics" src="../../_images/tutorial_5_2_demographics.jpg" />
+<p>Notice how infections in the <em>red</em> demographic lag behind those of the
+<em>blue</em> demographic. This makes sense, as it is only the workers from the
+<em>blue</em> demographic that can be infected outside their home ward. The
+<em>blue workers</em> are thus the source of the infection for the <em>red</em> demographic.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="01_demographics.html" class="btn btn-neutral float-left" title="Multi-demographic sub-networks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03_custom.html" class="btn btn-neutral float-right" title="Using custom merge functions to model shielding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

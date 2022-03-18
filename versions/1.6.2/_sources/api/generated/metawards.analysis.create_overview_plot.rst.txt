@@ -1,0 +1,6 @@
+﻿metawards.analysis.create\_overview\_plot
+=========================================
+
+.. currentmodule:: metawards.analysis
+
+.. autofunction:: create_overview_plot

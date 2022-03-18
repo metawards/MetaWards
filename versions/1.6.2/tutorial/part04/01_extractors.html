@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom extractors &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Accumulating into a Workspace" href="02_default.html" />
+    <link rel="prev" title="Part 4 - Customising the output" href="../index_part04.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Custom extractors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hello-extractors">Hello extractors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extract-xxx-and-output-xxx">extract_XXX and output_XXX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#occasional-functions">Occasional functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exiting-early">Exiting early</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="02_default.html">Accumulating into a Workspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_regional.html">Extracting by location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_rates.html">Extracting rates by ward</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part04.html">Part 4 - Customising the output</a> &raquo;</li>
+      <li>Custom extractors</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="../index_part04.html" class="btn btn-neutral float-left" title="Part 4 - Customising the output" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_default.html" class="btn btn-neutral float-right" title="Accumulating into a Workspace" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="custom-extractors">
+<h1>Custom extractors<a class="headerlink" href="#custom-extractors" title="Permalink to this headline"></a></h1>
+<p>You have now learned how to use custom iterators to customise the
+advancement of the outbreak during a model run.</p>
+<p>In a similar way, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> provides custom extractors that
+enable you to customise the output that is produced and written
+to a file (or files).</p>
+<section id="hello-extractors">
+<h2>Hello extractors<a class="headerlink" href="#hello-extractors" title="Permalink to this headline"></a></h2>
+<p>You create an extractor in an almost identical manner as an iterator.
+Start by creating a python file called <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and copy in the
+below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">extract_hello</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello extract_hello&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>The extractor is passed using the <code class="docutils literal notranslate"><span class="pre">--extractor</span></code> command-line argument.
+Run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --extractor hello
+</pre></div>
+</div>
+<p>You should see output something similar to this;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Importing a custom extractor from hello
+Loaded hello from hello.py
+&lt;function extract_hello at 0x1068599e0&gt;
+Building a custom extractor for &lt;function extract_hello at 0x1068599e0&gt;
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hello extract_hello
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 1 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hello extract_hello
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 2 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hello extract_hello
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hello extract_hello
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hello extract_hello
+S: 56082077  E: 0  I: 0  R: 0  IW: 0  POPULATION: 56082077
+Number of infections: 0
+Infection died ... Ending on day 5
+</pre></div>
+</div>
+</section>
+<section id="extract-xxx-and-output-xxx">
+<h2>extract_XXX and output_XXX<a class="headerlink" href="#extract-xxx-and-output-xxx" title="Permalink to this headline"></a></h2>
+<p>At the end of each model day, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> calls the
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">extract()</span></code> function. This calls your <code class="docutils literal notranslate"><span class="pre">extract_XXX</span></code>
+function. The signature is very similar to the custom iterator functions,
+namely it should take <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>, and then return a list of functions
+that <code class="xref py py-meth docutils literal notranslate"><span class="pre">extract()</span></code> will then call to output data
+(what we term <code class="docutils literal notranslate"><span class="pre">output_XXX</span></code> functions).</p>
+<p>At the moment, nothing is being written to the output directory. We
+can change this by adding an <code class="docutils literal notranslate"><span class="pre">output_XXX</span></code> function. For example,
+create a new python file called <code class="docutils literal notranslate"><span class="pre">population.py</span></code> and copy in
+the below;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">output_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello output_population&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create an output file called &#39;population.dat&#39;</span>
+    <span class="n">popfile</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;population.dat&quot;</span><span class="p">)</span>
+
+    <span class="c1"># write the population to this file</span>
+    <span class="n">popfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2"> &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">extract_population</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;hello extract_population&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">output_population</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This defines two functions;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">extract_population</span></code>, which tells <code class="docutils literal notranslate"><span class="pre">metawards</span></code> to use your
+<code class="docutils literal notranslate"><span class="pre">output_population</span></code> function,</p></li>
+<li><p>and <code class="docutils literal notranslate"><span class="pre">output_population</span></code> that uses the passed
+<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population" title="metawards.Population"><code class="xref py py-class docutils literal notranslate"><span class="pre">population</span></code></a> and
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles" title="metawards.OutputFiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">output_dir</span></code></a> objects to write
+the population of the different disease states to a file
+in the output directory called <code class="docutils literal notranslate"><span class="pre">population.dat</span></code>.</p></li>
+</ul>
+<p>Use this extractor using the command;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --extractor population
+</pre></div>
+</div>
+<p>If you take a look in the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory you should see that a file
+called <code class="docutils literal notranslate"><span class="pre">population.dat.bz2</span></code> has been created. You can take a look at
+this in R, Python pandas or excel. For example, we can load this in
+pandas using;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/population.dat.bz2&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">      0           1         2  3  4  5</span>
+<span class="go">   0  0  2020-04-26  56082077  0  0  0</span>
+<span class="go">   1  1  2020-04-27  56082077  0  0  0</span>
+<span class="go">   2  2  2020-04-28  56082077  0  0  0</span>
+<span class="go">   3  3  2020-04-29  56082077  0  0  0</span>
+<span class="go">   4  4  2020-04-30  56082077  0  0  0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> will auto-compress all files written into the output
+directory. If you don’t want this, then use the command-line argument
+<code class="docutils literal notranslate"><span class="pre">--no-auto-bzip</span></code>.</p>
+</div>
+<p>Notice that there are no headers to the columns. We can add a header
+by passing in the headers to the
+<a class="reference internal" href="../../api/generated/metawards.OutputFiles.html#metawards.OutputFiles.open" title="metawards.OutputFiles.open"><code class="xref py py-meth docutils literal notranslate"><span class="pre">open()</span></code></a> function, e.g. change <code class="docutils literal notranslate"><span class="pre">population.py</span></code>
+to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">output_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello output_population&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create an output file called &#39;population.dat&#39;</span>
+    <span class="n">popfile</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;population.dat&quot;</span><span class="p">,</span>
+                              <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                                       <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">])</span>
+
+    <span class="c1"># write the population to this file</span>
+    <span class="n">popfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2"> &quot;</span>
+                  <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">extract_population</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;hello extract_population&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">output_population</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> again, and now if you load the <code class="docutils literal notranslate"><span class="pre">population.dat.bz2</span></code>
+file into pandas (or R or Excel) you will see something similar to;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/population.dat.bz2&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="go">             date         S  E  I  R</span>
+<span class="go">  day</span>
+<span class="go">  0    2020-04-26  56082077  0  0  0</span>
+<span class="go">  1    2020-04-27  56082077  0  0  0</span>
+<span class="go">  2    2020-04-28  56082077  0  0  0</span>
+<span class="go">  3    2020-04-29  56082077  0  0  0</span>
+<span class="go">  4    2020-04-30  56082077  0  0  0</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note how I have used <code class="docutils literal notranslate"><span class="pre">index_col</span></code> to set the <code class="docutils literal notranslate"><span class="pre">day</span></code> as the index
+in pandas</p>
+</div>
+</section>
+<section id="occasional-functions">
+<h2>Occasional functions<a class="headerlink" href="#occasional-functions" title="Permalink to this headline"></a></h2>
+<p>Just as with iterators, we can choose to only call the output function
+on specific days. For example, to only output the population to the
+file on even days, change <code class="docutils literal notranslate"><span class="pre">population.py</span></code> to read;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="k">def</span> <span class="nf">output_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Hello output_population&quot;</span><span class="p">)</span>
+
+    <span class="c1"># create an output file called &#39;population.dat&#39;</span>
+    <span class="n">popfile</span> <span class="o">=</span> <span class="n">output_dir</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;population.dat&quot;</span><span class="p">,</span>
+                            <span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span>
+                                    <span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">])</span>
+
+    <span class="c1"># write the population to this file</span>
+    <span class="n">popfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">day</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">susceptibles</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">latent</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">total</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">population</span><span class="o">.</span><span class="n">recovereds</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">extract_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">Console</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;hello extract_population&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">day</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">output_population</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using this extractor and you should see that the
+<code class="docutils literal notranslate"><span class="pre">population.dat.bz2</span></code> file contains output only for days 0, 2, and 4.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The line <code class="docutils literal notranslate"><span class="pre">population.day</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">==</span> <span class="pre">0</span></code> takes the remainder division
+of <code class="docutils literal notranslate"><span class="pre">population.day</span></code> with 2. Any day that is divisible by 2 will
+return 0. You can output every <code class="docutils literal notranslate"><span class="pre">N</span></code> days using
+<code class="docutils literal notranslate"><span class="pre">population.day</span> <span class="pre">%</span> <span class="pre">N</span> <span class="pre">==</span> <span class="pre">0</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You are also able to only print out on other conditions, e.g.
+when the <em>model run</em> reaches a certain date, or when the
+infected population grows above a certain size.</p>
+</div>
+</section>
+<section id="exiting-early">
+<h2>Exiting early<a class="headerlink" href="#exiting-early" title="Permalink to this headline"></a></h2>
+<p>Sometimes you may want to exit a <em>model run</em> early if a condition
+is reached. The best way to do this is to raise a Python
+<a class="reference external" href="https://docs.python.org/3/library/exceptions.html">StopIteration</a>
+exception. This will signal to <code class="docutils literal notranslate"><span class="pre">metawards</span></code> that the <em>model run</em> should
+stop at the end of the current iteration (other functions that are
+part of that iteration can still complete, and any output written
+for that iteration will still be recorded).</p>
+<p>For example, you could use this output function to stop the <em>model run</em>
+once the number of infections reaches 2000. Copy the below into
+<code class="docutils literal notranslate"><span class="pre">extract_stop.py</span></code>;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+
+<span class="k">def</span> <span class="nf">output_stop</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">population</span><span class="o">.</span><span class="n">infecteds</span> <span class="o">&gt;</span> <span class="mi">2000</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">StopIteration</span>
+
+
+<span class="k">def</span> <span class="nf">extract_stop</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">output_funcs</span> <span class="o">=</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">output_funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_stop</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output_funcs</span>
+</pre></div>
+</div>
+<p>This extractor uses all of the functions of
+<a class="reference internal" href="../../api/generated/metawards.extractors.extract_default.html#metawards.extractors.extract_default" title="metawards.extractors.extract_default"><code class="xref py py-meth docutils literal notranslate"><span class="pre">extract_default()</span></code></a>, plus a new custom
+output function called <code class="docutils literal notranslate"><span class="pre">output_stop</span></code>. This compares the number
+of infections (<a class="reference internal" href="../../api/generated/metawards.Population.html#metawards.Population.infecteds" title="metawards.Population.infecteds"><code class="xref py py-data docutils literal notranslate"><span class="pre">population.infecteds</span></code></a>),
+and if this is more than 2000, then it raises a Python
+<a class="reference external" href="https://docs.python.org/3/library/exceptions.html">StopIteration</a>.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">metawards</span></code> using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -a ExtraSeedsLondon.dat --extractor extract_stop
+</pre></div>
+</div>
+<p>You should see that the <em>model run</em> is stopped once the number of infections
+is greater than 2000, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 29 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56078417  E: 566  I: 1275  R: 1819  IW: 501  POPULATION: 56082077
+Number of infections: 1841
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 30 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56077705  E: 650  I: 1555  R: 2167  IW: 543  POPULATION: 56082077
+&lt;function output_stop at 0x105412e60&gt; has indicated that the model run should stop early. Will finish the
+run at the end of this iteration
+Number of infections: 2205
+Exiting model run early due to function request
+Infection died ... Ending on day 31
+</pre></div>
+</div>
+<p>You can use this to stop a <em>model run</em> for any reason you want, e.g.
+a calculated condition has been reached, the model is unstable or
+uses parameters that are uninteresting. Another option is to use this to
+stop <code class="docutils literal notranslate"><span class="pre">metawards</span></code> from running for more than a specified amount of time.</p>
+<p>To do this, create an extractor called <code class="docutils literal notranslate"><span class="pre">extract_stop_time.py</span></code> and
+copy in;</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metawards.extractors</span> <span class="kn">import</span> <span class="n">extract_default</span>
+<span class="kn">from</span> <span class="nn">metawards.utils</span> <span class="kn">import</span> <span class="n">Console</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+
+<span class="k">def</span> <span class="nf">output_stop_time</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="p">,</span> <span class="s2">&quot;_start_model_time&quot;</span><span class="p">):</span>
+        <span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">_start_model_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="n">runtime</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">network</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">_start_model_time</span>
+
+    <span class="n">Console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Runtime is </span><span class="si">{</span><span class="n">runtime</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">runtime</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">Console</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Runtime exceeded 5 seconds!&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">StopIteration</span>
+
+
+<span class="k">def</span> <span class="nf">extract_stop_time</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">output_funcs</span> <span class="o">=</span> <span class="n">extract_default</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">output_funcs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output_stop_time</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">output_funcs</span>
+</pre></div>
+</div>
+<p>This uses the Python
+<a class="reference external" href="https://docs.python.org/3/library/datetime.html">datetime</a> module to
+calculate the time since <code class="docutils literal notranslate"><span class="pre">output_stop_time</span></code> was first called.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’ve recorded this start time by adding an attribute to <code class="docutils literal notranslate"><span class="pre">network.params</span></code>
+called <code class="docutils literal notranslate"><span class="pre">_start_model_time</span></code>. Adding attributes like this to the
+<code class="docutils literal notranslate"><span class="pre">network.params</span></code> object is a good way to store parameters between
+model runs, or to initialise values at the start of a model run.
+Any parameters are guaranteed to be cleared between runs, and
+the threading model means that anything you read/write is thread
+safe and will not interfere with other runs.</p>
+</div>
+<p>Run this extractor using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d lurgy3 -a ExtraSeedsLondon.dat --extractor extract_stop_time
+</pre></div>
+</div>
+<p>You should see that the run ends after five seconds, e.g.;</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 38 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56064800  E: 2313  I: 5934  R: 9030  IW: 1784  POPULATION: 56082077
+Runtime is 4.538544 seconds
+Number of infections: 8247
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 39 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56061567  E: 2816  I: 7023  R: 10671  IW: 2026  POPULATION: 56082077
+Runtime is 4.831688 seconds
+Number of infections: 9839
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Day 40 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S: 56057698  E: 3233  I: 8359  R: 12787  IW: 2306  POPULATION: 56082077
+Runtime is 5.156103 seconds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ WARNING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Runtime exceeded 5 seconds!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+&lt;function output_stop_time at 0x10aa3ec20&gt; has indicated that the model run should stop early. Will
+finish the run at the end of this iteration
+Number of infections: 11592
+Exiting model run early due to function request
+Infection died ... Ending on day 41
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index_part04.html" class="btn btn-neutral float-left" title="Part 4 - Customising the output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="02_default.html" class="btn btn-neutral float-right" title="Accumulating into a Workspace" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

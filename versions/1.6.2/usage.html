@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Usage &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/custom.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Command line options" href="metawards_help.html" />
+    <link rel="prev" title="User input files" href="fileformats/userinput.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html">
+            <img src="_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metawards-program">metawards program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-help">Getting help</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="metawards_help.html">Command line options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-options">Understanding the options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-input">Understanding the input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-the-output">Understanding the output</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metawards-plot">metawards-plot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metawards_plot_help.html">Command line options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Usage</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="fileformats/userinput.html" class="btn btn-neutral float-left" title="User input files" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metawards_help.html" class="btn btn-neutral float-right" title="Command line options" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline"></a></h1>
+<section id="metawards-program">
+<h2>metawards program<a class="headerlink" href="#metawards-program" title="Permalink to this headline"></a></h2>
+<p>MetaWards comes with a command-line program called <code class="docutils literal notranslate"><span class="pre">metawards</span></code>.
+This is installed by default into the same directory as the
+<code class="docutils literal notranslate"><span class="pre">python</span></code> executable used to build the package. To run <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --version
+</pre></div>
+</div>
+<p>This prints out the version of <code class="docutils literal notranslate"><span class="pre">metawards</span></code>, which should look something
+like this;</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>┌──────────────────────────────────────────────────────────────────────┐
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                   MetaWards version 1.6.2                    ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                    https://metawards.org                     ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                      Source information                      ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│    • repository: https://github.com/metawards/MetaWards              │
+│    • branch: 1.6.2)                                                  │
+│    • revision: 6f85018f13a8f7164d05ea4d2472e11603e52b6a              │
+│    • last modified: 2022-03-18T11:42:21+0000                         │
+│                                                                      │
+│   WARNING: MetaWardsData cannot be found! Please see                 │
+│   https://metawards.org/model_data for instructions on how to        │
+│   download and install this necessary data.                          │
+│                                                                      │
+│   ╔══════════════════════════════════════════════════════════════╗   │
+│   ║                    Additional information                    ║   │
+│   ╚══════════════════════════════════════════════════════════════╝   │
+│                                                                      │
+│   Visit https://metawards.org for more information about             │
+│   metawards, its authors and its license                             │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>This version information gives you the provenance of this executable which
+should help in reproducing output. It is written to the top of all
+metawards outputs.</p>
+<p>If you see output like this, with <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> lines about the version
+not having been committed to git…</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────────────────────────────────────────────────────────┐
+│                                                                      │
+│                                                                      │
+│             MetaWards version 0.12.0+17.gd839bca1.dirty              │
+│                                                                      │
+│                                                                      │
+│                        https://metawards.org                         │
+│                                                                      │
+│                          Source information                          │
+│                                                                      │
+│   • repository: https://github.com/metawards/MetaWards               │
+│   • branch: feature-mover-tutorial                                   │
+│   • revision: d839bca1e32e8c8b1814d7f72667e84ead1a59d7               │
+│   • last modified: 2020-05-20T13:01:14+0100                          │
+│                                                                      │
+│  WARNING: This version has not been committed to git, so you may     │
+│  not be able to recover the original source code that was used to    │
+│  generate this run!                                                  │
+│                                                                      │
+│                      MetaWardsData information                       │
+│                                                                      │
+│   • version: 0.5.0                                                   │
+│   • repository: https://github.com/metawards/MetaWardsData           │
+│   • branch: main                                                   │
+│                                                                      │
+│                        Additional information                        │
+│                                                                      │
+│  Visit https://metawards.org for more information about metawards,   │
+│  its authors and its license                                         │
+│                                                                      │
+└──────────────────────────────────────────────────────────────────────┘
+</pre></div>
+</div>
+<p>then this means that your <code class="docutils literal notranslate"><span class="pre">metawards</span></code> executable has been built using
+source code that has not been committed to git, and is therefore not
+version controlled. Do not use <code class="docutils literal notranslate"><span class="pre">dirty</span></code> software for production jobs
+as it will not be possible to recover the software used to produce
+outputs at a later date, and thus it may not be possile to reproduce
+results.</p>
+</section>
+<section id="getting-help">
+<h2>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">metawards</span></code> program has up-to-date and very comprehensive in-built
+help for all of its command line options. You can print this help by
+typing;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards --help
+</pre></div>
+</div>
+<p>The full help is <a class="reference internal" href="metawards_help.html"><span class="doc">available here</span></a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="understanding-the-options">
+<h2>Understanding the options<a class="headerlink" href="#understanding-the-options" title="Permalink to this headline"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">metawards</span></code> is a powerful program so it comes with a lot of options.
+The most used and thus most important options are given first. These
+are;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--disease</span> <span class="pre">/</span> <span class="pre">-d</span></code> : Specify the name of the disease file to load.
+These files are described in <a class="reference external" href="model_data.html">Model data</a>.
+If the file exists in your path then that will be used. Otherwise the
+file will be
+searched for from the <code class="docutils literal notranslate"><span class="pre">MetaWardsData/diseases</span></code> directory. Note that
+you don’t need to specify the file type, as this is assumed to be
+<code class="docutils literal notranslate"><span class="pre">.json</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--input</span> <span class="pre">/</span> <span class="pre">-i</span></code> : Specify the input file adjustable parameters that will be
+explored for the model run. You must supply an input file to be
+able to run a model. This file is described below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--line</span> <span class="pre">/</span> <span class="pre">-l</span></code> : Specify the line number (or line numbers) of adjustable
+parameter sets from the input file. Line numbers are counted from 0, and
+multiple line numbers can be given, e.g. <code class="docutils literal notranslate"><span class="pre">--line</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">7-10</span></code> will
+read from lines 3, 5, 7, 8, 9, and 10 (remembering that the first line
+of the file is line 0). If multiple lines are read, then multiple model
+runs will be performed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--repeats</span> <span class="pre">/</span> <span class="pre">-r</span></code> : specify the number of times model runs for each
+adjustable parameter set should be repeated. MetaWards model runs
+are stochastic, based on random numbers. The results for multiple
+runs must thus be processed to derive meaning.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--additional</span> <span class="pre">/</span> <span class="pre">-a</span></code> : specify the file (or files) containing additional
+seeds. These files are described in <a class="reference external" href="model_data.html">Model data</a>.
+You can specify as many or few files as you wish. If the file exists
+in your path then that will be used. Otherwise the file will be
+searched for from the <code class="docutils literal notranslate"><span class="pre">MetaWardsData/extra_seeds</span></code> directory.
+Note that you can write the additional seeds directly, rather
+than using a file. To see how, take a look at
+<a class="reference internal" href="tutorial/part08/01_networks.html"><span class="doc">this section of the tutorial</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--output</span> <span class="pre">/</span> <span class="pre">-o</span></code> : specify the location to place all output files. By default
+this will be in a new directory called <code class="docutils literal notranslate"><span class="pre">output</span></code>. A description of the
+output files is below.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--seed</span> <span class="pre">/</span> <span class="pre">-s</span></code> : specify the random number seed to use for a run. By default
+a truly random seed will be used. This will be printed into the output,
+so that you can use it together with this option to reproduce a run.
+The same version of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> will reproduce the same output when
+given the same input, same random number seed, and run over the
+same number of threads.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--start-date</span></code> : specify the date of <em>day zero</em> of the model outbreak.
+If this isn’t specified then this defaults to the current date. This
+recognises any date that is understood by
+<a class="reference internal" href="api/generated/metawards.Interpret.html#metawards.Interpret.date" title="metawards.Interpret.date"><code class="xref py py-func docutils literal notranslate"><span class="pre">metawards.Interpret.date()</span></code></a>,
+which includes dates like <em>today</em>, <em>tomorrow</em>, <em>Monday</em>, <em>Jan 2020</em> etc.
+The start date is used to trigger events based on day of week or
+date within a model outbreak (e.g. is the day a weekend)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--start-day</span></code> : specify the day of the outbreak, e.g. the default
+is <code class="docutils literal notranslate"><span class="pre">0</span></code> for <em>day zero</em>. This is useful if you want to start the
+model run from a later day than the start date. Note that the
+start date passed via <code class="docutils literal notranslate"><span class="pre">--start-date</span></code> is the date of <em>day zero</em>,
+so the first day modelled will be <code class="docutils literal notranslate"><span class="pre">--start-day</span></code> days
+after <code class="docutils literal notranslate"><span class="pre">--start-date</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--nthreads</span></code> : specify the number of threads over which to perform a
+model run. The sequence of random numbers drawn in parallel is
+deterministic for a given number of threads, but will be different
+for different numbers of threads. This is why you can only reproduce
+a model run using a combination of the same random number seed and
+same number of threads. The number of threads used for a model run
+is written into the output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--nprocs</span></code> : specify the number of processes over which you want
+to parallelise the model runs. This is useful if you have multiple
+processors on your computer and you are running multiple model runs.
+Note that this option is set automatically for you if you are
+<a class="reference external" href="cluster_usage.html">running on a cluster</a>.</p></li>
+</ul>
+<p>Using these options, a typical <code class="docutils literal notranslate"><span class="pre">metawards</span></code> run can be performed
+using;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards -d ncov -a <span class="s2">&quot;1  5  1&quot;</span>
+</pre></div>
+</div>
+<p>This python port of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> was written to reproduce the output
+of the original C code. This original code is bundled with this
+port and is in the <code class="docutils literal notranslate"><span class="pre">original</span></code> directory. There are several integration
+tests included in the unit testing suite that validate that the
+Python code still reproduces the results generated using the C code.</p>
+</section>
+<section id="understanding-the-input">
+<h2>Understanding the input<a class="headerlink" href="#understanding-the-input" title="Permalink to this headline"></a></h2>
+<p>The input file for <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is a
+<a class="reference internal" href="fileformats/design.html"><span class="doc">design file</span></a> that can be as
+simple as a set of lines containing
+five comma-separated or space-separated values per line, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.95</span><span class="p">,</span><span class="mf">0.95</span><span class="p">,</span><span class="mf">0.19</span><span class="p">,</span><span class="mf">0.91</span><span class="p">,</span><span class="mf">0.91</span>
+<span class="mf">0.90</span><span class="p">,</span><span class="mf">0.93</span><span class="p">,</span><span class="mf">0.18</span><span class="p">,</span><span class="mf">0.92</span><span class="p">,</span><span class="mf">0.90</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.90</span> <span class="mf">0.93</span> <span class="mf">0.18</span> <span class="mf">0.92</span> <span class="mf">0.90</span>
+</pre></div>
+</div>
+<p>These five values per line adjust the <code class="docutils literal notranslate"><span class="pre">beta[2]</span></code>, <code class="docutils literal notranslate"><span class="pre">beta[3]</span></code>,
+<code class="docutils literal notranslate"><span class="pre">progress[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">progress[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">progress[3]</span></code> parameters of
+the <code class="docutils literal notranslate"><span class="pre">disease</span></code> model as described in <a class="reference external" href="model_data.html">Model Data</a>.</p>
+<p>You can optionally choose which parameters will be varied by adding
+a title line, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="n">progress</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>   <span class="n">progress</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+  <span class="mf">0.90</span>        <span class="mf">0.92</span>         <span class="mf">0.90</span>
+  <span class="mf">0.85</span>        <span class="mf">0.91</span>         <span class="mf">0.92</span>
+</pre></div>
+</div>
+<p>specifies that you want to adjust the <code class="docutils literal notranslate"><span class="pre">beta[2]</span></code>, <code class="docutils literal notranslate"><span class="pre">progress[2]</span></code> and
+<code class="docutils literal notranslate"><span class="pre">progress[3]</span></code> parameters to the specified values.</p>
+<p>This file can adjust a lot more, include user-specified parameters,
+and control the numbers of repeats and output directories. Please
+see the <a class="reference internal" href="fileformats/design.html"><span class="doc">full file format description</span></a>
+for more information.</p>
+</section>
+<section id="understanding-the-output">
+<h2>Understanding the output<a class="headerlink" href="#understanding-the-output" title="Permalink to this headline"></a></h2>
+<p>The output of <code class="docutils literal notranslate"><span class="pre">metawards</span></code> is primarily a trajectory of the outbreak
+through the model population. This is reported daily from the first
+day (day 0) until the outbreak ends. For single runs this is printed
+to the screen, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mi">21</span> <span class="mi">58</span>
+<span class="n">S</span><span class="p">:</span> <span class="mi">56081959</span>    <span class="n">E</span><span class="p">:</span> <span class="mi">52</span>    <span class="n">I</span><span class="p">:</span> <span class="mi">17</span>    <span class="n">R</span><span class="p">:</span> <span class="mi">49</span>    <span class="n">IW</span><span class="p">:</span> <span class="mi">9</span>   <span class="n">TOTAL</span> <span class="n">POPULATION</span> <span class="mi">56082025</span>
+</pre></div>
+</div>
+<p>A model run moves individuals between different states according to
+whether they become infected, and then progress through the outbreak.
+The codes mean;</p>
+<ul class="simple">
+<li><p><strong>S</strong>: The number of the population who are <em>susceptible</em> to infection</p></li>
+<li><p><strong>E</strong>: The number of the population who are <em>latent</em>, meaning they are
+infected, but not yet infectious.</p></li>
+<li><p><strong>I</strong>: The number of the population who are <em>infected</em>, meaning they
+have symptoms and are infectious</p></li>
+<li><p><strong>R</strong>: The number of the population who are removed from being susceptible,
+either because they have been newly infected that day, or because they
+have recovered from the infection and are no longer susceptible to infection</p></li>
+<li><p><strong>IW</strong>: The number of electoral wards that contain at least one
+individual who was newly infected that day.</p></li>
+</ul>
+<p>As well as being printed to the screen, this data is also written
+to the CSV file <code class="docutils literal notranslate"><span class="pre">output/results.csv.bz2</span></code> for easy reading and analysis
+using R or Python pandas.</p>
+<p>If multiple model runs are performed, then each run is given a fingerprint
+based on the adjustable parameters and repeat number. The output is written
+to <code class="docutils literal notranslate"><span class="pre">output/[fingerprint]_[repeat]/output.txt</span></code>. In addition, results
+for all of the runs are combined into a single <code class="docutils literal notranslate"><span class="pre">output/results.csv.bz2</span></code>
+file for easy combined analysis.</p>
+<p>For example, this output could be read into a pandas dataframe using</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;output/results.csv.bz2&quot;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="c1"># perform analysis</span>
+</pre></div>
+</div>
+<p>We run a good online workshop on
+<a class="reference external" href="https://milliams.com/courses/data_analysis_python/index.html">how to use pandas for data analysis</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code> and <code class="docutils literal notranslate"><span class="pre">R</span></code> stages are just the defaults, and <code class="docutils literal notranslate"><span class="pre">metawards</span></code>
+does support custom disease stages which may not have <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">I</span></code> or <code class="docutils literal notranslate"><span class="pre">R</span></code>.
+To learn more, take a look at the
+<a class="reference internal" href="tutorial/part07/05_named_stages.html"><span class="doc">tutorial on custom named stages</span></a>.</p>
+</div>
+<section id="metawards-plot">
+<h3>metawards-plot<a class="headerlink" href="#metawards-plot" title="Permalink to this headline"></a></h3>
+<p>For quick and simple plots, <code class="docutils literal notranslate"><span class="pre">metawards</span></code> comes with the command-line
+program <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code>. This can be used to create plots of the
+data in the <code class="docutils literal notranslate"><span class="pre">output/results.csv.bz2</span></code> file using, e.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot --input output/results.csv.bz2
+</pre></div>
+</div>
+<p>For full help on this program using <code class="docutils literal notranslate"><span class="pre">metawards-plot</span> <span class="pre">--help</span></code>.
+The full help is <a class="reference internal" href="metawards_plot_help.html"><span class="doc">available here</span></a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fileformats/userinput.html" class="btn btn-neutral float-left" title="User input files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metawards_help.html" class="btn btn-neutral float-right" title="Command line options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿metawards.utils.clear\_all\_infections
+======================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: clear_all_infections

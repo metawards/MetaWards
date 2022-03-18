@@ -1,0 +1,6 @@
+﻿metawards.utils.add\_wards\_network\_distance
+=============================================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: add_wards_network_distance

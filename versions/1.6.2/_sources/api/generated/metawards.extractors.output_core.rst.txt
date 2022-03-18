@@ -1,0 +1,6 @@
+﻿metawards.extractors.output\_core
+=================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: output_core

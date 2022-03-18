@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Different networks for different demographics &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 9 - Advanced Moves and Scenarios" href="../index_part09.html" />
+    <link rel="prev" title="Specifying ward-local parameters" href="05_local_network.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_networks.html">Understanding the Model Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_custom_network.html">Creating a Custom Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_reticulate.html">Creating Networks in R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_using_custom.html">Using a Custom Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_local_network.html">Specifying ward-local parameters</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Different networks for different demographics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part08.html">Part 8 - Creating your own models / networks</a> &raquo;</li>
+      <li>Different networks for different demographics</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="05_local_network.html" class="btn btn-neutral float-left" title="Specifying ward-local parameters" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part09.html" class="btn btn-neutral float-right" title="Part 9 - Advanced Moves and Scenarios" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="different-networks-for-different-demographics">
+<h1>Different networks for different demographics<a class="headerlink" href="#different-networks-for-different-demographics" title="Permalink to this headline"></a></h1>
+<p>Custom networks significantly increase the flexibility of <code class="docutils literal notranslate"><span class="pre">metawards</span></code>.
+You can use them to create models for different countries. And you can
+use them to use the concept of metapopulations to model different
+environments.</p>
+<p>For example, we can use a custom network to model <code class="docutils literal notranslate"><span class="pre">home</span></code>, <code class="docutils literal notranslate"><span class="pre">school</span></code>
+and <code class="docutils literal notranslate"><span class="pre">work</span></code>, and then use different demographics to model
+students, teachers and everyone else. This way
+you could explore how closing schools could impact disease spread.</p>
+<p>This concept is explored in detail in the
+<a class="reference internal" href="../../quickstart/index.html"><span class="doc">quick start guide</span></a>. The key takeaway you should
+have now, having worked through this
+<a class="reference internal" href="../index.html"><span class="doc">tutorial</span></a> as well as the
+<a class="reference internal" href="../../quickstart/index.html"><span class="doc">quick start</span></a>, is that you can create;</p>
+<ul class="simple">
+<li><p>different <a class="reference internal" href="../../api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> objects that contain different
+disease stages and parameters,</p></li>
+<li><p>different <a class="reference internal" href="../../api/generated/metawards.Demographic.html#metawards.Demographic" title="metawards.Demographic"><code class="xref py py-class docutils literal notranslate"><span class="pre">Demographic</span></code></a> objects that represent
+different groups of individuals, each of which can experience
+different <a class="reference internal" href="../../api/generated/metawards.Disease.html#metawards.Disease" title="metawards.Disease"><code class="xref py py-class docutils literal notranslate"><span class="pre">Disease</span></code></a> objects (and thus advance
+along different pathways,</p></li>
+<li><p>who can each experience metapopulation movements on different
+<a class="reference internal" href="../../api/generated/metawards.Network.html#metawards.Network" title="metawards.Network"><code class="xref py py-class docutils literal notranslate"><span class="pre">Network</span></code></a> networks (built flexibly via the
+<a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Ward" title="metawards.Ward"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ward</span></code></a> / <a class="reference internal" href="../../api/index_api_MetaWards.html#metawards.Wards" title="metawards.Wards"><code class="xref py py-class docutils literal notranslate"><span class="pre">Wards</span></code></a> objects),</p></li>
+<li><p>where each ward in each network can have its own parameters, thereby
+enabling modelling of ward-local behaviour for different demographics at
+different disease stages in different networks.</p></li>
+</ul>
+<p>This flexibility for the model is then enhanced by building custom
+<a class="reference internal" href="../../api/index_api_MetaWards_iterators.html#module-metawards.iterators" title="metawards.iterators"><code class="xref py py-mod docutils literal notranslate"><span class="pre">iterators</span></code></a> that enable you to write your own code
+to advance individuals from one disease stage to the next, and control
+how susceptible individuals are infected.</p>
+<p>You can build custom <a class="reference internal" href="../../api/index_api_MetaWards_mixers.html#module-metawards.mixers" title="metawards.mixers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mixers</span></code></a> to control how the force
+of infections calculated for different demographics are mixed and merged
+together, thereby controlling how they interact (from not interacting,
+to evenly interacting, via custom interactions for the interaction matrix).</p>
+<p>You can build custom <a class="reference internal" href="../../api/index_api_MetaWards_movers.html#module-metawards.movers" title="metawards.movers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">movers</span></code></a> to control vertical
+movements of individuals between demographics, that complement the
+horizontal movement of individuals along disease stages.</p>
+<p>And you can write custom <a class="reference internal" href="../../api/index_api_MetaWards_extractors.html#module-metawards.extractors" title="metawards.extractors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">extractors</span></code></a> to analyse the
+data from the simulation on the fly, and write whatever data you wish
+out to disk or database.</p>
+<p>And, from here you can creata custom user parameters that control all
+of this model, and write scan/design files that can run multiple
+simulations to scan through these custom parameters, as well as
+(nearly) all in-built and disease parameters, optionally repeating
+runs to check for statistical variance.</p>
+<p>And (finally!) you can do all of this from within a single Python or R
+script using the Python or R APIs, or you can run from the command line,
+or from within a batch script that will automatically parallelise
+the runs over a supercomputing cluster.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="05_local_network.html" class="btn btn-neutral float-left" title="Specifying ward-local parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part09.html" class="btn btn-neutral float-right" title="Part 9 - Advanced Moves and Scenarios" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+﻿metawards.analysis.import\_animate\_modules
+===========================================
+
+.. currentmodule:: metawards.analysis
+
+.. autofunction:: import_animate_modules

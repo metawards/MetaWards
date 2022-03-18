@@ -1,0 +1,6 @@
+﻿metawards.extractors.output\_trajectory
+=======================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: output_trajectory

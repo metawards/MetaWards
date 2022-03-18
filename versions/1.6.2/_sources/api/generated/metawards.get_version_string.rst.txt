@@ -1,0 +1,6 @@
+﻿metawards.get\_version\_string
+==============================
+
+.. currentmodule:: metawards
+
+.. autofunction:: get_version_string

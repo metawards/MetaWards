@@ -1,0 +1,6 @@
+﻿metawards.utils.zero\_workspace
+===============================
+
+.. currentmodule:: metawards.utils
+
+.. autofunction:: zero_workspace

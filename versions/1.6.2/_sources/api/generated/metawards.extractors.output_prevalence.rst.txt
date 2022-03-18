@@ -1,0 +1,6 @@
+﻿metawards.extractors.output\_prevalence
+=======================================
+
+.. currentmodule:: metawards.extractors
+
+.. autofunction:: output_prevalence

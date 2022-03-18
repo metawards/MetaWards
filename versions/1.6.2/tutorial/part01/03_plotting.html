@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plotting outputs &mdash; MetaWards Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/custom.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 2 - Refining the model" href="../index_part02.html" />
+    <link rel="prev" title="Multiple model runs" href="02_repeating.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/logo.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+  <div id="version_box"></div>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../features.html">Features</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation instructions</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../model_data.html">Model data</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Quick Start Guide</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index_part01.html">Part 1 - Modelling outbreaks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="01_getting_started.html">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_repeating.html">Multiple model runs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Plotting outputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#understanding-the-graphs">Understanding the graphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#jupyter-notebooks">Jupyter notebooks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part02.html">Part 2 - Refining the model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part03.html">Part 3 - Customising the outbreak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part04.html">Part 4 - Customising the output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part05.html">Part 5 - Modelling multiple demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part06.html">Part 6 - Moving between demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part07.html">Part 7 - Different pathways for different demographics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part08.html">Part 8 - Creating your own models / networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index_part09.html">Part 9 - Advanced Moves and Scenarios</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../fileformats/index.html">Input files and formats</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_usage.html">Running on a cluster</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Help and support</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../devsupport.html">Developer Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packaging.html">Packaging releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../development.html">Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../snaglist.html">Snag list</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/index.html">Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MetaWards</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Tutorial</a> &raquo;</li>
+          <li><a href="../index_part01.html">Part 1 - Modelling outbreaks</a> &raquo;</li>
+      <li>Plotting outputs</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="02_repeating.html" class="btn btn-neutral float-left" title="Multiple model runs" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part02.html" class="btn btn-neutral float-right" title="Part 2 - Refining the model" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="plotting-outputs">
+<h1>Plotting outputs<a class="headerlink" href="#plotting-outputs" title="Permalink to this headline"></a></h1>
+<p>You should now have a <code class="docutils literal notranslate"><span class="pre">results.csv.bz2</span></code> file in the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory,
+which contains the results of four <em>model runs</em> of the outbreak of the
+lurgy that was seeded in London.</p>
+<p>You can plot graphs of the result using the
+<a class="reference internal" href="../../metawards_plot_help.html"><span class="doc">metawards-plot</span></a> command.
+To run this, type;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>metawards-plot --input output/results.csv.bz2
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code> uses <a class="reference external" href="https://pandas.pydata.org">pandas</a> and
+<a class="reference external" href="https://matplotlib.org">matplotlib</a> for plotting. If you don’t have
+these on your computer then you will see an error message giving
+instructions on how to install the packages. Note that the default
+format of the output is jpeg. You can change the format using the
+<code class="docutils literal notranslate"><span class="pre">--format</span></code> option, e.g. <code class="docutils literal notranslate"><span class="pre">--format</span> <span class="pre">png</span></code> or <code class="docutils literal notranslate"><span class="pre">--format</span> <span class="pre">pdf</span></code>.
+You may need to install
+<a class="reference external" href="https://pillow.readthedocs.io/en/stable/">Pillow</a>
+to support output in some file formats.</p>
+</div>
+<section id="understanding-the-graphs">
+<h2>Understanding the graphs<a class="headerlink" href="#understanding-the-graphs" title="Permalink to this headline"></a></h2>
+<p>This will create two sets of graphs;</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">output/overview.pdf</span></code></dt><dd><p>This is an overview of the <strong>E</strong>, <strong>I</strong>, <strong>IW</strong> and <strong>R</strong> values
+from each day of the model outbreak for each of the four <em>model runs</em>.
+Your graph should look something like this;</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="Overview image of the outbreak of the lurgy" src="../../_images/tutorial_1_3_overview.jpg" />
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">output/average.pdf</span></code></dt><dd><p>This shows the average of the <strong>E</strong>, <strong>I</strong>, <strong>IW</strong> and <strong>R</strong> values,
+with the standard deviation shown as the error bars. Your graph should
+look something like this;</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="Overview image of the outbreak of the lurgy" src="../../_images/tutorial_1_3_average.jpg" />
+<p>The <strong>E</strong> graph shows the total number of latent infections. It should be
+slightly ahead of and of a similar shape to the <strong>I</strong> graph, which shows
+the total number of infections.</p>
+<p>The <strong>IW</strong> graph shows the number of wards with at least one infection.
+This cannot grow to more than the total number of wards, hence why
+you see this graph topping out at ~8588, as this is the number of wards.</p>
+<p>The <strong>R</strong> graph shows the number of individuals removed from the epidemic
+(e.g. as they may have recovered). This should have an “S” shape,
+showing exponential growth in the initial stage of the epidemic that
+tails off as the number of individuals susceptible to infection is
+reduced (e.g. as immunity in the population is built up).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your graphs may look a little different in the exact numbers, but should
+be similar in shape. The purpose of this type of modelling is not to
+make exact numerical predictions, but to instead understand trends
+and timelines.</p>
+</div>
+</section>
+<section id="jupyter-notebooks">
+<h2>Jupyter notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code> command can be used for quick-and-simple plots.
+If you want something more complex then you can take a look at the functions
+in the <a class="reference internal" href="../../api/index_api_MetaWards_analysis.html#module-metawards.analysis" title="metawards.analysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">metawards.analysis</span></code></a> module. In addition, we have a
+<a class="reference download internal" download="" href="../../_downloads/884177eeedc36a3821e057f8750cb1da/1_3_plotting.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">notebook</span></code></a>
+which you can look at which breaks down exactly how <code class="docutils literal notranslate"><span class="pre">metawards-plot</span></code>
+uses pandas and matplotlib to render these two graphs.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="02_repeating.html" class="btn btn-neutral float-left" title="Multiple model runs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index_part02.html" class="btn btn-neutral float-right" title="Part 2 - Refining the model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <span class="lastupdated">Last updated on Mar 18, 2022.
+      </span></p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

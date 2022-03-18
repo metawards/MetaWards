@@ -1,0 +1,6 @@
+﻿metawards.mixers.mix\_evenly\_multi\_population
+===============================================
+
+.. currentmodule:: metawards.mixers
+
+.. autofunction:: mix_evenly_multi_population
