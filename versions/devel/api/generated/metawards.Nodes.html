@@ -137,18 +137,18 @@
 <h1>metawards.Nodes<a class="headerlink" href="#metawards-nodes" title="Permalink to this headline"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="metawards.Nodes">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">metawards.</span></span><span class="sig-name descname"><span class="pre">Nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">metawards.</span></span><span class="sig-name descname"><span class="pre">Nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes" title="Permalink to this definition"></a></dt>
 <dd><p>This is a container class for Nodes. This uses Python arrays
 to store a list of Node objects as a “struct of arrays”.
 This should improve speed of loading and access.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Create a container for up to “N” nodes</p>
 </dd></dl>
 
 <p class="rubric">Methods</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -259,7 +259,7 @@ This should improve speed of loading and access.</p>
 </tbody>
 </table>
 <p class="rubric">Attributes</p>
-<table class="longtable docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -353,7 +353,7 @@ This should improve speed of loading and access.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.__getitem__">
-<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.__getitem__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__getitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.__getitem__" title="Permalink to this definition"></a></dt>
 <dd><p>Return the node at index ‘i’. Note that this is a
 deep copy of the node. Changing the node will not change
 the data in this container. To update the data in this
@@ -363,7 +363,7 @@ index operator (see __setitem__)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id0">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
 <dd><p>Create a container for up to “N” nodes</p>
 </dd></dl>
 
@@ -375,7 +375,7 @@ index operator (see __setitem__)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.__setitem__">
-<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="metawards.Node.html#metawards.Node" title="metawards._node.Node"><span class="pre">metawards._node.Node</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__setitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.__setitem__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__setitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="metawards.Node.html#metawards.Node" title="metawards._node.Node"><span class="pre">metawards._node.Node</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.__setitem__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.__setitem__" title="Permalink to this definition"></a></dt>
 <dd><p>Set the item as index ‘i’ equal to ‘value’. This deep-copies
 ‘value’ into this container</p>
 </dd></dl>
@@ -492,7 +492,7 @@ is greater than any distance between points on Earth
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.get_custom">
-<span class="sig-name descname"><span class="pre">get_custom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.get_custom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.get_custom" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_custom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.get_custom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.get_custom" title="Permalink to this definition"></a></dt>
 <dd><p>Return the array of custom parameters for the key called ‘key’.
 If these don’t exist then create them with the specified
 default value. Note that this returns a shallow copy of the
@@ -550,7 +550,7 @@ a negative index into a canonical positive index</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.resize">
-<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.resize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.resize" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.resize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.resize" title="Permalink to this definition"></a></dt>
 <dd><p>Resize this container to hold ‘N’ nodes. This will expand
 the container if ‘N’ is greater than len(self), or will
 contract the container (deleting excess nodes) if ‘N’
@@ -567,7 +567,7 @@ want to reduce the size to fit the number of loaded nodes</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.scale_susceptibles">
-<span class="sig-name descname"><span class="pre">scale_susceptibles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">play_ratio</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.scale_susceptibles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.scale_susceptibles" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">scale_susceptibles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">work_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">play_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.scale_susceptibles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.scale_susceptibles" title="Permalink to this definition"></a></dt>
 <dd><p>Scale the number of susceptibles in these Nodes
 by the passed scale ratios. These can be values, e.g.
 ratio = 2.0 will scale the total number of susceptibles
@@ -583,11 +583,8 @@ susceptibles - evenly scales the work and play populations</p></li>
 <li><p><strong>play_ratio</strong> (<em>None</em><em>, </em><em>float</em><em>, </em><em>list</em><em> or </em><em>dict</em>) – Scale only the play population of susceptibles</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -612,7 +609,7 @@ susceptibles - evenly scales the work and play populations</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="metawards.Nodes.set_custom">
-<span class="sig-name descname"><span class="pre">set_custom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">_Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span> </span><span class="pre">array</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.set_custom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.set_custom" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_custom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">array</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="../../_modules/metawards/_nodes.html#Nodes.set_custom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#metawards.Nodes.set_custom" title="Permalink to this definition"></a></dt>
 <dd><p>Set the custom parameters for the key called ‘key’ to ‘value’.
 If the index is set then this just sets the value for that
 index. You pass in either an array of floats (thus setting
@@ -649,7 +646,7 @@ single ward, or will set all wards to have that value.</p>
 
   <div role="contentinfo">
     <p>
-      <span class="lastupdated">Last updated on Feb 14, 2022.
+      <span class="lastupdated">Last updated on Mar 29, 2022.
       </span></p>
   </div>
 
